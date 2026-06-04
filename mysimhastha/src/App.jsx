@@ -1267,7 +1267,7 @@ const carouselRef = useRef(null);
                   <div key={l} className="adv-stat"><span className="adv-val">{v}</span><div className="adv-lbl">{l}</div></div>
                 ))}
               </div>
-              <button className="btn btn-gold btn-lg" onClick={()=>alert("Advertising enquiries:\nads@mysimhastha.com\nOur media team responds within 24 hours.")}>Contact Ad Team →</button>
+              <button className="btn btn-gold btn-lg" onClick={()=>alert("Advertising enquiries:\ninfo@mysimhastha.com\nOur media team responds within 24 hours.")}>Contact Ad Team →</button>
             </div>
             <div className="adv-poster">
               <div style={{fontSize:"44px",marginBottom:"10px"}}>📢</div>
@@ -1276,7 +1276,7 @@ const carouselRef = useRef(null);
               {[["🌟 Homepage Banner","₹2L / month"],["📅 Calendar Sponsor","₹1.5L / month"],["📡 Darshan Sponsor","₹3L / Snan"],["📱 Push Notification","₹50K / blast"]].map(([n,p])=>(
                 <div key={n} className="adv-pkg"><span className="adv-pkg-name">{n}</span><span className="adv-pkg-price">{p}</span></div>
               ))}
-              <button className="btn btn-gold btn-full" style={{marginTop:"14px"}} onClick={()=>alert("Send brief to: ads@mysimhastha.com")}>Get Custom Quote →</button>
+              <button className="btn btn-gold btn-full" style={{marginTop:"14px"}} onClick={()=>alert("Send brief to: info@mysimhastha.com")}>Get Custom Quote →</button>
             </div>
           </div>
         </div>
@@ -1293,7 +1293,7 @@ const carouselRef = useRef(null);
               <p style={{fontSize:"14px",color:"var(--muted)",lineHeight:"1.8",marginBottom:"16px"}}>mysimhastha.com is the official digital companion for pilgrims attending the Ujjain Simhastha Mahakumbh 2028. We bring together information, booking services, live darshan, and community support under one sacred roof.</p>
               <p style={{fontSize:"14px",color:"var(--muted)",lineHeight:"1.8",marginBottom:"24px"}}>Built by a team of devotees and technologists, our mission is to ensure every pilgrim — whether attending in person or joining from across the globe — experiences the divine grace of Ujjain Simhastha 2028.</p>
               <div style={{display:"flex",gap:"10px",flexWrap:"wrap"}}>
-                <button className="btn btn-primary" onClick={()=>alert("Contact: contact@mysimhastha.com\nHelpline: 1800-XXX-XXXX")}>Contact Us</button>
+                <button className="btn btn-primary" onClick={()=>alert("Contact: info@mysimhastha.com\nHelpline: 1800-XXX-XXXX")}>Contact Us</button>
                 <button className="btn btn-ghost" onClick={()=>alert("About page coming soon!")}>Learn More</button>
               </div>
             </div>
@@ -1494,7 +1494,7 @@ const openPopup = (p) => {
           <h1 style={{fontFamily:"var(--serif)",fontSize:"clamp(32px,5vw,60px)",fontWeight:800,color:"#fff",marginBottom:"8px",lineHeight:1.08}}>Ujjain Simhastha Mahakumbh 2028</h1>
           <p style={{fontSize:"15px",color:"rgba(255,255,255,.6)",marginBottom:"24px"}}>April 13 – June 24, 2028 · River Shipra, Ujjain, MP · 200M+ Pilgrims Expected</p>
           <div style={{display:"flex",justifyContent:"center",gap:"12px",flexWrap:"wrap",marginBottom:"32px"}}>
-            <button className="btn btn-primary btn-xl" onClick={()=>alert("E-Pass booking opens October 2027.\nRegister: bookings@mysimhastha.com")}>🎟 Book E-Pass</button>
+            <button className="btn btn-primary btn-xl" onClick={()=>alert("E-Pass booking opens October 2027.\nRegister: info@mysimhastha.com")}>🎟 Book E-Pass</button>
             <button className="btn btn-white btn-xl" onClick={()=>setPage("live-darshan")}>📡 Live Darshan</button>
             <button className="btn btn-dark btn-xl" onClick={()=>setPage("hotels")}>🏨 Book Stay</button>
           </div>
@@ -1723,7 +1723,7 @@ const openPopup = (p) => {
             {emoji:"🌿",tag:"Wellness",name:"Ayurveda & Yoga Camps",desc:"Ayurvedic treatment camps, yoga shalas, and meditation retreats set up across the Mela grounds.",btn:"Find Camp →"},
             {emoji:"🎶",tag:"Sacred Music",name:"Kirtan & Bhajan Sessions",desc:"Continuous bhajan and kirtan sessions by renowned artists from across India during the entire Mela period.",btn:"Schedule →"},
           ].map((c,i)=>(
-            <div key={i} className="cult" onClick={()=>alert(`${c.name}\nContact: culture@mysimhastha.com`)}>
+            <div key={i} className="cult" onClick={()=>alert(`${c.name}\nContact: info@mysimhastha.com`)}>
               <div className="cult-img">{c.emoji}</div>
               <div className="cult-body">
                 <div className="cult-tag">{c.tag}</div>
@@ -1851,7 +1851,7 @@ function HotelsPage(){
 </div>
           <div className="hotels-grid">
             {currentItems.map((h,i)=>(
-              <div key={i} className="hotel-card" onClick={()=>alert(`${h.name}\n\nType: ${h.type}\nPrice: ${h.price}\nLocation: ${h.location}\nPhone: ${h.phone}\nRating: ⭐ ${h.rating}\n\n${h.desc}\n\nBooking: stays@mysimhastha.com`)}>
+              <div key={i} className="hotel-card" onClick={()=>alert(`${h.name}\n\nType: ${h.type}\nPrice: ${h.price}\nLocation: ${h.location}\nPhone: ${h.phone}\nRating: ⭐ ${h.rating}\n\n${h.desc}\n\nBooking: info@mysimhastha.com`)}>
                 <div className="hcard-img">
                   {h.img?<img src={h.img} alt={h.name} loading="lazy"/>:<div style={{fontSize:"70px"}}>{h.type==="Hotel"?"🏨":h.type==="Dharamshala"?"🏛️":h.type==="Restaurant"?"🍛":h.type==="Cab Service"?"🚖":"🧭"}</div>}
                   <div className="hcard-img-overlay"/>
@@ -1867,7 +1867,7 @@ function HotelsPage(){
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
                     <span className="hcard-price">{h.price}</span>
-                    <button className="btn btn-primary btn-sm" onClick={e=>{e.stopPropagation();alert(`Booking for ${h.name}\nOpens October 2027.\nEmail: stays@mysimhastha.com\nPhone: ${h.phone}`);}}>Book Now</button>
+                    <button className="btn btn-primary btn-sm" onClick={e=>{e.stopPropagation();alert(`Booking for ${h.name}\nOpens October 2027.\nEmail: info@mysimhastha.com\nPhone: ${h.phone}`);}}>Book Now</button>
                   </div>
                 </div>
               </div>
@@ -1896,7 +1896,7 @@ function HotelsPage(){
           <div style={{background:"var(--deep)",borderRadius:"14px",padding:"24px",marginTop:"32px",display:"flex",alignItems:"center",gap:"16px",flexWrap:"wrap"}}>
             <div style={{fontSize:"28px"}}>🏨</div>
             <div><div style={{fontFamily:"var(--serif)",fontSize:"18px",fontWeight:700,color:"#fff",marginBottom:"3px"}}>List Your Property</div><div style={{fontSize:"13px",color:"rgba(255,255,255,.45)",marginTop:"2px"}}>Hotel, guesthouse, dharamshala, restaurant, cab or guide — reach millions of pilgrims.</div></div>
-            <button className="btn btn-gold" style={{marginLeft:"auto"}} onClick={()=>alert("Property listing registration opens September 2027.\nEmail: vendors@mysimhastha.com")}>List Your Property →</button>
+            <button className="btn btn-gold" style={{marginLeft:"auto"}} onClick={()=>alert("Property listing registration opens September 2027.\nEmail: info@mysimhastha.com")}>List Your Property →</button>
           </div>
         </div>
       </section>
