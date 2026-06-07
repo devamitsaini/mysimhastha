@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from "react";
-import heroImg from './assets/hero-image.png';
+import heroImg from './assets/hero-image.webp';
 
 /* ═══ DATA ═══════════════════════════════════════════ */
 
@@ -274,7 +274,7 @@ function LiveDarshanCard({ d }) {
 }
 /* ═══ STYLES ═════════════════════════════════════════ */
 const S = `
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,700&family=Tiro+Devanagari+Hindi&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --cream:#FAF6EF;--cream2:#F3EBD9;--deep:#1C0900;
@@ -322,7 +322,7 @@ input,select,textarea{font-family:var(--ui)}
 .btn-full{width:100%;justify-content:center}
 
 /* NAVBAR */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:rgba(255,253,248,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:box-shadow .2s}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:rgba(255,253,248,.97);border-bottom:1px solid var(--border);transition:box-shadow .2s}
 .navbar.scrolled{box-shadow:var(--shadow)}
 .nav-inner{height:var(--nav-h);display:flex;align-items:center;gap:20px}
 .nav-logo{display:flex;align-items:center;gap:9px;cursor:pointer;flex-shrink:0;margin-right:8px}
@@ -406,7 +406,7 @@ h3{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--text)}
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('./assets/hero-image.png') center/cover no-repeat;z-index:0}
+.hero-bg{position:absolute;inset:0;background:url('./assets/hero-image.webp') center/cover no-repeat;z-index:0}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,5,0,.55) 0%,rgba(15,3,0,.65) 50%,rgba(10,2,0,.8) 100%)}
 .hero-inner{position:relative;z-index:1;text-align:center;padding:calc(var(--nav-h) + 40px) 0 80px;width:100%}
 .hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,210,120,.85);margin-bottom:20px}
@@ -416,7 +416,7 @@ h3{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--text)}
 
 /* COUNTDOWN */
 .cd-grid{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:0}
-.cd-unit{background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:16px 20px;text-align:center;min-width:80px}
+.cd-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:16px 20px;text-align:center;min-width:80px}
 .cd-val{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:700;color:#fff;line-height:1;display:block}
 .cd-en{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:3px;display:block}
 .cd-hi{font-family:var(--deva);font-size:11px;color:rgba(255,210,120,.7);margin-top:1px;display:block}
@@ -974,7 +974,8 @@ const carouselRef = useRef(null);
   {NEWS_DATA.map((n) => (
     <div key={n.id} className="news-card">
       <div className="news-img">
-        <img src={n.img} alt={n.title} style={{width:"100%", height:"100%", objectFit:"cover"}}/>
+        <img loading="lazy"
+decoding="async" src={n.img} alt={n.title} style={{width:"100%", height:"100%", objectFit:"cover"}}/>
       </div>
       <div className="news-body">
         <span style={{fontSize:"10px", color:"var(--saffron)", fontWeight:700, textTransform:"uppercase"}}>{n.tag}</span>
@@ -994,7 +995,8 @@ const carouselRef = useRef(null);
   <div className="modal-overlay" onClick={() => setSelectedNews(null)}>
     <div className="modal-box" onClick={(e) => e.stopPropagation()}>
       <button className="modal-close" onClick={() => setSelectedNews(null)}>✕</button>
-      <img src={selectedNews.img} alt={selectedNews.title} style={{width:"100%", height:"200px", objectFit:"cover", borderRadius:"8px"}}/>
+      <img loading="lazy"
+decoding="async" src={selectedNews.img} alt={selectedNews.title} style={{width:"100%", height:"200px", objectFit:"cover", borderRadius:"8px"}}/>
       <h3 style={{fontFamily: "var(--serif)", fontSize: "24px", color: "var(--deep)", marginTop: "15px"}}>{selectedNews.title}</h3>
       <p style={{marginTop: "10px", color: "var(--muted)", fontSize: "14px", lineHeight: 1.6}}>{selectedNews.desc}</p>
     </div>
@@ -1133,6 +1135,8 @@ const carouselRef = useRef(null);
     >
       <img 
         /* Safe check lagaya hai taki agar property ka naam img, src ya url ho toh photo load ho jaye */
+        loading="lazy"
+decoding="async"
         src={img.img || img.src || img.url} 
         alt={img.cap || img.caption || img.title} 
         style={{ 
@@ -1227,7 +1231,9 @@ const carouselRef = useRef(null);
             {HOTELS_DATA.filter(h=>h.type==="Hotel").map((h,i)=>(
               <div key={i} className="hotel-card" onClick={()=>setPage("hotels")}>
                 <div className="hcard-img">
-                  {h.img?<img src={h.img} alt={h.name} loading="lazy"/>:<div style={{fontSize:"60px"}}>{h.type==="Hotel"?"🏨":h.type==="Dharamshala"?"🏛️":h.type==="Restaurant"?"🍛":h.type==="Cab Service"?"🚖":"🧭"}</div>}
+                  {h.img?<img  loading="lazy"
+decoding="async"
+src={h.img} alt={h.name} loading="lazy"/>:<div style={{fontSize:"60px"}}>{h.type==="Hotel"?"🏨":h.type==="Dharamshala"?"🏛️":h.type==="Restaurant"?"🍛":h.type==="Cab Service"?"🚖":"🧭"}</div>}
                   <div className="hcard-img-overlay"/>
                   <div className="hcard-tags"><span className="hcard-tag">{h.type}</span>{h.featured&&<span className="hcard-tag featured">Featured</span>}</div>
                 </div>
@@ -1685,7 +1691,8 @@ const openPopup = (p) => {
       {HOTELS_DATA.map((h, i) => (
         <div key={i} className="hotel-card" onClick={() => setPage("hotels")}>
           <div className="hcard-img">
-            {h.img ? <img src={h.img} alt={h.name} loading="lazy"/> : <div style={{fontSize:"60px"}}>🏨</div>}
+            {h.img ? <img loading="lazy"
+decoding="async" src={h.img} alt={h.name} loading="lazy"/> : <div style={{fontSize:"60px"}}>🏨</div>}
             <div className="hcard-img-overlay"/>
             <div className="hcard-tags">
               <span className="hcard-tag">{h.type}</span>
@@ -1853,7 +1860,8 @@ function HotelsPage(){
             {currentItems.map((h,i)=>(
               <div key={i} className="hotel-card" onClick={()=>alert(`${h.name}\n\nType: ${h.type}\nPrice: ${h.price}\nLocation: ${h.location}\nPhone: ${h.phone}\nRating: ⭐ ${h.rating}\n\n${h.desc}\n\nBooking: info@mysimhastha.com`)}>
                 <div className="hcard-img">
-                  {h.img?<img src={h.img} alt={h.name} loading="lazy"/>:<div style={{fontSize:"70px"}}>{h.type==="Hotel"?"🏨":h.type==="Dharamshala"?"🏛️":h.type==="Restaurant"?"🍛":h.type==="Cab Service"?"🚖":"🧭"}</div>}
+                  {h.img?<img loading="lazy"
+decoding="async" src={h.img} alt={h.name} loading="lazy"/>:<div style={{fontSize:"70px"}}>{h.type==="Hotel"?"🏨":h.type==="Dharamshala"?"🏛️":h.type==="Restaurant"?"🍛":h.type==="Cab Service"?"🚖":"🧭"}</div>}
                   <div className="hcard-img-overlay"/>
                   <div className="hcard-tags"><span className="hcard-tag">{h.type}</span>{h.featured&&<span className="hcard-tag featured">Featured</span>}</div>
                 </div>
@@ -1993,152 +2001,6 @@ function MissingPersonsPage(){
   )
 }
 
-/* ═══ LOGIN PAGE ══════════════════════════════════════ */
-/* ABHI KE LIYE LOGIN HATA DIYA HAI 👇
-function LoginPage({setPage}){
-
-  const [mode,setMode]=useState("login");
-  const [role,setRole]=useState("visitor");
-  const [form,setForm]=useState({email:"",password:"",name:""});
-  const submit=()=>{
-    if(!form.email||!form.password){alert("Please fill all required fields.");return}
-    if(mode==="login"){if(role==="admin"&&form.email==="admin@mysimhastha.com"){setPage("admin");return}alert(`✅ Welcome back!\nLogged in as ${role}.`)}
-    else alert(`✅ Registration successful!\nWelcome as ${role}.\nVerification sent to ${form.email}.`)
-  };
-  return(
-    <div className="page-wrap" style={{background:"var(--deep)",minHeight:"100vh",display:"flex",alignItems:"center",position:"relative",overflow:"hidden"}}>
-      <div style={{position:"absolute",inset:0,fontFamily:"var(--deva)",fontSize:"clamp(100px,18vw,240px)",color:"#fff",opacity:.03,display:"flex",alignItems:"center",justifyContent:"center",pointerEvents:"none",userSelect:"none"}}>ॐ</div>
-      <div className="container" style={{position:"relative",zIndex:1,padding:"48px 20px"}}>
-        <div style={{maxWidth:"440px",margin:"0 auto",background:"var(--white)",borderRadius:"20px",padding:"36px",boxShadow:"0 24px 60px rgba(0,0,0,.35)"}}>
-          <div style={{textAlign:"center",marginBottom:"28px"}}>
-            <div style={{width:"52px",height:"52px",background:"var(--saffron)",borderRadius:"14px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"24px",margin:"0 auto 12px"}}>🕉️</div>
-            <div style={{fontFamily:"var(--serif)",fontSize:"24px",fontWeight:700,color:"var(--text)",marginBottom:"4px"}}>{mode==="login"?"Welcome Back":"Create Account"}</div>
-            <div style={{fontFamily:"var(--deva)",fontSize:"14px",color:"var(--muted)"}}>{mode==="login"?"लॉगिन करें":"नया खाता बनाएं"}</div>
-          </div>
-          <div style={{display:"flex",gap:"4px",marginBottom:"22px",background:"var(--cream2)",borderRadius:"10px",padding:"4px"}}>
-            {[["visitor","Visitor"],["business","Business"],["admin","Admin"]].map(([v,l])=>(
-              <button key={v} onClick={()=>setRole(v)} style={{flex:1,padding:"8px",borderRadius:"7px",fontSize:"13px",fontWeight:600,border:"none",cursor:"pointer",background:role===v?"var(--saffron)":"transparent",color:role===v?"#fff":"var(--muted)",transition:"all .15s"}}>{l}</button>
-            ))}
-          </div>
-          {mode==="register"&&<div className="form-group"><label>Full Name</label><input type="text" placeholder="Your full name" value={form.name} onChange={e=>setForm(f=>({...f,name:e.target.value}))}/></div>}
-          <div className="form-group"><label>Email Address</label><input type="email" placeholder={role==="admin"?"admin@mysimhastha.com":"your@email.com"} value={form.email} onChange={e=>setForm(f=>({...f,email:e.target.value}))}/></div>
-          <div className="form-group"><label>Password</label><input type="password" placeholder="Enter password" value={form.password} onChange={e=>setForm(f=>({...f,password:e.target.value}))}/></div>
-          <button className="btn btn-primary btn-full btn-lg" onClick={submit} style={{marginBottom:"14px"}}>{mode==="login"?"Login →":"Create Account"}</button>
-          <div style={{textAlign:"center",fontSize:"13px",color:"var(--muted)"}}>
-            {mode==="login"?<>Don't have an account? <button onClick={()=>setMode("register")} style={{color:"var(--saffron)",fontWeight:700,cursor:"pointer",border:"none",background:"none"}}>Register</button></>:<>Already registered? <button onClick={()=>setMode("login")} style={{color:"var(--saffron)",fontWeight:700,cursor:"pointer",border:"none",background:"none"}}>Login</button></>}
-          </div>
-          {role==="admin"&&<div style={{marginTop:"12px",padding:"10px 12px",background:"var(--cream2)",borderRadius:"8px",fontSize:"12px",color:"var(--muted)",textAlign:"center"}}>Demo: admin@mysimhastha.com / any password</div>}
-        </div>
-      </div>
-    </div>
-  )
-}
-👆 --------------------------------- */
-
-/* ═══ ADMIN PAGE ══════════════════════════════════════ */
-/* ABHI KE LIYE LOGIN HATA DIYA HAI 👇
-function AdminPage({setPage}){
-  const [section,setSection]=useState("dashboard");
-  const [mpList,setMpList]=useState(MISSING_DATA);
-  return(
-    <div className="page-wrap" style={{background:"var(--cream)"}}>
-      <div className="page-hero" style={{background:"var(--deep)"}}>
-        <div className="container" style={{position:"relative",zIndex:1}}>
-          <div className="page-hero-title">Admin Portal</div>
-          <div className="page-hero-hi">प्रशासन पोर्टल</div>
-          <p className="page-hero-sub">Content management system — edit news, manage listings, update calendars.</p>
-        </div>
-      </div>
-      <div className="section">
-        <div className="container">
-          <div style={{display:"flex",gap:"4px",flexWrap:"wrap",marginBottom:"28px",background:"var(--white)",border:"1px solid var(--border)",borderRadius:"10px",padding:"4px",width:"fit-content"}}>
-            {[["dashboard","📊 Dashboard"],["news","📰 News"],["missing","🆘 Missing"],["hotels","🏨 Hotels"],["snan","📅 Snan"],["gallery","📸 Gallery"]].map(([id,l])=>(
-              <button key={id} onClick={()=>setSection(id)} className={`ptab${section===id?" active":""}`} style={{fontSize:"12px"}}>{l}</button>
-            ))}
-          </div>
-          {section==="dashboard"&&(
-            <>
-              <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(190px,1fr))",gap:"14px",marginBottom:"24px"}}>
-                {[["18,400","E-Passes Booked"],["143","Missing Reports"],["38","Businesses Listed"],["2,891","Gallery Uploads"]].map(([v,l])=>(
-                  <div key={l} className="admin-stat"><div className="a-val">{v}</div><div className="a-lbl">{l}</div></div>
-                ))}
-              </div>
-              <div className="admin-section">
-                <div style={{fontFamily:"var(--serif)",fontSize:"19px",fontWeight:700,color:"var(--text)",marginBottom:"16px"}}>Quick Actions</div>
-                <div style={{display:"flex",gap:"10px",flexWrap:"wrap"}}>
-                  {[["Add News","btn-primary"],["Review Missing Persons","btn-ghost"],["Approve Hotel Listing","btn-teal"],["Update Snan Calendar","btn-gold"]].map(([l,c])=>(
-                    <button key={l} className={`btn ${c}`} onClick={()=>alert(`${l} — Admin function available in production.`)}>{l}</button>
-                  ))}
-                </div>
-              </div>
-            </>
-          )}
-          {section==="news"&&(
-            <div className="admin-section">
-              <div style={{fontFamily:"var(--serif)",fontSize:"19px",fontWeight:700,color:"var(--text)",marginBottom:"16px"}}>Manage News</div>
-              <div style={{display:"flex",gap:"10px",marginBottom:"16px",flexWrap:"wrap"}}>
-                <input type="text" placeholder="News title..." style={{flex:1,minWidth:"200px",padding:"10px 12px",border:"1.5px solid var(--border)",borderRadius:var_r,fontFamily:"var(--ui)",fontSize:"14px",outline:"none",background:"var(--cream)"}}/>
-                <button className="btn btn-primary" onClick={()=>alert("News added!")}>Add News</button>
-              </div>
-              <table className="admin-table">
-                <thead><tr><th>Title</th><th>Tag</th><th>Date</th><th>Actions</th></tr></thead>
-                <tbody>{NEWS_DATA.map(n=><tr key={n.id}><td>{n.title}</td><td><span style={{background:"var(--sf-soft)",color:"var(--saffron)",padding:"2px 7px",borderRadius:"4px",fontSize:"11px",fontWeight:700}}>{n.tag}</span></td><td>{n.date}</td><td><button className="btn btn-ghost btn-sm" onClick={()=>alert(`Edit: ${n.title}`)}>Edit</button> <button className="btn btn-sm" style={{background:"#fee2e2",color:"#991b1b",border:"1px solid #fecaca"}} onClick={()=>alert(`Delete: ${n.title}`)}>Delete</button></td></tr>)}</tbody>
-              </table>
-            </div>
-          )}
-          {section==="missing"&&(
-            <div className="admin-section">
-              <div style={{fontFamily:"var(--serif)",fontSize:"19px",fontWeight:700,color:"var(--text)",marginBottom:"16px"}}>Missing Persons Management</div>
-              <table className="admin-table">
-                <thead><tr><th>Name</th><th>Age</th><th>Location</th><th>Contact</th><th>Status</th><th>Action</th></tr></thead>
-                <tbody>{mpList.map(p=><tr key={p.id}><td>{p.name}</td><td>{p.age}</td><td>{p.location}</td><td>{p.contact}</td><td><span className={`mp-badge${p.status==="found"?" found":""}`}>{p.status}</span></td><td><button className="btn btn-teal btn-sm" onClick={()=>{setMpList(l=>l.map(x=>x.id===p.id?{...x,status:"found"}:x));alert(`${p.name} marked as Found`)}}>Mark Found</button></td></tr>)}</tbody>
-              </table>
-            </div>
-          )}
-          {section==="hotels"&&(
-            <div className="admin-section">
-              <div style={{fontFamily:"var(--serif)",fontSize:"19px",fontWeight:700,color:"var(--text)",marginBottom:"16px"}}>Hotel & Stay Listings</div>
-              <table className="admin-table">
-                <thead><tr><th>Property</th><th>Type</th><th>Price</th><th>Rating</th><th>Status</th><th>Action</th></tr></thead>
-                <tbody>{HOTELS_DATA.map(h=><tr key={h.id}><td>{h.name}</td><td>{h.type}</td><td>{h.price}</td><td>⭐ {h.rating}</td><td><span style={{background:"var(--teal-lt)",color:"var(--teal)",padding:"2px 7px",borderRadius:"4px",fontSize:"11px",fontWeight:700}}>Verified</span></td><td><button className="btn btn-ghost btn-sm" onClick={()=>alert(`Edit: ${h.name}`)}>Edit</button></td></tr>)}</tbody>
-              </table>
-            </div>
-          )}
-          {section==="snan"&&(
-            <div className="admin-section">
-              <div style={{fontFamily:"var(--serif)",fontSize:"19px",fontWeight:700,color:"var(--text)",marginBottom:"16px"}}>Snan Calendar Management</div>
-              <table className="admin-table">
-                <thead><tr><th>Tithi</th><th>Date</th><th>Time</th><th>Type</th><th>Action</th></tr></thead>
-                <tbody>{SNAN_DATES.map((s,i)=><tr key={i}><td><strong>{s.name}</strong> · <span style={{fontFamily:"var(--deva)"}}>{s.nameHi}</span></td><td>{s.date}</td><td>{s.time}</td><td>{s.shahi?<span style={{background:"var(--sf-soft)",color:"var(--saffron)",padding:"2px 7px",borderRadius:"4px",fontSize:"11px",fontWeight:700}}>Shahi Snan</span>:"Snan Tithi"}</td><td><button className="btn btn-ghost btn-sm" onClick={()=>alert(`Edit: ${s.name}`)}>Edit</button></td></tr>)}</tbody>
-              </table>
-            </div>
-          )}
-          {section==="gallery"&&(
-            <div className="admin-section">
-              <div style={{fontFamily:"var(--serif)",fontSize:"19px",fontWeight:700,color:"var(--text)",marginBottom:"16px"}}>Gallery Management</div>
-              <p style={{fontSize:"13px",color:"var(--muted)",marginBottom:"16px"}}>Review and approve community-submitted photos.</p>
-              <div className="gallery-grid" style={{gridTemplateRows:"200px 200px"}}>
-                {GALLERY_IMAGES.slice(0,6).map((g,i)=>(
-                  <div key={i} className={`gi${i===0?" tall":""}`} style={{position:"relative",height:i===0?"100%":"200px"}}>
-                    {g.url?<img src={g.url} alt={g.cap} style={{width:"100%",height:"100%",objectFit:"cover"}}/>:<div style={{width:"100%",height:"100%",background:"var(--cream)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"40px"}}>🕉️</div>}
-                    <div style={{position:"absolute",bottom:"8px",left:"8px",right:"8px",display:"flex",gap:"5px"}}>
-                      <button style={{flex:1,background:"rgba(34,197,94,.9)",color:"#fff",border:"none",borderRadius:"5px",padding:"5px",fontSize:"11px",fontWeight:700,cursor:"pointer"}} onClick={()=>alert("Photo approved!")}>✓ Approve</button>
-                      <button style={{flex:1,background:"rgba(239,68,68,.9)",color:"#fff",border:"none",borderRadius:"5px",padding:"5px",fontSize:"11px",fontWeight:700,cursor:"pointer"}} onClick={()=>alert("Photo rejected.")}>✕ Reject</button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          <div style={{marginTop:"24px",textAlign:"center"}}>
-            <button className="btn btn-ghost btn-sm" onClick={()=>{setPage("home");alert("Logged out.")}}>← Logout & Return to Site</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-👆 --------------------------------- */
 const var_r = '"var(--r)"';
 
 /* ═══ FOOTER ══════════════════════════════════════════ */
