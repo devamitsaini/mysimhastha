@@ -1,0 +1,124 @@
+.page-wrap{
+  width:100%;
+  min-height:100vh;
+  background:#faf7f2;
+}
+
+.page-wrap .container{
+  width:min(1400px,92%);
+  margin:auto;
+}
+
+.section{
+  padding:80px 0;
+}
+
+.sec-head{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.sec-head h2{
+  font-size:42px;
+  margin:10px 0;
+}
+
+.sec-sub{
+  max-width:800px;
+  margin:auto;
+  color:#666;
+}
+
+/* MAIN PAGE WRAPPER */
+
+.page-wrap{
+  width:100%;
+  overflow-x:hidden;
+  background:#faf7f2;
+}
+
+/* EVERY SECTION GETS SIDE SPACE */
+
+.section{
+  padding:70px 24px;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+  width:100%;
+  max-width:1400px;
+  margin:0 auto;
+  padding-left:24px;
+  padding-right:24px;
+  box-sizing:border-box;
+}
+
+/* HEADINGS */
+
+.sec-head{
+  margin-bottom:40px;
+}
+
+.sec-head h2{
+  margin:8px 0;
+}
+
+/* CARDS */
+
+.darshan-grid,
+.places-grid,
+.heritage-grid,
+.route-grid,
+.hotels-grid,
+.cult-grid,
+.snan-grid-new{
+  gap:24px;
+}
+
+@media (max-width:1024px){
+
+  .container{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .section{
+    padding:60px 20px;
+  }
+}
+
+@media (max-width:768px){
+
+  .container{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .section{
+    padding:50px 16px;
+  }
+
+  .sec-head{
+    text-align:center;
+  }
+
+  .sec-head h2{
+    font-size:28px;
+  }
+}
+
+/* Force spacing from screen edges */
+
+.page-wrap > *{
+  padding-left:24px;
+  padding-right:24px;
+  box-sizing:border-box;
+}
+
+@media (max-width:768px){
+  .page-wrap > *{
+    padding-left:16px;
+    padding-right:16px;
+  }
+}
