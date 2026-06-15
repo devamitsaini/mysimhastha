@@ -99,21 +99,42 @@ const Home = ({ setPage }) => {
             <h2 id="news-heading">Latest Simhastha News</h2>
           </div>
           <div className="news-container">
-            {NEWS_DATA.map((n) => (
-              <article key={n.id} className="news-card" onClick={() => setSelectedNews(n)} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setSelectedNews(n)}>
-                <div className="news-img">
-                  <img src={n.img} alt={n.title} loading="lazy" width="400" height="160" />
-                </div>
-                <div className="news-body">
-                  <span className="news-tag">{n.tag}</span>
-                  <h3 className="news-title">{n.title}</h3>
-                  <p className="news-desc">{n.desc.substring(0, 80)}…</p>
-                  <span className="read-more" aria-label={`Read more about ${n.title}`}>Read More →</span>
-                </div>
-              </article>
-            ))}
-          </div>
+  {NEWS_DATA.slice(0, 2).map((n) => (
+    <article
+      key={n.id}
+      className="news-card"
+      onClick={() => setSelectedNews(n)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && setSelectedNews(n)}
+    >
+      <div className="news-img">
+        <img
+          src={n.img}
+          alt={n.title}
+          loading="lazy"
+          width="400"
+          height="160"
+        />
+      </div>
+
+      <div className="news-body">
+        <span className="news-tag">{n.tag}</span>
+        <h3 className="news-title">{n.title}</h3>
+        <p className="news-desc">{n.desc.substring(0, 80)}…</p>
+        <span className="read-more">
+          Read More →
+        </span>
+      </div>
+    </article>
+  ))}
+</div>
         </div>
+        <div className="news-view-all">
+  <button onClick={() => setPage("news")}>
+    View All News →
+  </button>
+</div>
       </section>
 
       {/* NEWS MODAL */}
@@ -136,43 +157,51 @@ const Home = ({ setPage }) => {
             <p className="sec-sub">A legacy of faith spanning millennia</p>
           </div>
           <div className="kumbh-years">
-            {KUMBH_YEARS.map((k) => (
-              <div
-                key={k.year}
-                className={`ky-card${k.active ? ' active' : ''}`}
-                onClick={() => k.active && setPage('simhastha-2028')}
-                role={k.active ? 'button' : undefined}
-                tabIndex={k.active ? 0 : undefined}
-                onKeyDown={k.active ? (e) => e.key === 'Enter' && setPage('simhastha-2028') : undefined}
-              >
-                <div className="ky-year">{k.year}</div>
-                <div className="ky-city">{k.city}</div>
-                <div className="ky-type">{k.type}</div>
-                <div className="ky-note">{k.note}</div>
-              </div>
-            ))}
-          </div>
+  {KUMBH_YEARS.map((k) => (
+    <div
+      key={k.year}
+      className={`ky-strip ${k.active ? 'active' : ''}`}
+      onClick={() => k.active && setPage('simhastha-2028')}
+    >
+      <div className="ky-year">{k.year}</div>
+      <div className="ky-city">{k.city}</div>
+      <div className="ky-type">{k.type}</div>
+      {k.active && <div className="ky-arrow">→</div>}
+    </div>
+  ))}
+</div>
         </div>
       </section>
 
       {/* LIVE DARSHAN */}
       <section className="section" style={{ background: 'var(--white)' }} aria-labelledby="darshan-heading">
         <div className="container">
-          <div className="sec-head" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '32px' }}>
-            <div>
-              <div className="sec-label">Sacred Streams</div>
-              <h2 id="darshan-heading">Live Darshan</h2>
-              <p className="sec-sub" style={{ maxWidth: '420px' }}>Watch sacred temples of Ujjain live. All Aarti timings listed.</p>
-            </div>
-            <button className="btn btn-outline" onClick={() => setPage('live-darshan')}>View All Feeds →</button>
-          </div>
-          <div className="darshan-grid">
-            {DARSHAN_FEEDS.slice(0, 2).map((d, i) => (
-              <LiveDarshanCard key={i} d={d} />
-            ))}
-          </div>
+          <div className="sec-head" style={{ marginBottom: '24px' }}>
+  <div>
+    <div className="sec-label">Sacred Streams</div>
+    <h2 id="darshan-heading">Live Darshan</h2>
+    <p className="sec-sub" style={{ maxWidth: '420px' }}>
+      Watch sacred temples of Ujjain live. All Aarti timings listed.
+    </p>
+  </div>
+</div>
+
+<div className="darshan-grid">
+  {DARSHAN_FEEDS.slice(0, 2).map((d, i) => (
+    <LiveDarshanCard key={i} d={d} />
+  ))}
+</div>
         </div>
+        <div className="darshan-cta">
+  <button
+    className="btn btn-outline"
+    onClick={() => setPage('live-darshan')}
+  >
+    View All Feeds →
+  </button>
+</div>
       </section>
+      
 
       {/* NRI / PRASAD SECTION */}
       <section className="section nri-section" style={{ background: 'linear-gradient(135deg, var(--deep) 0%, #3D0C00 50%, #1C0900 100%)' }} aria-labelledby="nri-heading">
@@ -247,17 +276,30 @@ const Home = ({ setPage }) => {
               <h2 id="mp-heading">Missing Persons Board</h2>
               <p className="sec-sub">Help reunite families — ground team monitors 24/7 during Simhastha</p>
             </div>
-            <button type="button" className="btn btn-red" onClick={() => setPage('missing-persons')}>⚠️ Report Missing</button>
+            <div className="mp-actions">
+  <button
+    type="button"
+    className="btn btn-red"
+    onClick={() => setPage('missing-persons')}
+  >
+    ⚠️ Report Missing
+  </button>
+
+  <button
+    type="button"
+    className="btn btn-outline"
+    onClick={() => setPage('missing-persons')}
+  >
+    View All Cases →
+  </button>
+</div>
           </div>
           <div className="mp-grid">
             {mpList.slice(0, 2).map((p) => (
               <div key={p.id} className="mp-card" onClick={() => setPage('missing-persons')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setPage('missing-persons')}>
                 <div className="mp-photo">
-                  <svg className="mp-photo-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
-                    <circle cx="12" cy="7" r="4" />
-                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
-                  </svg>
-                </div>
+  {p.name.charAt(0)}
+</div>
                 <div className="mp-body">
                   <div className="mp-name-row">
                     <span className="mp-name">{p.name}</span>
@@ -283,10 +325,12 @@ const Home = ({ setPage }) => {
               <h2 id="hotels-heading">Hotels &amp; Stays</h2>
               <p className="sec-sub">Verified partner accommodations near Mahakal and Ram Ghat</p>
             </div>
-            <button type="button" className="btn btn-outline" onClick={() => setPage('hotels')}>View All Stays →</button>
           </div>
           <div className="hotels-grid">
-            {HOTELS_DATA.filter((h) => h.type === 'Hotel').map((h) => (
+            {HOTELS_DATA
+  .filter(h => h.type === 'Hotel')
+  .slice(0, 3)
+  .map(h => (
               <div key={h.id} className="hotel-card" onClick={() => setPage('hotels')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setPage('hotels')}>
                 <div className="hcard-img">
                   {h.img
@@ -313,7 +357,17 @@ const Home = ({ setPage }) => {
               </div>
             ))}
           </div>
+          <div className="hotels-cta">
+  <button
+    type="button"
+    className="btn btn-outline"
+    onClick={() => setPage('hotels')}
+  >
+    View All Stays →
+  </button>
+</div>
         </div>
+        
       </section>
 
       {/* NRI REGISTRATION MODAL */}

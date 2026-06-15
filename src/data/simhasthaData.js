@@ -44,7 +44,97 @@ export const heritageList = [
   }
 ];
 export const HOTELS_DATA = [
-  { id:1, name:"Hotel Mahakal Palace", type:"Hotel", price:"₹3,500/night", location:"Near Mahakal Temple, Ujjain", phone:"+91 73400 xxxxx", rating:4.5, tier:"Premium", desc:"Luxury hotel with temple views, modern amenities, and traditional Malwa hospitality. Walking distance to Mahakaleshwar.", featured:true, img:"https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80" },
+  {
+    id: 1,
+    name: "Hotel Mahakal Palace",
+    type: "Hotel",
+    price: "₹3,500/night",
+    location: "Near Mahakal Temple, Ujjain",
+    phone: "+91 73400 xxxxx",
+    rating: 4.5,
+    tier: "Premium",
+    desc: "Luxury hotel with temple views and modern amenities.",
+    featured: true,
+    img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80"
+  },
+  {
+    id: 2,
+    name: "Shivam Residency",
+    type: "Hotel",
+    price: "₹2,800/night",
+    location: "Ram Ghat Road, Ujjain",
+    phone: "+91 73400 xxxxx",
+    rating: 4.3,
+    tier: "Comfort",
+    desc: "Comfortable stay near Ram Ghat with family-friendly rooms.",
+    featured: false,
+    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80"
+  },
+  {
+    id: 3,
+    name: "Hotel Rudraksh",
+    type: "Hotel",
+    price: "₹2,200/night",
+    location: "Freeganj, Ujjain",
+    phone: "+91 73400 xxxxx",
+    rating: 4.2,
+    tier: "Standard",
+    desc: "Clean rooms and convenient access to major temples.",
+    featured: false,
+    img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80"
+  },
+  {
+    id: 4,
+    name: "Mahakal Inn",
+    type: "Hotel",
+    price: "₹1,900/night",
+    location: "Near Harsiddhi Temple",
+    phone: "+91 73400 xxxxx",
+    rating: 4.1,
+    tier: "Budget",
+    desc: "Affordable accommodation for pilgrims.",
+    featured: false,
+    img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80"
+  },
+  {
+    id: 5,
+    name: "Hotel Kalpataru",
+    type: "Hotel",
+    price: "₹4,200/night",
+    location: "Mahakal Corridor",
+    phone: "+91 73400 xxxxx",
+    rating: 4.7,
+    tier: "Premium",
+    desc: "Elegant rooms with premium facilities and dining.",
+    featured: true,
+    img: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80"
+  },
+  {
+    id: 6,
+    name: "Shipra View Hotel",
+    type: "Hotel",
+    price: "₹3,000/night",
+    location: "Near Ram Ghat",
+    phone: "+91 73400 xxxxx",
+    rating: 4.4,
+    tier: "Comfort",
+    desc: "Beautiful views and easy access to bathing ghats.",
+    featured: false,
+    img: "https://images.unsplash.com/photo-1455587734955-081b22074882?w=600&q=80"
+  },
+  {
+    id: 7,
+    name: "Ujjain Heritage Stay",
+    type: "Hotel",
+    price: "₹2,600/night",
+    location: "Old City, Ujjain",
+    phone: "+91 73400 xxxxx",
+    rating: 4.3,
+    tier: "Heritage",
+    desc: "Traditional Malwa-style hospitality and decor.",
+    featured: false,
+    img: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80"
+  }
 ];
 
 export const MISSING_DATA = [
@@ -122,3 +212,41 @@ export const VAARS_EN = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Fri
 export const VAARS_HI = ["रविवार","सोमवार","मंगलवार","बुधवार","गुरुवार","शुक्रवार","शनिवार"];
 export const NAKSHATRAS = ["Ashwini","Bharani","Krittika","Rohini","Mrigashira","Ardra","Punarvasu","Pushya","Ashlesha","Magha","Purva Phalguni","Uttara Phalguni","Hasta"];
 export const FESTIVALS = {"6-5":"Jyeshtha Purnima","6-1":"Nirjala Ekadashi","5-12":"Vaishakh Amavasya","5-26":"Vaishakh Purnima","4-13":"Chaitra Purnima"};
+
+export const CULTURE_DATA = [
+  {
+    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    tag: "Food",
+    name: "Prasad & Local Cuisine",
+    desc: "Poha-jalebi, bhutte ki kees, sabudana khichdi and traditional Malwa delicacies.",
+    btn: "Food Map →",
+    page: "food-map"
+  },
+
+  {
+    img: "https://images.unsplash.com/photo-1503095396549-807759245b35?w=800&q=80",
+    tag: "Performing Arts",
+    name: "Cultural Events & Performances",
+    desc: "Classical music, folk dance, Ram Leela and Kavi Sammelan throughout Simhastha.",
+    btn: "View Calendar →",
+    page: "events"
+  },
+
+  {
+    img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80",
+    tag: "Evening Ritual",
+    name: "Shipra River Aarti",
+    desc: "Witness thousands of diyas illuminating the sacred Shipra River every evening.",
+    btn: "Watch Live →",
+    page: "live-darshan"
+  },
+
+  {
+    img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80",
+    tag: "Wellness",
+    name: "Yoga & Ayurveda Camps",
+    desc: "Join yoga sessions, meditation retreats and Ayurveda wellness camps.",
+    btn: "Find Camp →",
+    page: "wellness"
+  }
+];

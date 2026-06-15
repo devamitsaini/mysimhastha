@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer';
 
 import AboutPage from "./pages/AboutPage";
 import HomePage from './pages/Home';
+import NewsPage from "./pages/NewsPage";
 import LiveDarshanPage from './pages/LiveDarshan';
 import HotelsPage from './pages/Hotels';
 import MissingPersonsPage from './pages/MissingPersons';
@@ -30,20 +31,13 @@ function App() {
       case "simhastha-2028":  return <Simhastha2028Page setPage={setPage} />;
       case "snan-calendar":   return <SnanCalendarPage setPage={setPage} />;
       case "about":           return <AboutPage />;
-      case "blog":
-        return (
-        <BlogPage
-        setPage={setPage}
-        setSelectedBlog={setSelectedBlog}
-        />
-        );
-      case "blog-details":
-        return (
-        <BlogDetailsPage
-        blog={selectedBlog}
-        setPage={setPage}
-        />
-        );  
+
+      case "blog":            return (<BlogPage setPage={setPage}
+        setSelectedBlog=       {setSelectedBlog}/>);
+      case "blog-details":    return (<BlogDetailsPage 
+        blog={selectedBlog}   setPage={setPage}/>);  
+        
+      case "news":            return <NewsPage setPage={setPage} />;
       default:                return <NotFoundPage setPage={setPage} />;
     }
   };

@@ -5,12 +5,21 @@ import {
   PLACE_BG,
   HERITAGE_BG,
   HOTELS_DATA,
-  heritageList
+  heritageList,
+  CULTURE_DATA
 } from '../data/simhasthaData';
 import Countdown from '../components/common/Countdown';
 import "../styles/simhastha2028.css";
 
 function Simhastha2028Page({ setPage }) {
+  const [hotelPage, setHotelPage] = useState(1);
+  const hotelsPerPage = 4;
+  const totalPages = Math.ceil(HOTELS_DATA.length / hotelsPerPage);
+
+  const paginatedHotels = HOTELS_DATA.slice(
+  (hotelPage - 1) * hotelsPerPage,
+  hotelPage * hotelsPerPage
+  );
   const [activeTab, setActiveTab] = useState("temples");
   const [modalData, setModalData] = useState(null);
   const [selectedHeritage, setSelectedHeritage] = useState(null);
@@ -53,9 +62,13 @@ function Simhastha2028Page({ setPage }) {
           <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(32px,5vw,60px)", fontWeight: 800, color: "#fff", marginBottom: "8px", lineHeight: 1.08 }}>Ujjain Simhastha Mahakumbh 2028</h1>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,.6)", marginBottom: "24px" }}>April 22 – June 18, 2028 · River Shipra, Ujjain, MP · 200M+ Pilgrims Expected</p>
           <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap", marginBottom: "32px" }}>
-            <button className="btn btn-primary btn-xl" onClick={() => alert("E-Pass booking opens October 2027.\nRegister: info@mysimhastha.com")}>🎟 Book E-Pass</button>
-            <button className="btn btn-white btn-xl" onClick={() => setPage("live-darshan")}>📡 Live Darshan</button>
-            <button className="btn btn-dark btn-xl" onClick={() => setPage("hotels")}>🏨 Book Stay</button>
+            <button
+  className="btn btn-primary btn-xl"
+  onClick={() => setPage("plan-visit")}
+>Plan Your Visit
+</button>
+            <button className="btn btn-white btn-xl" onClick={() => setPage("live-darshan")}>Live Darshan</button>
+            <button className="btn btn-dark btn-xl" onClick={() => setPage("hotels")}> Book Stay</button>
           </div>
           <Countdown />
         </div>
@@ -109,7 +122,7 @@ function Simhastha2028Page({ setPage }) {
           <h2>Live Darshan & Aarti Timings</h2>
         </div>
         <div className="darshan-grid" style={{marginBottom:"64px"}}>
-          {DARSHAN_FEEDS.map((d,i)=>(
+          {DARSHAN_FEEDS.slice(0, 3).map((d,i)=>(
             <div key={i} className="dc" onClick={()=>setPage("live-darshan")}>
               <div className="dc-thumb" style={{background:`linear-gradient(160deg,${d.color},#050200)`}}>
                 <div style={{position:"absolute",inset:0,background:"radial-gradient(ellipse at center,rgba(212,82,10,.18) 0%,transparent 70%)"}}/>
@@ -126,38 +139,81 @@ function Simhastha2028Page({ setPage }) {
             </div>
           ))}
         </div>
+        <div className="darshan-cta">
+  <button
+    className="btn btn-outline"
+    onClick={() => setPage("live-darshan")}
+  >
+    View All Aartis →
+  </button>
+</div>
 
-        {/* TEMPLES GHATS AKHADAS */}
-        <div className="sec-head">
-          <div className="sec-label">Sacred Ujjain</div>
-          <h2>Temples, Ghats & Akhadas</h2>
-        </div>
-        <div className="ptabs" style={{marginBottom:"24px"}}>
-          {[["temples","Temples"],["ghats","Ghats"],["akhadas","Akhadas"]].map(([id,en])=>(
-            <button key={id} className={`ptab${activeTab===id?" active":""}`} onClick={()=>setActiveTab(id)}>{en}</button>
-          ))}
-        </div>
-        
-        {/* Yahan places-grid ko naye bg-card me badla hai */}
-        <div className="places-grid" style={{marginBottom:"64px"}}>
-          {tabData[activeTab].map((p,i)=>{
-            const bgImg = PLACE_BG[activeTab][i] || "";
-            return (
-              // Temples/Ghats/Akhadas grid mein click change karo
-<div key={i} className="bg-card" onClick={() => setModalData(p)}>
-                <div className="bg-card-img" style={{ backgroundImage: `url(${bgImg})` }} />
-                <div className="bg-card-overlay" />
-                <div className="bg-card-content">
-                  <span className="bg-icon">{p.icon}</span>
-                  <div className="bg-title">{p.name}</div>
-                  <div className="bg-subtitle">{p.hi}</div>
-                  <div className="bg-desc">{p.desc}</div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+{/* TEMPLES GHATS AKHADAS */}
 
+<div className="sec-head">
+  <div className="sec-label">Sacred Ujjain</div>
+  <h2>Temples, Ghats & Akhadas</h2>
+</div>
+
+<div className="active-tab-label">
+  {activeTab === "temples" && "🛕 Sacred Temples"}
+  {activeTab === "ghats" && "🌊 Holy Ghats"}
+  {activeTab === "akhadas" && "🚩 Sacred Akhadas"}
+</div>
+
+<div className="ptabs">
+  {[
+    ["temples", "Temples"],
+    ["ghats", "Ghats"],
+    ["akhadas", "Akhadas"],
+  ].map(([id, label]) => (
+    <button
+      key={id}
+      className={`ptab${activeTab === id ? " active" : ""}`}
+      onClick={() => setActiveTab(id)}
+    >
+      {label}
+    </button>
+  ))}
+</div>
+
+<div className="places-grid" style={{ marginBottom: "64px" }}>
+  {tabData[activeTab].map((p, i) => {
+    const bgImg = PLACE_BG[activeTab][i] || "";
+
+    return (
+      <div
+        key={i}
+        className="bg-card"
+        onClick={() => setModalData(p)}
+      >
+        <div
+          className="bg-card-img"
+          style={{ backgroundImage: `url(${bgImg})` }}
+        />
+
+        <div className="bg-card-overlay" />
+
+        <div className="bg-card-content">
+          <span className="bg-icon">{p.icon}</span>
+
+          <div className="bg-title">
+            {p.name}
+          </div>
+
+          <div className="bg-subtitle">
+            {p.hi}
+          </div>
+
+          <div className="bg-desc">
+            {p.desc}
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
+ 
         {/* HERITAGE */}
         <div className="sec-head">
           <div className="sec-label">Ancient Legacy</div>
@@ -262,7 +318,7 @@ function Simhastha2028Page({ setPage }) {
     
     <div className="hotels-grid">
       {/* Yahan hum HOTELS_DATA ko map kar rahe hain */}
-      {HOTELS_DATA.map((h, i) => (
+      {paginatedHotels.map((h, i) => (
         <div key={i} className="hotel-card" onClick={() => setPage("hotels")}>
           <div className="hcard-img">
             {h.img ? (
@@ -299,30 +355,70 @@ function Simhastha2028Page({ setPage }) {
         </div>
       ))}
     </div>
+    <div className="pagination">
+  <button
+    className="page-btn"
+    disabled={hotelPage === 1}
+    onClick={() => setHotelPage(hotelPage - 1)}
+  >
+    ← Prev
+  </button>
+
+  {[...Array(totalPages)].map((_, index) => (
+    <button
+      key={index}
+      className={`page-btn ${hotelPage === index + 1 ? "active" : ""}`}
+      onClick={() => setHotelPage(index + 1)}
+    >
+      {index + 1}
+    </button>
+  ))}
+
+  <button
+    className="page-btn"
+    disabled={hotelPage === totalPages}
+    onClick={() => setHotelPage(hotelPage + 1)}
+  >
+    Next →
+  </button>
+</div>
   </div>
 </section>
 
         {/* SATVIK FOOD & CULTURE */}
         <div className="sec-head"><div className="sec-label">Experience Ujjain</div><h2>Events & Culture </h2></div>
         <div className="cult-grid" style={{marginBottom:"64px"}}>
-          {[{emoji:"🍛",tag:"Food",name:"Prasad & Local Cuisine",desc:"Poha-jalebi, bhutte ki kees, sabudana khichdi, dal-bafla. Hundreds of free langars run throughout the Mela.",btn:"Food Map →"},
-            {emoji:"🎭",tag:"Performing Arts",name:"Cultural Events & Performances",desc:"Classical music, folk dance, Ram Leela, and Kavi Sammelan nightly. Most events are free for all pilgrims.",btn:"View Calendar →"},
-            {emoji:"🏺",tag:"Artisan Crafts",name:"Local Artisans & Handcrafts",desc:"Chanderi sarees, brass and copper ware, hand-painted pottery, religious idols — directly from artisans.",btn:"Browse →"},
-            {emoji:"🕯️",tag:"Evening Ritual",name:"Shipra River Aarti",desc:"Nightly Aarti at Ram Ghat — 1,000+ diyas lit simultaneously. India's most breathtaking spiritual spectacle.",btn:"Watch Live →"},
-            {emoji:"🌿",tag:"Wellness",name:"Ayurveda & Yoga Camps",desc:"Ayurvedic treatment camps, yoga shalas, and meditation retreats set up across the Mela grounds.",btn:"Find Camp →"},
-            {emoji:"🎶",tag:"Sacred Music",name:"Kirtan & Bhajan Sessions",desc:"Continuous bhajan and kirtan sessions by renowned artists from across India during the entire Mela period.",btn:"Schedule →"},
-          ].map((c,i)=>(
-            <div key={i} className="cult" onClick={()=>alert(`${c.name}\nContact: info@mysimhastha.com`)}>
-              <div className="cult-img">{c.emoji}</div>
-              <div className="cult-body">
-                <div className="cult-tag">{c.tag}</div>
-                <div className="cult-name">{c.name}</div>
-                <p className="cult-desc">{c.desc}</p>
-                <button className="btn btn-gold btn-sm" onClick={e=>e.stopPropagation()}>{c.btn}</button>
-              </div>
-            </div>
-          ))}
-        </div>
+  {CULTURE_DATA.map((c,i)=>(
+    <div
+      key={i}
+      className="cult"
+      onClick={() => setPage(c.page)}
+    >
+      <div
+        className="cult-img"
+        style={{
+          backgroundImage: `url(${c.img})`
+        }}
+      />
+
+      <div className="cult-body">
+        <div className="cult-tag">{c.tag}</div>
+        <div className="cult-name">{c.name}</div>
+        <p className="cult-desc">{c.desc}</p>
+
+        <button
+          className="btn btn-gold btn-sm"
+          onClick={(e)=>{
+            e.stopPropagation();
+            setPage(c.page);
+          }}
+        >
+          {c.btn}
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
        {modalData && (
   <div className="modal-overlay" onClick={() => setModalData(null)}>
     <div className="modal-box" onClick={(e) => e.stopPropagation()}>

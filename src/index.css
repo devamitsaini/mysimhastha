@@ -144,14 +144,64 @@
   .trust-hl{color:#FCD34D;font-weight:700}
 
   /* ALL KUMBH YEARS */
-  .kumbh-years{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-  .ky-card{flex:1;min-width:160px;max-width:220px;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center;transition:all .2s;cursor:pointer}
-  .ky-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-  .ky-card.active{border-color:var(--saffron);border-width:2px}
-  .ky-year{font-family:var(--serif);font-size:36px;font-weight:800;color:var(--saffron);margin-bottom:6px}
-  .ky-city{font-size:16px;font-weight:700;color:var(--text);margin-bottom:3px}
-  .ky-type{font-size:13px;color:var(--muted);margin-bottom:8px}
-  .ky-note{font-size:13px;font-weight:600;color:var(--saffron)}
+.kumbh-years{
+  max-width:850px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.ky-strip{
+  display:flex;
+  align-items:center;
+  padding:14px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  transition:.25s ease;
+}
+
+.ky-strip:hover{
+  transform:translateX(4px);
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.ky-year{
+  width:90px;
+  font-size:22px;
+  font-weight:800;
+  color:var(--saffron);
+}
+
+.ky-city{
+  flex:1;
+  font-size:16px;
+  font-weight:700;
+  color:var(--text);
+}
+
+.ky-type{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.ky-arrow{
+  margin-left:16px;
+  color:var(--saffron);
+  font-size:18px;
+  font-weight:700;
+}
+
+.ky-strip.active{
+  border-color:var(--saffron);
+  background:linear-gradient(
+    90deg,
+    rgba(255,153,51,.08),
+    #fff
+  );
+  cursor:pointer;
+}
 
   /* NEWS */
   .news-container,.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
@@ -166,6 +216,33 @@
   .news-title{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:6px}
   .news-desc{font-size:13px;color:var(--muted);line-height:1.6}
   .news-date{font-size:11px;color:var(--light);margin-top:8px;font-weight:600}
+.news-img{
+  height:120px;
+}
+.news-desc{
+  display:none;
+}
+.news-view-all{
+  text-align:center;
+  margin-top:24px;
+}
+
+.news-view-all button{
+  background:#e46a25;
+  color:white;
+  border:none;
+  padding:12px 24px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.news-view-all button:hover{
+  background:#d85f1d;
+}
+
 
   /* GALLERY */
   .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:12px}
@@ -193,57 +270,54 @@
   .gallery-upload-row{margin-top:20px;display:flex;justify-content:center;gap:12px}
 
   /* DARSHAN CARDS */
-  .darshan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+  .darshan-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:16px;
+}
+  .darshan-cta{
+  text-align:center;
+  margin-top:20px;
+}
   .dc{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);transition:all .2s;cursor:pointer}
   .dc:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--saffron)}
-  .dc-thumb{height:130px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-  .dc-icon{font-size:52px;z-index:1;position:relative}
+  .dc-thumb{height:100px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .dc-icon{font-size:42px;z-index:1;position:relative}
   .dc-badge{position:absolute;top:10px;left:10px;display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.55);border-radius:6px;padding:3px 9px;z-index:2}
   .dc-dot{width:6px;height:6px;border-radius:50%;background:#aaa;flex-shrink:0}
   .dc-dot.on{background:#22C55E;animation:blink 1.5s infinite}
   .dc-badge-txt{font-size:10px;font-weight:700;color:#fff;letter-spacing:.5px}
-  .dc-body{padding:16px}
-  .dc-name{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px}
+  .dc-body{padding:12px}
+  .dc-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--text);margin-bottom:2px}
   .dc-name-hi{font-family:var(--deva);font-size:13px;color:var(--muted);margin-bottom:10px}
-  .dc-aarti-lbl{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
-  .aarti-row{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;border-bottom:1px solid var(--border)}
+  .dc-aarti-lbl{font-size:11px;
+  margin-bottom:8px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+  .aarti-row{display:flex;justify-content:space-between;font-size:11px;padding:2px 0;border-bottom:1px solid var(--border)}
   .aarti-row:last-child{border-bottom:none}
   .ar-name{color:var(--muted);font-weight:600}
   .ar-time{color:var(--text);font-weight:700}
-  .dc-footer{margin-top:12px;display:flex;align-items:center;justify-content:space-between}
+  .dc-footer{margin-top:8px;display:flex;align-items:center;justify-content:space-between}
   .dc-watch{font-size:12px;font-weight:700;background:var(--saffron);color:#fff;padding:7px 14px;border-radius:8px;border:none;cursor:pointer;transition:background .15s}
   .dc-watch:hover{background:var(--saffron2)}
   .dc-free{font-size:11px;font-weight:700;color:var(--teal)}
   @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
-  /* PANCHANG */
-  .panch-nav{display:flex;align-items:center;gap:8px}
-  .panch-nav button{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:18px;cursor:pointer;transition:background .15s}
-  .panch-nav button:hover{background:rgba(255,255,255,.2)}
-  .panch-month-lbl{font-family:var(--deva);font-size:18px;color:#fff;padding:0 8px;white-space:nowrap}
-  .panch-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:18px}
-  .pday-head{font-size:9px;font-weight:700;text-align:center;color:rgba(255,190,80,.6);padding:5px 0;text-transform:uppercase;letter-spacing:.4px}
-  .pday{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:7px 3px 9px;text-align:center;cursor:pointer;transition:all .15s;min-height:60px}
-  .pday:hover{background:rgba(255,255,255,.12)}
-  .pday.today{background:rgba(212,82,10,.28);border-color:var(--saffron)}
-  .pday.fest{background:rgba(176,120,0,.2);border-color:var(--gold2)}
-  .pday.empty{background:transparent;border-color:transparent;pointer-events:none}
-  .pd-num{font-size:13px;font-weight:700;color:#fff}
-  .pd-tithi{font-family:var(--deva);font-size:9px;color:rgba(255,255,255,.4);margin-top:2px;line-height:1.2}
-  .pd-fest-lbl{font-family:var(--deva);font-size:8px;color:rgba(255,200,80,.7);margin-top:2px;line-height:1.2}
-  .panch-info{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px}
-  .pti-lbl{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,165,50,.6);margin-bottom:3px}
-  .pti-hi{font-family:var(--deva);font-size:15px;color:#fff}
-  .pti-en{font-size:11px;color:rgba(255,255,255,.4);margin-top:1px}
-
   /* HOTELS */
+  .hotels-cta{
+  text-align:center;
+  margin-top:24px;
+}
   .hotels-filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
   .hotel-filter-btn{font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .15s}
   .hotel-filter-btn.active,.hotel-filter-btn:hover{background:var(--saffron);color:#fff;border-color:var(--saffron)}
-  .hotels-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+  .hotels-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:18px;
+}
   .hotel-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .2s}
   .hotel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-  .hcard-img{height:200px;background:var(--cream2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:60px}
+  .hcard-img{height:170px;background:var(--cream2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:60px}
   .hcard-img img{width:100%;height:100%;object-fit:cover}
   .hcard-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,9,0,.6) 0%,transparent 60%)}
   .hcard-tags{position:absolute;top:12px;left:12px;display:flex;gap:6px}
@@ -266,14 +340,57 @@
   .read-more:hover{opacity:.75}
 
   /* MISSING PERSONS */
+  .mp-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+@media (max-width:768px){
+  .mp-actions{
+    width:100%;
+  }
+
+  .mp-actions .btn{
+    flex:1;
+    justify-content:center;
+  }
+}
   .mp-board-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px}
-  .mp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-  .mp-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .2s;cursor:pointer}
+  .mp-grid{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+  .mp-card{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid var(--border);
+}
   .mp-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-  .mp-photo{height:200px;background:var(--cream2);display:flex;align-items:center;justify-content:center}
+  .mp-photo{
+  width:56px;
+  height:56px;
+  min-width:56px;
+  border-radius:50%;
+  background:var(--cream2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:20px;
+  color:var(--saffron);
+}
   .mp-photo-icon{color:var(--border);opacity:.6}
   .mp-photo img{width:100%;height:100%;object-fit:cover}
-  .mp-body{padding:16px}
+  .mp-body{
+  flex:1;
+  padding:0;
+}
   .mp-name-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
   .mp-name{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--text)}
   .mp-badge{font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:#FEE2E2;color:#DC2626}

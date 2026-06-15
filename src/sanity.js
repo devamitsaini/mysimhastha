@@ -1,8 +1,8 @@
-import { createClient } from "@sanity/client";
+  import { createClient } from "@sanity/client";
 
-export const client = createClient({
-  projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
-  dataset: process.env.REACT_APP_SANITY_DATASET,
-  apiVersion: process.env.REACT_APP_SANITY_API_VERSION,
-  useCdn: false,
-});
+  export const client = createClient({
+    projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
+    dataset: process.env.REACT_APP_SANITY_DATASET,
+    apiVersion: process.env.REACT_APP_SANITY_API_VERSION,
+    useCdn: false,
+  });
