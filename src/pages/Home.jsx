@@ -75,7 +75,13 @@ const Home = ({ setPage }) => {
               <button type="button" className="btn btn-primary btn-xl" onClick={() => setPage('simhastha-2028')}>
                 Explore Simhastha →
               </button>
-              <button type="button" className="btn btn-white btn-xl" onClick={() => setPage('hotels')}>
+              <button type="button" className="btn btn-white btn-xl" onClick={() => {
+  setPage('hotels');
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}}>
                 Book Your Stay
               </button>
             </div>
@@ -333,7 +339,13 @@ const Home = ({ setPage }) => {
   .filter(h => h.type === 'Hotel')
   .slice(0, 3)
   .map(h => (
-              <div key={h.id} className="hotel-card" onClick={() => setPage('hotels')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setPage('hotels')}>
+              <div key={h.id} className="hotel-card" onClick={() => {
+  setPage('hotels');
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setPage('hotels')}>
                 <div className="hcard-img">
                   {h.img
                     ? <img src={h.img} alt={h.name} loading="lazy" width="400" height="200" />
