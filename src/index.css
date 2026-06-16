@@ -1096,14 +1096,14 @@ iframe {
 }
 
 .ms-home-quick-icon{
-  width:90px;
-  height:90px;
+  width:70px;
+  height:70px;
   border-radius:50%;
   background:#faf3ed;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:42px;
+  font-size:30px;
   margin-bottom:18px;
 }
 
@@ -1326,7 +1326,7 @@ iframe {
   align-items:center;
   justify-content:center;
   gap:8px;
-  font-size:18px;
+  font-size:14px;
   font-weight:700;
   color:#221100;
   text-align:center;
