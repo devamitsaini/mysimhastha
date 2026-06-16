@@ -5,14 +5,15 @@
   "dependencies": {
     "@portabletext/react": "^6.2.0",
     "@sanity/client": "^7.22.1",
+    "i18next": "^25.5.3",
     "lucide-react": "^1.20.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-i18next": "^15.7.3",
     "react-router-dom": "^7.17.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "prebuild": "npm ls i18next react-i18next",
     "build": "react-scripts build",
     "start": "react-scripts start",
     "test": "react-scripts test",
