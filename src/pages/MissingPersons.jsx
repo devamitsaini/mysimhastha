@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { MISSING_DATA } from '../data/simhasthaData';
 
-function MissingPersonsPage({ openOnLoad }) {
+function MissingPersonsPage({
+  openOnLoad,
+  setOpenMissingForm,
+}) {
   const [photo, setPhoto] = useState(null);
   const [form, setForm] = useState({ name: "", age: "", desc: "", location: "", contact: "", reporter: "" });
   const [list, setList] = useState(MISSING_DATA);
@@ -10,8 +13,10 @@ function MissingPersonsPage({ openOnLoad }) {
   useEffect(() => {
   if (openOnLoad) {
     setShowForm(true);
+
+    setOpenMissingForm(false);
   }
-}, [openOnLoad]);
+}, [openOnLoad, setOpenMissingForm]);
 
     const [formStatus, setFormStatus] = useState("");
 
@@ -103,13 +108,17 @@ if (photo) {
       ]);
 
       setForm({
-        name: "",
-        age: "",
-        desc: "",
-        location: "",
-        contact: "",
-        reporter: "",
-      });
+  name: "",
+  age: "",
+  desc: "",
+  location: "",
+  contact: "",
+  reporter: "",
+});
+
+setPhoto(null);
+
+setShowForm(false);
 
       setShowForm(false);
 
@@ -189,20 +198,80 @@ if (photo) {
               <div className="form-group"><label>Description (clothing, features, etc.)</label><textarea placeholder="e.g. Wearing white dhoti and saffron kurta." value={form.desc} onChange={e => setForm(f => ({ ...f, desc: e.target.value }))} /></div>
               <div className="form-group">
                 <label>Upload Photo</label>
-                <div className="upload-zone" onClick={() => document.getElementById("mp-file")?.click()}>
-                  <div style={{ fontSize: "24px", marginBottom: "6px" }}>📷</div>
-                  <div style={{ fontSize: "13px", color: "var(--muted)" }}>Click to upload a recent photo</div>
-                  <input
-  id="mp-file"
-  type="file"
-  accept="image/*"
-  style={{ display: "none" }}
-  onChange={(e) => {
-    setPhoto(e.target.files[0]);
-    alert("Photo attached ✅");
+                <div className="upload-zone">
+  {!photo ? (
+    <>
+      <div
+        onClick={() => document.getElementById("mp-file")?.click()}
+        style={{ cursor: "pointer" }}
+      >
+        <div style={{ fontSize: "24px", marginBottom: "6px" }}>📷</div>
+        <div style={{ fontSize: "13px", color: "var(--muted)" }}>
+          Click to upload a recent photo
+        </div>
+      </div>
+    </>
+  ) : (
+    <div style={{ textAlign: "center" }}>
+      <img
+        src={URL.createObjectURL(photo)}
+        alt="Preview"
+        style={{
+          width: "120px",
+          height: "120px",
+          objectFit: "cover",
+          borderRadius: "12px",
+          marginBottom: "12px",
+        }}
+      />
+
+      <div style={{ fontSize: "14px", marginBottom: "12px" }}>
+        <div
+  style={{
+    color: "green",
+    fontWeight: "600",
+    marginBottom: "10px",
   }}
-/>
-                </div>
+>
+  ✓ Photo selected
+</div>
+        ✅ {photo.name}
+      </div>
+
+      <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+        <button
+          type="button"
+          className="btn btn-outline"
+          onClick={() =>
+            document.getElementById("mp-file")?.click()
+          }
+        >
+          Change Photo
+        </button>
+
+        <button
+          type="button"
+          className="btn btn-ghost"
+          onClick={() => setPhoto(null)}
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  )}
+
+  <input
+    id="mp-file"
+    type="file"
+    accept="image/*"
+    style={{ display: "none" }}
+    onChange={(e) => {
+      if (e.target.files?.[0]) {
+        setPhoto(e.target.files[0]);
+      }
+    }}
+  />
+</div>
               </div>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
                 <button

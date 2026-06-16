@@ -38,9 +38,11 @@ useEffect(() => {
       case "home":  return (<HomePage setPage={setPage} setOpenMissingForm={setOpenMissingForm}/>);
       case "live-darshan":    return <LiveDarshanPage setPage={setPage} />;
       case "hotels":          return <HotelsPage setPage={setPage} />;
-      case "missing-persons": return (<MissingPersonsPage setPage={setPage}
-      openOnLoad={openMissingForm}
-    />
+      case "missing-persons": return (<MissingPersonsPage
+  setPage={setPage}
+  openOnLoad={openMissingForm}
+  setOpenMissingForm={setOpenMissingForm}
+/>
   );
       case "simhastha-2028":  return <Simhastha2028Page setPage={setPage} />;
       case "snan-calendar":   return <SnanCalendarPage setPage={setPage} />;

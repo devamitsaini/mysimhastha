@@ -117,16 +117,31 @@
                   </li>
 
                   <li>
-                    <button
-                      className={page === "blog" ? "active" : ""}
-                      onClick={() => nav("blog")}
-                    >
-                      Blog
-                    </button>
-                  </li>
-                  <li>
-                    <button onClick={() => nav("about")}> About </button>
-                  </li>
+  <button
+    className={page === "blog" ? "active" : ""}
+    onClick={() => nav("blog")}
+  >
+    Blog
+  </button>
+</li>
+
+<li>
+  <button
+    className={page === "missing-persons" ? "active" : ""}
+    onClick={() => nav("missing-persons")}
+  >
+    Missing Persons
+  </button>
+</li>
+
+<li>
+  <button
+    className={page === "about" ? "active" : ""}
+    onClick={() => nav("about")}
+  >
+    About
+  </button>
+</li>
                 </ul>
 
                 {/* Hamburger */}
