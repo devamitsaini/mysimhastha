@@ -430,10 +430,14 @@
   .dc-watch{font-size:12px;font-weight:700;background:var(--saffron);color:#fff;padding:7px 14px;border-radius:8px;border:none;cursor:pointer;transition:background .15s}
   .dc-watch:hover{background:var(--saffron2)}
 
-@media (max-width:768px){
+  @media (max-width:768px){
 
   .darshan-grid{
-    grid-template-columns:1fr !important;
+    grid-template-columns:1fr;
+  }
+
+  .dc{
+    width:100%;
   }
 
 }
@@ -448,9 +452,16 @@
   .hotel-filter-btn{font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .15s}
   .hotel-filter-btn.active,.hotel-filter-btn:hover{background:var(--saffron);color:#fff;border-color:var(--saffron)}
   .hotels-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:20px !important;
+  background:rgb(255, 255, 255) !important;
+}
+
+@media (max-width:768px){
+  .hotels-grid{
+    grid-template-columns:1fr;
+  }
 }
   .hotel-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .2s}
   .hotel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
