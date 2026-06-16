@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MISSING_DATA } from '../data/simhasthaData';
 
 function MissingPersonsPage({ openOnLoad }) {
+  const [photo, setPhoto] = useState(null);
   const [form, setForm] = useState({ name: "", age: "", desc: "", location: "", contact: "", reporter: "" });
   const [list, setList] = useState(MISSING_DATA);
   const [statusFilter, setStatusFilter] = useState("all");
@@ -15,6 +16,33 @@ function MissingPersonsPage({ openOnLoad }) {
     const [formStatus, setFormStatus] = useState("");
 
   const submit = async () => {
+    let photoUrl = "";
+
+if (photo) {
+  const imageData = new FormData();
+
+  imageData.append("file", photo);
+  imageData.append("upload_preset", "missing_persons");
+
+  const uploadRes = await fetch(
+    "https://api.cloudinary.com/v1_1/dkbrukc0t/image/upload",
+    {
+      method: "POST",
+      body: imageData,
+    }
+  );
+
+  const uploadData = await uploadRes.json();
+  console.log("Cloudinary Response:", uploadData);
+  if (!uploadRes.ok || !uploadData.secure_url) {
+  alert("Image upload failed");
+  return;
+}
+
+  photoUrl = uploadData.secure_url;
+  console.log("Photo URL:", photoUrl);
+}
+
   if (!form.name.trim()) {
     alert("Please enter the missing person's name.");
     return;
@@ -45,6 +73,7 @@ function MissingPersonsPage({ openOnLoad }) {
         Last_Seen_Location: form.location,
         Contact_Number: form.contact,
         Description: form.desc,
+        Photo_URL: photoUrl,
       }),
     });
 
@@ -65,6 +94,7 @@ function MissingPersonsPage({ openOnLoad }) {
           contact: form.contact,
           reporter: form.reporter,
           status: "missing",
+          photo: photoUrl,
         },
         ...l,
       ]);
@@ -149,7 +179,8 @@ function MissingPersonsPage({ openOnLoad }) {
               <h3 style={{ marginBottom: "16px" }}>Report a Missing Person</h3>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", gap: "0 16px" }}>
                 {[["Full Name *", "name", "text", "e.g. Ramesh Kumar Sharma"], ["Age & Gender *", "age", "text", "e.g. 65 years, Male"], ["Last Seen Location", "location", "text", "e.g. Ram Ghat, Zone 1"], ["Your Contact *", "contact", "tel", "+91 98765 43210"], ["Your Name (Reporter)", "reporter", "text", "e.g. Amit Sharma"]].map(([l, k, t, p]) => (
-                  <div key={k} className="form-group"><label>{l}</label><input type={t} placeholder={p} value={form[k]} onChange={e => setForm(f => ({ ...f, [k]: e.target.value }))} /></div>
+                  <div key={k} className="form-group"><label>{l}</label>
+                  <input type={t} placeholder={p} value={form[k]} onChange={e => setForm(f => ({ ...f, [k]: e.target.value }))} /></div>
                 ))}
               </div>
               <div className="form-group"><label>Description (clothing, features, etc.)</label><textarea placeholder="e.g. Wearing white dhoti and saffron kurta." value={form.desc} onChange={e => setForm(f => ({ ...f, desc: e.target.value }))} /></div>
@@ -158,7 +189,16 @@ function MissingPersonsPage({ openOnLoad }) {
                 <div className="upload-zone" onClick={() => document.getElementById("mp-file")?.click()}>
                   <div style={{ fontSize: "24px", marginBottom: "6px" }}>📷</div>
                   <div style={{ fontSize: "13px", color: "var(--muted)" }}>Click to upload a recent photo</div>
-                  <input id="mp-file" type="file" accept="image/*" style={{ display: "none" }} onChange={() => alert("Photo attached ✅")} />
+                  <input
+  id="mp-file"
+  type="file"
+  accept="image/*"
+  style={{ display: "none" }}
+  onChange={(e) => {
+    setPhoto(e.target.files[0]);
+    alert("Photo attached ✅");
+  }}
+/>
                 </div>
               </div>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
@@ -181,8 +221,20 @@ function MissingPersonsPage({ openOnLoad }) {
             {filtered.map(p => (
               <div key={p.id} className="mp-card" onClick={() => alert(`${p.name}\n\nAge: ${p.age}\nLast seen: ${p.location}\nDate: ${p.date}\n${p.desc}\n\nContact: ${p.contact} (${p.reporter})`)}>
                 <div className="mp-photo">
-                  <svg className="mp-photo-icon" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><circle cx="12" cy="7" r="4" /><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" /></svg>
-                </div>
+  {p.photo ? (
+    <img
+      src={p.photo}
+      alt={p.name}
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+      }}
+    />
+  ) : (
+    p.name.charAt(0)
+  )}
+</div>
                 <div className="mp-body">
                   <div className="mp-name-row"><span className="mp-name">{p.name}</span><span className={`mp-badge${p.status === "found" ? " found" : ""}`}>{p.status === "found" ? "Found" : "Missing"}</span></div>
                   <div className="mp-age">{p.age}</div>
