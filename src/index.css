@@ -650,7 +650,7 @@
   .foot-links-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
   .fl-logo {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 12px;
   margin-bottom: 1rem;
 }
@@ -677,7 +677,7 @@
 
   @media (max-width: 640px) {
   .fl-logo {
-    justify-content: center;
+    justify-content: left;
     text-align: left;
   }
 
