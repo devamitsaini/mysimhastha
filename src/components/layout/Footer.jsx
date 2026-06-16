@@ -7,7 +7,7 @@ function Footer({ setPage }) {
         <div className="foot-grid">
           <div className="foot-col-brand">
             <div className="fl-logo">
-              <div className="fl-mark">🕉️</div>
+              <div className="fl-mark"></div>
               <div>
                 <div className="fl-name">उज्जैन सिंहस्थ</div>
                 <div className="fl-sub">SIMHASTHA 2028</div>

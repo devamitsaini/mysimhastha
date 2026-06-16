@@ -42,7 +42,7 @@ const Sidebar = ({ drawerOpen, setDrawerOpen, setPage }) => {
             </button>
 
             <button onClick={() => nav("simhastha-2028")}>
-              🕉️ Simhastha 2028
+               Simhastha 2028
             </button>
 
             <button onClick={() => nav("live-darshan")}>
@@ -68,11 +68,11 @@ const Sidebar = ({ drawerOpen, setDrawerOpen, setPage }) => {
               🍛 Food & Prasad
             </button>*/}
 
-            <button>
+            <button onClick={() => nav("hotels")}>
               🚕 Cab & Transport
             </button>
 
-            <button>
+            <button onClick={() => nav("hotels")}>
               🎟️ Darshan Booking
             </button>
 
@@ -80,7 +80,7 @@ const Sidebar = ({ drawerOpen, setDrawerOpen, setPage }) => {
               🎫 Event Passes
             </button>*/}
 
-            <button>
+            <button onClick={() => nav("hotels")}>
               🗺️ Guided Tours
             </button>
           </div>
@@ -105,11 +105,11 @@ const Sidebar = ({ drawerOpen, setDrawerOpen, setPage }) => {
           {/* FOOTER */}
           <div className="drawer-footer">
             <div className="footer-logo">
-              🕉️ MySimhastha
+               MySimhastha
             </div>
 
             <div className="footer-text">
-              Official Pilgrim Companion
+              Kumbh Digital Portal
             </div>
           </div>
 
