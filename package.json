@@ -5,11 +5,9 @@
   "dependencies": {
     "@portabletext/react": "^6.2.0",
     "@sanity/client": "^7.22.1",
-    "i18next": "^26.3.1",
     "lucide-react": "^1.20.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-i18next": "^17.0.8",
     "react-router-dom": "^7.17.0",
     "react-scripts": "5.0.1"
   },
@@ -30,5 +28,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
   }
 }
