@@ -20,15 +20,6 @@ import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 function App() {
   const [page, setPage] = useState("home");
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, [page]);
-useEffect(() => {
-  if ('scrollRestoration' in window.history) {
-    window.history.scrollRestoration = 'manual';
-  }
-}, []);
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
