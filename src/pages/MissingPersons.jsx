@@ -214,31 +214,45 @@ setShowForm(false);
   ) : (
     <div style={{ textAlign: "center" }}>
       <img
-        src={URL.createObjectURL(photo)}
-        alt="Preview"
-        style={{
-          width: "120px",
-          height: "120px",
-          objectFit: "cover",
-          borderRadius: "12px",
-          marginBottom: "12px",
-        }}
-      />
+  src={URL.createObjectURL(photo)}
+  alt="Preview"
+  style={{
+    width: "100%",
+    maxWidth: "280px",
+    height: "220px",
+    objectFit: "cover",
+    borderRadius: "12px",
+    marginBottom: "12px",
+  }}
+/>
 
-      <div style={{ fontSize: "14px", marginBottom: "12px" }}>
-        <div
+      <div
   style={{
     color: "green",
     fontWeight: "600",
-    marginBottom: "10px",
+    marginBottom: "8px",
   }}
 >
   ✓ Photo selected
 </div>
-        ✅ {photo.name}
-      </div>
 
-      <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+<div
+  style={{
+    fontSize: "14px",
+    marginBottom: "12px",
+  }}
+>
+  📄 {photo.name}
+</div>
+
+      <div
+  style={{
+    display: "flex",
+    gap: "10px",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  }}
+>
         <button
           type="button"
           className="btn btn-outline"
