@@ -40,8 +40,8 @@ function HotelsPage() {
   return (
     <div className="page-wrap">
       {/* Hero */}
-      <div className="page-hero">
-        <div style={{ position: "absolute", inset: 0, fontFamily: "var(--deva)", fontSize: "clamp(60px,10vw,120px)", color: "#fff", opacity: .025, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>अतिथि देवो भव</div>
+      <div className="page-hero hotels-hero">
+        <div style={{ position: "absolute", inset: 0, fontFamily: "var(--deva)", fontSize: "clamp(60px,10vw,120px)", color: "#fff", opacity: .025, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none",background: "linear-gradient(135deg,#3a1000,#6b2200)" }}>अतिथि देवो भव</div>
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div style={{ fontSize: "32px", marginBottom: "6px" }}>🏨</div>
           <div className="page-hero-title">Hotels and Stays</div>
