@@ -106,10 +106,7 @@
   <div className="container">
 
     <div className="ms-home-quick-header">
-      <span className="ms-home-quick-subtitle">
-        ✦ त्वरित पहुँच ✦
-      </span>
-
+      
       <h2 className="ms-home-quick-title">
         Quick Access
       </h2>
