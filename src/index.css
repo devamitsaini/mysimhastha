@@ -1151,8 +1151,8 @@ iframe {
 
 .ms-home-shahi-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
 }
 
 .ms-home-shahi-trishul{
@@ -1369,15 +1369,9 @@ iframe {
   grid-template-columns:repeat(4,1fr);
   gap:24px;
 }
-
 .ms-home-shahi-card{
-  background:#fff;
-  border:2px solid #e46b00;
-  border-radius:24px;
-  padding:22px 16px;
-  text-align:center;
-  position:relative;
-  min-height:280px;
+  width:100%;
+  min-height:220px;
 }
 
 .ms-home-shahi-trishul{
@@ -1480,72 +1474,51 @@ iframe {
 
 @media (max-width:768px){
 
-  .ms-home-quick{
-    padding:20px;
-  }
-
-  .ms-home-shahi{
-    padding:24px 16px;
-  }
-
-  .ms-home-quick-grid{
+  .ms-home-shahi-grid{
+    display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:14px;
   }
 
-  .ms-home-quick-card{
-    min-height:140px;
-  }
-
-  .ms-home-quick-icon{
-    width:64px;
-    height:64px;
-    font-size:28px;
-    margin-bottom:12px;
-  }
-
-  .ms-home-quick-label{
-    font-size:14px;
-    flex-direction:column;
-    gap:2px;
-  }
-
-  .ms-home-quick-arrow{
-    display:none;
-  }
-
-  .ms-home-shahi-grid{
-    grid-template-columns:1fr;
-    gap:18px;
-  }
-
   .ms-home-shahi-card{
-    max-width:320px;
-    width:100%;
-    margin:0 auto;
-    min-height:240px;
-    padding:18px 14px;
+    background:#fff;
+    border:2px solid #e46b00;
+    border-radius:18px;
+    padding:16px 10px;
+    min-height:200px;
+    position:relative;
+  }
+
+  .ms-home-shahi-trishul{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:24px;
   }
 
   .ms-home-shahi-date{
-    font-size:52px;
+    font-size:42px;
+    margin-top:12px;
   }
 
   .ms-home-shahi-month{
-    font-size:18px;
+    font-size:14px;
+    margin-top:8px;
+  }
+
+  .ms-home-shahi-divider{
+    margin:12px auto;
   }
 
   .ms-home-shahi-name{
-    font-size:18px;
+    font-size:14px;
+    line-height:1.25;
+    margin-bottom:12px;
   }
 
   .ms-home-shahi-badge{
-    font-size:13px;
-    padding:6px 14px;
-  }
-
-  .ms-home-shahi-button{
-    width:100%;
-    font-size:16px;
+    font-size:10px;
+    padding:5px 10px;
   }
 }
