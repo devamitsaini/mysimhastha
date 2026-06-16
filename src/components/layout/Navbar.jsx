@@ -45,7 +45,8 @@
       };
 
       const servicesBtnActive = ["hotels", "live-darshan"].includes(page);
-
+      const currentLang = i18n.language || "en";
+      
       return (
         <>
           <nav className={`navbar${scrolled ? " scrolled" : ""}`} role="navigation" aria-label="Main navigation">
@@ -161,7 +162,7 @@
       alignItems: "center"
     }}
   >
-    <Globe size={20} />
+    <Globe size={20} color="#E86A1F" />
   </button>
 
   {languageOpen && (
@@ -218,36 +219,44 @@
 </div>
 
   <button
-    onClick={() => {
-      localStorage.setItem("lang", "en");
-      i18n.changeLanguage("en");
-    }}
-    style={{
-      marginRight: "8px",
-      padding: "6px 10px",
-      borderRadius: "6px",
-      border: "1px solid #ddd",
-      cursor: "pointer"
-    }}
-  >
-    EN
-  </button>
+  onClick={() => {
+    localStorage.setItem("lang", "en");
+    i18n.changeLanguage("en");
+  }}
+  style={{
+    marginRight: "8px",
+    padding: "8px 14px",
+    borderRadius: "10px",
+    border: currentLang === "en" ? "1px solid #E86A1F" : "1px solid #ddd",
+    background: currentLang === "en" ? "#E86A1F" : "#fff",
+    color: currentLang === "en" ? "#fff" : "#555",
+    fontWeight: "600",
+    cursor: "pointer",
+    transition: "all .2s ease"
+  }}
+>
+  EN
+</button>
 
-  <button
-    onClick={() => {
-      localStorage.setItem("lang", "hi");
-      i18n.changeLanguage("hi");
-    }}
-    style={{
-      marginRight: "12px",
-      padding: "6px 10px",
-      borderRadius: "6px",
-      border: "1px solid #ddd",
-      cursor: "pointer"
-    }}
-  >
-    हिन्दी
-  </button>
+<button
+  onClick={() => {
+    localStorage.setItem("lang", "hi");
+    i18n.changeLanguage("hi");
+  }}
+  style={{
+    marginRight: "12px",
+    padding: "8px 14px",
+    borderRadius: "10px",
+    border: currentLang === "hi" ? "1px solid #E86A1F" : "1px solid #ddd",
+    background: currentLang === "hi" ? "#E86A1F" : "#fff",
+    color: currentLang === "hi" ? "#fff" : "#555",
+    fontWeight: "600",
+    cursor: "pointer",
+    transition: "all .2s ease"
+  }}
+>
+  हिन्दी
+</button>
 
   <button
     className={`hamburger${drawerOpen ? " open" : ""}`}
