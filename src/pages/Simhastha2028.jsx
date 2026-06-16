@@ -58,10 +58,8 @@ function Simhastha2028Page({ setPage }) {
         <div style={{ position: "absolute", inset: 0, background: "url('https://www.ercotravels.com/blog/wp-content/uploads/2016/01/groupofsadhus.jpg') center/cover no-repeat" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom,rgba(28,9,0,.6),rgba(28,9,0,.82))" }} />
         <div className="container" style={{ position: "relative", zIndex: 1, paddingTop: "var(--nav-h)", paddingBottom: "48px", textAlign: "center" }}>
-          <div style={{ fontFamily: "var(--ui)", fontSize: "11px", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", color: "rgba(255,190,80,.7)", marginBottom: "8px" }}>📍 FEATURED EVENT</div>
           <div style={{ fontFamily: "var(--deva)", fontSize: "clamp(20px,3vw,32px)", color: "rgba(255,190,80,.85)", marginBottom: "6px" }}>उज्जैन सिंहस्थ महाकुम्भ २०२८</div>
           <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(32px,5vw,60px)", fontWeight: 800, color: "#fff", marginBottom: "8px", lineHeight: 1.08 }}>Ujjain Simhastha Mahakumbh 2028</h1>
-          <p style={{ fontSize: "15px", color: "rgba(255,255,255,.6)", marginBottom: "24px" }}>April 22 – June 18, 2028 · River Shipra, Ujjain, MP · 200M+ Pilgrims Expected</p>
           <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap", marginBottom: "32px" }}>
             <button
   className="btn btn-primary btn-xl"
