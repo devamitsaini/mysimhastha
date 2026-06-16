@@ -389,14 +389,15 @@
 
   /* DARSHAN CARDS */
   .darshan-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:16px;
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:20px !important;
 }
   .darshan-cta{
   text-align:center;
   margin-top:20px;
 }
+
   .dc{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);transition:all .2s;cursor:pointer}
   .dc:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--saffron)}
   .dc-thumb{height:100px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
