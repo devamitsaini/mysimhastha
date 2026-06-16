@@ -110,7 +110,6 @@ export default function LiveDarshanCard({ d }) {
                 >
                   {isLiveNow ? "📡 Watch Live" : "📅 Notify Me"}
                 </button>
-                <span className="dc-free">{d.free ? "Free" : "Premium"}</span>
               </div>
             </div>
           </>
