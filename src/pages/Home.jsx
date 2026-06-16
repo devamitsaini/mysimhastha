@@ -98,49 +98,74 @@
             <p className="shlok-trans">— Bathing in the Kumbh bestows great merit and washes away all sins</p>
           </div>
         </div>
+{/* =========================
+    QUICK ACCESS
+========================= */}
 
-{/* QUICK ACCESS */}
-<section className="quick-access-section">
+<section className="ms-home-quick">
   <div className="container">
 
-    <div className="quick-access-header">
-  <br></br><br></br>
-      <h2>
-        <span>Quick Access</span>
+    <div className="ms-home-quick-header">
+      <span className="ms-home-quick-subtitle">
+        ✦ त्वरित पहुँच ✦
+      </span>
+
+      <h2 className="ms-home-quick-title">
+        Quick Access
       </h2>
     </div>
 
-    <div className="quick-access-grid">
+    <div className="ms-home-quick-grid">
 
-      <button className="qa-card" onClick={() => setPage('snan-calendar')}>
-        <div className="qa-icon">📅</div>
-        <div className="qa-label">
+      <button
+        type="button"
+        className="ms-home-quick-card"
+        onClick={() => setPage('snan-calendar')}
+      >
+        <div className="ms-home-quick-icon">📅</div>
+
+        <div className="ms-home-quick-label">
           <span>स्नान कैलेंडर</span>
-          <span className="qa-arrow">›</span>
+          <span className="ms-home-quick-arrow">›</span>
         </div>
       </button>
 
-      <button className="qa-card" onClick={() => setPage('live-darshan')}>
-        <div className="qa-icon">📺</div>
-        <div className="qa-label">
+      <button
+        type="button"
+        className="ms-home-quick-card"
+        onClick={() => setPage('live-darshan')}
+      >
+        <div className="ms-home-quick-icon">📺</div>
+
+        <div className="ms-home-quick-label">
           <span>लाइव दर्शन</span>
-          <span className="qa-arrow">›</span>
+          <span className="ms-home-quick-arrow">›</span>
         </div>
       </button>
 
-      <button className="qa-card" onClick={() => setPage('hotels')}>
-        <div className="qa-icon">🏨</div>
-        <div className="qa-label">
+      <button
+        type="button"
+        className="ms-home-quick-card"
+        onClick={() => setPage('hotels')}
+      >
+        <div className="ms-home-quick-icon">🏨</div>
+
+        <div className="ms-home-quick-label">
           <span>होटल एवं ठहराव</span>
-          <span className="qa-arrow">›</span>
+          <span className="ms-home-quick-arrow">›</span>
         </div>
       </button>
 
-      <button className="qa-card" onClick={() => setPage('missing-persons')}>
-        <div className="qa-icon">⚠️</div>
-        <div className="qa-label">
+      <button
+        type="button"
+        className="ms-home-quick-card"
+        onClick={() => setPage('missing-persons')}
+      >
+        <div className="ms-home-quick-icon">⚠️</div>
+
+        <div className="ms-home-quick-label">
           <span>खोया-पाया केंद्र</span>
-          <span className="qa-arrow">›</span>
+          <span className="ms-home-quick-arrow">›</span>
         </div>
       </button>
 
@@ -148,30 +173,44 @@
   </div>
 </section>
 
-<section className="shahi-preview">
+{/* =========================
+    SHAHI SNAN PREVIEW
+========================= */}
+
+<section className="ms-home-shahi">
   <div className="container">
 
-    <div className="shahi-header">
-      <span className="shahi-subtitle">
+    <div className="ms-home-shahi-header">
+
+      <span className="ms-home-shahi-subtitle">
         ✦ पवित्र स्नान पर्व ✦
       </span>
 
-      <h2>शाही स्नान 2028</h2>
+      <h2 className="ms-home-shahi-title">
+        शाही स्नान 2028
+      </h2>
 
-      <p>मुख्य शाही स्नान तिथियाँ</p>
+      <p className="ms-home-shahi-description">
+        मुख्य शाही स्नान तिथियाँ
+      </p>
+
     </div>
 
-    <div className="shahi-snan-grid">
+    <div className="ms-home-shahi-grid">
+
       {SHAHI_SNAN_DATES.map((snan, index) => (
-        <div key={index} className="shahi-card">
 
-          <div className="trishul">🔱</div>
+        <div key={index} className="ms-home-shahi-card">
 
-          <div className="shahi-date">
+          <div className="ms-home-shahi-trishul">
+            🔱
+          </div>
+
+          <div className="ms-home-shahi-date">
             {snan.day}
           </div>
 
-          <div className="shahi-month">
+          <div className="ms-home-shahi-month">
             {snan.month === 'APR'
               ? 'अप्रैल 2028'
               : snan.month === 'MAY'
@@ -179,20 +218,25 @@
               : 'जून 2028'}
           </div>
 
-          <div className="shahi-divider" />
+          <div className="ms-home-shahi-divider"></div>
 
-          <h3>{snan.nameHi}</h3>
+          <div className="ms-home-shahi-name">
+            {snan.nameHi}
+          </div>
 
-          <span className="shahi-badge">
+          <span className="ms-home-shahi-badge">
             👑 शाही स्नान
           </span>
 
         </div>
+
       ))}
+
     </div>
 
     <button
-      className="shahi-btn"
+      type="button"
+      className="ms-home-shahi-button"
       onClick={() => setPage('snan-calendar')}
     >
       📅 पूरा स्नान कैलेंडर देखें →

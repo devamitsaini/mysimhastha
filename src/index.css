@@ -1023,382 +1023,529 @@ iframe {
   align-items:center;
   gap:12px;
 }
-/* =========================
-   QUICK ACCESS
-========================= */
+/* ==========================
+   MYSIMHASTHA QUICK ACCESS
+========================== */
 
-.quick-access-wrap{
+.ms-home-quick{
   background:#fff;
-  border:1px solid #eadfd3;
+  border:1px solid #eadccf;
   border-radius:28px;
-  padding:32px 40px 38px;
-  box-shadow:0 2px 18px rgba(0,0,0,.03);
+  padding:32px;
+  margin:32px 0;
 }
 
-.quick-access-header{
+.ms-home-quick-header{
   text-align:center;
-  margin-bottom:36px;
+  margin-bottom:32px;
 }
 
-.quick-access-header small{
+.ms-home-quick-subtitle{
   display:block;
-  color:#d89b59;
-  font-size:22px;
+  color:#d8914a;
+  font-size:16px;
   font-weight:600;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
-.quick-access-header h2{
+.ms-home-quick-title{
   margin:0;
-  font-size:72px;
-  line-height:1.1;
   color:#2b1200;
-  font-family:"Noto Serif Devanagari",serif;
+  font-size:clamp(2rem,5vw,4rem);
   font-weight:700;
+  line-height:1.1;
 }
 
-.quick-access-grid{
+.ms-home-quick-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
 }
 
-.qa-card{
-  height:240px;
+.ms-home-quick-card{
   border:1px solid #ecdccd;
   border-radius:22px;
   background:#fff;
+  min-height:210px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  transition:.25s;
   cursor:pointer;
+  transition:.25s ease;
 }
 
-.qa-card:hover{
+.ms-home-quick-card:hover{
   transform:translateY(-4px);
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
 
-.qa-icon{
-  width:130px;
-  height:130px;
+.ms-home-quick-icon{
+  width:90px;
+  height:90px;
   border-radius:50%;
   background:#faf3ed;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:24px;
-  font-size:64px;
+  font-size:42px;
+  margin-bottom:18px;
 }
 
-.qa-title{
-  font-size:32px;
-  font-weight:700;
-  color:#1c140f;
+.ms-home-quick-label{
   display:flex;
   align-items:center;
-  gap:12px;
-}
-
-.qa-arrow{
-  color:#d86800;
-  font-size:34px;
-}
-
-/* =========================
-   SHAHI SNAN PREVIEW
-========================= */
-
-.shahi-preview{
-  margin-top:34px;
-  background:linear-gradient(
-    to bottom,
-    #fffdfa,
-    #fff7ef
-  );
-  border:1px solid #eadfd3;
-  border-radius:28px;
-  padding:40px 32px 30px;
-  position:relative;
-  overflow:hidden;
-}
-
-.shahi-preview::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:120px;
-  opacity:.08;
-  background:
-  linear-gradient(
-    transparent,
-    rgba(230,102,0,.15)
-  );
-}
-
-.shahi-header{
-  text-align:center;
-  margin-bottom:42px;
-}
-
-.shahi-header small{
-  display:block;
-  color:#c96c1c;
-  font-size:22px;
-  font-weight:700;
-  margin-bottom:12px;
-}
-
-.shahi-header h2{
-  margin:0;
-  font-size:78px;
-  line-height:1;
-  color:#2b1200;
-  font-family:"Noto Serif Devanagari",serif;
-  font-weight:700;
-}
-
-.shahi-header p{
-  margin-top:12px;
-  font-size:26px;
-  color:#6f6257;
-}
-
-.shahi-snan-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:36px;
-}
-
-.shahi-card{
-  background:#fff;
-  border:2px solid #e66a00;
-  border-radius:24px;
-  min-height:420px;
-  padding:36px 24px;
-  text-align:center;
-  position:relative;
-  box-shadow:0 6px 18px rgba(0,0,0,.03);
-}
-
-.shahi-card::before{
-  content:"🔱";
-  position:absolute;
-  top:-28px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:56px;
-}
-
-.shahi-date{
-  font-size:100px;
-  line-height:1;
-  font-weight:800;
-  color:#2b1200;
-  font-family:"Noto Serif Devanagari",serif;
-}
-
-.shahi-month{
-  margin-top:18px;
-  color:#e66a00;
-  font-size:36px;
-  font-weight:700;
-  font-family:"Noto Serif Devanagari",serif;
-}
-
-.shahi-divider{
-  width:82%;
-  height:1px;
-  background:#e7ddd4;
-  margin:28px auto;
-  position:relative;
-}
-
-.shahi-divider::after{
-  content:"◆";
-  position:absolute;
-  left:50%;
-  top:-14px;
-  transform:translateX(-50%);
-  background:#fff;
-  color:#e66a00;
-  padding:0 10px;
-}
-
-.shahi-name{
-  font-size:42px;
-  line-height:1.3;
-  font-weight:700;
-  color:#111;
-  margin-bottom:28px;
-  font-family:"Noto Serif Devanagari",serif;
-}
-
-.shahi-badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
   gap:8px;
-  border:1px solid #f0a25d;
-  border-radius:999px;
-  padding:12px 26px;
-  color:#e66a00;
   font-size:20px;
   font-weight:700;
-  background:#fff;
+  color:#221100;
 }
 
-.shahi-btn{
-  margin:42px auto 0;
-  width:max-content;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  background:#e66a00;
-  color:#fff;
-  border:none;
-  border-radius:16px;
-  padding:18px 42px;
-  font-size:28px;
-  font-weight:700;
-  cursor:pointer;
-  box-shadow:0 10px 24px rgba(230,102,0,.25);
+.ms-home-quick-arrow{
+  color:#e46b00;
+  font-size:22px;
 }
 
-.shahi-btn:hover{
-  transform:translateY(-2px);
+/* ==========================
+   MYSIMHASTHA SHAHI SNAN
+========================== */
+
+.ms-home-shahi{
+  background:linear-gradient(
+    180deg,
+    #fffdfa 0%,
+    #fff7ef 100%
+  );
+
+  border:1px solid #eadccf;
+  border-radius:28px;
+  padding:36px 28px;
+  margin-top:32px;
 }
 
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width:1200px){
-
-  .quick-access-grid,
-  .shahi-snan-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .quick-access-header h2,
-  .shahi-header h2{
-    font-size:56px;
-  }
-
-  .shahi-date{
-    font-size:78px;
-  }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-  @media(max-width:768px){
-
-  .quick-access-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .shahi-snan-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-  .quick-access-top h2,
-  .shahi-header h2{
-    font-size:42px;
-  }
-
-  .qa-card{
-    height:180px;
-  }
-
-  .qa-icon{
-    width:90px;
-    height:90px;
-    font-size:42px;
-  }
-
-  .qa-title{
-    font-size:22px;
-  }
-
-  .shahi-date{
-    font-size:64px;
-  }
-
-  .shahi-month{
-    font-size:26px;
-  }
-
-  .shahi-name{
-    font-size:28px;
-  }
-
-  .shahi-btn{
-    width:100%;
-    justify-content:center;
-    font-size:20px;
-  }
-}
-
-.quick-access-header{
-  text-align:center;
-  margin-bottom:32px;
-}
-
-.qa-subtitle{
-  display:block;
-  color:#d89b59;
-  font-size:18px;
-  font-weight:600;
-  margin-bottom:8px;
-}
-
-.quick-access-header h2{
-  font-size:clamp(2rem,6vw,4rem);
-  color:#2b1200;
-  margin:0;
-}
-
-.qa-label{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:1.2rem;
-  font-weight:700;
-  color:#1c140f;
-}
-
-.shahi-header{
+.ms-home-shahi-header{
   text-align:center;
   margin-bottom:36px;
 }
 
-.shahi-subtitle{
+.ms-home-shahi-subtitle{
   display:block;
-  color:#c96c1c;
-  font-size:18px;
+  color:#d8914a;
+  font-size:16px;
   font-weight:600;
   margin-bottom:10px;
 }
 
-.shahi-header h2{
-  font-size:clamp(2.2rem,7vw,5rem);
+.ms-home-shahi-title{
   margin:0;
+  font-size:clamp(2.2rem,6vw,4.5rem);
+  color:#2b1200;
+  font-weight:700;
+}
+
+.ms-home-shahi-description{
+  margin-top:10px;
+  color:#6f6257;
+  font-size:18px;
+}
+
+.ms-home-shahi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.ms-home-shahi-trishul{
+  position:absolute;
+  top:-22px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:38px;
+}
+
+.ms-home-shahi-date{
+  margin-top:24px;
+  font-size:64px;
+  line-height:1;
+  font-weight:800;
   color:#2b1200;
 }
 
-.shahi-header p{
-  margin-top:10px;
-  color:#6f6257;
+.ms-home-shahi-month{
+  margin-top:12px;
+  color:#e46b00;
+  font-size:24px;
+  font-weight:700;
 }
 
+.ms-home-shahi-divider{
+  width:75%;
+  height:1px;
+  background:#ece2d8;
+  margin:20px auto;
+  position:relative;
+}
+
+.ms-home-shahi-divider::after{
+  content:"◆";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  color:#e46b00;
+  padding:0 8px;
+}
+
+.ms-home-shahi-name{
+  font-size:24px;
+  font-weight:700;
+  color:#111;
+  margin-bottom:18px;
+}
+
+.ms-home-shahi-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid #f0a25d;
+  border-radius:999px;
+  padding:8px 18px;
+  color:#e46b00;
+  font-size:14px;
+  font-weight:700;
+}
+
+.ms-home-shahi-button{
+  margin:32px auto 0;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border:none;
+  border-radius:14px;
+  background:#e46b00;
+  color:#fff;
+  padding:14px 28px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+}
+@media (max-width:768px){
+
+  .ms-home-shahi-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+
+}/* ==========================
+   MYSIMHASTHA QUICK ACCESS
+========================== */
+
+.ms-home-quick{
+  background:#fff;
+  border:1px solid #eadccf;
+  border-radius:28px;
+  padding:32px;
+  margin:32px 0;
+}
+
+.ms-home-quick-header{
+  text-align:center;
+  margin-bottom:32px;
+}
+
+.ms-home-quick-subtitle{
+  display:block;
+  color:#d8914a;
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+.ms-home-quick-title{
+  margin:0;
+  color:#2b1200;
+  font-size:clamp(2rem,5vw,4rem);
+  font-weight:700;
+  line-height:1.1;
+}
+
+.ms-home-quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.ms-home-quick-card{
+  border:1px solid #ecdccd;
+  border-radius:22px;
+  background:#fff;
+  min-height:180px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.ms-home-quick-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.ms-home-quick-icon{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:#faf3ed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  margin-bottom:18px;
+}
+
+.ms-home-quick-label{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:18px;
+  font-weight:700;
+  color:#221100;
+  text-align:center;
+}
+
+.ms-home-quick-arrow{
+  color:#e46b00;
+  font-size:22px;
+}
+
+/* ==========================
+   MYSIMHASTHA SHAHI SNAN
+========================== */
+
+.ms-home-shahi{
+  background:linear-gradient(
+    180deg,
+    #fffdfa 0%,
+    #fff7ef 100%
+  );
+  border:1px solid #eadccf;
+  border-radius:28px;
+  padding:36px 28px;
+  margin-top:32px;
+}
+
+.ms-home-shahi-header{
+  text-align:center;
+  margin-bottom:36px;
+}
+
+.ms-home-shahi-subtitle{
+  display:block;
+  color:#d8914a;
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.ms-home-shahi-title{
+  margin:0;
+  font-size:clamp(2.2rem,6vw,4.5rem);
+  color:#2b1200;
+  font-weight:700;
+}
+
+.ms-home-shahi-description{
+  margin-top:10px;
+  color:#6f6257;
+  font-size:18px;
+}
+
+.ms-home-shahi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.ms-home-shahi-card{
+  background:#fff;
+  border:2px solid #e46b00;
+  border-radius:24px;
+  padding:22px 16px;
+  text-align:center;
+  position:relative;
+  min-height:280px;
+}
+
+.ms-home-shahi-trishul{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:34px;
+}
+
+.ms-home-shahi-date{
+  margin-top:20px;
+  font-size:60px;
+  line-height:1;
+  font-weight:800;
+  color:#2b1200;
+}
+
+.ms-home-shahi-month{
+  margin-top:10px;
+  color:#e46b00;
+  font-size:20px;
+  font-weight:700;
+}
+
+.ms-home-shahi-divider{
+  width:75%;
+  height:1px;
+  background:#ece2d8;
+  margin:18px auto;
+  position:relative;
+}
+
+.ms-home-shahi-divider::after{
+  content:"◆";
+  position:absolute;
+  top:-11px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  color:#e46b00;
+  padding:0 8px;
+}
+
+.ms-home-shahi-name{
+  font-size:22px;
+  font-weight:700;
+  color:#111;
+  margin-bottom:16px;
+  line-height:1.3;
+}
+
+.ms-home-shahi-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid #f0a25d;
+  border-radius:999px;
+  padding:8px 18px;
+  color:#e46b00;
+  font-size:14px;
+  font-weight:700;
+}
+
+.ms-home-shahi-button{
+  margin:32px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border:none;
+  border-radius:14px;
+  background:#e46b00;
+  color:#fff;
+  padding:14px 28px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:992px){
+
+  .ms-home-quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .ms-home-shahi-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+  .ms-home-quick{
+    padding:20px;
+  }
+
+  .ms-home-shahi{
+    padding:24px 16px;
+  }
+
+  .ms-home-quick-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+
+  .ms-home-quick-card{
+    min-height:140px;
+  }
+
+  .ms-home-quick-icon{
+    width:64px;
+    height:64px;
+    font-size:28px;
+    margin-bottom:12px;
+  }
+
+  .ms-home-quick-label{
+    font-size:14px;
+    flex-direction:column;
+    gap:2px;
+  }
+
+  .ms-home-quick-arrow{
+    display:none;
+  }
+
+  .ms-home-shahi-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .ms-home-shahi-card{
+    max-width:320px;
+    width:100%;
+    margin:0 auto;
+    min-height:240px;
+    padding:18px 14px;
+  }
+
+  .ms-home-shahi-date{
+    font-size:52px;
+  }
+
+  .ms-home-shahi-month{
+    font-size:18px;
+  }
+
+  .ms-home-shahi-name{
+    font-size:18px;
+  }
+
+  .ms-home-shahi-badge{
+    font-size:13px;
+    padding:6px 14px;
+  }
+
+  .ms-home-shahi-button{
+    width:100%;
+    font-size:16px;
+  }
+}
