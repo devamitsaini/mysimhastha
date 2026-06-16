@@ -181,11 +181,6 @@
   <div className="container">
 
     <div className="ms-home-shahi-header">
-
-      <span className="ms-home-shahi-subtitle">
-        ✦ पवित्र स्नान पर्व ✦
-      </span>
-
       <h2 className="ms-home-shahi-title">
         शाही स्नान 2028
       </h2>
