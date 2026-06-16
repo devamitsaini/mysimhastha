@@ -1,6 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
+
 
 function AboutPage() {
+
+  const [contactForm, setContactForm] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const [formStatus, setFormStatus] = useState("");
+
+  const handleContactSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!contactForm.name || !contactForm.email || !contactForm.message) {
+    alert("Please fill all fields.");
+    return;
+  }
+
+  setFormStatus("loading");
+
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+
+        subject: "New Contact Us Message",
+
+        name: contactForm.name,
+        email: contactForm.email,
+        message: contactForm.message,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      setFormStatus("success");
+
+      setContactForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      alert("✅ Message sent successfully!");
+    } else {
+      setFormStatus("error");
+      alert("Failed to send message.");
+    }
+  } catch (error) {
+    console.error(error);
+    setFormStatus("error");
+    alert("Something went wrong.");
+  }
+};
   return (
     <div className="about-page">
 
@@ -172,26 +232,53 @@ function AboutPage() {
         <div className="container">
           <h2>Contact Us</h2>
 
-          <form className="contact-form">
-            <input
-              type="text"
-              placeholder="Your Name"
-            />
+          <form className="contact-form" onSubmit={handleContactSubmit}>
+  <input
+    type="text"
+    placeholder="Your Name"
+    value={contactForm.name}
+    onChange={(e) =>
+      setContactForm({
+        ...contactForm,
+        name: e.target.value,
+      })
+    }
+  />
 
-            <input
-              type="email"
-              placeholder="Your Email"
-            />
+  <input
+    type="email"
+    placeholder="Your Email"
+    value={contactForm.email}
+    onChange={(e) =>
+      setContactForm({
+        ...contactForm,
+        email: e.target.value,
+      })
+    }
+  />
 
-            <textarea
-              rows="5"
-              placeholder="Your Message"
-            />
+  <textarea
+    rows="5"
+    placeholder="Your Message"
+    value={contactForm.message}
+    onChange={(e) =>
+      setContactForm({
+        ...contactForm,
+        message: e.target.value,
+      })
+    }
+  />
 
-            <button type="submit" className="btn btn-primary">
-              Send Message
-            </button>
-          </form>
+  <button
+    type="submit"
+    className="btn btn-primary"
+    disabled={formStatus === "loading"}
+  >
+    {formStatus === "loading"
+      ? "Sending..."
+      : "Send Message"}
+  </button>
+</form>
         </div>
       </section>
 

@@ -7,26 +7,87 @@ function MissingPersonsPage() {
   const [statusFilter, setStatusFilter] = useState("all");
   const [showForm, setShowForm] = useState(false);
 
-  const submit = () => {
-    if (!form.name.trim()) { alert("Please enter the missing person's name."); return; }
-    if (!form.contact.trim()) { alert("Please enter your contact number."); return; }
-    
-    setList(l => [{
-      id: Date.now(),
-      name: form.name,
-      age: form.age,
-      desc: form.desc,
-      location: form.location,
-      date: new Date().toISOString().split("T")[0],
-      contact: form.contact,
-      reporter: form.reporter,
-      status: "missing"
-    }, ...l]);
+    const [formStatus, setFormStatus] = useState("");
 
-    setForm({ name: "", age: "", desc: "", location: "", contact: "", reporter: "" });
-    setShowForm(false);
-    alert("✅ Report submitted! Ground volunteers have been alerted.\nEmergency Helpline: 1800-XXX-XXXX");
-  };
+  const submit = async () => {
+  if (!form.name.trim()) {
+    alert("Please enter the missing person's name.");
+    return;
+  }
+
+  if (!form.contact.trim()) {
+    alert("Please enter your contact number.");
+    return;
+  }
+
+  setFormStatus("loading");
+
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+
+        subject: "New Missing Person Report",
+
+        Reporter_Name: form.reporter,
+        Missing_Person_Name: form.name,
+        Age_Gender: form.age,
+        Last_Seen_Location: form.location,
+        Contact_Number: form.contact,
+        Description: form.desc,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      setFormStatus("success");
+
+      // Optional: Add to local board
+      setList((l) => [
+        {
+          id: Date.now(),
+          name: form.name,
+          age: form.age,
+          desc: form.desc,
+          location: form.location,
+          date: new Date().toISOString().split("T")[0],
+          contact: form.contact,
+          reporter: form.reporter,
+          status: "missing",
+        },
+        ...l,
+      ]);
+
+      setForm({
+        name: "",
+        age: "",
+        desc: "",
+        location: "",
+        contact: "",
+        reporter: "",
+      });
+
+      setShowForm(false);
+
+      alert(
+        "✅ Missing person report submitted successfully."
+      );
+    } else {
+      setFormStatus("error");
+      alert("Failed to submit report.");
+    }
+  } catch (error) {
+    console.error(error);
+    setFormStatus("error");
+    alert("Something went wrong.");
+  }
+};
 
   const filtered = list.filter(p => statusFilter === "all" || p.status === statusFilter);
 
@@ -96,7 +157,15 @@ function MissingPersonsPage() {
                 </div>
               </div>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                <button className="btn btn-red btn-lg" onClick={submit}>Submit Report Immediately</button>
+                <button
+  className="btn btn-red btn-lg"
+  onClick={submit}
+  disabled={formStatus === "loading"}
+>
+  {formStatus === "loading"
+    ? "Submitting..."
+    : "Submit Report Immediately"}
+</button>
                 <button className="btn btn-ghost btn-lg" onClick={() => setShowForm(false)}>Cancel</button>
               </div>
             </div>
