@@ -35,7 +35,7 @@ function MissingPersonsPage({ openOnLoad }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+        access_key: process.env.REACT_APP_WEB3FORMS_ACCESS_KEY,
 
         subject: "New Missing Person Report",
 
