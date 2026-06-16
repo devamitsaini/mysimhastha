@@ -14,7 +14,7 @@
   import '../index.css';
   import '../styles/home-hero.css';
 
-  const Home = ({ setPage }) => {
+  const Home = ({ setPage, setOpenMissingForm }) => {
     const [galleryItems] = useState(GALLERY_IMAGES);
     const SHAHI_SNAN_DATES = SNAN_DATES.filter(s => s.shahi);
     const [mpList] = useState(MISSING_DATA.slice(0, 4));
@@ -424,12 +424,15 @@
               </div>
               <div className="mp-actions">
     <button
-      type="button"
-      className="btn btn-red"
-      onClick={() => setPage('missing-persons')}
-    >
-      ⚠️ Report Missing
-    </button>
+  type="button"
+  className="btn btn-red"
+  onClick={() => {
+    setOpenMissingForm(true);
+    setPage('missing-persons');
+  }}
+>
+  ⚠️ Report Missing
+</button>
 
     <button
       type="button"

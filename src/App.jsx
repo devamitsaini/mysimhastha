@@ -20,6 +20,7 @@ import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 function App() {
   const [page, setPage] = useState("home");
+  const [openMissingForm, setOpenMissingForm] = useState(false);
 
 useEffect(() => {
   window.scrollTo(0, 0);
@@ -34,10 +35,13 @@ useEffect(() => {
 
   const renderPage = () => {
     switch (page) {
-      case "home":             return <HomePage setPage={setPage} />;
+      case "home":  return (<HomePage setPage={setPage} setOpenMissingForm={setOpenMissingForm}/>);
       case "live-darshan":    return <LiveDarshanPage setPage={setPage} />;
       case "hotels":          return <HotelsPage setPage={setPage} />;
-      case "missing-persons": return <MissingPersonsPage setPage={setPage} />;
+      case "missing-persons": return (<MissingPersonsPage setPage={setPage}
+      openOnLoad={openMissingForm}
+    />
+  );
       case "simhastha-2028":  return <Simhastha2028Page setPage={setPage} />;
       case "snan-calendar":   return <SnanCalendarPage setPage={setPage} />;
       case "about":           return <AboutPage />;

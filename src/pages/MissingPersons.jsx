@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MISSING_DATA } from '../data/simhasthaData';
 
-function MissingPersonsPage() {
+function MissingPersonsPage({ openOnLoad }) {
   const [form, setForm] = useState({ name: "", age: "", desc: "", location: "", contact: "", reporter: "" });
   const [list, setList] = useState(MISSING_DATA);
   const [statusFilter, setStatusFilter] = useState("all");
   const [showForm, setShowForm] = useState(false);
+  useEffect(() => {
+  if (openOnLoad) {
+    setShowForm(true);
+  }
+}, [openOnLoad]);
 
     const [formStatus, setFormStatus] = useState("");
 
