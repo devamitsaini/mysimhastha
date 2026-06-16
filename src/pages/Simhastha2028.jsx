@@ -15,13 +15,14 @@ function Simhastha2028Page({ setPage }) {
   const [hotelPage, setHotelPage] = useState(1);
   const hotelsPerPage = 4;
   const totalPages = Math.ceil(HOTELS_DATA.length / hotelsPerPage);
+  const [modalData, setModalData] = useState(null);
 
   const paginatedHotels = HOTELS_DATA.slice(
   (hotelPage - 1) * hotelsPerPage,
   hotelPage * hotelsPerPage
   );
   const [activeTab, setActiveTab] = useState("temples");
-  const [modalData, setModalData] = useState(null);
+  
   const [selectedHeritage, setSelectedHeritage] = useState(null);
   const tabData = {
     temples: [
@@ -392,7 +393,13 @@ function Simhastha2028Page({ setPage }) {
     <div
       key={i}
       className="cult"
-      onClick={() => setPage(c.page)}
+      onClick={() =>
+  setModalData({
+    name: c.name,
+    desc: c.desc,
+    detail: "This feature will be live soon."
+  })
+}
     >
       <div
         className="cult-img"
@@ -407,14 +414,20 @@ function Simhastha2028Page({ setPage }) {
         <p className="cult-desc">{c.desc}</p>
 
         <button
-          className="btn btn-gold btn-sm"
-          onClick={(e)=>{
-            e.stopPropagation();
-            setPage(c.page);
-          }}
-        >
-          {c.btn}
-        </button>
+  className="btn btn-gold btn-sm"
+  onClick={(e) => {
+    e.stopPropagation();
+
+    setModalData({
+      icon: "🚀",
+      name: c.name,
+      desc: c.desc,
+      detail: "This feature will be live soon."
+    });
+  }}
+>
+  {c.btn}
+</button>
       </div>
     </div>
   ))}
