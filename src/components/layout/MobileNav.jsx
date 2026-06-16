@@ -4,7 +4,7 @@ import {
   Calendar,
   Bed,
   MapPin,
-  Menu,
+  LifeBuoy,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -54,10 +54,12 @@ function MobileNav({ page, setPage, setDrawerOpen }) {
         <span>{t("map")}</span>
       </button>
 
-      <button onClick={() => setDrawerOpen(true)}>
-        <Menu size={22} />
-        <span>{t("all")}</span>
-      </button>
+      <button
+  onClick={() => setPage("missing-persons")}
+>
+  <LifeBuoy size={22} />
+  <span>Help</span>
+</button>
     </nav>
   );
 }

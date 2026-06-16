@@ -3,6 +3,7 @@
   import logo from "../../assets/logo.PNG";
   import i18n from "../../i18n";
   import { useTranslation } from "react-i18next";
+  import { Languages } from "lucide-react";
 
   const SERVICES = [
       { icon: "🏨", label: "Hotels & Stay",      page: "hotels" },
@@ -18,6 +19,7 @@
       const [servicesOpen, setServicesOpen] = useState(false);
       const dropRef = useRef(null);
       const { t } = useTranslation();
+      const [languageOpen, setLanguageOpen] = useState(false);
       
       useEffect(() => {
         const h = () => setScrolled(window.scrollY > 20);
@@ -149,6 +151,72 @@
 
                 {/* Hamburger */}
                 <div className="nav-right">
+                <div style={{ position: "relative", marginRight: "12px" }}>
+  <button
+    onClick={() => setLanguageOpen(!languageOpen)}
+    style={{
+      background: "transparent",
+      border: "none",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center"
+    }}
+  >
+    <Languages size={22} />
+  </button>
+
+  {languageOpen && (
+    <div
+      style={{
+        position: "absolute",
+        top: "35px",
+        right: 0,
+        background: "#fff",
+        border: "1px solid #ddd",
+        borderRadius: "8px",
+        minWidth: "120px",
+        zIndex: 9999,
+        boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+      }}
+    >
+      <button
+        onClick={() => {
+          localStorage.setItem("lang", "en");
+          i18n.changeLanguage("en");
+          setLanguageOpen(false);
+        }}
+        style={{
+          width: "100%",
+          padding: "10px",
+          border: "none",
+          background: "white",
+          textAlign: "left",
+          cursor: "pointer"
+        }}
+      >
+        English
+      </button>
+
+      <button
+        onClick={() => {
+          localStorage.setItem("lang", "hi");
+          i18n.changeLanguage("hi");
+          setLanguageOpen(false);
+        }}
+        style={{
+          width: "100%",
+          padding: "10px",
+          border: "none",
+          background: "white",
+          textAlign: "left",
+          cursor: "pointer"
+        }}
+      >
+        हिन्दी
+      </button>
+    </div>
+  )}
+</div>
 
   <button
     onClick={() => {
