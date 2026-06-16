@@ -365,7 +365,13 @@ const Home = ({ setPage }) => {
   <button
     type="button"
     className="btn btn-outline"
-    onClick={() => setPage('hotels')}
+    onClick={() => {
+  setPage('hotels');
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}}
   >
     View All Stays →
   </button>

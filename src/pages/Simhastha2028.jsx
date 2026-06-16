@@ -62,7 +62,7 @@ function Simhastha2028Page({ setPage }) {
           <div style={{ fontFamily: "var(--deva)", fontSize: "clamp(20px,3vw,32px)", color: "rgba(255,190,80,.85)", marginBottom: "6px" }}>उज्जैन सिंहस्थ महाकुम्भ २०२८</div>
 
           <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(32px,5vw,60px)", fontWeight: 800, color: "#fff", marginBottom: "8px", lineHeight: 1.08 }}>Ujjain Simhastha Mahakumbh 2028</h1>
-
+          <br></br>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,.6)", marginBottom: "24px" }}>March 27 – May 27, 2028 · River Shipra, Ujjain, Madhya Pradesh</p>
           <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap", marginBottom: "32px" }}>
             <button
