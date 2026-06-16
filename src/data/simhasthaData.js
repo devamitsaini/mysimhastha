@@ -215,7 +215,7 @@ export const FESTIVALS = {"6-5":"Jyeshtha Purnima","6-1":"Nirjala Ekadashi","5-1
 
 export const CULTURE_DATA = [
   {
-    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    img: "https://www.pansnovens.com/blog/wp-content/uploads/2019/07/kapa-prashad.jpg",
     tag: "Food",
     name: "Prasad & Local Cuisine",
     desc: "Poha-jalebi, bhutte ki kees, sabudana khichdi and traditional Malwa delicacies.",
@@ -224,7 +224,7 @@ export const CULTURE_DATA = [
   },
 
   {
-    img: "https://images.unsplash.com/photo-1503095396549-807759245b35?w=800&q=80",
+    img: "https://www.mptourism.com/web/image/catalog/Blog-2025/folk-dance-of-mp.webp",
     tag: "Performing Arts",
     name: "Cultural Events & Performances",
     desc: "Classical music, folk dance, Ram Leela and Kavi Sammelan throughout Simhastha.",
@@ -233,7 +233,7 @@ export const CULTURE_DATA = [
   },
 
   {
-    img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80",
+    img: "https://new.vedikpuja.com/public//temple-images/temple-1706342994.webp",
     tag: "Evening Ritual",
     name: "Shipra River Aarti",
     desc: "Witness thousands of diyas illuminating the sacred Shipra River every evening.",
@@ -242,7 +242,7 @@ export const CULTURE_DATA = [
   },
 
   {
-    img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL9oQ5a1zSFtPpuFlAkQw_RZDrzU5xl-B-eA&s",
     tag: "Wellness",
     name: "Yoga & Ayurveda Camps",
     desc: "Join yoga sessions, meditation retreats and Ayurveda wellness camps.",

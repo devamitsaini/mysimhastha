@@ -49,14 +49,32 @@ function MissingPersonsPage() {
               <h2 style={{ marginBottom: "4px" }}>Missing Persons Board</h2>
               <p style={{ fontSize: "14px", color: "var(--muted)" }}>Help reunite families — every share matters</p>
             </div>
-            <div style={{ display: "flex", gap: "10px" }}>
-              <button className="btn btn-red" onClick={() => setShowForm(!showForm)}>⚠️ Report Missing Person</button>
-              {["all", "missing", "found"].map(s => (
-                <button key={s} className={`btn btn-sm ${statusFilter === s ? "btn-primary" : "btn-ghost"}`} onClick={() => setStatusFilter(s)}>
-                  {s === "all" ? "All" : s === "missing" ? "Searching" : "Found"}
-                </button>
-              ))}
-            </div>
+            <div className="mp-actions">
+  <button
+    className="btn btn-red mp-report-btn"
+    onClick={() => setShowForm(!showForm)}
+  >
+    ⚠️ Report Missing Person
+  </button>
+
+  <div className="mp-filters">
+    {["all", "missing", "found"].map((s) => (
+      <button
+        key={s}
+        className={`mp-filter ${
+          statusFilter === s ? "active" : ""
+        }`}
+        onClick={() => setStatusFilter(s)}
+      >
+        {s === "all"
+          ? "All"
+          : s === "missing"
+          ? "Searching"
+          : "Found"}
+      </button>
+    ))}
+  </div>
+</div>
           </div>
 
           {/* Report Form */}

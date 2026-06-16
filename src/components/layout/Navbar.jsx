@@ -143,37 +143,6 @@
               </div>
             </div>
           </nav>
-
-          {/* Mobile drawer overlay */}
-          <div
-            className={`drawer-overlay${drawerOpen ? " open" : ""}`}
-            onClick={() => setDrawerOpen(false)}
-            aria-hidden="true"
-          />
-
-          {/* Mobile drawer */}
-          <div className={`drawer${drawerOpen ? " open" : ""}`} aria-label="Mobile navigation" role="dialog">
-            <div className="drawer-body">
-              <div className="d-top-links">
-                <button className="d-link-bold" onClick={() => nav("snan-calendar")}>Snan Calendar</button>
-                <button className="d-link-bold" onClick={() => nav("simhastha-2028")}>Simhastha 2028</button>
-                <button className="d-link-bold" onClick={() => nav("live-darshan")}>Live Darshan</button>
-                <button className="d-link-bold" onClick={() => nav("missing-persons")}>Missing Persons</button>
-              </div>
-
-              <div className="d-title">SERVICES</div>
-              <div className="d-service-links">
-                {SERVICES.map((s) => (
-                  <button key={s.label} className="d-service-link" onClick={() => nav(s.page)}>
-                    <span className="d-s-icon" aria-hidden="true">{s.icon}</span>
-                    {s.label}
-                  </button>
-                ))}
-              </div>
-
-              <hr className="d-divider" />
-            </div>
-          </div>
         </>
       );
     }

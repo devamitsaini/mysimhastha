@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 
 import Navbar from './components/layout/Navbar';
+import Sidebar from './components/layout/Sidebar';
 import Footer from './components/layout/Footer';
 
 
@@ -32,8 +33,13 @@ function App() {
       case "snan-calendar":   return <SnanCalendarPage setPage={setPage} />;
       case "about":           return <AboutPage />;
 
-      case "blog":            return (<BlogPage setPage={setPage}
-        setSelectedBlog=       {setSelectedBlog}/>);
+      case "blog":
+  return (
+    <BlogPage
+      setPage={setPage}
+      setSelectedBlog={setSelectedBlog}
+    />
+  );
       case "blog-details":    return (<BlogDetailsPage 
         blog={selectedBlog}   setPage={setPage}/>);  
         
@@ -49,6 +55,11 @@ function App() {
         setPage={setPage}
         drawerOpen={drawerOpen}
         setDrawerOpen={setDrawerOpen}
+      />
+      <Sidebar
+        drawerOpen={drawerOpen}
+        setDrawerOpen={setDrawerOpen}
+        setPage={setPage}
       />
       <main className="main-content">
         {renderPage()}
