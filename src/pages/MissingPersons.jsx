@@ -78,6 +78,9 @@ if (photo) {
     });
 
     const data = await res.json();
+    console.log("WEB3 STATUS:", res.status);
+    console.log("WEB3 DATA:", data);
+    console.log("WEB3 KEY:", process.env.REACT_APP_WEB3FORMS_ACCESS_KEY); 
 
     if (res.ok && data.success) {
       setFormStatus("success");
