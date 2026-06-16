@@ -3,8 +3,7 @@
   import logo from "../../assets/logo.PNG";
   import i18n from "../../i18n";
   import { useTranslation } from "react-i18next";
-  import { Languages } from "lucide-react";
-
+  import { Globe } from "lucide-react";
   const SERVICES = [
       { icon: "🏨", label: "Hotels & Stay",      page: "hotels" },
       { icon: "🍱", label: "Food & Prasad",       page: "hotels" },
@@ -162,7 +161,7 @@
       alignItems: "center"
     }}
   >
-    <Languages size={22} />
+    <Globe size={20} />
   </button>
 
   {languageOpen && (
