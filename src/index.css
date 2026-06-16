@@ -455,7 +455,7 @@
   display:grid !important;
   grid-template-columns:1fr !important;
   gap:20px !important;
-  background:rgb(255, 255, 255) !important;
+  background:rgba(255, 255, 255, 0) !important;
 }
 
 @media (max-width:768px){

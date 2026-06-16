@@ -317,7 +317,9 @@ const Home = ({ setPage }) => {
       </section>
 
       {/* HOTELS */}
-      <section className="section" style={{ background: 'var(--white)' }} aria-labelledby="hotels-heading">
+      <section className="section" style={{ background: 'var(--white)' }} 
+      aria-labelledby="hotels-heading">
+        
         <div className="container">
           <div className="sec-head hotels-sec-head" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
             <div>
@@ -351,7 +353,9 @@ const Home = ({ setPage }) => {
                   <div className="hcard-meta">📍 {h.location}</div>
                   <div className="hcard-foot">
                     <span className="hcard-price">{h.price}</span>
-                    <span className="read-more">Book →</span>
+                    <button className="btn btn-primary btn-sm">
+  Book Now
+</button>
                   </div>
                 </div>
               </div>
