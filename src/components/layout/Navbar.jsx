@@ -1,6 +1,8 @@
     /* eslint-disable react/prop-types */
   import { useState, useEffect, useRef } from "react";
   import logo from "../../assets/logo.PNG";
+  import i18n from "../../i18n";
+  import { useTranslation } from "react-i18next";
 
   const SERVICES = [
       { icon: "🏨", label: "Hotels & Stay",      page: "hotels" },
@@ -15,7 +17,8 @@
       const [scrolled, setScrolled]       = useState(false);
       const [servicesOpen, setServicesOpen] = useState(false);
       const dropRef = useRef(null);
-
+      const { t } = useTranslation();
+      
       useEffect(() => {
         const h = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", h, { passive: true });
@@ -69,7 +72,7 @@
                       className={page === "snan-calendar" ? "active" : ""}
                       onClick={() => nav("snan-calendar")}
                     >
-                      Snan Calendar
+                      {t("snanCalendar")}
                     </button>
                   </li>
                   <li>
@@ -77,7 +80,7 @@
                       className={page === "simhastha-2028" ? "active" : ""}
                       onClick={() => nav("simhastha-2028")}
                     >
-                      Simhastha 2028
+                      {t("simhastha2028")}
                     </button>
                   </li>
 
@@ -89,7 +92,7 @@
                       aria-haspopup="true"
                       aria-expanded={servicesOpen}
                     >
-                      Services
+                      {t("services")}
                       <svg
                         width="12" height="12" viewBox="0 0 12 12" fill="currentColor"
                         style={{ marginLeft: "4px", transition: "transform .2s", transform: servicesOpen ? "rotate(180deg)" : "none" }}
@@ -120,7 +123,7 @@
     className={page === "missing-persons" ? "active" : ""}
     onClick={() => nav("missing-persons")}
   >
-    Missing Persons
+    {t("missingPersons")}
   </button>
 </li>
                   <li>
@@ -128,7 +131,7 @@
     className={page === "blog" ? "active" : ""}
     onClick={() => nav("blog")}
   >
-    Blog
+    {t("blog")}
   </button>
 </li>
 
@@ -139,22 +142,58 @@
     className={page === "about" ? "active" : ""}
     onClick={() => nav("about")}
   >
-    About
+    {t("about")}
   </button>
 </li>
                 </ul>
 
                 {/* Hamburger */}
                 <div className="nav-right">
-                  <button
-                    className={`hamburger${drawerOpen ? " open" : ""}`}
-                    onClick={() => setDrawerOpen((o) => !o)}
-                    aria-label={drawerOpen ? "Close menu" : "Open menu"}
-                    aria-expanded={drawerOpen}
-                  >
-                    <span /><span /><span />
-                  </button>
-                </div>
+
+  <button
+    onClick={() => {
+      localStorage.setItem("lang", "en");
+      i18n.changeLanguage("en");
+    }}
+    style={{
+      marginRight: "8px",
+      padding: "6px 10px",
+      borderRadius: "6px",
+      border: "1px solid #ddd",
+      cursor: "pointer"
+    }}
+  >
+    EN
+  </button>
+
+  <button
+    onClick={() => {
+      localStorage.setItem("lang", "hi");
+      i18n.changeLanguage("hi");
+    }}
+    style={{
+      marginRight: "12px",
+      padding: "6px 10px",
+      borderRadius: "6px",
+      border: "1px solid #ddd",
+      cursor: "pointer"
+    }}
+  >
+    हिन्दी
+  </button>
+
+  <button
+    className={`hamburger${drawerOpen ? " open" : ""}`}
+    onClick={() => setDrawerOpen((o) => !o)}
+    aria-label={drawerOpen ? "Close menu" : "Open menu"}
+    aria-expanded={drawerOpen}
+  >
+    <span />
+    <span />
+    <span />
+  </button>
+
+</div>
               </div>
             </div>
           </nav>

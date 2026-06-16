@@ -6,8 +6,10 @@ import {
   MapPin,
   Menu,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function MobileNav({ page, setPage, setDrawerOpen }) {
+  const { t } = useTranslation();
   return (
     <nav className="mobile-nav">
       <button
@@ -15,7 +17,7 @@ function MobileNav({ page, setPage, setDrawerOpen }) {
         onClick={() => setPage("home")}
       >
         <Home size={22} />
-        <span>Home</span>
+        <span>{t("home")}</span>
       </button>
 
       <button
@@ -23,7 +25,7 @@ function MobileNav({ page, setPage, setDrawerOpen }) {
         onClick={() => setPage("snan-calendar")}
       >
         <Calendar size={22} />
-        <span>Snan</span>
+        <span>{t("snan")}</span>
       </button>
 
       <button
@@ -31,7 +33,7 @@ function MobileNav({ page, setPage, setDrawerOpen }) {
         onClick={() => setPage("hotels")}
       >
         <Bed size={22} />
-        <span>Stay</span>
+        <span>{t("stay")}</span>
       </button>
 
       <button
@@ -49,12 +51,12 @@ function MobileNav({ page, setPage, setDrawerOpen }) {
         }}
       >
         <MapPin size={22} />
-        <span>Map</span>
+        <span>{t("map")}</span>
       </button>
 
       <button onClick={() => setDrawerOpen(true)}>
         <Menu size={22} />
-        <span>All</span>
+        <span>{t("all")}</span>
       </button>
     </nav>
   );

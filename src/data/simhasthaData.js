@@ -1,12 +1,12 @@
 export const SNAN_DATES = [
-  { name:"Pratham Shahi Snan", nameHi:"प्रथम शाही स्नान", day:22, month:"APR", weekday:"Tuesday", tithi:"Chaitra Shukla Purnima", shahi:true },
+  { name:"First Shahi Snan", nameHi:"प्रथम शाही स्नान", day:22, month:"APR", weekday:"Tuesday", tithi:"Chaitra Shukla Purnima", shahi:true },
   { name:"Akshaya Tritiya", nameHi:"अक्षय तृतीया", day:6, month:"MAY", weekday:"Monday", tithi:"Vaishakha Shukla Tritiya", shahi:false },
-  { name:"Dwitiya Shahi Snan", nameHi:"द्वितीय शाही स्नान", day:11, month:"MAY", weekday:"Saturday", tithi:"Vaishakha Shukla Ashtami", shahi:true },
+  { name:"Second Shahi Snan", nameHi:"द्वितीय शाही स्नान", day:11, month:"MAY", weekday:"Saturday", tithi:"Vaishakha Shukla Ashtami", shahi:true },
   { name:"Narasimha Chaturdashi", nameHi:"नरसिंह चतुर्दशी", day:19, month:"MAY", weekday:"Sunday", tithi:"Vaishakha Shukla Chaturdashi", shahi:false },
-  { name:"Tritiya Shahi Snan", nameHi:"तृतीय शाही स्नान", day:20, month:"MAY", weekday:"Monday", tithi:"Vaishakha Shukla Purnima", shahi:true },
+  { name:"Third Shahi Snan", nameHi:"तृतीय शाही स्नान", day:20, month:"MAY", weekday:"Monday", tithi:"Vaishakha Shukla Purnima", shahi:true },
   { name:"Ganga Dussehra", nameHi:"गंगा दशहरा स्नान", day:3, month:"JUN", weekday:"Tuesday", tithi:"Jyeshtha Shukla Dashami", shahi:false },
   { name:"Nirjala Ekadashi", nameHi:"निर्जला एकादशी", day:11, month:"JUN", weekday:"Wednesday", tithi:"Jyeshtha Shukla Ekadashi", shahi:false },
-  { name:"Chaturthi Shahi Snan", nameHi:"चतुर्थ शाही स्नान", day:18, month:"JUN", weekday:"Wednesday", tithi:"Jyeshtha Shukla Purnima", shahi:true },
+  { name:"Fourth Shahi Snan", nameHi:"चतुर्थ शाही स्नान", day:18, month:"JUN", weekday:"Wednesday", tithi:"Jyeshtha Shukla Purnima", shahi:true },
 ];
 
 export const DARSHAN_FEEDS = [

@@ -1,4 +1,5 @@
   import React, { useState, useRef } from 'react';
+  import { useTranslation } from "react-i18next";
   import {
     GALLERY_IMAGES,
     MISSING_DATA,
@@ -15,8 +16,10 @@
   import '../styles/home-hero.css';
 
   const Home = ({ setPage, setOpenMissingForm }) => {
-    const [galleryItems] = useState(GALLERY_IMAGES);
-    const SHAHI_SNAN_DATES = SNAN_DATES.filter(s => s.shahi);
+  const { t } = useTranslation();
+
+  const [galleryItems] = useState(GALLERY_IMAGES);
+  const SHAHI_SNAN_DATES = SNAN_DATES.filter(s => s.shahi);
     const [mpList] = useState(MISSING_DATA.slice(0, 4));
     const [selectedNews, setSelectedNews] = useState(null);
     const [showNriForm, setShowNriForm] = useState(false);
@@ -69,13 +72,15 @@
           </div>
           <div className="container">
             <div className="hero-inner">
-              <p className="hero-eyebrow">THE WORLD&apos;S LARGEST SPIRITUAL GATHERING</p>
+              <p className="hero-eyebrow">
+  {t("heroEyebrow")}
+</p>
               <h1 className="hero-title">सिंहस्थ महाकुम्भ</h1>
               <p className="hero-sub">Ujjain 2028</p>
               <Countdown />
               <div className="hero-ctas">
                 <button type="button" className="btn btn-primary btn-xl" onClick={() => setPage('simhastha-2028')}>
-                  Explore Simhastha →
+                  {t("exploreSimhastha")} →
                 </button>
                 <button type="button" className="btn btn-white btn-xl" onClick={() => {
     setPage('hotels');
@@ -84,7 +89,7 @@
       behavior: 'smooth'
     });
   }}>
-                  Book Your Stay
+                  {t("bookStay")}
                 </button>
               </div>
             </div>
@@ -108,7 +113,7 @@
     <div className="ms-home-quick-header">
       
       <h2 className="ms-home-quick-title">
-        Quick Access
+        {t("quickAccess")}
       </h2>
     </div>
 
@@ -122,7 +127,7 @@
         <div className="ms-home-quick-icon">📅</div>
 
         <div className="ms-home-quick-label">
-          <span>स्नान कैलेंडर</span>
+          <span>Snan Calendar</span>
           <span className="ms-home-quick-arrow">›</span>
         </div>
       </button>
@@ -135,7 +140,7 @@
         <div className="ms-home-quick-icon">📺</div>
 
         <div className="ms-home-quick-label">
-          <span>लाइव दर्शन</span>
+          <span>Live Darshan</span>
           <span className="ms-home-quick-arrow">›</span>
         </div>
       </button>
@@ -148,7 +153,7 @@
         <div className="ms-home-quick-icon">🏨</div>
 
         <div className="ms-home-quick-label">
-          <span>होटल एवं ठहराव</span>
+          <span>Hotel & Stay</span>
           <span className="ms-home-quick-arrow">›</span>
         </div>
       </button>
@@ -161,7 +166,7 @@
         <div className="ms-home-quick-icon">⚠️</div>
 
         <div className="ms-home-quick-label">
-          <span>खोया-पाया केंद्र</span>
+          <span>Missing Person</span>
           <span className="ms-home-quick-arrow">›</span>
         </div>
       </button>
@@ -179,11 +184,11 @@
 
     <div className="ms-home-shahi-header">
       <h2 className="ms-home-shahi-title">
-        शाही स्नान 2028
+        Shahi Snan 2028
       </h2>
 
       <p className="ms-home-shahi-description">
-        मुख्य शाही स्नान तिथियाँ
+        Shahi Snan Dates
       </p>
 
     </div>
@@ -204,20 +209,20 @@
 
           <div className="ms-home-shahi-month">
             {snan.month === 'APR'
-              ? 'अप्रैल 2028'
+              ? 'April 2028'
               : snan.month === 'MAY'
-              ? 'मई 2028'
-              : 'जून 2028'}
+              ? 'May 2028'
+              : 'June 2028'}
           </div>
 
           <div className="ms-home-shahi-divider"></div>
 
           <div className="ms-home-shahi-name">
-            {snan.nameHi}
+            {snan.name}
           </div>
 
           <span className="ms-home-shahi-badge">
-            👑 शाही स्नान
+            👑 Shahi Snan
           </span>
 
         </div>
@@ -231,7 +236,7 @@
       className="ms-home-shahi-button"
       onClick={() => setPage('snan-calendar')}
     >
-      📅 पूरा स्नान कैलेंडर देखें →
+      📅 Open Full Snan Calendar →
     </button>
 
   </div>
