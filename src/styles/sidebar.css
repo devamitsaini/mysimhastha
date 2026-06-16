@@ -179,7 +179,12 @@
   border-top: 1px solid rgba(124, 45, 18, 0.1);
   text-align: center;
 }
-
+.footer-logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 10px;
+}
 .footer-logo {
   color: #7c2d12;
   font-size: 20px;

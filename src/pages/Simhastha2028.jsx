@@ -78,6 +78,8 @@ function Simhastha2028Page({ setPage }) {
       </section>
 
       {/* SHAHI SNAN CALENDAR */}
+      <section id="snan-calendar">
+
       <section className="section" style={{ background: "var(--cream)" }}>
         <div className="container">
           <div className="sec-head center">
@@ -117,8 +119,8 @@ function Simhastha2028Page({ setPage }) {
             </div>
           </div>
         </div>
-      </section>
-
+      </section>     
+</section>
               {/* LIVE DARSHAN */}
         <div className="sec-head">
           <div className="sec-label">Sacred Streams</div>
@@ -152,7 +154,7 @@ function Simhastha2028Page({ setPage }) {
 </div>
 
 {/* TEMPLES GHATS AKHADAS */}
-
+<section id="temples-ghats">
 <div className="sec-head">
   <div className="sec-label">Sacred Ujjain</div>
   <h2>Temples, Ghats & Akhadas</h2>
@@ -216,8 +218,10 @@ function Simhastha2028Page({ setPage }) {
     );
   })}
 </div>
+ </section>
  
         {/* HERITAGE */}
+        <section id="heritage">
         <div className="sec-head">
           <div className="sec-label">Ancient Legacy</div>
           <h2>Heritage of Ujjain</h2>
@@ -259,8 +263,10 @@ function Simhastha2028Page({ setPage }) {
             </div>
           </div>
         )}
+        </section>
 
         {/* ZONES */}
+        <section id="zones-routes">
         <div className="sec-head">
           <div className="sec-label">Navigation Guide</div>
           <h2>Simhastha Zones & Routes</h2>
@@ -311,6 +317,7 @@ function Simhastha2028Page({ setPage }) {
             </div>
           ))}
         </div>
+        </section>
 
         {/* ACCOMMODATION */}
         

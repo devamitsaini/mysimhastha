@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from "../../assets/logo.PNG";
 
 function Footer({ setPage }) {
   return (
@@ -7,25 +8,60 @@ function Footer({ setPage }) {
         <div className="foot-grid">
           <div className="foot-col-brand">
             <div className="fl-logo">
-              <div className="fl-mark"></div>
-              <div>
-                <div className="fl-name">उज्जैन सिंहस्थ</div>
-                <div className="fl-sub">SIMHASTHA 2028</div>
-              </div>
-            </div>
+  <img
+    src={logo}
+    alt="MySimhastha Logo"
+    className="footer-logo-img"
+  />
+
+  <div>
+    <div className="fl-name">MySimhastha</div>
+    <div className="fl-sub">Ujjain Simhastha 2028</div>
+  </div>
+</div>
             <p className="brand-desc">India's most complete sacred pilgrimage portal.</p>
             <div className="foot-shlok">॥ हर हर महादेव · जय महाकाल ॥<br/>शिप्रायां स्नानमात्रेण पाप मुक्तो भवेन्नरः।</div>
           </div>
           
           <div className="foot-links-grid">
             <div className="fc">
-              <div className="fc-title">Simhastha 2028</div>
-              <ul>
-                {[["Snan Calendar", "simhastha-2028"], ["Live Darshan", "live-darshan"], ["Temples & Ghats", "simhastha-2028"], ["Heritage", "simhastha-2028"], ["Zones & Routes", "simhastha-2028"]].map(([l, p]) => (
-                  <li key={l}><button onClick={() => { setPage(p); window.scrollTo(0,0); }}>{l}</button></li>
-                ))}
-              </ul>
-            </div>
+  <div className="fc-title">Simhastha 2028</div>
+  <ul>
+    {[
+      ["Snan Calendar", "simhastha-2028", "snan-calendar"],
+      ["Live Darshan", "live-darshan", null],
+      ["Temples & Ghats", "simhastha-2028", "temples-ghats"],
+      ["Heritage", "simhastha-2028", "heritage"],
+      ["Zones & Routes", "simhastha-2028", "zones-routes"],
+    ].map(([label, page, section]) => (
+      <li key={label}>
+        <button
+          onClick={() => {
+            setPage(page);
+
+            if (section) {
+              setTimeout(() => {
+                document
+                  .getElementById(section)
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }, 300);
+            } else {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }}
+        >
+          {label}
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
             
             <div className="fc">
               <div className="fc-title">Services</div>
@@ -40,13 +76,38 @@ function Footer({ setPage }) {
               <div className="fc-title">About Us</div>
               <ul>
                 {[
-                  ["Our Mission", "simhastha-2028"],
-                  ["Simhastha 2028", "simhastha-2028"],
-                  ["For Global Devotees", "home"],
-                  ["Partner With Us", "hotels"],
-                ].map(([l, p]) => (
-                  <li key={l}><button type="button" onClick={() => { setPage(p); window.scrollTo(0, 0); }}>{l}</button></li>
-                ))}
+  ["Our Mission", "about", "our-mission"],
+  ["Simhastha 2028", "simhastha-2028", null],
+  ["For Global Devotees", "home", "NRI"],
+  ["Partner With Us", "hotels", null],
+].map(([label, page, section]) => (
+  <li key={label}>
+    <button
+      type="button"
+      onClick={() => {
+        setPage(page);
+
+        if (section) {
+          setTimeout(() => {
+            document
+              .getElementById(section)
+              ?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+          }, 300);
+        } else {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+      }}
+    >
+      {label}
+    </button>
+  </li>
+))}
               </ul>
             </div>
 

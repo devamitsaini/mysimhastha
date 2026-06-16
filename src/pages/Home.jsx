@@ -210,7 +210,7 @@ const Home = ({ setPage }) => {
       
 
       {/* NRI / PRASAD SECTION */}
-      <section className="section nri-section" style={{ background: 'linear-gradient(135deg, var(--deep) 0%, #3D0C00 50%, #1C0900 100%)' }} aria-labelledby="nri-heading">
+      <section id="NRI" className="section nri-section" style={{ background: 'linear-gradient(135deg, var(--deep) 0%, #3D0C00 50%, #1C0900 100%)' }} aria-labelledby="nri-heading">
         <div className="container">
           <div className="nri-inner">
             <div className="nri-copy">

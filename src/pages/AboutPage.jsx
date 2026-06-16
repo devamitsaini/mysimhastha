@@ -215,7 +215,7 @@ function AboutPage() {
       </section>
 
       {/* MISSION */}
-      <section className="about-section">
+      <section id="our-mission" className="about-section">
         <div className="container">
           <h2>Our Mission</h2>
 

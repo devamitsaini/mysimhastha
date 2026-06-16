@@ -648,10 +648,23 @@
   footer{background:var(--deep);padding:56px 0 28px}
   .foot-grid{display:grid;grid-template-columns:1.4fr 2fr;gap:40px;margin-bottom:40px}
   .foot-links-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
-  .fl-logo{display:flex;align-items:center;gap:9px;margin-bottom:13px}
+  .fl-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
   .fl-mark{width:34px;height:34px;background:var(--saffron);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff}
-  .fl-name{font-family:var(--deva);font-size:18px;font-weight:700;color:#fff}
-  .fl-sub{font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:2px}
+  .fl-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+  .fl-sub {
+  font-size: 0.875rem;
+  color: #d1d5db;
+  margin-top: 2px;
+}
   .brand-desc{font-size:12px;color:rgba(255,255,255,.35);line-height:1.7;margin-bottom:12px}
   .foot-shlok{font-family:var(--deva);font-size:14px;color:rgba(255,165,50,.4);line-height:1.7;margin-bottom:12px;font-style:italic}
   .fc-title{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:11px}
@@ -661,6 +674,26 @@
   .foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .foot-bottom p{font-size:11px;color:rgba(255,255,255,.25)}
   .foot-hi{font-family:var(--deva);font-size:13px;color:rgba(255,165,50,.3)}
+
+  @media (max-width: 640px) {
+  .fl-logo {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .footer-logo-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .fl-name {
+    font-size: 1.1rem;
+  }
+
+  .fl-sub {
+    font-size: 0.8rem;
+  }
+}
 
   /* PAGE WRAPS */
   .page-wrap{min-height:100vh}
