@@ -3,6 +3,7 @@ import logo from "../../assets/logo.PNG";
 
 function Footer({ setPage }) {
   return (
+    
     <footer>
       <div className="container">
         <div className="foot-grid">

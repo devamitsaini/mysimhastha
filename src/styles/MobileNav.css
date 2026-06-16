@@ -1,0 +1,43 @@
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 70px;
+
+  background: #fff;
+
+  border-top: 1px solid #ececec;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: 9999;
+
+  box-shadow: 0 -4px 12px rgba(0,0,0,.08);
+}
+
+.mobile-nav button {
+  border: none;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 11px;
+  color: #666;
+}
+
+.mobile-nav button.active {
+  color: #f97316;
+}
+
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+}

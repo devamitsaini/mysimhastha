@@ -19,6 +19,21 @@
   .app-container{display:flex;flex-direction:column;min-height:100vh}
   .main-content{flex:1;padding-top:var(--nav-h)}
   a{text-decoration:none;color:inherit}
+  .main-content{
+  flex: 1;
+  padding-top: var(--nav-h);
+}
+
+@media (max-width: 768px){
+  .main-content{
+    padding-bottom: 90px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
   button{cursor:pointer;border:none;background:none;font-family:var(--ui)}
   img{display:block;max-width:100%}
   input,select,textarea{font-family:var(--ui)}

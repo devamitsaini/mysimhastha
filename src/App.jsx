@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
 
+import MobileNav from './components/layout/MobileNav';
 import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
 import Footer from './components/layout/Footer';
@@ -79,7 +80,9 @@ useEffect(() => {
       <main className="main-content">
         {renderPage()}
       </main>
-      <Footer setPage={setPage} />
+     <MobileNav  page={page} setPage={setPage}/>
+
+    <Footer setPage={setPage} />
     </div>
   );
 }

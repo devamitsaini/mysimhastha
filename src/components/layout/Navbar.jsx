@@ -115,7 +115,14 @@
                       </div>
                     )}
                   </li>
-
+<li>
+  <button
+    className={page === "missing-persons" ? "active" : ""}
+    onClick={() => nav("missing-persons")}
+  >
+    Missing Persons
+  </button>
+</li>
                   <li>
   <button
     className={page === "blog" ? "active" : ""}
@@ -125,14 +132,7 @@
   </button>
 </li>
 
-<li>
-  <button
-    className={page === "missing-persons" ? "active" : ""}
-    onClick={() => nav("missing-persons")}
-  >
-    Missing Persons
-  </button>
-</li>
+
 
 <li>
   <button
