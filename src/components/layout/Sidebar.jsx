@@ -72,9 +72,9 @@ const Sidebar = ({ drawerOpen, setDrawerOpen, setPage }) => {
               🚕 Cab & Transport
             </button>
 
-            <button onClick={() => nav("hotels")}>
+            {/*<button onClick={() => nav("hotels")}>
               🎟️ Darshan Booking
-            </button>
+            </button>*/}
 
             {/*<button>
               🎫 Event Passes
