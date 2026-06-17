@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { client } from "../sanity";
+import { supabase } from "../lib/supabase";
 
 function NewsPage() {
 
   const [news, setNews] = useState([]);
 
   useEffect(() => {
+  const fetchNews = async () => {
+    const { data, error } = await supabase
+      .from("news")
+      .select("*")
+      .order("created_at", { ascending: false });
 
-    client.fetch(`
-      *[_type=="news"] | order(publishedAt desc){
-        _id,
-        title,
-        publishedAt,
-        category,
-        mainImage{
-          asset->{
-            url
-          }
-        }
-      }
-    `)
-    .then((data) => {
-      setNews(data);
-    });
+    console.log("NEWS DATA:", data);
+    console.log("NEWS ERROR:", error);
 
-  }, []);
+    if (!error) {
+      setNews(data || []);
+    }
+  };
+
+  fetchNews();
+}, []);
 
   return (
     <div className="news-page">
@@ -37,18 +34,16 @@ function NewsPage() {
 
           <div
             className="news-card"
-            key={item._id}
+            key={item.id}
           >
 
-            {item.mainImage?.asset?.url && (
-
-              <img
-                src={item.mainImage.asset.url}
-                alt={item.title}
-                className="news-image"
-              />
-
-            )}
+            {item.image_url && (
+  <img
+    src={item.image_url}
+    alt={item.title}
+    className="news-image"
+  />
+)}
 
             <div className="news-body">
 

@@ -70,7 +70,7 @@
                       />
                     </div>
                   <div>
-                    <div className="nav-logo-main"> MySimhastha </div>
+                    <div className="nav-logo-main"> My Simhastha </div>
                     <div className="nav-logo-sub"> Ujjain Simhastha 2028 </div>
                   </div>
                 </div>
