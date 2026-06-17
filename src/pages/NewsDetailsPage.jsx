@@ -26,10 +26,14 @@ function NewsDetailsPage({ news, setPage }) {
     >
       {news.image_url && (
         <img
-  src={news.image_url}
-  alt={news.title}
-  className="news-details-image"
-/>
+          src={news.image_url}
+          alt={news.title}
+          style={{
+            width: "100%",
+            borderRadius: "16px",
+            marginBottom: "20px",
+          }}
+        />
       )}
 
       <span className="news-tag">
