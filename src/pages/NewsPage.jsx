@@ -1,68 +1,89 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import "../styles/news.css";
 
-function NewsPage() {
-
+function NewsPage({ setPage, setSelectedNews }) {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-  const fetchNews = async () => {
-    const { data, error } = await supabase
-      .from("news")
-      .select("*")
-      .order("created_at", { ascending: false });
+    const fetchNews = async () => {
+      const { data, error } = await supabase
+        .from("news")
+        .select("*")
+        .order("created_at", { ascending: false });
 
-    console.log("NEWS DATA:", data);
-    console.log("NEWS ERROR:", error);
+      if (!error) {
+        setNews(data || []);
+      } else {
+        console.error(error);
+      }
+    };
 
-    if (!error) {
-      setNews(data || []);
-    }
-  };
-
-  fetchNews();
-}, []);
+    fetchNews();
+  }, []);
 
   return (
     <div className="news-page">
-
-      <h1>Latest News & Updates</h1>
+      <div className="news-header">
+        <h1>Latest News & Updates</h1>
+      </div>
 
       <div className="news-grid">
-
         {news.map((item) => (
-
-          <div
-            className="news-card"
-            key={item.id}
-          >
-
+          <article className="news-card" key={item.id}>
+            
             {item.image_url && (
-  <img
-    src={item.image_url}
-    alt={item.title}
-    className="news-image"
-  />
+  <div className="news-image-wrap">
+
+    <span className="news-tag">
+      {item.category}
+    </span>
+
+    <img
+      src={item.image_url}
+      alt={item.title}
+      className="news-image"
+      loading="lazy"
+      decoding="async"
+    />
+
+  </div>
 )}
 
             <div className="news-body">
 
-              <span className="news-tag">
-                {item.category}
-              </span>
+  <p className="news-date">
+    {new Date(item.created_at).toLocaleDateString("hi-IN", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })}
+  </p>
 
-              <h3>
-                {item.title}
-              </h3>
+  <h2 className="news-title">
+    {item.title}
+  </h2>
 
-            </div>
+  {item.content && (
+    <p className="news-excerpt">
+      {item.content}
+    </p>
+  )}
 
-          </div>
+  <button
+  className="news-readmore"
+  onClick={() => {
+    setSelectedNews?.(item);
+    setPage?.("news-details");
+  }}
+>
+  पूरी खबर जानिए →
+</button>
 
+</div>
+          </article>
         ))}
-
       </div>
-
     </div>
   );
 }

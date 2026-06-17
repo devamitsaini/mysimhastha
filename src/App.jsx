@@ -10,6 +10,7 @@ import Footer from './components/layout/Footer';
 import AboutPage from "./pages/AboutPage";
 import HomePage from './pages/Home';
 import NewsPage from "./pages/NewsPage";
+import NewsDetailsPage from "./pages/NewsDetailsPage";
 import LiveDarshanPage from './pages/LiveDarshan';
 import HotelsPage from './pages/Hotels';
 import MissingPersonsPage from './pages/MissingPersons';
@@ -32,6 +33,7 @@ useEffect(() => {
   }
 }, []);
   const [selectedBlog, setSelectedBlog] = useState(null);
+  const [selectedNews, setSelectedNews] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const renderPage = () => {
@@ -40,8 +42,7 @@ useEffect(() => {
       case "live-darshan":    return <LiveDarshanPage setPage={setPage} />;
       case "hotels":          return <HotelsPage setPage={setPage} />;
       case "missing-persons": return (<MissingPersonsPage
-  setPage={setPage}
-  openOnLoad={openMissingForm}
+  setPage={setPage}  openOnLoad={openMissingForm}
   setOpenMissingForm={setOpenMissingForm}
 />
   );
@@ -59,8 +60,10 @@ useEffect(() => {
       case "blog-details":    return (<BlogDetailsPage 
         blog={selectedBlog}   setPage={setPage}/>);  
         
-      case "news":            return <NewsPage setPage={setPage} />;
-      default:                return <NotFoundPage setPage={setPage} />;
+      case "news":  return ( <NewsPage setPage={setPage} setSelectedNews={setSelectedNews}/>);
+
+      case "news-details": return (<NewsDetailsPage news={selectedNews}
+      setPage={setPage}/>);
     }
   };
 

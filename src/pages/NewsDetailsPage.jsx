@@ -1,0 +1,52 @@
+import React from "react";
+
+function NewsDetailsPage({ news, setPage }) {
+  if (!news) {
+    return (
+      <div style={{ padding: "120px 20px", textAlign: "center" }}>
+        <h2>News not found</h2>
+
+        <button
+          className="news-readmore"
+          onClick={() => setPage("news")}
+        >
+          Back to News
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      style={{
+        maxWidth: "900px",
+        margin: "40px auto",
+        padding: "20px",
+      }}
+    >
+      {news.image_url && (
+        <img
+  src={news.image_url}
+  alt={news.title}
+  className="news-details-image"
+/>
+      )}
+
+      <span className="news-tag">
+        {news.category}
+      </span>
+
+      <h1>{news.title}</h1>
+
+      <p className="news-date">
+        {new Date(news.created_at).toLocaleDateString("hi-IN")}
+      </p>
+
+      <div className="news-details-content">
+  {news.content}
+</div>
+    </div>
+  );
+}
+
+export default NewsDetailsPage;

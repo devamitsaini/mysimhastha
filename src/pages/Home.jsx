@@ -1,9 +1,9 @@
-  import React, { useState, useRef } from 'react';
+  import React, { useState, useRef, useEffect } from 'react';
   import { useTranslation } from "react-i18next";
+  import { supabase } from "../lib/supabase";
   import {
     GALLERY_IMAGES,
     MISSING_DATA,
-    NEWS_DATA,
     KUMBH_YEARS,
     DARSHAN_FEEDS,
     HOTELS_DATA,
@@ -21,12 +21,31 @@
   const [galleryItems] = useState(GALLERY_IMAGES);
   const SHAHI_SNAN_DATES = SNAN_DATES.filter(s => s.shahi);
     const [mpList] = useState(MISSING_DATA.slice(0, 4));
+    const [latestNews, setLatestNews] = useState([]);
     const [selectedNews, setSelectedNews] = useState(null);
     const [showNriForm, setShowNriForm] = useState(false);
     const [nriForm, setNriForm] = useState({ name: '', email: '', country: '', service: 'pooja' });
     const [formStatus, setFormStatus] = useState('idle'); // idle | loading | success | error
 
     const carouselRef = useRef(null);
+
+    useEffect(() => {
+  const fetchLatestNews = async () => {
+    const { data, error } = await supabase
+      .from("news")
+      .select("*")
+      .order("created_at", { ascending: false })
+      .limit(2);
+
+    if (!error) {
+      setLatestNews(data || []);
+    } else {
+      console.error(error);
+    }
+  };
+
+  fetchLatestNews();
+}, []);
 
     const scrollCarousel = (direction) => {
       if (carouselRef.current) {
@@ -250,7 +269,7 @@
               <h2 id="news-heading">Latest Simhastha News</h2>
             </div>
             <div className="news-container">
-    {NEWS_DATA.slice(0, 2).map((n) => (
+    {latestNews.map((n) => (
       <article
         key={n.id}
         className="news-card"
@@ -261,7 +280,7 @@
       >
         <div className="news-img">
           <img
-            src={n.img}
+            src={n.image_url}
             alt={n.title}
             loading="lazy"
             width="400"
@@ -270,9 +289,13 @@
         </div>
 
         <div className="news-body">
-          <span className="news-tag">{n.tag}</span>
+          <span className="news-tag">
+  {n.category}
+</span>
           <h3 className="news-title">{n.title}</h3>
-          <p className="news-desc">{n.desc.substring(0, 80)}…</p>
+          <p className="news-desc">
+  {n.content}
+</p>
           <span className="read-more">
             Read More →
           </span>
@@ -293,9 +316,24 @@
           <div className="modal-overlay" role="dialog" aria-modal="true" aria-label={selectedNews.title} onClick={() => setSelectedNews(null)}>
             <div className="modal-box" onClick={(e) => e.stopPropagation()}>
               <button className="modal-close" onClick={() => setSelectedNews(null)} aria-label="Close">✕</button>
-              <img src={selectedNews.img} alt={selectedNews.title} style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '10px' }} />
-              <h3 style={{ fontFamily: 'var(--serif)', fontSize: '22px', color: 'var(--deep)', marginTop: '16px', marginBottom: '10px' }}>{selectedNews.title}</h3>
-              <p style={{ color: 'var(--muted)', fontSize: '14px', lineHeight: 1.7 }}>{selectedNews.desc}</p>
+              <img
+  src={selectedNews.image_url}
+  alt={selectedNews.title}
+  className="news-modal-image"
+/>
+
+<h2 className="news-modal-title">
+  {selectedNews.title}
+</h2>
+
+<div className="news-modal-content">
+  {selectedNews.content
+    ?.split("\n")
+    .filter(Boolean)
+    .map((para, index) => (
+      <p key={index}>{para}</p>
+    ))}
+</div>
             </div>
           </div>
         )}
