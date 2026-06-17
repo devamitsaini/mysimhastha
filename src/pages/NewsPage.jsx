@@ -35,9 +35,6 @@ function NewsPage({ setPage, setSelectedNews }) {
             {item.image_url && (
   <div className="news-image-wrap">
 
-    <span className="news-tag">
-      {item.category}
-    </span>
 
     <img
       src={item.image_url}

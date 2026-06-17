@@ -289,9 +289,6 @@
         </div>
 
         <div className="news-body">
-          <span className="news-tag">
-  {n.category}
-</span>
           <h3 className="news-title">{n.title}</h3>
           <p className="news-desc">
   {n.content}

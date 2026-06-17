@@ -73,30 +73,6 @@
    CATEGORY BADGE
 ================================== */
 
-.news-tag{
-  position:absolute;
-  top:14px;
-  left:14px;
-  z-index:2;
-
-  display:inline-flex;
-  align-items:center;
-
-  padding:8px 14px;
-
-  border-radius:999px;
-
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(8px);
-
-  color:#E46A00;
-
-  font-size:12px;
-  font-weight:700;
-
-  box-shadow:
-    0 4px 12px rgba(0,0,0,.12);
-}
 
 /* ==================================
    BODY
