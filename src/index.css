@@ -264,7 +264,7 @@
 }
 
 .modal-close{
-  position:absolute;
+  position:sticky;
   top:16px;
   right:16px;
 
