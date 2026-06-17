@@ -31,89 +31,51 @@ const Sidebar = ({ drawerOpen, setDrawerOpen, setPage }) => {
 
         <div className="drawer-body">
 
-          {/* MAIN NAVIGATION */}
-          <div className="d-links">
-            <button onClick={() => nav("home")}>
-              🏠 Home
-            </button>
+  {/*<button className="menu-item" onClick={() => nav("home")}>
+    <span>🏠 Home</span>
+    <span>›</span>
+  </button>*/}
 
-            <button onClick={() => nav("snan-calendar")}>
-              📅 Snan Calendar
-            </button>
+  <button className="menu-item" onClick={() => nav("snan-calendar")}>
+    <span>📅 Snan Calendar</span>
+    <span>›</span>
+  </button>
 
-            <button onClick={() => nav("simhastha-2028")}>
-               Simhastha 2028
-            </button>
+  <button className="menu-item" onClick={() => nav("simhastha-2028")}>
+    <span>🚩 Simhastha 2028</span>
+    <span>›</span>
+  </button>
 
-            <button onClick={() => nav("live-darshan")}>
-              📺 Live Darshan
-            </button>
+  <button className="menu-item" onClick={() => nav("live-darshan")}>
+    <span>📺 Live Darshan</span>
+    <span>›</span>
+  </button>
 
-            <button onClick={() => nav("missing-persons")}>
-              🔍 Missing Persons
-            </button>
-          </div>
+  <button className="menu-item" onClick={() => nav("missing-persons")}>
+    <span>🔍 Missing Persons</span>
+    <span>›</span>
+  </button>
 
-          <div className="d-divider" />
+  <button className="menu-item" onClick={() => nav("hotels")}>
+    <span>🏨 Hotels & Stays</span>
+    <span>›</span>
+  </button>
 
-          {/* SERVICES */}
-          <div className="d-title">SERVICES</div>
+  <button className="menu-item" onClick={() => nav("hotels")}>
+    <span>🚕 Cab & Transport</span>
+    <span>›</span>
+  </button>
 
-          <div className="d-service-links">
-            <button onClick={() => nav("hotels")}>
-              🏨 Hotels & Stays
-            </button>
+  <button className="menu-item" onClick={() => nav("blog")}>
+    <span>📰 Blogs & Updates</span>
+      <span>›</span>
+</button>
+  <button className="menu-item" onClick={() => nav("about")}>
+    <span>📖 About Us</span>
+    <span>›</span>
+  </button>
 
-            {/*<button>
-              🍛 Food & Prasad
-            </button>*/}
-
-            <button onClick={() => nav("hotels")}>
-              🚕 Cab & Transport
-            </button>
-
-            {/*<button onClick={() => nav("hotels")}>
-              🎟️ Darshan Booking
-            </button>*/}
-
-            {/*<button>
-              🎫 Event Passes
-            </button>*/}
-
-            <button onClick={() => nav("hotels")}>
-              🗺️ Guided Tours
-            </button>
-          </div>
-
-          <div className="d-divider" />
-
-          {/* INFORMATION */}
-          <div className="d-title">INFORMATION</div>
-
-          <div className="d-service-links">
-            <button onClick={() => nav("about")}>
-              📖 About US
-            </button>
-
-            <button onClick={() => nav("blog")}>
-              📰 Blogs & Updates
-            </button>
-          </div>
-
-          <div className="d-divider" />
-
-          {/* FOOTER */}
-          <div className="drawer-footer">
-            <div className="footer-logo">
-               MySimhastha
-            </div>
-
-            <div className="footer-text">
-              Kumbh Digital Portal
-            </div>
-          </div>
-
-        </div>
+</div>
       </div>
     </>
   );
