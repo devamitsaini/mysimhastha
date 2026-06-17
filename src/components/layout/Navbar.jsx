@@ -3,7 +3,7 @@
   import logo from "../../assets/logo.PNG";
   import i18n from "../../i18n";
   import { useTranslation } from "react-i18next";
-  import { Globe } from "lucide-react";
+
   const SERVICES = [
       { icon: "🏨", label: "Hotels & Stay",      page: "hotels" },
       { icon: "🍱", label: "Food & Prasad",       page: "hotels" },
@@ -17,8 +17,10 @@
       const [scrolled, setScrolled]       = useState(false);
       const [servicesOpen, setServicesOpen] = useState(false);
       const dropRef = useRef(null);
+      const langRef = useRef(null);
       const { t } = useTranslation();
       const [languageOpen, setLanguageOpen] = useState(false);
+      const currentLang = i18n.language || "en";
       
       useEffect(() => {
         const h = () => setScrolled(window.scrollY > 20);
@@ -28,14 +30,20 @@
 
       // Close dropdown on outside click
       useEffect(() => {
-        const handler = (e) => {
-          if (dropRef.current && !dropRef.current.contains(e.target)) {
-            setServicesOpen(false);
-          }
-        };
-        document.addEventListener("mousedown", handler);
-        return () => document.removeEventListener("mousedown", handler);
-      }, []);
+  const handler = (e) => {
+    if (dropRef.current && !dropRef.current.contains(e.target)) {
+      setServicesOpen(false);
+    }
+
+    if (langRef.current && !langRef.current.contains(e.target)) {
+      setLanguageOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handler);
+
+  return () => document.removeEventListener("mousedown", handler);
+}, []);
 
       const nav = (p) => {
         setPage(p);
@@ -45,7 +53,7 @@
       };
 
       const servicesBtnActive = ["hotels", "live-darshan"].includes(page);
-      const currentLang = i18n.language || "en";
+    
       
       return (
         <>
@@ -151,47 +159,30 @@
 
                 {/* Hamburger */}
                 <div className="nav-right">
-                <div style={{ position: "relative", marginRight: "12px" }}>
+                 
+<div ref={langRef} style={{ position: "relative" }}>
   <button
+    className="lang-switch"
     onClick={() => setLanguageOpen(!languageOpen)}
-    style={{
-      background: "transparent",
-      border: "none",
-      cursor: "pointer",
-      display: "flex",
-      alignItems: "center"
-    }}
   >
-    <Globe size={20} color="#E86A1F" />
+    {currentLang === "hi" ? "हिन्दी" : "English"}
+    <span
+  style={{
+    transition: "0.2s",
+    transform: languageOpen ? "rotate(180deg)" : "rotate(0deg)"
+  }}
+>
+  ▼
+</span>
   </button>
 
   {languageOpen && (
-    <div
-      style={{
-        position: "absolute",
-        top: "35px",
-        right: 0,
-        background: "#fff",
-        border: "1px solid #ddd",
-        borderRadius: "8px",
-        minWidth: "120px",
-        zIndex: 9999,
-        boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
-      }}
-    >
+    <div className="language-dropdown">
       <button
         onClick={() => {
           localStorage.setItem("lang", "en");
           i18n.changeLanguage("en");
           setLanguageOpen(false);
-        }}
-        style={{
-          width: "100%",
-          padding: "10px",
-          border: "none",
-          background: "white",
-          textAlign: "left",
-          cursor: "pointer"
         }}
       >
         English
@@ -203,60 +194,12 @@
           i18n.changeLanguage("hi");
           setLanguageOpen(false);
         }}
-        style={{
-          width: "100%",
-          padding: "10px",
-          border: "none",
-          background: "white",
-          textAlign: "left",
-          cursor: "pointer"
-        }}
       >
         हिन्दी
       </button>
     </div>
   )}
 </div>
-
-  <button
-  onClick={() => {
-    localStorage.setItem("lang", "en");
-    i18n.changeLanguage("en");
-  }}
-  style={{
-    marginRight: "8px",
-    padding: "8px 14px",
-    borderRadius: "10px",
-    border: currentLang === "en" ? "1px solid #E86A1F" : "1px solid #ddd",
-    background: currentLang === "en" ? "#E86A1F" : "#fff",
-    color: currentLang === "en" ? "#fff" : "#555",
-    fontWeight: "600",
-    cursor: "pointer",
-    transition: "all .2s ease"
-  }}
->
-  EN
-</button>
-
-<button
-  onClick={() => {
-    localStorage.setItem("lang", "hi");
-    i18n.changeLanguage("hi");
-  }}
-  style={{
-    marginRight: "12px",
-    padding: "8px 14px",
-    borderRadius: "10px",
-    border: currentLang === "hi" ? "1px solid #E86A1F" : "1px solid #ddd",
-    background: currentLang === "hi" ? "#E86A1F" : "#fff",
-    color: currentLang === "hi" ? "#fff" : "#555",
-    fontWeight: "600",
-    cursor: "pointer",
-    transition: "all .2s ease"
-  }}
->
-  हिन्दी
-</button>
 
   <button
     className={`hamburger${drawerOpen ? " open" : ""}`}
