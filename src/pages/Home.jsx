@@ -39,14 +39,15 @@
 
     if (!error) {
       setLatestNews(data || []);
-    } else {
-      console.error(error);
     }
   };
 
-  fetchLatestNews();
-}, []);
+  const timer = setTimeout(() => {
+    fetchLatestNews();
+  }, 2000);
 
+  return () => clearTimeout(timer);
+}, []);
     const scrollCarousel = (direction) => {
       if (carouselRef.current) {
         carouselRef.current.scrollBy({ left: direction === 'left' ? -300 : 300, behavior: 'smooth' });
@@ -313,9 +314,10 @@
               <img
   src={selectedNews.image_url}
   alt={selectedNews.title}
+  loading="lazy"
+  decoding="async"
   className="news-modal-image"
 />
-
 <h2 className="news-modal-title">
   {selectedNews.title}
 </h2>
@@ -435,12 +437,13 @@
                 {galleryItems.map((img, i) => (
                   <figure key={i} className="gallery-slide">
                     <img
-                      src={img.url || img.img || img.src}
-                      alt={img.cap || `Simhastha gallery image ${i + 1}`}
-                      loading="lazy"
-                      width="280"
-                      height="200"
-                    />
+  src={img.url || img.img || img.src}
+  alt={img.cap || `Simhastha gallery image ${i + 1}`}
+  loading="lazy"
+  decoding="async"
+  width="280"
+  height="200"
+/>
                     <figcaption className="gallery-cap">{img.cap}</figcaption>
                   </figure>
                 ))}
@@ -528,9 +531,22 @@
   }} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setPage('hotels')}>
                   <div className="hcard-img">
                     {h.img
-                      ? <img src={h.img} alt={h.name} loading="lazy" width="400" height="200" />
-                      : <span style={{ fontSize: '70px' }} role="img" aria-label="Hotel">🏨</span>
-                    }
+  ? (
+      <img
+        src={h.img}
+        alt={h.name}
+        loading="lazy"
+        decoding="async"
+        width="400"
+        height="200"
+      />
+    )
+  : (
+      <span style={{ fontSize: '70px' }} role="img" aria-label="Hotel">
+        🏨
+      </span>
+    )
+}
                     <div className="hcard-tags">
                       <span className="hcard-tag">{h.tier}</span>
                       {h.featured && <span className="hcard-tag featured">Featured</span>}
