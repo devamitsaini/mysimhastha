@@ -1,6 +1,6 @@
     /* eslint-disable react/prop-types */
   import { useState, useEffect, useRef } from "react";
-  import logo from "../../assets/logo.PNG";
+  import logo from "../../assets/logo.webp";
   import i18n from "../../i18n";
   import { useTranslation } from "react-i18next";
 

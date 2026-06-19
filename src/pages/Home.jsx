@@ -79,16 +79,13 @@
       <>
         {/* HERO */}
         <section className="hero hero-cinematic" aria-label="Simhastha 2028 Hero">
-          <div className="hero-bg" aria-hidden="true">
-            <img
-              className="hero-bg-img"
-              src={HERO_IMAGE}
-              alt=""
-              fetchpriority="high"
-              loading="eager"
-            />
-            <div className="hero-bg-overlay" />
-          </div>
+          <div
+  className="hero-bg"
+  aria-hidden="true"
+  style={{ backgroundImage: `url(${HERO_IMAGE})` }}
+>
+  <div className="hero-bg-overlay" />
+</div>
           <div className="container">
             <div className="hero-inner">
               <p className="hero-eyebrow">
