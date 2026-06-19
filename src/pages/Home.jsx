@@ -24,6 +24,7 @@
     const [latestNews, setLatestNews] = useState([]);
     const [selectedNews, setSelectedNews] = useState(null);
     const [showNriForm, setShowNriForm] = useState(false);
+    const [showBelowFold, setShowBelowFold] = useState(false);
     const [nriForm, setNriForm] = useState({ name: '', email: '', country: '', service: 'pooja' });
     const [formStatus, setFormStatus] = useState('idle'); // idle | loading | success | error
 
@@ -44,10 +45,19 @@
 
   const timer = setTimeout(() => {
     fetchLatestNews();
-  }, 2000);
+  }, 1000);
 
   return () => clearTimeout(timer);
 }, []);
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowBelowFold(true);
+  }, 1000);
+
+  return () => clearTimeout(timer);
+}, []);
+
     const scrollCarousel = (direction) => {
       if (carouselRef.current) {
         carouselRef.current.scrollBy({ left: direction === 'left' ? -300 : 300, behavior: 'smooth' });
@@ -334,6 +344,8 @@
           </div>
         )}
 
+        {showBelowFold && (
+  <>
         {/* KUMBH THROUGH YEARS */}
         <section className="section" style={{ background: 'var(--cream2)' }} aria-labelledby="years-heading">
           <div className="container">
@@ -587,7 +599,8 @@
           </div>
           
         </section>
-
+    </>
+)}
         {/* NRI REGISTRATION MODAL */}
         {showNriForm && (
           <div className="modal-overlay" role="dialog" aria-modal="true" aria-label="Global Devotee Registration" onClick={() => { setShowNriForm(false); setFormStatus('idle'); }}>
