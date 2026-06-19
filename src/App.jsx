@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import './index.css';
 
 import MobileNav from './components/layout/MobileNav';
@@ -7,18 +7,16 @@ import Sidebar from './components/layout/Sidebar';
 import Footer from './components/layout/Footer';
 
 
-import AboutPage from "./pages/AboutPage";
-import HomePage from './pages/Home';
-import NewsPage from "./pages/NewsPage";
-import NewsDetailsPage from "./pages/NewsDetailsPage";
-import LiveDarshanPage from './pages/LiveDarshan';
-import HotelsPage from './pages/Hotels';
-import MissingPersonsPage from './pages/MissingPersons';
-import Simhastha2028Page from './pages/Simhastha2028';
-import NotFoundPage from './pages/NotFound';
-import SnanCalendarPage from './pages/SnanCalendar';
-import BlogPage from "./pages/BlogPage";
-import BlogDetailsPage from "./pages/BlogDetailsPage";
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const NewsPage = lazy(() => import("./pages/NewsPage"));
+const NewsDetailsPage = lazy(() => import("./pages/NewsDetailsPage"));
+const LiveDarshanPage = lazy(() => import("./pages/LiveDarshan"));
+const HotelsPage = lazy(() => import("./pages/Hotels"));
+const MissingPersonsPage = lazy(() => import("./pages/MissingPersons"));
+const Simhastha2028Page = lazy(() => import("./pages/Simhastha2028"));
+const SnanCalendarPage = lazy(() => import("./pages/SnanCalendar"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
 
 function App() {
   const [page, setPage] = useState("home");
@@ -81,8 +79,10 @@ useEffect(() => {
         setPage={setPage}
       />
       <main className="main-content">
-        {renderPage()}
-      </main>
+  <Suspense fallback={<div></div>}>
+    {renderPage()}
+  </Suspense>
+</main>
      <MobileNav  page={page} setPage={setPage}/>
 
     <Footer setPage={setPage} />
