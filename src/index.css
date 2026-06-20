@@ -742,7 +742,42 @@
     height:20px;
     color:var(--muted);
   }
+.pagination{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:32px;
+}
 
+.page-btn{
+  min-width:42px;
+  height:42px;
+  border:none;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid var(--border);
+  cursor:pointer;
+  font-weight:600;
+  transition:.2s;
+}
+
+.page-btn:hover:not(:disabled){
+  background:var(--saffron);
+  color:#fff;
+  border-color:var(--saffron);
+}
+
+.page-btn.active{
+  background:var(--saffron);
+  color:#fff;
+  border-color:var(--saffron);
+}
+
+.page-btn:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
     /* MISSING PERSONS */
   .mp-actions{
     display:flex;
