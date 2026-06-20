@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.webp";
 
 function Footer({ setPage }) {
@@ -65,13 +66,26 @@ function Footer({ setPage }) {
 </div>
             
             <div className="fc">
-              <div className="fc-title">Services</div>
-              <ul>
-                {[["Hotels & Stays", "hotels"], ["Missing Persons", "missing-persons"], ["Transport", "hotels"], ["Guide", "hotels"]].map(([l, p]) => (
-                  <li key={l}><button onClick={() => { setPage(p); window.scrollTo(0,0); }}>{l}</button></li>
-                ))}
-              </ul>
-            </div>
+  <div className="fc-title">Services</div>
+
+  <ul>
+    <li>
+      <Link to="/hotels">Hotels & Stays</Link>
+    </li>
+
+    <li>
+      <Link to="/missing-persons">Missing Persons</Link>
+    </li>
+
+    <li>
+      <Link to="/blog">Blog</Link>
+    </li>
+
+    <li>
+      <Link to="/news">News</Link>
+    </li>
+  </ul>
+</div>
             
             <div className="fc">
               <div className="fc-title">About Us</div>
