@@ -1,4 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { Routes, Route } from "react-router-dom";
 import './index.css';
 
 import MobileNav from './components/layout/MobileNav';
@@ -81,7 +82,10 @@ useEffect(() => {
       />
       <main className="main-content">
   <Suspense fallback={<div></div>}>
-    {renderPage()}
+    <Routes>
+      <Route path="/" element={<HomePage setPage={setPage} setOpenMissingForm={setOpenMissingForm} />} />
+      <Route path="/hotels" element={<HotelsPage />} />
+    </Routes>
   </Suspense>
 </main>
      <MobileNav  page={page} setPage={setPage}/>
