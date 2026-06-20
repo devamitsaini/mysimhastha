@@ -81,7 +81,9 @@ useEffect(() => {
         setPage={setPage}
       />
       <main className="main-content">
-  {renderPage()}
+  <Suspense fallback={<div>Loading...</div>}>
+    {renderPage()}
+  </Suspense>
 </main>
      <MobileNav  page={page} setPage={setPage}/>
 
