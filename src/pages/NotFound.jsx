@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
-function NotFoundPage({ setPage }) {
+function NotFoundPage() {
+  const navigate = useNavigate();
   return (
     <div className="page-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80vh", textAlign: "center" }}>
       <div className="container">
@@ -9,7 +11,10 @@ function NotFoundPage({ setPage }) {
 
         <p style={{ color: "var(--muted)", marginBottom: "32px" }}>The page you are looking for does not exist or has been moved.</p>
         
-        <button className="btn btn-primary btn-lg" onClick={() => setPage("home")}>
+        <button
+  className="btn btn-primary btn-lg"
+  onClick={() => navigate("/")}
+>
           Back to Home→
         </button>
       </div>

@@ -1,8 +1,10 @@
 import React, { useEffect,  useState } from "react";
 import { supabase } from "../lib/supabase";
 import "../styles/blog.css";
+import { useNavigate } from "react-router-dom";
 
-function BlogPage({ setPage, setSelectedBlog }) {
+function BlogPage({ setSelectedBlog }) {
+  const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -49,7 +51,7 @@ function BlogPage({ setPage, setSelectedBlog }) {
             className="blog-btn"
             onClick={() => {
               setSelectedBlog(post);
-              setPage("blog-details");
+navigate("/blog-details");
             }}
           >
             Read More →

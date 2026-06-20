@@ -1,4 +1,6 @@
-function BlogDetailsPage({ blog, setPage }) {
+import { useNavigate } from "react-router-dom";
+function BlogDetailsPage({ blog }) {
+  const navigate = useNavigate();
   if (!blog) {
     return (
       <div style={{ padding: "120px 20px", textAlign: "center" }}>
@@ -6,7 +8,7 @@ function BlogDetailsPage({ blog, setPage }) {
 
         <button
           className="blog-btn"
-          onClick={() => setPage("blog")}
+          onClick={() => navigate("/blog")}
         >
           Back to Blogs
         </button>

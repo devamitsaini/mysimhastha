@@ -2,7 +2,7 @@ import React from 'react';
 import logo from "../../assets/logo.webp";
 import { useNavigate } from "react-router-dom";
 
-function Footer({ setPage }) {
+function Footer() {
   const navigate = useNavigate();
   const nav = (path) => {
   navigate(path);
@@ -11,6 +11,25 @@ function Footer({ setPage }) {
     top: 0,
     behavior: "smooth",
   });
+};
+const navSection = (path, sectionId) => {
+  navigate(path);
+
+  setTimeout(() => {
+    const el = document.getElementById(sectionId);
+
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, 300);
 };
   return (
     
@@ -39,33 +58,21 @@ function Footer({ setPage }) {
   <div className="fc-title">Simhastha 2028</div>
   <ul>
     {[
-      ["Snan Calendar", "simhastha-2028", "snan-calendar"],
-      ["Live Darshan", "live-darshan", null],
-      ["Temples & Ghats", "simhastha-2028", "temples-ghats"],
-      ["Heritage", "simhastha-2028", "heritage"],
-      ["Zones & Routes", "simhastha-2028", "zones-routes"],
+      ["Snan Calendar", "/snan-calendar", "snan-calendar"],
+["Live Darshan", "/live-darshan", null],
+["Temples & Ghats", "/simhastha-2028", "temples-ghats"],
+["Heritage", "/simhastha-2028", "heritage"],
+["Zones & Routes", "/simhastha-2028", "zones-routes"],
     ].map(([label, page, section]) => (
       <li key={label}>
         <button
           onClick={() => {
-            setPage(page);
-
-            if (section) {
-              setTimeout(() => {
-                document
-                  .getElementById(section)
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-              }, 300);
-            } else {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }
-          }}
+  if (section) {
+    navSection(page, section);
+  } else {
+    nav(page);
+  }
+}}
         >
           {label}
         </button>
@@ -107,33 +114,20 @@ function Footer({ setPage }) {
               <div className="fc-title">About Us</div>
               <ul>
                 {[
-  ["Our Mission", "about", "our-mission"],
-  ["Simhastha 2028", "simhastha-2028", null],
-  ["For Global Devotees", "home", "NRI"],
-  ["Partner With Us", "hotels", null],
+  ["Our Mission", "/about", "our-mission"],
+["For Global Devotees", "/", "NRI"],
+["Partner With Us", "/hotels", null],
 ].map(([label, page, section]) => (
   <li key={label}>
     <button
       type="button"
       onClick={() => {
-        setPage(page);
-
-        if (section) {
-          setTimeout(() => {
-            document
-              .getElementById(section)
-              ?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-          }, 300);
-        } else {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        }
-      }}
+  if (section) {
+    navSection(page, section);
+  } else {
+    nav(page);
+  }
+}}
     >
       {label}
     </button>

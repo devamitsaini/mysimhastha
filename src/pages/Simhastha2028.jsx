@@ -70,7 +70,7 @@ function Simhastha2028Page() {
           <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap", marginBottom: "32px" }}>
             <button
   className="btn btn-primary btn-xl"
-  onClick={() => navigate("/plan-visit")}
+  onClick={() => navigate("/")}
 >Plan Your Visit
 </button>
             <button className="btn btn-white btn-xl" onClick={() => navigate("/live-darshan")}>Live Darshan</button>
