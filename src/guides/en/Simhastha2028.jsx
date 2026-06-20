@@ -673,19 +673,19 @@ export default function Simhastha2028() {
 
   <ul>
     <li>
-      <a href="/guide/ujjain-travel-guide">
+      <a href="/blog">
         Ujjain Travel Guide
       </a>
     </li>
 
     <li>
-      <a href="/guide/mahakaleshwar-temple-guide">
+      <a href="/blog">
         Mahakaleshwar Temple Guide
       </a>
     </li>
 
     <li>
-      <a href="/guide/bhasma-aarti-guide">
+      <a href="/blog">
         Bhasma Aarti Guide
       </a>
     </li>
