@@ -51,9 +51,9 @@ function HotelsPage() {
     />
 
     <link
-      rel="canonical"
-      href="https://mysimhastha.com/hotels"
-    />
+  rel="canonical"
+  href="https://www.mysimhastha.com/hotels"
+/>
 
     <meta
       property="og:title"

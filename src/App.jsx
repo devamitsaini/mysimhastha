@@ -83,9 +83,86 @@ useEffect(() => {
       <main className="main-content">
   <Suspense fallback={<div></div>}>
     <Routes>
-      <Route path="/" element={<HomePage setPage={setPage} setOpenMissingForm={setOpenMissingForm} />} />
-      <Route path="/hotels" element={<HotelsPage />} />
-    </Routes>
+  <Route
+    path="/"
+    element={
+      <HomePage
+        setPage={setPage}
+        setOpenMissingForm={setOpenMissingForm}
+      />
+    }
+  />
+
+  <Route path="/hotels" element={<HotelsPage />} />
+
+  <Route
+    path="/live-darshan"
+    element={<LiveDarshanPage setPage={setPage} />}
+  />
+
+  <Route
+    path="/missing-persons"
+    element={
+      <MissingPersonsPage
+        setPage={setPage}
+        openOnLoad={openMissingForm}
+        setOpenMissingForm={setOpenMissingForm}
+      />
+    }
+  />
+
+  <Route
+    path="/simhastha-2028"
+    element={<Simhastha2028Page setPage={setPage} />}
+  />
+
+  <Route
+    path="/snan-calendar"
+    element={<SnanCalendarPage setPage={setPage} />}
+  />
+
+  <Route path="/about" element={<AboutPage />} />
+
+  <Route
+    path="/blog"
+    element={
+      <BlogPage
+        setPage={setPage}
+        setSelectedBlog={setSelectedBlog}
+      />
+    }
+  />
+
+  <Route
+    path="/blog-details"
+    element={
+      <BlogDetailsPage
+        blog={selectedBlog}
+        setPage={setPage}
+      />
+    }
+  />
+
+  <Route
+    path="/news"
+    element={
+      <NewsPage
+        setPage={setPage}
+        setSelectedNews={setSelectedNews}
+      />
+    }
+  />
+
+  <Route
+    path="/news-details"
+    element={
+      <NewsDetailsPage
+        news={selectedNews}
+        setPage={setPage}
+      />
+    }
+  />
+</Routes>
   </Suspense>
 </main>
      <MobileNav  page={page} setPage={setPage}/>
