@@ -2,7 +2,7 @@
   import "../../styles/sidebar.css";
   import { useNavigate } from "react-router-dom";
 
-  const Sidebar = ({ drawerOpen, setDrawerOpen, setPage }) => {
+  const Sidebar = ({ drawerOpen, setDrawerOpen}) => {
     const navigate = useNavigate();
     const nav = (path) => {
   navigate(path);

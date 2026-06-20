@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import "../styles/news.css";
 
-function NewsPage({ setPage, setSelectedNews }) {
+function NewsPage({ setSelectedNews }) {
   const [news, setNews] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -71,7 +73,7 @@ function NewsPage({ setPage, setSelectedNews }) {
   className="news-readmore"
   onClick={() => {
     setSelectedNews?.(item);
-    setPage?.("news-details");
+    navigate("/news-details");
   }}
 >
   पूरी खबर जानिए →

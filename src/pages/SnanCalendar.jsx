@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { SNAN_DATES } from "../data/simhasthaData";
 
-function SnanCalendarPage({ setPage }) {
+function SnanCalendarPage() {
 
   return (
     <div className="page-wrap">
