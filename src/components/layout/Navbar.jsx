@@ -3,7 +3,7 @@
   import logo from "../../assets/logo.webp";
   import i18n from "../../i18n";
   import { useTranslation } from "react-i18next";
-  import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
   const SERVICES = [
       { icon: "🏨", label: "Hotels & Stay",      page: "/hotels" },
@@ -14,7 +14,9 @@
       { icon: "🗺️", label: "Guided Tours",        page: "/hotels" },
     ];
 
-    export default function Navbar({ page, setPage, drawerOpen, setDrawerOpen }) {
+    export default function Navbar({ drawerOpen, setDrawerOpen }) {
+
+      const location = useLocation();
       const [scrolled, setScrolled]       = useState(false);
       const [servicesOpen, setServicesOpen] = useState(false);
       const dropRef = useRef(null);
@@ -56,7 +58,9 @@
   window.scrollTo(0, 0);
 };
 
-      const servicesBtnActive = ["hotels", "live-darshan"].includes(page);
+      const servicesBtnActive =
+  location.pathname === "/hotels" ||
+  location.pathname === "/live-darshan";
     
       
       return (
@@ -70,7 +74,7 @@
   onClick={() => nav("/")}
   role="button"
   tabIndex={0}
-  onKeyDown={(e) => e.key === "Enter" && nav("home")}
+  onKeyDown={(e) => e.key === "Enter" && nav("/")}
 >
                   <div className="nav-logo-icon">
                       <img
@@ -89,7 +93,7 @@
                 <ul className="nav-links" role="list">
                   <li>
                     <button
-                      className={page === "snan-calendar" ? "active" : ""}
+                      className={location.pathname === "/snan-calendar" ? "active" : ""}
                       onClick={() => nav("/snan-calendar")}
                     >
                       {t("snanCalendar")}
@@ -97,7 +101,7 @@
                   </li>
                   <li>
                     <button
-                      className={page === "simhastha-2028" ? "active" : ""}
+                      className={location.pathname === "/simhastha-2028" ? "active" : ""}
                       onClick={() => nav("/simhastha-2028")}
                     >
                       {t("simhastha2028")}
@@ -140,7 +144,7 @@
                   </li>
 <li>
   <button
-    className={page === "missing-persons" ? "active" : ""}
+    className={location.pathname === "/missing-persons" ? "active" : ""}
     onClick={() => nav("/missing-persons")}
   >
     {t("missingPersons")}
@@ -148,7 +152,7 @@
 </li>
                   <li>
   <button
-    className={page === "blog" ? "active" : ""}
+    className={location.pathname === "/blog" ? "active" : ""}
     onClick={() => nav("/blog")}
   >
     {t("blog")}
@@ -159,7 +163,7 @@
 
 <li>
   <button
-    className={page === "about" ? "active" : ""}
+    className={location.pathname === "/about" ? "active" : ""}
     onClick={() => nav("/about")}
   >
     {t("about")}
