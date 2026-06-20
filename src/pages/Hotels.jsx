@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Helmet } from "react-helmet-async";
 import { HOTELS_DATA } from '../data/simhasthaData';
-import '../index.css'; 
+import '../index.css';
 
 function HotelsPage() {
   const [search, setSearch] = useState("");
@@ -38,6 +39,37 @@ function HotelsPage() {
 
 
   return (
+    <>
+  <Helmet>
+    <title>
+      Hotels Near Mahakal Temple Ujjain | Simhastha 2028 Stay Guide
+    </title>
+
+    <meta
+      name="description"
+      content="Find hotels, dharamshalas, restaurants, guides and accommodation near Mahakal Temple for Simhastha 2028 Ujjain."
+    />
+
+    <link
+      rel="canonical"
+      href="https://mysimhastha.com/hotels"
+    />
+
+    <meta
+      property="og:title"
+      content="Hotels Near Mahakal Temple Ujjain | Simhastha 2028"
+    />
+
+    <meta
+      property="og:description"
+      content="Book hotels and accommodation near Mahakal Temple and Simhastha 2028 pilgrimage locations."
+    />
+
+    <meta
+      property="og:url"
+      content="https://mysimhastha.com/hotels"
+    />
+  </Helmet>
     <div className="page-wrap">
       {/* Hero */}
       <div className="page-hero hotels-hero">
@@ -200,6 +232,7 @@ function HotelsPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
 
