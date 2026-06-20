@@ -1,6 +1,13 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
 
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+
   "headers": [
     {
       "source": "/(.*).(js|css|png|jpg|jpeg|webp|svg|woff|woff2)",
