@@ -1,9 +1,55 @@
-import { useNavigate } from "react-router-dom";
-function BlogDetailsPage({ blog }) {
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
+
+function BlogDetailsPage() {
   const navigate = useNavigate();
+  const { slug } = useParams();
+
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchBlog();
+  }, [slug]);
+
+  const fetchBlog = async () => {
+    setLoading(true);
+
+    const { data, error } = await supabase
+      .from("blogs")
+      .select("*")
+      .eq("slug", slug)
+      .single();
+
+    if (!error) {
+      setBlog(data);
+    }
+
+    setLoading(false);
+  };
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          padding: "120px 20px",
+          textAlign: "center",
+        }}
+      >
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
+
   if (!blog) {
     return (
-      <div style={{ padding: "120px 20px", textAlign: "center" }}>
+      <div
+        style={{
+          padding: "120px 20px",
+          textAlign: "center",
+        }}
+      >
         <h2>Blog not found</h2>
 
         <button
@@ -23,6 +69,8 @@ function BlogDetailsPage({ blog }) {
         padding: "30px",
         borderRadius: "16px",
         boxShadow: "0 4px 20px rgba(0,0,0,.08)",
+        maxWidth: "1000px",
+        margin: "120px auto",
       }}
     >
       {blog.image_url && (
@@ -50,9 +98,12 @@ function BlogDetailsPage({ blog }) {
         {new Date(blog.created_at).toLocaleDateString()}
       </p>
 
-      <div className="blog-content">
-        {blog.content}
-      </div>
+      <div
+  className="blog-content"
+  style={{ whiteSpace: "pre-line" }}
+>
+  {blog.content}
+</div>
     </div>
   );
 }

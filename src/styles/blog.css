@@ -114,3 +114,11 @@
 .blog-content li {
   margin-bottom: 10px;
 }
+.blog-content{
+  white-space: pre-line;
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 18px;
+  color: #333;
+}

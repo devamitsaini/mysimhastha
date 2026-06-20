@@ -36,7 +36,7 @@ function App() {
     }
   }, []);
 
-  const [selectedBlog, setSelectedBlog] = useState(null);
+
   const [selectedNews, setSelectedNews] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -72,20 +72,14 @@ function App() {
             <Route
               path="/blog"
               element={
-                <BlogPage
-                  setSelectedBlog={setSelectedBlog}
-                />
+               <BlogPage />
               }
             />
 
             {/* BLOG DETAILS */}
             <Route
-              path="/blog-details"
-              element={
-                <BlogDetailsPage
-                  selectedBlog={selectedBlog}
-                />
-              }
+            path="/blog/:slug"
+            element={<BlogDetailsPage />}
             />
 
             <Route

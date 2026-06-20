@@ -3,7 +3,7 @@ import { supabase } from "../lib/supabase";
 import "../styles/blog.css";
 import { useNavigate } from "react-router-dom";
 
-function BlogPage({ setSelectedBlog }) {
+function BlogPage() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
 
@@ -50,9 +50,8 @@ function BlogPage({ setSelectedBlog }) {
           <button
             className="blog-btn"
             onClick={() => {
-              setSelectedBlog(post);
-navigate("/blog-details");
-            }}
+  navigate(`/blog/${post.slug}`);
+}}
           >
             Read More →
           </button>
