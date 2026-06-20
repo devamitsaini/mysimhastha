@@ -7,7 +7,7 @@ function Footer({ setPage }) {
     
     <footer>
       <div className="container">
-        <div className="foot-grid">
+        <div className="foot-grid"> 
           <div className="foot-col-brand">
             <div className="fl-logo">
   <img
@@ -68,23 +68,23 @@ function Footer({ setPage }) {
             <div className="fc">
   <div className="fc-title">Services</div>
 
-  <ul>
-    <li>
-      <Link to="/hotels">Hotels & Stays</Link>
-    </li>
+<ul>
+  <li>
+    <Link to="/hotels">Hotels & Stays</Link>
+  </li>
 
-    <li>
-      <Link to="/missing-persons">Missing Persons</Link>
-    </li>
+  <li>
+    <Link to="/missing-persons">Missing Persons</Link>
+  </li>
 
-    <li>
-      <Link to="/blog">Blog</Link>
-    </li>
+  <li>
+    <Link to="/blog">Blog</Link>
+  </li>
 
-    <li>
-      <Link to="/news">News</Link>
-    </li>
-  </ul>
+  <li>
+    <Link to="/news">News</Link>
+  </li>
+</ul>
 </div>
             
             <div className="fc">

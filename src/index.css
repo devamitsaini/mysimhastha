@@ -1010,6 +1010,17 @@
     .fc ul{list-style:none;display:flex;flex-direction:column;gap:7px}
     .fc ul button{font-size:13px;color:rgba(255,255,255,.4);transition:color .15s;background:none;border:none;cursor:pointer;text-align:left;padding:0;font-family:var(--ui)}
     .fc ul button:hover{color:#fff}
+    .fc ul a{
+  font-size:13px;
+  color:rgba(255,255,255,.4);
+  transition:color .15s;
+  text-decoration:none;
+  font-family:var(--ui);
+}
+
+.fc ul a:hover{
+  color:#fff;
+}
     .foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .foot-bottom p{font-size:11px;color:rgba(255,255,255,.25)}
     .foot-hi{font-family:var(--deva);font-size:13px;color:rgba(255,165,50,.3)}
