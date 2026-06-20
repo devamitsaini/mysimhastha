@@ -82,7 +82,74 @@ useEffect(() => {
       />
       <main className="main-content">
   <Suspense fallback={<div>Loading...</div>}>
-    {renderPage()}
+
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <HomePage
+            setPage={setPage}
+            setOpenMissingForm={setOpenMissingForm}
+          />
+        }
+      />
+
+      <Route
+        path="/about"
+        element={<AboutPage />}
+      />
+
+      <Route
+        path="/blog"
+        element={
+          <BlogPage
+            setPage={setPage}
+            setSelectedBlog={setSelectedBlog}
+          />
+        }
+      />
+
+      <Route
+        path="/news"
+        element={
+          <NewsPage
+            setPage={setPage}
+            setSelectedNews={setSelectedNews}
+          />
+        }
+      />
+
+      <Route
+        path="/hotels"
+        element={<HotelsPage />}
+      />
+
+      <Route
+        path="/snan-calendar"
+        element={<SnanCalendarPage />}
+      />
+
+      <Route
+        path="/simhastha-2028"
+        element={<Simhastha2028Page />}
+      />
+
+      <Route
+        path="/live-darshan"
+        element={<LiveDarshanPage />}
+      />
+
+      <Route
+        path="/missing-persons"
+        element={
+          <MissingPersonsPage
+            openOnLoad={openMissingForm}
+            setOpenMissingForm={setOpenMissingForm}
+          />
+        }
+      />
+    </Routes>
+
   </Suspense>
 </main>
      <MobileNav  page={page} setPage={setPage}/>

@@ -3,14 +3,15 @@
   import logo from "../../assets/logo.webp";
   import i18n from "../../i18n";
   import { useTranslation } from "react-i18next";
+  import { useNavigate } from "react-router-dom";
 
   const SERVICES = [
-      { icon: "🏨", label: "Hotels & Stay",      page: "hotels" },
-      { icon: "🍱", label: "Food & Prasad",       page: "hotels" },
-      { icon: "🚕", label: "Cab & Transport",     page: "hotels" },
-      { icon: "🎪", label: "Darshan Booking",     page: "live-darshan" },
-      { icon: "🎟", label: "Event Passes",        page: "hotels" },
-      { icon: "🗺️", label: "Guided Tours",        page: "hotels" },
+      { icon: "🏨", label: "Hotels & Stay",      page: "/hotels" },
+      { icon: "🍱", label: "Food & Prasad",       page: "/hotels" },
+      { icon: "🚕", label: "Cab & Transport",     page: "/hotels" },
+      { icon: "🎪", label: "Darshan Booking",     page: "/live-darshan" },
+      { icon: "🎟", label: "Event Passes",        page: "/hotels" },
+      { icon: "🗺️", label: "Guided Tours",        page: "/hotels" },
     ];
 
     export default function Navbar({ page, setPage, drawerOpen, setDrawerOpen }) {
@@ -21,6 +22,7 @@
       const { t } = useTranslation();
       const [languageOpen, setLanguageOpen] = useState(false);
       const currentLang = i18n.language || "en";
+      const navigate = useNavigate();
       
       useEffect(() => {
         const h = () => setScrolled(window.scrollY > 20);
@@ -45,8 +47,8 @@
   return () => document.removeEventListener("mousedown", handler);
 }, []);
 
-      const nav = (page) => {
-  setPage(page);
+      const nav = (path) => {
+  navigate(path);
 
   setServicesOpen(false);
   setDrawerOpen(false);
@@ -65,7 +67,7 @@
                 {/* Logo */}
                 <div
   className="nav-logo"
-  onClick={() => nav("home")}
+  onClick={() => nav("/home")}
   role="button"
   tabIndex={0}
   onKeyDown={(e) => e.key === "Enter" && nav("home")}
@@ -88,7 +90,7 @@
                   <li>
                     <button
                       className={page === "snan-calendar" ? "active" : ""}
-                      onClick={() => nav("snan-calendar")}
+                      onClick={() => nav("/snan-calendar")}
                     >
                       {t("snanCalendar")}
                     </button>
@@ -96,7 +98,7 @@
                   <li>
                     <button
                       className={page === "simhastha-2028" ? "active" : ""}
-                      onClick={() => nav("simhastha-2028")}
+                      onClick={() => nav("/simhastha-2028")}
                     >
                       {t("simhastha2028")}
                     </button>
@@ -139,7 +141,7 @@
 <li>
   <button
     className={page === "missing-persons" ? "active" : ""}
-    onClick={() => nav("missing-persons")}
+    onClick={() => nav("/missing-persons")}
   >
     {t("missingPersons")}
   </button>
@@ -147,7 +149,7 @@
                   <li>
   <button
     className={page === "blog" ? "active" : ""}
-    onClick={() => nav("blog")}
+    onClick={() => nav("/blog")}
   >
     {t("blog")}
   </button>
@@ -158,7 +160,7 @@
 <li>
   <button
     className={page === "about" ? "active" : ""}
-    onClick={() => nav("about")}
+    onClick={() => nav("/about")}
   >
     {t("about")}
   </button>

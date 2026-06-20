@@ -1,4 +1,5 @@
 import "../../styles/MobileNav.css";
+import { useNavigate } from "react-router-dom";
 import {
   Home,
   Calendar,
@@ -8,13 +9,18 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-function MobileNav({ page, setPage, setDrawerOpen }) {
+function MobileNav({ page }) {
+  const navigate = useNavigate();
+  const nav = (path) => {
+  navigate(path);
+  window.scrollTo(0, 0);
+};
   const { t } = useTranslation();
   return (
     <nav className="mobile-nav">
       <button
         className={page === "home" ? "active" : ""}
-        onClick={() => setPage("home")}
+        onClick={() => nav("/")}
       >
         <Home size={22} />
         <span>{t("home")}</span>
@@ -22,7 +28,7 @@ function MobileNav({ page, setPage, setDrawerOpen }) {
 
       <button
         className={page === "snan-calendar" ? "active" : ""}
-        onClick={() => setPage("snan-calendar")}
+        onClick={() => nav("/snan-calendar")}
       >
         <Calendar size={22} />
         <span>{t("snan")}</span>
@@ -30,32 +36,21 @@ function MobileNav({ page, setPage, setDrawerOpen }) {
 
       <button
         className={page === "hotels" ? "active" : ""}
-        onClick={() => setPage("hotels")}
+        onClick={() => nav("/hotels")}
       >
         <Bed size={22} />
         <span>{t("stay")}</span>
       </button>
 
       <button
-        onClick={() => {
-          setPage("simhastha-2028");
-
-          setTimeout(() => {
-            document
-              .getElementById("zones-routes")
-              ?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-          }, 300);
-        }}
+        onClick={() => nav("/simhastha-2028")}
       >
         <MapPin size={22} />
         <span>{t("map")}</span>
       </button>
 
       <button
-  onClick={() => setPage("missing-persons")}
+  onClick={() => nav("/missing-persons")}
 >
   <LifeBuoy size={22} />
   <span>Help</span>

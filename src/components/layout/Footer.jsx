@@ -1,7 +1,17 @@
 import React from 'react';
 import logo from "../../assets/logo.webp";
+import { useNavigate } from "react-router-dom";
 
 function Footer({ setPage }) {
+  const navigate = useNavigate();
+  const nav = (path) => {
+  navigate(path);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
   return (
     
     <footer>
@@ -67,10 +77,30 @@ function Footer({ setPage }) {
             <div className="fc">
               <div className="fc-title">Services</div>
               <ul>
-                {[["Hotels & Stays", "hotels"], ["Missing Persons", "missing-persons"], ["Transport", "hotels"], ["Guide", "hotels"]].map(([l, p]) => (
-                  <li key={l}><button onClick={() => { setPage(p); window.scrollTo(0,0); }}>{l}</button></li>
-                ))}
-              </ul>
+  <li>
+    <button onClick={() => nav("/hotels")}>
+      Hotels & Stays
+    </button>
+  </li>
+
+  <li>
+    <button onClick={() => nav("/missing-persons")}>
+      Missing Persons
+    </button>
+  </li>
+
+  <li>
+    <button onClick={() => nav("/blog")}>
+      Blog
+    </button>
+  </li>
+
+  <li>
+    <button onClick={() => nav("/news")}>
+      News
+    </button>
+  </li>
+</ul>
             </div>
             
             <div className="fc">

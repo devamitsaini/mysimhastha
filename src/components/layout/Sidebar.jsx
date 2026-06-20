@@ -1,12 +1,14 @@
   import React from "react";
   import "../../styles/sidebar.css";
+  import { useNavigate } from "react-router-dom";
 
   const Sidebar = ({ drawerOpen, setDrawerOpen, setPage }) => {
-    const nav = (page) => {
-      setPage(page);
-      setDrawerOpen(false);
-      window.scrollTo(0, 0);
-    };
+    const navigate = useNavigate();
+    const nav = (path) => {
+  navigate(path);
+  setDrawerOpen(false);
+  window.scrollTo(0, 0);
+};
 
     return (
       <>
@@ -31,46 +33,46 @@
 
           <div className="drawer-body">
 
-    {/*<button className="menu-item" onClick={() => nav("home")}>
+    <button className="menu-item" onClick={() => nav("/home")}>
       <span>🏠 Home</span>
       <span>›</span>
-    </button>*/}
+    </button>
 
-    <button className="menu-item" onClick={() => nav("snan-calendar")}>
+    <button className="menu-item" onClick={() => nav("/snan-calendar")}>
       <span>📅 Snan Calendar</span>
       <span>›</span>
     </button>
 
-    <button className="menu-item" onClick={() => nav("simhastha-2028")}>
+    <button className="menu-item" onClick={() => nav("/simhastha-2028")}>
       <span>🚩 Simhastha 2028</span>
       <span>›</span>
     </button>
 
-    <button className="menu-item" onClick={() => nav("live-darshan")}>
+    <button className="menu-item" onClick={() => nav("/live-darshan")}>
       <span>📺 Live Darshan</span>
       <span>›</span>
     </button>
 
-    <button className="menu-item" onClick={() => nav("missing-persons")}>
+    <button className="menu-item" onClick={() => nav("/missing-persons")}>
       <span>🔍 Missing Persons</span>
       <span>›</span>
     </button>
 
-    <button className="menu-item" onClick={() => nav("hotels")}>
+    <button className="menu-item" onClick={() => nav("/hotels")}>
       <span>🏨 Hotels & Stays</span>
       <span>›</span>
     </button>
 
-    <button className="menu-item" onClick={() => nav("hotels")}>
+    <button className="menu-item" onClick={() => nav("/hotels")}>
       <span>🚕 Cab & Transport</span>
       <span>›</span>
     </button>
 
-    <button className="menu-item" onClick={() => nav("blog")}>
+    <button className="menu-item" onClick={() => nav("/blog")}>
       <span>📰 Blogs & Updates</span>
         <span>›</span>
   </button>
-    <button className="menu-item" onClick={() => nav("about")}>
+    <button className="menu-item" onClick={() => nav("/about")}>
       <span>📖 About Us</span>
       <span>›</span>
     </button>
