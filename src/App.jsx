@@ -6,8 +6,9 @@
   import Navbar from './components/layout/Navbar';
   import Sidebar from './components/layout/Sidebar';
   import Footer from './components/layout/Footer';
-
   import HomePage from './pages/Home';
+
+  import SimhasthaGuide from "./pages/SimhasthaGuide";
 
   const AboutPage = lazy(() => import("./pages/AboutPage"));
   const NewsPage = lazy(() => import("./pages/NewsPage"));
@@ -114,8 +115,22 @@
             />
           }
         />
+
+        <Route
+          path="/simhastha-2028-guide"
+          element={<SimhasthaGuide />}
+        />
+        
       </Routes>
 
+        <Route
+  path="/blog-details"
+  element={
+    <BlogDetailsPage
+      selectedBlog={selectedBlog}
+    />
+  }
+/>
     </Suspense>
   </main>
       <MobileNav />

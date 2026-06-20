@@ -15,6 +15,7 @@
     import Countdown from '../components/common/Countdown';
     import '../index.css';
     import '../styles/home-hero.css';
+    import { Link } from "react-router-dom";
 
     const Home = ({ setOpenMissingForm }) => {
     const { t } = useTranslation();
@@ -186,6 +187,8 @@
       </div>
     </div>
   </section>
+
+
 
   {/* =========================
       SHAHI SNAN PREVIEW
@@ -633,6 +636,35 @@
               </div>
             </div>
           )}
+
+          {/* =========================
+      GUIDE
+  ========================= */}
+
+    <div className="guide-promo">
+  <div className="guide-promo-content">
+    <span className="guide-promo-badge">
+      📖 Essential Reading
+    </span>
+
+    <h3>
+      Complete Simhastha 2028 Guide
+    </h3>
+
+    <p>
+      History, Shahi Snan dates, Mahakaleshwar Darshan,
+      travel guide, accommodation, FAQs and everything
+      pilgrims need to know.
+    </p>
+
+    <Link
+      to="/simhastha-2028-guide"
+      className="guide-promo-btn"
+    >
+      Read Complete Guide →
+    </Link>
+  </div>
+</div>
         </>
       );
     };
