@@ -64,4 +64,10 @@
     <priority>0.5</priority>
   </url>
 
+  <url>
+  <loc>https://mysimhastha.com/simhastha-2028-guide</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
 </urlset>
