@@ -139,7 +139,7 @@ const navSection = (path, sectionId) => {
             <div className="fc">
               <div className="fc-title">Contact</div>
               <ul>
-                <li><button onClick={() => alert("info@mysimhastha.com")}>info@mysimhastha.com</button></li>
+                <li><button onClick={() => alert("mysimhastha@gmail.com")}>mysimhastha@gmail.com</button></li>
                 <li><button onClick={() => alert("Helpline: 1800-XXX-XXXX (24/7)")}>Helpline: 1800-XXX-XXXX</button></li>
               </ul>
             </div>

@@ -259,24 +259,18 @@
 
 /* MAIN POPUP */
 
-.modal-box{
-  position:relative;
-
-  width:100%;
-  max-width:720px; /* pehle 820 tha */
-
-  max-height:85vh;
-
-  overflow-y:auto;
-
-  background:#fff;
-
-  border-radius:22px;
-
-  box-shadow:
-    0 24px 70px rgba(0,0,0,.25);
+.modal-box {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,.18);
 }
-
 /* SCROLLBAR */
 
 .modal-box::-webkit-scrollbar{
