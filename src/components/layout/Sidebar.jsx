@@ -33,7 +33,7 @@
 
           <div className="drawer-body">
 
-    <button className="menu-item" onClick={() => nav("/home")}>
+    <button className="menu-item" onClick={() => nav("/")}>
       <span>🏠 Home</span>
       <span>›</span>
     </button>

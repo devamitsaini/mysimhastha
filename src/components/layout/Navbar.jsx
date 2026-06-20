@@ -67,7 +67,7 @@
                 {/* Logo */}
                 <div
   className="nav-logo"
-  onClick={() => nav("/home")}
+  onClick={() => nav("/")}
   role="button"
   tabIndex={0}
   onKeyDown={(e) => e.key === "Enter" && nav("home")}

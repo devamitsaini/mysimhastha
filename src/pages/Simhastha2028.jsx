@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import {
   SNAN_DATES,
   DARSHAN_FEEDS,
@@ -11,7 +12,9 @@ import {
 import Countdown from '../components/common/Countdown';
 import "../styles/simhastha2028.css";
 
-function Simhastha2028Page({ setPage }) {
+function Simhastha2028Page() {
+  const navigate = useNavigate();
+  
   const [hotelPage, setHotelPage] = useState(1);
   const hotelsPerPage = 4;
   const totalPages = Math.ceil(HOTELS_DATA.length / hotelsPerPage);
@@ -67,11 +70,11 @@ function Simhastha2028Page({ setPage }) {
           <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap", marginBottom: "32px" }}>
             <button
   className="btn btn-primary btn-xl"
-  onClick={() => setPage("plan-visit")}
+  onClick={() => navigate("/plan-visit")}
 >Plan Your Visit
 </button>
-            <button className="btn btn-white btn-xl" onClick={() => setPage("live-darshan")}>Live Darshan</button>
-            <button className="btn btn-dark btn-xl" onClick={() => setPage("hotels")}> Book Stay</button>
+            <button className="btn btn-white btn-xl" onClick={() => navigate("/live-darshan")}>Live Darshan</button>
+            <button className="btn btn-dark btn-xl" onClick={() => navigate("/hotels")}> Book Stay</button>
           </div>
           <Countdown />
         </div>
@@ -128,7 +131,7 @@ function Simhastha2028Page({ setPage }) {
         </div>
         <div className="darshan-grid" style={{marginBottom:"64px"}}>
           {DARSHAN_FEEDS.slice(0, 3).map((d,i)=>(
-            <div key={i} className="dc" onClick={()=>setPage("live-darshan")}>
+            <div key={i} className="dc" onClick={()=>navigate("/live-darshan")}>
               <div className="dc-thumb" style={{background:`linear-gradient(160deg,${d.color},#050200)`}}>
                 <div style={{position:"absolute",inset:0,background:"radial-gradient(ellipse at center,rgba(212,82,10,.18) 0%,transparent 70%)"}}/>
                 <div className="dc-icon">{d.icon}</div>
@@ -147,7 +150,7 @@ function Simhastha2028Page({ setPage }) {
         <div className="darshan-cta">
   <button
     className="btn btn-outline"
-    onClick={() => setPage("live-darshan")}
+    onClick={() => navigate("/live-darshan")}
   >
     View All Aartis →
   </button>
@@ -329,7 +332,7 @@ function Simhastha2028Page({ setPage }) {
     <div className="hotels-grid">
       {/* Yahan hum HOTELS_DATA ko map kar rahe hain */}
       {paginatedHotels.map((h, i) => (
-        <div key={i} className="hotel-card" onClick={() => setPage("hotels")}>
+        <div key={i} className="hotel-card" onClick={() => navigate("/hotels")}>
           <div className="hcard-img">
             {h.img ? (
   <img
@@ -359,7 +362,7 @@ function Simhastha2028Page({ setPage }) {
             </div>
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center", marginTop: "15px"}}>
               <span className="hcard-price">{h.price}</span>
-              <button className="btn btn-primary btn-sm" onClick={(e) => {e.stopPropagation(); setPage("hotels")}}>Book Now</button>
+              <button className="btn btn-primary btn-sm" onClick={(e) => {e.stopPropagation(); navigate("/hotels")}}>Book Now</button>
             </div>
           </div>
         </div>
