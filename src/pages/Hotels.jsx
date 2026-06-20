@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { HOTELS_DATA } from '../data/simhasthaData';
 import '../index.css';
 
 function HotelsPage() {
+  const hotelsRef = useRef(null);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All"); // Tab logic
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,6 +37,14 @@ function HotelsPage() {
   setCurrentPage(1);
 };
 
+const goToPage = (page) => {
+  setCurrentPage(page);
+
+  hotelsRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 
   return (
@@ -80,7 +89,7 @@ function HotelsPage() {
           <p className="page-hero-sub">Verified partner accommodations and services for your comfortable pilgrimage</p>
         </div>
       </div>
-       <section className="section">
+       <section ref={hotelsRef} className="section">
   <div className="container">
 
     {/* Search Bar */}
@@ -201,7 +210,7 @@ function HotelsPage() {
     <button
       className="page-btn"
       disabled={currentPage === 1}
-      onClick={() => setCurrentPage(currentPage - 1)}
+      onClick={() => goToPage(currentPage - 1)}
     >
       ←
     </button>
@@ -212,7 +221,7 @@ function HotelsPage() {
         className={`page-btn ${
           currentPage === i + 1 ? "active" : ""
         }`}
-        onClick={() => setCurrentPage(i + 1)}
+        onClick={() => goToPage(i + 1)}
       >
         {i + 1}
       </button>
@@ -221,7 +230,7 @@ function HotelsPage() {
     <button
       className="page-btn"
       disabled={currentPage === totalPages}
-      onClick={() => setCurrentPage(currentPage + 1)}
+      onClick={() => goToPage(currentPage + 1)}
     >
       →
     </button>
