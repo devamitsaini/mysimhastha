@@ -8,7 +8,8 @@ import Sidebar from "./components/layout/Sidebar";
 import Footer from "./components/layout/Footer";
 
 import HomePage from "./pages/Home";
-import SimhasthaGuide from "./pages/SimhasthaGuide";
+import Simhastha2028 from "./guides/en/Simhastha2028";
+import GuidesPage from "./pages/GuidesPage";
 
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const NewsPage = lazy(() => import("./pages/NewsPage"));
@@ -122,9 +123,15 @@ function App() {
             />
 
             <Route
-              path="/simhastha-2028-guide"
-              element={<SimhasthaGuide />}
+              path="/guides"
+              element={<GuidesPage />}
             />
+
+            <Route
+            path="/guide/simhastha-2028"
+            element={<Simhastha2028 />}
+            />
+
           </Routes>
         </Suspense>
       </main>

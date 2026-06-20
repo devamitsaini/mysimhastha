@@ -1,0 +1,526 @@
+
+/* =====================================================
+   MYSIMHASTHA GUIDE STYLES
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =====================================================
+   PAGE WRAPPER
+===================================================== */
+
+.simhastha-guide {
+  padding: 120px 20px 60px;
+
+  background:
+    radial-gradient(circle at top right,
+      #fff3e8 0%,
+      transparent 25%),
+    radial-gradient(circle at top left,
+      #fff8f0 0%,
+      transparent 20%),
+    #f8f9fb;
+}
+
+.simhastha-guide .container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.guide-header {
+  text-align: center;
+
+  background: #fff;
+
+  padding: 45px;
+
+  border-radius: 24px;
+
+  margin-bottom: 40px;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.05);
+}
+
+.guide-header h1 {
+  font-size: clamp(36px, 5vw, 56px);
+
+  line-height: 1.15;
+
+  color: #2b1400;
+
+  margin-bottom: 18px;
+
+  font-weight: 800;
+}
+
+.guide-header p {
+  font-size: 20px;
+
+  color: #666;
+
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  line-height: 1.8;
+}
+
+/* =====================================================
+   LANGUAGE SWITCHER
+===================================================== */
+
+.language-switcher {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 35px;
+}
+
+.language-switcher a {
+  padding: 12px 22px;
+
+  background: white;
+
+  border: 1px solid #eee;
+
+  border-radius: 999px;
+
+  color: #2b1400;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: all .3s ease;
+}
+
+.language-switcher a:hover {
+  background: #e46a25;
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  border-color: #e46a25;
+}
+
+/* =====================================================
+   QUICK SUMMARY
+===================================================== */
+
+.guide-highlight {
+  background:
+    linear-gradient(
+      135deg,
+      #fff7ed,
+      #ffffff
+    );
+
+  border-left: 6px solid #f97316;
+
+  padding: 24px;
+
+  border-radius: 16px;
+
+  margin-bottom: 35px;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.04);
+}
+
+.guide-highlight p {
+  margin: 0;
+
+  color: #444;
+
+  line-height: 1.9;
+
+  font-size: 17px;
+}
+
+/* =====================================================
+   CONTENT BOX
+===================================================== */
+
+.guide-box {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  margin-bottom: 35px;
+
+  border: 1px solid #f2f2f2;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.05);
+
+  
+}
+
+.guide-box h2,
+.guide-box h3 {
+  color: #2b1400;
+
+  margin-bottom: 16px;
+}
+
+.guide-box ul {
+  list-style: none;
+
+  padding: 0;
+  
+  margin: 0;
+}
+
+.guide-box li {
+  padding: 12px 0;
+  
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.guide-box li:last-child {
+  border-bottom: none;
+}
+
+.guide-box a {
+  color: #e46a25;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: .3s ease;
+}
+
+.guide-box a:hover {
+  color: #c24e10;
+
+  padding-left: 4px;
+}
+
+/* =====================================================
+   TABLE OF CONTENTS
+===================================================== */
+
+.guide-box.toc {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fffdfb
+    );
+}
+
+.guide-box.toc ul li a {
+  display: block;
+}
+
+/* =====================================================
+   ARTICLE SECTIONS
+===================================================== */
+
+.guide-section {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 22px;
+
+  margin-bottom: 30px;
+
+  border: 1px solid #f2f2f2;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.04),
+    0 1px 2px rgba(0,0,0,.04);
+}
+
+.guide-section h2 {
+  font-size: 36px;
+
+  color: #2b1400;
+
+  line-height: 1.25;
+
+  margin-bottom: 24px;
+
+  position: relative;
+
+  padding-bottom: 12px;
+}
+
+.guide-section h2::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 75px;
+
+  height: 4px;
+
+  border-radius: 999px;
+
+  background: #e46a25;
+}
+
+.guide-section h3 {
+  font-size: 24px;
+
+  color: #2b1400;
+
+  margin-top: 30px;
+
+  margin-bottom: 14px;
+}
+
+.guide-section p {
+  color: #444;
+
+  font-size: 18px;
+
+  line-height: 2;
+
+  margin-bottom: 22px;
+}
+
+.guide-section ul,
+.guide-section ol {
+  margin: 22px 0;
+
+  padding-left: 30px;
+}
+
+.guide-section li {
+  margin-bottom: 12px;
+
+  line-height: 1.9;
+
+  color: #444;
+}
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq-item {
+  margin-bottom: 25px;
+}
+
+.faq-item h3 {
+  background: #fff7ed;
+
+  padding: 15px 18px;
+
+  border-radius: 12px;
+
+  margin-bottom: 12px;
+}
+
+/* =====================================================
+   TABLES
+===================================================== */
+
+.guide-section table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin: 30px 0;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+}
+
+.guide-section th {
+  background: #f97316;
+
+  color: white;
+
+  padding: 16px;
+
+  text-align: left;
+}
+
+.guide-section td {
+  padding: 14px;
+
+  border: 1px solid #eee;
+}
+
+.guide-section tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+.guide-image {
+  width: 100%;
+
+  border-radius: 18px;
+
+  margin: 30px 0;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+}
+
+/* =====================================================
+   INTERNAL LINKS
+===================================================== */
+
+.guide-section a {
+  color: #e46a25;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.guide-section a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
+
+.social-links {
+  display: grid;
+
+  gap: 15px;
+
+  margin-top: 20px;
+}
+
+.social-links p {
+  margin: 0;
+}
+
+.social-links a {
+  color: #e46a25;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: .3s ease;
+}
+
+.social-links a:hover {
+  transform: translateX(4px);
+
+  color: #c24e10;
+}
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.cta-box {
+  background:
+    linear-gradient(
+      135deg,
+      #fff7ed,
+      #ffffff
+    );
+
+  border: 2px solid #fed7aa;
+
+  border-radius: 24px;
+
+  padding: 35px;
+
+  box-shadow:
+    0 10px 30px rgba(228,106,37,.08);
+}
+
+/* =====================================================
+   STICKY TOC (OPTIONAL)
+===================================================== */
+
+@media (min-width: 1100px) {
+
+  .guide-box.toc {
+    position: sticky;
+
+    top: 110px;
+  }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .simhastha-guide {
+    padding: 100px 16px 40px;
+  }
+
+  .guide-header {
+    padding: 28px;
+  }
+
+  .guide-header h1 {
+    font-size: 34px;
+  }
+
+  .guide-header p {
+    font-size: 17px;
+  }
+
+  .guide-section {
+    padding: 24px;
+  }
+
+  .guide-section h2 {
+    font-size: 28px;
+  }
+
+  .guide-section h3 {
+    font-size: 22px;
+  }
+
+  .guide-section p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .guide-box {
+    padding: 22px;
+  }
+
+  .language-switcher {
+    gap: 8px;
+  }
+
+  .language-switcher a {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+

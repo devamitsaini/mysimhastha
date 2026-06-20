@@ -1,0 +1,154 @@
+/* =========================
+   SIMHASTHA GUIDES PAGE
+========================= */
+
+.simhastha-guide{
+  padding:12px 0 32px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.guide-header{
+  margin-bottom:20px;
+}
+
+.guide-header h1{
+  margin:0 0 6px;
+  color:var(--deep);
+  font-family:var(--deva);
+  font-size:2rem;
+  line-height:1.1;
+  text-align:left;
+}
+
+.guide-header p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
+  font-size:.95rem;
+  max-width:550px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.guides-grid{
+  display:grid;
+  gap:16px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.guide-card{
+  display:block;
+  text-decoration:none;
+  background:#fffdf9;
+  border:1px solid rgba(212,82,10,.12);
+  border-radius:20px;
+  padding:18px;
+  position:relative;
+  overflow:hidden;
+  transition:.25s ease;
+}
+
+.guide-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:5px;
+  height:100%;
+  background:var(--saffron);
+}
+
+.guide-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(212,82,10,.25);
+}
+
+.guide-card h2{
+  margin:0 0 8px;
+  padding-left:8px;
+  color:var(--deep);
+  font-family:var(--deva);
+  font-size:1.45rem;
+  line-height:1.25;
+}
+
+.guide-card p{
+  margin:0 0 14px;
+  padding-left:8px;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:.95rem;
+}
+
+.guide-card span{
+  padding-left:8px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--saffron);
+  font-weight:700;
+  font-size:.95rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  .guide-header h1{
+    font-size:1.8rem;
+  }
+
+  .guide-card{
+    padding:16px;
+  }
+
+  .guide-card h2{
+    font-size:1.3rem;
+  }
+}
+
+@media (max-width:480px){
+
+  .simhastha-guide{
+    padding:8px 0 24px;
+  }
+
+  .guide-header{
+    margin-bottom:16px;
+  }
+
+  .guide-header h1{
+    font-size:1.65rem;
+  }
+
+  .guide-header p{
+    font-size:.92rem;
+  }
+
+  .guide-card{
+    padding:15px;
+    border-radius:16px;
+  }
+
+  .guide-card h2{
+    font-size:1.2rem;
+  }
+
+  .guide-card p{
+    font-size:.9rem;
+  }
+
+  .guide-card span{
+    font-size:.88rem;
+  }
+}

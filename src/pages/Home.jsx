@@ -658,11 +658,11 @@
     </p>
 
     <Link
-      to="/simhastha-2028-guide"
-      className="guide-promo-btn"
-    >
-      Read Complete Guide →
-    </Link>
+  to="/guides"
+  className="guide-promo-btn"
+>
+  Explore All Guides
+</Link>
   </div>
 </div>
         </>

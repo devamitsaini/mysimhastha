@@ -1960,7 +1960,7 @@
 }
 
 .guide-promo{
-  margin:48px 0;
+  margin:32px 0;
   background:linear-gradient(
     135deg,
     #fff7eb 0%,
@@ -1968,12 +1968,13 @@
   );
   border:1px solid rgba(212,82,10,.18);
   border-radius:24px;
-  padding:28px;
+  padding:24px;
   box-shadow:0 12px 40px rgba(28,9,0,.08);
 }
 
 .guide-promo-content{
   max-width:650px;
+  width:100%;
 }
 
 .guide-promo-badge{
@@ -1990,7 +1991,7 @@
 }
 
 .guide-promo h3{
-  margin:0 0 10px;
+  margin:0 0 12px;
   color:var(--deep);
   font-family:var(--deva);
   font-size:2rem;
@@ -2003,17 +2004,28 @@
   line-height:1.8;
 }
 
+/* CTA Button */
 .guide-promo-btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:8px;
   background:var(--saffron);
-  color:#fff;
-  text-decoration:none;
+  color:#fff !important;
+  text-decoration:none !important;
   padding:14px 22px;
   border-radius:12px;
   font-weight:700;
-  transition:.25s ease;
+  font-size:1rem;
+  line-height:1;
+  transition:all .25s ease;
+}
+
+.guide-promo-btn:visited,
+.guide-promo-btn:hover,
+.guide-promo-btn:active{
+  color:#fff !important;
+  text-decoration:none;
 }
 
 .guide-promo-btn:hover{
@@ -2024,16 +2036,37 @@
 @media (max-width:768px){
 
   .guide-promo{
-    padding:22px;
-    margin:36px 0;
+    padding:20px;
+    margin:24px 0;
   }
 
   .guide-promo h3{
-    font-size:1.55rem;
+    font-size:1.75rem;
+  }
+
+  .guide-promo p{
+    line-height:1.7;
   }
 
   .guide-promo-btn{
     width:100%;
-    justify-content:center;
+    padding:14px 18px;
+  }
+}
+
+@media (max-width:480px){
+
+  .guide-promo{
+    padding:18px;
+    border-radius:20px;
+  }
+
+  .guide-promo h3{
+    font-size:1.6rem;
+    line-height:1.15;
+  }
+
+  .guide-promo p{
+    font-size:.98rem;
   }
 }
