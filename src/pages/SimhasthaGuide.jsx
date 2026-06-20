@@ -21,12 +21,6 @@ export default function SimhasthaGuide() {
           {/* HEADER */}
           <div className="guide-header">
             <h1>Simhastha 2028 Ujjain Complete Guide</h1>
-
-            <p className="guide-intro">
-              Everything you need to know about Simhastha 2028,
-              including its history, significance, Shahi Snan dates,
-              major temples, travel information, and pilgrimage tips.
-            </p>
           </div>
 
           {/* QUICK SUMMARY */}
