@@ -171,7 +171,7 @@ export default function Simhastha2028() {
   <h2>When is the Next Simhastha in Ujjain?</h2>
 
   <p>
-    The next Simhastha in Ujjain will likely take place in 2028. As with all previous Simhasthas, the detailed dates for the exact timing and bathing festivals will be officially decided and released by the concerned authorities as the event draws near.
+    The next Simhastha in Ujjain will likely take place on 27 March to 27 May 2028. As with all previous Simhasthas, the detailed dates for the exact timing and bathing festivals will be officially decided and released by the concerned authorities as the event draws near.
   </p>
 
   <p>
