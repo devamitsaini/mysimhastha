@@ -268,8 +268,6 @@ export default function Simhastha2028Hi() {
           <div className="language-switcher">
             <a href="/guide/simhastha-2028">English</a>
             <a href="/hi/guide/simhastha-2028">हिन्दी</a>
-            <a href="/mr/guide/simhastha-2028">मराठी</a>
-            <a href="/gu/guide/simhastha-2028">ગુજરાતી</a>
           </div>
 
           {/* QUICK SUMMARY */}
