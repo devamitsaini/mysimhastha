@@ -105,7 +105,10 @@ function App() {
               path="/snan-calendar"
               element={<SnanCalendarPage />}
             />
-
+            <Route
+            path="/news-details"
+            element={<NewsDetailsPage news={selectedNews} />}
+            />
             <Route
               path="/simhastha-2028"
               element={<Simhastha2028Page />}

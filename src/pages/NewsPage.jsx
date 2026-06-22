@@ -76,7 +76,7 @@ function NewsPage({ setSelectedNews }) {
     navigate("/news-details");
   }}
 >
-  पूरी खबर जानिए →
+  See full News →
 </button>
 
 </div>
