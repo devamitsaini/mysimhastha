@@ -9,7 +9,11 @@ import Footer from "./components/layout/Footer";
 
 import HomePage from "./pages/Home";
 import Simhastha2028 from "./guides/en/Simhastha2028";
+import Simhastha2028HI from "./guides/hi/Simhastha2028";
+import Sawan2026 from "./guides/en/Sawan2026";
+import Sawan2026HI from "./guides/hi/Sawan2026";
 import GuidesPage from "./pages/GuidesPage";
+
 
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const NewsPage = lazy(() => import("./pages/NewsPage"));
@@ -130,6 +134,19 @@ function App() {
             <Route
             path="/guide/simhastha-2028"
             element={<Simhastha2028 />}
+            />
+            <Route
+            path="/hi/guide/simhastha-2028"
+            element={<Simhastha2028HI />}
+            />
+
+            <Route
+            path="/guide/sawan-2026"
+            element={<Sawan2026 />}
+            />
+            <Route
+            path="/hi/guide/sawan-2026"
+            element={<Sawan2026HI />}
             />
 
           </Routes>
