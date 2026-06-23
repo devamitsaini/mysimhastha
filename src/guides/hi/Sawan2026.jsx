@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import "../styles/guides.css";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export default function Sawan2026Hi() {
   const faqSchema = {
@@ -1410,6 +1412,35 @@ export default function Sawan2026Hi() {
             </p>
           </div>
 
+<div className="guide-promo">
+
+  <div className="guide-promo-content">
+
+    <span className="guide-promo-badge">
+      📚 संबंधित गाइड
+    </span>
+
+    <h3>और अधिक जानें</h3>
+
+    <p>
+      सिंहस्थ 2028, महाकाल दर्शन और
+      उज्जैन यात्रा से जुड़ी जानकारी पढ़ें।
+    </p>
+
+    <div className="related-links">
+
+      <Link
+        to="/hi/guide/simhastha-2028"
+        className="guide-promo-btn"
+      >
+        सिंहस्थ 2028 गाइड →
+      </Link>
+
+    </div>
+
+  </div>
+
+</div>
         </div>
       </section>
 

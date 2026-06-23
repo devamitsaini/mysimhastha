@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import "../styles/guides.css";
 
 export default function Simhastha2028Hi() {
@@ -710,23 +711,6 @@ export default function Simhastha2028Hi() {
                 </a>
               </li>
 
-              <li>
-                <a href="/hi/blog">
-                  महाकालेश्वर मंदिर गाइड
-                </a>
-              </li>
-
-              <li>
-                <a href="/hi/blog">
-                  भस्म आरती गाइड
-                </a>
-              </li>
-
-              <li>
-                <a href="/hi/news">
-                  नवीनतम सिमहस्था अपडेट
-                </a>
-              </li>
             </ul>
 
             <p>
@@ -738,7 +722,39 @@ export default function Simhastha2028Hi() {
             </p>
           </div>
 
+<div className="guide-promo">
+
+  <div className="guide-promo-content">
+
+    <span className="guide-promo-badge">
+      📚 संबंधित गाइड
+    </span>
+
+    <h3>और अधिक जानें</h3>
+
+    <p>
+      उज्जैन यात्रा, महाकाल दर्शन और सावन से जुड़ी
+      महत्वपूर्ण जानकारी पढ़ें।
+    </p>
+
+    <div className="related-links">
+
+      <Link
+        to="/hi/guide/sawan-2026"
+        className="guide-promo-btn"
+      >
+        सावन 2026 गाइड →
+      </Link>
+
+
+    </div>
+
+  </div>
+
+</div>
+
         </div>
+
       </section>
 
     </>

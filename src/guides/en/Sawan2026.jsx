@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import "../styles/guides.css";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function Sawan2026() {
@@ -1442,6 +1443,35 @@ export default function Sawan2026() {
             </p>
           </div>
 
+<div className="guide-promo">
+
+  <div className="guide-promo-content">
+
+    <span className="guide-promo-badge">
+      📚 Related Guides
+    </span>
+
+    <h3>Explore More</h3>
+
+    <p>
+      Learn more about Simhastha 2028,
+      Mahakal Darshan and Ujjain pilgrimage.
+    </p>
+
+    <div className="related-links">
+
+      <Link
+        to="/guide/simhastha-2028"
+        className="guide-promo-btn"
+      >
+        Simhastha 2028 Guide →
+      </Link>
+
+    </div>
+
+  </div>
+
+</div>
         </div>
         
       </section>

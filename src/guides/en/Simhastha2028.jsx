@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import "../styles/guides.css";
 
 
@@ -684,28 +685,11 @@ export default function Simhastha2028() {
 
   <ul>
     <li>
-      <a href="/blog">
+      <a href="/blog/best-places-to-visit-in-ujjain">
         Ujjain Travel Guide
       </a>
     </li>
 
-    <li>
-      <a href="/blog">
-        Mahakaleshwar Temple Guide
-      </a>
-    </li>
-
-    <li>
-      <a href="/blog">
-        Bhasma Aarti Guide
-      </a>
-    </li>
-
-    <li>
-      <a href="/blog">
-        Latest Simhastha Updates
-      </a>
-    </li>
   </ul>
 
   <p>
@@ -717,7 +701,39 @@ export default function Simhastha2028() {
     pilgrims and travelers from different regions plan their Simhastha journey.
   </p>
 </div>
+<div className="guide-promo">
+
+  <div className="guide-promo-content">
+
+    <span className="guide-promo-badge">
+      📚 Related Guides
+    </span>
+
+    <h3>Explore More Pilgrim Guides</h3>
+
+    <p>
+      Read detailed guides about Ujjain, Mahakal Darshan,
+      Sawan festivals, travel planning and pilgrimage tips.
+    </p>
+
+    <div className="related-links">
+
+      <Link
+        to="/guide/sawan-2026"
+        className="guide-promo-btn"
+      >
+        Sawan 2026 Guide →
+      </Link>
+
+
+    </div>
+
+  </div>
+
+</div>
         </div>
+
+
       </section>
 
       

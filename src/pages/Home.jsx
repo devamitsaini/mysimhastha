@@ -641,30 +641,80 @@
       GUIDE
   ========================= */}
 
-    <div className="guide-promo">
-  <div className="guide-promo-content">
-    <span className="guide-promo-badge">
-      📖 Essential Reading
-    </span>
+<section className="section">
+  <div className="container">
 
-    <h3>
-      Complete Simhastha 2028 Guide
-    </h3>
+    <div className="sec-head center">
+      <h2>Simhastha & Mahakal Darshan Guides</h2>
+<p>
+  Complete guides for Simhastha 2028, Sawan 2026,
+  Mahakal Darshan, Shahi Snan dates and Ujjain pilgrimage planning.
+</p>
+    </div>
 
+    <div className="guides-grid">
+
+  <Link
+    to="/guide/simhastha-2028"
+    className="guide-card"
+  >
+    <span className="guide-tag">English</span>
+    <h3>Simhastha 2028 Complete Guide</h3>
     <p>
-      History, Shahi Snan dates, Mahakaleshwar Darshan,
-      travel guide, accommodation, FAQs and everything
-      pilgrims need to know.
+      Dates, Shahi Snan, Mahakal Darshan,
+      travel and accommodation.
     </p>
+  </Link>
 
-    <Link
-  to="/guides"
-  className="guide-promo-btn"
->
-  Explore All Guides
-</Link>
-  </div>
+  <Link
+    to="/guide/sawan-2026"
+    className="guide-card"
+  >
+    <span className="guide-tag">English</span>
+    <h3>Sawan 2026 Ujjain Guide</h3>
+    <p>
+      Sawan Somwar dates,
+      Bhasma Aarti and Mahakal Darshan.
+    </p>
+  </Link>
+
+  <Link
+    to="/hi/guide/simhastha-2028"
+    className="guide-card"
+  >
+    <span className="guide-tag">हिन्दी</span>
+    <h3>सिंहस्थ 2028 उज्जैन गाइड</h3>
+    <p>
+      शाही स्नान, महाकाल दर्शन,
+      यात्रा और आवास जानकारी।
+    </p>
+  </Link>
+
+  <Link
+    to="/hi/guide/sawan-2026"
+    className="guide-card"
+  >
+    <span className="guide-tag">हिन्दी</span>
+    <h3>सावन 2026 उज्जैन गाइड</h3>
+    <p>
+      सावन सोमवार, भस्म आरती,
+      महाकाल दर्शन जानकारी।
+    </p>
+  </Link>
+
 </div>
+
+    <div style={{ textAlign: "center", marginTop: "24px" }}>
+      <Link
+        to="/guides"
+        className="btn btn-outline"
+      >
+        Explore All Guides →
+      </Link>
+    </div>
+
+  </div>
+</section>
         </>
       );
     };
