@@ -6,15 +6,35 @@ export default function Simhastha2028() {
   return (
     <>
       <Helmet>
-        <title>
-          Simhastha 2028 Ujjain Complete Guide | MySimhastha
-        </title>
+  <title>
+    Simhastha 2028 Ujjain Complete Guide | MySimhastha
+  </title>
 
-        <meta
-          name="description"
-          content="Complete guide to Simhastha 2028 in Ujjain including dates, Shahi Snan, Mahakaleshwar Temple, travel information, accommodation and FAQs."
-        />
-      </Helmet>
+  <meta
+    name="description"
+    content="Complete guide to Simhastha 2028 in Ujjain including dates, Shahi Snan, Mahakaleshwar Temple, travel information, accommodation and FAQs."
+  />
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href="https://www.mysimhastha.com/guide/simhastha-2028"
+/>
+  <link
+  rel="canonical"
+  href="https://www.mysimhastha.com/guide/simhastha-2028"
+/>
+  <link
+  rel="alternate"
+  hreflang="en"
+  href="https://www.mysimhastha.com/guide/simhastha-2028"
+/>
+
+<link
+  rel="alternate"
+  hreflang="hi"
+  href="https://www.mysimhastha.com/hi/guide/simhastha-2028"
+/>
+</Helmet>
 
       <section className="simhastha-guide">
         <div className="container">

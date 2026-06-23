@@ -233,9 +233,27 @@ export default function Simhastha2028Hi() {
           name="keywords"
           content="सिमहस्था 2028, सिमहस्था उज्जैन, शाही स्नान, महाकाल दर्शन, महाकालेश्वर मंदिर, उज्जैन यात्रा गाइड, कुंभ मेला, सिमहस्था 2028 तारीखें, उज्जैन होटल, सिमहस्था दर्शन, शिप्रा नदी, सिमहस्था पर्यटन"
         />
+        <link
+  rel="alternate"
+  hreflang="x-default"
+  href="https://www.mysimhastha.com/guide/simhastha-2028"
+/>
 
-        <link rel="canonical" href="https://mysimhastha.com/hi/guide/simhastha-2028" />
+      <link
+  rel="canonical"
+  href="https://www.mysimhastha.com/hi/guide/simhastha-2028"
+/>
+        <link
+  rel="alternate"
+  hreflang="hi"
+  href="https://www.mysimhastha.com/hi/guide/simhastha-2028"
+/>
 
+<link
+  rel="alternate"
+  hreflang="en"
+  href="https://www.mysimhastha.com/guide/simhastha-2028"
+/>
         <meta name="language" content="Hindi" />
         <meta name="content-language" content="hi" />
 

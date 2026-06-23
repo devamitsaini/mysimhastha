@@ -48,10 +48,13 @@
           {new Date(news.created_at).toLocaleDateString("hi-IN")}
         </p>
 
-        <div className="news-details-content">
-    {news.content}
+
+        {news.summary && (
+  <div className="news-details-content">
+    <p>{news.summary}</p>
   </div>
-      </div>
+)}
+  </div>
     );
   }
 

@@ -2,11 +2,6 @@ import { Helmet } from "react-helmet-async";
 import "../styles/guides.css";
 import { NavLink } from "react-router-dom";
 
-<Helmet>
-  <link rel="alternate" hreflang="en" href="https://www.mysimhastha.com/guide/sawan-2026" />
-  <link rel="alternate" hreflang="hi" href="https://www.mysimhastha.com/hi/guide/sawan-2026" />
-</Helmet>
-
 export default function Sawan2026Hi() {
   const faqSchema = {
     "@context": "https://schema.org",
@@ -272,7 +267,7 @@ export default function Sawan2026Hi() {
           content="सावन 2026 उज्जैन, महाकाल दर्शन, महाकालेश्वर मंदिर, सावन सोमवार, भस्म आरती, उज्जैन यात्रा गाइड, महाकाल के पास होटल, महाकाल मंदिर समय, महाकाल भीड़, उज्जैन तीर्थ, भगवान शिव, उज्जैन मंदिर, महाकाल पार्किंग, महाकाल शाही सवारी, सावन त्योहार, उज्जैन दर्शन गाइड"
         />
 
-        <link rel="canonical" href="https://mysimhastha.com/hi/guide/sawan-2026" />
+        <link rel="canonical" href="https://www.mysimhastha.com/hi/guide/sawan-2026" />
 
         <meta name="language" content="Hindi" />
         <meta name="content-language" content="hi" />

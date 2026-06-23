@@ -2,10 +2,6 @@ import { Helmet } from "react-helmet-async";
 import "../styles/guides.css";
 import { NavLink } from "react-router-dom";
 
-<Helmet>
-  <link rel="alternate" hreflang="en" href="https://www.mysimhastha.com/guide/sawan-2026" />
-  <link rel="alternate" hreflang="hi" href="https://www.mysimhastha.com/hi/guide/sawan-2026" />
-</Helmet>
 
 export default function Sawan2026() {
   const faqSchema = {
@@ -280,7 +276,7 @@ export default function Sawan2026() {
           content="Sawan 2026 Ujjain, Mahakal Darshan, Mahakaleshwar Temple, Sawan Somwar, Bhasma Aarti, Ujjain travel guide, Hotels near Mahakal, Mahakal Temple timings, Mahakal crowd, Ujjain pilgrimage, Lord Shiva, Ujjain temples, Mahakal parking, Mahakal Sawari, Sawan festival, Ujjain darshan guide"
         />
 
-        <link rel="canonical" href="https://mysimhastha.com/guide/sawan-2026" />
+        <link rel="canonical" href="https://www.mysimhastha.com/guide/sawan-2026" />
 
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}

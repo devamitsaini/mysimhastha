@@ -55,5 +55,7 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
-# Sitemap
-Sitemap: https://mysimhastha.com/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mysimhastha.com/sitemap.xml

@@ -36,17 +36,17 @@ function NewsPage({ setSelectedNews }) {
             
             {item.image_url && (
   <div className="news-image-wrap">
-
-
-    <img
-      src={item.image_url}
-      alt={item.title}
-      className="news-image"
-      loading="lazy"
-      decoding="async"
-    />
-
-  </div>
+  <img
+    src={item.image_url || "https://cokhwroeblaykgyicmgq.supabase.co/storage/v1/object/public/News_mysimhastha/default-news.webp"}
+    alt={item.title}
+    className="news-image"
+    loading="lazy"
+    decoding="async"
+    onError={(e) => {
+      e.currentTarget.src = "https://cokhwroeblaykgyicmgq.supabase.co/storage/v1/object/public/News_mysimhastha/default-news.webp";
+    }}
+  />
+</div>
 )}
 
             <div className="news-body">
@@ -63,11 +63,11 @@ function NewsPage({ setSelectedNews }) {
     {item.title}
   </h2>
 
-  {item.content && (
-    <p className="news-excerpt">
-      {item.content}
-    </p>
-  )}
+  {item.summary && (
+  <p className="news-excerpt">
+    {item.summary}
+  </p>
+)}
 
   <button
   className="news-readmore"
