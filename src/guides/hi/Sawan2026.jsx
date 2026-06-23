@@ -228,27 +228,30 @@ export default function Sawan2026Hi() {
   };
 
   const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "सावन 2026 उज्जैन पूर्ण गाइड: महाकाल दर्शन, मंदिर समय, भस्म आरती, यात्रा सूचना",
-    description: "सावन 2026 उज्जैन की पूर्ण गाइड जिसमें महाकाल दर्शन, भस्म आरती, मंदिर समय, होटल, यात्रा सूचना और अक्सर पूछे जाने वाले प्रश्न शामिल हैं।",
-    image: "https://mysimhastha.com/images/sawan-2026-guide-hindi.jpg",
-    author: {
-      "@type": "Organization",
-      name: "MySimhastha",
-      url: "https://mysimhastha.com"
-    },
-    datePublished: "2026-06-01",
-    dateModified: "2026-06-22",
-    publisher: {
-      "@type": "Organization",
-      name: "MySimhastha",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://mysimhastha.com/logo.png"
-      }
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sawan 2026 Ujjain Complete Guide",
+  "description":
+    "Complete guide to Sawan 2026 in Ujjain including Mahakal Darshan, Bhasma Aarti, Sawan Somwar dates, travel, accommodation and FAQs.",
+
+  "author": {
+    "@type": "Organization",
+    "name": "MySimhastha",
+    "url": "https://www.mysimhastha.com"
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "name": "MySimhastha",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mysimhastha.com/logo.png"
     }
-  };
+  },
+
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23"
+};
 
   return (
     <>
@@ -268,6 +271,24 @@ export default function Sawan2026Hi() {
         />
 
         <link rel="canonical" href="https://www.mysimhastha.com/hi/guide/sawan-2026" />
+
+        <link
+  rel="alternate"
+  hreflang="x-default"
+  href="https://www.mysimhastha.com/guide/sawan-2026"
+/>
+
+<link
+  rel="alternate"
+  hreflang="hi"
+  href="https://www.mysimhastha.com/hi/guide/sawan-2026"
+/>
+
+<link
+  rel="alternate"
+  hreflang="en"
+  href="https://www.mysimhastha.com/guide/sawan-2026"
+/>
 
         <meta name="language" content="Hindi" />
         <meta name="content-language" content="hi" />

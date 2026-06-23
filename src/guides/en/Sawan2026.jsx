@@ -237,27 +237,30 @@ export default function Sawan2026() {
   };
 
   const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Sawan 2026 Ujjain Guide: Mahakal Darshan, Sawan Somwar Dates, Bhasma Aarti & Travel Tips",
-    description: "Complete guide to Sawan 2026 in Ujjain covering Mahakal darshan, Bhasma Aarti, temple timings, accommodation, travel information and FAQs for pilgrims.",
-    image: "https://mysimhastha.com/images/sawan-2026-guide.jpg",
-    author: {
-      "@type": "Organization",
-      name: "MySimhastha",
-      url: "https://mysimhastha.com"
-    },
-    datePublished: "2026-06-01",
-    dateModified: "2026-06-22",
-    publisher: {
-      "@type": "Organization",
-      name: "MySimhastha",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://mysimhastha.com/logo.png"
-      }
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sawan 2026 Ujjain Complete Guide",
+  "description":
+    "Complete guide to Sawan 2026 in Ujjain including Mahakal Darshan, Bhasma Aarti, Sawan Somwar dates, travel, accommodation and FAQs.",
+
+  "author": {
+    "@type": "Organization",
+    "name": "MySimhastha",
+    "url": "https://www.mysimhastha.com"
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "name": "MySimhastha",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mysimhastha.com/logo.png"
     }
-  };
+  },
+
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23"
+};
 
   return (
     <>
@@ -277,6 +280,24 @@ export default function Sawan2026() {
         />
 
         <link rel="canonical" href="https://www.mysimhastha.com/guide/sawan-2026" />
+
+      <link
+  rel="alternate"
+  hreflang="x-default"
+  href="https://www.mysimhastha.com/guide/sawan-2026"
+/>
+
+<link
+  rel="alternate"
+  hreflang="en"
+  href="https://www.mysimhastha.com/guide/sawan-2026"
+/>
+
+<link
+  rel="alternate"
+  hreflang="hi"
+  href="https://www.mysimhastha.com/hi/guide/sawan-2026"
+/>
 
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}

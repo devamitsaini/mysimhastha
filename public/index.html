@@ -82,32 +82,46 @@
 </script>
 
     <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        "name": "Simhastha Kumbh Mela 2028 Ujjain",
-        "description": "The Simhastha Kumbh Mela held every 12 years in Ujjain, Madhya Pradesh, India.",
-        "startDate": "2028-04-13",
-        "endDate": "2028-06-24",
-        "location": {
-          "@type": "Place",
-          "name": "Ujjain, Madhya Pradesh",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ujjain",
-            "addressRegion": "Madhya Pradesh",
-            "addressCountry": "IN"
-          }
-        },
-        "url": "https://www.mysimhastha.com/",
-        "image": "https://www.mysimhastha.com/images/hero-image.webp",
-        "organizer": {
-          "@type": "Organization",
-          "name": "MySimhastha"
-        }
-      }
-    </script>
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Simhastha Kumbh Mela 2028 Ujjain",
+  "description": "The Simhastha Kumbh Mela held every 12 years in Ujjain, Madhya Pradesh, India.",
+  "startDate": "2028-04-13",
+  "endDate": "2028-06-24",
+
+  "eventStatus": "https://schema.org/EventScheduled",
+
+  "location": {
+    "@type": "Place",
+    "name": "Ujjain, Madhya Pradesh",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ujjain",
+      "addressRegion": "Madhya Pradesh",
+      "addressCountry": "IN"
+    }
+  },
+
+  "url": "https://www.mysimhastha.com/",
+  "image": "https://www.mysimhastha.com/images/hero-image.webp",
+
+  "organizer": {
+    "@type": "Organization",
+    "name": "MySimhastha",
+    "url": "https://www.mysimhastha.com"
+  },
+
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.mysimhastha.com",
+    "price": "0",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
   </head>
 
   <body>
