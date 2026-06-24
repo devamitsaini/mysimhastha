@@ -48,15 +48,26 @@ if (photo) {
   console.log("Photo URL:", photoUrl);
 }
 
-  if (!form.name.trim()) {
-    alert("Please enter the missing person's name.");
-    return;
-  }
+  if (form.name.length > 100) {
+  alert("Name is too long.");
+  return;
+}
 
   if (!form.contact.trim()) {
-    alert("Please enter your contact number.");
-    return;
-  }
+  alert("Please enter your contact number.");
+  return;
+}
+const phoneRegex = /^[6-9]\d{9}$/;
+
+if (!phoneRegex.test(form.contact)) {
+  alert("Enter a valid 10 digit mobile number.");
+  return;
+}
+
+if (form.desc.length > 1000) {
+  alert("Description must be under 1000 characters.");
+  return;
+}
 
   setFormStatus("loading");
 
@@ -275,16 +286,34 @@ setShowForm(false);
   )}
 
   <input
-    id="mp-file"
-    type="file"
-    accept="image/*"
-    style={{ display: "none" }}
-    onChange={(e) => {
-      if (e.target.files?.[0]) {
-        setPhoto(e.target.files[0]);
-      }
-    }}
-  />
+  id="mp-file"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  style={{ display: "none" }}
+  onChange={(e) => {
+    const file = e.target.files?.[0];
+
+    if (!file) return;
+
+    const allowedTypes = [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+      alert("Only JPG, PNG and WEBP images are allowed.");
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      alert("Maximum file size is 5MB.");
+      return;
+    }
+
+    setPhoto(file);
+  }}
+/>
 </div>
               </div>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
