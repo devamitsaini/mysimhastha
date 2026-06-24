@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from "../../assets/logo.webp";
 import { useNavigate } from "react-router-dom";
+import {FaInstagram,FaYoutube,FaFacebook, FaReddit} from "react-icons/fa";
+
+import { FaXTwitter } from "react-icons/fa6";
 
 function Footer() {
   const navigate = useNavigate();
@@ -50,6 +53,54 @@ const navSection = (path, sectionId) => {
   </div>
 </div>
             <p className="brand-desc">India's most complete sacred pilgrimage portal.</p>
+
+            <div className="footer-social">
+  <a
+    href="https://instagram.com/mysimhastha"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <FaInstagram />
+  </a>
+
+  <a
+  href="https://www.facebook.com/share/1JdQSG3nFz/?mibextid=wwXIfr"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Facebook"
+>
+  <FaFacebook />
+</a>
+
+  <a
+  href="https://reddit.com/r/Simhastha2028"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Reddit"
+>
+  <FaReddit />
+</a>
+
+  <a
+    href="https://x.com/mysimhastha"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="X"
+  >
+    <FaXTwitter />
+  </a>
+
+  <a
+    href="https://youtube.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="YouTube"
+  >
+    <FaYoutube />
+  </a>
+</div>
+
             <div className="foot-shlok">॥ हर हर महादेव · जय महाकाल ॥<br/>शिप्रायां स्नानमात्रेण पाप मुक्तो भवेन्नरः।</div>
           </div>
           
