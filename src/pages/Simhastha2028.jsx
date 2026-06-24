@@ -11,6 +11,7 @@ import {
 } from '../data/simhasthaData';
 import Countdown from '../components/common/Countdown';
 import "../styles/simhastha2028.css";
+import { Helmet } from "react-helmet-async";
 
 function Simhastha2028Page() {
   const navigate = useNavigate();
@@ -55,7 +56,59 @@ function Simhastha2028Page() {
   };
 
   return (
+  <>
+    <Helmet>
+        <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.mysimhastha.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Simhastha 2028",
+      "item": "https://www.mysimhastha.com/simhastha-2028"
+    }
+  ]
+})}
+</script>
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ujjain Simhastha Mahakumbh 2028",
+  "description":
+    "Complete guide to Simhastha 2028 including Shahi Snan dates, temples, ghats, akhadas, accommodation, routes and pilgrimage information.",
+  "author": {
+    "@type": "Organization",
+    "name": "MySimhastha"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MySimhastha",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mysimhastha.com/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.mysimhastha.com/simhastha-2028"
+  },
+  "image": "https://www.mysimhastha.com/images/hero-image.webp"
+})}
+</script>
+
+    </Helmet>
+
     <div className="page-wrap">
+
       {/* HERO */}
       <section style={{ position: "relative", minHeight: "60vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "url('https://www.ercotravels.com/blog/wp-content/uploads/2016/01/groupofsadhus.jpg') center/cover no-repeat" }} />
@@ -79,7 +132,15 @@ function Simhastha2028Page() {
           <Countdown />
         </div>
       </section>
+  <div className="breadcrumb">
+  <button onClick={() => navigate("/")}>
+    Home
+  </button>
 
+  <span>›</span>
+
+  <span>Simhastha 2028</span>
+</div>
       {/* SHAHI SNAN CALENDAR */}
       <section id="snan-calendar">
 
@@ -489,8 +550,8 @@ function Simhastha2028Page() {
     </div>
   </div>
 )}
-
-</div>
+    </div>
+  </>
 );
 }
 

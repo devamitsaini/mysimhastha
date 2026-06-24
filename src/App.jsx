@@ -6,6 +6,7 @@ import MobileNav from "./components/layout/MobileNav";
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
 import Footer from "./components/layout/Footer";
+import Breadcrumb from "./components/layout/Breadcrumb";
 
 import HomePage from "./pages/Home";
 import Simhastha2028 from "./guides/en/Simhastha2028";
@@ -47,18 +48,21 @@ function App() {
 
   return (
     <div className="app-container">
-      <Navbar
-        drawerOpen={drawerOpen}
-        setDrawerOpen={setDrawerOpen}
-      />
+<Navbar
+  drawerOpen={drawerOpen}
+  setDrawerOpen={setDrawerOpen}
+/>
 
-      <Sidebar
-        drawerOpen={drawerOpen}
-        setDrawerOpen={setDrawerOpen}
-      />
+<Sidebar
+  drawerOpen={drawerOpen}
+  setDrawerOpen={setDrawerOpen}
+/>
 
       <main className="main-content">
-        <Suspense fallback={<div>Loading...</div>}>
+
+  <Breadcrumb />
+
+  <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route
               path="/"

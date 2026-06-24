@@ -2191,3 +2191,57 @@
   transform: translateY(-3px);
   opacity: 0.85;
 }
+
+/* =========================
+   BREADCRUMB
+========================= */
+
+.breadcrumb-wrap{
+  width:100%;
+  border-bottom:1px solid var(--border);
+  background:#fff;
+}
+
+.breadcrumb-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 24px;
+
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+
+  font-size:14px;
+  color:var(--muted);
+}
+
+.breadcrumb-inner a{
+  color:var(--saffron);
+  text-decoration:none;
+  font-weight:600;
+  transition:.2s ease;
+}
+
+.breadcrumb-inner a:hover{
+  color:var(--saffron2);
+}
+
+.breadcrumb-separator{
+  color:#b9b9b9;
+  margin:0 2px;
+}
+
+.breadcrumb-current{
+  color:var(--text);
+  font-weight:600;
+}
+
+@media(max-width:768px){
+
+  .breadcrumb-inner{
+    padding:12px 16px;
+    font-size:13px;
+  }
+
+}
