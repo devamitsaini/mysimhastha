@@ -48,6 +48,11 @@ if (photo) {
   console.log("Photo URL:", photoUrl);
 }
 
+if (!form.name.trim()) {
+  alert("Please enter the missing person's name.");
+  return;
+}
+
   if (form.name.length > 100) {
   alert("Name is too long.");
   return;

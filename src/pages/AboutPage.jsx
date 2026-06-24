@@ -15,18 +15,19 @@
       e.preventDefault();
 
       if (!contactForm.name || !contactForm.email || !contactForm.message) {
-        if (contactForm.name.length > 100) {
-    alert("Name is too long.");
-    return;
-  }
+  alert("Please fill all fields.");
+  return;
+}
 
-  if (contactForm.message.length > 2000) {
-    alert("Message is too long.");
-    return;
-  }
-        alert("Please fill all fields.");
-        return;
-      }
+if (contactForm.name.length > 100) {
+  alert("Name is too long.");
+  return;
+}
+
+if (contactForm.message.length > 2000) {
+  alert("Message is too long.");
+  return;
+}
 
       setFormStatus("loading");
 
