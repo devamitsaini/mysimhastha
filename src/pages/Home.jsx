@@ -285,14 +285,20 @@
           </div>
 
           <div className="news-body">
-            <h3 className="news-title">{n.title}</h3>
-            <p className="news-desc">
-    {n.content}
+  <h3 className="news-title">
+    {n.title}
+  </h3>
+
+  <p className="news-desc">
+    {n.summary?.length > 140
+      ? n.summary.slice(0, 140) + "..."
+      : n.summary}
   </p>
-            <span className="read-more">
-              Read More →
-            </span>
-          </div>
+
+  <span className="read-more">
+    Read More →
+  </span>
+</div>
         </article>
       ))}
     </div>
@@ -321,8 +327,8 @@
   </h2>
 
   <div className="news-modal-content">
-    {selectedNews.content
-      ?.split("\n")
+    {selectedNews.summary
+  ?.split("\n")
       .filter(Boolean)
       .map((para, index) => (
         <p key={index}>{para}</p>
