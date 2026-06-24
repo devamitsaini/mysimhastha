@@ -90,7 +90,7 @@ export default function Simhastha2028() {
   <h2>What is Simhastha?</h2>
 
   <p>
-    Simhastha is the name for the Kumbh Mela of Ujjain. It is a major Hindu holy pilgrimage which is organized once every twelve years. Millions and thousands of saints and Sadhus gather on the bank of the sacred river Shipra, in Ujjain, in Madhya Pradesh. It is the second largest pilgrimage in India. Research scholars, pilgrims, tourists as well as photographers come to see this biggest Hindu’s religion place in India.
+    Simhastha is the name for the Kumbh Mela of Ujjain. It is a major Hindu holy pilgrimage which is organized once every twelve years. Millions & thousands of saints and Sadhus gather on the bank of the sacred river Shipra, in Ujjain, in Madhya Pradesh. It is the second largest pilgrimage in India. Research scholars, pilgrims, tourists as well as photographers come to see this biggest Hindu’s religion place in India.
   </p>
 
   <p>
