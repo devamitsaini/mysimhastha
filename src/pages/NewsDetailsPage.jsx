@@ -139,20 +139,15 @@ mainEntityOfPage: {
   <h3>Related Guides</h3>
 
   <ul>
-    <li>
-      <Link to="/guides/mahakal-darshan-guide">
-  Mahakal Darshan Complete Guide
-</Link>
-    </li>
-
+    
 <li>
-  <Link to="/guides/simhastha-2028-guide">
+  <Link to="/guide/simhastha-2028">
     Simhastha 2028 Guide
   </Link>
 </li>
 
 <li>
-  <Link to="/guides/hotels-near-mahakal">
+  <Link to="/hotels">
     Hotels Near Mahakal
   </Link>
 </li>
