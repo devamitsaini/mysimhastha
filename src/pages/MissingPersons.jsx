@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MISSING_DATA } from '../data/simhasthaData';
 
 function MissingPersonsPage({
+  
   openOnLoad,
   setOpenMissingForm,
 }) {
@@ -21,7 +22,19 @@ function MissingPersonsPage({
     const [formStatus, setFormStatus] = useState("");
 
   const submit = async () => {
-    let photoUrl = "";
+
+  const lastSubmit = localStorage.getItem("missing_submit");
+
+  if (
+    lastSubmit &&
+    Date.now() - Number(lastSubmit) < 60000
+  ) {
+    alert("Please wait 1 minute before submitting another report.");
+    return;
+  }
+
+  let photoUrl = "";
+    
 
 if (photo) {
   const imageData = new FormData();
@@ -104,6 +117,10 @@ if (form.desc.length > 1000) {
     console.log("WEB3 KEY:", process.env.REACT_APP_WEB3FORMS_ACCESS_KEY); 
 
     if (res.ok && data.success) {
+      localStorage.setItem(
+  "missing_submit",
+  Date.now()
+);
       setFormStatus("success");
 
       // Optional: Add to local board
@@ -133,10 +150,8 @@ if (form.desc.length > 1000) {
 });
 
 setPhoto(null);
-
 setShowForm(false);
 
-      setShowForm(false);
 
       alert(
         "✅ Missing person report submitted successfully."
@@ -151,8 +166,8 @@ setShowForm(false);
     alert("Something went wrong.");
   }
 };
-
   const filtered = list.filter(p => statusFilter === "all" || p.status === statusFilter);
+
 
   return (
     <div className="page-wrap">

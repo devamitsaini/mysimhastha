@@ -56,6 +56,15 @@
       };
 
       const handleNriSubmit = async () => {
+        const lastSubmit = localStorage.getItem("nri_submit");
+
+if (
+  lastSubmit &&
+  Date.now() - Number(lastSubmit) < 60000
+) {
+  alert("Please wait 1 minute before submitting again.");
+  return;
+}
         if (!nriForm.name || !nriForm.email) return;
         if (nriForm.name.length > 100) {
   alert("Name too long");
@@ -79,7 +88,14 @@ if (nriForm.country.length > 100) {
               Service: nriForm.service,
             }),
           });
-          if (res.ok) { setFormStatus('success'); }
+          if (res.ok) {
+  localStorage.setItem(
+    "nri_submit",
+    Date.now()
+  );
+
+  setFormStatus('success');
+}
           else { setFormStatus('error'); }
         } catch {
           setFormStatus('error');

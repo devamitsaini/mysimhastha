@@ -13,6 +13,16 @@
 
       const handleContactSubmit = async (e) => {
       e.preventDefault();
+        
+      const lastSubmit = localStorage.getItem("contact_submit");
+
+if (
+  lastSubmit &&
+  Date.now() - Number(lastSubmit) < 60000
+) {
+  alert("Please wait 1 minute before sending another message.");
+  return;
+}
 
       if (!contactForm.name || !contactForm.email || !contactForm.message) {
   alert("Please fill all fields.");
@@ -53,6 +63,10 @@ if (contactForm.message.length > 2000) {
         const data = await res.json();
 
         if (res.ok && data.success) {
+          localStorage.setItem(
+  "contact_submit",
+  Date.now()
+);
           setFormStatus("success");
 
           setContactForm({
