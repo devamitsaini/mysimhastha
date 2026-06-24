@@ -1,7 +1,12 @@
   import React from "react";
   import { useNavigate } from "react-router-dom";
+  import { Link } from "react-router-dom";
+  import { Helmet } from "react-helmet-async";
+
+
 
   function NewsDetailsPage({ news }) {
+
   const navigate = useNavigate();
     if (!news) {
       return (
@@ -19,6 +24,54 @@
     }
 
     return (
+      <>
+  <Helmet>
+    <meta
+  name="description"
+  content={news.summary?.slice(0, 160)}
+/>
+
+<link
+  rel="canonical"
+  href={`https://mysimhastha.com/news/${news.slug}`}
+/>
+    <title>{news.title} | MySimhastha News</title>
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        headline: news.title,
+        datePublished: news.created_at,
+        image: news.image_url,
+        description: news.summary,
+        author: {
+          "@type": "Organization",
+          name: "MySimhastha"
+        },
+        publisher: {
+  "@type": "Organization",
+  name: "MySimhastha",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://mysimhastha.com/logo.png"
+  }
+},
+mainEntityOfPage: {
+  "@type": "WebPage",
+  "@id": `https://mysimhastha.com/news/${news.slug}`
+}
+      })}
+    </script>
+  </Helmet>
+
+  <div
+    style={{
+      maxWidth: "900px",
+      margin: "40px auto",
+      padding: "20px"
+    }}
+  ></div>
       <div
         style={{
           maxWidth: "900px",
@@ -47,15 +100,70 @@
         <p className="news-date">
           {new Date(news.created_at).toLocaleDateString("hi-IN")}
         </p>
+        <div className="news-facts-box">
+  <h3>Quick Facts</h3>
 
+  <ul>
+    <li><strong>Location:</strong> Ujjain</li>
+    <li><strong>Category:</strong> {news.category}</li>
+    <li><strong>Topic:</strong> Mahakal Temple</li>
+    <li><strong>Relevance:</strong> Devotees & Pilgrims</li>
+  </ul>
+</div>
 
         {news.summary && (
-  <div className="news-details-content">
-    <p>{news.summary}</p>
+ 
+    <div className="news-details-content">
+  {news.summary.split("\n").map((para, index) => (
+    para.trim() && (
+      <p key={index}>{para}</p>
+    )
+  ))}
+</div>
+
+  
+)}
+{news.source_url && (
+  <div className="news-source">
+    <strong>Source:</strong>{" "}
+    <a
+      href={news.source_url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Read Original News
+    </a>
   </div>
 )}
+<div className="related-guides">
+  <h3>Related Guides</h3>
+
+  <ul>
+    <li>
+      <Link to="/guides/mahakal-darshan-guide">
+  Mahakal Darshan Complete Guide
+</Link>
+    </li>
+
+<li>
+  <Link to="/guides/simhastha-2028-guide">
+    Simhastha 2028 Guide
+  </Link>
+</li>
+
+<li>
+  <Link to="/guides/hotels-near-mahakal">
+    Hotels Near Mahakal
+  </Link>
+</li>
+  </ul>
+</div>
+
   </div>
+</>
     );
+    
   }
+  
 
   export default NewsDetailsPage;

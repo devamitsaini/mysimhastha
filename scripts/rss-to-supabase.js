@@ -34,7 +34,15 @@ const keywords = [
 "simhastha 2028",
 "kumbh",
 "shahi snan",
-"shipra"
+"shipra",
+
+// Hindi
+"महाकाल",
+"महाकालेश्वर",
+"सिंहस्थ",
+"भस्म",
+"उज्जैन",
+"क्षिप्रा"
 ];
 
 const badKeywords = [
@@ -53,43 +61,97 @@ const badKeywords = [
 "election",
 "assembly",
 "congress",
-"bjp"
+"bjp",
+"ranveer",
+"allahbadia",
+"birthday",
+"girlfriend",
+"photos",
+"viral",
+"actor",
+"actress",
+"celebrity",
+"youtube",
+"minister",
+"education minister",
+"politics",
+"political",
+"tmc",
+"congress",
+"statement",
+"remark",
+"controversy"
+];
+
+const englishFeeds = [
+  "https://news.google.com/rss/search?q=%22Mahakal%22",
+  "https://news.google.com/rss/search?q=%22Mahakaleshwar%22",
+  "https://news.google.com/rss/search?q=%22Simhastha%22",
+  "https://news.google.com/rss/search?q=%22Simhastha%202028%22"
+];
+
+const hindiFeeds = [
+  encodeURI("https://news.google.com/rss/search?q=महाकाल"),
+  encodeURI("https://news.google.com/rss/search?q=महाकालेश्वर"),
+  encodeURI("https://news.google.com/rss/search?q=सिंहस्थ"),
+  encodeURI("https://news.google.com/rss/search?q=भस्म आरती"),
+  encodeURI("https://news.google.com/rss/search?q=उज्जैन"),
+  encodeURI("https://news.google.com/rss/search?q=भस्म आरती महाकाल"),
+  encodeURI("https://news.google.com/rss/search?q=उज्जैन महाकाल")
 ];
 
 const feeds = [
-"https://news.google.com/rss/search?q=%22Mahakal%22",
-"https://news.google.com/rss/search?q=%22Mahakaleshwar%22",
-"https://news.google.com/rss/search?q=%22Simhastha%22",
-"https://news.google.com/rss/search?q=%22Simhastha%202028%22",
-"https://news.google.com/rss/search?q=%22Kumbh%20Mela%22",
-"https://news.google.com/rss/search?q=%22Shahi%20Snan%22",
-"https://news.google.com/rss/search?q=%22Shipra%20River%22",
-"https://news.google.com/rss/search?q=%22Mahakal%20Lok%22"
+  ...englishFeeds,
+  ...hindiFeeds
 ];
 
 async function generateAISummary(title, snippet) {
 try {
+  const isHindi =
+  /[\u0900-\u097F]/.test(title);
+
+const languageInstruction =
+  isHindi
+    ? "Write the summary in simple Hindi using Devanagari script."
+    : "Write the summary in English.";
 const prompt = `
-You are writing a news summary for MySimhastha.
+You are an editor for MySimhastha, a website focused on Mahakal Temple, Ujjain and Simhastha 2028.
 
-Write a detailed summary of 120-180 words.
+Write a news summary between 120 and 180 words.
 
-Rules:
-- Explain what the headline is about.
-- Explain the likely context based on the headline.
-- Explain why the news may matter.
-- Use simple English.
-- Keep it informative and readable.
-- Do not use bullet points.
-- Write at least 3 paragraphs.
-- Return only the summary.
+Structure:
+
+Paragraph 1:
+
+* What happened?
+* Where did it happen?
+* Who is involved?
+
+Paragraph 2:
+
+* Why is this important?
+* What is the background or context?
+
+Paragraph 3:
+
+* How does this affect devotees, pilgrims, tourists or visitors?
+
+${languageInstruction}
+
+Mention Ujjain, Mahakal Temple or Simhastha whenever relevant.
+Do not repeat the headline.
+Do not use bullet points.
+Do not speculate.
+Return only the summary.
 
 Headline:
 ${title}
 
-News Snippet:
+Available Information:
 ${snippet}
+
 `;
+
 
 
 const result =
@@ -106,18 +168,40 @@ return result.response
     err.message
   );
 
-  return snippet || title;
+  return "";
 }
 }
 
+function cleanTitle(title) {
+  return title
+    .replace(/\s*-\s*Times of India$/i, "")
+    .replace(/\s*-\s*India Today$/i, "")
+    .replace(/\s*-\s*News18$/i, "")
+    .replace(/\s*-\s*Bhaskar English$/i, "")
+    .replace(/\s*-\s*Mshale$/i, "")
+    .replace(/\s*-\s*Swarajyamag$/i, "")
+    .replace(/\s*-\s*Kanak News Odisha$/i, "")
+    .replace(/@\w+/g, "")
+    .replace(/\|\s*@.*$/i, "")
+    .replace(/\|\s*[^|]{0,50}\s*$/i, "")
+    .replace(/\s+/g, " ")
+    .replace(/\s*-\s*The Economic Times$/i, "")
+    .replace(/\s*-\s*Zee News$/i, "")
+    .replace(/\s*-\s*Dainik Bhaskar$/i, "")
+    .replace(/\s*-\s*Patrika News$/i, "")
+    .replace(/\s*-\s*Amar Ujala$/i, "")
+    .replace(/\s*-\s*ABP News$/i, "")
+    .trim();
+}
 
 function createSlug(title) {
-return title
-.toLowerCase()
-.replace(/[^\w\s-]/g, "")
-.replace(/\s+/g, "-")
-.replace(/-+/g, "-")
-.substring(0, 100);
+  return title
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .substring(0, 120);
 }
 
 async function getImage(link) {
@@ -159,8 +243,7 @@ console.log("=================================");
 
 
 for (const feedUrl of feeds) {
-  console.log("\n=================================");
-  console.log("Reading Feed:");
+
   console.log(feedUrl);
 
   let feed;
@@ -174,35 +257,90 @@ for (const feedUrl of feeds) {
 
   console.log(`Found ${feed.items.length} items`);
 
-  for (const item of feed.items) {
-    const title = item.title || "";
+  for (const item of feed.items.slice(0, 5)) {
+    const rawTitle = item.title || "";
+    const title = cleanTitle(rawTitle);
+    let category = "Ujjain News";
 
-    const text = title.toLowerCase();
-    const isBad = badKeywords.some(
-      (keyword) =>
-        text.includes(
-          keyword.toLowerCase()
-        )
-    );
+const titleLower = title.toLowerCase();
 
-    if (isBad) {
-      console.log(
-        "Rejected:",
-        title
-      );
-      continue;
-    }
+if (
+  titleLower.includes("simhastha") ||
+  titleLower.includes("kumbh") ||
+  titleLower.includes("shahi snan") ||
+  title.includes("सिंहस्थ")
+) {
+  category = "Simhastha News";
+}
+else if (
+  titleLower.includes("bhasma") ||
+  titleLower.includes("mahakal") ||
+  titleLower.includes("mahakaleshwar") ||
+  title.includes("महाकाल") ||
+  title.includes("महाकालेश्वर") ||
+  title.includes("भस्म")
+) {
+  category = "Mahakal News";
+}
+else if (
+  titleLower.includes("shipra") ||
+  title.includes("क्षिप्रा")
+) {
+  category = "Shipra News";
+}
 
-    const matched = keywords.some(
-      (keyword) =>
-        text.includes(
-          keyword.toLowerCase()
-        )
-    );
+    const combinedText = (
+  title +
+  " " +
+  (item.contentSnippet || "")
+).toLowerCase();
 
-    if (!matched) {
-      continue;
-    }
+const locationKeywords = [
+  "ujjain",
+  "mahakal",
+  "mahakaleshwar",
+  "mahakal lok",
+  "simhastha",
+  "shipra",
+  "महाकाल",
+  "सिंहस्थ",
+  "भस्म",
+  "उज्जैन",
+  "महाकालेश्वर",
+  "क्षिप्रा"
+];
+
+const isLocationRelevant =
+  locationKeywords.some(keyword =>
+    combinedText.includes(keyword.toLowerCase())
+  );
+
+if (!isLocationRelevant) {
+  console.log("Not Ujjain Related");
+  continue;
+}
+
+const text = title.toLowerCase();
+
+const isBad = badKeywords.some(
+  keyword =>
+    text.includes(keyword.toLowerCase())
+);
+
+if (isBad) {
+  console.log("Rejected:", title);
+  continue;
+}
+
+const matched = keywords.some(
+  keyword =>
+    text.includes(keyword.toLowerCase()) ||
+    title.includes(keyword)
+);
+
+if (!matched) {
+  continue;
+}
 
     console.log(
       "\n---------------------------------"
@@ -215,14 +353,14 @@ for (const feedUrl of feeds) {
     const slug =
       createSlug(title);
 
-    const {
-      data: existing,
-      error: checkError
-    } = await supabase
-      .from("news")
-      .select("id")
-      .eq("slug", slug)
-      .limit(1);
+const {
+  data: existing,
+  error: checkError
+} = await supabase
+  .from("news")
+  .select("id")
+  .eq("source_url", item.link)
+  .limit(1);
 
     if (checkError) {
       console.log(
@@ -258,11 +396,24 @@ const finalImage =
       );
     }
 
-  const snippet =
+console.log("LINK:", item.link);
+
+const snippet =
   item.contentSnippet ||
   item.summary ||
-  item.content ||
   "";
+
+console.log("\n======================");
+console.log("TITLE:", title);
+console.log("CONTENT LENGTH:", snippet.length);
+console.log("SNIPPET:");
+console.log(snippet.substring(0, 500));
+console.log("======================\n");
+
+if (!snippet || snippet.length < 40) {
+  console.log("Snippet too short");
+  continue;
+}
 
 let summary =
   await generateAISummary(
@@ -270,8 +421,50 @@ let summary =
     snippet
   );
 
-if (!summary || summary.trim().length < 30) {
-  summary = snippet || title;
+  await new Promise(resolve =>
+  setTimeout(resolve, 1500)
+);
+
+let topic = "Ujjain";
+
+if (
+  titleLower.includes("simhastha") ||
+  titleLower.includes("kumbh") ||
+  titleLower.includes("shahi snan") ||
+  title.includes("सिंहस्थ")
+) {
+  topic = "Simhastha";
+}
+else if (
+  titleLower.includes("shipra") ||
+  title.includes("क्षिप्रा")
+) {
+  topic = "Shipra";
+}
+else if (
+  titleLower.includes("bhasma") ||
+  titleLower.includes("mahakal") ||
+  titleLower.includes("mahakaleshwar") ||
+  title.includes("महाकाल") ||
+  title.includes("महाकालेश्वर") ||
+  title.includes("भस्म")
+) {
+  topic = "Mahakal";
+}
+else if (
+  title.includes("उज्जैन") ||
+  titleLower.includes("ujjain")
+) {
+  topic = "Ujjain";
+}
+
+console.log("SUMMARY LENGTH:", summary.length);
+console.log(summary);
+
+if (!summary || summary.trim().length < 50) {
+  
+  console.log("Gemini failed, skipping");
+  continue;
 }
 
     console.log(
@@ -285,10 +478,14 @@ if (!summary || summary.trim().length < 30) {
       .insert({
   title,
   summary,
-  category: "RSS News",
+  category,
   image_url: finalImage,
   slug,
-  source_url: item.link
+  source_url: item.link,
+
+  location: "Ujjain",
+  topic,
+  published_at: item.pubDate
 });
 
     if (insertError) {
