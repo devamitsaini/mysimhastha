@@ -3,49 +3,71 @@
 
   export default function GuidesPage() {
     const guides = [
-      {
-        title: "Simhastha 2028 Complete Guide",
-        description:
-          "Everything about Simhastha 2028 including dates, Shahi Snan, travel and FAQs.",
-        link: "/guide/simhastha-2028",
-      },
-      {
-        title: "Sawan 2026 Ujjain Guide",
+  {
+    title: "Simhastha 2028 Complete Guide",
+    description:
+      "Everything about Simhastha 2028 including dates, Shahi Snan, travel and FAQs.",
+    enLink: "/guide/simhastha-2028",
+    hiLink: "/hi/guide/simhastha-2028",
+  },
+
+  {
+    title: "Sawan 2026 Ujjain Guide",
     description:
       "Mahakal Darshan, Sawan Mondays, crowd updates, hotels and travel tips.",
-    link: "/guide/sawan-2026",
-      }
-    ];
+    enLink: "/guide/sawan-2026",
+    hiLink: "/hi/guide/sawan-2026",
+  },
+
+  {
+    title: "Sawan 2026 Dates Guide",
+    description:
+      "Complete Sawan 2026 calendar, Sawan Somwar dates and Shravan month information.",
+    enLink: "/sawan-2026-dates",
+    hiLink: "/hi/sawan-2026-dates",
+  },
+];
 
     return (
       <section className="simhastha-guide">
         <div className="container">
           <div className="guide-header">
-            <h1>Simhastha Guides</h1>
+            <h1>Guides</h1>
             <p>
               Explore complete guides for Simhastha 2028,
-              Mahakaleshwar Temple, Ujjain travel,
+              Mahakaleshwar Temple, Sawan/Shravan Month Guide, Ujjain travel,
               accommodation and more.
             </p>
           </div>
 
           <div className="guides-grid">
-            {guides.map((guide) => (
-              <Link
-                key={guide.link}
-                to={guide.link}
-                className="guide-card"
-              >
-                <h2>{guide.title}</h2>
+  {guides.map((guide) => (
+    <div
+      key={guide.title}
+      className="guide-card"
+    >
+      <h2>{guide.title}</h2>
 
-                <p>{guide.description}</p>
+      <p>{guide.description}</p>
 
-                <span>
-                  Read Guide →
-                </span>
-              </Link>
-            ))}
-          </div>
+      <div className="guide-language-switch">
+        <Link
+          to={guide.enLink}
+          className="lang-btn"
+        >
+          English
+        </Link>
+
+        <Link
+          to={guide.hiLink}
+          className="lang-btn"
+        >
+          हिन्दी
+        </Link>
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </section>
     );

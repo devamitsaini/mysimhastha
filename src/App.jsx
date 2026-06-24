@@ -2,6 +2,7 @@ import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import "./index.css";
 
+
 import MobileNav from "./components/layout/MobileNav";
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
@@ -14,8 +15,9 @@ import Simhastha2028HI from "./guides/hi/Simhastha2028";
 import Sawan2026 from "./guides/en/Sawan2026";
 import Sawan2026HI from "./guides/hi/Sawan2026";
 import GuidesPage from "./pages/GuidesPage";
-
-
+import Sawan2026Dates from "./guides/en/Sawan2026Dates";
+import Sawan2026DatesHI from "./guides/hi/Sawan2026Dates";
+import { Navigate } from "react-router-dom";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const NewsPage = lazy(() => import("./pages/NewsPage"));
 const NewsDetailsPage = lazy(() => import("./pages/NewsDetailsPage"));
@@ -137,7 +139,18 @@ function App() {
               path="/guides"
               element={<GuidesPage />}
             />
-
+            <Route
+              path="/guide"
+              element={<GuidesPage />}
+            />
+            <Route
+              path="/hi/guides"
+              element={<GuidesPage />}
+            />
+            <Route
+              path="/hi/guide"
+              element={<GuidesPage />}
+            />
             <Route
             path="/guide/simhastha-2028"
             element={<Simhastha2028 />}
@@ -154,6 +167,16 @@ function App() {
             <Route
             path="/hi/guide/sawan-2026"
             element={<Sawan2026HI />}
+            />
+
+            <Route
+              path="/sawan-2026-dates"
+              element={<Sawan2026Dates />}
+            />
+
+            <Route
+            path="/hi/sawan-2026-dates"
+            element={<Sawan2026DatesHI />}
             />
 
           </Routes>

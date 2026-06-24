@@ -12,6 +12,7 @@
 
 .guide-header{
   margin-bottom:20px;
+  text-align:center;
 }
 
 .guide-header h1{
@@ -20,11 +21,10 @@
   font-family:var(--deva);
   font-size:2rem;
   line-height:1.1;
-  text-align:left;
 }
 
 .guide-header p{
-  margin:0;
+  margin:0 auto;
   color:var(--muted);
   line-height:1.6;
   font-size:.95rem;
@@ -151,4 +151,24 @@
   .guide-card span{
     font-size:.88rem;
   }
+}
+.guide-language-switch {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.lang-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #f97316;
+  color: #f97316;
+  transition: 0.3s;
+}
+
+.lang-btn:hover {
+  background: #f97316;
+  color: white;
 }

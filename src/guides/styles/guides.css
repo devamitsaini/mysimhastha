@@ -72,6 +72,22 @@ html {
   line-height: 1.8;
 }
 
+.guide-meta {
+  font-size: 15px;
+  color: #888;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.guide-header .guide-figure {
+  margin-top: 24px;
+  text-align: left;
+}
+
+.guide-article {
+  width: 100%;
+}
+
 /* =====================================================
    LANGUAGE SWITCHER
 ===================================================== */
@@ -371,20 +387,82 @@ html {
 }
 
 /* =====================================================
-   IMAGES
+   IMAGES & FIGURES
 ===================================================== */
 
-.guide-image {
-  width: 100%;
-
+.guide-figure {
+  margin: 28px auto 32px;
+  max-width: 100%;
+  padding: 0;
   border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
 
+.guide-figure img,
+img.guide-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.guide-figure figcaption {
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #666;
+  text-align: center;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+.guide-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
   margin: 30px 0;
+  border-radius: 18px;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
 
-  object-fit: cover;
+.guide-section .guide-figure,
+.guide-section .guide-image,
+.guide-header .guide-figure,
+.guide-header .guide-image,
+.guide-article .guide-figure,
+.guide-article .guide-image {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.08);
+@media (max-width: 768px) {
+  .guide-figure {
+    margin: 20px auto 24px;
+    border-radius: 14px;
+  }
+
+  .guide-figure figcaption {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .guide-image {
+    margin: 20px 0;
+    border-radius: 14px;
+  }
 }
 
 /* =====================================================
@@ -524,3 +602,127 @@ html {
   }
 }
 
+/* =====================================================
+   QUICK FACTS
+===================================================== */
+
+.quick-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 25px 0;
+}
+
+.quick-fact-card {
+  background: #fff;
+  border: 1px solid #f2e7dc;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+
+.quick-fact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(228, 106, 37, 0.12);
+  border-color: #e46a25;
+}
+
+.quick-fact-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e46a25;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+}
+
+.quick-fact-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2b1400;
+  line-height: 1.4;
+}
+
+.quick-fact-value small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .quick-facts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .quick-fact-card {
+    padding: 12px;
+  }
+
+  .quick-fact-label {
+    font-size: 11px;
+  }
+
+  .quick-fact-value {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================
+   RELATED GUIDES
+========================================== */
+
+.related-guides {
+  margin-top: 10px;
+}
+
+.related-guide-card {
+  display: block;
+  margin-top: 18px;
+  padding: 18px 22px;
+  background: #fff7ed;
+  border: 1px solid #f59e0b;
+  border-left: 5px solid #f97316;
+  border-radius: 14px;
+  color: #2b1400;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+.related-guide-card:hover {
+  background: #f97316;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   FOOTER GUIDE LINK
+========================================== */
+
+.guide-footer-link {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.guide-footer-link a {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #f97316;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.guide-footer-link a:hover {
+  background: #d95b10;
+  transform: translateY(-2px);
+}
