@@ -114,7 +114,7 @@ const navSection = (path, sectionId) => {
               <div className="fc-title">About Us</div>
               <ul>
                 {[
-  ["Our Mission", "/about", "our-mission"],
+  ["Our Mission", "/about", "about"],
 ["For Global Devotees", "/", "NRI"],
 ["Partner With Us", "/hotels", null],
 ].map(([label, page, section]) => (

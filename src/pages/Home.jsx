@@ -10,7 +10,6 @@
       HOTELS_DATA,
       SNAN_DATES
     } from '../data/simhasthaData';
-    import HERO_IMAGE from '../assets/hero-image.webp';
     import LiveDarshanCard from '../components/common/LiveDarshanCard';
     import Countdown from '../components/common/Countdown';
     import '../index.css';
@@ -83,10 +82,12 @@
           {/* HERO */}
           <section className="hero hero-cinematic" aria-label="Simhastha 2028 Hero">
             <div
-    className="hero-bg"
-    aria-hidden="true"
-    style={{ backgroundImage: `url(${HERO_IMAGE})` }}
-  >
+  className="hero-bg"
+  aria-hidden="true"
+  style={{
+    backgroundImage: "url('/images/hero-image.webp')"
+  }}
+>
     <div className="hero-bg-overlay" />
   </div>
             <div className="container">
