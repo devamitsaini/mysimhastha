@@ -27,10 +27,10 @@ function BlogPage() {
 
   return (
     <div className="blog-page">
-      <h1>Simhastha Blog</h1>
+      <h1>Latest Blogs & Updates</h1>
 
       <p className="blog-subtitle">
-        Latest articles, travel guides and Simhastha updates.
+        Latest articles, travel guides, Sawan updates and Simhastha updates.
       </p>
 
       {loading && (
