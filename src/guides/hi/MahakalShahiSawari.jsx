@@ -50,7 +50,7 @@ export default function MahakalShahiSawariHi() {
 
         <meta
           property="og:image"
-          content="https://mysimhastha.com/images/mahakal-shahi-sawari-hi.webp"
+          content="https://mysimhastha.com/images/mahakal-shahi-sawari.webp"
         />
 
         <meta property="og:site_name" content="MySimhastha" />
@@ -95,7 +95,7 @@ export default function MahakalShahiSawariHi() {
               "@type": "Article",
               "headline": "महाकाल शाही सवारी उज्जैन: संपूर्ण गाइड, तारीखें, मार्ग और दर्शन सुझाव 2026",
               "description": "महाकाल शाही सवारी उज्जैन में दर्शन करने के लिए संपूर्ण गाइड - तारीखें, समय, दर्शन स्थान, भीड़, सुरक्षा और आध्यात्मिक महत्व के बारे में विस्तृत जानकारी।",
-              "image": "https://mysimhastha.com/images/mahakal-shahi-sawari-hi.webp",
+              "image": "https://mysimhastha.com/images/mahakal-shahi-sawari.webp",
               "author": {
                 "@type": "Organization",
                 "name": "MySimhastha"
@@ -233,7 +233,7 @@ export default function MahakalShahiSawariHi() {
             <header className="guide-header">
               <h1>महाकाल शाही सवारी उज्जैन: भव्य जुलूस के दर्शन की संपूर्ण गाइड</h1>
               <img 
-          src="https://mysimhastha.com/images/mahakal-shahi-sawari-hi.webp" 
+          src="https://mysimhastha.com/images/mahakal-shahi-sawari.webp" 
           alt="Mahakal Shahi Sawari Ujjain" 
           className="guide-image" 
           loading="eager" 
