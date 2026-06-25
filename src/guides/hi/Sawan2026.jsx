@@ -310,7 +310,32 @@ export default function Sawan2026Hi() {
 
       <section className="simhastha-guide">
         <div className="container">
+          {/* Header */}
+<header className="guide-header">
+  <h1>
+    सावन 2026 उज्जैन सम्पूर्ण गाइड
+  </h1>
 
+  <img
+    src="https://mysimhastha.com/images/sawan-2026.webp"
+    alt="सावन 2026 उज्जैन सम्पूर्ण गाइड"
+    className="guide-image"
+    loading="eager"
+  />
+
+  <figcaption>
+    सावन 2026 में उज्जैन की सम्पूर्ण जानकारी – श्रावण मास की तिथियाँ, महाकालेश्वर मंदिर दर्शन, भस्म आरती, सावन सोमवार, जलाभिषेक, रुद्राभिषेक, यात्रा, होटल एवं श्रद्धालुओं के लिए उपयोगी सुझाव।
+  </figcaption>
+
+  <p className="guide-meta">
+    अंतिम अपडेट: 25 जून 2026
+  </p>
+
+  <p>
+    <strong>MySimhastha संपादकीय टीम</strong><br />
+    पढ़ने का समय: 12 मिनट
+  </p>
+</header>
           {/* HERO */}
           <div className="guide-header">
             <h1>सावन 2026 उज्जैन पूर्ण गाइड</h1>

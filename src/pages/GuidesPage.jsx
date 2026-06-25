@@ -7,7 +7,7 @@ export default function GuidesPage() {
       title: "Simhastha 2028 Complete Guide",
       description:
         "Everything about Simhastha 2028 including dates, Shahi Snan, travel and FAQs.",
-      image: "/images/mahakal-shahi-sawari.webp",
+      image: "/images/simhastha-2028.webp",
       enLink: "/guide/simhastha-2028",
       hiLink: "/hi/guide/simhastha-2028",
     },
@@ -15,7 +15,7 @@ export default function GuidesPage() {
       title: "Sawan 2026 Ujjain Guide",
       description:
         "Mahakal Darshan, Sawan Mondays, crowd updates, hotels and travel tips.",
-      image: "/images/mahakal-shahi-sawari.webp",
+      image: "/images/sawan-2026-ujjain.webp",
       enLink: "/guide/sawan-2026",
       hiLink: "/hi/guide/sawan-2026",
     },
@@ -23,7 +23,7 @@ export default function GuidesPage() {
       title: "Sawan 2026 Dates Guide",
       description:
         "Complete Sawan 2026 calendar, Sawan Somwar dates and Shravan month information.",
-      image: "/images/mahakal-shahi-sawari.webp",
+      image: "/images/sawan-2026.webp",
       enLink: "/guide/sawan-2026-dates",
       hiLink: "/hi/sawan-2026-dates",
     },

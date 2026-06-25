@@ -315,7 +315,32 @@ export default function Sawan2026() {
 
       <section className="simhastha-guide">
         <div className="container">
+          {/* Header */}
+<header className="guide-header">
+  <h1>
+    Sawan 2026 Ujjain Complete Guide
+  </h1>
 
+  <img
+    src="https://mysimhastha.com/images/sawan-2026.webp"
+    alt="Sawan 2026 Ujjain Complete Guide"
+    className="guide-image"
+    loading="eager"
+  />
+
+  <figcaption>
+    Complete guide to Sawan 2026 in Ujjain covering Shravan dates, Mahakaleshwar Temple darshan, Bhasma Aarti, Sawan Somvar, Jalabhishek, Rudrabhishek, travel, hotels, and pilgrimage tips.
+  </figcaption>
+
+  <p className="guide-meta">
+    Last Updated: June 25, 2026
+  </p>
+
+  <p>
+    <strong>By MySimhastha Editorial Team</strong><br />
+    Reading Time: 12 min
+  </p>
+</header>
           {/* HERO */}
           <div className="guide-header">
             <h1>Sawan 2026 Ujjain Complete Guide</h1>

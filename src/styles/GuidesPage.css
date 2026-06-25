@@ -110,27 +110,33 @@
   gap: 16px;
 }
 
-.lang-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  min-width: 130px;
-  height: 46px;
-
-  border: 2px solid #f97316;
-  border-radius: 10px;
-
-  text-decoration: none;
-  font-weight: 700;
-  color: #f97316;
-
-  transition: .25s;
+.guide-language-switch{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
 }
 
-.lang-btn:hover {
-  background: #f97316;
-  color: white;
+.lang-btn{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:46px;
+
+    border:2px solid var(--saffron);
+    border-radius:12px;
+
+    color:var(--saffron);
+    text-decoration:none;
+    font-weight:700;
+
+    transition:.25s ease;
+}
+
+.lang-btn:hover{
+    background:var(--saffron);
+    color:#fff;
 }
 
 /* ==========================================
@@ -201,14 +207,33 @@
 }
 
   .guide-language-switch{
-      display:flex;
-      gap:10px;
-  }
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
 
-  .lang-btn{
-      flex:1;
-      text-align:center;
-  }
+.lang-btn{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:46px;
+
+    border:2px solid var(--saffron);
+    border-radius:12px;
+
+    color:var(--saffron);
+    text-decoration:none;
+    font-weight:700;
+
+    transition:.25s ease;
+}
+
+.lang-btn:hover{
+    background:var(--saffron);
+    color:#fff;
+}
 
 }
 
@@ -230,12 +255,33 @@
     font-size: 1.2rem;
   }
 
-  .guide-language-switch {
-    flex-direction: column;
-  }
+  .guide-language-switch{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
 
-  .lang-btn {
-    width: 100%;
-  }
+.lang-btn{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:46px;
+
+    border:2px solid var(--saffron);
+    border-radius:12px;
+
+    color:var(--saffron);
+    text-decoration:none;
+    font-weight:700;
+
+    transition:.25s ease;
+}
+
+.lang-btn:hover{
+    background:var(--saffron);
+    color:#fff;
+}
 
 }

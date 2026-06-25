@@ -19,6 +19,30 @@ export default function Simhastha2028() {
       <section className="simhastha-guide">
         <div className="container">
 
+    {/* Header */}
+<header className="guide-header">
+  <h1>Simhastha 2028 Ujjain: Complete Guide to Dates, Shahi Snan, Travel & Pilgrimage</h1>
+
+  <img
+    src="https://mysimhastha.com/images/simhastha-2028.webp"
+    alt="Simhastha 2028 Ujjain Complete Guide"
+    className="guide-image"
+    loading="eager"
+  />
+
+  <figcaption>
+    Everything you need to know about Simhastha 2028 in Ujjain, including Shahi Snan dates, Mahakal Darshan, travel, accommodation, and pilgrimage planning.
+  </figcaption>
+
+  <p className="guide-meta">
+    Last Updated: June 25, 2026
+  </p>
+
+  <p>
+    By <strong>MySimhastha Editorial Team</strong><br />
+    Reading Time: 12 min
+  </p>
+</header>
           {/* HERO */}
           <div className="guide-header">
             <h1>Simhastha 2028 Ujjain Complete Guide</h1>

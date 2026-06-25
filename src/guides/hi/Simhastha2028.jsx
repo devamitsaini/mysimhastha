@@ -273,7 +273,30 @@ export default function Simhastha2028Hi() {
 
       <section className="simhastha-guide">
         <div className="container">
+          {/* Header */}
+<header className="guide-header">
+  <h1>सिंहस्थ 2028 उज्जैन: तिथियाँ, शाही स्नान, यात्रा एवं सम्पूर्ण गाइड</h1>
 
+  <img
+    src="https://mysimhastha.com/images/simhastha-2028.webp"
+    alt="सिंहस्थ 2028 उज्जैन सम्पूर्ण गाइड"
+    className="guide-image"
+    loading="eager"
+  />
+
+  <figcaption>
+    सिंहस्थ 2028 उज्जैन की सम्पूर्ण जानकारी – शाही स्नान की तिथियाँ, महाकाल दर्शन, यात्रा, आवास, घाट, मंदिर और श्रद्धालुओं के लिए आवश्यक मार्गदर्शिका।
+  </figcaption>
+
+  <p className="guide-meta">
+    अंतिम अपडेट: 25 जून 2026
+  </p>
+
+  <p>
+    <strong>MySimhastha संपादकीय टीम</strong><br />
+    पढ़ने का समय: 12 मिनट
+  </p>
+</header>
           {/* HERO */}
           <div className="guide-header">
             <h1>सिंहस्थ 2028 उज्जैन पूर्ण गाइड</h1>

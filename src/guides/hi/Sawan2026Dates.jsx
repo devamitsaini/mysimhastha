@@ -192,7 +192,7 @@ import "../styles/guides.css";
         <section className="simhastha-guide">
         <div className="container">
         <article className="guide-article">
-
+          
           {/* Hero Section */}
           <header className="guide-header">
             <h1>

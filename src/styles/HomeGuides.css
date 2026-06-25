@@ -59,21 +59,19 @@
 .home-guide-image-wrapper{
 
     width:100%;
-
+    padding: 5px 0px;
     aspect-ratio:16/9;
 
     overflow:hidden;
 
     background:#fff;
 }
-
 .home-guide-image{
-
     width:100%;
     height:100%;
-
-    object-fit:cover;
-
+    object-fit:contain;
+    object-position:center;
+    background:#fff;
     display:block;
 
     transition:transform .4s ease;
