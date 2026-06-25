@@ -671,11 +671,11 @@ export default function Simhastha2028() {
     <p>
       🔸 Reddit Community:
       <a
-        href="https://reddit.com/r/MySimhastha"
+        href="https://reddit.com/r/Simhastha2028"
         target="_blank"
         rel="noopener noreferrer"
       >
-        r/MySimhastha
+        r/Simhastha2028
       </a>
     </p>
 
@@ -697,7 +697,7 @@ export default function Simhastha2028() {
   </p>
 
   <p>
-    Content available soon in English, हिन्दी, मराठी and ગુજરાતી to help
+    Content available soon in English and हिन्दी to help
     pilgrims and travelers from different regions plan their Simhastha journey.
   </p>
 </div>

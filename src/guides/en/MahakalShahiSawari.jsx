@@ -458,15 +458,15 @@ export default function MahakalShahiSawari() {
 
       {/* 2. Language Switcher */}
       <div className="language-switcher">
-        <NavLink to="/guide/mahakal-shahi-sawari-ujjain">English</NavLink>
-        <NavLink to="/hi/guides/mahakal-shahi-sawari-ujjain">हिन्दी</NavLink>
+      <NavLink to="/guide/mahakal-shahi-sawari">English</NavLink>
+      <NavLink to="/hi/guide/mahakal-shahi-sawari">हिन्दी</NavLink>
       </div>
 
       {/* 3. Quick Answer */}
       <div className="guide-highlight">
         <h2>Quick Answer</h2>
         <p className="guide-text">
-          Mahakal Shahi Sawari is one of the most magnificent religious processions in India, held annually during the sacred Shravana month (July-August). This grand ceremonial event involves the sacred idol of Lord Mahakal being carried from the ancient Mahakaleshwar Temple through the streets of Ujjain...
+          Mahakal Shahi Sawari is one of the most magnificent religious processions in India, held annually during the sacred Shravana month (July-August). This grand ceremonial event involves the sacred idol of Lord Mahakal being carried from the ancient Mahakaleshwar Temple through the streets of Ujjain.
         </p>
       </div>
 
@@ -493,7 +493,7 @@ export default function MahakalShahiSawari() {
         <div className="quick-facts">
           <div className="quick-fact-card">
             <span className="quick-fact-label">Event Type</span>
-            <div className="quick-fact-value">Grand Procession</div>
+            <div className="quick-fact-value">Shahi Sawari</div>
           </div>
           <div className="quick-fact-card">
             <span className="quick-fact-label">Timing</span>
@@ -855,11 +855,11 @@ export default function MahakalShahiSawari() {
   <p>
     🔸 Reddit Community:
     <a
-      href="https://reddit.com/r/MySimhastha"
+      href="https://reddit.com/r/Simhastha2028"
       target="_blank"
       rel="noopener noreferrer"
     >
-      r/MySimhastha
+      r/Simhastha2028
     </a>
   </p>
 
@@ -900,7 +900,7 @@ export default function MahakalShahiSawari() {
             </p>
 
             <p>
-              Content available in English, हिन्दी, मराठी and ગુજરાતી to help pilgrims and travelers from different regions plan their Sawan 2026 journey to Ujjain and Mahakaleshwar Temple.
+              Content available in English and हिन्दी to help pilgrims and travelers from different regions plan their Sawan 2026 journey to Ujjain and Mahakaleshwar Temple.
             </p>
           </div>
             {/* Footer CTA */}

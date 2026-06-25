@@ -643,11 +643,11 @@ export default function MahakalShahiSawariHi() {
     <p>
       🔸 Reddit समुदाय:
       <a
-        href="https://reddit.com/r/MySimhastha"
+        href="https://reddit.com/r/Simhastha2028"
         target="_blank"
         rel="noopener noreferrer"
       >
-        r/MySimhastha
+        r/Simhastha2028
       </a>
     </p>
 

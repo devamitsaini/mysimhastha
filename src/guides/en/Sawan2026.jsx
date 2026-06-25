@@ -1394,11 +1394,11 @@ export default function Sawan2026() {
   <p>
     🔸 Reddit Community:
     <a
-      href="https://reddit.com/r/MySimhastha"
+      href="https://reddit.com/r/Simhastha2028"
       target="_blank"
       rel="noopener noreferrer"
     >
-      r/MySimhastha
+      r/Simhastha2028
     </a>
   </p>
 
@@ -1439,7 +1439,7 @@ export default function Sawan2026() {
             </p>
 
             <p>
-              Content available in English, हिन्दी, मराठी and ગુજરાતી to help pilgrims and travelers from different regions plan their Sawan 2026 journey to Ujjain and Mahakaleshwar Temple.
+              Content available in English and हिन्दी to help pilgrims and travelers from different regions plan their Sawan 2026 journey to Ujjain and Mahakaleshwar Temple.
             </p>
           </div>
 
