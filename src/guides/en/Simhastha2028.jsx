@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/guides.css";
-import GuideSEO from "../components/GuideSEO";
+import GuideSEO from "../GuideSEO";
 
 
 export default function Simhastha2028() {
