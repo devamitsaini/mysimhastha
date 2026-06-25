@@ -1,41 +1,20 @@
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../styles/guides.css";
+import GuideSEO from "../components/GuideSEO";
 
 
 export default function Simhastha2028() {
   return (
     <>
-      <Helmet>
-  <title>
-    Simhastha 2028 Ujjain Complete Guide | MySimhastha
-  </title>
-
-  <meta
-    name="description"
-    content="Complete guide to Simhastha 2028 in Ujjain including dates, Shahi Snan, Mahakaleshwar Temple, travel information, accommodation and FAQs."
-  />
-<link
-  rel="alternate"
-  hreflang="x-default"
-  href="https://www.mysimhastha.com/guide/simhastha-2028"
-/>
-  <link
-  rel="canonical"
-  href="https://www.mysimhastha.com/guide/simhastha-2028"
-/>
-  <link
-  rel="alternate"
-  hreflang="en"
-  href="https://www.mysimhastha.com/guide/simhastha-2028"
-/>
-
-<link
-  rel="alternate"
-  hreflang="hi"
-  href="https://www.mysimhastha.com/hi/guide/simhastha-2028"
-/>
-</Helmet>
+      <GuideSEO
+        title="Simhastha 2028 Ujjain Complete Guide | MySimhastha"
+        description="Complete guide to Simhastha 2028 in Ujjain including dates, Shahi Snan, Mahakaleshwar Temple, travel information, accommodation and FAQs."
+        slug="simhastha-2028"
+        lang="en"
+        keywords="Simhastha 2028,Ujjain,Kumbh Mela,Mahakal"
+        published="2026-06-20"
+        modified="2026-06-25"
+      />
 
       <section className="simhastha-guide">
         <div className="container">
