@@ -1,41 +1,44 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/GuidesPage.css";
 
+
 export default function GuidesPage() {
+
+  const navigate = useNavigate();
   const guides = [
-    {
-      title: "Simhastha 2028 Complete Guide",
-      description:
-        "Everything about Simhastha 2028 including dates, Shahi Snan, travel and FAQs.",
-      image: "/images/simhastha-2028.webp",
-      enLink: "/guide/simhastha-2028",
-      hiLink: "/hi/guide/simhastha-2028",
-    },
-    {
-      title: "Sawan 2026 Ujjain Guide",
-      description:
-        "Mahakal Darshan, Sawan Mondays, crowd updates, hotels and travel tips.",
-      image: "/images/sawan-2026-ujjain.webp",
-      enLink: "/guide/sawan-2026",
-      hiLink: "/hi/guide/sawan-2026",
-    },
-    {
-      title: "Sawan 2026 Dates Guide",
-      description:
-        "Complete Sawan 2026 calendar, Sawan Somwar dates and Shravan month information.",
-      image: "/images/sawan-2026.webp",
-      enLink: "/guide/sawan-2026-dates",
-      hiLink: "/hi/sawan-2026-dates",
-    },
-    {
-      title: "Mahakal Shahi Sawari Ujjain Guide",
-      description:
-        "Complete guide for Mahakal Shahi Sawari: dates, routes and viewing tips.",
-      image: "/images/mahakal-shahi-sawari.webp",
-      enLink: "/guide/mahakal-shahi-sawari",
-      hiLink: "/hi/guide/mahakal-shahi-sawari",
-    },
-  ];
+  {
+    title: "Mahakal Shahi Sawari Ujjain Guide",
+    description: "Complete guide for Mahakal Shahi Sawari...",
+    image: "/images/mahakal-shahi-sawari.webp",
+    enLink: "/guide/mahakal-shahi-sawari",
+    hiLink: "/hi/guide/mahakal-shahi-sawari",
+    date: "2026-06-25",
+  },
+  {
+    title: "Sawan 2026 Ujjain Guide",
+    description: "Mahakal Darshan, Sawan Mondays...",
+    image: "/images/sawan-2026-ujjain.webp",
+    enLink: "/guide/sawan-2026",
+    hiLink: "/hi/guide/sawan-2026",
+    date: "2026-06-24",
+  },
+  {
+    title: "Sawan 2026 Dates Guide",
+    description: "Complete Sawan 2026 calendar...",
+    image: "/images/sawan-2026.webp",
+    enLink: "/guide/sawan-2026-dates",
+    hiLink: "/hi/guide/sawan-2026-dates",
+    date: "2026-06-23",
+  },
+  {
+    title: "Simhastha 2028 Complete Guide",
+    description: "Everything about Simhastha 2028...",
+    image: "/images/simhastha-2028.webp",
+    enLink: "/guide/simhastha-2028",
+    hiLink: "/hi/guide/simhastha-2028",
+    date: "2026-06-20",
+  },
+];
 
   return (
     <section className="simhastha-guide">
@@ -53,8 +56,14 @@ export default function GuidesPage() {
 
         <div className="guides-grid">
 
-          {guides.map((guide) => (
-            <div key={guide.title} className="guide-card">
+          {[...guides]
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .map((guide) => (
+            <div
+  key={guide.title}
+  className="guide-card"
+  onClick={() => navigate(guide.enLink)}
+>
 
               {/* Left Image */}
               <div className="guide-card-image-wrapper">
@@ -75,19 +84,21 @@ export default function GuidesPage() {
 
                 <div className="guide-language-switch">
 
-                  <Link
-                    to={guide.enLink}
-                    className="lang-btn"
-                  >
-                    English
-                  </Link>
+<Link
+  to={guide.enLink}
+  className="lang-btn"
+  onClick={(e) => e.stopPropagation()}
+>
+  English
+</Link>
 
-                  <Link
-                    to={guide.hiLink}
-                    className="lang-btn"
-                  >
-                    हिन्दी
-                  </Link>
+<Link
+  to={guide.hiLink}
+  className="lang-btn"
+  onClick={(e) => e.stopPropagation()}
+>
+  हिन्दी
+</Link>
 
                 </div>
 

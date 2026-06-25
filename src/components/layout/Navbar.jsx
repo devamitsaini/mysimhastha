@@ -26,6 +26,20 @@ import { useNavigate, useLocation } from "react-router-dom";
       const currentLang = i18n.language || "en";
       const navigate = useNavigate();
       
+      const changeGoogleLanguage = (lang) => {
+  const combo = document.querySelector(".goog-te-combo");
+
+  if (!combo) {
+    alert("Google Translate is still loading.");
+    return;
+  }
+
+  combo.value = lang;
+  combo.dispatchEvent(new Event("change"));
+
+  setLanguageOpen(false);
+};
+
       useEffect(() => {
         const h = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", h, { passive: true });
@@ -172,49 +186,65 @@ import { useNavigate, useLocation } from "react-router-dom";
                 </ul>
 
                 {/* Hamburger */}
-                <div className="nav-right">
-                 
-<div ref={langRef} style={{ position: "relative" }}>
-  <button
-    className="lang-switch"
-    onClick={() => setLanguageOpen(!languageOpen)}
-  >
-    {currentLang === "hi" ? "हिन्दी" : "English"}
-    <span
-  style={{
-    transition: "0.2s",
-    transform: languageOpen ? "rotate(180deg)" : "rotate(0deg)"
-  }}
->
-  ▼
-</span>
-  </button>
+<div className="nav-right">
 
-  {languageOpen && (
-    <div className="language-dropdown">
-      <button
-        onClick={() => {
-          localStorage.setItem("lang", "en");
-          i18n.changeLanguage("en");
-          setLanguageOpen(false);
+  {/* Language Switcher */}
+  <div ref={langRef} style={{ position: "relative" }}>
+    <button
+      className="lang-switch"
+      onClick={() => setLanguageOpen(!languageOpen)}
+    >
+      {currentLang === "hi" ? "हिन्दी" : "English"}
+
+      <span
+        style={{
+          transition: "0.2s",
+          transform: languageOpen ? "rotate(180deg)" : "rotate(0deg)"
         }}
       >
-        English
-      </button>
+        ▼
+      </span>
+    </button>
 
-      <button
-        onClick={() => {
-          localStorage.setItem("lang", "hi");
-          i18n.changeLanguage("hi");
-          setLanguageOpen(false);
-        }}
-      >
-        हिन्दी
-      </button>
-    </div>
-  )}
-</div>
+    {languageOpen && (
+      <div className="language-dropdown">
 
+        {/* i18next */}
+        <button
+          onClick={() => {
+            localStorage.setItem("lang", "en");
+            i18n.changeLanguage("en");
+            setLanguageOpen(false);
+          }}
+        >
+          🇺🇸 English
+        </button>
+
+        <button
+          onClick={() => {
+            localStorage.setItem("lang", "hi");
+            i18n.changeLanguage("hi");
+            setLanguageOpen(false);
+          }}
+        >
+          🇮🇳 हिन्दी
+        </button>
+
+        <hr />
+
+        {/* Google Translate */}
+        <button onClick={() => changeGoogleLanguage("mr")}>🇮🇳 मराठी</button>
+        <button onClick={() => changeGoogleLanguage("gu")}>🇮🇳 ગુજરાતી</button>
+        <button onClick={() => changeGoogleLanguage("bn")}>🇮🇳 বাংলা</button>
+        <button onClick={() => changeGoogleLanguage("ta")}>🇮🇳 தமிழ்</button>
+        <button onClick={() => changeGoogleLanguage("te")}>🇮🇳 తెలుగు</button>
+        <button onClick={() => changeGoogleLanguage("kn")}>🇮🇳 ಕನ್ನಡ</button>
+
+      </div>
+    )}
+  </div>
+
+  {/* Hamburger */}
   <button
     className={`hamburger${drawerOpen ? " open" : ""}`}
     onClick={() => setDrawerOpen((o) => !o)}
@@ -227,9 +257,11 @@ import { useNavigate, useLocation } from "react-router-dom";
   </button>
 
 </div>
+
+</div>
               </div>
-            </div>
+      
           </nav>
         </>
       );
-    }
+}

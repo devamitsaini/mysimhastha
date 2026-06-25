@@ -2,165 +2,180 @@
    MYSIMHASTHA GUIDES PAGE
 ========================================== */
 
-.simhastha-guide {
-  padding: 40px 0 60px;
+.simhastha-guide{
+  padding:40px 0 60px;
 }
 
-.guide-header {
-  text-align: center;
-  margin-bottom: 40px;
+/* ==========================================
+   HEADER
+========================================== */
+
+.guide-header{
+  text-align:center;
+  margin-bottom:40px;
 }
 
-.guide-header h1 {
-  margin-bottom: 12px;
-  font-size: 2.5rem;
-  color: var(--deep);
-  font-family: var(--deva);
+.guide-header h1{
+  margin-bottom:12px;
+  font-size:2.5rem;
+  color:var(--deep);
+  font-family:var(--deva);
 }
 
-.guide-header p {
-  max-width: 700px;
-  margin: auto;
-  color: var(--muted);
-  line-height: 1.7;
+.guide-header p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  line-height:1.7;
 }
 
 /* ==========================================
    GRID
 ========================================== */
 
-.guides-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+.guides-grid{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
 }
 
 /* ==========================================
    CARD
 ========================================== */
 
-.guide-card {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+.guide-card{
+  display:flex;
+  align-items:center;
+  gap:30px;
 
-  background: #fff;
-  border-radius: 22px;
-  overflow: hidden;
+  background:#fff;
+  border:1px solid rgba(220,120,20,.18);
+  border-radius:22px;
 
-  border: 1px solid rgba(220, 120, 20, .18);
-  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+  overflow:hidden;
 
-  transition: .3s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+  transition:.3s ease;
+
+  cursor:pointer;
 }
 
-.guide-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 35px rgba(0,0,0,.10);
+.guide-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 35px rgba(0,0,0,.10);
 }
 
 /* ==========================================
    IMAGE
 ========================================== */
 
-.guide-card-image-wrapper {
-  width: 100%;
-  min-width: 380px;
-  height: 220px;
+.guide-card-image-wrapper{
+  width:100%;
+  min-width:380px;
+  height:220px;
 }
 
 .guide-card-image{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    object-position:center;
-    background:#fff;
-    border-radius:12px;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  background:#fff;
+  border-radius:12px;
+  transition:.3s ease;
+}
+
+.guide-card:hover .guide-card-image{
+  transform:scale(1.03);
 }
 
 /* ==========================================
    CONTENT
 ========================================== */
 
-.guide-card-content {
-  flex: 1;
-  padding: 24px 30px 24px 0;
+.guide-card-content{
+  flex:1;
+  padding:24px 30px 24px 0;
 }
 
-.guide-card-content h2 {
-  margin: 0 0 14px;
-  color: var(--deep);
-  font-size: 2rem;
-  line-height: 1.25;
+.guide-card-content h2{
+  margin:0 0 14px;
+  color:var(--deep);
+  font-size:2rem;
+  line-height:1.25;
 }
 
-.guide-card-content p {
-  margin: 0 0 24px;
-  color: var(--muted);
-  line-height: 1.8;
-  font-size: 1rem;
+.guide-card-content p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:1rem;
 }
 
 /* ==========================================
    BUTTONS
 ========================================== */
 
-.guide-language-switch {
-  display: flex;
-  gap: 16px;
-}
-
 .guide-language-switch{
-    display:flex;
-    gap:12px;
-    margin-top:20px;
+  display:flex;
+  gap:12px;
+  margin-top:24px;
 }
 
 .lang-btn{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  flex:1;
 
-    height:46px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-    border:2px solid var(--saffron);
-    border-radius:12px;
+  height:46px;
 
-    color:var(--saffron);
-    text-decoration:none;
-    font-weight:700;
+  border:2px solid var(--saffron);
+  border-radius:12px;
 
-    transition:.25s ease;
+  background:#fff;
+
+  color:var(--saffron);
+  text-decoration:none;
+
+  font-weight:700;
+
+  transition:.25s ease;
+
+  cursor:pointer;
+
+  z-index:2;
+  position:relative;
 }
 
 .lang-btn:hover{
-    background:var(--saffron);
-    color:#fff;
+  background:var(--saffron);
+  color:#fff;
 }
 
 /* ==========================================
    TABLET
 ========================================== */
 
-@media (max-width:992px) {
+@media (max-width:992px){
 
-  .guide-card {
-    gap: 20px;
+  .guide-card{
+    gap:20px;
   }
 
-  .guide-card-image-wrapper {
-    width: 300px;
-    min-width: 300px;
-    height: 190px;
+  .guide-card-image-wrapper{
+    min-width:300px;
+    height:190px;
   }
 
-  .guide-card-content {
-    padding-right: 20px;
+  .guide-card-content{
+    padding:20px 20px 20px 0;
   }
 
-  .guide-card-content h2 {
-    font-size: 1.5rem;
+  .guide-card-content h2{
+    font-size:1.5rem;
   }
 
 }
@@ -174,66 +189,39 @@
   .guide-card{
     display:block;
     padding:12px;
-}
+  }
 
   .guide-card-image-wrapper{
     width:100%;
     min-width:100%;
     height:170px;
     margin-bottom:12px;
-}
+  }
 
   .guide-card-image{
     width:100%;
     height:100%;
     object-fit:contain;
-    object-position:center;
-    background:#fff;
-    border-radius:12px;
-}
+  }
 
   .guide-card-content{
-      padding:0;
+    padding:0;
   }
 
   .guide-card-content h2{
     font-size:1.25rem;
-    margin-bottom:4px;
-}
+    margin-bottom:8px;
+  }
 
   .guide-card-content p{
-    margin-bottom:12px;
-    line-height:1;
-}
+    margin-bottom:16px;
+    line-height:1.5;
+  }
 
   .guide-language-switch{
-    display:flex;
-    gap:12px;
-    margin-top:20px;
-}
-
-.lang-btn{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    height:46px;
-
-    border:2px solid var(--saffron);
-    border-radius:12px;
-
-    color:var(--saffron);
-    text-decoration:none;
-    font-weight:700;
-
-    transition:.25s ease;
-}
-
-.lang-btn:hover{
-    background:var(--saffron);
-    color:#fff;
-}
+    gap:10px;
+    margin-top:16px;
+  }
 
 }
 
@@ -241,47 +229,35 @@
    SMALL MOBILE
 ========================================== */
 
-@media (max-width:480px) {
+@media (max-width:480px){
 
-  .guide-header h1 {
-    font-size: 1.8rem;
+  .guide-header h1{
+    font-size:1.8rem;
   }
 
-  .guide-card-content {
-    padding: 18px;
+  .guide-card{
+    border-radius:18px;
   }
 
-  .guide-card-content h2 {
-    font-size: 1.2rem;
+  .guide-card-content{
+    padding:8px;
+  }
+
+  .guide-card-content h2{
+    font-size:1.2rem;
+  }
+
+  .guide-card-content p{
+    font-size:.9rem;
   }
 
   .guide-language-switch{
-    display:flex;
-    gap:12px;
-    margin-top:20px;
-}
+    gap:10px;
+  }
 
-.lang-btn{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    height:46px;
-
-    border:2px solid var(--saffron);
-    border-radius:12px;
-
-    color:var(--saffron);
-    text-decoration:none;
-    font-weight:700;
-
-    transition:.25s ease;
-}
-
-.lang-btn:hover{
-    background:var(--saffron);
-    color:#fff;
-}
+  .lang-btn{
+    height:42px;
+    font-size:.95rem;
+  }
 
 }
