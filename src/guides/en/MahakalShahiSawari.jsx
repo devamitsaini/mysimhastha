@@ -18,7 +18,7 @@ export default function MahakalShahiSawari() {
 
         <link
           rel="canonical"
-          href="https://mysimhastha.com/guides/mahakal-shahi-sawari"
+          href="https://mysimhastha.com/guide/mahakal-shahi-sawari"
         />
 
         <meta
@@ -48,7 +48,7 @@ export default function MahakalShahiSawari() {
 
         <meta
           property="og:url"
-          content="https://mysimhastha.com/guides/mahakal-shahi-sawari"
+          content="https://mysimhastha.com/guide/mahakal-shahi-sawari"
         />
 
         <meta
@@ -114,7 +114,7 @@ export default function MahakalShahiSawari() {
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://mysimhastha.com/guides/mahakal-shahi-sawari"
+                "@id": "https://mysimhastha.com/guide/mahakal-shahi-sawari"
               },
               "datePublished": "2026-06-25",
               "dateModified": "2026-06-25"
