@@ -17,6 +17,9 @@ import Sawan2026HI from "./guides/hi/Sawan2026";
 import GuidesPage from "./pages/GuidesPage";
 import Sawan2026Dates from "./guides/en/Sawan2026Dates";
 import Sawan2026DatesHI from "./guides/hi/Sawan2026Dates";
+import MahakalShahiSawari from "./guides/en/MahakalShahiSawari";
+import MahakalShahiSawariHi from "./guides/hi/MahakalShahiSawari";
+
 import { Navigate } from "react-router-dom";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const NewsPage = lazy(() => import("./pages/NewsPage"));
@@ -177,6 +180,15 @@ function App() {
             <Route
             path="/hi/sawan-2026-dates"
             element={<Sawan2026DatesHI />}
+            />
+
+            <Route
+              path="/guide/mahakal-shahi-sawari"
+              element={<MahakalShahiSawari />}
+            />
+            <Route
+              path="/hi/guide/mahakal-shahi-sawari"
+              element={<MahakalShahiSawariHi />}
             />
 
           </Routes>

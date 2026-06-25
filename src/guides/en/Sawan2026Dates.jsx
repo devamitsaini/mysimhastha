@@ -339,7 +339,7 @@ import "../styles/guides.css";
         {/* LANGUAGE SWITCHER */}
             <div className="language-switcher">
               <NavLink to="/sawan-2026-dates">English</NavLink>
-              <NavLink to="/hi//sawan-2026-dates">हिन्दी</NavLink>
+              <NavLink to="/hi/sawan-2026-dates">हिन्दी</NavLink>
             </div>
           {/* Quick Answer */}
           <div className="guide-highlight">
@@ -662,7 +662,7 @@ import "../styles/guides.css";
                   </td>
 
                   <td >
-                    : 7:00 PM to 7:45 PM
+                    7:00 PM to 7:45 PM
                   </td>
                 </tr>
                 <tr>
@@ -745,97 +745,97 @@ import "../styles/guides.css";
 
           <div >
             <div className="faq-item">
-              <h3 >What is the significance of Shravan month at Mahakal Ujjain?</h3>
+              <h3 >Q. What is the significance of Shravan month at Mahakal Ujjain?</h3>
               <p className="guide-text">Shravan is considered the holiest month for Lord Shiva, attracting lakhs of pilgrims to Ujjain due to the increased spiritual energy and the tradition of performing rituals like Abhishekam to seek his blessings.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >What is Mahakal Shahi Sawari and why should you witness it?</h3>
+              <h3 >Q. What is Mahakal Shahi Sawari and why should you witness it?</h3>
               <p className="guide-text">The Shahi Sawari is a grand ceremonial procession where the deity of Mahakal is brought out of the temple to visit the city and the Kshipra river, offering a unique opportunity to witness the divine connection between the deity and the people.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >When does Mahakal Shahi Sawari happen each year?</h3>
+              <h3 >Q. When does Mahakal Shahi Sawari happen each year?</h3>
               <p className="guide-text">While the Shahi Sawari processions take place during the Shravan holy month, the days and times shift each year according to the customary calendar.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >Is Mahakal Shahi Sawari free to watch?</h3>
+              <h3 >Q. Is Mahakal Shahi Sawari free to watch?</h3>
               <p className="guide-text">Yes, the procession is a public event that can be viewed for free from the streets along the designated route.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >Are girls and women allowed at Mahakal Shahi Sawari?</h3>
+              <h3 >Q. Are girls and women allowed at Mahakal Shahi Sawari?</h3>
               <p className="guide-text">Yes, the Shahi Sawari is an inclusive event where women and girls are welcome to participate and witness the procession.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >Can children attend Mahakal Shahi Sawari?</h3>
+              <h3 >Q. Can children attend Mahakal Shahi Sawari?</h3>
               <p className="guide-text">Yes, children can attend, though parents are advised to be mindful of the large crowds and ensure proper supervision.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >Can you attend Mahakal Shahi Sawari if you're not Hindu?</h3>
+              <h3 >Q. Can you attend Mahakal Shahi Sawari if you're not Hindu?</h3>
               <p className="guide-text">The event is a cultural and religious procession open to visitors from all backgrounds who wish to observe and respect the local traditions.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >Is photography allowed during Mahakal Shahi Sawari?</h3>
+              <h3 >Q. Is photography allowed during Mahakal Shahi Sawari?</h3>
               <p className="guide-text">While general photography is common, visitors should always follow local guidelines and avoid using equipment that might disrupt the procession or the sanctity of the rituals.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >How long does Mahakal Shahi Sawari last?</h3>
+              <h3 >Q. How long does Mahakal Shahi Sawari last?</h3>
               <p className="guide-text">The duration of the procession depends on the route and the stops made for rituals, often lasting several hours as it traverses through the city.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >What should I wear to Mahakal Shahi Sawari?</h3>
+              <h3 >Q. What should I wear to Mahakal Shahi Sawari?</h3>
               <p className="guide-text">It is recommended to wear modest, traditional clothing that is comfortable for standing or walking in large, outdoor crowds.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >Can you touch Mahakal during Shahi Sawari?</h3>
+              <h3 >Q. Can you touch Mahakal during Shahi Sawari?</h3>
               <p className="guide-text">No, the idol is carried in a protected palanquin and devotees should maintain a respectful distance in accordance with security and temple guidelines.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >How crowded is Mahakal Shahi Sawari, and what are tips to beat the rush?</h3>
+              <h3 >Q. How crowded is Mahakal Shahi Sawari, and what are tips to beat the rush?</h3>
               <p className="guide-text">The event is extremely crowded; to manage this, it is recommended to arrive early, plan your viewing spot in advance, and stay updated on route changes.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >What happens during the Puja before Shahi Sawari?</h3>
+              <h3 >Q. What happens during the Puja before Shahi Sawari?</h3>
               <p className="guide-text">Before the procession begins, a traditional religious ceremony is conducted at the temple to invoke the deity's presence before the idol is mounted on the chariot.</p>
             </div>
 
             <div className="faq-item">
-              <h3 >What happens if you miss Mahakal Shahi Sawari this year?</h3>
+              <h3 >Q. What happens if you miss Mahakal Shahi Sawari this year?</h3>
               <p className="guide-text">If you are unable to attend, you can explore digital coverage of the event or plan your visit for the following year when the tradition continues.</p>
             </div>
 
            <div className="faq-item">
-            <h3 >What is the significance of Sawan Somwar fasts?</h3>
+            <h3 >Q. What is the significance of Sawan Somwar fasts?</h3>
             <p className="guide-text">Sawan Somwar fasts are observed to seek the blessings of Lord Shiva for mental peace, prosperity, and the fulfillment of heartfelt wishes. It is believed that observing these fasts with dedication pleases the deity immensely.</p>
           </div>
 
           <div className="faq-item">
-            <h3 >Can I offer water to the Shivalinga at home during Sawan?</h3>
+            <h3 >Q. Can I offer water to the Shivalinga at home during Sawan?</h3>
             <p className="guide-text">Yes, you can perform simple Abhishekam at home using clean water, milk, or a mixture of both, followed by offerings of Bilva leaves and flowers while chanting Om Namah Shivaya.</p>
           </div>
 
           <div className="faq-item">
-            <h3 >What are the recommended food items for a Sawan fast?</h3>
+            <h3 >Q. What are the recommended food items for a Sawan fast?</h3>
             <p className="guide-text">Devotees generally follow a Sattvic diet, consuming fruits, milk, dairy products, and vrat staples like sabudana (tapioca pearls), samak rice, and potatoes. It is traditional to avoid onion, garlic, and non-vegetarian food throughout the month.</p>
           </div>
 
           <div className="faq-item">
-            <h3 >Why are Bilva leaves (Bel Patra) used in Shiva worship?</h3>
+            <h3 >Q. Why are Bilva leaves (Bel Patra) used in Shiva worship?</h3>
             <p className="guide-text">The Bilva leaf is considered dear to Lord Shiva. Its three leaflets symbolize his three eyes and his trident, and offering them is believed to purify the soul and remove negative karma.</p>
           </div>
 
          <div className="faq-item">
-            <h3 >Is it necessary to visit a temple every day during Sawan?</h3>
+            <h3 >Q. Is it necessary to visit a temple every day during Sawan?</h3>
             <p className="guide-text">While visiting a temple is highly encouraged and beneficial, it is not mandatory. Sawan is fundamentally about internal devotion; you can achieve the same spiritual benefits by maintaining a pure heart and performing daily prayers at your home altar.</p>
           </div>
           </div>

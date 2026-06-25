@@ -23,9 +23,16 @@
     title: "Sawan 2026 Dates Guide",
     description:
       "Complete Sawan 2026 calendar, Sawan Somwar dates and Shravan month information.",
-    enLink: "/sawan-2026-dates",
+    enLink: "/guide/sawan-2026-dates",
     hiLink: "/hi/sawan-2026-dates",
   },
+  {
+      title: "Mahakal Shahi Sawari Ujjain Guide",
+      description:
+        "Complete guide for Mahakal Shahi Sawari: dates, routes, and viewing tips for 2026.",
+      enLink: "/guide/mahakal-shahi-sawari",
+      hiLink: "/hi/guide/mahakal-shahi-sawari",
+    },
 ];
 
     return (
