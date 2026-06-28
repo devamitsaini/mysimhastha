@@ -8,7 +8,8 @@ export default function GuideSEO({
   lang = "en",
   keywords = "",
   published,
-  modified
+  modified,
+  schema
 }) {
 
   const baseUrl = "https://mysimhastha.com";
@@ -69,31 +70,65 @@ export default function GuideSEO({
       {/* Schema */}
 
       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(
+      schema || {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: title,
+        description,
+        image: `${baseUrl}${image}`,
+        mainEntityOfPage: pageUrl,
+        datePublished: published,
+        dateModified: modified,
+        inLanguage: lang
+      }
+    ),
+  }}
+/>
 
-            "@context": "https://schema.org",
 
-            "@type": "Article",
+{/* Extra Schema */}
 
-            headline: title,
+{schema && (
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(schema)
+    }}
+  />
+)}
 
-            description,
-
-            image: `${baseUrl}${image}`,
-
-            mainEntityOfPage: pageUrl,
-
-            datePublished: published,
-
-            dateModified: modified,
-
-            inLanguage: lang
-
-          }),
-        }}
-      />
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: baseUrl
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Guides",
+          item: `${baseUrl}/guide`
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: title,
+          item: pageUrl
+        }
+      ]
+    })
+  }}
+/>
 
     </Helmet>
   );

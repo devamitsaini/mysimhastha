@@ -2,19 +2,160 @@ import { Link } from "react-router-dom";
 import "../styles/guides.css";
 import GuideSEO from "../GuideSEO";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
 
+    {
+      "@type":"Question",
+      "name":"What is Simhastha?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Simhastha is the Kumbh Mela held in Ujjain every 12 years."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"When is Simhastha 2028?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Simhastha 2028 is expected to take place in 2028. Official dates will be announced by the authorities."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"Where is Simhastha held?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Simhastha is held on the banks of the Shipra River in Ujjain, Madhya Pradesh."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"Why is Simhastha celebrated?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"It commemorates the sacred legend of Samudra Manthan and the drops of Amrit that fell at Ujjain."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"How often does Simhastha occur?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Simhastha is celebrated every 12 years."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"What is Shahi Snan?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Shahi Snan is the royal bathing procession of saints and Akharas during Simhastha."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"Can foreign tourists attend Simhastha?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Visitors from all over the world are welcome."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"How many people attend Simhastha?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Tens of millions of pilgrims attend Simhastha."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"What is the nearest airport to Ujjain?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Devi Ahilya Bai Holkar Airport, Indore."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"How far is Indore from Ujjain?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Approximately 55 km."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"Is Mahakaleshwar Temple open during Simhastha?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Mahakaleshwar Temple remains open during Simhastha."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"Do I need to book hotels in advance?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Hotels should be booked well in advance because of heavy demand."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"What should I carry during Simhastha?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Carry ID proof, booking confirmations, medicines and emergency contact details."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"Is Simhastha safe for families?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Follow official guidelines and crowd management instructions."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"Which temples should I visit in Ujjain?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Mahakaleshwar, Kal Bhairav, Harsiddhi, Mangalnath, Chintaman Ganesh and Sandipani Ashram."
+      }
+    }
+
+  ]
+};
 export default function Simhastha2028() {
   return (
     <>
       <GuideSEO
-        title="Simhastha 2028 Ujjain Complete Guide | MySimhastha"
-        description="Complete guide to Simhastha 2028 in Ujjain including dates, Shahi Snan, Mahakaleshwar Temple, travel information, accommodation and FAQs."
-        slug="simhastha-2028"
-        lang="en"
-        keywords="Simhastha 2028,Ujjain,Kumbh Mela,Mahakal"
-        published="2026-06-20"
-        modified="2026-06-25"
-      />
+    title="Simhastha 2028 Ujjain Complete Guide | MySimhastha"
+    description="Complete guide to Simhastha 2028 in Ujjain."
+    slug="simhastha-2028"
+    image="/images/simhastha-2028.webp"
+    published="2026-06-20"
+    modified="2026-06-28"
+    schema={faqSchema}
+/>
 
       <section className="simhastha-guide">
         <div className="container">
