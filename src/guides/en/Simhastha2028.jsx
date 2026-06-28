@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/guides.css";
-import GuideSEO from "../GuideSEO";
+import GuideSEO from "../../components/guides/GuideSEO";
 
 const faqSchema = {
   "@context": "https://schema.org",

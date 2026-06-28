@@ -709,6 +709,7 @@ Share this Guide
               
               <div className="guide-box">
                 <h3>Complete Cost Breakdown</h3>
+                <div className="table-wrapper">
                 <table>
                   <thead>
                     <tr>
@@ -751,6 +752,7 @@ Share this Guide
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
 
               <h3>Additional Expenses to Budget</h3>
@@ -980,6 +982,7 @@ Share this Guide
               </p>
 
               <h3>Time-Based Recommendations</h3>
+              <div className="table-wrapper">
               <table>
                 <thead>
                   <tr>
@@ -1016,6 +1019,7 @@ Share this Guide
                   </tr>
                 </tbody>
               </table>
+              </div>
 
               <h3>Monthly Considerations</h3>
               <ul style={{listStyle: 'none'}}>

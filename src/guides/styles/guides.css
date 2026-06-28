@@ -352,38 +352,67 @@ html {
 
 /* =====================================================
    TABLES
-===================================================== */
+=/* ==========================================
+   GUIDE TABLE
+========================================== */
+
+.guide-section .table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 30px 0;
+}
 
 .guide-section table {
   width: 100%;
-
+  min-width: 650px; /* Enables horizontal scroll on mobile */
   border-collapse: collapse;
-
-  margin: 30px 0;
-
-  overflow: hidden;
-
   border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
 }
 
 .guide-section th {
   background: #f97316;
-
-  color: white;
-
+  color: #fff;
   padding: 16px;
-
   text-align: left;
+  font-weight: 600;
 }
 
 .guide-section td {
   padding: 14px;
-
   border: 1px solid #eee;
+  vertical-align: middle;
 }
 
 .guide-section tr:nth-child(even) {
   background: #fafafa;
+}
+
+.guide-section th:first-child,
+.guide-section td:first-child {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+
+  .guide-section table {
+    min-width: 600px;
+  }
+
+  .guide-section th,
+  .guide-section td {
+    padding: 12px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .guide-section th:first-child,
+  .guide-section td:first-child {
+    white-space: normal;
+    min-width: 140px;
+  }
+
 }
 
 /* =====================================================
@@ -1057,5 +1086,60 @@ img.guide-image {
 .copy-btn{
     grid-column:1 / -1;
 }
+}
+
+
+.language-switcher a.active{
+    background:#f97316;
+    color:#fff;
+    border-color:#f97316;
+}
+/* ==========================================
+   GUIDE BREADCRUMB
+========================================== */
+
+.guide-breadcrumb{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+    font-size:15px;
+
+}
+
+.guide-breadcrumb a{
+
+    color:#f97316;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.guide-breadcrumb a:hover{
+
+    text-decoration:underline;
+
+}
+
+.breadcrumb-separator{
+
+    color:#999;
+
+}
+
+.breadcrumb-current{
+
+    color:#555;
+
+    font-weight:600;
 
 }
