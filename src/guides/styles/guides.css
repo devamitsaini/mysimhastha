@@ -352,67 +352,38 @@ html {
 
 /* =====================================================
    TABLES
-=/* ==========================================
-   GUIDE TABLE
-========================================== */
-
-.guide-section .table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin: 30px 0;
-}
+===================================================== */
 
 .guide-section table {
   width: 100%;
-  min-width: 650px; /* Enables horizontal scroll on mobile */
+
   border-collapse: collapse;
-  border-radius: 14px;
+
+  margin: 30px 0;
+
   overflow: hidden;
-  background: #fff;
+
+  border-radius: 14px;
 }
 
 .guide-section th {
   background: #f97316;
-  color: #fff;
+
+  color: white;
+
   padding: 16px;
+
   text-align: left;
-  font-weight: 600;
 }
 
 .guide-section td {
   padding: 14px;
+
   border: 1px solid #eee;
-  vertical-align: middle;
 }
 
 .guide-section tr:nth-child(even) {
   background: #fafafa;
-}
-
-.guide-section th:first-child,
-.guide-section td:first-child {
-  font-weight: 700;
-}
-
-@media (max-width: 768px) {
-
-  .guide-section table {
-    min-width: 600px;
-  }
-
-  .guide-section th,
-  .guide-section td {
-    padding: 12px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  .guide-section th:first-child,
-  .guide-section td:first-child {
-    white-space: normal;
-    min-width: 140px;
-  }
-
 }
 
 /* =====================================================
