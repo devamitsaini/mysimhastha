@@ -219,57 +219,19 @@ export default function Simhastha2028Hi() {
   };
 
   return (
+    
     <>
-      <Helmet>
-        <title>
-          सिंहस्थ 2028 उज्जैन पूर्ण गाइड | शाही स्नान, महाकाल दर्शन, यात्रा सूचना
-        </title>
-
-        <meta
-          name="description"
-          content="सिंहस्थ 2028 उज्जैन की पूर्ण गाइड: तारीखें, शाही स्नान, महाकालेश्वर मंदिर दर्शन, यात्रा सूचना, होटल, सुरक्षा सुझाव और अक्सर पूछे जाने वाले प्रश्न।"
-        />
-
-        <meta
-          name="keywords"
-          content="सिंहस्थ 2028, सिंहस्थ उज्जैन, शाही स्नान, महाकाल दर्शन, महाकालेश्वर मंदिर, उज्जैन यात्रा गाइड, कुंभ मेला, सिंहस्थ 2028 तारीखें, उज्जैन होटल, सिंहस्थ दर्शन, शिप्रा नदी, सिंहस्थ पर्यटन"
-        />
-        <link
-  rel="alternate"
-  hreflang="x-default"
-  href="https://www.mysimhastha.com/guide/simhastha-2028"
+    <GuideSEO
+  title="सिंहस्थ 2028 उज्जैन सम्पूर्ण गाइड | MySimhastha"
+  description="सिंहस्थ 2028 उज्जैन की सम्पूर्ण जानकारी। शाही स्नान तिथियां, महाकाल दर्शन, यात्रा, होटल, घाट, मंदिर और श्रद्धालुओं के लिए सम्पूर्ण गाइड।"
+  slug="simhastha-2028"
+  image="/images/simhastha-2028.webp"
+  lang="hi"
+  keywords="सिंहस्थ 2028, उज्जैन कुंभ, महाकाल, शाही स्नान, सिंहस्थ गाइड"
+  published="2026-06-20"
+  modified="2026-06-28"
+  schema={faqSchema}
 />
-
-      <link
-  rel="canonical"
-  href="https://www.mysimhastha.com/hi/guide/simhastha-2028"
-/>
-        <link
-  rel="alternate"
-  hreflang="hi"
-  href="https://www.mysimhastha.com/hi/guide/simhastha-2028"
-/>
-
-<link
-  rel="alternate"
-  hreflang="en"
-  href="https://www.mysimhastha.com/guide/simhastha-2028"
-/>
-        <meta name="language" content="Hindi" />
-        <meta name="content-language" content="hi" />
-
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-
-        <script type="application/ld+json">
-          {JSON.stringify(articleSchema)}
-        </script>
-      </Helmet>
 
       <section className="simhastha-guide">
         <div className="container">
