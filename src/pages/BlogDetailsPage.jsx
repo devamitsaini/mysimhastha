@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import ShareButtons from "../components/guides/ShareButtons";
 
 function BlogDetailsPage() {
   const navigate = useNavigate();
@@ -97,7 +98,10 @@ function BlogDetailsPage() {
       >
         {new Date(blog.created_at).toLocaleDateString()}
       </p>
-
+          <ShareButtons
+    title={blog.title}
+    image={blog.image_url}
+/>
       <div
   className="blog-content"
   style={{ whiteSpace: "pre-line" }}

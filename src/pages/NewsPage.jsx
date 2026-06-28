@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import "../styles/news.css";
 
-function NewsPage({ setSelectedNews }) {
+function NewsPage() {
   const [news, setNews] = useState([]);
   const navigate = useNavigate();
 
@@ -71,12 +71,9 @@ function NewsPage({ setSelectedNews }) {
 
   <button
   className="news-readmore"
-  onClick={() => {
-    setSelectedNews?.(item);
-    navigate("/news-details");
-  }}
+  onClick={() => navigate(`/news/${item.slug}`)}
 >
-  See full News →
+  Read Full News →
 </button>
 
 </div>

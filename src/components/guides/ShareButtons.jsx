@@ -8,26 +8,29 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FiCopy } from "react-icons/fi";
 import { toast } from "react-toastify";
 
-export default function GuideShare({ guide }) {
-  if (!guide) return null;
+export default function ShareButtons({
+  title,
+  image,
+  language = "en",
+}) {
 
-  const language = guide.language || "en";
+  
 
   const labels = {
-    en: {
-      heading: "Share this Guide",
-      copy: "Copy Guide Link",
-      copied: "Guide link copied!",
-      failed: "Unable to copy guide link.",
-    },
+  en: {
+    heading: "🙏 Share with Fellow Devotees",
+    copy: "Copy Link",
+    copied: "Link copied!",
+    failed: "Unable to copy link.",
+  },
 
-    hi: {
-      heading: "इस गाइड को साझा करें",
-      copy: "गाइड लिंक कॉपी करें",
-      copied: "गाइड लिंक कॉपी हो गया।",
-      failed: "गाइड लिंक कॉपी नहीं हो सका।",
-    },
-  };
+  hi: {
+    heading: "🙏 अपने साथी श्रद्धालुओं के साथ साझा करें",
+    copy: "लिंक कॉपी करें",
+    copied: "लिंक कॉपी हो गया।",
+    failed: "लिंक कॉपी नहीं हो सका।",
+  },
+};
 
   const t = labels[language];
 
@@ -35,17 +38,12 @@ export default function GuideShare({ guide }) {
 
   const shareUrl = encodeURIComponent(pageUrl);
 
-  const shareTitle = encodeURIComponent(
-    guide.seo?.title || guide.hero?.title || guide.title || ""
-  );
+  const shareTitle = encodeURIComponent(title || "");
 
   const imageUrl = encodeURIComponent(
-    `https://www.mysimhastha.com/images/${
-      guide.share?.image ||
-      guide.hero?.image ||
-      "default-guide.webp"
-    }`
-  );
+  image ||
+  "https://mysimhastha.com/images/default-guide.webp"
+);
 
   const copyLink = async () => {
     try {

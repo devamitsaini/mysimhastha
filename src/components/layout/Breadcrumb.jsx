@@ -15,7 +15,20 @@ function getBreadcrumbItems(pathname) {
   const contentSegments = isHindi ? segments.slice(1) : segments;
   const prefix = isHindi ? "/hi" : "";
 
-  return contentSegments.map((segment, index) => {
+  return contentSegments
+  .filter((segment, index) => {
+    const isLast = index === contentSegments.length - 1;
+
+    if (
+      isLast &&
+      ["news", "blog", "guide"].includes(contentSegments[0])
+    ) {
+      return false;
+    }
+
+    return true;
+  })
+  .map((segment, index) => {
     const isLast = index === contentSegments.length - 1;
     let url;
 
@@ -25,15 +38,16 @@ function getBreadcrumbItems(pathname) {
       url = prefix + "/" + contentSegments.slice(0, index + 1).join("/");
     }
 
-    const label =
-      LABELS[segment] ||
-      segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+   const decodedSegment = decodeURIComponent(segment);
+
+const label =
+  LABELS[segment] ||  
+  decodedSegment.replace(/-/g, " ");
 
     return { url, label, isLast };
   });
 }
-
-export default function Breadcrumb() {
+export default function Breadcrumb()  {
   const location = useLocation();
 
   if (location.pathname === "/") return null;

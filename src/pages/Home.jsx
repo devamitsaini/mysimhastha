@@ -24,7 +24,7 @@
       const SHAHI_SNAN_DATES = SNAN_DATES.filter(s => s.shahi);
         const [mpList] = useState(MISSING_DATA.slice(0, 4));
         const [latestNews, setLatestNews] = useState([]);
-        const [selectedNews, setSelectedNews] = useState(null);
+        
         const [showNriForm, setShowNriForm] = useState(false);
         const [nriForm, setNriForm] = useState({ name: '', email: '', country: '', service: 'pooja' });
         const [formStatus, setFormStatus] = useState('idle'); // idle | loading | success | error
@@ -296,10 +296,12 @@
           <article
             key={n.id}
             className="news-card"
-            onClick={() => setSelectedNews(n)}
+            onClick={() => navigate(`/news/${n.slug}`)}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && setSelectedNews(n)}
+            onKeyDown={(e) =>
+  e.key === "Enter" && navigate(`/news/${n.slug}`)
+}
           >
             <div className="news-img">
               <img
@@ -338,32 +340,7 @@
             </section>
 
             {/* NEWS MODAL */}
-            {selectedNews && (
-              <div className="modal-overlay" role="dialog" aria-modal="true" aria-label={selectedNews.title} onClick={() => setSelectedNews(null)}>
-                <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-                  <button className="modal-close" onClick={() => setSelectedNews(null)} aria-label="Close">✕</button>
-                  <img
-      src={selectedNews.image_url}
-      alt={selectedNews.title}
-      loading="lazy"
-      decoding="async"
-      className="news-modal-image"
-    />
-    <h2 className="news-modal-title">
-      {selectedNews.title}
-    </h2>
-
-    <div className="news-modal-content">
-      {selectedNews.summary
-    ?.split("\n")
-        .filter(Boolean)
-        .map((para, index) => (
-          <p key={index}>{para}</p>
-        ))}
-    </div>
-                </div>
-              </div>
-            )}
+            
 
             {/* KUMBH THROUGH YEARS */}
             <section className="section" style={{ background: 'var(--cream2)' }} aria-labelledby="years-heading">

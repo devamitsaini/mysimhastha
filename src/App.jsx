@@ -99,14 +99,12 @@ function App() {
             element={<BlogDetailsPage />}
             />
 
-            <Route
-              path="/news"
-              element={
-                <NewsPage
-                  setSelectedNews={setSelectedNews}
-                />
-              }
-            />
+            <Route path="/news" element={<NewsPage />} />
+
+<Route
+  path="/news/:slug"
+  element={<NewsDetailsPage />}
+/>
 
             <Route
               path="/hotels"
