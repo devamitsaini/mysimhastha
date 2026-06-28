@@ -4,6 +4,13 @@ import "../../styles/HomeGuides.css";
 export default function HomeGuides() {
   const guides = [
     {
+    title: "Complete Guide to Mahakal Darshan at Mahakaleshwar Temple",
+    description: "Temple visit guide, booking, costs, rules, spiritual experience",
+    image: "/images/mahakal-darshan.webp",
+    tag: "Mahakal Darshan",
+    link: "/guide/mahakal-darshan",
+  },
+    {
       title: "Simhastha 2028 Complete Guide",
       description:
         "Dates, Shahi Snan, Mahakal Darshan, travel and accommodation.",

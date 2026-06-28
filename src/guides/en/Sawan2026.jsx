@@ -5,212 +5,135 @@ import { Link } from "react-router-dom";
 
 
 export default function Sawan2026() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "When is Sawan 2026 starting?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Sawan 2026 starts on July 30, 2026 and ends on August 28, 2026. This is a sacred month dedicated to Lord Shiva in the Hindu calendar."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What are Sawan Somwar dates in 2026?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "The Sawan Somwar (Monday) dates in 2026 are: August 3, August  10, August 17 and August 24. These Mondays are considered especially auspicious for visiting Mahakaleshwar Temple."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Why is Sawan important for Lord Shiva devotees?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Sawan is the holiest month for Shiva devotees. It commemorates Lord Shiva drinking the poison during Samudra Manthan. Devotees believe visiting temples and performing rituals during Sawan brings blessings and spiritual growth."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What time is Bhasma Aarti at Mahakaleshwar Temple?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Bhasma Aarti is performed at 4:00 AM every morning at Mahakaleshwar Temple. During Sawan, devotees wake up early to witness this sacred ritual."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Is Mahakaleshwar Temple open throughout Sawan?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, Mahakaleshwar Temple remains open throughout Sawan 2026. Regular worship and special rituals are performed."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How many people visit Ujjain during Sawan?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Sawan attracts hundreds of thousands of devotees to Ujjain. The crowd is heaviest during Sawan Somwar (Mondays) and on the last day of Sawan. Daily footfall can reach 50,000-100,000 visitors."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What is Jalabhishek at Mahakaleshwar?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Jalabhishek is the ritual of pouring sacred water and milk over the Shivling. During Sawan, Jalabhishek is performed multiple times daily. Devotees can participate by donating for this ritual."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What is Rudrabhishek and when to do it?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Rudrabhishek is an elaborate ritual involving 11 priests and specific mantras dedicated to Lord Rudra (Shiva). It's performed on specific days and costs around ₹5000-15000. Bookings should be done in advance."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What is Mahakal Shahi Sawari during Sawan?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Shahi Sawari is a ceremonial procession where the deity of Mahakaleshwar is taken out on a decorated elephant. It happens on selected days during Sawan and attracts massive crowds."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Which is the best time to visit Mahakal during Sawan?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Early morning (before 7:00 AM) offers the shortest queues at Mahakaleshwar Temple. However, if you want the full Sawan experience with crowds and celebrations, mid-morning or evening times are ideal. Avoid midday heat."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How much time does Mahakal darshan take?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "During Sawan, darshan time varies from 30 minutes to 3-4 hours depending on crowd. Peak times (7-10 AM and 5-8 PM) can take 2-4 hours. Early morning (4-6 AM) usually takes 30-45 minutes."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What are the temple fees at Mahakaleshwar?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "General darshan is free. Optional rituals like Jalabhishek (₹500-2000), special pujas (₹1000-5000), and Rudrabhishek (₹5000-15000) have fees. Online booking is recommended for special rituals."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How to book accommodation near Mahakal Temple?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Book hotels 1-2 months in advance for Sawan. Use booking platforms like OYO, Booking.com, MySimhastha.com or contact Ujjain tourism directly. Budget options near temple range from ₹800-2000 per night."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Are there budget dharamshalas near Mahakal?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, several dharamshalas offer budget accommodation. Shri Mahakaleshwar Niwas, Anand Niwas, and other temple-affiliated dharamshalas charge ₹200-600 per night. Book directly with temple authorities."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What is the parking situation near Mahakal Temple?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Free parking is available at the temple complex. However, during Sawan peak hours, parking can be difficult. Street parking is available in surrounding lanes. Auto-rickshaw or taxi is recommended."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How to reach Ujjain by air?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "The nearest airport is Devi Ahilya Bai Holkar Airport in Indore, 55 km away. From Indore, you can hire a taxi (cost ₹1200-1800), take a bus, or use train to reach Ujjain in 1.5-2 hours."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How to reach Ujjain by train?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ujjain has direct train connections from major cities like Delhi, Mumbai, Indore, and Gwalior. Trains like Avantika Express and regional trains serve the city. Ujjain Junction railway station is 2 km from Mahakal Temple."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How to reach Ujjain by road?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ujjain is well-connected by road. From Indore: 55 km (1 hour), From Bhopal: 190 km (3 hours), From Gwalior: 240 km (4 hours). Bus services and taxis are available from nearby cities."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Which temples should I visit in Ujjain besides Mahakal?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Important temples: Kal Bhairav Temple (fearless form of Shiva), Harsiddhi Temple (Mother Goddess), Mangalnath Temple (Mars deity), Chintaman Ganesh Temple, and Sandipani Ashram (Lord Krishna's school)."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What food is special during Sawan in Ujjain?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Sawan special foods: Sabudana khichdi, makhana, singhare ki sabzi, fruit chaat, and sweets. Many devotees observe fasts with fruits and milk products. Local vendors sell poha, jalebi, and namkeen across temple areas."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What should I carry when visiting Mahakal in Sawan?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Essential items: Comfortable shoes, light cotton clothes, water bottle, umbrella, sunscreen, hand sanitizer, mask, ID proof, cash, phone charger. Avoid carrying valuables. Keep medications if needed."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Is it safe to visit Mahakal during Sawan rush?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, Mahakaleshwar is safe with adequate security. However, be cautious during peak hours. Keep children close, avoid carrying bags, and be aware of pickpockets in crowds. Avoid late nights on streets."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How much budget do I need for a Sawan trip to Ujjain?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Budget breakdown: Accommodation ₹800-3000/night, Darshan ₹0-5000, Food ₹500-1500/day, Transport ₹200-500/day. Total for 3 days: ₹3000-10000 per person (budget to mid-range)."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What tips do first-time visitors should know?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Arrive during off-peak hours, book hotels in advance, carry minimal luggage, respect the sacred atmosphere, follow darshan protocols, wear traditional clothes for better experience, and hire a local guide for temple history."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Can I do online booking for Mahakal rituals?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, online ritual booking is available through the official Mahakaleshwar Temple website and registered tour operators. Special puja and Rudrabhishek can be booked in advance to avoid waiting."
-        }
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      "name": "When does Sawan 2026 start and end?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sawan (Shravan) 2026 begins on July 30, 2026 and concludes on August 28, 2026. It is one of the holiest months in the Hindu calendar and is dedicated to the worship of Lord Shiva."
       }
-    ]
-  };
+    },
+    {
+      "@type": "Question",
+      "name": "What are the Sawan Somwar dates in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Sawan Somwar dates in 2026 are August 3, August 10, August 17 and August 24. These Mondays are considered especially auspicious for offering prayers and seeking the blessings of Lord Shiva."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is Mahakaleshwar Temple so special during Sawan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mahakaleshwar Temple, one of the twelve Jyotirlingas, attracts lakhs of devotees during the holy month of Sawan. Special rituals, Bhasma Aarti, Jalabhishek, and festive celebrations make this the most significant time to visit Ujjain."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Mahakaleshwar Temple darshan timings during Sawan 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mahakaleshwar Temple remains open throughout Sawan with regular darshan and special rituals. Timings may change during festivals and Sawan Somwar due to heavy crowds, so visitors should verify the latest schedule before planning their visit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I attend Bhasma Aarti at Mahakaleshwar Temple?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bhasma Aarti is the most sacred ritual at Mahakaleshwar Temple and is performed early every morning. Entry generally requires advance registration, and devotees must follow the temple's dress code and official guidelines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is online booking available for Mahakal Darshan and Bhasma Aarti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Eligible darshan services, Bhasma Aarti and selected pujas can be booked online through the official Shri Mahakaleshwar Temple Management Committee website, subject to availability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is VIP Darshan available at Mahakaleshwar Temple during Sawan 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VIP Darshan may be available during Sawan depending on the temple administration's arrangements. Availability, timings and booking procedures can change during festivals because of heavy pilgrim footfall."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the dress code for Bhasma Aarti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Devotees attending Bhasma Aarti should follow the dress code prescribed by the Mahakaleshwar Temple administration. Traditional attire is generally required, and visitors should check the latest guidelines before attending."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best time to visit Mahakaleshwar Temple during Sawan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Early morning is generally the best time for a smoother darshan experience. Sawan Somwar and weekends attract the largest crowds, so arriving well before temple opening is recommended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can devotees perform Jalabhishek during Sawan at Mahakaleshwar Temple?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jalabhishek is one of the most important rituals dedicated to Lord Shiva during Shravan. Whether devotees can personally perform Jalabhishek depends on the temple's rules and arrangements in effect during the festival."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does Mahakal Darshan take during Sawan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Darshan waiting time depends on the day and crowd size. On Sawan Somwar and festival days, waiting time can be significantly longer, while weekday mornings generally have shorter queues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I reach Mahakaleshwar Temple from Ujjain Railway Station?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mahakaleshwar Temple is approximately 2 km from Ujjain Junction Railway Station. Auto-rickshaws, taxis and local transport are easily available to reach the temple."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I stay near Mahakaleshwar Temple during Sawan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hotels, guest houses and dharamshalas are available near Mahakaleshwar Temple. Since Sawan is one of the busiest pilgrimage seasons, booking accommodation in advance is highly recommended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which temples should I visit near Mahakaleshwar Temple?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Besides Mahakaleshwar Temple, devotees often visit Kal Bhairav Temple, Harsiddhi Temple, Mangalnath Temple, Chintaman Ganesh Temple, Sandipani Ashram and Ram Ghat during their Ujjain pilgrimage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I carry while visiting Mahakaleshwar Temple during Sawan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Carry a valid ID, comfortable clothing, drinking water, an umbrella or raincoat, comfortable footwear, essential medicines and minimal luggage. Following temple rules and local administration guidelines will ensure a smooth pilgrimage experience."
+      }
+    }
+  ]
+};
+
+
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -267,12 +190,12 @@ export default function Sawan2026() {
     <>
       <Helmet>
         <title>
-          Sawan 2026 Ujjain Complete Guide | Mahakal Darshan, Bhasma Aarti, Travel Tips
+          Mahakal Sawan 2026: Ujjain Shravan Month Dates, Darshan, Timings & Complete Guide
         </title>
 
         <meta
           name="description"
-          content="Complete Sawan 2026 Ujjain guide: Mahakal Temple timings, Bhasma Aarti, Jalabhishek, Somwar dates (Aug 3, 10, 17, 24), hotels, parking, travel, accommodation and FAQs."
+          content="Planning to visit Mahakaleshwar during Sawan 2026? Get Shravan dates, Somwar schedule, Mahakal Darshan timings, Bhasma Aarti, travel tips and crowd guide."
         />
 
         <meta
@@ -318,7 +241,7 @@ export default function Sawan2026() {
           {/* Header */}
 <header className="guide-header">
   <h1>
-    Sawan 2026 Ujjain Complete Guide
+    Mahakal Sawan 2026: Complete Ujjain Shravan Month Guide
   </h1>
 
   <img
@@ -343,7 +266,8 @@ export default function Sawan2026() {
 </header>
           {/* HERO */}
           <div className="guide-header">
-            <h1>Sawan 2026 Ujjain Complete Guide</h1>
+         
+      
 
             <p>
               Sawan 2026 in Ujjain – Dates (July 30 – August 28), Mahakal Temple Opening Hours, Bhasma Aarti, Sawan Somvar (Aug 3, 10, 17, 24), Bhasm Aarti, Darshan Guide, Jalabhishek, Rudrabhishek, Traveling, Hotels and useful tips.
@@ -399,7 +323,7 @@ export default function Sawan2026() {
 
           {/* SECTION: What is Sawan */}
           <div className="guide-section" id="what-is-sawan">
-            <h2>What is Sawan?</h2>
+            <h2>What is Shravan Month?</h2>
 
             <p>
               Sawan is the fifth month of the Hindu lunar month and the holy month of lord Shiva. The month of July and August according to Gregorian calendar comes under this sacred month of Lord Shiva. It marks the beginning of the monsoons. The word "Sawan" originates from "Shravan" meaning Shravan Nakshatra.
@@ -476,7 +400,8 @@ export default function Sawan2026() {
 
           {/* SECTION: Sawan Somwar Dates */}
           <div className="guide-section" id="sawan-somwar">
-            <h2>Sawan Somwar Dates 2026</h2>
+            <h2>Sawan Somwar Dates 2026
+</h2>
 
             <p>
               Sawan Somwar are those Mondays that come within the month of Sawan. Monday is typically a day associated with Lord Shiva but the Mondays during the month of Sawan have a particular sanctity in our culture. Monday prayers during Sawan month are believed to have the maximum spiritual gains for the devotees.
@@ -500,7 +425,8 @@ export default function Sawan2026() {
 
           {/* SECTION: Why Sawan Important */}
           <div className="guide-section" id="why-sawan-important">
-            <h2>Why Sawan is Important for Lord Shiva Devotees</h2>
+            <h2>Why Mahakal is Special During Sawan
+</h2>
 
             <p>
               For many millions of Shiva bhakts across the globe, Sawan (or Shravana masa) month holds the highest spiritual value. This is considered the month during which the barriers between the material and spiritual planes become very thin and hence, the prayers & rituals are very potent and efficacious.
@@ -600,7 +526,8 @@ export default function Sawan2026() {
 
           {/* SECTION: Temple Timings */}
           <div className="guide-section" id="temple-timings">
-            <h2>Mahakal Temple Timings</h2>
+            <h2>Mahakal Darshan Timings During Sawan
+</h2>
 
             <p>
               The operating hours of the Mahakaleshwar Temple remain more or less the same on all days of the year, but the timings become elongated in popular festivals like Sawan. The information about these timings will assist you in scheduling the visit to the temple in a planned and well-structured manner and to prevent experiencing throngs.
@@ -635,7 +562,8 @@ export default function Sawan2026() {
 
           {/* SECTION: Bhasma Aarti */}
           <div className="guide-section" id="bhasma-aarti">
-            <h2>Bhasma Aarti Complete Guide</h2>
+            <h2>Bhasma Aarti During Sawan
+</h2>
 
             <p>
               Bhasma Aarti is Bhasma Aarti is the temple of mahakaleshwar’s iconic practice which is conducted every day at early 4.00 AM. In this practice "Bhasma" means Sacred Ash, and "Aarti" means worship ritual. Bhasma Aarti is the only worship performed at the temple of Mahakaleshwar which makes it different from the other Jyotirlinga temple.
@@ -735,7 +663,8 @@ export default function Sawan2026() {
 
           {/* SECTION: Expected Crowd */}
           <div className="guide-section" id="crowd">
-            <h2>Expected Crowd During Sawan</h2>
+            <h2>Temple Crowd & Best Time
+</h2>
 
             <p>
               Best time to visit Mahakaleshwar Temple in Sawan Considering it as one of the most important season for Mahakaleshwar Temple, we can see a big rush of devotees come from different parts of India and even foreign places. If you get to know about crowd during this season it will surely help you manage you plan.
@@ -793,7 +722,8 @@ export default function Sawan2026() {
 
           {/* SECTION: Hotels */}
           <div className="guide-section" id="hotels">
-            <h2>Hotels Near Mahakal Temple</h2>
+            <h2>Where to Stay
+</h2>
 
             <p>
               The best options to put up in the vicinity are to book hotels nearby theMahakaleshwar Temple, which includes an array of budget, medium range and luxury options according to your requirement. The hotels nearby Mahakaleshwar Mandir get packed with rooms due to large rush of visitors in Sawan.
@@ -1079,7 +1009,8 @@ export default function Sawan2026() {
 
           {/* SECTION: Safety Tips */}
           <div className="guide-section" id="safety">
-            <h2>Safety Tips</h2>
+            <h2>Travel Tips
+</h2>
 
             <p>
               While Ujjain is considered safe for a spiritual trip, staying aware in certain situations makes for a trouble-free and stress-free Sawan experience! Afterall, staying attentive lets you immerse in the experience of the pilgrimage without any distractions.
@@ -1490,6 +1421,12 @@ export default function Sawan2026() {
         className="guide-promo-btn"
       >
         Simhastha 2028 Guide →
+      </Link>
+      <Link
+        to="/guide/mahakal-darshan"
+        className="guide-promo-btn"
+      >
+        How to do Mahakal Darshan →
       </Link>
 
     </div>
