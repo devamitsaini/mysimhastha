@@ -903,12 +903,7 @@ export default function MahakalShahiSawari() {
               Content available in English and हिन्दी to help pilgrims and travelers from different regions plan their Sawan 2026 journey to Ujjain and Mahakaleshwar Temple.
             </p>
           </div>
-            {/* Footer CTA */}
-            <div className="guide-footer-link">
-              <Link to="/guides/mahakal-shahi-sawari">
-                📖 Save This Complete Mahakal Shahi Sawari Guide →
-              </Link>
-            </div>
+      
           </article>
         </div>
       </section>

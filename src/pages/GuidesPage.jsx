@@ -6,6 +6,14 @@ export default function GuidesPage() {
 
   const navigate = useNavigate();
   const guides = [
+    {
+    title: "Complete Guide to Mahakal Darshan at Mahakaleshwar Temple",
+    description: "Temple visit guide, booking, costs, rules, spiritual experience",
+    image: "/images/mahakal-darshan.webp",
+    enLink: "/guide/mahakal-darshan",
+    hiLink: "/hi/mahakal-darshan",
+    date: "2026-06-28",
+  },
   {
     title: "Mahakal Shahi Sawari Ujjain Guide",
     description: "Complete guide for Mahakal Shahi Sawari...",
@@ -37,15 +45,7 @@ export default function GuidesPage() {
     enLink: "/guide/simhastha-2028",
     hiLink: "/hi/guide/simhastha-2028",
     date: "2026-06-20",
-  },
-  {
-    title: "Complete Guide to Mahakal Darshan at Mahakaleshwar Temple",
-    description: "Temple visit guide, booking, costs, rules, spiritual experience",
-    image: "/images/simhastha-2028.webp",
-    enLink: "/guide/mahakal-darshan",
-    hiLink: "/hi/mahakal-darshan",
-    date: "2026-06-28",
-  },
+  }
 ];
 
   return (

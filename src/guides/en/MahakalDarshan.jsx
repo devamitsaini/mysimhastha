@@ -1513,7 +1513,101 @@ Your feedback helps us improve MySimhastha guides!</p>
               </p>
               
             </section>
+{/* STAY CONNECTED */}
+<div className="guide-box">
+  <h2>Stay Connected with MySimhastha</h2>
 
+  <p>
+    Planning your Sawan 2026 tour to Ujjain ? We got you covered here with updates, travel tips, temples and stay information so you don’t miss out anything for your pilgrimage visit.
+  </p>
+
+<div className="social-links">
+
+  <p>
+    🔸 Website:
+    <a
+      href="https://mysimhastha.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      MySimhastha.com
+    </a>
+  </p>
+
+  <p>
+    🔸 Instagram:
+    <a
+      href="https://instagram.com/mysimhastha"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      @mysimhastha
+    </a>
+  </p>
+
+  <p>
+    🔸 Facebook:
+    <a
+      href="https://facebook.com/mysimhastha"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      MySimhastha Facebook Page
+    </a>
+  </p>
+
+  <p>
+    🔸 Reddit Community:
+    <a
+      href="https://reddit.com/r/Simhastha2028"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      r/Simhastha2028
+    </a>
+  </p>
+
+</div>
+
+            <br />
+
+            <h3>Explore More</h3>
+
+            <ul>
+              <li>
+                <Link to="/guide/simhastha-2028">
+                  Simhastha 2028 Complete Guide
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/hotels">
+                  Hotels Near Mahakal Temple
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/news">
+                  Latest Ujjain Temple News
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/blog">
+                  Ujjain Travel Experiences & Stories
+                </Link>
+              </li>
+            </ul>
+
+            <p>
+              Planning an extensive pilgrimage to Ujjain this Sawan? Find exclusive Sawan hacks, crowd status live, and inspiring pilgrimage tales on MySimhastha across platforms! You can even check with pilgrims like yourself and various Ujjain specialists in our community, for that optimal Sawan 2026 experience.
+            </p>
+
+            <p>
+              Content available in English and हिन्दी to help pilgrims and travelers from different regions plan their Sawan 2026 journey to Ujjain and Mahakaleshwar Temple.
+            </p>
+          </div>
+      
             <h2>Official Resources</h2>
 
             <ul className="official-links">

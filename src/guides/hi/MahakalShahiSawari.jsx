@@ -691,7 +691,7 @@ export default function MahakalShahiSawariHi() {
   </p>
 
   <p>
-    सामग्री <strong>हिन्दी, English, मराठी और ગુજરાતી</strong> में उपलब्ध है,
+    सामग्री <strong>हिन्दी, English, </strong> में उपलब्ध है,
     ताकि देशभर के श्रद्धालु और यात्री अपनी महाकाल एवं उज्जैन यात्रा की बेहतर
     योजना बना सकें।
   </p>
@@ -711,12 +711,7 @@ export default function MahakalShahiSawariHi() {
               </Link>
             </section>
 
-            {/* Footer CTA */}
-            <div className="guide-footer-link">
-              <Link to="/hi/guides/mahakal-shahi-sawari">
-                📖 महाकाल शाही सवारी गाइड सहेजें →
-              </Link>
-            </div>
+  
           </article>
         </div>
       </section>

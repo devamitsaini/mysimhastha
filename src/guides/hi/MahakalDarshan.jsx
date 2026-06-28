@@ -1351,6 +1351,109 @@ encodeURIComponent(window.location.href);
               
             </section>
 
+            {/* जुड़े रहें - MySimhastha */}
+<div className="guide-box">
+  <h2>MySimhastha से जुड़े रहें</h2>
+
+  <p>
+    क्या आप श्रावण 2026 में उज्जैन यात्रा की योजना बना रहे हैं? 
+    MySimhastha पर आपको महाकाल दर्शन, शाही सवारी, यात्रा सुझाव, 
+    होटल, मंदिरों की जानकारी और नवीनतम अपडेट एक ही स्थान पर मिलेंगे, 
+    ताकि आपकी तीर्थ यात्रा सहज और यादगार बन सके।
+  </p>
+
+  <div className="social-links">
+
+    <p>
+      🔸 वेबसाइट:
+      <a
+        href="https://mysimhastha.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        MySimhastha.com
+      </a>
+    </p>
+
+    <p>
+      🔸 इंस्टाग्राम:
+      <a
+        href="https://instagram.com/mysimhastha"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        @mysimhastha
+      </a>
+    </p>
+
+    <p>
+      🔸 फेसबुक:
+      <a
+        href="https://facebook.com/mysimhastha"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        MySimhastha Facebook Page
+      </a>
+    </p>
+
+    <p>
+      🔸 Reddit समुदाय:
+      <a
+        href="https://reddit.com/r/Simhastha2028"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        r/Simhastha2028
+      </a>
+    </p>
+
+  </div>
+
+  <br />
+
+  <h3>और भी पढ़ें</h3>
+
+  <ul>
+    <li>
+      <Link to="/hi/guide/simhastha-2028">
+        सिंहस्थ 2028 संपूर्ण गाइड
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/hotels">
+        महाकाल मंदिर के पास होटल
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/news">
+        उज्जैन मंदिर की नवीनतम खबरें
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/blog">
+        उज्जैन यात्रा अनुभव एवं कहानियाँ
+      </Link>
+    </li>
+  </ul>
+
+  <p>
+    यदि आप श्रावण 2026 में उज्जैन की विस्तृत तीर्थ यात्रा की योजना बना रहे हैं,
+    तो MySimhastha पर आपको लाइव भीड़ अपडेट, यात्रा सुझाव, दर्शन मार्गदर्शिका
+    और अन्य श्रद्धालुओं के अनुभव मिलेंगे। आप हमारे समुदाय में उज्जैन के
+    जानकारों और अन्य यात्रियों से भी जुड़ सकते हैं।
+  </p>
+
+  <p>
+    सामग्री <strong>हिन्दी, English, </strong> में उपलब्ध है,
+    ताकि देशभर के श्रद्धालु और यात्री अपनी महाकाल एवं उज्जैन यात्रा की बेहतर
+    योजना बना सकें।
+  </p>
+</div>
+
 <h2>आधिकारिक संसाधन</h2>
 
 <ul className="official-links">
