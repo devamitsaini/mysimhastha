@@ -4,6 +4,7 @@
   import { supabase } from "../lib/supabase";
   import ShareButtons from "../components/guides/ShareButtons";
   import Breadcrumb from "../components/layout/Breadcrumb";
+  import "../styles/news.css";
 
   function NewsDetailsPage() {
     const { slug } = useParams();
