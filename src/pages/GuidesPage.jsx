@@ -32,11 +32,19 @@ export default function GuidesPage() {
   },
   {
     title: "Simhastha 2028 Complete Guide",
-    description: "Everything about Simhastha 2028...",
+    description: "Everything about Simhastha 2028",
     image: "/images/simhastha-2028.webp",
     enLink: "/guide/simhastha-2028",
     hiLink: "/hi/guide/simhastha-2028",
     date: "2026-06-20",
+  },
+  {
+    title: "Complete Guide to Mahakal Darshan at Mahakaleshwar Temple",
+    description: "Temple visit guide, booking, costs, rules, spiritual experience",
+    image: "/images/simhastha-2028.webp",
+    enLink: "/guide/mahakal-darshan",
+    hiLink: "/hi/mahakal-darshan",
+    date: "2026-06-28",
   },
 ];
 

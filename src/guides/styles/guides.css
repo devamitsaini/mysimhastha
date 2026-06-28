@@ -726,3 +726,336 @@ img.guide-image {
   background: #d95b10;
   transform: translateY(-2px);
 }
+
+/* ==========================================
+   SHARE BAR
+========================================== */
+
+.share-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin:30px 0;
+}
+
+.share-btn{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:999px;
+  color:#2b1400;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  transition:.25s;
+  min-width:170px;
+}
+
+.share-btn:hover{
+  background:#f97316;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+
+/* ==========================================
+   OFFICIAL RESOURCES
+========================================== */
+
+.official-links{
+  list-style:none;
+  padding:0;
+  margin:20px 0;
+}
+
+.official-links li{
+  margin-bottom:14px;
+}
+
+.official-links a{
+  display:block;
+  padding:18px;
+  background:#fff7ed;
+  border-left:5px solid #f97316;
+  border-radius:14px;
+  color:#2b1400;
+  font-weight:700;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.official-links a:hover{
+  background:#f97316;
+  color:white;
+}
+
+/* ==========================================
+   HELPFUL BOX
+========================================== */
+
+.helpful-box{
+  margin:40px 0;
+  padding:30px;
+  text-align:center;
+  background:#fff7ed;
+  border-radius:20px;
+}
+
+.helpful-box h3{
+  margin-bottom:20px;
+}
+
+.helpful-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.helpful-buttons button{
+  border:none;
+  padding:14px 24px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:700;
+  background:white;
+  transition:.25s;
+}
+
+.helpful-buttons button:hover{
+  background:#f97316;
+  color:white;
+}
+
+/* ==========================================
+   COPY GUIDE BUTTON
+========================================== */
+
+.copy-link-btn{
+  border:none;
+  background:#f97316;
+  color:white;
+  padding:12px 20px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:700;
+  transition:.25s;
+}
+
+.copy-link-btn:hover{
+  background:#d95b10;
+}
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+.back-top{
+  margin:50px 0 20px;
+  text-align:center;
+}
+
+.back-top a{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:999px;
+  background:#2b1400;
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  transition:.25s;
+}
+
+.back-top a:hover{
+  background:#f97316;
+}
+
+@media(max-width:768px){
+
+.share-wrapper{
+    gap:10px;
+}
+
+.share-btn{
+    flex:1 1 calc(50% - 10px);
+    justify-content:center;
+}
+
+.helpful-buttons{
+    flex-direction:column;
+}
+
+.helpful-buttons button{
+    width:100%;
+}
+
+}
+/* ==========================================
+   SHARE BUTTONS
+========================================== */
+
+.share-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin:25px 0 40px;
+}
+
+.share-buttons a,
+.share-buttons button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    min-width:150px;
+
+    padding:12px 18px;
+
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:999px;
+
+    color:#2b1400;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.share-buttons a:hover,
+.share-buttons button:hover{
+    background:#f97316;
+    color:#fff;
+    border-color:#f97316;
+    transform:translateY(-2px);
+}
+
+.share-buttons a:hover{
+  background:#f97316;
+  color:#fff;
+  transform:translateY(-2px);
+  border-color:#f97316;
+}
+
+@media(max-width:768px){
+
+.share-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.share-buttons a{
+    width:100%;
+    min-width:unset;
+}
+}
+.copy-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    min-width:180px;
+
+    padding:12px 20px;
+
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:999px;
+
+    color:#2b1400;
+    font-weight:600;
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.copy-btn:hover{
+    background:#f97316;
+    color:#fff;
+    border-color:#f97316;
+    transform:translateY(-2px);
+}
+
+.copy-btn svg{
+    flex-shrink:0;
+}
+/* WhatsApp */
+.share-btn.whatsapp:hover{
+    background:#25D366;
+    border-color:#25D366;
+    color:#fff;
+}
+
+/* Facebook */
+.share-btn.facebook:hover{
+    background:#1877F2;
+    border-color:#1877F2;
+    color:#fff;
+}
+
+/* X */
+.share-btn.twitter:hover{
+    background:#111;
+    border-color:#111;
+    color:#fff;
+}
+
+/* Pinterest */
+.share-btn.pinterest:hover{
+    background:#E60023;
+    border-color:#E60023;
+    color:#fff;
+}
+
+/* Copy */
+.share-btn.copy-btn:hover{
+    background:#f97316;
+    border-color:#f97316;
+    color:#fff;
+}
+.share-btn svg{
+    color:#f97316;
+    transition:.25s;
+}
+
+.share-btn:hover svg{
+    color:#fff;
+}
+.share-title{
+    text-align:center;
+    font-weight:700;
+    color:#2b1400;
+    margin-bottom:15px;
+    font-size:18px;
+}
+@media(max-width:768px){
+
+.share-buttons{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.copy-btn{
+    grid-column:1 / -1;
+}
+
+}

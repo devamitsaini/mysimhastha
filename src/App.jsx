@@ -1,7 +1,8 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import "./index.css";
-
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import MobileNav from "./components/layout/MobileNav";
 import Navbar from "./components/layout/Navbar";
@@ -19,6 +20,8 @@ import Sawan2026Dates from "./guides/en/Sawan2026Dates";
 import Sawan2026DatesHI from "./guides/hi/Sawan2026Dates";
 import MahakalShahiSawari from "./guides/en/MahakalShahiSawari";
 import MahakalShahiSawariHi from "./guides/hi/MahakalShahiSawari";
+import MahakalDarshan from "./guides/en/MahakalDarshan";
+import MahakalDarshanHi from "./guides/hi/MahakalDarshan";
 
 import { Navigate } from "react-router-dom";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -191,12 +194,29 @@ function App() {
               element={<MahakalShahiSawariHi />}
             />
 
+            <Route
+              path="/guide/mahakal-darshan"
+              element={<MahakalDarshan />}
+            />
+            <Route
+              path="/hi/guide/mahakal-darshan"
+              element={<MahakalDarshanHi />}
+            />
+
           </Routes>
         </Suspense>
       </main>
 
       <MobileNav />
       <Footer />
+      <ToastContainer
+      position="bottom-right"
+      autoClose={3000}
+      newestOnTop
+      closeOnClick
+      pauseOnHover
+      theme="light"
+    />
     </div>
   );
 }
