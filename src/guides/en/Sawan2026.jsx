@@ -300,7 +300,7 @@ const faqSchema = {
               <li><a href="#mahakaleshwar-guide">Mahakaleshwar Temple Complete Guide</a></li>
               <li><a href="#mahakal-darshan">Mahakal Darshan Guide</a></li>
               <li><a href="#temple-timings">Temple Timings</a></li>
-              <li><a href="#bhasma-aarti">Bhasma Aarti Complete Guide</a></li>
+              <li><a href="#bhasma-arti">Bhasma Aarti Complete Guide</a></li>
               <li><a href="#jalabhishek">Jalabhishek Guide</a></li>
               <li><a href="#rudrabhishek">Rudrabhishek Guide</a></li>
               <li><a href="#shahi-sawari">Mahakal Shahi Sawari During Sawan</a></li>
@@ -561,7 +561,7 @@ const faqSchema = {
           </div>
 
           {/* SECTION: Bhasma Aarti */}
-          <div className="guide-section" id="bhasma-aarti">
+          <div className="guide-section" id="bhasma-arti">
             <h2>Bhasma Aarti During Sawan
 </h2>
 

@@ -371,7 +371,7 @@ export default function Sawan2026Hi() {
               <li><a href="#mahakaleshwar-guide">महाकालेश्वर मंदिर पूर्ण गाइड</a></li>
               <li><a href="#mahakal-darshan">महाकाल दर्शन गाइड</a></li>
               <li><a href="#temple-timings">मंदिर समय</a></li>
-              <li><a href="#bhasma-aarti">भस्म आरती पूर्ण गाइड</a></li>
+              <li><a href="#bhasma-arti">भस्म आरती पूर्ण गाइड</a></li>
               <li><a href="#jalabhishek">जलाभिषेक गाइड</a></li>
               <li><a href="#rudrabhishek">रुद्राभिषेक गाइड</a></li>
               <li><a href="#shahi-sawari">सावन में महाकाल शाही सवारी</a></li>
@@ -624,7 +624,7 @@ export default function Sawan2026Hi() {
           </div>
 
           {/* SECTION: Bhasma Aarti */}
-          <div className="guide-section" id="bhasma-aarti">
+          <div className="guide-section" id="bhasma-arti">
             <h2>भस्म आरती पूर्ण गाइड</h2>
 
             <p>

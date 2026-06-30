@@ -22,6 +22,8 @@ import MahakalShahiSawari from "./guides/en/MahakalShahiSawari";
 import MahakalShahiSawariHi from "./guides/hi/MahakalShahiSawari";
 import MahakalDarshan from "./guides/en/MahakalDarshan";
 import MahakalDarshanHi from "./guides/hi/MahakalDarshan";
+import BhasmaartiGuideEn from "./guides/en/Bhasmaarti";
+import BhasmaartiGuideHi from "./guides/hi/Bhasmarti";
 
 import { Navigate } from "react-router-dom";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -199,6 +201,15 @@ function App() {
             <Route
               path="/hi/guide/mahakal-darshan"
               element={<MahakalDarshanHi />}
+            />
+            <Route
+              path="/guide/bhasma-arti"
+              element={<BhasmaartiGuideEn />}
+            />
+
+            <Route
+              path="/hi/guide/bhasma-arti"
+              element={<BhasmaartiGuideHi />}
             />
 
           </Routes>

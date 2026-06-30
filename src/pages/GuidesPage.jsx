@@ -7,11 +7,19 @@ export default function GuidesPage() {
   const navigate = useNavigate();
   const guides = [
     {
+  title: "Mahakal Bhasma Aarti Guide 2026: Booking, Timings, Dress Code & Entry Rules",
+  description: "Complete guide to Mahakal Bhasma Aarti at Mahakaleshwar Temple, Ujjain. Learn about online booking, timings, dress code, entry rules, required documents, VIP and free darshan, and important temple guidelines.",
+  image: "/images/bhasma-arti.webp",
+  enLink: "/guide/bhasma-arti",
+  hiLink: "/hi/guide/bhasma-arti",
+  date: "2026-06-30",
+},
+    {
     title: "Complete Guide to Mahakal Darshan at Mahakaleshwar Temple",
     description: "Temple visit guide, booking, costs, rules, spiritual experience",
     image: "/images/mahakal-darshan.webp",
     enLink: "/guide/mahakal-darshan",
-    hiLink: "/hi/mahakal-darshan",
+    hiLink: "/hi/guide/mahakal-darshan",
     date: "2026-06-28",
   },
   {

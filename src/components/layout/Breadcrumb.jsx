@@ -4,7 +4,12 @@ import { Link, useLocation } from "react-router-dom";
 const LABELS = {
   guide: "Guides",
   guides: "Guides",
+
   "simhastha-2028": "Simhastha 2028",
+  "mahakal-darshan": "Mahakal Darshan",
+  "bhasma-arti": "Mahakal Bhasma Aarti",
+  "mahakal-shahi-sawari": "Mahakal Shahi Sawari",
+
   "sawan-2026": "Sawan 2026",
   "sawan-2026-dates": "Sawan 2026 Dates",
 };
