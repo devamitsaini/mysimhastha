@@ -7,6 +7,14 @@ export default function GuidesPage() {
   const navigate = useNavigate();
   const guides = [
     {
+  title: "Where is Kumbh Mela Held? All 4 Kumbh Mela Locations in India Explained",
+  description: "Discover all four Kumbh Mela locations in India—Ujjain, Prayagraj, Haridwar, and Nashik. Learn why Simhastha is celebrated only in Ujjain, explore the history, sacred rivers, mythology, travel tips, FAQs, and everything you need to know about Kumbh Mela.",
+  image: "/images/kumbh-locations.webp",
+  enLink: "/guide/kumbh-locations",
+  hiLink: "/hi/guide/kumbh-locations",
+  date: "2026-06-30",
+},
+    {
   title: "Mahakal Bhasma Aarti Guide 2026: Booking, Timings, Dress Code & Entry Rules",
   description: "Complete guide to Mahakal Bhasma Aarti at Mahakaleshwar Temple, Ujjain. Learn about online booking, timings, dress code, entry rules, required documents, VIP and free darshan, and important temple guidelines.",
   image: "/images/bhasma-arti.webp",

@@ -1057,15 +1057,15 @@ export default function BhasmaartiGuideHi() {
 
 </section>
 {/* जुड़े रहें MySimhastha के साथ */}
+{/* जुड़े रहें */}
 <div className="guide-box">
   <h2>MySimhastha से जुड़े रहें</h2>
 
   <p>
-    क्या आप सावन 2026 में उज्जैन और श्री महाकालेश्वर मंदिर की यात्रा की योजना बना रहे हैं? MySimhastha पर आपको दर्शन अपडेट, यात्रा सुझाव, मंदिरों की जानकारी, होटल एवं ठहरने की सुविधा, यात्रा गाइड और महत्वपूर्ण समाचार एक ही स्थान पर मिलेंगे, ताकि आपकी तीर्थयात्रा सहज और यादगार बन सके।
+    यदि आप महाकाल भस्म आरती में शामिल होने की योजना बना रहे हैं, तो MySimhastha पर आपको भस्म आरती बुकिंग, दर्शन, मंदिर समय, यात्रा, होटल, नियम और उज्जैन यात्रा से जुड़ी हर महत्वपूर्ण जानकारी एक ही स्थान पर मिलेगी।
   </p>
 
   <div className="social-links">
-
     <p>
       🔸 वेबसाइट:
       <a
@@ -1078,7 +1078,7 @@ export default function BhasmaartiGuideHi() {
     </p>
 
     <p>
-      🔸 इंस्टाग्राम:
+      🔸 Instagram:
       <a
         href="https://instagram.com/mysimhastha"
         target="_blank"
@@ -1089,7 +1089,7 @@ export default function BhasmaartiGuideHi() {
     </p>
 
     <p>
-      🔸 फेसबुक:
+      🔸 Facebook:
       <a
         href="https://facebook.com/mysimhastha"
         target="_blank"
@@ -1100,7 +1100,7 @@ export default function BhasmaartiGuideHi() {
     </p>
 
     <p>
-      🔸 Reddit समुदाय:
+      🔸 Reddit Community:
       <a
         href="https://reddit.com/r/Simhastha2028"
         target="_blank"
@@ -1109,59 +1109,63 @@ export default function BhasmaartiGuideHi() {
         r/Simhastha2028
       </a>
     </p>
-
   </div>
 
   <br />
 
-  <h3>और जानें</h3>
+  <h3>और भी पढ़ें</h3>
 
   <ul>
     <li>
-      <Link to="/hi/guide/simhastha-2028">
-        सिंहस्थ 2028 संपूर्ण गाइड
+      <Link to="/hi/guide/mahakal-darshan">
+        महाकाल दर्शन सम्पूर्ण गाइड
       </Link>
     </li>
 
     <li>
-      <Link to="/hi/hotels">
+      <Link to="/hi/guide/simhastha-2028">
+        सिंहस्थ 2028 सम्पूर्ण गाइड
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/hotels">
         महाकाल मंदिर के पास होटल
       </Link>
     </li>
 
     <li>
-      <Link to="/hi/news">
-        उज्जैन मंदिर की नवीनतम खबरें
+      <Link to="/news">
+        महाकाल एवं उज्जैन की ताज़ा खबरें
       </Link>
     </li>
 
     <li>
-      <Link to="/hi/blog">
-        उज्जैन यात्रा अनुभव एवं लेख
+      <Link to="/blog">
+        उज्जैन यात्रा गाइड एवं यात्रा अनुभव
       </Link>
     </li>
   </ul>
 
   <p>
-    यदि आप सावन 2026 में उज्जैन की विस्तृत तीर्थयात्रा की योजना बना रहे हैं, तो MySimhastha पर आपको भीड़ की लाइव जानकारी, यात्रा सुझाव, विशेष गाइड और प्रेरणादायक यात्रा अनुभव मिलेंगे। आप हमारे समुदाय में अन्य श्रद्धालुओं और उज्जैन विशेषज्ञों से भी जुड़ सकते हैं ताकि आपकी यात्रा और अधिक सुगम एवं आध्यात्मिक बन सके।
+    चाहे आप पहली बार महाकाल भस्म आरती में शामिल हो रहे हों या पुनः दर्शन की योजना बना रहे हों, MySimhastha आपको विश्वसनीय जानकारी, यात्रा सुझाव, मंदिर अपडेट और स्थानीय मार्गदर्शन प्रदान करता है ताकि आपकी यात्रा सहज और आध्यात्मिक अनुभव से भरपूर रहे।
   </p>
 
   <p>
-    सामग्री हिन्दी और English दोनों भाषाओं में उपलब्ध है, जिससे देश-विदेश के श्रद्धालु अपनी महाकाल एवं उज्जैन यात्रा की बेहतर योजना बना सकें।
+    यह गाइड हिन्दी और English दोनों भाषाओं में उपलब्ध है, जिससे भारत एवं विदेशों से आने वाले श्रद्धालु अपनी महाकाल भस्म आरती यात्रा की बेहतर योजना बना सकें।
   </p>
 </div>
 
 <h2>आधिकारिक संसाधन</h2>
 
 <ul className="official-links">
-
   <li>
     <a
       href="https://shrimahakaleshwar.com/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      महाकालेश्वर मंदिर की आधिकारिक वेबसाइट ↗
+      श्री महाकालेश्वर मंदिर की आधिकारिक वेबसाइट ↗
     </a>
   </li>
 
@@ -1184,13 +1188,10 @@ export default function BhasmaartiGuideHi() {
       IRCTC पर ट्रेन टिकट बुक करें ↗
     </a>
   </li>
-
 </ul>
 
 <div className="back-top">
-  <a href="#top">
-    ↑ ऊपर जाएँ
-  </a>
+  <a href="#top">↑ ऊपर जाएँ</a>
 </div>
         </article>
   </div>

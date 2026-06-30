@@ -24,6 +24,8 @@ import MahakalDarshan from "./guides/en/MahakalDarshan";
 import MahakalDarshanHi from "./guides/hi/MahakalDarshan";
 import BhasmaartiGuideEn from "./guides/en/Bhasmaarti";
 import BhasmaartiGuideHi from "./guides/hi/Bhasmarti";
+import KumbhLocations from "./guides/en/KumbhLocations";
+import KumbhLocationsHi from "./guides/hi/KumbhLocations";
 
 import { Navigate } from "react-router-dom";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -210,6 +212,15 @@ function App() {
             <Route
               path="/hi/guide/bhasma-arti"
               element={<BhasmaartiGuideHi />}
+            />
+            <Route
+              path="/guide/kumbh-locations"
+              element={<KumbhLocations />}
+            />
+
+            <Route
+              path="/hi/guide/kumbh-locations"
+              element={<KumbhLocationsHi />}
             />
 
           </Routes>
