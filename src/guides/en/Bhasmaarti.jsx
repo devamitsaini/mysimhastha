@@ -371,7 +371,7 @@ const pinterestImage =
 
       <div className="language-switcher">
   <NavLink
-    to="/guide/bhasma-aarti"
+    to="/guide/bhasma-arti"
     className={({ isActive }) =>
       isActive ? "active" : ""
     }
@@ -380,7 +380,7 @@ const pinterestImage =
   </NavLink>
 
   <NavLink
-    to="/hi/guide/bhasma-aarti"
+    to="/hi/guide/bhasma-arti"
     className={({ isActive }) =>
       isActive ? "active" : ""
     }
