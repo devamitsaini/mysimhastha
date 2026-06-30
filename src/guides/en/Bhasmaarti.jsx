@@ -369,25 +369,10 @@ const pinterestImage =
 
       {/* LANGUAGE SWITCHER */}
 
-      <div className="language-switcher">
-  <NavLink
-    to="/guide/bhasma-arti"
-    className={({ isActive }) =>
-      isActive ? "active" : ""
-    }
-  >
-    🇺🇸 English
-  </NavLink>
-
-  <NavLink
-    to="/hi/guide/bhasma-arti"
-    className={({ isActive }) =>
-      isActive ? "active" : ""
-    }
-  >
-    🇮🇳 हिन्दी
-  </NavLink>
-</div>
+       <div className="language-switcher">
+              <NavLink to="/guide/bhasma-arti">English</NavLink>
+              <NavLink to="/hi/guide/bhasma-arti">हिन्दी</NavLink>
+            </div>
 
 <div className="share-title">
   Share this Guide

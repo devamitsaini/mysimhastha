@@ -112,36 +112,7 @@ export default function BhasmaartiGuideHi() {
         <link rel="alternate" hrefLang="hi" href="https://mysimhastha.com/hi/guide/bhasma-arti" />
         <link rel="alternate" hrefLang="x-default" href="https://mysimhastha.com/guide/bhasma-arti" />
 
-        {/* BREADCRUMB SCHEMA */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "होम",
-                  "item": "https://mysimhastha.com"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "गाइड्स",
-                  "item": "https://mysimhastha.com/guides"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 3,
-                  "name": "भस्मार्ति बुकिंग गाइड",
-                  "item": "https://mysimhastha.com/hi/guide/bhasma-arti"
-                }
-              ]
-            })
-          }}
-        />
+     
 
         {/* ARTICLE SCHEMA */}
         <script
@@ -300,28 +271,12 @@ export default function BhasmaartiGuideHi() {
   </p>
 
 </header>
+   <div className="language-switcher">
+              <NavLink to="/guide/bhasma-arti">English</NavLink>
+              <NavLink to="/hi/guide/bhasma-arti">हिन्दी</NavLink>
+            </div>
 
-      <div className="language-switcher">
-
-  <NavLink
-    to="/guide/bhasma-arti"
-    className={({ isActive }) =>
-      isActive ? "active" : ""
-    }
-  >
-    🇺🇸 English
-  </NavLink>
-
-  <NavLink
-    to="/hi/guide/bhasma-arti"
-    className={({ isActive }) =>
-      isActive ? "active" : ""
-    }
-  >
-    🇮🇳 हिन्दी
-  </NavLink>
-
-</div>
+      
 <div className="share-title">
   इस गाइड को साझा करें
 </div>
