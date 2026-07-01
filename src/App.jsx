@@ -26,8 +26,7 @@ const Simhastha2028Page = lazy(() => import("./pages/Simhastha2028"));
 const SnanCalendarPage = lazy(() => import("./pages/SnanCalendar"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
-const StaysPage = lazy(() => import("./pages/Stays/Stays"));
-const StayDetailsPage = lazy(() => import("./pages/StayDetails/StayDetails"));
+
 const Simhastha2028 = lazy(() => import("./guides/en/Simhastha2028"));
 const Simhastha2028HI = lazy(() => import("./guides/hi/Simhastha2028"));
 
@@ -123,15 +122,6 @@ function App() {
             <Route
               path="/hotels"
               element={<HotelsPage />}
-            />
-                        <Route
-              path="/stays"
-              element={<StaysPage />}
-            />
-
-            <Route
-              path="/stays/:slug"
-              element={<StayDetailsPage />}
             />
 
             <Route
