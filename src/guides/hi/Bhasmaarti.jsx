@@ -230,15 +230,7 @@ export default function BhasmaartiGuideHi() {
         />
       </Helmet>
 
-      <nav className="guide-breadcrumb" aria-label="Breadcrumb">
-        <Link to="/">होम</Link>
-        <span className="breadcrumb-separator">/</span>
-        <Link to="/guides">गाइड्स</Link>
-        <span className="breadcrumb-separator">/</span>
-       <span className="breadcrumb-current">
-महाकाल भस्म आरती
-</span>
-      </nav>
+  
 
       <header className="guide-header">
 
