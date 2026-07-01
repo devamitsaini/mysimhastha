@@ -1,0 +1,494 @@
+
+import { createClient } from '@supabase/supabase-js';
+
+
+// Initialize Supabase client
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || '';
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.warn('Supabase credentials not configured');
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+console.log("URL:", supabaseUrl);
+console.log("KEY:", supabaseAnonKey.substring(0, 20));
+/**
+ * Fetch all active stays with pagination
+ */
+export const fetchAllStays = async (filters = {}) => {
+  const {
+    page = 1,
+    limit = 12,
+    search = "",
+    stayType = "all",
+    rating = 0,
+    verified = false,
+    sort = "featured",
+  } = filters;
+
+  const from = (page - 1) * limit;
+  const to = from + limit - 1;
+
+  let query = supabase
+    .from("stays")
+    .select("*", { count: "exact" });
+
+  if (search) {
+    query = query.or(
+      `name.ilike.%${search}%,locality.ilike.%${search}%,city.ilike.%${search}%`
+    );
+  }
+
+  if (stayType !== "all") {
+    query = query.eq("stay_type", stayType);
+  }
+
+  if (rating > 0) {
+    query = query.gte("rating", rating);
+  }
+
+  if (verified) {
+    query = query.eq("verified", true);
+  }
+
+  switch (sort) {
+    case "price-low":
+      query = query.order("price_from", { ascending: true });
+      break;
+
+    case "price-high":
+      query = query.order("starting_price", { ascending: false });
+      break;
+
+    case "rating":
+      query = query.order("rating", { ascending: false });
+      break;
+
+    default:
+      query = query
+        .order("featured", { ascending: false })
+        .order("rating", { ascending: false });
+  }
+
+  const { data, error, count } = await query.range(from, to);
+
+  return {
+    data: data || [],
+    count: count || 0,
+    error,
+  };
+};
+/**
+ * Fetch featured stays (limited)
+ */
+export const fetchFeaturedStays = async (limit = 6) => {
+  try {
+    const { data, error } = await supabase
+      .from("stays")
+      .select("*")
+      .eq("active", true)
+      .order("rating", { ascending: false })
+      .order("review_count", { ascending: false })
+      .limit(limit);
+
+    if (error) {
+      console.error("Error fetching featured stays:", error);
+      return { data: [], error };
+    }
+
+    return {
+      data: data || [],
+      error: null,
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      data: [],
+      error,
+    };
+  }
+};
+/**
+ * Fetch single stay by ID
+ */
+export const fetchStayById = async (id) => {
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('*')
+      .eq('id', id)
+      .eq('active', true)
+      .single();
+
+    if (error) {
+      console.error('Error fetching stay:', error);
+      return { data: null, error };
+    }
+
+    return { data, error: null };
+  } catch (error) {
+    console.error('Unexpected error fetching stay:', error);
+    return { data: null, error };
+  }
+};
+
+/**
+ * Fetch stay by slug
+ */
+export const fetchStayBySlug = async (slug) => {
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('*')
+      .eq('slug', slug)
+      .eq('active', true)
+      .single();
+
+    if (error) {
+      console.error('Error fetching stay by slug:', error);
+      return { data: null, error };
+    }
+
+    return { data, error: null };
+  } catch (error) {
+    console.error('Unexpected error fetching stay by slug:', error);
+    return { data: null, error };
+  }
+};
+
+/**
+ * Fetch stays by locality (area)
+ */
+export const fetchStaysByLocality = async (locality, limit = 20) => {
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('*')
+      .eq('active', true)
+      .eq('locality', locality)
+      .order('featured', { ascending: false })
+      .order('rating', { ascending: false })
+      .limit(limit);
+
+    if (error) {
+      console.error('Error fetching stays by locality:', error);
+      return { data: [], error };
+    }
+
+    return { data: data || [], error: null };
+  } catch (error) {
+    console.error('Unexpected error fetching stays by locality:', error);
+    return { data: [], error };
+  }
+};
+
+/**
+ * Fetch stays by type
+ */
+export const fetchStaysByType = async (stayType, limit = 20) => {
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('*')
+      .eq('active', true)
+      .eq('stay_type', stayType)
+      .order('featured', { ascending: false })
+      .order('rating', { ascending: false })
+      .limit(limit);
+
+    if (error) {
+      console.error('Error fetching stays by type:', error);
+      return { data: [], error };
+    }
+
+    return { data: data || [], error: null };
+  } catch (error) {
+    console.error('Unexpected error fetching stays by type:', error);
+    return { data: [], error };
+  }
+};
+
+/**
+ * Get all unique localities for filter dropdown
+ */
+export const fetchAllLocalities = async () => {
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('locality')
+      .eq('active', true)
+      .not('locality', 'is', null);
+
+    if (error) {
+      console.error('Error fetching localities:', error);
+      return { data: [], error };
+    }
+
+    // Get unique localities
+    const localities = [...new Set((data || []).map((item) => item.locality))];
+    return { data: localities.sort(), error: null };
+  } catch (error) {
+    console.error('Unexpected error fetching localities:', error);
+    return { data: [], error };
+  }
+};
+
+/**
+ * Get all unique stay types for filter dropdown
+ */
+export const fetchAllStayTypes = async () => {
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('stay_type')
+      .eq('active', true)
+      .not('stay_type', 'is', null);
+
+    if (error) {
+      console.error('Error fetching stay types:', error);
+      return { data: [], error };
+    }
+
+    // Get unique stay types
+    const types = [...new Set((data || []).map((item) => item.stay_type))];
+    return { data: types.sort(), error: null };
+  } catch (error) {
+    console.error('Unexpected error fetching stay types:', error);
+    return { data: [], error };
+  }
+};
+
+/**
+ * Get stays statistics (for hero section)
+ */
+export const fetchStaysStats = async () => {
+  try {
+    const { data, error, count } = await supabase
+      .from('stays')
+      .select('rating, review_count', { count: 'exact' })
+      .eq('active', true);
+
+    if (error) {
+      console.error('Error fetching stays stats:', error);
+      return {
+        totalStays: 0,
+        averageRating: 0,
+        totalReviews: 0,
+        verifiedCount: 0,
+        error,
+      };
+    }
+
+    const stays = data || [];
+
+    // Calculate average rating
+    const totalRating = stays.reduce((sum, stay) => sum + (stay.rating || 0), 0);
+    const averageRating =
+      stays.length > 0 ? (totalRating / stays.length).toFixed(1) : 0;
+
+    // Calculate total reviews
+    const totalReviews = stays.reduce(
+      (sum, stay) => sum + (stay.review_count || 0),
+      0
+    );
+
+    // Get verified count
+    const verifiedCount = await fetchVerifiedCount();
+
+    return {
+      totalStays: count || 0,
+      averageRating: parseFloat(averageRating),
+      totalReviews,
+      verifiedCount,
+      error: null,
+    };
+  } catch (error) {
+    console.error('Unexpected error fetching stats:', error);
+    return {
+      totalStays: 0,
+      averageRating: 0,
+      totalReviews: 0,
+      verifiedCount: 0,
+      error,
+    };
+  }
+};
+
+/**
+ * Get verified stays count
+ */
+export const fetchVerifiedCount = async () => {
+  try {
+    const { count, error } = await supabase
+      .from('stays')
+      .select('id', { count: 'exact' })
+      .eq('active', true)
+      .eq('verified', true);
+
+    if (error) {
+      console.error('Error fetching verified count:', error);
+      return 0;
+    }
+
+    return count || 0;
+  } catch (error) {
+    console.error('Unexpected error fetching verified count:', error);
+    return 0;
+  }
+};
+
+/**
+ * Search stays (fuzzy/full text search)
+ */
+export const searchStays = async (searchQuery, limit = 12) => {
+  if (!searchQuery || searchQuery.trim().length === 0) {
+    return { data: [], error: null };
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('*')
+      .eq('active', true)
+      .or(
+        `name.ilike.%${searchQuery}%,short_description.ilike.%${searchQuery}%,description.ilike.%${searchQuery}%,locality.ilike.%${searchQuery}%`
+      )
+      .order('featured', { ascending: false })
+      .order('rating', { ascending: false })
+      .limit(limit);
+
+    if (error) {
+      console.error('Error searching stays:', error);
+      return { data: [], error };
+    }
+
+    return { data: data || [], error: null };
+  } catch (error) {
+    console.error('Unexpected error searching stays:', error);
+    return { data: [], error };
+  }
+};
+
+/**
+ * Get price range stats
+ */
+export const fetchPriceStats = async () => {
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('price_from, price_to')
+      .eq('active', true)
+      .not('price_from', 'is', null);
+
+    if (error) {
+      console.error('Error fetching price stats:', error);
+      return { minPrice: 0, maxPrice: 10000, error };
+    }
+
+    const prices = (data || []).map((stay) => stay.price_from);
+    const minPrice = Math.min(...prices.filter((p) => p));
+    const maxPrice = Math.max(...prices.filter((p) => p));
+
+    return {
+      minPrice: minPrice || 0,
+      maxPrice: maxPrice || 10000,
+      error: null,
+    };
+  } catch (error) {
+    console.error('Unexpected error fetching price stats:', error);
+    return { minPrice: 0, maxPrice: 10000, error };
+  }
+};
+
+/**
+ * Batch fetch stays by IDs
+ */
+export const fetchStaysByIds = async (ids) => {
+  if (!ids || ids.length === 0) {
+    return { data: [], error: null };
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('*')
+      .eq('active', true)
+      .in('id', ids);
+
+    if (error) {
+      console.error('Error fetching stays by IDs:', error);
+      return { data: [], error };
+    }
+
+    return { data: data || [], error: null };
+  } catch (error) {
+    console.error('Unexpected error fetching stays by IDs:', error);
+    return { data: [], error };
+  }
+};
+
+/**
+ * Get recently added stays
+ */
+export const fetchRecentlyAddedStays = async (limit = 6) => {
+  try {
+    const { data, error } = await supabase
+      .from('stays')
+      .select('*')
+      .eq('active', true)
+      .order('created_at', { ascending: false })
+      .limit(limit);
+
+    if (error) {
+      console.error('Error fetching recently added:', error);
+      return { data: [], error };
+    }
+
+    return { data: data || [], error: null };
+  } catch (error) {
+    console.error('Unexpected error fetching recently added:', error);
+    return { data: [], error };
+  }
+};
+
+/**
+ * Subscribe to real-time changes on stays table
+ */
+export const subscribeToStaysChanges = (callback) => {
+  const subscription = supabase
+    .channel('public:stays')
+    .on(
+      'postgres_changes',
+      {
+        event: '*',
+        schema: 'public',
+        table: 'stays',
+      },
+      (payload) => {
+        callback(payload);
+      }
+    )
+    .subscribe();
+
+  return subscription;
+};
+
+/**
+ * Unsubscribe from changes
+ */
+export const unsubscribeFromStaysChanges = (subscription) => {
+  if (subscription) {
+    supabase.removeChannel(subscription);
+  }
+};
+export const fetchSimilarStays = async (stay) => {
+  const { data, error } = await supabase
+    .from("stays")
+    .select("*")
+    .eq("stay_type", stay.stay_type)
+    .neq("id", stay.id)
+    .limit(3);
+
+  return { data: data || [], error };
+};

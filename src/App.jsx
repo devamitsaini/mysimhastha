@@ -14,6 +14,8 @@ import HomePage from "./pages/Home";
 
 import GuidesPage from "./pages/GuidesPage";
 
+const StaysPage = lazy(() => import("./pages/Stays/Stays"));
+const StayDetails = lazy(() => import("./pages/StayDetails/StayDetails"));
 
 import { Navigate } from "react-router-dom";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -64,7 +66,7 @@ function App() {
   }, []);
 
 
-  const [selectedNews, setSelectedNews] = useState(null);
+  
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -124,14 +126,22 @@ function App() {
               element={<HotelsPage />}
             />
 
+
+            <Route
+  path="/stays"
+  element={<StaysPage />}
+/>
+
+<Route
+  path="/stays/:slug"
+  element={<StayDetails />}
+/>
+
             <Route
               path="/snan-calendar"
               element={<SnanCalendarPage />}
             />
-            <Route
-            path="/news-details"
-            element={<NewsDetailsPage news={selectedNews} />}
-            />
+        
             <Route
               path="/simhastha-2028"
               element={<Simhastha2028Page />}
