@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../styles/guides.css";
+import GuideSEO from "../../components/guides/GuideSEO";
 
 export default function Simhastha2028Hi() {
   const faqSchema = {
