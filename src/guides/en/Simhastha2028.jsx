@@ -148,8 +148,8 @@ export default function Simhastha2028() {
   return (
     <>
       <GuideSEO
-  title="Simhastha 2028 Ujjain Complete Guide | MySimhastha"
-  description="Complete guide to Simhastha 2028 in Ujjain."
+  title="Simhastha 2028 Complete Guide: Dates, Shahi Snan, Hotels & Travel | MySimhastha"
+  description="Complete guide to Simhastha 2028 including Shahi Snan dates, Mahakal Darshan, hotels, travel, temples, accommodation and pilgrimage planning."
   slug="simhastha-2028"
   image="/images/simhastha-2028.webp"
   keywords="Simhastha 2028,Ujjain,Kumbh Mela,Mahakal,Shahi Snan"
@@ -187,7 +187,7 @@ export default function Simhastha2028() {
 </header>
           {/* HERO */}
           <div className="guide-header">
-
+          <h2>Your Complete Simhastha Travel Guide</h2>
             <p>
               Simhastha 2028: When & Where, Shahi Snan Date, Darshan Timings, Mahakaleshwar Darshan booking, Travel, Stay, FAQs etc.
             </p>

@@ -82,7 +82,7 @@ export default function HomeGuides() {
   },
 
   {
-    title: "Simhastha 2028 Complete Guide",
+    title: "Simhastha 2028 Complete Guide: Dates, Shahi Snan & Travel",
     description:
       "Everything about Simhastha 2028, including dates, Shahi Snan schedule, travel planning, accommodation, history, and FAQs.",
     image: "/images/simhastha-2028.webp",
@@ -113,7 +113,7 @@ export default function HomeGuides() {
     .map((guide) => (
       <Link
         key={guide.link}
-        to={guide.link}
+        to={guide.enLink}
         className="home-guide-card"
       >
         <div className="home-guide-image-wrapper">
@@ -127,7 +127,7 @@ export default function HomeGuides() {
 
         <div className="home-guide-content">
           <span className="home-guide-tag">
-            {guide.tag}
+            {guide.category}
           </span>
 
           <h3 className="home-guide-title">
