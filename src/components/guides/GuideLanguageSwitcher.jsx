@@ -16,7 +16,7 @@ export default function GuideLanguageSwitcher({ guide }) {
         className={currentLanguage === "en" ? "active" : ""}
         aria-label="View English Guide"
       >
-        🇺🇸 English
+        English
       </Link>
 
       <Link
@@ -24,7 +24,7 @@ export default function GuideLanguageSwitcher({ guide }) {
         className={currentLanguage === "hi" ? "active" : ""}
         aria-label="हिन्दी गाइड देखें"
       >
-        🇮🇳 हिन्दी
+        हिन्दी
       </Link>
 
     </div>

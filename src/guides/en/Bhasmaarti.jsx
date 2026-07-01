@@ -12,10 +12,10 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 
-export default function BhasmaAartiGuide() {
+export default function BhasmaartiGuideEn () {
 
 const canonicalUrl =
-  "https://mysimhastha.com/guide/bhasma-aarti";
+  "https://mysimhastha.com/guide/bhasma-arti";
 
 const heroImage =
   "https://mysimhastha.com/images/bhasma-arti.webp";

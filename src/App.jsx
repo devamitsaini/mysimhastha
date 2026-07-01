@@ -11,21 +11,9 @@ import Footer from "./components/layout/Footer";
 import Breadcrumb from "./components/layout/Breadcrumb";
 
 import HomePage from "./pages/Home";
-import Simhastha2028 from "./guides/en/Simhastha2028";
-import Simhastha2028HI from "./guides/hi/Simhastha2028";
-import Sawan2026 from "./guides/en/Sawan2026";
-import Sawan2026HI from "./guides/hi/Sawan2026";
+
 import GuidesPage from "./pages/GuidesPage";
-import Sawan2026Dates from "./guides/en/Sawan2026Dates";
-import Sawan2026DatesHI from "./guides/hi/Sawan2026Dates";
-import MahakalShahiSawari from "./guides/en/MahakalShahiSawari";
-import MahakalShahiSawariHi from "./guides/hi/MahakalShahiSawari";
-import MahakalDarshan from "./guides/en/MahakalDarshan";
-import MahakalDarshanHi from "./guides/hi/MahakalDarshan";
-import BhasmaartiGuideEn from "./guides/en/Bhasmaarti";
-import BhasmaartiGuideHi from "./guides/hi/Bhasmarti";
-import KumbhLocations from "./guides/en/KumbhLocations";
-import KumbhLocationsHi from "./guides/hi/KumbhLocations";
+
 
 import { Navigate } from "react-router-dom";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -38,6 +26,28 @@ const Simhastha2028Page = lazy(() => import("./pages/Simhastha2028"));
 const SnanCalendarPage = lazy(() => import("./pages/SnanCalendar"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
+const StaysPage = lazy(() => import("./pages/Stays/Stays"));
+const StayDetailsPage = lazy(() => import("./pages/StayDetails/StayDetails"));
+const Simhastha2028 = lazy(() => import("./guides/en/Simhastha2028"));
+const Simhastha2028HI = lazy(() => import("./guides/hi/Simhastha2028"));
+
+const Sawan2026 = lazy(() => import("./guides/en/Sawan2026"));
+const Sawan2026HI = lazy(() => import("./guides/hi/Sawan2026"));
+
+const Sawan2026Dates = lazy(() => import("./guides/en/Sawan2026Dates"));
+const Sawan2026DatesHI = lazy(() => import("./guides/hi/Sawan2026Dates"));
+
+const MahakalShahiSawari = lazy(() => import("./guides/en/MahakalShahiSawari"));
+const MahakalShahiSawariHi = lazy(() => import("./guides/hi/MahakalShahiSawari"));
+    
+const MahakalDarshan = lazy(() => import("./guides/en/MahakalDarshan"));
+const MahakalDarshanHi = lazy(() => import("./guides/hi/MahakalDarshan"));
+
+const BhasmaartiGuideEn = lazy(() => import("./guides/en/Bhasmaarti"));
+const BhasmaartiGuideHi = lazy(() => import("./guides/hi/Bhasmaarti"));
+
+const KumbhLocations = lazy(() => import("./guides/en/KumbhLocations"));
+const KumbhLocationsHi = lazy(() => import("./guides/hi/KumbhLocations"));
 
 function App() {
   const [openMissingForm, setOpenMissingForm] = useState(false);
@@ -114,6 +124,15 @@ function App() {
               path="/hotels"
               element={<HotelsPage />}
             />
+                        <Route
+              path="/stays"
+              element={<StaysPage />}
+            />
+
+            <Route
+              path="/stays/:slug"
+              element={<StayDetailsPage />}
+            />
 
             <Route
               path="/snan-calendar"
@@ -183,7 +202,7 @@ function App() {
             />
 
             <Route
-            path="/hi/sawan-2026-dates"
+            path="/hi/guide/sawan-2026-dates"
             element={<Sawan2026DatesHI />}
             />
 
@@ -222,8 +241,11 @@ function App() {
               path="/hi/guide/kumbh-locations"
               element={<KumbhLocationsHi />}
             />
-
-          </Routes>
+            <Route
+              path="*"
+              element={<Navigate to="/" replace />}
+            />
+           </Routes>
         </Suspense>
       </main>
 

@@ -125,12 +125,18 @@
                   <p className="hero-sub">Ujjain 2028</p>
                   <Countdown />
                   <div className="hero-ctas">
-                    <button type="button" className="btn btn-primary btn-xl" onClick={() => navigate("/simhastha-2028")}>
-                      {t("exploreSimhastha")} →
-                    </button>
-                    <button type="button" className="btn btn-white btn-xl" onClick={() => navigate("/hotels")}>
-                      {t("bookStay")}
-                    </button>
+                    <Link
+  to="/simhastha-2028"
+  className="btn btn-primary btn-xl"
+>
+  {t("exploreSimhastha")} →
+</Link>
+                    <Link
+  to="/stays"
+  className="btn btn-white btn-xl"
+>
+  {t("bookStay")}
+</Link>
                   </div>
                 </div>
               </div>
@@ -159,57 +165,53 @@
 
         <div className="ms-home-quick-grid">
 
-          <button
-            type="button"
-            className="ms-home-quick-card"
-            onClick={() => navigate("/snan-calendar")}
-          >
+          <Link
+  to="/snan-calendar"
+  className="ms-home-quick-card"
+>
             <div className="ms-home-quick-icon">📅</div>
 
             <div className="ms-home-quick-label">
               <span>Snan Calendar</span>
               <span className="ms-home-quick-arrow">›</span>
             </div>
-          </button>
+          </Link>
 
-          <button
-            type="button"
-            className="ms-home-quick-card"
-            onClick={() => navigate("/live-darshan")}
-          >
+          <Link
+  to="/live-darshan"
+  className="ms-home-quick-card"
+>
             <div className="ms-home-quick-icon">📺</div>
 
             <div className="ms-home-quick-label">
               <span>Live Darshan</span>
               <span className="ms-home-quick-arrow">›</span>
             </div>
-          </button>
+          </Link>
 
-          <button
-            type="button"
-            className="ms-home-quick-card"
-            onClick={() => navigate("/hotels")}
-          >
+          <Link
+  to="/hotels"
+  className="ms-home-quick-card"
+>
             <div className="ms-home-quick-icon">🏨</div>
 
             <div className="ms-home-quick-label">
-              <span>Hotel & Stay</span>
+              <span>Hotels & Stays</span>
               <span className="ms-home-quick-arrow">›</span>
             </div>
-          </button>
+          </Link>
 
-          <button
-            type="button"
-            className="ms-home-quick-card"
-            onClick={() => navigate("/missing-persons")}
-          >
+          <Link
+  to="/missing-persons"
+  className="ms-home-quick-card"
+>
             <div className="ms-home-quick-icon">⚠️</div>
 
             <div className="ms-home-quick-label">
-              <span>Missing Person</span>
+              <span>Missing Persons</span>
               <span className="ms-home-quick-arrow">›</span>
             </div>
-          </button>
+          </Link>
 
         </div>
       </div>
@@ -293,16 +295,11 @@
                 </div>
                 <div className="news-container">
         {latestNews.map((n) => (
-          <article
-            key={n.id}
-            className="news-card"
-            onClick={() => navigate(`/news/${n.slug}`)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) =>
-  e.key === "Enter" && navigate(`/news/${n.slug}`)
-}
-          >
+          <Link
+  key={n.id}
+  to={`/news/${n.slug}`}
+  className="news-card"
+>
             <div className="news-img">
               <img
                 src={n.image_url}
@@ -328,7 +325,7 @@
       Read More →
     </span>
   </div>
-          </article>
+          </Link>
         ))}
       </div>
               </div>

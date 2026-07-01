@@ -9,7 +9,15 @@ const LABELS = {
   "mahakal-darshan": "Mahakal Darshan",
   "bhasma-arti": "Mahakal Bhasma Aarti",
   "mahakal-shahi-sawari": "Mahakal Shahi Sawari",
-
+  "kumbh-locations": "Kumbh Mela Locations",
+  "snan-calendar": "Snan Calendar",
+  hotels: "Hotels",
+  stays: "Hotels & Stays",
+  "live-darshan": "Live Darshan",
+  news: "News",
+  blog: "Blog",
+  about: "About",
+  "missing-persons": "Missing Persons",
   "sawan-2026": "Sawan 2026",
   "sawan-2026-dates": "Sawan 2026 Dates",
 };
@@ -66,7 +74,7 @@ export default function Breadcrumb()  {
 
         {items.map(({ url, label, isLast }) => (
           <React.Fragment key={url}>
-            <span className="breadcrumb-separator">/</span>
+            <span className="breadcrumb-separator">›</span>
 
             {isLast ? (
               <span className="breadcrumb-current">{label}</span>

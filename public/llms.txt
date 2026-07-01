@@ -54,7 +54,7 @@ Content-Categories: Religious Tourism, Indian Pilgrimage, Spiritual Events, Ujja
 Llms-Priority: /
 Llms-Priority: /simhastha-2028
 Llms-Priority: /guides
-Llms-Priority: /hotels
+Llms-Priority: /stays
 Llms-Priority: /news
 Llms-Priority: /blog
 Llms-Priority: /live-darshan
