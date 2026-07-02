@@ -180,4 +180,20 @@
     <priority>0.8</priority>
   </url>
 
+    <!-- How to Reach Ujjain -->
+
+  <url>
+    <loc>https://www.mysimhastha.com/guide/how-to-reach-ujjain</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/hi/guide/ujjain-kaise-pahunche</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
