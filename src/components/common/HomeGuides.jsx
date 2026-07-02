@@ -3,6 +3,18 @@
 
   export default function HomeGuides() {
     const guides = [
+      {
+  title: "How to Reach Ujjain: Complete Travel Guide by Train, Flight & Road (2026)",
+  description:
+    "Planning a trip to Ujjain? Learn how to reach Ujjain by train, flight, and road. Find the nearest airport, railway station, major city routes, local transport, travel tips, and everything you need for a smooth Mahakal pilgrimage.",
+  image: "/images/how-to-reach-ujjain.webp",
+  enLink: "/guide/how-to-reach-ujjain",
+  hiLink: "/hi/guide/ujjain-kaise-pahunche",
+  date: "2026-07-03",
+  readingTime: "15 min",
+  category: "Travel Guide",
+  featured: true,
+},
     {
       title: "Where is Kumbh Mela Held? All 4 Kumbh Mela Locations in India Explained",
       description:
