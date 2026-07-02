@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function GuideSection({ section }) {
+export default function GuideSection({
+  section,
+  children,
+}) {
   if (!section) return null;
 
   return (
@@ -18,18 +21,20 @@ export default function GuideSection({ section }) {
         </p>
       )}
 
-      {section.content && (
-        <div className="section-content">
+      {/* Render children such as GuideRenderer */}
+      {children}
 
-          {Array.isArray(section.content)
-            ? section.content.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))
-            : <p>{section.content}</p>}
-
-        </div>
-      )}
-
+      {/* Backward compatibility */}
+      {section.content &&
+        (!children ? (
+          <div className="section-content">
+            {Array.isArray(section.content)
+              ? section.content.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))
+              : <p>{section.content}</p>}
+          </div>
+        ) : null)}
     </section>
   );
 }

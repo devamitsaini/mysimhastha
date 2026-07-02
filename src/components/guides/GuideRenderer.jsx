@@ -37,14 +37,24 @@ export default function GuideRenderer({ content }) {
             );
 
           case "infoBox":
-            return (
-              <GuideInfoBox
-                key={index}
-                box={block.box}
-              />
-            );
+  return (
+    <GuideInfoBox
+      key={index}
+      box={block.box}
+    />
+  );
 
-          default:
+case "subheading":
+  return (
+    <div
+      key={index}
+      className="guide-subheading"
+    >
+      <h3>{block.text}</h3>
+    </div>
+  );
+
+default:
             return null;
         }
       })}

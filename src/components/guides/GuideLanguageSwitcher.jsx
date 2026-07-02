@@ -6,13 +6,14 @@ export default function GuideLanguageSwitcher({ guide }) {
 
   const currentLanguage = guide.language || "en";
 
-  const slug = guide.slug;
+  const englishSlug = guide.englishSlug || guide.slug;
+const hindiSlug = guide.hindiSlug || guide.slug;
 
   return (
     <div className="language-switcher">
 
       <Link
-        to={`/guide/${slug}`}
+        to={`/guide/${englishSlug}`}
         className={currentLanguage === "en" ? "active" : ""}
         aria-label="View English Guide"
       >
@@ -20,7 +21,7 @@ export default function GuideLanguageSwitcher({ guide }) {
       </Link>
 
       <Link
-        to={`/hi/guide/${slug}`}
+        to={`/hi/guide/${hindiSlug}`}
         className={currentLanguage === "hi" ? "active" : ""}
         aria-label="हिन्दी गाइड देखें"
       >

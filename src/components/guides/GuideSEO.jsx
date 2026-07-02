@@ -1,16 +1,27 @@
       import { Helmet } from "react-helmet-async";
 
       export default function GuideSEO({
-        title,
-        description,
-        slug,
-        image,
-        lang = "en",
-        keywords = "",
-        published,
-        modified,
-        schema
-      }) {
+  title,
+  description,
+  slug,
+  image,
+  lang = "en",
+  keywords = "",
+  published,
+  modified,
+
+  // Existing
+  schema,
+
+  // New
+  about = "Simhastha",
+  articleSection = "Pilgrimage Guide",
+
+  place,
+  howTo,
+  event,
+  touristDestination
+}) {
         const baseUrl = "https://www.mysimhastha.com";
 
         const pageUrl =
@@ -33,7 +44,11 @@
               />
             )}
 
-            <meta name="robots" content="index,follow,max-image-preview:large" />
+            <meta name="robots" content="index,
+follow,
+max-image-preview:large,
+max-snippet:-1,
+max-video-preview:-1" />
 
             <link rel="canonical" href={pageUrl} />
 
@@ -114,8 +129,10 @@
                 __html: JSON.stringify({
                   "@context": "https://schema.org",
                   "@type": "Article",
-
+                  
                   headline: title,
+
+                  alternativeHeadline: title,
                   keywords,
                   description,
 
@@ -134,31 +151,157 @@
 
                   inLanguage: lang,
 
-                  author: {
-                    "@type": "Organization",
-                    name: "MySimhastha"
+                  author:{
+                    "@type":"Organization",
+
+                    name:"MySimhastha",
+
+                    url:baseUrl
+                    },
+                        
+                  articleSection,
+
+                  isAccessibleForFree: true,
+
+                  about: {
+                    "@type": "Thing",
+                    name: about
                   },
-                  
+
                   publisher: {
                     "@type": "Organization",
                     name: "MySimhastha",
-
+                    url: baseUrl,
                     logo: {
                       "@type": "ImageObject",
                       url: `${baseUrl}/logo.png`
-                    }                 
+                    }
                   },
-                  articleSection: "Pilgrimage Guide",
-                  isAccessibleForFree: true,
-                  about: {
-                    "@type": "Thing",
-                    name: "Simhastha"
+                  copyrightHolder:{
+                  "@type":"Organization",
+
+                  name:"MySimhastha"
                   },
+
+                  copyrightYear:new Date().getFullYear(),
+
+                  license:pageUrl,
+              
                 })
               }}
             />
 
-            {/* ========================= */}
+
+            <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+
+                "@id": pageUrl,
+
+                url: pageUrl,
+
+                name: title,
+
+                description,
+
+                inLanguage: lang,
+
+                isPartOf: {
+                  "@type": "WebSite",
+                  name: "MySimhastha",
+                  url: baseUrl
+                }
+              })
+            }}
+          />
+
+          <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+
+              "@type": "Organization",
+
+              name: "MySimhastha",
+
+              url: baseUrl,
+
+              logo: `${baseUrl}/logo.png`
+            })
+          }}
+        />
+
+        <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+
+            "@type": "WebSite",
+
+            url: baseUrl,
+
+            name: "MySimhastha",
+
+            inLanguage: [
+              "en-IN",
+              "hi-IN"
+            ]
+          })
+        }}
+      />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+
+                              
+                "@type":"ImageObject",
+
+                url:`${baseUrl}${image}`,
+
+                contentUrl:`${baseUrl}${image}`,
+
+                name:title,
+
+                caption:title,
+
+                inLanguage:lang
+
+            })
+          }}
+        />
+
+        <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+          "@context":"https://schema.org",
+
+          "@type":"WebPage",
+
+          "@id":pageUrl,
+
+          url:pageUrl,
+
+          speakable:{
+            "@type":"SpeakableSpecification",
+
+            cssSelector:[
+                ".guide-highlight",
+                ".guide-header h1"
+            ]
+          }
+          })
+                  }}
+      />
+                    {/* ========================= */}
             {/* FAQ Schema */}
             {/* ========================= */}
 

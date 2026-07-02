@@ -7,6 +7,15 @@ export default function GuidesPage() {
   const navigate = useNavigate();
   const guides = [
     {
+    title: "How to Reach Ujjain: Complete Travel Guide by Train, Flight & Road",
+    description:
+      "Learn how to reach Ujjain by train, flight, and road. Find the nearest airport, railway station, bus routes, travel time, distances from major cities, local transport, and tips for visiting Mahakaleshwar Temple.",
+    image: "/images/how-to-reach-ujjain.webp",
+    enLink: "/guide/how-to-reach-ujjain",
+    hiLink: "/hi/guide/ujjain-kaise-pahunche",
+    date: "2026-07-02",
+  },
+    {
   title: "Where is Kumbh Mela Held? All 4 Kumbh Mela Locations in India Explained",
   description: "Discover all four Kumbh Mela locations in India—Ujjain, Prayagraj, Haridwar, and Nashik. Learn why Simhastha is celebrated only in Ujjain, explore the history, sacred rivers, mythology, travel tips, FAQs, and everything you need to know about Kumbh Mela.",
   image: "/images/kumbh-locations.webp",

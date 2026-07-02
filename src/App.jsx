@@ -50,6 +50,9 @@ const BhasmaartiGuideHi = lazy(() => import("./guides/hi/Bhasmaarti"));
 const KumbhLocations = lazy(() => import("./guides/en/KumbhLocations"));
 const KumbhLocationsHi = lazy(() => import("./guides/hi/KumbhLocations"));
 
+const HowToReachUjjain = lazy(() => import("./guides/en/HowToReachUjjain"));
+const HowToReachUjjainHi = lazy(() => import("./guides/hi/HowToReachUjjain"));
+
 function App() {
   const [openMissingForm, setOpenMissingForm] = useState(false);
 
@@ -240,6 +243,15 @@ function App() {
             <Route
               path="/hi/guide/kumbh-locations"
               element={<KumbhLocationsHi />}
+            />
+            <Route
+              path="/guide/how-to-reach-ujjain"
+              element={<HowToReachUjjain />}
+            />
+
+            <Route
+              path="/hi/guide/ujjain-kaise-pahunche"
+              element={<HowToReachUjjainHi />}
             />
             <Route
               path="*"
