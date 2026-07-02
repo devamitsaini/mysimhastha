@@ -90,6 +90,36 @@
     color:var(--stay-maroon, #6d1b2b);
 }
 
+.view-all-amenities{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    margin-top:20px;
+    padding:13px;
+    border:1px solid var(--stay-gold, #b8863c);
+    border-radius:12px;
+    background:none;
+    color:var(--stay-maroon, #6d1b2b);
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.view-all-amenities:hover{
+    background:var(--stay-gold-soft, #f6ead0);
+}
+
+.view-all-amenities svg{
+    transition:.25s;
+}
+
+.view-all-amenities svg.rotate{
+    transform:rotate(180deg);
+}
+
 @media(max-width:768px){
 
 .hotel-amenities{

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Star,
   MapPin,
@@ -6,6 +8,7 @@ import {
   Users,
   Hotel,
   BedDouble,
+  ChevronDown,
 } from "lucide-react";
 
 import { getAmenities } from "../../../utils/getAmenities";
@@ -22,6 +25,15 @@ const HotelInfo = ({ stay }) => {
     "Near Mahakaleshwar Temple";
 
   const highlights = getAmenities(stay).slice(0, 4);
+
+  const [aboutExpanded, setAboutExpanded] = useState(false);
+
+  const description =
+    stay.description ||
+    stay.short_description ||
+    "No description available.";
+
+  const isLongDescription = description.length > 220;
 
   return (
     <section className="hotel-info">
@@ -176,13 +188,29 @@ const HotelInfo = ({ stay }) => {
 
         </h2>
 
-        <p>
+        <p className={aboutExpanded ? "" : "clamped"}>
 
-          {stay.description ||
-            stay.short_description ||
-            "No description available."}
+          {description}
 
         </p>
+
+        {isLongDescription && (
+
+          <button
+            className="view-all-toggle"
+            onClick={() => setAboutExpanded((prev) => !prev)}
+          >
+
+            {aboutExpanded ? "Show Less" : "View All"}
+
+            <ChevronDown
+              size={15}
+              className={aboutExpanded ? "rotate" : ""}
+            />
+
+          </button>
+
+        )}
 
       </div>
 

@@ -7,6 +7,7 @@
     import HotelInfo from "../../components/stayDetails/HotelInfo/HotelInfo";
     import Amenities from "../../components/stayDetails/Amenities/Amenities";
     import BookingCard from "../../components/stayDetails/BookingCard/BookingCard";
+    import StickyBookingBar from "../../components/stayDetails/StickyBookingBar/StickyBookingBar";
     import NearbyPlaces from "../../components/stayDetails/NearbyPlaces/NearbyPlaces";
     import HotelFAQ from "../../components/stayDetails/HotelFAQ/HotelFAQ";
     import SimilarHotels from "../../components/stayDetails/SimilarHotels/SimilarHotels";
@@ -131,6 +132,8 @@
       <HotelFAQ stay={stay} />
 
       <SimilarHotels stay={stay} />
+
+      <StickyBookingBar stay={stay} />
 
     </div>
 

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Wifi,
   Car,
@@ -12,6 +14,7 @@ import {
   BatteryCharging,
   Clock3,
   CheckCircle2,
+  ChevronDown,
 } from "lucide-react";
 
 import { getAmenities } from "../../../utils/getAmenities";
@@ -91,6 +94,19 @@ const Amenities = ({ stay }) => {
     },
   ];
 
+  // Show available amenities first, so the preview is useful at a glance
+  const sortedAmenities = [...amenities].sort(
+    (a, b) => (b.available ? 1 : 0) - (a.available ? 1 : 0)
+  );
+
+  const PREVIEW_COUNT = 6;
+
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleAmenities = showAll
+    ? sortedAmenities
+    : sortedAmenities.slice(0, PREVIEW_COUNT);
+
   return (
     <section className="hotel-amenities">
 
@@ -106,7 +122,7 @@ const Amenities = ({ stay }) => {
 
       <div className="amenities-grid">
 
-        {amenities.map((item) => {
+        {visibleAmenities.map((item) => {
 
           const Icon = item.icon;
 
@@ -157,6 +173,26 @@ const Amenities = ({ stay }) => {
         })}
 
       </div>
+
+      {sortedAmenities.length > PREVIEW_COUNT && (
+
+        <button
+          className="view-all-amenities"
+          onClick={() => setShowAll((prev) => !prev)}
+        >
+
+          {showAll
+            ? "Show Less"
+            : `View All Amenities (${sortedAmenities.length})`}
+
+          <ChevronDown
+            size={16}
+            className={showAll ? "rotate" : ""}
+          />
+
+        </button>
+
+      )}
 
     </section>
   );

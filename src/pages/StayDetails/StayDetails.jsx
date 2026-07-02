@@ -9,10 +9,12 @@ import HotelInfo from "../../components/stayDetails/HotelInfo/HotelInfo";
 import Amenities from "../../components/stayDetails/Amenities/Amenities";
 import MapSection from "../../components/stayDetails/MapSection/MapSection";
 import NearbyPlaces from "../../components/stayDetails/NearbyPlaces/NearbyPlaces";
+import PropertyRules from "../../components/stayDetails/PropertyRules/PropertyRules";
 import HotelFAQ from "../../components/stayDetails/HotelFAQ/HotelFAQ";
 import Reviews from "../../components/stayDetails/Reviews/Reviews";
 import SimilarHotels from "../../components/stayDetails/SimilarHotels/SimilarHotels";
 import BookingCard from "../../components/stayDetails/BookingCard/BookingCard";
+import StickyBookingBar from "../../components/stayDetails/StickyBookingBar/StickyBookingBar";
 
 import "./StayDetails.css";
 
@@ -168,6 +170,8 @@ const StayDetails = () => {
 
             <NearbyPlaces stay={stay} />
 
+            <PropertyRules stay={stay} />
+
             <section id="faq">
 
   <HotelFAQ stay={stay} />
@@ -193,6 +197,8 @@ const StayDetails = () => {
         </div>
 
       </main>
+
+      <StickyBookingBar stay={stay} />
     </>
   );
 };
