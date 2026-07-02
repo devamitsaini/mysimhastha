@@ -1,5 +1,5 @@
 import "../../styles/MobileNav.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   Home,
   Calendar,
@@ -11,11 +11,15 @@ import { useTranslation } from "react-i18next";
 
 function MobileNav({ page }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const nav = (path) => {
   navigate(path);
   window.scrollTo(0, 0);
 };
   const { t } = useTranslation();
+  if (location.pathname.startsWith("/stays")) {
+  return null;
+}
   return (
     <nav className="mobile-nav">
       <button
