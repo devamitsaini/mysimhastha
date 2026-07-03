@@ -1,6 +1,19 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
 
+  "redirects": [
+    {
+      "source": "/guide/bhasma-aarti",
+      "destination": "/guide/bhasma-arti",
+      "permanent": true
+    },
+    {
+      "source": "/hi/guide/bhasma-aarti",
+      "destination": "/hi/guide/bhasma-arti",
+      "permanent": true
+    }
+  ],
+
   "rewrites": [
     {
       "source": "/(.*)",
