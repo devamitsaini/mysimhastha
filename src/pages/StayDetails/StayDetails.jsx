@@ -1,4 +1,78 @@
-import { useParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import "./StayDetails.css";
+
+export default function StayDetails() {
+  return (
+    <>
+      <Helmet>
+        <title>Stay Details | MySimhastha</title>
+
+        <meta
+          name="description"
+          content="Premium hotels and dharamshalas near Mahakaleshwar Temple are coming soon on MySimhastha."
+        />
+
+        <meta name="robots" content="noindex,nofollow" />
+      </Helmet>
+
+      <main className="stay-details-page">
+        <div
+          style={{
+            maxWidth: "800px",
+            margin: "80px auto",
+            padding: "48px 32px",
+            background: "#fff",
+            borderRadius: "20px",
+            textAlign: "center",
+            boxShadow: "0 10px 40px rgba(0,0,0,.08)",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "2.4rem",
+              marginBottom: "20px",
+              color: "#1f2937",
+            }}
+          >
+            🚧 Stay Details Coming Soon
+          </h1>
+
+          <p
+            style={{
+              fontSize: "1.1rem",
+              color: "#6b7280",
+              lineHeight: 1.8,
+              marginBottom: "32px",
+            }}
+          >
+            We are building a premium hotel booking experience for pilgrims
+            visiting Mahakaleshwar Temple and Simhastha 2028.
+            <br />
+            Detailed property pages, room information, amenities, maps, reviews,
+            and direct booking will be available soon.
+          </p>
+
+          <Link
+            to="/stays"
+            style={{
+              display: "inline-block",
+              padding: "14px 28px",
+              borderRadius: "10px",
+              background: "#f97316",
+              color: "#fff",
+              textDecoration: "none",
+              fontWeight: 600,
+            }}
+          >
+            ← Back to Hotels
+          </Link>
+        </div>
+      </main>
+    </>
+  );
+}
+{/*import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
@@ -203,4 +277,4 @@ const StayDetails = () => {
   );
 };
 
-export default StayDetails;
+export default StayDetails;*/}
