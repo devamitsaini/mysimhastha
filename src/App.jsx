@@ -60,7 +60,7 @@ const KumbhLocations = lazy(() => import("./guides/en/KumbhLocations"));
 const KumbhLocationsHi = lazy(() => import("./guides/hi/KumbhLocations"));
 
 const HowToReachUjjain = lazy(() => import("./guides/en/HowToReachUjjain"));
-const HowToReachUjjain = lazy(() => import("./guides/hi/HowToReachUjjain"));
+const HowToReachUjjainHi = lazy(() => import("./guides/hi/HowToReachUjjain"));
 
 const MahakalVisitMistakes = lazy(() => import("./guides/en/MahakalVisitMistakes"));
 const MahakalVisitMistakesHi = lazy(() => import("./guides/hi/MahakalVisitMistakes"));
@@ -146,7 +146,7 @@ function App() {
               <Route path="/hi/guide/mahakal-darshan" element={<MahakalDarshanHi />} />
               <Route path="/hi/guide/bhasma-arti" element={<BhasmaartiGuideHi />} />
               <Route path="/hi/guide/kumbh-locations" element={<KumbhLocationsHi />} />
-              <Route path="/hi/guide/how-to-reach-ujjain" element={<HowToReachUjjain />} />
+              <Route path="/hi/guide/how-to-reach-ujjain" element={<HowToReachUjjainHi />} />
               <Route path="/hi/guide/mahakal-visit-mistakes" 
               element={<MahakalVisitMistakesHi />}/>
               <Route path="/hi/guide/ujjain-to-omkareshwar" element={<UjjainToOmkareshwarGuideHi/>}/>
