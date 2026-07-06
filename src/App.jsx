@@ -16,9 +16,9 @@ import GuidesPage from "./pages/GuidesPage";
 
 import Stays from "./pages/Stays/Stays";
 
-const StayListingPage = lazy(() =>
+{/*const StayListingPage = lazy(() =>
   import("./pages/Stays/StayListingPage")
-);
+);*/}
 
 const StayDetailsPage = lazy(() =>
   import("./pages/StayDetails/StayDetails")
@@ -107,7 +107,7 @@ function App() {
 
             {/* STAYS ROUTES */}
             <Route path="/stays" element={<Stays />} />
-            <Route path="/stays/list" element={<StayListingPage />} />
+            {/*<Route path="/stays/list" element={<StayListingPage />} />*/}
             <Route path="/stays/:slug" element={<StayDetailsPage />} />
 
             
