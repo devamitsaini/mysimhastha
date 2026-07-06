@@ -1,6 +1,9 @@
 const guide = {
   slug: "2-3-day-ujjain-itinerary",
   language: "en",
+  translations: {
+    hi: "2-3-day-ujjain-itinerary"
+  },
   title: "2–3 Day Ujjain Itinerary: Complete Pilgrim's Travel Plan (2026)",
   description:
     "A detailed, hour-by-hour 2–3 day Ujjain itinerary covering Mahakaleshwar Temple, Bhasma Aarti booking, Ram Ghat, Kal Bhairav, Sandipani Ashram, and an optional Omkareshwar day trip — with timings, distances, budgets, and common mistakes to avoid.",

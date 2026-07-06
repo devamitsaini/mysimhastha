@@ -19,7 +19,7 @@ export default function GuidesPage() {
   title: "Ujjain to Omkareshwar Travel Guide: Distance, Route, Taxi, Bus & Train",
   description:
     "Planning a trip from Ujjain to Omkareshwar? Discover the best travel routes, distance, taxi fares, buses, trains, travel time, one-day itinerary, temple timings, and essential tips for visiting Omkareshwar Jyotirlinga.",
-  image: "/images/guide-hero.webp",
+  image: "/images/ujjain-to-om.webp",
   enLink: "/guide/ujjain-to-omkareshwar",
   hiLink: "/hi/guide/ujjain-to-omkareshwar",
   date: "2026-07-05"

@@ -16,18 +16,18 @@ const seoHi = {
     "उज्जैन तीर्थयात्रा गाइड",
     "उज्जैन के लिए कितने दिन चाहिए",
   ],
-  canonical: "https://mysimhastha.com/hi/guide/2-3-din-ujjain-yatra-itinerary",
+  canonical: "https://mysimhastha.com/hi/guide/2-3-day-ujjain-itinerary",
   robots: "index, follow, max-image-preview:large, max-snippet:-1",
 
   openGraph: {
     title: "2–3 दिन उज्जैन यात्रा कार्यक्रम: संपूर्ण तीर्थयात्री गाइड",
     description:
       "महाकालेश्वर, भस्म आरती, राम घाट, काल भैरव और सांदीपनि आश्रम सहित घंटे-दर-घंटे उज्जैन यात्रा कार्यक्रम — वैकल्पिक ओंकारेश्वर दिन-यात्रा के साथ।",
-    url: "https://mysimhastha.com/hi/guide/2-3-din-ujjain-yatra-itinerary",
+    url: "https://mysimhastha.com/hi/guide/2-3-day-ujjain-itinerary",
     type: "article",
     siteName: "MySimhastha",
     locale: "hi_IN",
-    image: "https://mysimhastha.com/images/guides/2-day-ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/mahakaleshwar-hero.webp",
     imageAlt: "सूर्योदय के समय शिप्रा नदी के पास महाकालेश्वर मंदिर का शिखर, श्रद्धालु दर्शन के लिए एकत्रित",
   },
 
@@ -36,7 +36,7 @@ const seoHi = {
     title: "2–3 दिन उज्जैन यात्रा कार्यक्रम: संपूर्ण तीर्थयात्री गाइड",
     description:
       "महाकालेश्वर दर्शन, भस्म आरती बुकिंग, राम घाट, काल भैरव और वैकल्पिक ओंकारेश्वर यात्रा — घंटे-दर-घंटे योजना के साथ।",
-    image: "https://mysimhastha.com/images/guides/2-day-ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/mahakaleshwar-hero.webp",
   },
 
   publishedTime: "2026-07-06T00:00:00+05:30",
@@ -45,7 +45,7 @@ const seoHi = {
   breadcrumb: [
     { name: "होम", url: "https://mysimhastha.com/hi" },
     { name: "गाइड", url: "https://mysimhastha.com/hi/guides" },
-    { name: "2–3 दिन उज्जैन यात्रा कार्यक्रम", url: "https://mysimhastha.com/hi/guide/2-3-din-ujjain-yatra-itinerary" },
+    { name: "2–3 दिन उज्जैन यात्रा कार्यक्रम", url: "https://mysimhastha.com/hi/guide/2-3-day-ujjain-itinerary" },
   ],
 
   articleSchema: {
@@ -54,7 +54,7 @@ const seoHi = {
     headline: "2–3 दिन उज्जैन यात्रा कार्यक्रम: संपूर्ण तीर्थयात्री गाइड",
     description:
       "महाकालेश्वर मंदिर, भस्म आरती बुकिंग, राम घाट, काल भैरव, सांदीपनि आश्रम और वैकल्पिक ओंकारेश्वर यात्रा सहित विस्तृत 2–3 दिन का उज्जैन यात्रा कार्यक्रम।",
-    image: "https://mysimhastha.com/images/guides/2-day-ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/mahakaleshwar-hero.webp",
     author: {
       "@type": "Organization",
       name: "MySimhastha यात्रा डेस्क",
@@ -72,7 +72,7 @@ const seoHi = {
     dateModified: "2026-07-06T00:00:00+05:30",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://mysimhastha.com/hi/guide/2-3-din-ujjain-yatra-itinerary",
+      "@id": "https://mysimhastha.com/hi/guide/2-3-day-ujjain-itinerary",
     },
   },
 

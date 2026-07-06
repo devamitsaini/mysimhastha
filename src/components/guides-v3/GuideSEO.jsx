@@ -1,41 +1,161 @@
 import { Helmet } from "react-helmet-async";
 
 
+const SITE = {
+  url: "https://mysimhastha.com",
+  name: "MySimhastha",
+  twitter: "@MySimhastha",
+  themeColor: "#f97316",
+};
 
-const GuideSEO = ({ guide }) => {
+const DEFAULT_SEO = {
+  title: "Ujjain Travel Guide | MySimhastha",
+  description: "Complete travel guide for Ujjain pilgrimage with temple information, darshan timings, and travel tips.",
+  image: "https://mysimhastha.com/images/mahakaleshwar-hero.webp",
+};
+
+const getArticleSchema = (guide) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guide.title,
+    description: guide.description,
+    image: guide.hero?.image ? `${SITE.url}${guide.hero.image}` : DEFAULT_SEO.image,
+    author: {
+      "@type": "Organization",
+      name: guide.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE.url}/images/logo.png`,
+      },
+    },
+    datePublished: guide.seo?.publishedTime,
+    dateModified: guide.seo?.modifiedTime,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE.url}/${guide.language === "hi" ? "hi/" : ""}guide/${guide.slug}`,
+    },
+  };
+};
+
+const getFAQSchema = (faq) => {
+  if (!faq || faq.length === 0) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+};
+
+const getBreadcrumbSchema = (guide) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: guide.language === "hi" ? "होम" : "Home",
+        item: guide.language === "hi" ? `${SITE.url}/hi` : SITE.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: guide.language === "hi" ? "गाइड" : "Guides",
+        item: guide.language === "hi" ? `${SITE.url}/hi/guides` : `${SITE.url}/guides`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: guide.title,
+        item: `${SITE.url}/${guide.language === "hi" ? "hi/" : ""}guide/${guide.slug}`,
+      },
+    ],
+  };
+};
+
+const getWebPageSchema = (guide) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: guide.title,
+    description: guide.description,
+    url: `${SITE.url}/${guide.language === "hi" ? "hi/" : ""}guide/${guide.slug}`,
+  };
+};
+
+const getOrganizationSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.name,
+    url: SITE.url,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE.url}/images/logo.png`,
+    },
+  };
+};
+
+const GuideSEO = ({ guide, seo }) => {
 
   if (!guide) return null;
 
-  const pageUrl = `${SITE.url}/${guide.language === "hi" ? "hi/" : ""}guide/${guide.slug}`;
+  // Merge seo data into guide for easier access
+  const guideData = {
+    ...guide,
+    seo: seo || guide.seo,
+  };
+
+  const pageUrl = `${SITE.url}/${guideData.language === "hi" ? "hi/" : ""}guide/${guideData.slug}`;
 
   const metaTitle =
-    guide?.seo?.metaTitle ||
-    guide.title ||
+    guideData?.seo?.title ||
+    guideData.title ||
     DEFAULT_SEO.title;
 
   const metaDescription =
-    guide?.seo?.metaDescription ||
-    guide.description ||
+    guideData?.seo?.description ||
+    guideData.description ||
     DEFAULT_SEO.description;
 
   const canonical =
-    guide?.seo?.canonical ||
+    guideData?.seo?.canonical ||
     pageUrl;
 
   const image =
-    guide?.hero?.image
-      ? `${SITE.url}${guide.hero.image}`
+    guideData?.seo?.openGraph?.image ||
+    guideData?.hero?.image
+      ? guideData.seo?.openGraph?.image || guideData.hero?.image
       : DEFAULT_SEO.image;
 
-  const articleSchema = getArticleSchema(guide);
+  const articleSchema = getArticleSchema({
+    ...guideData,
+    seo: {
+      ...guideData.seo,
+      publishedTime: seo?.publishedTime || guideData.seo?.publishedTime,
+      modifiedTime: seo?.modifiedTime || guideData.seo?.modifiedTime,
+    }
+  });
 
-  const faqSchema = getFAQSchema(guide.faq);
+  const faqSchema = getFAQSchema(guideData.faq);
 
   const breadcrumbSchema =
-    getBreadcrumbSchema(guide);
+    getBreadcrumbSchema(guideData);
 
   const webpageSchema =
-    getWebPageSchema(guide);
+    getWebPageSchema(guideData);
 
   const organizationSchema =
     getOrganizationSchema();
@@ -48,7 +168,7 @@ const GuideSEO = ({ guide }) => {
           BASIC SEO
       ========================== */}
 
-      <html lang={guide.language} />
+      <html lang={guideData.language} />
 
       <title>
 
@@ -76,7 +196,7 @@ const GuideSEO = ({ guide }) => {
 
         name="author"
 
-        content={guide.author}
+        content={guideData.author}
 
       />
 
@@ -143,7 +263,7 @@ const GuideSEO = ({ guide }) => {
 
         property="og:locale"
 
-        content={guide.language === "hi" ? "hi_IN" : "en_IN"}
+        content={guideData.language === "hi" ? "hi_IN" : "en_IN"}
 
       />
             {/* ==========================
@@ -189,34 +309,46 @@ const GuideSEO = ({ guide }) => {
         content={SITE.twitter}
 
       />
-            {/* ==========================
+      {/* ==========================
           Alternate Languages
       ========================== */}
 
-      {guide.translations?.en && (
+      {guideData.translations?.en && (
 
         <link
+
           rel="alternate"
+
           hrefLang="en"
-          href={`${SITE.url}/guide/${guide.translations.en}`}
+
+          href={`${SITE.url}/guide/${guideData.translations.en}`}
+
         />
 
       )}
 
-      {guide.translations?.hi && (
+      {guideData.translations?.hi && (
 
         <link
+
           rel="alternate"
+
           hrefLang="hi"
-          href={`${SITE.url}/hi/guide/${guide.translations.hi}`}
+
+          href={`${SITE.url}/hi/guide/${guideData.translations.hi}`}
+
         />
 
       )}
 
       <link
+
         rel="alternate"
+
         hrefLang="x-default"
+
         href={canonical}
+
       />
 
 
@@ -226,8 +358,11 @@ const GuideSEO = ({ guide }) => {
       ========================== */}
 
       <meta
+
         name="theme-color"
+
         content={SITE.themeColor}
+
       />
 
 
@@ -237,18 +372,27 @@ const GuideSEO = ({ guide }) => {
       ========================== */}
 
       <meta
+
         name="apple-mobile-web-app-capable"
+
         content="yes"
+
       />
 
       <meta
+
         name="apple-mobile-web-app-title"
+
         content={SITE.name}
+
       />
 
       <meta
+
         name="application-name"
+
         content={SITE.name}
+
       />
 
 
@@ -258,18 +402,27 @@ const GuideSEO = ({ guide }) => {
       ========================== */}
 
       <meta
+
         property="article:published_time"
-        content={guide.seo?.publishedTime}
+
+        content={seo?.publishedTime || guideData.seo?.publishedTime}
+
       />
 
       <meta
+
         property="article:modified_time"
-        content={guide.seo?.modifiedTime}
+
+        content={seo?.modifiedTime || guideData.seo?.modifiedTime}
+
       />
 
       <meta
+
         property="article:author"
-        content={guide.author}
+
+        content={guideData.author}
+
       />
 
 
@@ -279,39 +432,60 @@ const GuideSEO = ({ guide }) => {
       ========================== */}
 
       <script
+
         type="application/ld+json"
+
       >
+
         {JSON.stringify(organizationSchema)}
+
       </script>
 
       <script
+
         type="application/ld+json"
+
       >
+
         {JSON.stringify(webpageSchema)}
+
       </script>
 
       <script
+
         type="application/ld+json"
+
       >
+
         {JSON.stringify(articleSchema)}
+
       </script>
 
-      {guide.faq?.length > 0 && (
+      {guideData.faq?.length > 0 && (
 
         <script
+
           type="application/ld+json"
+
         >
+
           {JSON.stringify(faqSchema)}
+
         </script>
 
       )}
 
       <script
+
         type="application/ld+json"
+
       >
+
         {JSON.stringify(breadcrumbSchema)}
+
       </script>
-          </Helmet>
+
+    </Helmet>
 
   );
 

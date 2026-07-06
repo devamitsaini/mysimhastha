@@ -23,7 +23,7 @@ export default function UjjainToOmkareshwarGuide() {
     "https://mysimhastha.com/guide/ujjain-to-omkareshwar";
 
   const heroImage =
-    "https://mysimhastha.com/images/guide-hero.webp";
+    "https://mysimhastha.com/images/ujjain-to-om.webp";
 
   const pinterestImage = heroImage;
 

@@ -54,7 +54,7 @@ const seo = {
     headline: "2–3 Day Ujjain Itinerary: Complete Pilgrim's Travel Plan",
     description:
       "A detailed 2–3 day Ujjain itinerary covering Mahakaleshwar Temple, Bhasma Aarti booking, Ram Ghat, Kal Bhairav, Sandipani Ashram, and an optional Omkareshwar day trip.",
-    image: "https://mysimhastha.com/images/guides/ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/mahakaleshwar-hero.webp",
     author: {
       "@type": "Organization",
       name: "MySimhastha Travel Desk",
