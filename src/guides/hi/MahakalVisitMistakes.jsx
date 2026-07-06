@@ -5418,7 +5418,7 @@ MySimhastha संपादकीय टीम
             🛕 संपूर्ण महाकाल दर्शन गाइड
           </Link>
 
-          <Link to="/hi/guide/ujjain-kaise-pahunche">
+          <Link to="/hi/guide/how-to-reach-ujjain">
             🚆 उज्जैन कैसे पहुँचें – ट्रेन, फ्लाइट एवं सड़क मार्ग
           </Link>
 
