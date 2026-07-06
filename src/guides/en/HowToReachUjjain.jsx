@@ -24,11 +24,11 @@ import { FiArrowUp } from "react-icons/fi";
 import "../styles/guides.css";
 
 const guide = {
-  language: "en",
+language: "en",
 
-  slug: "how-to-reach-ujjain",
-  englishSlug: "how-to-reach-ujjain",
-  hindiSlug: "ujjain-kaise-pahunche",
+slug: "how-to-reach-ujjain",
+englishSlug: "how-to-reach-ujjain",
+hindiSlug: "how-to-reach-ujjain",
 
   title:
     "How to Reach Ujjain: Complete Travel Guide by Train, Flight & Road (2026)",

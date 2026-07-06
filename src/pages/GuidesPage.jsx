@@ -39,7 +39,7 @@ export default function GuidesPage() {
       "Learn how to reach Ujjain by train, flight, and road. Find the nearest airport, railway station, bus routes, travel time, distances from major cities, local transport, and tips for visiting Mahakaleshwar Temple.",
     image: "/images/how-to-reach-ujjain.webp",
     enLink: "/guide/how-to-reach-ujjain",
-    hiLink: "/hi/guide/ujjain-kaise-pahunche",
+    hiLink: "/hi/guide/how-to-reach-ujjain",
     date: "2026-07-02",
   },
     {

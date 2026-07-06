@@ -135,8 +135,8 @@ function App() {
               <Route path="/guide/how-to-reach-ujjain" element={<HowToReachUjjain />} />
               <Route path="/guide/mahakal-visit-mistakes" element={<MahakalVisitMistakes />} />
               <Route path="/guide/ujjain-to-omkareshwar" element={<UjjainToOmkareshwarGuide />}/>
-              <Route path="/hi/guide/ujjain-to-omkareshwar" element={<UjjainToOmkareshwarGuideHi />}/>
-                            
+              
+              <Route path="/guide/2-3-day-ujjain-itinerary"  element={<UjjainItinerary />} />
 
               {/* Hindi */}
               <Route path="/hi/guide/simhastha-2028" element={<Simhastha2028HI />} />
@@ -146,10 +146,10 @@ function App() {
               <Route path="/hi/guide/mahakal-darshan" element={<MahakalDarshanHi />} />
               <Route path="/hi/guide/bhasma-arti" element={<BhasmaartiGuideHi />} />
               <Route path="/hi/guide/kumbh-locations" element={<KumbhLocationsHi />} />
-              <Route path="/hi/guide/how-to-reach-ujjain" element={<HowToReachUjjainHi />} />
+              <Route path="/hi/guide/how-to-reach-ujjain" element={<HowToReachUjjain />} />
               <Route path="/hi/guide/mahakal-visit-mistakes" 
               element={<MahakalVisitMistakesHi />}/>
-              <Route path="/guide/2-3-day-ujjain-itinerary"  element={<UjjainItinerary />} />
+              <Route path="/hi/guide/ujjain-to-omkareshwar" element={<UjjainToOmkareshwarGuideHi/>}/>
               <Route path="/hi/guide/2-3-day-ujjain-itinerary"element={<UjjainItinerary />}/>
 
 
