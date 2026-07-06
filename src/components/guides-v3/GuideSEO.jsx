@@ -1,13 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
 
-import {
-  getArticleSchema,
-  getFAQSchema,
-  getBreadcrumbSchema,
-  getWebPageSchema,
-  getOrganizationSchema
-} from "../../utils/schema";
 
 const GuideSEO = ({ guide }) => {
 
