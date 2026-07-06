@@ -14,7 +14,7 @@ import HomePage from "./pages/Home";
 
 import GuidesPage from "./pages/GuidesPage";
 
-//import StayHomePage from "./pages/Stays/StayHomePage";
+import StayHomePage from "./pages/Stays/Stays";
 
 const StayListingPage = lazy(() =>
   import("./pages/Stays/StayListingPage")
@@ -106,7 +106,7 @@ function App() {
             <Route path="/hotels" element={<HotelsPage />} />
 
             {/* STAYS ROUTES */}
-            <Route path="/stays" element={<StayHomePage />} />
+            <Route path="/stays" element={<Stays />} />
             <Route path="/stays/list" element={<StayListingPage />} />
             <Route path="/stays/:slug" element={<StayDetailsPage />} />
 
@@ -149,8 +149,8 @@ function App() {
               <Route path="/hi/guide/how-to-reach-ujjain" element={<HowToReachUjjainHi />} />
               <Route path="/hi/guide/mahakal-visit-mistakes" 
               element={<MahakalVisitMistakesHi />}/>
-              <Route path="/guide/2-3-day-ujjain-itinerary" element={<UjjainItinerary />} />
-              <Route path="/hi/guide/2-3-day-ujjain-itinerary" element={<UjjainItinerary />}/>
+              <Route path="/guide/2-day-ujjain-itinerary"  element={<UjjainItinerary />} />
+              <Route path="/hi/guide/2-day-ujjain-itinerary"element={<UjjainItinerary />}/>
 
 
             <Route path="*" element={<Navigate to="/" replace />} />
