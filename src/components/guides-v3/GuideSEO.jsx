@@ -1,8 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
 
-import DEFAULT_SEO from "../../config/defaultSeo";
-
 import {
   getArticleSchema,
   getFAQSchema,
