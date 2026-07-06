@@ -91,21 +91,7 @@ export default function ShareButtons({
           <span>Facebook</span>
         </a>
 
-        <a
-          href={mounted ? `https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}` : "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="share-btn twitter"
-          aria-label="Share on X"
-        >
-          target="_blank"
-          rel="noopener noreferrer"
-          className="share-btn pinterest"
-          aria-label="Share on Pinterest"
-        >
-          <FaPinterestP />
-          <span>Pinterest</span>
-        </a>
+
 
         <button
           type="button"

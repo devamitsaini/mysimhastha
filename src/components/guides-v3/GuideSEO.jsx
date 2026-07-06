@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 
-import SITE from "../../config/siteConfig";
 
 import DEFAULT_SEO from "../../config/defaultSeo";
 
