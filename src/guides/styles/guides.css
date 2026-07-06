@@ -610,82 +610,6 @@
     }
 
 }
-  /* =====================================================
-    PHASE 3 — TABLE DESIGN SYSTEM
-  ===================================================== */
-
-  /* ===============================
-    TABLE WRAPPER
-  =============================== */
-
-  .guide-section .table-wrapper,
-  .guide-table{
-
-      width:100%;
-
-      margin:32px 0;
-
-      overflow-x:auto;
-
-      -webkit-overflow-scrolling:touch;
-
-      border-radius:18px;
-
-      border:1px solid #ececec;
-
-      box-shadow:
-          0 10px 25px rgba(0,0,0,.05);
-
-  }
-
-  .guide-section .table-wrapper::-webkit-scrollbar,
-  .guide-table::-webkit-scrollbar{
-
-      height:6px;
-
-  }
-
-  .guide-section .table-wrapper::-webkit-scrollbar-track,
-  .guide-table::-webkit-scrollbar-track{
-
-      background:#f2f2f2;
-
-      border-radius:3px;
-
-  }
-
-  .guide-section .table-wrapper::-webkit-scrollbar-thumb,
-  .guide-table::-webkit-scrollbar-thumb{
-
-      background:#f97316;
-
-      border-radius:3px;
-
-  }
-
-  .guide-section .table-wrapper::-webkit-scrollbar-thumb:hover,
-  .guide-table::-webkit-scrollbar-thumb:hover{
-
-      background:#d95b10;
-
-  }
-
-  .guide-section table{
-
-      width:100%;
-
-      border-collapse:separate;
-
-      border-spacing:0;
-
-      overflow:hidden;
-
-      border-radius:18px;
-
-      background:#fff;
-
-  }
-
   /* ===============================
     HEADER
   =============================== */
@@ -1466,81 +1390,152 @@
 
 }
 /* =====================================================
-   PHASE 6 — FINAL POLISH
+   PHASE 3 — TABLE DESIGN SYSTEM
 ===================================================== */
 
 /* ===============================
-   GLOBAL TRANSITIONS
+   TABLE WRAPPER (for horizontal scroll)
 =============================== */
 
-.guide-section,
-.guide-box,
-.guide-highlight,
-.quick-fact-card,
-.related-guide-card,
-.official-links a,
-.share-btn,
-.feedback-btn,
-.helpful-buttons button,
-.back-top a{
+.guide-section .table-wrapper,
+.guide-table-wrapper .table-wrapper,
+.table-wrapper{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
 
-    transition:
-        background-color .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease,
-        transform .25s ease,
-        color .25s ease;
+    margin:24px 0;
+    border:1px solid #ececec;
+    border-radius:18px;
+    background:#fff;
 
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
-/* ===============================
-   HOVER EFFECT
-=============================== */
+/* Scrollbar */
 
-.guide-section:hover,
-.guide-box:hover{
-
-    box-shadow:
-        0 18px 40px rgba(0,0,0,.06);
-
+.guide-section .table-wrapper::-webkit-scrollbar,
+.guide-table-wrapper .table-wrapper::-webkit-scrollbar,
+.guide-table::-webkit-scrollbar{
+    height:8px;
 }
 
-/* ===============================
-   FOCUS
-=============================== */
-
-a:focus,
-button:focus{
-
-    outline:3px solid rgba(249,115,22,.25);
-
-    outline-offset:3px;
-
+.guide-section .table-wrapper::-webkit-scrollbar-track,
+.guide-table-wrapper .table-wrapper::-webkit-scrollbar-track,
+.guide-table::-webkit-scrollbar-track{
+    background:#f3f3f3;
+    border-radius:999px;
 }
 
-/* ===============================
-   TEXT SELECTION
-=============================== */
-
-::selection{
-
+.guide-section .table-wrapper::-webkit-scrollbar-thumb,
+.guide-table-wrapper .table-wrapper::-webkit-scrollbar-thumb,
+.guide-table::-webkit-scrollbar-thumb{
     background:#f97316;
+    border-radius:999px;
+}
 
-    color:#fff;
-
+.guide-section .table-wrapper::-webkit-scrollbar-thumb:hover,
+.guide-table-wrapper .table-wrapper::-webkit-scrollbar-thumb:hover,
+.guide-table::-webkit-scrollbar-thumb:hover{
+    background:#d95b10;
 }
 
 /* ===============================
-   HR
+   TABLE
 =============================== */
 
-.guide-section hr{
+.guide-section table,
+.guide-table-wrapper .guide-table,
+.guide-table{
+    width:max-content;          /* Prevent shrinking */
+    min-width:700px;            /* Creates horizontal scroll on mobile */
+    border-collapse:separate;
+    border-spacing:0;
+    background:#fff;
+}
 
-    border:none;
+/* Prevent cell text wrapping so table stays wide enough to scroll */
+.guide-section th,
+.guide-section td,
+.guide-table-wrapper .guide-table th,
+.guide-table-wrapper .guide-table td,
+.guide-table th,
+.guide-table td{
+    white-space:nowrap;
+}
 
-    border-top:1px solid #ececec;
+/* GuideTable header styling (matches .guide-section table look) */
+.guide-table-wrapper .guide-table thead,
+.guide-table thead{
+    background:#f97316;
+}
 
-    margin:40px 0;
+.guide-table-wrapper .guide-table th,
+.guide-table th{
+    padding:18px 20px;
+    color:#fff;
+    font-weight:700;
+    text-align:left;
+    font-size:16px;
+}
+
+.guide-table-wrapper .guide-table td,
+.guide-table td{
+    padding:18px 20px;
+    font-size:16px;
+    line-height:1.7;
+    color:#444;
+    border-top:1px solid #f2f2f2;
+    vertical-align:top;
+}
+
+.guide-table-wrapper .guide-table tbody tr,
+.guide-table tbody tr{
+    transition:.25s;
+}
+
+.guide-table-wrapper .guide-table tbody tr:nth-child(even),
+.guide-table tbody tr:nth-child(even){
+    background:#fafafa;
+}
+
+.guide-table-wrapper .guide-table tbody tr:hover,
+.guide-table tbody tr:hover{
+    background:#fff7ed;
+}
+
+@media(max-width:768px){
+
+    .guide-table-wrapper .guide-table th,
+    .guide-table-wrapper .guide-table td,
+    .guide-table th,
+    .guide-table td{
+        padding:14px;
+        font-size:15px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .guide-section table,
+    .guide-table-wrapper .guide-table,
+    .guide-table{
+        min-width:600px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .guide-section table,
+    .guide-table-wrapper .guide-table,
+    .guide-table{
+        min-width:520px;
+    }
 
 }
 

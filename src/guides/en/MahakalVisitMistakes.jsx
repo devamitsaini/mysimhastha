@@ -1154,6 +1154,7 @@ Reading Time: 18 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1198,6 +1199,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
         <p>
 
@@ -1239,6 +1241,7 @@ Reading Time: 18 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1297,6 +1300,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
         <div className="guide-info-box info">
 
@@ -1908,6 +1912,7 @@ Reading Time: 18 min
           Best Time to Visit Mahakaleshwar Temple
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1989,6 +1994,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
         <h3>
           How to Avoid This Mistake
@@ -2737,6 +2743,7 @@ Reading Time: 18 min
           Essential Things to Carry
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2812,6 +2819,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
         <h3>
           How to Avoid This Mistake
@@ -3007,6 +3015,7 @@ Reading Time: 18 min
           Must-Visit Places Near Mahakaleshwar Temple
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -3074,6 +3083,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
         <h3>
           How to Avoid This Mistake
@@ -3272,6 +3282,7 @@ Reading Time: 18 min
           A Better Way to Plan Your Visit
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -3315,6 +3326,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
         <h3>
           How to Avoid This Mistake
@@ -3666,6 +3678,7 @@ Reading Time: 18 min
           Challenges During Different Seasons
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -3717,6 +3730,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
         <div className="guide-info-box info">
 
@@ -3915,6 +3929,7 @@ Reading Time: 18 min
           Transport Options in Ujjain
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -3974,6 +3989,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
         <h3>
           How to Avoid This Mistake
@@ -4472,6 +4488,7 @@ Reading Time: 18 min
         </p>
 
 
+      <div className="table-wrapper">
       <table className="guide-comparison-table">
 
         <thead>
@@ -4501,6 +4518,7 @@ Reading Time: 18 min
         </tbody>
 
       </table>
+      </div>
 
       </section>
             {/* =========================
@@ -4699,6 +4717,7 @@ Reading Time: 18 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -4810,6 +4829,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
       </section>
 
@@ -4834,6 +4854,7 @@ Reading Time: 18 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -4893,6 +4914,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
       </section>
 
@@ -4917,6 +4939,7 @@ Reading Time: 18 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -5024,6 +5047,7 @@ Reading Time: 18 min
           </tbody>
 
         </table>
+        </div>
 
       </section>
 

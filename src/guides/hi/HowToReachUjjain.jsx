@@ -1458,15 +1458,7 @@ export default function HowToReachUjjain() {
 
         </div>
       </section>
-      <div className="back-top">
-
-                <a href="#top">
-
-                ↑ Back to Top
-
-                </a>
-
-</div>
+      
     </>
   );
 }

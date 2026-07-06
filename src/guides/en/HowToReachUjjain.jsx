@@ -1493,15 +1493,7 @@ export default function HowToReachUjjain() {
             languageNote="This guide is available in English and हिन्दी to help devotees from across India and around the world."
           />
 
-            <div className="back-top">
-
-                <a href="#top">
-
-                ↑ Back to Top
-
-                </a>
-
-</div>
+      
 
         </div>
       </section>

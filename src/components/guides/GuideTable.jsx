@@ -10,39 +10,31 @@ export default function GuideTable({ table }) {
         <h3>{table.title}</h3>
       )}
 
-      <table className="guide-table">
+      <div className="table-wrapper">
 
-        <thead>
-          <tr>
-            {table.headers.map((header, index) => (
-              <th key={index}>
-                {header}
-              </th>
-            ))}
-          </tr>
-        </thead>
+        <table className="guide-table">
 
-        <tbody>
-
-          {table.rows.map((row, rowIndex) => (
-
-            <tr key={rowIndex}>
-
-              {row.map((cell, cellIndex) => (
-
-                <td key={cellIndex}>
-                  {cell}
-                </td>
-
+          <thead>
+            <tr>
+              {table.headers.map((header, index) => (
+                <th key={index}>{header}</th>
               ))}
-
             </tr>
+          </thead>
 
-          ))}
+          <tbody>
+            {table.rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
 
-        </tbody>
+        </table>
 
-      </table>
+      </div>
 
     </div>
   );
