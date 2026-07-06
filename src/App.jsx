@@ -14,14 +14,14 @@ import HomePage from "./pages/Home";
 
 import GuidesPage from "./pages/GuidesPage";
 
-import StayHomePage from "./pages/Stays/Stays";
+import Stays from "./pages/Stays/Stays";
 
 const StayListingPage = lazy(() =>
   import("./pages/Stays/StayListingPage")
 );
 
 const StayDetailsPage = lazy(() =>
-  import("./pages/Stays/StayDetailsPage")
+  import("./pages/StayDetails/StayDetails")
 );
 
 
