@@ -962,7 +962,7 @@ Reading Time: 18 min
       <figure className="guide-image">
 
         <img
-          src="/images/guide-hotel.webp"
+          src="/images/guide-hotel-ujjain.webp"
           alt="Hotel near Mahakal Temple"
           loading="lazy"
           width="1200"

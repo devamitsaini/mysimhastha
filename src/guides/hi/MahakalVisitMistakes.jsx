@@ -962,7 +962,7 @@ MySimhastha संपादकीय टीम
       <figure className="guide-image">
 
         <img
-          src="/images/guide-hotel.webp"
+          src="/images/guide-hotel-ujjain.webp"
           alt="महाकाल मंदिर के पास होटल"
           loading="lazy"
           width="1200"
