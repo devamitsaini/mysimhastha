@@ -618,7 +618,8 @@
     TABLE WRAPPER
   =============================== */
 
-  .guide-section .table-wrapper{
+  .guide-section .table-wrapper,
+  .guide-table{
 
       width:100%;
 
@@ -637,13 +638,15 @@
 
   }
 
-  .guide-section .table-wrapper::-webkit-scrollbar{
+  .guide-section .table-wrapper::-webkit-scrollbar,
+  .guide-table::-webkit-scrollbar{
 
       height:6px;
 
   }
 
-  .guide-section .table-wrapper::-webkit-scrollbar-track{
+  .guide-section .table-wrapper::-webkit-scrollbar-track,
+  .guide-table::-webkit-scrollbar-track{
 
       background:#f2f2f2;
 
@@ -651,7 +654,8 @@
 
   }
 
-  .guide-section .table-wrapper::-webkit-scrollbar-thumb{
+  .guide-section .table-wrapper::-webkit-scrollbar-thumb,
+  .guide-table::-webkit-scrollbar-thumb{
 
       background:#f97316;
 
@@ -659,7 +663,8 @@
 
   }
 
-  .guide-section .table-wrapper::-webkit-scrollbar-thumb:hover{
+  .guide-section .table-wrapper::-webkit-scrollbar-thumb:hover,
+  .guide-table::-webkit-scrollbar-thumb:hover{
 
       background:#d95b10;
 
