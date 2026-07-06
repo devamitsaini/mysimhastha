@@ -14,7 +14,7 @@ import HomePage from "./pages/Home";
 
 import GuidesPage from "./pages/GuidesPage";
 
-import StayHomePage from "./pages/Stays/StayHomePage";
+//import StayHomePage from "./pages/Stays/StayHomePage";
 
 const StayListingPage = lazy(() =>
   import("./pages/Stays/StayListingPage")
