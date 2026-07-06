@@ -61,7 +61,8 @@ export default function GuidePage({
             />
 
             <GuideLanguageSwitcher
-                guide={currentGuide}
+                slug={currentGuide.slug}
+                language={isHindi ? "hi" : "en"}
             />
 
             {/* Render Quick Answer separately first */}
