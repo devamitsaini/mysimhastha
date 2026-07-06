@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaWhatsapp,
   FaFacebookF,
@@ -14,7 +14,13 @@ export default function ShareButtons({
   language = "en",
 }) {
 
-  
+  const [pageUrl, setPageUrl] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    setPageUrl(window.location.href);
+  }, []);
 
   const labels = {
   en: {
@@ -34,9 +40,7 @@ export default function ShareButtons({
 
   const t = labels[language];
 
-  const pageUrl = window.location.href;
-
-  const shareUrl = encodeURIComponent(pageUrl);
+  const shareUrl = mounted ? encodeURIComponent(pageUrl) : "";
 
   const shareTitle = encodeURIComponent(title || "");
 
@@ -47,8 +51,10 @@ export default function ShareButtons({
 
   const copyLink = async () => {
     try {
-      await navigator.clipboard.writeText(pageUrl);
-      toast.success(t.copied);
+      if (mounted) {
+        await navigator.clipboard.writeText(pageUrl);
+        toast.success(t.copied);
+      }
     } catch {
       toast.error(t.failed);
     }
@@ -64,7 +70,7 @@ export default function ShareButtons({
       <div className="share-buttons">
 
         <a
-          href={`https://wa.me/?text=${shareTitle}%20${shareUrl}`}
+          href={mounted ? `https://wa.me/?text=${shareTitle}%20${shareUrl}` : "#"}
           target="_blank"
           rel="noopener noreferrer"
           className="share-btn whatsapp"
@@ -75,7 +81,7 @@ export default function ShareButtons({
         </a>
 
         <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
+          href={mounted ? `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}` : "#"}
           target="_blank"
           rel="noopener noreferrer"
           className="share-btn facebook"
@@ -86,18 +92,12 @@ export default function ShareButtons({
         </a>
 
         <a
-          href={`https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}`}
+          href={mounted ? `https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}` : "#"}
           target="_blank"
           rel="noopener noreferrer"
           className="share-btn twitter"
           aria-label="Share on X"
         >
-          <FaXTwitter />
-          <span>X</span>
-        </a>
-
-        <a
-          href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=${imageUrl}&description=${shareTitle}`}
           target="_blank"
           rel="noopener noreferrer"
           className="share-btn pinterest"

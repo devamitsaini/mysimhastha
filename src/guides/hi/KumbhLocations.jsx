@@ -563,7 +563,7 @@ relatedGuides: [
 
   image: "bhasma-arti.webp",
 
-  url: "/hi/guide/bhasma-aarti"
+  url: "/hi/guide/bhasma-arti"
 },
 
 {
@@ -744,7 +744,7 @@ export default function KumbhLocations() {
               </li>
 
               <li>
-                <Link to="/hi/guide/bhasma-aarti">
+                <Link to="/hi/guide/bhasma-arti">
                   महाकाल भस्म आरती गाइड
                 </Link>
               </li>

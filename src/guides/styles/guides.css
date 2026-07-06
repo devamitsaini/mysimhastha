@@ -1,1073 +1,1125 @@
+  /* =====================================================
+    MYSIMHASTHA GUIDE DESIGN SYSTEM
+    PHASE 1 — LAYOUT FOUNDATION
+  ===================================================== */
 
-/* =====================================================
-   MYSIMHASTHA GUIDE STYLES
+  /* ===============================
+    ROOT VARIABLES
+  =============================== */
+
+  :root{
+
+      --container:1100px;
+
+      --radius-sm:12px;
+      --radius-md:18px;
+      --radius-lg:24px;
+
+      --space-xs:10px;
+      --space-sm:18px;
+      --space-md:28px;
+      --space-lg:40px;
+      --space-xl:60px;
+
+      --white:#fff;
+
+      --border:#ececec;
+
+      --bg:#f8f9fb;
+
+      --shadow-sm:
+          0 4px 12px rgba(0,0,0,.05);
+
+      --shadow-md:
+          0 12px 30px rgba(0,0,0,.06);
+
+      --shadow-lg:
+          0 18px 50px rgba(0,0,0,.08);
+
+  }
+
+  /* ===============================
+    PAGE
+  =============================== */
+
+  .simhastha-guide{
+
+      background:var(--bg);
+
+      padding:110px 20px 70px;
+
+  }
+
+  /* ===============================
+    CONTAINER
+  =============================== */
+
+  .simhastha-guide .container{
+
+      max-width:var(--container);
+
+      margin:auto;
+
+  }
+
+  /* ===============================
+    ARTICLE
+  =============================== */
+
+  .guide-article{
+
+      width:100%;
+
+  }
+
+  /* ===============================
+    HERO
+  =============================== */
+
+  .guide-header{
+
+      background:#fff;
+
+      padding:48px;
+
+      border-radius:var(--radius-lg);
+
+      box-shadow:var(--shadow-md);
+
+      margin-bottom:40px;
+
+      overflow:hidden;
+
+  }
+
+  /* ===============================
+    ARTICLE SECTIONS
+  =============================== */
+
+  .guide-section{
+
+      background:#fff;
+
+      padding:40px;
+
+      margin-bottom:30px;
+
+      border-radius:22px;
+
+      border:1px solid var(--border);
+
+      box-shadow:var(--shadow-sm);
+
+  }
+
+  /* ===============================
+    BOXES
+  =============================== */
+
+  .guide-box{
+
+      background:#fff;
+
+      padding:32px;
+
+      margin-bottom:30px;
+
+      border-radius:20px;
+
+      border:1px solid var(--border);
+
+      box-shadow:var(--shadow-sm);
+
+  }
+
+  /* ===============================
+    HIGHLIGHT
+  =============================== */
+
+  .guide-highlight{
+
+      padding:28px;
+
+      border-left:5px solid #f97316;
+
+      border-radius:18px;
+
+      background:
+
+          linear-gradient(
+              135deg,
+              #fff8ef,
+              #ffffff
+          );
+
+      box-shadow:var(--shadow-sm);
+
+      margin-bottom:35px;
+
+  }
+
+  /* ===============================
+    CTA
+  =============================== */
+
+  .cta-box{
+
+      padding:40px;
+
+      border-radius:22px;
+
+      border:2px solid #fed7aa;
+
+      background:
+
+          linear-gradient(
+              135deg,
+              #fff8ef,
+              #fff
+          );
+
+  }
+
+  /* ===============================
+    MOBILE
+  =============================== */
+
+  @media(max-width:992px){
+
+  .simhastha-guide{
+
+      padding:95px 18px 45px;
+
+  }
+
+  .guide-header{
+
+      padding:34px;
+
+  }
+
+  .guide-section{
+
+      padding:30px;
+
+  }
+
+  .guide-box{
+
+      padding:24px;
+
+  }
+
+  }
+
+  @media(max-width:768px){
+
+  .simhastha-guide{
+
+      padding:88px 14px 35px;
+
+  }
+
+  .guide-header{
+
+      padding:22px;
+
+      border-radius:18px;
+
+  }
+
+  .guide-section{
+
+      padding:22px;
+
+      border-radius:18px;
+
+  }
+
+  .guide-box{
+
+      padding:18px;
+
+      border-radius:16px;
+
+  }
+
+  .cta-box{
+
+      padding:24px;
+
+  }
+
+  }
+  /* =====================================================
+    PHASE 2 — TYPOGRAPHY SYSTEM
+  ===================================================== */
+
+  /* ===============================
+    HEADINGS
+  =============================== */
+
+  .guide-header h1{
+
+      margin:0 0 18px;
+
+      font-size:clamp(2rem,5vw,3.5rem);
+
+      line-height:1.15;
+
+      font-weight:800;
+
+      color:#2b1400;
+
+      letter-spacing:-0.02em;
+
+  }
+
+  .guide-header p{
+
+      max-width:760px;
+
+      margin:0 auto;
+
+      font-size:clamp(1rem,2vw,1.2rem);
+
+      line-height:1.8;
+
+      color:#666;
+
+  }
+
+  .guide-meta{
+
+      margin-top:18px;
+
+      color:#888;
+
+      font-size:.95rem;
+
+      line-height:1.7;
+
+  }
+
+  /* ===============================
+    SECTION HEADINGS
+  =============================== */
+
+  .guide-section h2{
+
+      margin:0 0 24px;
+
+      padding-bottom:14px;
+
+      font-size:clamp(1.8rem,4vw,2.4rem);
+
+      line-height:1.25;
+
+      font-weight:800;
+
+      color:#2b1400;
+
+      position:relative;
+
+  }
+
+  .guide-section h2::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+
+      bottom:0;
+
+      width:70px;
+
+      height:4px;
+
+      border-radius:999px;
+
+      background:#f97316;
+
+  }
+
+  .guide-section h3{
+
+      margin:36px 0 16px;
+
+      font-size:clamp(1.3rem,2vw,1.65rem);
+
+      line-height:1.4;
+
+      font-weight:700;
+
+      color:#2b1400;
+
+  }
+
+  .guide-section h4{
+
+      margin:28px 0 12px;
+
+      font-size:1.15rem;
+
+      font-weight:700;
+
+      color:#444;
+
+  }
+
+  /* ===============================
+    PARAGRAPHS
+  =============================== */
+
+  .guide-section p,
+
+  .guide-highlight p,
+
+  .guide-box p{
+
+      margin:0 0 20px;
+
+      font-size:1.08rem;
+
+      line-height:1.9;
+
+      color:#444;
+
+  }
+
+  /* ===============================
+    LISTS
+  =============================== */
+
+  .guide-section ul,
+
+  .guide-section ol{
+
+      margin:20px 0;
+
+      padding-left:24px;
+
+  }
+
+  .guide-section li{
+
+      margin-bottom:14px;
+
+      line-height:1.9;
+
+      color:#444;
+
+  }
+
+  /* ===============================
+    LINKS
+  =============================== */
+
+  .guide-section a,
+
+  .guide-box a{
+
+      color:#e46a25;
+
+      font-weight:600;
+
+      text-decoration:none;
+
+      transition:.25s;
+
+  }
+
+  .guide-section a:hover,
+
+  .guide-box a:hover{
+
+      color:#c24e10;
+
+      text-decoration:underline;
+
+  }
+
+  /* ===============================
+    STRONG
+  =============================== */
+
+  .guide-section strong{
+
+      color:#222;
+
+      font-weight:700;
+
+  }
+
+  /* ===============================
+    BLOCKQUOTE
+  =============================== */
+
+  .guide-section blockquote{
+
+      margin:30px 0;
+
+      padding:22px 24px;
+
+      background:#fff7ed;
+
+      border-left:5px solid #f97316;
+
+      border-radius:16px;
+
+      font-size:1.05rem;
+
+      line-height:1.9;
+
+      color:#444;
+
+  }
+
+  /* ===============================
+    FIGURE CAPTION
+  =============================== */
+
+  .guide-figure figcaption{
+
+      padding:14px 18px;
+
+      text-align:center;
+
+      font-size:.92rem;
+
+      color:#666;
+
+      background:#fafafa;
+
+  }
+
+  /* ===============================
+    MOBILE
+  =============================== */
+
+  @media(max-width:768px){
+
+  .guide-header h1{
+
+      font-size:2rem;
+
+  }
+
+  .guide-header p{
+
+      font-size:1rem;
+
+  }
+
+  .guide-section h2{
+
+      font-size:1.65rem;
+
+  }
+
+  .guide-section h3{
+
+      font-size:1.3rem;
+
+  }
+
+  .guide-section p,
+
+  .guide-highlight p,
+
+  .guide-box p{
+
+      font-size:1rem;
+
+      line-height:1.8;
+
+  }
+
+  .guide-section li{
+
+      font-size:1rem;
+
+  }
+
+  }
+  /* =====================================================
+    PHASE 3 — IMAGE SYSTEM
+  ===================================================== */
+
+  /* ===============================
+    IMAGE WRAPPER
+  =============================== */
+
+  .guide-image{
+
+      width:100%;
+
+      margin:36px auto;
+
+      overflow:hidden;
+
+      border-radius:22px;
+
+      background:#fff;
+
+      border:1px solid #ececec;
+
+      box-shadow:
+          0 12px 32px rgba(0,0,0,.08);
+
+  }
+
+  /* ===============================
+    IMAGE
+  =============================== */
+
+  .guide-image img{
+
+      display:block;
+
+      width:100%;
+
+      height:auto;
+
+      max-width:100%;
+
+      vertical-align:middle;
+
+  }
+
+  /* ===============================
+    CAPTION
+  =============================== */
+
+  .guide-image figcaption{
+
+      padding:16px 20px;
+
+      text-align:center;
+
+      font-size:.92rem;
+
+      line-height:1.7;
+
+      color:#666;
+
+      background:#fafafa;
+
+      border-top:1px solid #ececec;
+
+  }
+
+  /* ===============================
+    HERO IMAGE
+  =============================== */
+
+  .guide-header .guide-image{
+
+      margin-top:28px;
+
+  }
+
+  /* ===============================
+    ARTICLE IMAGE
+  =============================== */
+
+  .guide-section .guide-image{
+
+      margin:32px auto;
+
+  }
+
+  /* ===============================
+    IMAGE HOVER
+  =============================== */
+
+  .guide-image{
+
+      transition:.3s ease;
+
+  }
+
+  .guide-image:hover{
+
+      transform:translateY(-2px);
+
+      box-shadow:
+          0 18px 40px rgba(0,0,0,.10);
+
+  }
+
+  /* ===============================
+    MOBILE
+  =============================== */
+
+  @media(max-width:768px){
+
+  .guide-image{
+
+      margin:24px auto;
+
+      border-radius:18px;
+
+  }
+
+  .guide-image figcaption{
+
+      padding:12px 16px;
+
+      font-size:.85rem;
+
+  }
+
+  }
+  /* =====================================================
+    PHASE 3 — TABLE DESIGN SYSTEM
+  ===================================================== */
+
+  /* ===============================
+    TABLE WRAPPER
+  =============================== */
+
+  .guide-section table{
+
+      width:100%;
+
+      border-collapse:separate;
+
+      border-spacing:0;
+
+      margin:32px 0;
+
+      overflow:hidden;
+
+      border-radius:18px;
+
+      border:1px solid #ececec;
+
+      box-shadow:
+          0 10px 25px rgba(0,0,0,.05);
+
+      background:#fff;
+
+  }
+
+  /* ===============================
+    HEADER
+  =============================== */
+
+  .guide-section thead{
+
+      background:#f97316;
+
+  }
+
+  .guide-section th{
+
+      padding:18px 20px;
+
+      color:#fff;
+
+      font-weight:700;
+
+      text-align:left;
+
+      font-size:16px;
+
+      white-space:nowrap;
+
+  }
+
+  /* ===============================
+    BODY
+  =============================== */
+
+  .guide-section td{
+
+      padding:18px 20px;
+
+      font-size:16px;
+
+      line-height:1.7;
+
+      color:#444;
+
+      border-top:1px solid #f2f2f2;
+
+      vertical-align:top;
+
+  }
+
+  /* ===============================
+    ROWS
+  =============================== */
+
+  .guide-section tbody tr{
+
+      transition:.25s;
+
+  }
+
+  .guide-section tbody tr:nth-child(even){
+
+      background:#fafafa;
+
+  }
+
+  .guide-section tbody tr:hover{
+
+      background:#fff7ed;
+
+  }
+
+  /* ===============================
+    MOBILE
+  =============================== */
+
+  @media(max-width:768px){
+
+  .guide-section table{
+
+      display:block;
+
+      overflow-x:auto;
+
+      -webkit-overflow-scrolling:touch;
+
+  }
+
+  .guide-section th,
+
+  .guide-section td{
+
+      padding:14px;
+
+      font-size:15px;
+
+  }
+
+  }
+
+  /* =====================================================
+   PHASE 4 — COMPONENTS
 ===================================================== */
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* =====================================================
-   PAGE WRAPPER
-===================================================== */
-
-.simhastha-guide {
-  padding: 120px 20px 60px;
-
-  background:
-    radial-gradient(circle at top right,
-      #fff3e8 0%,
-      transparent 25%),
-    radial-gradient(circle at top left,
-      #fff8f0 0%,
-      transparent 20%),
-    #f8f9fb;
-}
-
-.simhastha-guide .container {
-  max-width: 950px;
-  margin: 0 auto;
-}
-
-/* =====================================================
-   HERO SECTION
-===================================================== */
-
-.guide-header {
-  text-align: center;
-
-  background: #fff;
-
-  padding: 45px;
-
-  border-radius: 24px;
-
-  margin-bottom: 40px;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.05);
-}
-
-.guide-header h1 {
-  font-size: clamp(36px, 5vw, 56px);
-
-  line-height: 1.15;
-
-  color: #2b1400;
-
-  margin-bottom: 18px;
-
-  font-weight: 800;
-}
-
-.guide-header p {
-  font-size: 20px;
-
-  color: #666;
-
-  max-width: 750px;
-
-  margin: 0 auto;
-
-  line-height: 1.8;
-}
-
-.guide-meta {
-  font-size: 15px;
-  color: #888;
-  margin-top: 12px;
-  line-height: 1.7;
-}
-
-.guide-header .guide-figure {
-  margin-top: 24px;
-  text-align: left;
-}
-
-.guide-article {
-  width: 100%;
-}
-
-/* =====================================================
-   LANGUAGE SWITCHER
-===================================================== */
-
-.language-switcher {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 12px;
-
-  flex-wrap: wrap;
-
-  margin-bottom: 35px;
-}
-
-.language-switcher a {
-  padding: 12px 22px;
-
-  background: white;
-
-  border: 1px solid #eee;
-
-  border-radius: 999px;
-
-  color: #2b1400;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-  transition: all .3s ease;
-}
-
-.language-switcher a:hover {
-  background: #e46a25;
-
-  color: white;
-
-  transform: translateY(-2px);
-
-  border-color: #e46a25;
-}
-
-/* =====================================================
-   QUICK SUMMARY
-===================================================== */
-
-.guide-highlight {
-  background:
-    linear-gradient(
-      135deg,
-      #fff7ed,
-      #ffffff
-    );
-
-  border-left: 6px solid #f97316;
-
-  padding: 24px;
-
-  border-radius: 16px;
-
-  margin-bottom: 35px;
-
-  box-shadow:
-    0 6px 20px rgba(0,0,0,.04);
-}
-
-.guide-highlight p {
-  margin: 0;
-
-  color: #444;
-
-  line-height: 1.9;
-
-  font-size: 17px;
-}
-
-/* =====================================================
-   CONTENT BOX
-===================================================== */
-
-.guide-box {
-  background: white;
-
-  padding: 30px;
-
-  border-radius: 20px;
-
-  margin-bottom: 35px;
-
-  border: 1px solid #f2f2f2;
-
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.05);
-
-  
-}
-
-.guide-box h2,
-.guide-box h3 {
-  color: #2b1400;
-
-  margin-bottom: 16px;
-}
-
-.guide-box ul {
-  list-style: none;
-
-  padding: 0;
-  
-  margin: 0;
-}
-
-.guide-box li {
-  padding: 12px 0;
-  
-  border-bottom: 1px solid #f1f1f1;
-}
-
-.guide-box li:last-child {
-  border-bottom: none;
-}
-
-.guide-box a {
-  color: #e46a25;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-  transition: .3s ease;
-}
-
-.guide-box a:hover {
-  color: #c24e10;
-
-  padding-left: 4px;
-}
-
-/* =====================================================
-   TABLE OF CONTENTS
-===================================================== */
-
-.guide-box.toc {
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff,
-      #fffdfb
-    );
-}
-
-.guide-box.toc ul li a {
-  display: block;
-}
-
-/* =====================================================
-   ARTICLE SECTIONS
-===================================================== */
-
-.guide-section {
-  background: white;
-
-  padding: 40px;
-
-  border-radius: 22px;
-
-  margin-bottom: 30px;
-
-  border: 1px solid #f2f2f2;
-
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.04),
-    0 1px 2px rgba(0,0,0,.04);
-}
-
-.guide-section h2 {
-  font-size: 36px;
-
-  color: #2b1400;
+/* ===============================
+   HIGHLIGHT BOX
+=============================== */
 
-  line-height: 1.25;
+.guide-highlight{
 
-  margin-bottom: 24px;
+    background:linear-gradient(135deg,#fff8ef,#fff);
 
-  position: relative;
+    border-left:6px solid #f97316;
 
-  padding-bottom: 12px;
-}
-
-.guide-section h2::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-
-  bottom: 0;
-
-  width: 75px;
-
-  height: 4px;
-
-  border-radius: 999px;
-
-  background: #e46a25;
-}
-
-.guide-section h3 {
-  font-size: 24px;
-
-  color: #2b1400;
-
-  margin-top: 30px;
-
-  margin-bottom: 14px;
-}
-
-.guide-section p {
-  color: #444;
-
-  font-size: 18px;
-
-  line-height: 2;
-
-  margin-bottom: 22px;
-}
-
-.guide-section ul,
-.guide-section ol {
-  margin: 22px 0;
-
-  padding-left: 30px;
-}
-
-.guide-section li {
-  margin-bottom: 12px;
-
-  line-height: 1.9;
-
-  color: #444;
-}
-
-/* =====================================================
-   FAQ
-===================================================== */
-
-.faq-item {
-  margin-bottom: 25px;
-}
-
-.faq-item h3 {
-  background: #fff7ed;
-
-  padding: 15px 18px;
-
-  border-radius: 12px;
-
-  margin-bottom: 12px;
-}
-
-/* =====================================================
-   TABLES
-===================================================== */
-
-.guide-section table {
-  width: 100%;
-
-  border-collapse: collapse;
-
-  margin: 30px 0;
-
-  overflow: hidden;
-
-  border-radius: 14px;
-}
-
-.guide-section th {
-  background: #f97316;
-
-  color: white;
-
-  padding: 16px;
-  
-  text-align: left;
-}
-
-.guide-section td {
-  padding: 14px;
-
-  border: 1px solid #eee;
-}
-
-.guide-section tr:nth-child(even) {
-  background: #fafafa;
-}
-
-/* =====================================================
-   IMAGES & FIGURES
-===================================================== */
-
-.guide-figure {
-  margin: 28px auto 32px;
-  max-width: 100%;
-  padding: 0;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-}
+    border-radius:20px;
 
-.guide-figure img,
-img.guide-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center;
-  margin: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.guide-figure figcaption {
-  padding: 14px 18px;
-  font-size: 14px;
-  line-height: 1.65;
-  color: #666;
-  text-align: center;
-  background: #fafafa;
-  border-top: 1px solid #eee;
-}
-
-.guide-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  margin: 30px 0;
-  border-radius: 18px;
-  object-fit: contain;
-  object-position: center;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-}
-
-.guide-section .guide-figure,
-.guide-section .guide-image,
-.guide-header .guide-figure,
-.guide-header .guide-image,
-.guide-article .guide-figure,
-.guide-article .guide-image {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 768px) {
-  .guide-figure {
-    margin: 20px auto 24px;
-    border-radius: 14px;
-  }
-
-  .guide-figure figcaption {
-    padding: 12px 14px;
-    font-size: 13px;
-  }
-
-  .guide-image {
-    margin: 20px 0;
-    border-radius: 14px;
-  }
-}
-
-/* =====================================================
-   INTERNAL LINKS
-===================================================== */
-
-.guide-section a {
-  color: #e46a25;
-
-  font-weight: 600;
-
-  text-decoration: none;
-}
-
-.guide-section a:hover {
-  text-decoration: underline;
-}
-
-/* =====================================================
-   SOCIAL LINKS
-===================================================== */
-
-.social-links {
-  display: grid;
-
-  gap: 15px;
-
-  margin-top: 20px;
-}
-
-.social-links p {
-  margin: 0;
-}
-
-.social-links a {
-  color: #e46a25;
-
-  font-weight: 700;
-
-  text-decoration: none;
+    padding:28px;
 
-  transition: .3s ease;
-}
+    margin:35px 0;
 
-.social-links a:hover {
-  transform: translateX(4px);
+    box-shadow:0 10px 24px rgba(0,0,0,.05);
 
-  color: #c24e10;
 }
-
-/* =====================================================
-   CTA SECTION
-===================================================== */
-
-.cta-box {
-  background:
-    linear-gradient(
-      135deg,
-      #fff7ed,
-      #ffffff
-    );
 
-  border: 2px solid #fed7aa;
+/* ===============================
+   FACT BOX
+=============================== */
 
-  border-radius: 24px;
+.guide-facts-box{
 
-  padding: 35px;
+    background:#fff;
 
-  box-shadow:
-    0 10px 30px rgba(228,106,37,.08);
-}
+    border:1px solid #ececec;
 
-/* =====================================================
-   STICKY TOC (OPTIONAL)
-===================================================== */
+    border-radius:18px;
 
-@media (min-width: 1100px) {
+    padding:28px;
 
-  .guide-box.toc {
-    position: sticky;
+    margin:32px 0;
 
-    top: 110px;
-  }
+    box-shadow:0 6px 18px rgba(0,0,0,.04);
 
 }
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
 
-  .simhastha-guide {
-    padding: 100px 16px 40px;
-  }
+/* ===============================
+   INFO BOX
+=============================== */
 
-  .guide-header {
-    padding: 28px;
-  }
+.guide-info-box{
 
-  .guide-header h1 {
-    font-size: 34px;
-  }
+    background:#eef7ff;
 
-  .guide-header p {
-    font-size: 17px;
-  }
+    border-left:5px solid #2196f3;
 
-  .guide-section {
-    padding: 24px;
-  }
-
-  .guide-section h2 {
-    font-size: 28px;
-  }
-
-  .guide-section h3 {
-    font-size: 22px;
-  }
-
-  .guide-section p {
-    font-size: 16px;
-    line-height: 1.9;
-  }
-
-  .guide-box {
-    padding: 22px;
-  }
-
-  .language-switcher {
-    gap: 8px;
-  }
-
-  .language-switcher a {
-    padding: 8px 14px;
-    font-size: 14px;
-  }
-}
+    border-radius:18px;
 
-/* =====================================================
-   QUICK FACTS
-===================================================== */
-
-.quick-facts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
-  margin: 25px 0;
-}
+    padding:24px;
 
-.quick-fact-card {
-  background: #fff;
-  border: 1px solid #f2e7dc;
-  border-radius: 14px;
-  padding: 14px 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: all 0.25s ease;
-}
+    margin:30px 0;
 
-.quick-fact-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(228, 106, 37, 0.12);
-  border-color: #e46a25;
 }
 
-.quick-fact-label {
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  color: #e46a25;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  margin-bottom: 6px;
-}
+/* ===============================
+   WARNING BOX
+=============================== */
 
-.quick-fact-value {
-  font-size: 16px;
-  font-weight: 700;
-  color: #2b1400;
-  line-height: 1.4;
-}
+.guide-warning{
 
-.quick-fact-value small {
-  display: block;
-  margin-top: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #777;
-}
+    background:#fff8ef;
 
-@media (max-width: 768px) {
-  .quick-facts {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .quick-fact-card {
-    padding: 12px;
-  }
-
-  .quick-fact-label {
-    font-size: 11px;
-  }
-
-  .quick-fact-value {
-    font-size: 15px;
-  }
-}
+    border-left:5px solid #f97316;
 
-/* ==========================================
-   RELATED GUIDES
-========================================== */
+    border-radius:18px;
 
-.related-guides {
-  margin-top: 10px;
-}
+    padding:24px;
 
-.related-guide-card {
-  display: block;
-  margin-top: 18px;
-  padding: 18px 22px;
-  background: #fff7ed;
-  border: 1px solid #f59e0b;
-  border-left: 5px solid #f97316;
-  border-radius: 14px;
-  color: #2b1400;
-  font-size: 18px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: .3s ease;
-}
+    margin:30px 0;
 
-.related-guide-card:hover {
-  background: #f97316;
-  color: #fff;
-  transform: translateY(-2px);
 }
 
+/* ===============================
+   SUCCESS BOX
+=============================== */
 
-/* ==========================================
-   FOOTER GUIDE LINK
-========================================== */
+.guide-success{
 
-.guide-footer-link {
-  margin: 40px 0;
-  text-align: center;
-}
+    background:#eefbf3;
 
-.guide-footer-link a {
-  display: inline-block;
-  padding: 14px 28px;
-  background: #f97316;
-  color: #fff;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: .3s ease;
-}
+    border-left:5px solid #22c55e;
 
-.guide-footer-link a:hover {
-  background: #d95b10;
-  transform: translateY(-2px);
-}
+    border-radius:18px;
 
-/* ==========================================
-   SHARE BAR
-========================================== */
-
-.share-wrapper{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-  margin:30px 0;
-}
+    padding:24px;
 
-.share-btn{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:12px 18px;
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:999px;
-  color:#2b1400;
-  font-weight:600;
-  text-decoration:none;
-  cursor:pointer;
-  transition:.25s;
-  min-width:170px;
-}
+    margin:30px 0;
 
-.share-btn:hover{
-  background:#f97316;
-  color:#fff;
-  transform:translateY(-2px);
 }
-
 
-/* ==========================================
-   OFFICIAL RESOURCES
-========================================== */
+/* ===============================
+   OFFICIAL LINKS
+=============================== */
 
 .official-links{
-  list-style:none;
-  padding:0;
-  margin:20px 0;
+
+    list-style:none;
+
+    padding:0;
+
+    margin:30px 0;
+
 }
 
 .official-links li{
-  margin-bottom:14px;
+
+    margin-bottom:16px;
+
 }
 
 .official-links a{
-  display:block;
-  padding:18px;
-  background:#fff7ed;
-  border-left:5px solid #f97316;
-  border-radius:14px;
-  color:#2b1400;
-  font-weight:700;
-  text-decoration:none;
-  transition:.25s;
-}
 
-.official-links a:hover{
-  background:#f97316;
-  color:white;
-}
+    display:block;
 
-/* ==========================================
-   HELPFUL BOX
-========================================== */
+    padding:20px;
 
-.helpful-box{
-  margin:40px 0;
-  padding:30px;
-  text-align:center;
-  background:#fff7ed;
-  border-radius:20px;
-}
-
-.helpful-box h3{
-  margin-bottom:20px;
-}
-
-.helpful-buttons{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.helpful-buttons button{
-  border:none;
-  padding:14px 24px;
-  border-radius:999px;
-  cursor:pointer;
-  font-weight:700;
-  background:white;
-  transition:.25s;
-}
-
-.helpful-buttons button:hover{
-  background:#f97316;
-  color:white;
-}
-
-/* ==========================================
-   COPY GUIDE BUTTON
-========================================== */
-
-.copy-link-btn{
-  border:none;
-  background:#f97316;
-  color:white;
-  padding:12px 20px;
-  border-radius:999px;
-  cursor:pointer;
-  font-weight:700;
-  transition:.25s;
-}
-
-.copy-link-btn:hover{
-  background:#d95b10;
-}
-
-/* ==========================================
-   BACK TO TOP
-========================================== */
-
-.back-top{
-  margin:50px 0 20px;
-  text-align:center;
-}
-
-.back-top a{
-  display:inline-block;
-  padding:14px 24px;
-  border-radius:999px;
-  background:#2b1400;
-  color:white;
-  text-decoration:none;
-  font-weight:700;
-  transition:.25s;
-}
-
-.back-top a:hover{
-  background:#f97316;
-}
-
-@media(max-width:768px){
-
-.share-wrapper{
-    gap:10px;
-}
-
-.share-btn{
-    flex:1 1 calc(50% - 10px);
-    justify-content:center;
-}
-
-.helpful-buttons{
-    flex-direction:column;
-}
-
-.helpful-buttons button{
-    width:100%;
-}
-
-}
-/* ==========================================
-   SHARE BUTTONS
-========================================== */
-
-.share-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-  margin:25px 0 40px;
-}
-
-.share-buttons a,
-.share-buttons button{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    gap:8px;
-
-    min-width:150px;
-
-    padding:12px 18px;
+    border-radius:16px;
 
     background:#fff;
+
     border:1px solid #ececec;
-    border-radius:999px;
-
-    color:#2b1400;
-
-    font-weight:600;
 
     text-decoration:none;
 
-    cursor:pointer;
+    color:#2b1400;
 
-    transition:all .25s ease;
+    font-weight:600;
 
-    box-shadow:0 4px 12px rgba(0,0,0,.05);
+    transition:.25s;
+
 }
 
-.share-buttons a:hover,
-.share-buttons button:hover{
-    background:#f97316;
-    color:#fff;
-    border-color:#f97316;
+.official-links a:hover{
+
     transform:translateY(-2px);
+
+    border-color:#f97316;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.05);
+
 }
 
-.share-buttons a:hover{
-  background:#f97316;
-  color:#fff;
-  transform:translateY(-2px);
-  border-color:#f97316;
-}
+/* ===============================
+   RELATED GUIDES
+=============================== */
 
-@media(max-width:768px){
+.related-guides{
 
-.share-buttons{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+    margin-top:24px;
+
 }
 
-.share-buttons a{
-    width:100%;
-    min-width:unset;
-}
-}
-.copy-btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
+.related-guide-card{
 
-    min-width:180px;
+    display:block;
 
-    padding:12px 20px;
+    padding:20px 24px;
 
     background:#fff;
+
+    border-radius:18px;
+
     border:1px solid #ececec;
+
+    text-decoration:none;
+
+    color:#2b1400;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.related-guide-card:hover{
+
+    background:#fff7ed;
+
+    border-color:#f97316;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===============================
+   CTA
+=============================== */
+
+.cta-box{
+
+    text-align:center;
+
+}
+
+.cta-box h2{
+
+    margin-top:0;
+
+}
+
+.cta-box .btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:20px;
+
+    padding:14px 28px;
+
     border-radius:999px;
 
-    color:#2b1400;
-    font-weight:600;
-    font-size:15px;
-
-    cursor:pointer;
-
-    transition:all .25s ease;
-
-    box-shadow:0 4px 12px rgba(0,0,0,.05);
-}
-
-.copy-btn:hover{
     background:#f97316;
-    color:#fff;
-    border-color:#f97316;
-    transform:translateY(-2px);
-}
 
-.copy-btn svg{
-    flex-shrink:0;
-}
-/* WhatsApp */
-.share-btn.whatsapp:hover{
-    background:#25D366;
-    border-color:#25D366;
     color:#fff;
-}
 
-/* Facebook */
-.share-btn.facebook:hover{
-    background:#1877F2;
-    border-color:#1877F2;
-    color:#fff;
-}
+    text-decoration:none;
 
-/* X */
-.share-btn.twitter:hover{
-    background:#111;
-    border-color:#111;
-    color:#fff;
-}
-
-/* Pinterest */
-.share-btn.pinterest:hover{
-    background:#E60023;
-    border-color:#E60023;
-    color:#fff;
-}
-
-/* Copy */
-.share-btn.copy-btn:hover{
-    background:#f97316;
-    border-color:#f97316;
-    color:#fff;
-}
-.share-btn svg{
-    color:#f97316;
-    transition:.25s;
-}
-
-.share-btn:hover svg{
-    color:#fff;
-}
-.share-title{
-    text-align:center;
     font-weight:700;
-    color:#2b1400;
-    margin-bottom:15px;
-    font-size:18px;
+
+    transition:.25s;
+
 }
+
+.cta-box .btn:hover{
+
+    background:#d95b10;
+
+}
+
+/* ===============================
+   FAQ
+=============================== */
+
+.faq-item{
+
+    margin-bottom:22px;
+
+    border:1px solid #ececec;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+}
+
+.faq-item h3{
+
+    margin:0;
+
+    padding:18px 22px;
+
+    background:#fff7ed;
+
+    font-size:1.15rem;
+
+}
+
+.faq-item p{
+
+    padding:18px 22px;
+
+    margin:0;
+
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+
 @media(max-width:768px){
 
-.share-buttons{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+.guide-highlight,
+
+.guide-info-box,
+
+.guide-warning,
+
+.guide-success,
+
+.guide-facts-box{
+
+    padding:20px;
+
 }
 
-.copy-btn{
-    grid-column:1 / -1;
-}
+.related-guide-card{
+
+    padding:18px;
+
 }
 
+.official-links a{
 
-.language-switcher a.active{
-    background:#f97316;
-    color:#fff;
-    border-color:#f97316;
+    padding:18px;
+
 }
-/* ==========================================
-   GUIDE BREADCRUMB
-========================================== */
+
+}
+/* =====================================================
+   PHASE 5 — UTILITIES
+===================================================== */
+
+/* ===============================
+   BREADCRUMB
+=============================== */
 
 .guide-breadcrumb{
 
@@ -1075,13 +1127,15 @@ img.guide-image {
 
     flex-wrap:wrap;
 
-    align-items:center;
-
     gap:10px;
 
-    margin-bottom:30px;
+    align-items:center;
+
+    margin-bottom:28px;
 
     font-size:15px;
+
+    color:#777;
 
 }
 
@@ -1101,85 +1155,610 @@ img.guide-image {
 
 }
 
-.breadcrumb-separator{
+/* ===============================
+   QUICK FACTS
+=============================== */
 
-    color:#999;
+.quick-facts{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+    margin:35px 0;
 
 }
 
-.breadcrumb-current{
+.quick-fact-card{
 
-    color:#555;
+    padding:22px;
+
+    border-radius:18px;
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.quick-fact-label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#f97316;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+}
+
+.quick-fact-value{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#2b1400;
+
+    line-height:1.5;
+
+}
+
+/* ===============================
+   SHARE BUTTONS
+=============================== */
+
+.share-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    justify-content:center;
+
+    margin:40px 0;
+
+}
+
+.share-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 22px;
+
+    border-radius:999px;
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    color:#2b1400;
+
+    text-decoration:none;
 
     font-weight:600;
 
-}
-.guide-subheading {
-  margin: 2rem 0 1rem;
+    transition:.25s;
+
+    cursor:pointer;
+
 }
 
-.guide-subheading h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--primary-color);
-}
-.feedback-section {
-  margin-top: 60px;
-  padding: 32px;
-  border-radius: 16px;
-  text-align: center;
-  background: #fff8ef;
-  border: 1px solid #f2d3a2;
+.share-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 22px rgba(0,0,0,.08);
+
 }
 
-.feedback-section h2 {
-  margin-bottom: 10px;
+/* ===============================
+   COPY BUTTON
+=============================== */
+
+.copy-btn{
+
+    background:#f97316;
+
+    color:#fff;
+
+    border:none;
+
 }
 
-.feedback-section p {
-  margin-bottom: 20px;
-  color: #555;
+.copy-btn:hover{
+
+    background:#d95b10;
+
 }
 
-.feedback-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
+/* ===============================
+   HELPFUL
+=============================== */
+
+.helpful-box{
+
+    margin:45px 0;
+
+    padding:36px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:#fff8ef;
+
+    border:1px solid #f5d2b4;
+
 }
 
-.feedback-btn {
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 12px 22px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: 0.25s;
+.helpful-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+    margin-top:24px;
+
 }
 
-.feedback-btn.yes {
-  background: #2e7d32;
-  color: white;
+.helpful-buttons button{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.25s;
+
 }
 
-.feedback-btn.no {
-  background: #d32f2f;
-  color: white;
+.helpful-buttons button:hover{
+
+    transform:translateY(-2px);
+
 }
 
-.feedback-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  opacity: 0.95;
+/* ===============================
+   FEEDBACK
+=============================== */
+
+.feedback-section{
+
+    margin-top:60px;
+
+    padding:36px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
 }
 
-.feedback-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.feedback-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+    margin-top:24px;
+
 }
 
-.feedback-success {
-  margin-top: 18px;
-  font-weight: 600;
-  color: #2e7d32;
+.feedback-btn{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.feedback-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ===============================
+   BACK TO TOP
+=============================== */
+
+.back-top{
+
+    margin:60px 0 20px;
+
+    text-align:center;
+
+}
+
+.back-top a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:#2b1400;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.back-top a:hover{
+
+    background:#f97316;
+
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media(max-width:768px){
+
+.quick-facts{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+}
+
+.quick-fact-card{
+
+    padding:16px;
+
+}
+
+.quick-fact-value{
+
+    font-size:16px;
+
+}
+
+.share-buttons{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.copy-btn{
+
+    grid-column:1/-1;
+
+}
+
+.helpful-box,
+
+.feedback-section{
+
+    padding:24px;
+
+}
+
+.helpful-buttons,
+
+.feedback-buttons{
+
+    flex-direction:column;
+
+}
+
+.helpful-buttons button,
+
+.feedback-btn{
+
+    width:100%;
+
+}
+
+}
+/* =====================================================
+   PHASE 6 — FINAL POLISH
+===================================================== */
+
+/* ===============================
+   GLOBAL TRANSITIONS
+=============================== */
+
+.guide-section,
+.guide-box,
+.guide-highlight,
+.quick-fact-card,
+.related-guide-card,
+.official-links a,
+.share-btn,
+.feedback-btn,
+.helpful-buttons button,
+.back-top a{
+
+    transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease,
+        color .25s ease;
+
+}
+
+/* ===============================
+   HOVER EFFECT
+=============================== */
+
+.guide-section:hover,
+.guide-box:hover{
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.06);
+
+}
+
+/* ===============================
+   FOCUS
+=============================== */
+
+a:focus,
+button:focus{
+
+    outline:3px solid rgba(249,115,22,.25);
+
+    outline-offset:3px;
+
+}
+
+/* ===============================
+   TEXT SELECTION
+=============================== */
+
+::selection{
+
+    background:#f97316;
+
+    color:#fff;
+
+}
+
+/* ===============================
+   HR
+=============================== */
+
+.guide-section hr{
+
+    border:none;
+
+    border-top:1px solid #ececec;
+
+    margin:40px 0;
+
+}
+
+/* ===============================
+   CODE
+=============================== */
+
+.guide-section code{
+
+    background:#fff7ed;
+
+    padding:2px 8px;
+
+    border-radius:6px;
+
+    font-size:.95em;
+
+}
+
+.guide-section pre{
+
+    overflow:auto;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:#2b1400;
+
+    color:#fff;
+
+}
+
+/* ===============================
+   IMAGES
+=============================== */
+
+.guide-image img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ===============================
+   SVG
+=============================== */
+
+svg{
+
+    flex-shrink:0;
+
+}
+
+/* ===============================
+   SMOOTH ANCHOR OFFSET
+=============================== */
+
+.guide-section{
+
+    scroll-margin-top:110px;
+
+}
+
+/* ===============================
+   REDUCED MOTION
+=============================== */
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
+/* ===============================
+   PRINT
+=============================== */
+
+@media print{
+
+.simhastha-guide{
+
+    background:#fff;
+
+}
+
+.share-buttons,
+.feedback-section,
+.back-top,
+.language-switcher{
+
+    display:none;
+
+}
+
+.guide-section,
+.guide-box{
+
+    box-shadow:none;
+
+    border:1px solid #ddd;
+
+}
+
+}
+
+/* ===============================
+   LARGE DESKTOP
+=============================== */
+
+@media(min-width:1600px){
+
+.simhastha-guide .container{
+
+    max-width:1200px;
+
+}
+
+}
+
+/* ===============================
+   SMALL MOBILE
+=============================== */
+
+@media(max-width:480px){
+
+.guide-header{
+
+    padding:18px;
+
+}
+
+.guide-section{
+
+    padding:18px;
+
+}
+
+.guide-box{
+
+    padding:16px;
+
+}
+
+.guide-section h2{
+
+    font-size:1.45rem;
+
+}
+
+.guide-section h3{
+
+    font-size:1.2rem;
+
+}
+
+.quick-facts{
+
+    grid-template-columns:1fr;
+
+}
+
+.share-buttons{
+
+    grid-template-columns:1fr;
+
+}
+
 }

@@ -358,6 +358,7 @@ encodeURIComponent(window.location.href);
 
       </Helmet>
 
+
       <section className="simhastha-guide">
         <div className="container">
           <article className="guide-article">

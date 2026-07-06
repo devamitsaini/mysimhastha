@@ -7,6 +7,33 @@ export default function GuidesPage() {
   const navigate = useNavigate();
   const guides = [
     {
+  title: "2–3 Day Ujjain Itinerary: Complete Travel Guide",
+  description:
+    "Plan the perfect 2 or 3-day Ujjain trip with Mahakaleshwar Temple, Mahakal Lok, Harsiddhi Temple, Kal Bhairav, Ram Ghat, Mangalnath, Omkareshwar, hotels, transport, budget and local travel tips.",
+  image: "/images/mahakaleshwar-hero.webp",
+  enLink: "/guide/2-3-day-ujjain-itinerary",
+  hiLink: "/hi/guide/2-3-day-ujjain-itinerary",
+  date: "2026-07-05"
+},
+{
+  title: "Ujjain to Omkareshwar Travel Guide: Distance, Route, Taxi, Bus & Train",
+  description:
+    "Planning a trip from Ujjain to Omkareshwar? Discover the best travel routes, distance, taxi fares, buses, trains, travel time, one-day itinerary, temple timings, and essential tips for visiting Omkareshwar Jyotirlinga.",
+  image: "/images/ujjain-to-om.webp",
+  enLink: "/guide/ujjain-to-omkareshwar",
+  hiLink: "/hi/guide/ujjain-to-omkareshwar",
+  date: "2026-07-05"
+},
+    {
+  title: "15 Common Mistakes to Avoid During Your Mahakal Temple Visit",
+  description:
+    "Planning a visit to Mahakaleshwar Temple? Avoid these common mistakes related to Bhasma Aarti, dress code, mobile phones, VIP entry, parking, timings, and temple etiquette.",
+  image: "/images/mahakal-visit-mistakes.webp",
+  enLink: "/guide/mahakal-visit-mistakes",
+  hiLink: "/hi/guide/mahakal-visit-mistakes",
+  date: "2026-07-05",
+},
+    {
     title: "How to Reach Ujjain: Complete Travel Guide by Train, Flight & Road",
     description:
       "Learn how to reach Ujjain by train, flight, and road. Find the nearest airport, railway station, bus routes, travel time, distances from major cities, local transport, and tips for visiting Mahakaleshwar Temple.",
@@ -70,7 +97,7 @@ export default function GuidesPage() {
     enLink: "/guide/simhastha-2028",
     hiLink: "/hi/guide/simhastha-2028",
     date: "2026-06-20",
-  }
+  },
 ];
 
   return (

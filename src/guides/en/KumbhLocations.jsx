@@ -557,7 +557,7 @@ relatedGuides: [
 
     image: "bhasma-arti.webp",
 
-    url: "/guide/bhasma-aarti"
+    url: "/guide/bhasma-arti"
 
   },
 
@@ -742,7 +742,7 @@ export default function KumbhLocations() {
     </li>
 
     <li>
-      <Link to="/guide/bhasma-aarti">
+      <Link to="/guide/bhasma-arti">
         Mahakal Bhasma Aarti Guide
       </Link>
     </li>

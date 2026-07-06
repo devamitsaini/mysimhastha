@@ -70,9 +70,12 @@ const copyLink = async () => {
   return (
     <>
       <Helmet>
-        <title>
-            
-        </title>
+        <title>Mahakal Darshan 2026: Complete Mahakaleshwar Temple Guide, Timings & Booking</title>
+
+  <meta
+  name="description"
+  content="Complete Mahakal Darshan guide for first-time visitors. Learn about temple timings, VIP entry, online booking, darshan fees, Bhasma Aarti, dress code, parking, accommodation, and important travel tips."
+/>
 
         <meta
 

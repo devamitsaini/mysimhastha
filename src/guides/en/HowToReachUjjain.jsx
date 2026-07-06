@@ -1,5 +1,5 @@
 import GuideSEO from "../../components/guides/GuideSEO";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabase";
 import GuideHero from "../../components/guides/GuideHero";
 import GuideLanguageSwitcher from "../../components/guides/GuideLanguageSwitcher";
@@ -18,6 +18,8 @@ import GuideRelatedGuides from "../../components/guides/GuideRelatedGuides";
 import GuideOfficialResources from "../../components/guides/GuideOfficialResources";
 import GuideFeedback from "../../components/guides/GuideFeedback";
 import GuideStayConnected from "../../components/guides/GuideStayConnected";
+
+import { FiArrowUp } from "react-icons/fi";
 
 import "../styles/guides.css";
 
@@ -1353,6 +1355,8 @@ const faqSchema = {
 export default function HowToReachUjjain() {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [showScrollTop, setShowScrollTop] = useState(false);
+
     const handleFeedback = async (helpful) => {
   if (submitted || loading) return;
 
@@ -1374,8 +1378,29 @@ export default function HowToReachUjjain() {
     alert("Something went wrong. Please try again.");
   }
 
-  setLoading(false);
+    setLoading(false);
 };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                setShowScrollTop(true);
+            } else {
+                setShowScrollTop(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
   return (
     <>
       <GuideSEO
@@ -1467,6 +1492,16 @@ export default function HowToReachUjjain() {
 
             languageNote="This guide is available in English and हिन्दी to help devotees from across India and around the world."
           />
+
+            <div className="back-top">
+
+                <a href="#top">
+
+                ↑ Back to Top
+
+                </a>
+
+</div>
 
         </div>
       </section>

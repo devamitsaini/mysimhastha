@@ -219,7 +219,7 @@ const pinterestImage =
   <link
     rel="alternate"
     hrefLang="hi"
-    href="https://mysimhastha.com/hi/guide/bhasma-aarti"
+    href="https://mysimhastha.com/hi/guide/bhasma-arti"
   />
 
   <link
