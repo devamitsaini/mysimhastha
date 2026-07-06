@@ -27,8 +27,8 @@ const guide = {
 language: "en",
 
 slug: "how-to-reach-ujjain",
-englishSlug: "how-to-reach-ujjain",
-hindiSlug: "how-to-reach-ujjain",
+englishSlug: "guide/how-to-reach-ujjain",
+hindiSlug: "hi/guide/how-to-reach-ujjain",
 
   title:
     "How to Reach Ujjain: Complete Travel Guide by Train, Flight & Road (2026)",
