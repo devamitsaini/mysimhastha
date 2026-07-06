@@ -1,0 +1,92 @@
+/* ==========================================
+   STAY LIST PAGE
+========================================== */
+
+.stay-list-page{
+    background:#f8fafc;
+    min-height:100vh;
+    padding-bottom:60px;
+}
+
+/* Container */
+
+.stay-container{
+    width:100%;
+    max-width:1320px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+/* ==========================================
+   DESKTOP LAYOUT
+========================================== */
+
+.listing-layout{
+
+    display:grid;
+
+    grid-template-columns:300px 1fr;
+
+    gap:28px;
+
+    align-items:start;
+
+}
+
+/* Sidebar */
+
+.listing-layout > :first-child{
+
+    position:sticky;
+
+    top:90px;
+
+}
+
+/* Right Side */
+
+.listing-layout > :last-child{
+
+    min-width:0;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+.listing-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.listing-layout > :first-child{
+
+position:static;
+
+}
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.stay-container{
+
+padding:0 14px;
+
+}
+
+.listing-layout{
+
+display:block;
+
+}
+
+}

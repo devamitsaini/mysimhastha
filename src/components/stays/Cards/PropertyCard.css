@@ -1,0 +1,402 @@
+/* ==========================================
+   PROPERTY CARD
+========================================== */
+
+.stay-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid #edf2f7;
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
+    transition:.3s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.stay-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(15,23,42,.12);
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.stay-card-image{
+    position:relative;
+    aspect-ratio:16/10;
+    overflow:hidden;
+    background:#f5f7fb;
+}
+
+.stay-card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.35s;
+}
+
+.stay-card:hover .stay-card-image img{
+    transform:scale(1.05);
+}
+
+/* ==========================================
+   WISHLIST
+========================================== */
+
+.wishlist-btn{
+    position:absolute;
+    top:14px;
+    right:14px;
+
+    width:40px;
+    height:40px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.95);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.25s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.wishlist-btn:hover{
+    color:#ef4444;
+}
+
+/* ==========================================
+   VERIFIED
+========================================== */
+
+.verified-badge{
+    position:absolute;
+    left:14px;
+    top:14px;
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:7px 12px;
+
+    background:#16a34a;
+    color:#fff;
+
+    border-radius:999px;
+
+    font-size:12px;
+    font-weight:600;
+}
+
+.verified-badge svg{
+    font-size:14px;
+}
+
+/* ==========================================
+   RATING
+========================================== */
+
+.rating-badge{
+    position:absolute;
+    left:14px;
+    bottom:14px;
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:8px 12px;
+
+    background:#fff;
+
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:700;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+.rating-badge svg{
+    color:#f59e0b;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+.stay-card-body{
+    padding:20px;
+}
+
+.stay-type{
+    display:inline-block;
+
+    margin-bottom:10px;
+
+    background:#eef5ff;
+
+    color:#2563eb;
+
+    padding:5px 12px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+}
+
+.stay-card-body h3{
+    font-size:22px;
+    font-weight:700;
+    color:#0f172a;
+    line-height:1.35;
+    margin-bottom:10px;
+}
+
+.stay-location{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+}
+
+.stay-location svg{
+    color:#2563eb;
+}
+/* ==========================================
+   INFO
+========================================== */
+
+.stay-info{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.stay-info span{
+    background:#f8fafc;
+    color:#475569;
+    font-size:13px;
+    padding:7px 12px;
+    border-radius:999px;
+    border:1px solid #e2e8f0;
+}
+
+/* ==========================================
+   PRICE
+========================================== */
+
+.stay-price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:22px;
+    padding-top:18px;
+    border-top:1px solid #eef2f7;
+}
+
+.stay-price-row small{
+    display:block;
+    color:#64748b;
+    font-size:12px;
+    margin-bottom:4px;
+}
+
+.stay-price-row h2{
+    margin:0;
+    font-size:30px;
+    font-weight:800;
+    color:#0f172a;
+    line-height:1;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.stay-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.details-btn,
+.whatsapp-btn{
+
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.25s;
+}
+
+/* Details */
+
+.details-btn{
+
+    background:#2563eb;
+    color:#fff;
+}
+
+.details-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* WhatsApp */
+
+.whatsapp-btn{
+
+    border:1px solid #22c55e;
+
+    color:#22c55e;
+
+    background:#fff;
+
+    gap:8px;
+}
+
+.whatsapp-btn:hover{
+
+    background:#22c55e;
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+.stay-card{
+
+border-radius:16px;
+
+}
+
+.stay-card-body{
+
+padding:16px;
+
+}
+
+.stay-card-body h3{
+
+font-size:19px;
+
+}
+
+.stay-location{
+
+font-size:14px;
+
+margin-bottom:14px;
+
+}
+
+.stay-price-row{
+
+margin-bottom:18px;
+
+}
+
+.stay-price-row h2{
+
+font-size:26px;
+
+}
+
+.stay-actions{
+
+grid-template-columns:1fr;
+
+}
+
+.details-btn,
+.whatsapp-btn{
+
+height:46px;
+
+font-size:14px;
+
+}
+
+.rating-badge{
+
+font-size:12px;
+
+padding:7px 10px;
+
+}
+
+.verified-badge{
+
+font-size:11px;
+
+}
+
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.featured-stays-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+
+gap:24px;
+
+margin-top:30px;
+
+}
+
+@media (max-width:768px){
+
+.featured-stays-grid{
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+}
+
+}

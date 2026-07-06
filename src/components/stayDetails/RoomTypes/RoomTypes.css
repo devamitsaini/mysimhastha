@@ -1,0 +1,257 @@
+.sd-room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sd-rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sd-room-card {
+  background: var(--sd-surface);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--sd-border);
+  transition: all 0.2s;
+  padding: 16px;
+}
+
+.sd-room-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sd-room-top {
+  display: flex;
+  gap: 16px;
+}
+
+.sd-room-image {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sd-room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sd-room-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sd-room-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--sd-text);
+  margin: 0;
+}
+
+.sd-room-details {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--sd-text-muted);
+}
+
+.sd-room-details span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sd-room-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sd-room-amenity-tag {
+  padding: 4px 10px;
+  background: var(--sd-bg);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--sd-text-muted);
+}
+
+.sd-room-amenity-tag--green {
+  background: #e5f6ea;
+  color: #1e7a3a;
+}
+
+.sd-room-more-details {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--sd-orange);
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sd-room-more-details .sd-rotate {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
+}
+
+.sd-room-extra-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--sd-text-muted);
+}
+
+.sd-rate-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sd-rate-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--sd-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sd-rate-option.is-active {
+  border-color: var(--sd-orange);
+  background: #fff6ee;
+}
+
+.sd-rate-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--sd-orange);
+  flex-shrink: 0;
+}
+
+.sd-rate-option-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sd-rate-option-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--sd-text);
+}
+
+.sd-rate-option-cancellation {
+  font-size: 0.78rem;
+  color: var(--sd-success);
+}
+
+.sd-rate-option-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.sd-rate-option-amount {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--sd-text);
+}
+
+.sd-rate-option-period {
+  font-size: 0.72rem;
+  color: var(--sd-text-muted);
+}
+
+.sd-room-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--sd-border);
+}
+
+.sd-room-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.sd-room-amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--sd-text);
+}
+
+.sd-room-period {
+  font-size: 0.8rem;
+  color: var(--sd-text-muted);
+}
+
+.sd-btn-select {
+  padding: 8px 20px;
+  background: var(--sd-orange);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sd-btn-select:hover {
+  background: var(--sd-orange-dark);
+}
+
+@media (max-width: 768px) {
+  .sd-room-top {
+    flex-direction: column;
+  }
+
+  .sd-room-image {
+    width: 100%;
+    height: 160px;
+  }
+
+  .sd-rate-option {
+    flex-wrap: wrap;
+  }
+
+  .sd-rate-option-price {
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 30px;
+  }
+
+  .sd-room-footer {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .sd-btn-select {
+    width: 100%;
+  }
+}

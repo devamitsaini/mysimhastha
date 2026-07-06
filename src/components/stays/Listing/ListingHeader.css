@@ -1,0 +1,382 @@
+/* ==========================================
+   LISTING HEADER
+========================================== */
+
+.listing-header{
+    background:#fff;
+    border-bottom:1px solid #edf2f7;
+    padding:26px 0;
+    margin-bottom:24px;
+}
+
+.listing-header .stay-container{
+    max-width:1320px;
+    margin:auto;
+    padding:0 20px;
+}
+
+/* ==========================================
+   TOP
+========================================== */
+
+.listing-header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:22px;
+}
+
+.listing-header h1{
+    font-size:38px;
+    font-weight:800;
+    color:#0f172a;
+    margin:0 0 8px;
+    line-height:1.15;
+}
+
+.listing-header p{
+    color:#64748b;
+    font-size:15px;
+    margin:0;
+}
+
+/* ==========================================
+   SORT
+========================================== */
+
+.listing-sort{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    height:48px;
+
+    background:#fff;
+
+    border:1px solid #dbe4f1;
+
+    border-radius:14px;
+
+    padding:0 16px;
+
+    min-width:220px;
+}
+
+.listing-sort svg{
+    color:#2563eb;
+    font-size:18px;
+}
+
+.listing-sort select{
+    width:100%;
+    border:none;
+    outline:none;
+    background:none;
+    font-size:15px;
+    cursor:pointer;
+    color:#0f172a;
+}
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.listing-search{
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    height:56px;
+
+    background:#fff;
+
+    border:1px solid #dbe4f1;
+
+    border-radius:16px;
+
+    padding:0 20px;
+
+    transition:.25s;
+
+    box-shadow:0 3px 12px rgba(15,23,42,.05);
+
+}
+
+.listing-search:hover{
+
+    border-color:#2563eb;
+
+}
+
+.listing-search:focus-within{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+.listing-search svg{
+
+    color:#2563eb;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+.listing-search input{
+
+    flex:1;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    font-size:16px;
+
+    color:#0f172a;
+
+}
+
+.listing-search input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/* ==========================================
+   MOBILE ACTION BAR
+========================================== */
+
+.mobile-action-bar{
+
+    display:none;
+
+}
+
+/* ==========================================
+   DESKTOP BUTTONS
+========================================== */
+
+.mobile-action-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border:1px solid #dbe4f1;
+
+    background:#fff;
+
+    color:#0f172a;
+
+    cursor:pointer;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.mobile-action-btn svg{
+
+    color:#2563eb;
+
+    font-size:18px;
+
+}
+
+.mobile-action-btn:hover{
+
+    border-color:#2563eb;
+
+    box-shadow:0 4px 12px rgba(37,99,235,.12);
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+.listing-header-top{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.listing-sort{
+
+width:100%;
+
+max-width:280px;
+
+}
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.listing-header{
+
+padding:18px 0;
+
+margin-bottom:18px;
+
+}
+
+.listing-header .stay-container{
+
+padding:0 16px;
+
+}
+
+.listing-header-top{
+
+display:block;
+
+margin-bottom:14px;
+
+}
+
+.listing-header h1{
+
+font-size:28px;
+
+margin-bottom:6px;
+
+}
+
+.listing-header p{
+
+font-size:14px;
+
+line-height:1.5;
+
+}
+
+.listing-sort{
+
+display:none;
+
+}
+
+.listing-search{
+
+height:50px;
+
+padding:0 16px;
+
+border-radius:14px;
+
+margin-bottom:14px;
+
+}
+
+.listing-search svg{
+
+font-size:18px;
+
+}
+
+.listing-search input{
+
+font-size:15px;
+
+}
+
+.mobile-action-bar{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:10px;
+
+}
+
+.mobile-action-btn{
+
+height:44px;
+
+font-size:14px;
+
+border-radius:12px;
+
+box-shadow:0 2px 8px rgba(15,23,42,.05);
+
+}
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+.listing-header{
+
+padding:16px 0;
+
+}
+
+.listing-header .stay-container{
+
+padding:0 14px;
+
+}
+
+.listing-header h1{
+
+font-size:24px;
+
+}
+
+.listing-search{
+
+height:48px;
+
+padding:0 14px;
+
+}
+
+.mobile-action-bar{
+
+gap:8px;
+
+}
+
+.mobile-action-btn{
+
+height:42px;
+
+font-size:13px;
+
+}
+
+}
