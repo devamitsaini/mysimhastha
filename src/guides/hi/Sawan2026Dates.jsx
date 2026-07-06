@@ -365,7 +365,8 @@ import "../styles/guides.css";
 
             <p className="guide-text">ये महीने के सबसे शुभ दिन हैं। इन सोमवारों पर व्रत रखने से माना जाता है कि अपनी इच्छाएं पूरी होती हैं और मानसिक शांति मिलती है।
 
-  <table className="guide-table">
+  <div className="table-wrapper">
+        <table className="guide-table">
     <thead>
       <tr>
         <th>सावन सोमवार</th>
@@ -399,7 +400,8 @@ import "../styles/guides.css";
         <td>24 अगस्त, 2026</td>
       </tr>
     </tbody>
-  </table></p>
+  </table>
+      </div></p>
 
             <h3 className="text-2xl font-semibold mb-3 mt-8">
               सावन शिवरात्रि

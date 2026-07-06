@@ -10,7 +10,7 @@ const guideHi = {
     title: "2–3 दिन उज्जैन यात्रा कार्यक्रम: संपूर्ण तीर्थयात्री गाइड",
     subtitle:
       "महाकालेश्वर दर्शन, पवित्र घाट और हर महत्वपूर्ण मंदिर — घंटे-दर-घंटे योजना के साथ",
-    image: "/images/guides/ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "/images/mahakaleshwar-hero.webp",
     imageAlt: "सूर्योदय के समय शिप्रा नदी के पास महाकालेश्वर मंदिर का शिखर, श्रद्धालु दर्शन के लिए एकत्रित",
   },
 

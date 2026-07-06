@@ -1209,6 +1209,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1267,6 +1268,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
       </section>
 
@@ -1295,6 +1297,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1346,6 +1349,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box warning">
 
@@ -1435,6 +1439,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1493,6 +1498,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box info">
 
@@ -1559,6 +1565,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1610,6 +1617,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box warning">
 
@@ -1844,6 +1852,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1889,6 +1898,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box success">
 
@@ -1929,6 +1939,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1968,6 +1979,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
         <h3>Recommended Visit Order</h3>
 
@@ -2048,6 +2060,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2106,6 +2119,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
         <h3>Family Budget Example (2 Adults + 2 Children, 2 Days)</h3>
 
@@ -2157,6 +2171,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2201,6 +2216,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box warning">
 
@@ -2666,6 +2682,7 @@ Reading Time: 24 min
           Common Mistakes to Avoid
         </h2>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2735,6 +2752,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
       </section>
 
@@ -2759,6 +2777,7 @@ Reading Time: 24 min
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2808,6 +2827,7 @@ Reading Time: 24 min
           </tbody>
 
         </table>
+      </div>
 
       </section>
 
@@ -3550,15 +3570,11 @@ early morning or just before sunset light.
 
       </section>
 
-      {showScrollTop && (
-        <button
-          className="scroll-to-top"
-          onClick={scrollToTop}
-          aria-label="Scroll to top"
-        >
-          <FiArrowUp size={24} />
-        </button>
-      )}
+     <div className="back-top">
+  <a href="#top">
+    ↑ Back to Top
+  </a>
+</div>
 
     </article>
 

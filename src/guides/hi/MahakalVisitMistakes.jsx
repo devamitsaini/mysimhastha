@@ -1154,6 +1154,7 @@ MySimhastha संपादकीय टीम
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1198,6 +1199,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
         <p>
 
@@ -1207,7 +1209,7 @@ MySimhastha संपादकीय टीम
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             हमारी 2–3 दिन की उज्जैन यात्रा गाइड पढ़ें →
 
@@ -1239,6 +1241,7 @@ MySimhastha संपादकीय टीम
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1297,6 +1300,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box info">
 
@@ -1900,6 +1904,7 @@ MySimhastha संपादकीय टीम
           महाकालेश्वर मंदिर दर्शन के लिए सर्वोत्तम समय
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1981,6 +1986,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
         <h3>
           इस गलती से कैसे बचें
@@ -2061,7 +2067,7 @@ MySimhastha संपादकीय टीम
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             हमारी 2–3 दिन की उज्जैन यात्रा गाइड पढ़ें →
 
@@ -2725,6 +2731,7 @@ MySimhastha संपादकीय टीम
           ज़रूरी सामान जो साथ ले जाएँ
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2800,6 +2807,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
         <h3>
           इस गलती से कैसे बचें
@@ -2993,6 +3001,7 @@ MySimhastha संपादकीय टीम
           महाकालेश्वर मंदिर के पास ज़रूर देखने लायक स्थान
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -3060,6 +3069,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
         <h3>
           इस गलती से कैसे बचें
@@ -3144,7 +3154,7 @@ MySimhastha संपादकीय टीम
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             हमारी संपूर्ण उज्जैन यात्रा गाइड पढ़ें →
 
@@ -3256,6 +3266,7 @@ MySimhastha संपादकीय टीम
           अपने दर्शन की योजना बनाने का बेहतर तरीका
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -3299,6 +3310,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
         <h3>
           इस गलती से कैसे बचें
@@ -3390,7 +3402,7 @@ MySimhastha संपादकीय टीम
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             हमारी संपूर्ण उज्जैन यात्रा गाइड देखें →
 
@@ -3644,6 +3656,7 @@ MySimhastha संपादकीय टीम
           अलग-अलग मौसम में आने वाली चुनौतियाँ
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -3695,6 +3708,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box info">
 
@@ -3892,6 +3906,7 @@ MySimhastha संपादकीय टीम
           उज्जैन में परिवहन के विकल्प
         </h3>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -3951,6 +3966,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
         <h3>
           इस गलती से कैसे बचें
@@ -4046,7 +4062,7 @@ MySimhastha संपादकीय टीम
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             हमारी संपूर्ण उज्जैन यात्रा गाइड देखें →
 
@@ -4476,7 +4492,6 @@ MySimhastha संपादकीय टीम
         </tbody>
 
       </table>
-
       </section>
             {/* =========================
           MISTAKE 15
@@ -4672,6 +4687,7 @@ MySimhastha संपादकीय टीम
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -4783,7 +4799,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
-
+        </div>     
       </section>
 
       {/* =========================
@@ -4807,6 +4823,7 @@ MySimhastha संपादकीय टीम
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -4866,7 +4883,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
-
+        </div>
       </section>
 
       {/* =========================
@@ -4890,6 +4907,7 @@ MySimhastha संपादकीय टीम
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -4997,6 +5015,7 @@ MySimhastha संपादकीय टीम
           </tbody>
 
         </table>
+      </div>
 
       </section>
 

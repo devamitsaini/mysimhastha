@@ -1168,6 +1168,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1226,6 +1227,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
       </section>
 
@@ -1254,6 +1256,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1305,6 +1308,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box warning">
 
@@ -1393,6 +1397,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1451,6 +1456,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box info">
 
@@ -1518,6 +1524,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1569,6 +1576,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box warning">
 
@@ -1806,6 +1814,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1851,6 +1860,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box success">
 
@@ -1891,6 +1901,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -1930,6 +1941,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
         <h3>सुझाया गया दर्शन क्रम</h3>
 
@@ -2011,6 +2023,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2069,6 +2082,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
         <h3>परिवार का बजट उदाहरण (2 वयस्क + 2 बच्चे, 2 दिन)</h3>
 
@@ -2120,6 +2134,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2164,6 +2179,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
         <div className="guide-info-box warning">
 
@@ -2628,6 +2644,7 @@ MySimhastha संपादकीय टीम द्वारा
           आम गलतियां जिनसे बचें
         </h2>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2697,6 +2714,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
       </section>
 
@@ -2721,6 +2739,7 @@ MySimhastha संपादकीय टीम द्वारा
 
         </p>
 
+        <div className="table-wrapper">
         <table className="guide-table">
 
           <thead>
@@ -2770,6 +2789,7 @@ MySimhastha संपादकीय टीम द्वारा
           </tbody>
 
         </table>
+      </div>
 
       </section>
 
@@ -3505,7 +3525,11 @@ MySimhastha संपादकीय टीम द्वारा
         )}
 
       </section>
-
+<div className="back-top">
+            <a href="#top">
+              ↑ शीर्ष पर जाएँ
+            </a>
+          </div>
     </article>
 
   </div>

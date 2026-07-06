@@ -1209,7 +1209,7 @@ Reading Time: 18 min
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             Read our 2–3 Day Ujjain Itinerary →
 
@@ -2075,7 +2075,7 @@ Reading Time: 18 min
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             Read our 2–3 Day Ujjain Itinerary →
 
@@ -3169,7 +3169,7 @@ Reading Time: 18 min
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             Read our Complete Ujjain Itinerary Guide →
 
@@ -3420,7 +3420,7 @@ Reading Time: 18 min
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             Explore our Complete Ujjain Itinerary Guide →
 
@@ -4084,7 +4084,7 @@ Reading Time: 18 min
 
         <p>
 
-          <Link to="/guide/ujjain-itinerary">
+          <Link to="/guide/2-3-day-ujjain-itinerary">
 
             Explore our Complete Ujjain Itinerary Guide →
 

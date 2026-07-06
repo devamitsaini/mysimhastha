@@ -4,7 +4,7 @@ import { useState } from "react";
 import { supabase } from "../../lib/supabase";
 import { toast } from "react-toastify";
 import { Link, NavLink } from "react-router-dom";
-import { FiCopy } from "react-icons/fi";
+import { FiCopy } from "react-icons/fi";  
 import {
   FaWhatsapp,
   FaFacebookF,
@@ -458,7 +458,8 @@ export default function BhasmaartiGuideHi() {
         <p>भस्मार्ति का सटीक समय समझना आपकी यात्रा की योजना बनाने और इस पवित्र अनुष्ठान को मिस न करने के लिए महत्वपूर्ण है। समय पूरे वर्ष सूर्योदय के समय में मौसमी परिवर्तनों के कारण थोड़ा भिन्न होता है।</p>
 
         <div className="guide-table-wrapper">
-          <table className="guide-table">
+          <div className="table-wrapper">
+        <table className="guide-table">
             <thead>
               <tr>
                 <th>ऋतु</th>
@@ -494,6 +495,7 @@ export default function BhasmaartiGuideHi() {
               </tr>
             </tbody>
           </table>
+        </div>
         </div>
 
         <p><strong>महत्वपूर्ण नोट:</strong> हमेशा निर्धारित भस्मार्ति समय से 30-45 मिनट पहले पहुंचें। यह सुरक्षा जांच के लिए पर्याप्त समय, आपकी बुकिंग का सत्यापन और अनुष्ठान क्षेत्र में अपनी निर्धारित सीट पर बैठने की अनुमति देता है। मंदिर के द्वार 4:00 बजे खुलते हैं, और भक्तों को उनकी बुकिंग पुष्टि के आधार पर व्यवस्थित तरीके से संसाधित किया जाता है।</p>
@@ -553,7 +555,8 @@ export default function BhasmaartiGuideHi() {
         <p>भस्मार्ति का एक बड़ा पहलू यह है कि यह पूरी तरह से मुफ्त है। कोई बुकिंग शुल्क नहीं है, कोई प्रवेश शुल्क नहीं है, और इस पवित्र अनुष्ठान में भाग लेने से संबंधित कोई छिपी लागत नहीं है। मंदिर का रखरखाव दान और भक्तों की उदारता के माध्यम से होता है, दर्शन के लिए शुल्क लेने के बजाय।</p>
 
         <div className="guide-table-wrapper">
-          <table className="guide-table">
+          <div className="table-wrapper">
+        <table className="guide-table">
             <thead>
               <tr>
                 <th>वस्तु/सेवा</th>
@@ -599,6 +602,7 @@ export default function BhasmaartiGuideHi() {
               </tr>
             </tbody>
           </table>
+        </div>
         </div>
 
         <p><strong>वैकल्पिक खर्चे जो आप कर सकते हैं:</strong></p>

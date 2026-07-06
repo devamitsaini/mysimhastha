@@ -27,7 +27,7 @@ const seo = {
     type: "article",
     siteName: "MySimhastha",
     locale: "en_IN",
-    image: "https://mysimhastha.com/images/guides/ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/mahakaleshwar-hero.webp",
     imageAlt: "Mahakaleshwar Temple shikhara at sunrise with pilgrims gathered near Shipra river, Ujjain",
   },
 
@@ -36,7 +36,7 @@ const seo = {
     title: "2–3 Day Ujjain Itinerary: Complete Pilgrim's Travel Plan",
     description:
       "Mahakaleshwar darshan, Bhasma Aarti booking, Ram Ghat, Kal Bhairav, and an optional Omkareshwar day trip — planned hour by hour.",
-    image: "https://mysimhastha.com/images/guides/ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/mahakaleshwar-hero.webp",
   },
 
   publishedTime: "2026-07-06T00:00:00+05:30",

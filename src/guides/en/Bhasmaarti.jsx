@@ -550,7 +550,8 @@ const pinterestImage =
         <p>Understanding the exact timing of Bhasmaarti is crucial for planning your visit and ensuring you don't miss this sacred ritual. The timing varies slightly throughout the year due to seasonal changes in sunrise times.</p>
 
         <div className="guide-table-wrapper">
-          <table className="guide-table">
+          <div className="table-wrapper">
+        <table className="guide-table">
             <thead>
               <tr>
                 <th>Season</th>
@@ -586,6 +587,7 @@ const pinterestImage =
               </tr>
             </tbody>
           </table>
+        </div>
         </div>
 
         <p><strong>Important Note:</strong> Always arrive 30-45 minutes before the scheduled Bhasmaarti time. This allows sufficient time for security checks, verification of your booking, and settling into your assigned seat in the ritual area. The temple gates open at 4:00 AM, and devotees are processed in an orderly manner based on their booking confirmations.</p>
@@ -645,7 +647,8 @@ const pinterestImage =
         <p>One of the greatest aspects of Bhasmaarti is that it is completely free. There are no booking fees, no entry charges, and no hidden costs associated with participating in this sacred ritual. The temple is maintained through donations and the generosity of devotees, not through charging for darshan.</p>
 
         <div className="guide-table-wrapper">
-          <table className="guide-table">
+          <div className="table-wrapper">
+        <table className="guide-table">
             <thead>
               <tr>
                 <th>Item/Service</th>
@@ -691,6 +694,7 @@ const pinterestImage =
               </tr>
             </tbody>
           </table>
+        </div>
         </div>
 
         <p><strong>Optional Expenses You May Incur:</strong></p>

@@ -27,7 +27,7 @@ const seoHi = {
     type: "article",
     siteName: "MySimhastha",
     locale: "hi_IN",
-    image: "https://mysimhastha.com/images/guides/ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/guides/2-day-ujjain-itinerary/mahakaleshwar-hero.jpg",
     imageAlt: "सूर्योदय के समय शिप्रा नदी के पास महाकालेश्वर मंदिर का शिखर, श्रद्धालु दर्शन के लिए एकत्रित",
   },
 
@@ -36,7 +36,7 @@ const seoHi = {
     title: "2–3 दिन उज्जैन यात्रा कार्यक्रम: संपूर्ण तीर्थयात्री गाइड",
     description:
       "महाकालेश्वर दर्शन, भस्म आरती बुकिंग, राम घाट, काल भैरव और वैकल्पिक ओंकारेश्वर यात्रा — घंटे-दर-घंटे योजना के साथ।",
-    image: "https://mysimhastha.com/images/guides/ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/guides/2-day-ujjain-itinerary/mahakaleshwar-hero.jpg",
   },
 
   publishedTime: "2026-07-06T00:00:00+05:30",
@@ -54,7 +54,7 @@ const seoHi = {
     headline: "2–3 दिन उज्जैन यात्रा कार्यक्रम: संपूर्ण तीर्थयात्री गाइड",
     description:
       "महाकालेश्वर मंदिर, भस्म आरती बुकिंग, राम घाट, काल भैरव, सांदीपनि आश्रम और वैकल्पिक ओंकारेश्वर यात्रा सहित विस्तृत 2–3 दिन का उज्जैन यात्रा कार्यक्रम।",
-    image: "https://mysimhastha.com/images/guides/ujjain-itinerary/mahakaleshwar-hero.jpg",
+    image: "https://mysimhastha.com/images/guides/2-day-ujjain-itinerary/mahakaleshwar-hero.jpg",
     author: {
       "@type": "Organization",
       name: "MySimhastha यात्रा डेस्क",

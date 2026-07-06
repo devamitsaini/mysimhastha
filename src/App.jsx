@@ -149,8 +149,8 @@ function App() {
               <Route path="/hi/guide/how-to-reach-ujjain" element={<HowToReachUjjainHi />} />
               <Route path="/hi/guide/mahakal-visit-mistakes" 
               element={<MahakalVisitMistakesHi />}/>
-              <Route path="/guide/2-day-ujjain-itinerary"  element={<UjjainItinerary />} />
-              <Route path="/hi/guide/2-day-ujjain-itinerary"element={<UjjainItinerary />}/>
+              <Route path="/guide/2-3-day-ujjain-itinerary"  element={<UjjainItinerary />} />
+              <Route path="/hi/guide/2-3-day-ujjain-itinerary"element={<UjjainItinerary />}/>
 
 
             <Route path="*" element={<Navigate to="/" replace />} />
