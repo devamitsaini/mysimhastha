@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function GuideFAQ({ guide }) {
+  const [openIndex, setOpenIndex] = useState(null);
+
   if (!guide?.faq?.length) return null;
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section className="guide-section faq-section">
@@ -13,22 +19,24 @@ export default function GuideFAQ({ guide }) {
       </h2>
 
       {guide.faq.map((item, index) => (
-
         <div
           key={index}
-          className="faq-item"
+          className={`faq-item ${openIndex === index ? "open" : ""}`}
         >
 
-          <h3>
-            Q. {item.question}
+          <h3
+            className="faq-question"
+            onClick={() => toggleFAQ(index)}
+          >
+            <span>Q. {item.question}</span>
+            <span className="faq-question-icon">+</span>
           </h3>
 
-          <p>
+          <p className="faq-answer">
             {item.answer}
           </p>
 
         </div>
-
       ))}
 
     </section>

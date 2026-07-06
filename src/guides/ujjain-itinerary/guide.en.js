@@ -23,7 +23,7 @@ const guide = {
       type: "quickAnswer",
       title: "Quick Answer",
       answer:
-        "Two full days are enough to cover Ujjain's essential circuit: [Mahakaleshwar Temple](/guide/mahakal-darshan) (with [Bhasma Aarti](/guide/bhasma-aarti) on day one morning), Ram Ghat, Kal Bhairav Temple, Harsiddhi Temple, Chintaman Ganesh, and Sandipani Ashram. A third day is worth adding only if you want an unhurried pace, extra time at the museums and Vedh Shala observatory, or a [day trip to Omkareshwar](/guide/omkareshwar-day-trip), which sits about 140 km and roughly 3 hours away by road.",
+        "Two days are enough for most visitors to explore Ujjain. In 2 days, you can comfortably visit Mahakaleshwar Temple, attend Bhasma Aarti, explore Ram Ghat, Kal Bhairav Temple, Harsiddhi Temple, Chintaman Ganesh Temple, and Sandipani Ashram. Consider staying for 3 days only if you also want to visit Vedh Shala, local museums, or take a day trip to Omkareshwar.",
     },
 
     {
@@ -390,11 +390,11 @@ const guide = {
     {
       type: "paragraph",
       content: [
-        "The single most common mistake is treating Ujjain as a one-day stopover between Indore and other Madhya Pradesh destinations. Because [Bhasma Aarti](/guide/bhasma-aarti) requires arrival before 4 AM and general darshan queues can run long, a single day rarely leaves enough time for the old city's other significant temples without visitors feeling rushed or skipping sites entirely. For a complete understanding of temple rituals and requirements, see our [Complete Mahakal Darshan Guide](/guide/mahakal-darshan).",
-        "A second frequent error is not booking Bhasma Aarti access in advance and assuming walk-in entry will be available. Slots fill quickly, particularly around weekends, [Shravan month](/guide/sawan-2026), and major festivals, and travellers who arrive without a booking are sometimes turned away from the ritual itself, though general darshan later in the day remains possible.",
-        "Underestimating travel time within the city is another common issue. While Ujjain is compact by Indian city standards, sites like Chintaman Ganesh, Mangalnath, and Sandipani Ashram sit outside the dense old-city cluster, and auto-rickshaw availability can be inconsistent during peak temple hours. Check [How to Reach Ujjain](/guide/how-to-reach-ujjain) for detailed transportation options.",
-        "Finally, many visitors overlook dress code expectations, arriving in shorts or sleeveless clothing and being asked to cover up or purchase suitable clothing at the temple gate — a completely avoidable delay if planned for in advance.",
-      ],
+  "The single most common mistake is treating Ujjain as a one-day stopover between Indore and other Madhya Pradesh destinations. Because Bhasma Aarti requires arrival before 4 AM and general darshan queues can run long, a single day rarely leaves enough time for the old city's other significant temples without visitors feeling rushed or skipping sites entirely. For a complete understanding of temple rituals and requirements, see our Complete Mahakal Darshan Guide.",
+  "A second frequent error is not booking Bhasma Aarti access in advance and assuming walk-in entry will be available. Slots fill quickly, particularly around weekends, Shravan month, and major festivals, and travellers who arrive without a booking are sometimes turned away from the ritual itself, though general darshan later in the day remains possible.",
+  "Underestimating travel time within the city is another common issue. While Ujjain is compact by Indian city standards, sites like Chintaman Ganesh, Mangalnath, and Sandipani Ashram sit outside the dense old-city cluster, and auto-rickshaw availability can be inconsistent during peak temple hours. Check our How to Reach Ujjain guide for detailed transportation options.",
+  "Finally, many visitors overlook dress code expectations, arriving in shorts or sleeveless clothing and being asked to cover up or purchase suitable clothing at the temple gate—a completely avoidable delay if planned for in advance.",
+],
     },
 
     {
@@ -405,9 +405,9 @@ const guide = {
     {
       type: "paragraph",
       content: [
-        "Most pilgrims prefer staying within 1–2 km of Mahakaleshwar Temple, which puts [Bhasma Aarti](/guide/bhasma-aarti) within easy walking or short rickshaw distance and cuts down significantly on pre-dawn travel stress. This area has a wide range of options, from simple dharamshalas and budget lodges to mid-range hotels. For the best accommodation options near the temple, check out [Stays Near Mahakaleshwar](/stays) for verified recommendations with early check-in flexibility.",
-        "Travellers prioritizing comfort over proximity sometimes choose to stay slightly further out, closer to the railway station or the newer parts of the city, trading a longer pre-dawn commute for better amenities and often lower rates. If you're taking the [Omkareshwar day trip](/guide/omkareshwar-day-trip) on Day 3, staying on the side of the city closer to the Indore highway can save a small amount of travel time.",
-      ],
+  "Most pilgrims prefer staying within 1–2 km of Mahakaleshwar Temple, which puts Bhasma Aarti within easy walking or short rickshaw distance and cuts down significantly on pre-dawn travel stress. This area has a wide range of options, from simple dharamshalas and budget lodges to mid-range hotels. For the best accommodation options near the temple, check out our Stays Near Mahakaleshwar guide for verified recommendations with early check-in flexibility.",
+  "Travellers prioritizing comfort over proximity sometimes choose to stay slightly further out, closer to the railway station or the newer parts of the city, trading a longer pre-dawn commute for better amenities and often lower rates. If you're taking the Omkareshwar day trip on Day 3, staying on the side of the city closer to the Indore highway can save a small amount of travel time.",
+],
     },
 
     {
@@ -432,10 +432,10 @@ const guide = {
     {
       type: "paragraph",
       content: [
-        "Plan your itinerary around [Bhasma Aarti](/guide/bhasma-aarti) first, then build everything else around it — this single decision affects your entire schedule, from what time you need to sleep the night before to how early breakfast needs to happen. For detailed information about the ritual, timing, and booking process, see our [Complete Bhasma Aarti Guide](/guide/bhasma-aarti).",
-        "If travelling during [Simhastha Kumbh Mela](/guide/simhastha-2028) years or [Shravan month](/guide/sawan-2026), add a buffer day rather than trying to compress the same circuit into two days — crowd density at Ram Ghat and Mahakaleshwar during these periods can multiply queue times several times over compared to an ordinary weekday. Check the [Simhastha 2028 Complete Guide](/guide/simhastha-2028) for crowd management strategies.",
-        "Hire a local auto-rickshaw driver for the full day rather than booking rides individually — most drivers familiar with the pilgrim circuit can suggest realistic timing between temples and will wait during darshan, which is often more efficient than trying to find transport repeatedly through the day.",
-      ],
+  "Plan your itinerary around Bhasma Aarti first, then build everything else around it — this single decision affects your entire schedule, from what time you need to sleep the night before to how early breakfast needs to happen. For detailed information about the ritual, timing, and booking process, see our Complete Bhasma Aarti Guide.",
+  "If travelling during Simhastha Kumbh Mela years or Shravan month, add a buffer day rather than trying to compress the same circuit into two days — crowd density at Ram Ghat and Mahakaleshwar during these periods can multiply queue times several times over compared to an ordinary weekday. Check our Simhastha 2028 Complete Guide for crowd management strategies.",
+  "Hire a local auto-rickshaw driver for the full day rather than booking rides individually — most drivers familiar with the pilgrim circuit can suggest realistic timing between temples and will wait during darshan, which is often more efficient than trying to find transport repeatedly through the day.",
+],
     },
 
     {
