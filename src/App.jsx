@@ -60,7 +60,7 @@ const KumbhLocations = lazy(() => import("./guides/en/KumbhLocations"));
 const KumbhLocationsHi = lazy(() => import("./guides/hi/KumbhLocations"));
 
 const HowToReachUjjain = lazy(() => import("./guides/en/HowToReachUjjain"));
-const HowToReachUjjainHi = lazy(() => import("./guides/hi/HowToReachUjjain"));
+const HowToReachUjjain = lazy(() => import("./guides/hi/HowToReachUjjain"));
 
 const MahakalVisitMistakes = lazy(() => import("./guides/en/MahakalVisitMistakes"));
 const MahakalVisitMistakesHi = lazy(() => import("./guides/hi/MahakalVisitMistakes"));
