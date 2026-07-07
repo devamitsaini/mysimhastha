@@ -11,6 +11,17 @@
       "source": "/hi/guide/bhasma-aarti",
       "destination": "/hi/guide/bhasma-arti",
       "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mysimhastha.com"
+        }
+      ],
+      "destination": "https://www.mysimhastha.com/$1",
+      "permanent": true
     }
   ],
 
@@ -23,7 +34,7 @@
 
   "headers": [
     {
-      "source": "/(.*).(js|css|png|jpg|jpeg|webp|svg|woff|woff2)",
+      "source": "/(.*)\\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)",
       "headers": [
         {
           "key": "Cache-Control",
