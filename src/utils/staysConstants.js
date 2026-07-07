@@ -239,7 +239,7 @@ export const PAGE_METADATA = {
   description: 'Discover verified hotels, dharamshalas, ashrams and guest houses in Ujjain near Mahakaleshwar Temple. Book pilgrimage accommodation for Simhastha 2028 with direct WhatsApp booking.',
   keywords: 'hotels Ujjain, dharamshala Ujjain, ashram Ujjain, guest house Ujjain, Mahakal hotel, pilgrimage stay, Simhastha accommodation, Ujjain resort',
   ogImage: '/og-stays.jpg',
-  canonical: 'https://mysimhastha.com/stays',
+  canonical: 'https://www.mysimhastha.com/stays',
 };
 
 // API/Supabase

@@ -63,7 +63,7 @@ export default function BhasmaartiGuideHi() {
 
         <link
           rel="canonical"
-          href="https://mysimhastha.com/hi/guide/bhasma-arti"
+          href="https://www.mysimhastha.com/hi/guide/bhasma-arti"
         />
 
         <meta
@@ -90,12 +90,12 @@ export default function BhasmaartiGuideHi() {
 
         <meta
           property="og:url"
-          content="https://mysimhastha.com/hi/guide/bhasma-arti"
+          content="https://www.mysimhastha.com/hi/guide/bhasma-arti"
         />
 
         <meta
           property="og:image"
-          content="https://mysimhastha.com/images/bhasma-arti.webp"
+          content="https://www.mysimhastha.com/images/bhasma-arti.webp"
         />
 
         <meta property="og:site_name" content="MySimhastha" />
@@ -105,12 +105,12 @@ export default function BhasmaartiGuideHi() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="भस्मार्ति बुकिंग गाइड: संपूर्ण जानकारी" />
         <meta name="twitter:description" content="भस्म आरती बुकिंग, समय, लागत और महाकालेश्वर मंदिर उज्जैन में प्रक्रिया के बारे में सब कुछ जानें।" />
-        <meta name="twitter:image" content="https://mysimhastha.com/images/bhasma-arti.webp" />
+        <meta name="twitter:image" content="https://www.mysimhastha.com/images/bhasma-arti.webp" />
 
         {/* Language Alternate URLs */}
-        <link rel="alternate" hrefLang="en" href="https://mysimhastha.com/guide/bhasma-arti" />
-        <link rel="alternate" hrefLang="hi" href="https://mysimhastha.com/hi/guide/bhasma-arti" />
-        <link rel="alternate" hrefLang="x-default" href="https://mysimhastha.com/guide/bhasma-arti" />
+        <link rel="alternate" hrefLang="en" href="https://www.mysimhastha.com/guide/bhasma-arti" />
+        <link rel="alternate" hrefLang="hi" href="https://www.mysimhastha.com/hi/guide/bhasma-arti" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.mysimhastha.com/guide/bhasma-arti" />
 
      
 
@@ -123,7 +123,7 @@ export default function BhasmaartiGuideHi() {
               "@type": "Article",
               "headline": "भस्मार्ति: महाकालेश्वर मंदिर में भस्म आरती बुकिंग की संपूर्ण गाइड 2026",
               "description": "भस्मार्ति की विस्तृत गाइड - बुकिंग, समय, प्रक्रिया, लागत और आध्यात्मिक महत्व।",
-              "image": "https://mysimhastha.com/images/bhasma-arti.webp",
+              "image": "https://www.mysimhastha.com/images/bhasma-arti.webp",
               "author": {
                 "@type": "Organization",
                 "name": "MySimhastha"
@@ -133,12 +133,12 @@ export default function BhasmaartiGuideHi() {
                 "name": "MySimhastha",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://mysimhastha.com/logo.png"
+                  "url": "https://www.mysimhastha.com/logo.png"
                 }
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://mysimhastha.com/hi/guide/bhasma-arti"
+                "@id": "https://www.mysimhastha.com/hi/guide/bhasma-arti"
               },
               "datePublished": "2026-06-30",
               "dateModified": "2026-06-30",
@@ -165,7 +165,7 @@ export default function BhasmaartiGuideHi() {
                 "postalCode": "456010",
                 "addressCountry": "भारत"
               },
-              "url": "https://mysimhastha.com/hi/guide/bhasma-arti",
+              "url": "https://www.mysimhastha.com/hi/guide/bhasma-arti",
               "telephone": "+91-734-2550563, +91-734-2559277",
               "geo": {
                 "@type": "GeoCoordinates",
@@ -999,7 +999,7 @@ export default function BhasmaartiGuideHi() {
           </a>
 
           <a
-            href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=https://mysimhastha.com/images/bhasma-arti.webp&description=${encodeURIComponent(shareTitle)}`}
+            href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=https://www.mysimhastha.com/images/bhasma-arti.webp&description=${encodeURIComponent(shareTitle)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="share-btn pinterest"
@@ -1065,7 +1065,7 @@ export default function BhasmaartiGuideHi() {
     <p>
       🔸 वेबसाइट:
       <a
-        href="https://mysimhastha.com"
+        href="https://www.mysimhastha.com"
         target="_blank"
         rel="noopener noreferrer"
       >

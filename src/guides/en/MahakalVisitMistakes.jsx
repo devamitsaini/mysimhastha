@@ -20,10 +20,10 @@ export default function MahakalVisitMistakes() {
   ========================================== */
 
   const canonicalUrl =
-    "https://mysimhastha.com/guide/mahakal-visit-mistakes";
+    "https://www.mysimhastha.com/guide/mahakal-visit-mistakes";
 
   const heroImage =
-    "https://mysimhastha.com/images/mahakal-visit-mistakes.webp";
+    "https://www.mysimhastha.com/images/mahakal-visit-mistakes.webp";
 
   const pinterestImage = heroImage;
 
@@ -156,13 +156,13 @@ export default function MahakalVisitMistakes() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://mysimhastha.com",
+        item: "https://www.mysimhastha.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Guides",
-        item: "https://mysimhastha.com/guides",
+        item: "https://www.mysimhastha.com/guides",
       },
       {
         "@type": "ListItem",
@@ -200,7 +200,7 @@ export default function MahakalVisitMistakes() {
 
       logo: {
         "@type": "ImageObject",
-        url: "https://mysimhastha.com/logo.png",
+        url: "https://www.mysimhastha.com/logo.png",
       },
     },
 
@@ -295,7 +295,7 @@ export default function MahakalVisitMistakes() {
   <link
     rel="alternate"
     hrefLang="hi"
-    href="https://mysimhastha.com/hi/guide/mahakal-visit-mistakes"
+    href="https://www.mysimhastha.com/hi/guide/mahakal-visit-mistakes"
   />
 
   <link

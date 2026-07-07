@@ -15,13 +15,13 @@ import {
 export default function BhasmaartiGuideEn () {
 
 const canonicalUrl =
-  "https://mysimhastha.com/guide/bhasma-arti";
+  "https://www.mysimhastha.com/guide/bhasma-arti";
 
 const heroImage =
-  "https://mysimhastha.com/images/bhasma-arti.webp";
+  "https://www.mysimhastha.com/images/bhasma-arti.webp";
 
 const pinterestImage =
-  "https://mysimhastha.com/images/bhasma-arti.webp";
+  "https://www.mysimhastha.com/images/bhasma-arti.webp";
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -78,13 +78,13 @@ const pinterestImage =
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://mysimhastha.com",
+        item: "https://www.mysimhastha.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Guides",
-        item: "https://mysimhastha.com/guides",
+        item: "https://www.mysimhastha.com/guides",
       },
       {
         "@type": "ListItem",
@@ -114,7 +114,7 @@ const pinterestImage =
       name: "MySimhastha",
       logo: {
         "@type": "ImageObject",
-        url: "https://mysimhastha.com/logo.png",
+        url: "https://www.mysimhastha.com/logo.png",
       },
     },
 
@@ -219,7 +219,7 @@ const pinterestImage =
   <link
     rel="alternate"
     hrefLang="hi"
-    href="https://mysimhastha.com/hi/guide/bhasma-arti"
+    href="https://www.mysimhastha.com/hi/guide/bhasma-arti"
   />
 
   <link
@@ -1129,7 +1129,7 @@ const pinterestImage =
           </a>
 
           <a
-            href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=https://mysimhastha.com/images/bhasma-arti.webp&description=${encodeURIComponent(shareTitle)}`}
+            href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=https://www.mysimhastha.com/images/bhasma-arti.webp&description=${encodeURIComponent(shareTitle)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="share-btn pinterest"
@@ -1187,7 +1187,7 @@ const pinterestImage =
     <p>
       🔸 Website:
       <a
-        href="https://mysimhastha.com"
+        href="https://www.mysimhastha.com"
         target="_blank"
         rel="noopener noreferrer"
       >

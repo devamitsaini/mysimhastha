@@ -682,7 +682,7 @@ export default function KumbhLocations() {
     <p>
       🔸 Website:
       <a
-        href="https://mysimhastha.com"
+        href="https://www.mysimhastha.com"
         target="_blank"
         rel="noopener noreferrer"
       >

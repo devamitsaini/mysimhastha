@@ -46,7 +46,7 @@ export default function ShareButtons({
 
   const imageUrl = encodeURIComponent(
   image ||
-  "https://mysimhastha.com/images/default-guide.webp"
+  "https://www.mysimhastha.com/images/default-guide.webp"
 );
 
   const copyLink = async () => {

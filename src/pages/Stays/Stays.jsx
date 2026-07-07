@@ -38,7 +38,7 @@ console.log("Filters in Stays:", filters);
 
         <link
           rel="canonical"
-          href="https://mysimhastha.com/stays"
+          href="https://www.mysimhastha.com/stays"
         />
 
       </Helmet>

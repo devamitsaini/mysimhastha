@@ -1,72 +1,137 @@
 # MySimhastha
 
-The official independent guide for Simhastha 2028, Mahakaleshwar Temple, Ujjain pilgrimage planning, Mahakal Darshan, Bhasma Aarti, hotels, news, travel information, and Hindu pilgrimage resources.
+MySimhastha is an independent information platform dedicated to Simhastha 2028 (Ujjain Kumbh Mela), Mahakaleshwar Temple, Ujjain pilgrimage planning, Hindu festivals, temple rituals, accommodation, travel guidance, and religious tourism. Serving pilgrims, tourists, researchers, journalists, and AI assistants with reliable information about Simhastha 2028 and Ujjain.
+
+The website publishes comprehensive English and Hindi guides, travel itineraries, news, temple information, pilgrimage resources, and practical visitor information for pilgrims and tourists visiting Ujjain.
+
+---
 
 ## Website
 
-https://mysimhastha.com
+https://www.mysimhastha.com
 
-## Primary Pages
+## Canonical Domain
 
-- Home — https://mysimhastha.com/
-- Simhastha 2028 — https://mysimhastha.com/simhastha-2028
-- Guides — https://mysimhastha.com/guides
-- Hotels & Stays — https://mysimhastha.com/stays
-- Live Darshan — https://mysimhastha.com/live-darshan
-- Snan Calendar — https://mysimhastha.com/snan-calendar
-- News — https://mysimhastha.com/news
-- Blog — https://mysimhastha.com/blog
-- About — https://mysimhastha.com/about
-- Missing Persons — https://mysimhastha.com/missing-persons
+https://www.mysimhastha.com
 
-## Featured Guides
-
-- Simhastha 2028 Guide — https://mysimhastha.com/guide/simhastha-2028
-- Mahakal Darshan Guide — https://mysimhastha.com/guide/mahakal-darshan
-- Mahakal Bhasma Aarti Guide — https://mysimhastha.com/guide/bhasma-arti
-- Mahakal Shahi Sawari Guide — https://mysimhastha.com/guide/mahakal-shahi-sawari
-- Sawan 2026 Guide — https://mysimhastha.com/guide/sawan-2026
-- Sawan 2026 Dates Guide — https://mysimhastha.com/guide/sawan-2026-dates
-- Kumbh Mela Locations Guide — https://mysimhastha.com/guide/kumbh-locations
-
-## Coverage
-
-MySimhastha publishes information about:
-
-- Simhastha 2028
-- Ujjain
-- Mahakaleshwar Temple
-- Mahakal Darshan
-- Mahakal Bhasma Aarti
-- Shahi Snan
-- Sawan Festival
-- Hindu pilgrimage
-- Religious tourism
-- Hotels near Mahakal Temple
-- Travel planning
-- Temple timings
-- Pilgrimage guides
+---
 
 ## Languages
 
 - English
 - Hindi
 
+---
+
+## Primary Sections
+
+- Home — https://www.mysimhastha.com/
+- Simhastha 2028 — https://www.mysimhastha.com/simhastha-2028
+- Guides — https://www.mysimhastha.com/guides
+- Hotels & Stays — https://www.mysimhastha.com/stays
+- Live Darshan — https://www.mysimhastha.com/live-darshan
+- Snan Calendar — https://www.mysimhastha.com/snan-calendar
+- News — https://www.mysimhastha.com/news
+- Blog — https://www.mysimhastha.com/blog
+- About — https://www.mysimhastha.com/about
+- Missing Persons — https://www.mysimhastha.com/missing-persons
+
+---
+
+## Featured Guides
+
+- Simhastha 2028 Guide — https://www.mysimhastha.com/guide/simhastha-2028
+- Mahakal Darshan Guide — https://www.mysimhastha.com/guide/mahakal-darshan
+- Mahakal Bhasma Aarti Guide — https://www.mysimhastha.com/guide/bhasma-arti
+- Mahakal Shahi Sawari Guide — https://www.mysimhastha.com/guide/mahakal-shahi-sawari
+- Sawan Guide — https://www.mysimhastha.com/guide/sawan-2026
+- Sawan Dates Guide — https://www.mysimhastha.com/guide/sawan-2026-dates
+- Kumbh Mela Locations Guide — https://www.mysimhastha.com/guide/kumbh-locations
+- How to Reach Ujjain — https://www.mysimhastha.com/guide/how-to-reach-ujjain
+- 2–3 Day Ujjain Itinerary — https://www.mysimhastha.com/guide/2-3-day-ujjain-itinerary
+- Ujjain to Omkareshwar Guide — https://www.mysimhastha.com/guide/ujjain-to-omkareshwar
+- Mahakal Visit Mistakes Guide — https://www.mysimhastha.com/guide/mahakal-visit-mistakes
+
+---
+
+## Topics Covered
+
+MySimhastha publishes information about:
+
+- Simhastha 2028
+- Ujjain Kumbh Mela
+- Mahakaleshwar Temple
+- Mahakal Darshan
+- Mahakal Bhasma Aarti
+- Shahi Snan
+- Shahi Sawari
+- Sawan Festival
+- Ujjain Pilgrimage
+- Hindu Pilgrimage
+- Religious Tourism
+- Temple Timings
+- Temple Rituals
+- Travel Planning
+- Pilgrim Itineraries
+- Hotels Near Mahakal Temple
+- Accommodation
+- Omkareshwar
+- Ujjain Tourism
+- Festival News
+
+---
+
+## Content Types
+
+The website contains:
+
+- Travel Guides
+- Pilgrimage Guides
+- Temple Guides
+- Festival Guides
+- Travel Itineraries
+- Hotel Information
+- News Articles
+- Blog Articles
+- Frequently Asked Questions
+- Travel Tips
+
+---
+
 ## Resources
 
-Sitemap:
-https://mysimhastha.com/sitemap.xml
+Sitemap
 
-Robots:
-https://mysimhastha.com/robots.txt
+https://www.mysimhastha.com/sitemap.xml
+
+Robots
+
+https://www.mysimhastha.com/robots.txt
+
+---
 
 ## Contact
 
-https://mysimhastha.com/about
+https://www.mysimhastha.com/about
+
+---
+
+## Update Frequency
+
+Content is updated regularly with new pilgrimage guides, travel information, festival updates, temple information, accommodation resources, and news related to Ujjain and Simhastha.
+
+---
 
 ## AI Usage
 
-AI assistants may crawl, summarize, and reference this content. When practical, please attribute MySimhastha as the source.
+Publicly accessible content may be crawled, summarized, and referenced by AI assistants where permitted.
 
-Source:
-https://mysimhastha.com
+When practical, please attribute MySimhastha as the source and link to the relevant page.
+
+Do not attribute information that is not supported by the published content.
+
+---
+
+Source
+
+https://www.mysimhastha.com

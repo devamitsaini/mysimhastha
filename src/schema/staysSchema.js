@@ -1,31 +1,6 @@
 import { MAHAKAL_TEMPLE } from '../utils/staysConstants';
 
 /**
- * Generate Organization schema for MySimhastha
- */
-export const generateOrganizationSchema = () => {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'MySimhastha',
-    url: 'https://mysimhastha.com',
-    logo: 'https://mysimhastha.com/logo.png',
-    description: 'MySimhastha is your guide to pilgrimage and spiritual tourism in Ujjain',
-    sameAs: [
-      'https://twitter.com/mysimhastha',
-      'https://www.facebook.com/mysimhastha',
-      'https://www.instagram.com/mysimhastha',
-    ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'Customer Support',
-      email: 'support@mysimhastha.com',
-      telephone: '+91-XXXXXXXXXX',
-    },
-  };
-};
-
-/**
  * Generate WebPage schema for Stays Directory
  */
 export const generateWebPageSchema = () => {
@@ -35,13 +10,13 @@ export const generateWebPageSchema = () => {
     name: 'Find Your Perfect Stay in Ujjain',
     description:
       'Discover verified hotels, dharamshalas, ashrams and guest houses in Ujjain near Mahakaleshwar Temple. Book pilgrimage accommodation for Simhastha 2028.',
-    url: 'https://mysimhastha.com/stays',
+    url: 'https://www.mysimhastha.com/stays',
     isPartOf: {
       '@type': 'WebSite',
-      url: 'https://mysimhastha.com',
+      url: 'https://www.mysimhastha.com',
       name: 'MySimhastha',
     },
-    image: 'https://mysimhastha.com/og-stays.jpg',
+    image: 'https://www.mysimhastha.com/og-stays.jpg',
     author: {
       '@type': 'Organization',
       name: 'MySimhastha',
@@ -58,7 +33,7 @@ export const generateLocalBusinessSchema = (stay) => {
     '@type': 'LodgingBusiness',
     name: stay.name,
     description: stay.short_description || stay.description,
-    url: `https://mysimhastha.com/stays/${stay.slug}`,
+    url: `https://www.mysimhastha.com/stays/${stay.slug}`,
     image: stay.featured_image || stay.image,
     address: {
       '@type': 'PostalAddress',
@@ -114,7 +89,7 @@ export const generateItemListSchema = (stays, listName = 'Verified Stays in Ujja
       position: (index + 1).toString(),
       name: stay.name,
       description: stay.short_description || stay.description,
-      url: `https://mysimhastha.com/stays/${stay.slug}`,
+      url: `https://www.mysimhastha.com/stays/${stay.slug}`,
       image: stay.featured_image || stay.image,
       aggregateRating: stay.rating && stay.review_count ? {
         '@type': 'AggregateRating',
@@ -136,7 +111,7 @@ export const generateBreadcrumbSchema = (breadcrumbs) => {
       '@type': 'ListItem',
       position: (index + 1).toString(),
       name: item.label,
-      item: item.path ? `https://mysimhastha.com${item.path}` : undefined,
+      item: item.path ? `https://www.mysimhastha.com${item.path}` : undefined,
     })),
   };
 };
@@ -168,7 +143,7 @@ export const generatePlaceSchema = (locality, description, stayCount) => {
     '@type': 'Place',
     name: locality,
     description: description,
-    url: `https://mysimhastha.com/stays?area=${encodeURIComponent(locality)}`,
+    url: `https://www.mysimhastha.com/stays?area=${encodeURIComponent(locality)}`,
     geo: {
       '@type': 'GeoShape',
       box: `${MAHAKAL_TEMPLE.latitude - 0.1} ${MAHAKAL_TEMPLE.longitude - 0.1} ${MAHAKAL_TEMPLE.latitude + 0.1} ${MAHAKAL_TEMPLE.longitude + 0.1}`,
@@ -209,8 +184,8 @@ export const generateSimhasthEventSchema = () => {
       '@type': 'Organization',
       name: 'Ujjain Municipal Corporation',
     },
-    url: 'https://mysimhastha.com/simhastha-2028',
-    image: 'https://mysimhastha.com/og-simhastha.jpg',
+    url: 'https://www.mysimhastha.com/simhastha-2028',
+    image: 'https://www.mysimhastha.com/og-simhastha.jpg',
   };
 };
 
@@ -227,7 +202,7 @@ export const generateAccommodationCollectionSchema = (
     '@type': 'CollectionPage',
     name: collectionName,
     description: collectionDescription,
-    url: `https://mysimhastha.com/stays?collection=${encodeURIComponent(collectionName)}`,
+    url: `https://www.mysimhastha.com/stays?collection=${encodeURIComponent(collectionName)}`,
     mainEntity: {
       '@type': 'ItemList',
       name: collectionName,
@@ -238,7 +213,7 @@ export const generateAccommodationCollectionSchema = (
         item: {
           '@type': 'LodgingBusiness',
           name: stay.name,
-          url: `https://mysimhastha.com/stays/${stay.slug}`,
+          url: `https://www.mysimhastha.com/stays/${stay.slug}`,
           image: stay.featured_image || stay.image,
           priceRange: `₹${stay.price_from}-${stay.price_to}`,
           aggregateRating: stay.rating ? {
@@ -262,10 +237,10 @@ export const generateComprehensiveAccommodationSchema = (stay) => {
   return {
     '@context': 'https://schema.org',
     '@type': 'Hotel',
-    '@id': `https://mysimhastha.com/stays/${stay.slug}#hotel`,
+    '@id': `https://www.mysimhastha.com/stays/${stay.slug}#hotel`,
     name: stay.name,
     description: stay.description,
-    url: `https://mysimhastha.com/stays/${stay.slug}`,
+    url: `https://www.mysimhastha.com/stays/${stay.slug}`,
     image: images,
     address: {
       '@type': 'PostalAddress',
@@ -353,7 +328,7 @@ export const generateAEOSchema = (content) => {
       name: 'MySimhastha',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://mysimhastha.com/logo.png',
+        url: 'https://www.mysimhastha.com/logo.png',
       },
     },
     mainEntity: {
@@ -381,7 +356,7 @@ export const generateSearchResultsSchema = (
     '@type': 'SearchResultsPage',
     name: `${query} - Stays in Ujjain`,
     description: `Found ${resultsCount} stays matching: ${query}${filters.stayType ? ` (${filters.stayType})` : ''}${filters.area ? ` near ${filters.area}` : ''}`,
-    url: `https://mysimhastha.com/stays?q=${encodeURIComponent(query)}`,
+    url: `https://www.mysimhastha.com/stays?q=${encodeURIComponent(query)}`,
     image: stays[0]?.featured_image,
     mainEntity: {
       '@type': 'ItemList',
@@ -393,7 +368,7 @@ export const generateSearchResultsSchema = (
         item: {
           '@type': 'LodgingBusiness',
           name: stay.name,
-          url: `https://mysimhastha.com/stays/${stay.slug}`,
+          url: `https://www.mysimhastha.com/stays/${stay.slug}`,
           image: stay.featured_image,
           priceRange: `₹${stay.price_from}-${stay.price_to}`,
           aggregateRating: stay.rating ? {

@@ -212,19 +212,19 @@ export default function Sawan2026Hi() {
         "@type": "ListItem",
         position: 1,
         name: "होम",
-        item: "https://mysimhastha.com/hi"
+        item: "https://www.mysimhastha.com/hi"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "गाइड",
-        item: "https://mysimhastha.com/hi/guides"
+        item: "https://www.mysimhastha.com/hi/guides"
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "सावन 2026 उज्जैन गाइड",
-        item: "https://mysimhastha.com/hi/guide/sawan-2026"
+        item: "https://www.mysimhastha.com/hi/guide/sawan-2026"
       }
     ]
   };
@@ -317,7 +317,7 @@ export default function Sawan2026Hi() {
   </h1>
 
   <img
-    src="https://mysimhastha.com/images/sawan-2026.webp"
+    src="https://www.mysimhastha.com/images/sawan-2026.webp"
     alt="सावन 2026 उज्जैन सम्पूर्ण गाइड"
     className="guide-image"
     loading="eager"
@@ -1355,7 +1355,7 @@ export default function Sawan2026Hi() {
               <p>
                 🔸 वेबसाइट:
                 <a
-                  href="https://mysimhastha.com"
+                  href="https://www.mysimhastha.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

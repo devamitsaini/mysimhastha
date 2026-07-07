@@ -166,7 +166,7 @@ export default function Simhastha2028() {
   <h1>Simhastha 2028 Ujjain: Complete Guide to Dates, Shahi Snan, Travel & Pilgrimage</h1>
 
   <img
-    src="https://mysimhastha.com/images/simhastha-2028.webp"
+    src="https://www.mysimhastha.com/images/simhastha-2028.webp"
     alt="Simhastha 2028 Ujjain Complete Guide"
     className="guide-image"
     loading="eager"
@@ -782,7 +782,7 @@ export default function Simhastha2028() {
     <p>
       🔸 Website: 
       <a
-        href="https://mysimhastha.com"
+        href="https://www.mysimhastha.com"
         target="_blank"
         rel="noopener noreferrer"
       >

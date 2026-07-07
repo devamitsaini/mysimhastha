@@ -81,7 +81,7 @@ const copyLink = async () => {
 
         property="og:image"
 
-        content="https://mysimhastha.com/images/mahakal-darshan-pinterest.webp"
+        content="https://www.mysimhastha.com/images/mahakal-darshan-pinterest.webp"
 
         />
         <meta
@@ -110,7 +110,7 @@ const copyLink = async () => {
 
         <link
           rel="canonical"
-          href="https://mysimhastha.com/guide/mahakal-darshan"
+          href="https://www.mysimhastha.com/guide/mahakal-darshan"
         />
 
         <meta
@@ -140,7 +140,7 @@ const copyLink = async () => {
 
         <meta
           property="og:url"
-          content="https://mysimhastha.com/guide/mahakal-darshan"
+          content="https://www.mysimhastha.com/guide/mahakal-darshan"
         />
 
         <meta property="og:site_name" content="MySimhastha" />
@@ -152,13 +152,13 @@ const copyLink = async () => {
         <meta name="twitter:description" content="Your complete guide to experiencing Mahakal Darshan with booking tips, timing, costs, rules, and spiritual preparation." />
         <meta
 name="twitter:image"
-content="https://mysimhastha.com/images/mahakal-darshan-pinterest.webp"
+content="https://www.mysimhastha.com/images/mahakal-darshan-pinterest.webp"
 />
 
         {/* Language Alternate URLs */}
-        <link rel="alternate" hrefLang="en" href="https://mysimhastha.com/guide/mahakal-darshan" />
-        <link rel="alternate" hrefLang="hi" href="https://mysimhastha.com/hi/guide/mahakal-darshan" />
-        <link rel="alternate" hrefLang="x-default" href="https://mysimhastha.com/guide/mahakal-darshan" />
+        <link rel="alternate" hrefLang="en" href="https://www.mysimhastha.com/guide/mahakal-darshan" />
+        <link rel="alternate" hrefLang="hi" href="https://www.mysimhastha.com/hi/guide/mahakal-darshan" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.mysimhastha.com/guide/mahakal-darshan" />
 
         {/* ========================= */}
         {/* BREADCRUMB SCHEMA */}
@@ -174,19 +174,19 @@ content="https://mysimhastha.com/images/mahakal-darshan-pinterest.webp"
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://mysimhastha.com"
+                  "item": "https://www.mysimhastha.com"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Guides",
-                  "item": "https://mysimhastha.com/guides"
+                  "item": "https://www.mysimhastha.com/guides"
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": "Mahakal Darshan Guide",
-                  "item": "https://mysimhastha.com/guide/mahakal-darshan"
+                  "item": "https://www.mysimhastha.com/guide/mahakal-darshan"
                 }
               ]
             })
@@ -204,7 +204,7 @@ content="https://mysimhastha.com/images/mahakal-darshan-pinterest.webp"
               "@type": "Article",
               "headline": "Mahakal Darshan: Complete Guide to Mahakaleshwar Temple Visit, Timings, Cost & Booking 2026",
               "description": "Complete guide to Mahakal Darshan experience at Mahakaleshwar Temple - everything about booking, timings, cost, dress code, rules, and what to expect.",
-              "image": "https://mysimhastha.com/images/mahakal-darshan.webp",
+              "image": "https://www.mysimhastha.com/images/mahakal-darshan.webp",
               "author": {
                 "@type": "Organization",
                 "name": "MySimhastha"
@@ -214,12 +214,12 @@ content="https://mysimhastha.com/images/mahakal-darshan-pinterest.webp"
                 "name": "MySimhastha",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://mysimhastha.com/logo.png"
+                  "url": "https://www.mysimhastha.com/logo.png"
                 }
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://mysimhastha.com/guide/mahakal-darshan"
+                "@id": "https://www.mysimhastha.com/guide/mahakal-darshan"
               },
               "datePublished": "2026-06-28",
               "dateModified": "2026-06-28",
@@ -248,7 +248,7 @@ content="https://mysimhastha.com/images/mahakal-darshan-pinterest.webp"
                 "postalCode": "456010",
                 "addressCountry": "India"
               },
-              "url": "https://mysimhastha.com/guide/mahakal-darshan",
+              "url": "https://www.mysimhastha.com/guide/mahakal-darshan",
               "telephone": "0734-2550563, 0734-2559277, 18002331008",
               "geo": {
                 "@type": "GeoCoordinates",
@@ -432,13 +432,13 @@ __html: JSON.stringify({
 "@context":"https://schema.org",
 "@type":"WebPage",
 "name":"Mahakal Darshan Guide",
-"url":"https://mysimhastha.com/guide/mahakal-darshan",
+"url":"https://www.mysimhastha.com/guide/mahakal-darshan",
 "description":"Complete Mahakal Darshan guide for visitors.",
 "inLanguage":"en",
 "isPartOf":{
 "@type":"WebSite",
 "name":"MySimhastha",
-"url":"https://mysimhastha.com"
+"url":"https://www.mysimhastha.com"
 }
 })
 }}
@@ -452,8 +452,8 @@ __html:JSON.stringify({
 "@context":"https://schema.org",
 "@type":"Organization",
 "name":"MySimhastha",
-"url":"https://mysimhastha.com",
-"logo":"https://mysimhastha.com/logo.png",
+"url":"https://www.mysimhastha.com",
+"logo":"https://www.mysimhastha.com/logo.png",
 "sameAs":[
 "https://facebook.com/mysimhastha",
 "https://instagram.com/mysimhastha",
@@ -476,7 +476,7 @@ __html:JSON.stringify({
               <h1>Mahakal Darshan: Complete Guide to Mahakaleshwar Temple Visit</h1>
               <figure className="guide-figure">
                 <img 
-                  src="https://mysimhastha.com/images/mahakal-darshan.webp" 
+                  src="https://www.mysimhastha.com/images/mahakal-darshan.webp" 
                   alt="Mahakaleshwar Temple - Mahakal Darshan" 
                   className="guide-image" 
                   loading="eager" 
@@ -552,7 +552,7 @@ Share this Guide
 
   {/* Pinterest */}
   <a className="share-btn pinterest"
-    href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=https://mysimhastha.com/images/mahakal-darshan-pinterest.webp&description=${encodeURIComponent(
+    href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=https://www.mysimhastha.com/images/mahakal-darshan-pinterest.webp&description=${encodeURIComponent(
       shareTitle
     )}`}
     target="_blank"
@@ -1529,7 +1529,7 @@ Your feedback helps us improve MySimhastha guides!</p>
   <p>
     🔸 Website:
     <a
-      href="https://mysimhastha.com"
+      href="https://www.mysimhastha.com"
       target="_blank"
       rel="noopener noreferrer"
     >

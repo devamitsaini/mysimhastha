@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 
 const SITE = {
-  url: "https://mysimhastha.com",
+  url: "https://www.mysimhastha.com",
   name: "MySimhastha",
   twitter: "@MySimhastha",
   themeColor: "#f97316",
@@ -11,7 +11,7 @@ const SITE = {
 const DEFAULT_SEO = {
   title: "Ujjain Travel Guide | MySimhastha",
   description: "Complete travel guide for Ujjain pilgrimage with temple information, darshan timings, and travel tips.",
-  image: "https://mysimhastha.com/images/mahakaleshwar-hero.webp",
+  image: "https://www.mysimhastha.com/images/mahakaleshwar-hero.webp",
 };
 
 const getArticleSchema = (guide) => {

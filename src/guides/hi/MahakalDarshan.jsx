@@ -76,7 +76,7 @@ encodeURIComponent(window.location.href);
 
         <link
           rel="canonical"
-          href="https://mysimhastha.com/hi/guide/mahakal-darshan"
+          href="https://www.mysimhastha.com/hi/guide/mahakal-darshan"
         />
 
         <meta
@@ -106,12 +106,12 @@ encodeURIComponent(window.location.href);
 
         <meta
           property="og:url"
-          content="https://mysimhastha.com/hi/guide/mahakal-darshan"
+          content="https://www.mysimhastha.com/hi/guide/mahakal-darshan"
         />
 
         <meta
           property="og:image"
-          content="https://mysimhastha.com/images/mahakal-darshan.webp"
+          content="https://www.mysimhastha.com/images/mahakal-darshan.webp"
         />
 
         <meta property="og:site_name" content="MySimhastha" />
@@ -121,11 +121,11 @@ encodeURIComponent(window.location.href);
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="महाकाल दर्शन: महाकालेश्वर मंदिर की पूरी गाइड" />
         <meta name="twitter:description" content="महाकाल दर्शन के लिए पूरी जानकारी, बुकिंग सुझाव, समय, लागत, नियम और आध्यात्मिक तैयारी।" />
-        <meta name="twitter:image" content="https://mysimhastha.com/images/mahakal-darshan.webp" />
+        <meta name="twitter:image" content="https://www.mysimhastha.com/images/mahakal-darshan.webp" />
 
         <meta
   property="og:image"
-  content="https://mysimhastha.com/images/mahakal-darshan-hi-pinterest.webp"
+  content="https://www.mysimhastha.com/images/mahakal-darshan-hi-pinterest.webp"
 />
 
 <meta
@@ -150,7 +150,7 @@ encodeURIComponent(window.location.href);
 
 <meta
   name="twitter:image"
-  content="https://mysimhastha.com/images/mahakal-darshan-hi-pinterest.webp"
+  content="https://www.mysimhastha.com/images/mahakal-darshan-hi-pinterest.webp"
 />
 
 <meta
@@ -158,9 +158,9 @@ encodeURIComponent(window.location.href);
   content="true"
 />
         {/* Language Alternate URLs */}
-        <link rel="alternate" hrefLang="en" href="https://mysimhastha.com/guide/mahakal-darshan" />
-        <link rel="alternate" hrefLang="hi" href="https://mysimhastha.com/hi/guide/mahakal-darshan" />
-        <link rel="alternate" hrefLang="x-default" href="https://mysimhastha.com/guide/mahakal-darshan" />
+        <link rel="alternate" hrefLang="en" href="https://www.mysimhastha.com/guide/mahakal-darshan" />
+        <link rel="alternate" hrefLang="hi" href="https://www.mysimhastha.com/hi/guide/mahakal-darshan" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.mysimhastha.com/guide/mahakal-darshan" />
 
         {/* ========================= */}
         {/* BREADCRUMB SCHEMA */}
@@ -176,19 +176,19 @@ encodeURIComponent(window.location.href);
                   "@type": "ListItem",
                   "position": 1,
                   "name": "होम",
-                  "item": "https://mysimhastha.com"
+                  "item": "https://www.mysimhastha.com"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "गाइड",
-                  "item": "https://mysimhastha.com/guides"
+                  "item": "https://www.mysimhastha.com/guides"
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": "महाकाल दर्शन गाइड",
-                  "item": "https://mysimhastha.com/hi/guide/mahakal-darshan"
+                  "item": "https://www.mysimhastha.com/hi/guide/mahakal-darshan"
                 }
               ]
             })
@@ -206,7 +206,7 @@ encodeURIComponent(window.location.href);
               "@type": "Article",
               "headline": "महाकाल दर्शन: महाकालेश्वर मंदिर के दर्शन की संपूर्ण गाइड 2026",
               "description": "महाकाल दर्शन की संपूर्ण गाइड - बुकिंग, समय, लागत, ड्रेस कोड, नियम, और क्या अपेक्षा करें।",
-              "image": "https://mysimhastha.com/images/mahakal-darshan.webp",
+              "image": "https://www.mysimhastha.com/images/mahakal-darshan.webp",
               "author": {
                 "@type": "Organization",
                 "name": "MySimhastha"
@@ -216,12 +216,12 @@ encodeURIComponent(window.location.href);
                 "name": "MySimhastha",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://mysimhastha.com/logo.png"
+                  "url": "https://www.mysimhastha.com/logo.png"
                 }
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://mysimhastha.com/hi/guide/mahakal-darshan"
+                "@id": "https://www.mysimhastha.com/hi/guide/mahakal-darshan"
               },
               "datePublished": "2026-06-28",
               "dateModified": "2026-06-28",
@@ -250,7 +250,7 @@ encodeURIComponent(window.location.href);
                 "postalCode": "456010",
                 "addressCountry": "भारत"
               },
-              "url": "https://mysimhastha.com/hi/guide/mahakal-darshan",
+              "url": "https://www.mysimhastha.com/hi/guide/mahakal-darshan",
               "telephone": "0734-2550563, 0734-2559277, 18002331008",
               "geo": {
                 "@type": "GeoCoordinates",
@@ -368,7 +368,7 @@ encodeURIComponent(window.location.href);
               <h1>महाकाल दर्शन: महाकालेश्वर मंदिर के दर्शन की संपूर्ण गाइड</h1>
               <figure className="guide-figure">
                 <img 
-                  src="https://mysimhastha.com/images/mahakal-darshan.webp" 
+                  src="https://www.mysimhastha.com/images/mahakal-darshan.webp" 
                   alt="महाकालेश्वर मंदिर - महाकाल दर्शन" 
                   className="guide-image" 
                   loading="eager" 
@@ -441,7 +441,7 @@ encodeURIComponent(window.location.href);
 
   {/* Pinterest */}
   <a className="share-btn pinterest"
-    href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=https://mysimhastha.com/images/mahakal-darshan-pinterest.webp&description=${encodeURIComponent(
+    href={`https://pinterest.com/pin/create/button/?url=${shareUrl}&media=https://www.mysimhastha.com/images/mahakal-darshan-pinterest.webp&description=${encodeURIComponent(
       shareTitle
     )}`}
     target="_blank"
@@ -1368,7 +1368,7 @@ encodeURIComponent(window.location.href);
     <p>
       🔸 वेबसाइट:
       <a
-        href="https://mysimhastha.com"
+        href="https://www.mysimhastha.com"
         target="_blank"
         rel="noopener noreferrer"
       >

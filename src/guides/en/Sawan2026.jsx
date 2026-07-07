@@ -143,19 +143,19 @@ const faqSchema = {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://mysimhastha.com"
+        item: "https://www.mysimhastha.com"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Guides",
-        item: "https://mysimhastha.com/guides"
+        item: "https://www.mysimhastha.com/guides"
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Sawan 2026 Ujjain Guide",
-        item: "https://mysimhastha.com/guide/sawan-2026"
+        item: "https://www.mysimhastha.com/guide/sawan-2026"
       }
     ]
   };
@@ -245,7 +245,7 @@ const faqSchema = {
   </h1>
 
   <img
-    src="https://mysimhastha.com/images/sawan-2026.webp"
+    src="https://www.mysimhastha.com/images/sawan-2026.webp"
     alt="Sawan 2026 Ujjain Complete Guide"
     className="guide-image"
     loading="eager"
@@ -1317,7 +1317,7 @@ const faqSchema = {
   <p>
     🔸 Website:
     <a
-      href="https://mysimhastha.com"
+      href="https://www.mysimhastha.com"
       target="_blank"
       rel="noopener noreferrer"
     >

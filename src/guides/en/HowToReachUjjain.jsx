@@ -1433,7 +1433,7 @@ export default function HowToReachUjjain() {
 
           <ShareButtons
             title={guide.title}
-            image="https://mysimhastha.com/images/how-to-reach-ujjain.webp"
+            image="https://www.mysimhastha.com/images/how-to-reach-ujjain.webp"
           />
 
           {guide.sections.map((section) => (

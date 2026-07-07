@@ -95,8 +95,8 @@ if (contactForm.message.length > 2000) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MySimhastha",
-    "url": "https://mysimhastha.com",
-    "logo": "https://mysimhastha.com/logo.png",
+    "url": "https://www.mysimhastha.com",
+    "logo": "https://www.mysimhastha.com/logo.png",
     "description": "Information platform for Simhastha 2028, Mahakaleshwar Temple, Ujjain travel and pilgrimage planning.",
     "areaServed": "India",
     "knowsAbout": [

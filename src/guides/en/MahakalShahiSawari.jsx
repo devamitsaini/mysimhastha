@@ -18,7 +18,7 @@ export default function MahakalShahiSawari() {
 
         <link
           rel="canonical"
-          href="https://mysimhastha.com/guide/mahakal-shahi-sawari"
+          href="https://www.mysimhastha.com/guide/mahakal-shahi-sawari"
         />
 
         <meta
@@ -48,12 +48,12 @@ export default function MahakalShahiSawari() {
 
         <meta
           property="og:url"
-          content="https://mysimhastha.com/guide/mahakal-shahi-sawari"
+          content="https://www.mysimhastha.com/guide/mahakal-shahi-sawari"
         />
 
         <meta
           property="og:image"
-          content="https://mysimhastha.com/images/mahakal-shahi-sawari.webp"
+          content="https://www.mysimhastha.com/images/mahakal-shahi-sawari.webp"
         />
 
         <meta property="og:site_name" content="MySimhastha" />
@@ -73,13 +73,13 @@ export default function MahakalShahiSawari() {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://mysimhastha.com"
+                  "item": "https://www.mysimhastha.com"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Guides",
-                  "item": "https://mysimhastha.com/guides"
+                  "item": "https://www.mysimhastha.com/guides"
                 },
                 {
                   "@type": "ListItem",
@@ -99,7 +99,7 @@ export default function MahakalShahiSawari() {
               "@type": "Article",
               "headline": "Mahakal Shahi Sawari Ujjain: Complete Guide, Dates, Route & Viewing Tips 2026",
               "description": "Complete guide to witnessing Mahakal Shahi Sawari in Ujjain with detailed information about dates, timing, viewing spots, crowds, safety, and spiritual significance.",
-              "image": "https://mysimhastha.com/images/mahakal-shahi-sawari.webp",
+              "image": "https://www.mysimhastha.com/images/mahakal-shahi-sawari.webp",
               "author": {
                 "@type": "Organization",
                 "name": "MySimhastha"
@@ -109,46 +109,15 @@ export default function MahakalShahiSawari() {
                 "name": "MySimhastha",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://mysimhastha.com/logo.png"
+                  "url": "https://www.mysimhastha.com/logo.png"
                 }
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://mysimhastha.com/guide/mahakal-shahi-sawari"
+                "@id": "https://www.mysimhastha.com/guide/mahakal-shahi-sawari"
               },
               "datePublished": "2026-06-25",
               "dateModified": "2026-06-25"
-            })
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Event",
-              "name": "Mahakal Shahi Sawari",
-              "description": "Grand religious procession of Lord Mahakal through Ujjain during Shravana month",
-              "startDate": "2026-07-01",
-              "endDate": "2026-08-31",
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "location": {
-                "@type": "Place",
-                "name": "Ujjain",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Ujjain",
-                  "addressRegion": "Madhya Pradesh",
-                  "postalCode": "456010",
-                  "addressCountry": "India"
-                }
-              },
-              "organizer": {
-                "@type": "Organization",
-                "name": "Mahakaleshwar Temple Administration"
-              }
             })
           }}
         />
@@ -446,7 +415,7 @@ export default function MahakalShahiSawari() {
       <header className="guide-header">
         <h1>Mahakal Shahi Sawari Ujjain: Complete Guide to Witnessing the Grand Procession</h1>
         <img 
-          src="https://mysimhastha.com/images/mahakal-shahi-sawari.webp" 
+          src="https://www.mysimhastha.com/images/mahakal-shahi-sawari.webp" 
           alt="Mahakal Shahi Sawari Ujjain" 
           className="guide-image" 
           loading="eager" 
@@ -822,7 +791,7 @@ export default function MahakalShahiSawari() {
   <p>
     🔸 Website:
     <a
-      href="https://mysimhastha.com"
+      href="https://www.mysimhastha.com"
       target="_blank"
       rel="noopener noreferrer"
     >

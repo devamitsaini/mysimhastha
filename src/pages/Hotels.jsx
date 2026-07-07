@@ -76,7 +76,7 @@ const goToPage = (page) => {
 
     <meta
       property="og:url"
-      content="https://mysimhastha.com/hotels"
+      content="https://www.mysimhastha.com/hotels"
     />
   </Helmet>
     <div className="page-wrap">

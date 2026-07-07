@@ -20,10 +20,10 @@ export default function UjjainToOmkareshwarGuideHindi() {
   ========================================== */
 
   const canonicalUrl =
-    "https://mysimhastha.com/hi/guide/ujjain-to-omkareshwar";
+    "https://www.mysimhastha.com/hi/guide/ujjain-to-omkareshwar";
 
   const heroImage =
-    "https://mysimhastha.com/images/ujjain-to-om.webp";
+    "https://www.mysimhastha.com/images/ujjain-to-om.webp";
 
   const pinterestImage = heroImage;
 
@@ -165,13 +165,13 @@ export default function UjjainToOmkareshwarGuideHindi() {
         "@type": "ListItem",
         position: 1,
         name: "होम",
-        item: "https://mysimhastha.com",
+        item: "https://www.mysimhastha.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "गाइड्स",
-        item: "https://mysimhastha.com/guides",
+        item: "https://www.mysimhastha.com/guides",
       },
       {
         "@type": "ListItem",
@@ -209,7 +209,7 @@ export default function UjjainToOmkareshwarGuideHindi() {
 
       logo: {
         "@type": "ImageObject",
-        url: "https://mysimhastha.com/logo.png",
+        url: "https://www.mysimhastha.com/logo.png",
       },
     },
 
@@ -304,13 +304,13 @@ export default function UjjainToOmkareshwarGuideHindi() {
   <link
     rel="alternate"
     hrefLang="en"
-    href="https://mysimhastha.com/guide/ujjain-to-omkareshwar"
+    href="https://www.mysimhastha.com/guide/ujjain-to-omkareshwar"
   />
 
   <link
     rel="alternate"
     hrefLang="x-default"
-    href="https://mysimhastha.com/guide/ujjain-to-omkareshwar"
+    href="https://www.mysimhastha.com/guide/ujjain-to-omkareshwar"
   />
 
   {/* =========================

@@ -19,7 +19,7 @@ import "../styles/guides.css";
 
           <link
             rel="canonical"
-            href="https://mysimhastha.com/sawan-2026-dates"
+            href="https://www.mysimhastha.com/sawan-2026-dates"
           />
 
           <meta
@@ -51,12 +51,12 @@ import "../styles/guides.css";
 
           <meta
             property="og:url"
-            content="https://mysimhastha.com/sawan-2026-dates"
+            content="https://www.mysimhastha.com/sawan-2026-dates"
           />
 
             <meta
               property="og:image"
-              content="https://mysimhastha.com/images/sawan-2026-calendar.webp"
+              content="https://www.mysimhastha.com/images/sawan-2026-calendar.webp"
             />
 
             <script
@@ -70,13 +70,13 @@ import "../styles/guides.css";
               "@type":"ListItem",
               "position":1,
               "name":"Home",
-              "item":"https://mysimhastha.com"
+              "item":"https://www.mysimhastha.com"
               },
               {
               "@type":"ListItem",
               "position":2,
               "name":"Sawan 2026",
-              "item":"https://mysimhastha.com/sawan-2026"
+              "item":"https://www.mysimhastha.com/sawan-2026"
               },
               {
               "@type":"ListItem",
@@ -109,13 +109,13 @@ import "../styles/guides.css";
                 "name":"MySimhastha",
                 "logo":{
                 "@type":"ImageObject",
-                "url":"https://mysimhastha.com/logo.png"
+                "url":"https://www.mysimhastha.com/logo.png"
                 }
                 },
 
                 "mainEntityOfPage":{
                 "@type":"WebPage",
-                "@id":"https://mysimhastha.com/sawan-2026-dates"
+                "@id":"https://www.mysimhastha.com/sawan-2026-dates"
                 },
 
                 "datePublished":"2026-06-25",
@@ -130,7 +130,7 @@ import "../styles/guides.css";
                   "@context":"https://schema.org",
                   "@type":"WebPage",
                   "name":"Sawan 2026 Dates",
-                  "url":"https://mysimhastha.com/sawan-2026-dates",
+                  "url":"https://www.mysimhastha.com/sawan-2026-dates",
                   "description":"Complete Sawan 2026 calendar with important dates and festivals."
                   })
                   }}

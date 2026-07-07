@@ -404,7 +404,7 @@ export const generateShareMetadata = (stay) => {
     title: `${stay.name} - ${stay.stay_type} in Ujjain`,
     description: stay.short_description || stay.description,
     image: stay.featured_image || stay.image,
-    url: `https://mysimhastha.com/stays/${stay.slug}`,
+    url: `https://www.mysimhastha.com/stays/${stay.slug}`,
   };
 };
 

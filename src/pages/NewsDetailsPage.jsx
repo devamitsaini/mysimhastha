@@ -73,7 +73,7 @@
 
   <link
     rel="canonical"
-    href={`https://mysimhastha.com/news/${news.slug}`}
+    href={`https://www.mysimhastha.com/news/${news.slug}`}
   />
       <title>{news.title} | MySimhastha News</title>
 
@@ -94,12 +94,12 @@
     name: "MySimhastha",
     logo: {
       "@type": "ImageObject",
-      url: "https://mysimhastha.com/logo.png"
+      url: "https://www.mysimhastha.com/logo.png"
     }
   },
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": `https://mysimhastha.com/news/${news.slug}`
+    "@id": `https://www.mysimhastha.com/news/${news.slug}`
   }
         })}
       </script>

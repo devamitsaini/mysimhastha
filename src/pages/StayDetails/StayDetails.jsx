@@ -161,7 +161,7 @@ const StayDetails = () => {
 
         <link
           rel="canonical"
-          href={`https://mysimhastha.com/stays/${stay.slug}`}
+          href={`https://www.mysimhastha.com/stays/${stay.slug}`}
         />
 
         <meta property="og:type" content="website" />
@@ -186,7 +186,7 @@ const StayDetails = () => {
 
         <meta
           property="og:url"
-          content={`https://mysimhastha.com/stays/${stay.slug}`}
+          content={`https://www.mysimhastha.com/stays/${stay.slug}`}
         />
       </Helmet>
 

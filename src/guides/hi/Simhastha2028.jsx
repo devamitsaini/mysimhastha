@@ -179,19 +179,19 @@ export default function Simhastha2028Hi() {
         "@type": "ListItem",
         position: 1,
         name: "होम",
-        item: "https://mysimhastha.com/hi"
+        item: "https://www.mysimhastha.com/hi"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "गाइड",
-        item: "https://mysimhastha.com/hi/guides"
+        item: "https://www.mysimhastha.com/hi/guides"
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "सिंहस्थ 2028 उज्जैन गाइड",
-        item: "https://mysimhastha.com/hi/guide/simhastha-2028"
+        item: "https://www.mysimhastha.com/hi/guide/simhastha-2028"
       }
     ]
   };
@@ -201,11 +201,11 @@ export default function Simhastha2028Hi() {
     "@type": "Article",
     headline: "सिंहस्थ 2028 उज्जैन पूर्ण गाइड: शाही स्नान, महाकाल दर्शन, यात्रा सूचना",
     description: "सिंहस्थ 2028 उज्जैन की पूर्ण गाइड जिसमें तारीखें, शाही स्नान, महाकालेश्वर मंदिर, यात्रा सूचना, रहने की जगह और FAQ शामिल हैं।",
-    image: "https://mysimhastha.com/images/simhastha-2028-guide-hindi.jpg",
+    image: "https://www.mysimhastha.com/images/simhastha-2028-guide-hindi.jpg",
     author: {
       "@type": "Organization",
       name: "MySimhastha",
-      url: "https://mysimhastha.com"
+      url: "https://www.mysimhastha.com"
     },
     datePublished: "2026-06-01",
     dateModified: "2026-06-22",
@@ -214,7 +214,7 @@ export default function Simhastha2028Hi() {
       name: "MySimhastha",
       logo: {
         "@type": "ImageObject",
-        url: "https://mysimhastha.com/logo.png"
+        url: "https://www.mysimhastha.com/logo.png"
       }
     }
   };
@@ -241,7 +241,7 @@ export default function Simhastha2028Hi() {
   <h1>सिंहस्थ 2028 उज्जैन: तिथियाँ, शाही स्नान, यात्रा एवं सम्पूर्ण गाइड</h1>
 
   <img
-    src="https://mysimhastha.com/images/simhastha-2028.webp"
+    src="https://www.mysimhastha.com/images/simhastha-2028.webp"
     alt="सिंहस्थ 2028 उज्जैन सम्पूर्ण गाइड"
     className="guide-image"
     loading="eager"
@@ -643,7 +643,7 @@ export default function Simhastha2028Hi() {
               <p>
                 🔸 वेबसाइट:
                 <a
-                  href="https://mysimhastha.com"
+                  href="https://www.mysimhastha.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
