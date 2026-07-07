@@ -79,6 +79,12 @@
     padding: 0;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-sans);
     color: var(--text);
@@ -86,6 +92,22 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Prevents long URLs/route names/links from overflowing their box and
+   breaking the layout on any screen size (fixes "routes link breaking") */
+.guide-page,
+.guide-page * {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Safety net: images/iframes never exceed their container */
+.guide-page img,
+.guide-page svg,
+.guide-page iframe {
+    max-width: 100%;
 }
 
 /*==========================================================
@@ -229,6 +251,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -2233,6 +2256,71 @@ body {
 }
 
 /*==========================================================
+    SMALL MOBILE - up to 380px (extra refinement for
+    89%-mobile audience: smaller phones, comfortable tap targets)
+==========================================================*/
+
+@media (max-width: 380px) {
+    .guide-content {
+        padding: var(--space-xl) var(--space-sm);
+    }
+
+    .guide-title {
+        font-size: 1.25rem;
+    }
+
+    .guide-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .guide-hero-image {
+        max-height: 200px;
+    }
+
+    .guide-hero-buttons {
+        flex-direction: column;
+    }
+
+    .guide-hero-buttons .guide-btn,
+    .guide-hero-buttons .guide-btn-outline {
+        width: 100%;
+    }
+
+    .guide-section h2 {
+        font-size: 1.35rem;
+    }
+
+    .guide-facts-grid,
+    .guide-cards,
+    .info-grid,
+    .guide-related-grid,
+    .guide-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-actions {
+        flex-direction: column;
+    }
+
+    .feedback-btn {
+        width: 100%;
+    }
+}
+
+/* Comfortable tap targets on touch devices (min 44px per accessibility
+   guidelines) without changing existing visual padding elsewhere */
+@media (max-width: 768px) {
+    .guide-btn,
+    .guide-btn-outline,
+    .guide-share-btn,
+    .feedback-btn,
+    .language-btn,
+    .guide-toc-item {
+        min-height: 44px;
+    }
+}
+
+/*==========================================================
     TABLET - 768px to 1024px
 ==========================================================*/
 
@@ -2247,6 +2335,13 @@ body {
 
     .guide-facts-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Hero Tablet - matches the wider desktop ratio so the image doesn't
+       get taller/more cropped than intended as screens grow */
+    .guide-hero-image {
+        aspect-ratio: 16 / 9;
+        max-height: 420px;
     }
 }
 
@@ -2267,9 +2362,16 @@ body {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    /* Hero Desktop - Smaller image */
+    /* Hero Desktop - Full image display.
+       NOTE: previously this set max-height: 480px while the base rule also
+       set aspect-ratio: 16/9. On desktop container widths (~1085px) 16:9
+       needs ~610px of height, so the two constraints fought each other and
+       object-fit: cover cropped ~130px off the image. Switching to a wider
+       aspect-ratio here removes that conflict so the image displays fully
+       without an unexpected extra crop. */
     .guide-hero-image {
-        max-height: 320px;
+        aspect-ratio: 21 / 9;
+        max-height: 560px;
     }
 
     .guide-title {
