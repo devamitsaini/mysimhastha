@@ -4,8 +4,6 @@ export default function MobileStickyBar({ stay }) {
   const phone = stay?.phone || "";
   const whatsapp = stay?.whatsapp || stay?.phone || "";
 
-  if (!phone && !whatsapp) return null;
-
   return (
     <div className="mobile-sticky-bar">
 
@@ -23,27 +21,25 @@ export default function MobileStickyBar({ stay }) {
 
       <div className="mobile-buttons">
 
-        {phone && (
-          <a
-            href={`tel:${phone}`}
-            className="mobile-call"
-          >
-            <FiPhone />
-            Call
-          </a>
-        )}
+        <a
+          href={phone ? `tel:${phone}` : "#"}
+          className="mobile-call"
+          onClick={(e) => !phone && e.preventDefault()}
+        >
+          <FiPhone />
+          Call
+        </a>
 
-        {whatsapp && (
-          <a
-            href={`https://wa.me/${whatsapp}`}
-            target="_blank"
-            rel="noreferrer"
-            className="mobile-whatsapp"
-          >
-            <FiMessageCircle />
-            WhatsApp
-          </a>
-        )}
+        <a
+          href={whatsapp ? `https://wa.me/${whatsapp}` : "#"}
+          target="_blank"
+          rel="noreferrer"
+          className="mobile-whatsapp"
+          onClick={(e) => !whatsapp && e.preventDefault()}
+        >
+          <FiMessageCircle />
+          WhatsApp
+        </a>
 
       </div>
 

@@ -1,22 +1,84 @@
-/* ==========================================
-   STAY DETAILS PAGE
-========================================== */
+    /* ==========================================
+    STICKY BOTTOM BAR
+    ========================================== */
 
-.stay-details-page{
-    background:#f3f4f6;
-    min-height:100vh;
-    padding:20px 0 90px;
-}
+    .mobile-sticky-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid #e6ebf1;
+        box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.1);
+        padding: 8px 12px;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
 
-/* ==========================================
-   CONTAINER
-========================================== */
+    .mobile-price {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
 
-.stay-container{
-    max-width:1320px;
-    margin:0 auto;
-    padding:0 18px;
-}
+    .mobile-price small {
+        font-size: 9px;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+
+    .mobile-price strong {
+        font-size: 16px;
+        font-weight: 800;
+        color: #0f172a;
+        line-height: 1;
+    }
+
+    .mobile-buttons {
+        display: flex;
+        gap: 4px;
+        flex: 1;
+    }
+
+    .mobile-call,
+    .mobile-whatsapp {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        padding: 4px 8px;
+        border: none;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s;
+        text-decoration: none;
+    }
+
+    .mobile-call {
+        background: #2563eb;
+        color: #fff;
+    }
+
+    .mobile-call:hover {
+        background: #1d4ed8;
+    }
+
+    .mobile-whatsapp {
+        background: #22c55e;
+        color: #fff;
+    }
+
+    .mobile-whatsapp:hover {
+        background: #16a34a;
+    }
 
 /* ==========================================
    MAIN LAYOUT
