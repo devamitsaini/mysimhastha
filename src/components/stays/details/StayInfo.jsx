@@ -4,6 +4,8 @@ import {
   FiCheckCircle,
   FiClock,
   FiHome,
+  FiPhone,
+  FiMessageCircle,
 } from "react-icons/fi";
 import "./StayInfo.css";
 
@@ -16,6 +18,46 @@ export default function StayInfo({ stay }) {
         <div>
 
           <h1>{stay.name}</h1>
+
+          <div className="stay-rating">
+
+            <FiStar />
+
+            <strong>{stay.rating || "New"}</strong>
+
+            <small>
+              ({stay.review_count || 0} Reviews)
+            </small>
+
+            {(stay.phone || stay.whatsapp) && (
+              <div className="rating-actions">
+
+                {stay.phone && (
+                  <a
+                    href={`tel:${stay.phone}`}
+                    className="rating-action-btn"
+                    title="Call"
+                  >
+                    <FiPhone />
+                  </a>
+                )}
+
+                {stay.whatsapp && (
+                  <a
+                    href={`https://wa.me/${stay.whatsapp}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rating-action-btn"
+                    title="WhatsApp"
+                  >
+                    <FiMessageCircle />
+                  </a>
+                )}
+
+              </div>
+            )}
+
+          </div>
 
           <div className="stay-badges">
 
@@ -35,18 +77,6 @@ export default function StayInfo({ stay }) {
             )}
 
           </div>
-
-        </div>
-
-        <div className="stay-rating">
-
-          <FiStar />
-
-          <strong>{stay.rating || "New"}</strong>
-
-          <small>
-            ({stay.review_count || 0} Reviews)
-          </small>
 
         </div>
 

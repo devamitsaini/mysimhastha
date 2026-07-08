@@ -54,39 +54,37 @@
 
 .stay-rating{
 
-    display:flex;
-
-    flex-direction:column;
+    display:inline-flex;
 
     align-items:center;
 
-    justify-content:center;
+    gap:8px;
 
-    min-width:110px;
+    padding:6px 14px;
 
-    padding:16px;
-
-    border-radius:18px;
+    border-radius:10px;
 
     background:#16a34a;
 
     color:#fff;
 
-    box-shadow:0 12px 30px rgba(22,163,74,.22);
+    box-shadow:0 2px 8px rgba(22,163,74,.2);
+
+    margin-top:10px;
 
 }
 
 .stay-rating svg{
 
-    font-size:18px;
-
-    margin-bottom:4px;
+    font-size:14px;
 
 }
 
 .stay-rating strong{
 
-    font-size:24px;
+    font-size:16px;
+
+    font-weight:700;
 
     line-height:1;
 
@@ -94,13 +92,71 @@
 
 .stay-rating small{
 
-    margin-top:6px;
-
     font-size:12px;
 
-    opacity:.95;
+    opacity:.9;
 
-    text-align:center;
+    font-weight:500;
+
+}
+
+/* ==========================================
+   RATING ACTIONS
+========================================== */
+
+.rating-actions{
+
+    display:flex;
+
+    gap:6px;
+
+    margin-left:8px;
+
+    padding-left:8px;
+
+    border-left:1px solid rgba(255,255,255,0.3);
+
+}
+
+.rating-action-btn{
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:6px;
+
+    background:rgba(255,255,255,0.2);
+
+    border:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:all 0.2s ease;
+
+    text-decoration:none;
+
+}
+
+.rating-action-btn:hover{
+
+    background:rgba(255,255,255,0.3);
+
+    transform:scale(1.1);
+
+}
+
+.rating-action-btn svg{
+
+    font-size:14px;
 
 }
 
@@ -342,23 +398,49 @@ line-height:1.35;
 
 .stay-rating{
 
-width:100%;
+padding:5px 12px;
 
-justify-content:center;
+border-radius:8px;
 
-border-radius:14px;
+}
+
+.stay-rating svg{
+
+font-size:13px;
 
 }
 
 .stay-rating strong{
 
-font-size:20px;
+font-size:15px;
 
 }
 
 .stay-rating small{
 
-font-size:11px;
+    font-size:11px;
+
+}
+
+.rating-actions{
+
+    margin-left:6px;
+
+    padding-left:6px;
+
+}
+
+.rating-action-btn{
+
+    width:24px;
+
+    height:24px;
+
+}
+
+.rating-action-btn svg{
+
+    font-size:12px;
 
 }
 

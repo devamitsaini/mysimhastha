@@ -1,4 +1,4 @@
-import { FiHeart, FiCamera } from "react-icons/fi";
+import { FiHeart } from "react-icons/fi";
 import "./StayGallery.css";
 
 export default function StayGallery({ stay }) {
@@ -50,22 +50,30 @@ export default function StayGallery({ stay }) {
           <FiHeart />
         </button>
 
-        <button className="gallery-all-photos">
-          <FiCamera />
-          View {images.length} Photos
-        </button>
-
       </div>
 
       <div className="gallery-side">
 
-        {images.slice(1, 5).map((image, index) => (
+        {images.slice(1, 4).map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`${stay.name} ${index + 2}`}
           />
         ))}
+
+        {images.length > 4 && (
+          <div className="photo-count-overlay">
+            <img
+              src={images[4]}
+              alt={`${stay.name} 5`}
+            />
+            <div className="overlay">
+              <div className="count">+{images.length - 4}</div>
+              <div className="label">Property & Guest Photos</div>
+            </div>
+          </div>
+        )}
 
       </div>
 

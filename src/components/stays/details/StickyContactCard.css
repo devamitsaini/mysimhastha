@@ -1,0 +1,250 @@
+/* ==========================================
+   STICKY CONTACT CARD
+========================================== */
+
+.sticky-contact-card {
+    background: #fff;
+    border: 1px solid #e6ebf1;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+    transition: 0.25s;
+}
+
+.sticky-contact-card:hover {
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+/* ==========================================
+   PRICE CARD
+========================================== */
+
+.price-card {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #fef3dc 0%, #fff7ed 100%);
+    border-radius: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #fde68a;
+}
+
+.price-card small {
+    display: block;
+    font-size: 12px;
+    color: #92400e;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.price-card h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    color: #78350f;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.price-card span {
+    display: block;
+    font-size: 13px;
+    color: #a16207;
+    font-weight: 500;
+}
+
+/* ==========================================
+   CONTACT ACTIONS
+========================================== */
+
+.contact-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.contact-actions a {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.whatsapp-btn {
+    background: #16a34a;
+    color: #fff;
+    border: none;
+}
+
+.whatsapp-btn:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   OUTLINE BUTTON
+========================================== */
+
+.outline-btn {
+    width: 100%;
+    height: 52px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 2px solid #f97316;
+    border-radius: 14px;
+    color: #f97316;
+    background: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.outline-btn:hover {
+    background: #f97316;
+    color: #fff;
+}
+
+/* ==========================================
+   SECONDARY ACTIONS
+========================================== */
+
+.secondary-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e6ebf1;
+}
+
+.secondary-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    border: 1.5px solid #e6ebf1;
+    border-radius: 10px;
+    background: #fff;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.secondary-actions button:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    background: #f8fafc;
+}
+
+/* ==========================================
+   BOOKING NOTE
+========================================== */
+
+.booking-note {
+    margin-top: 20px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e6ebf1;
+}
+
+.booking-note strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.booking-note p,
+.booking-note li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.booking-note p:last-child,
+.booking-note li:last-child {
+    margin-bottom: 0;
+}
+
+.booking-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.booking-note a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.booking-note a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+    .contact-actions {
+        gap: 10px;
+    }
+
+    .contact-actions a {
+        height: 46px;
+        font-size: 14px;
+    }
+
+    .outline-btn {
+        height: 46px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-actions a {
+        height: 44px;
+        font-size: 13px;
+    }
+
+    .outline-btn {
+        height: 44px;
+        font-size: 13px;
+    }
+}
