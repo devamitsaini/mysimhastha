@@ -1,0 +1,331 @@
+/* ==========================================
+   STAY GALLERY
+========================================== */
+
+.stay-gallery {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 12px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    height: 480px;
+
+}
+
+/* ==========================================
+   MAIN IMAGE
+========================================== */
+
+.gallery-main {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+}
+
+.gallery-main img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+/* ==========================================
+   WISHLIST BUTTON
+========================================== */
+
+.gallery-wishlist {
+
+    position: absolute;
+
+    top: 16px;
+
+    right: 16px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: none;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+
+    color: #64748b;
+
+    font-size: 18px;
+
+}
+
+.gallery-wishlist:hover {
+
+    background: #fff;
+
+    color: #ef4444;
+
+    transform: scale(1.1);
+
+}
+
+/* ==========================================
+   VIEW ALL PHOTOS BUTTON
+========================================== */
+
+.gallery-all-photos {
+
+    position: absolute;
+
+    bottom: 16px;
+
+    right: 16px;
+
+    padding: 10px 18px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+.gallery-all-photos:hover {
+
+    background: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+.gallery-all-photos svg {
+
+    font-size: 16px;
+
+    color: #2563eb;
+
+}
+
+/* ==========================================
+   SIDE IMAGES
+========================================== */
+
+.gallery-side {
+
+    display: grid;
+
+    grid-template-rows: repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+.gallery-side img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+.gallery-side img:hover {
+
+    transform: scale(1.05);
+
+    opacity: 0.9;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .stay-gallery {
+
+        height: 400px;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .stay-gallery {
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: 300px 1fr;
+
+        height: auto;
+
+        gap: 10px;
+
+    }
+
+    .gallery-main {
+
+        border-radius: 16px;
+
+    }
+
+    .gallery-side {
+
+        grid-template-columns: repeat(4, 1fr);
+
+        grid-template-rows: 1fr;
+
+        gap: 8px;
+
+    }
+
+    .gallery-side img {
+
+        border-radius: 12px;
+
+        height: 120px;
+
+    }
+
+    .gallery-wishlist {
+
+        width: 36px;
+
+        height: 36px;
+
+        top: 12px;
+
+        right: 12px;
+
+        font-size: 16px;
+
+    }
+
+    .gallery-all-photos {
+
+        padding: 8px 14px;
+
+        font-size: 13px;
+
+        bottom: 12px;
+
+        right: 12px;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .stay-gallery {
+
+        grid-template-rows: 250px 1fr;
+
+        gap: 8px;
+
+    }
+
+    .gallery-side {
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 6px;
+
+    }
+
+    .gallery-side img {
+
+        height: 100px;
+
+        border-radius: 10px;
+
+    }
+
+    .gallery-wishlist {
+
+        width: 32px;
+
+        height: 32px;
+
+        top: 10px;
+
+        right: 10px;
+
+    }
+
+    .gallery-all-photos {
+
+        padding: 6px 12px;
+
+        font-size: 12px;
+
+        bottom: 10px;
+
+        right: 10px;
+
+    }
+
+}

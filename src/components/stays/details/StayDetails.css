@@ -1,942 +1,939 @@
-/* ==========================================
-   STAY DETAILS PAGE - Complete Styles
-   Property Details Page
-========================================== */
-
-/* ==========================================
-   PAGE LAYOUT
-========================================== */
-
-.stay-details-page {
-    background: #f3f4f6;
-    min-height: 100vh;
-    padding: 20px 0 90px;
-}
-
-.stay-container {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 18px;
-}
-
-.details-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: 24px;
-    align-items: start;
-    margin-top: 20px;
-}
-
-.details-main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-width: 0;
-}
-
-.details-layout > aside,
-.details-layout > :last-child {
-    position: sticky;
-    top: 90px;
-    align-self: start;
-}
-
-/* ==========================================
-   GALLERY SECTION
-========================================== */
-
-.stay-gallery {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 12px;
-    background: #fff;
-    border: 1px solid #e6ebf1;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
-}
-
-.gallery-main {
-    position: relative;
-    height: 450px;
-    overflow: hidden;
-}
-
-.gallery-main img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s;
-}
-
-.gallery-main:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-wishlist {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 18px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.25s;
-    z-index: 10;
-    color: #64748b;
-}
-
-.gallery-wishlist:hover {
-    color: #ef4444;
-    transform: scale(1.1);
-}
-
-.gallery-all-photos {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 12px;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s;
-    z-index: 10;
-}
-
-.gallery-all-photos:hover {
-    background: rgba(0, 0, 0, 0.85);
-    transform: translateY(-2px);
-}
-
-.gallery-side {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    gap: 12px;
-}
-
-.gallery-side img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.gallery-side img:hover {
-    transform: scale(1.03);
-    opacity: 0.9;
-}
-
-/* ==========================================
-   STICKY CONTACT CARD
-========================================== */
-
-.sticky-contact-card {
-    background: #fff;
-    border: 1px solid #e6ebf1;
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
-    transition: 0.25s;
-}
-
-.sticky-contact-card:hover {
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-}
-
-.price-card {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(135deg, #fef3dc 0%, #fff7ed 100%);
-    border-radius: 14px;
-    margin-bottom: 20px;
-    border: 1px solid #fde68a;
-}
-
-.price-card small {
-    display: block;
-    font-size: 12px;
-    color: #92400e;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-}
-
-.price-card h2 {
-    margin: 0;
-    font-size: 32px;
-    font-weight: 800;
-    color: #78350f;
-    line-height: 1;
-    margin-bottom: 6px;
-}
-
-.price-card span {
-    display: block;
-    font-size: 13px;
-    color: #a16207;
-    font-weight: 500;
-}
-
-.primary-btn,
-.whatsapp-btn,
-.outline-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    height: 52px;
-    border: none;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.25s;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.primary-btn {
-    background: #2563eb;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
-.primary-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
-}
-
-.whatsapp-btn {
-    background: #22c55e;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
-}
-
-.whatsapp-btn:hover {
-    background: #16a34a;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.35);
-}
-
-.outline-btn {
-    background: #fff;
-    color: #2563eb;
-    border: 2px solid #2563eb;
-}
-
-.outline-btn:hover {
-    background: #2563eb;
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.secondary-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid #e6ebf1;
-}
-
-.secondary-actions button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 10px;
-    border: 1.5px solid #e6ebf1;
-    border-radius: 10px;
-    background: #fff;
-    color: #475569;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.secondary-actions button:hover {
-    border-color: #2563eb;
-    color: #2563eb;
-    background: #f8fafc;
-}
-
-.booking-note {
-    margin-top: 20px;
-    padding: 16px;
-    background: #f8fafc;
-    border-radius: 12px;
-    border: 1px solid #e6ebf1;
-}
-
-.booking-note strong {
-    display: block;
-    font-size: 14px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 12px;
-}
-
-.booking-note p,
-.booking-note li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: #475569;
-    margin-bottom: 8px;
-    line-height: 1.5;
-}
-
-.booking-note p:last-child,
-.booking-note li:last-child {
-    margin-bottom: 0;
-}
-
-.booking-note ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.booking-note a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.booking-note a:hover {
-    text-decoration: underline;
-}
-
-/* ==========================================
-   AMENITIES SECTION
-========================================== */
-
-.amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 14px;
-    margin-top: 20px;
-}
-
-.amenity-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    padding: 20px 16px;
-    background: #fcfcfd;
-    border: 1px solid #edf2f7;
-    border-radius: 14px;
-    transition: all 0.25s;
-}
-
-.amenity-item:hover {
-    border-color: #ea580c;
-    background: #fffaf6;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.08);
-}
-
-.amenity-item svg {
-    font-size: 28px;
-    color: #ea580c;
-    flex-shrink: 0;
-}
-
-.amenity-item h4 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: #0f172a;
-}
-
-/* ==========================================
-   NEARBY PLACES SECTION
-========================================== */
-
-.nearby-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.nearby-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    background: #fcfcfd;
-    border: 1px solid #edf2f7;
-    border-radius: 14px;
-    transition: all 0.25s;
-}
-
-.nearby-item:hover {
-    border-color: #2563eb;
-    background: #f8fafc;
-    transform: translateX(4px);
-}
-
-.nearby-left {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex: 1;
-}
-
-.nearby-left svg {
-    font-size: 20px;
-    color: #2563eb;
-    flex-shrink: 0;
-}
-
-.nearby-left h4 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 2px;
-}
-
-.nearby-left span {
-    font-size: 13px;
-    color: #64748b;
-}
-
-.distance-chip {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: #dbeafe;
-    color: #1e40af;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.distance-chip svg {
-    font-size: 14px;
-}
-
-/* ==========================================
-   PROPERTY MAP SECTION
-========================================== */
-
-.property-map {
-    margin-top: 20px;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid #e6ebf1;
-    height: 400px;
-}
-
-.property-map iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* ==========================================
-   PROPERTY RULES SECTION
-========================================== */
-
-.rules-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-top: 20px;
-}
-
-.rule-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px;
-    background: #fcfcfd;
-    border: 1px solid #edf2f7;
-    border-radius: 14px;
-    transition: all 0.25s;
-}
-
-.rule-item:hover {
-    border-color: #16a34a;
-    background: #f0fdf4;
-    transform: translateY(-2px);
-}
-
-.rule-item svg {
-    font-size: 20px;
-    color: #16a34a;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.rule-item strong {
-    display: block;
-    font-size: 14px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 4px;
-}
-
-.rule-item span {
-    font-size: 13px;
-    color: #64748b;
-    line-height: 1.5;
-}
-
-/* ==========================================
-   SIMILAR STAYS SECTION
-========================================== */
-
-.similar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
-    margin-top: 20px;
-}
-
-.similar-card {
-    display: block;
-    background: #fff;
-    border: 1px solid #e6ebf1;
-    border-radius: 16px;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s;
-}
-
-.similar-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
-    border-color: #ea580c;
-}
-
-.similar-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.4s;
-}
-
-.similar-card:hover img {
-    transform: scale(1.05);
-}
-
-.similar-content {
-    padding: 16px;
-}
-
-.similar-content h3 {
-    margin: 0 0 8px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #0f172a;
-    line-height: 1.4;
-}
-
-.similar-content p {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin: 0;
-    font-size: 13px;
-    color: #64748b;
-}
-
-.similar-content p svg {
-    color: #2563eb;
-    font-size: 14px;
-    flex-shrink: 0;
-}
-
-.similar-price {
-    font-size: 18px;
-    font-weight: 800;
-    color: #ea580c;
-}
-
-.similar-content > div:last-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #e6ebf1;
-}
-
-.similar-content > div:last-child span {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #f59e0b;
-}
-
-/* ==========================================
-   MOBILE STICKY BAR
-========================================== */
-
-.mobile-sticky-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-top: 1px solid #e6ebf1;
-    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.1);
-    padding: 12px 18px;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.mobile-price {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.mobile-price small {
-    font-size: 11px;
-    color: #64748b;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.mobile-price strong {
-    font-size: 20px;
-    font-weight: 800;
-    color: #0f172a;
-    line-height: 1;
-}
-
-.mobile-buttons {
-    display: flex;
-    gap: 8px;
-    flex: 1;
-}
-
-.mobile-call,
-.mobile-whatsapp {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.25s;
-    text-decoration: none;
-}
-
-.mobile-call {
-    background: #2563eb;
-    color: #fff;
-}
-
-.mobile-call:hover {
-    background: #1d4ed8;
-}
-
-.mobile-whatsapp {
-    background: #22c55e;
-    color: #fff;
-}
-
-.mobile-whatsapp:hover {
-    background: #16a34a;
-}
-
-/* ==========================================
-   SHARED CARD STYLES
-========================================== */
-
-.details-card {
-    background: #fff;
-    border: 1px solid #e6ebf1;
-    border-radius: 18px;
-    padding: 28px;
-    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
-    transition: 0.25s;
-}
-
-.details-card:hover {
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-}
-
-.details-card h2 {
-    margin: 0 0 18px;
-    font-size: 28px;
-    font-weight: 700;
-    color: #0f172a;
-    line-height: 1.2;
-}
-
-.details-card p {
-    margin: 0;
-    color: #475569;
-    font-size: 16px;
-    line-height: 1.9;
-}
-
-.details-card + .details-card {
-    margin-top: 0;
-}
-
-/* ==========================================
-   BREADCRUMB
-========================================== */
-
-.hotel-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 14px;
-    font-size: 13px;
-}
-
-.hotel-breadcrumb a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.hotel-breadcrumb a:hover {
-    color: #1d4ed8;
-}
-
-.hotel-breadcrumb span {
-    color: #64748b;
-}
-
-.breadcrumb-current {
-    color: #0f172a;
-    font-weight: 600;
-}
-
-.breadcrumb-separator {
-    color: #cbd5e1;
-}
-
-/* ==========================================
-   RESPONSIVE - TABLET
-========================================== */
-
-@media (max-width: 1100px) {
-    .details-layout {
-        grid-template-columns: 1fr 320px;
-    }
-}
-
-@media (max-width: 992px) {
-    .details-layout {
-        grid-template-columns: 1fr;
-        gap: 18px;
+    /* ==========================================
+    STAY DETAILS PAGE - Complete Styles
+    Property Details Page
+    ========================================== */
+
+    /* ==========================================
+    PAGE LAYOUT
+    ========================================== */
+
+    .stay-details-page {
+        background: #f3f4f6;
+        min-height: 100vh;
+        padding: 20px 0 90px;
     }
 
+    .stay-container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 18px;
+    }
+
+    .details-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 24px;
+        align-items: start;
+        margin-top: 24px;
+    }
+
+    .details-main {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        min-width: 0;
+    }
+
+    .details-layout > aside,
     .details-layout > :last-child {
-        position: static;
+        position: sticky;
+        top: 90px;
+        align-self: start;
     }
+
+    /* ==========================================
+    GALLERY SECTION
+    ========================================== */
 
     .stay-gallery {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 12px;
+        background: #fff;
+        border: 1px solid #e6ebf1;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+        margin-bottom: 24px;
     }
 
     .gallery-main {
-        height: 350px;
+        position: relative;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .gallery-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+    }
+
+    .gallery-main:hover img {
+        transform: scale(1.05);
+    }
+
+    .gallery-wishlist {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 18px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.25s;
+        z-index: 10;
+        color: #64748b;
+    }
+
+    .gallery-wishlist:hover {
+        color: #ef4444;
+        transform: scale(1.1);
+    }
+
+    .gallery-all-photos {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s;
+        z-index: 10;
+    }
+
+    .gallery-all-photos:hover {
+        background: rgba(0, 0, 0, 0.85);
+        transform: translateY(-2px);
     }
 
     .gallery-side {
-        display: none;
-    }
-
-    .rules-list {
+        display: grid;
         grid-template-columns: 1fr;
-    }
-
-    .amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ==========================================
-   RESPONSIVE - MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-    .stay-details-page {
-        padding: 12px 0 85px;
-    }
-
-    .stay-container {
-        padding: 0 14px;
-    }
-
-    .details-main {
-        gap: 16px;
-    }
-
-    .details-layout {
-        margin-top: 14px;
-    }
-
-    .hotel-breadcrumb {
-        display: none;
-    }
-
-    .details-card {
-        padding: 18px;
-        border-radius: 16px;
-    }
-
-    .details-card h2 {
-        font-size: 22px;
-        margin-bottom: 14px;
-    }
-
-    .details-card p {
-        font-size: 15px;
-        line-height: 1.75;
-    }
-
-    .gallery-main {
-        height: 280px;
-    }
-
-    .gallery-wishlist {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
-    }
-
-    .gallery-all-photos {
-        padding: 8px 14px;
-        font-size: 12px;
-    }
-
-    .amenities-grid {
-        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
         gap: 12px;
     }
 
-    .amenity-item {
-        padding: 16px;
+    .gallery-side img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: all 0.3s;
     }
 
-    .similar-grid {
-        grid-template-columns: 1fr;
+    .gallery-side img:hover {
+        transform: scale(1.03);
+        opacity: 0.9;
     }
+
+    /* ==========================================
+    STICKY CONTACT CARD
+    ========================================== */
 
     .sticky-contact-card {
-        position: static;
-    }
-}
-
-/* ==========================================
-   RESPONSIVE - SMALL MOBILE
-========================================== */
-
-@media (max-width: 480px) {
-    .stay-container {
-        padding: 0 10px;
+        background: #fff;
+        border: 1px solid #e6ebf1;
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+        transition: 0.25s;
     }
 
-    .details-main {
-        gap: 14px;
+    .sticky-contact-card:hover {
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
     }
 
-    .details-layout {
-        gap: 14px;
+    .price-card {
+        text-align: center;
+        padding: 20px;
+        background: linear-gradient(135deg, #fef3dc 0%, #fff7ed 100%);
+        border-radius: 14px;
+        margin-bottom: 20px;
+        border: 1px solid #fde68a;
     }
 
-    .details-card {
-        padding: 16px;
-    }
-
-    .details-card h2 {
-        font-size: 20px;
-    }
-
-    .details-card p {
-        font-size: 14px;
-    }
-
-    .gallery-main {
-        height: 240px;
-    }
-
-    .gallery-wishlist {
-        width: 34px;
-        height: 34px;
-        top: 10px;
-        right: 10px;
-    }
-
-    .gallery-all-photos {
-        bottom: 10px;
-        right: 10px;
-        padding: 7px 12px;
-        font-size: 11px;
+    .price-card small {
+        display: block;
+        font-size: 12px;
+        color: #92400e;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
     }
 
     .price-card h2 {
-        font-size: 26px;
+        margin: 0;
+        font-size: 32px;
+        font-weight: 800;
+        color: #78350f;
+        line-height: 1;
+        margin-bottom: 6px;
+    }
+
+    .price-card span {
+        display: block;
+        font-size: 13px;
+        color: #a16207;
+        font-weight: 500;
     }
 
     .primary-btn,
     .whatsapp-btn,
     .outline-btn {
-        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        height: 52px;
+        border: none;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s;
+        text-decoration: none;
+        margin-bottom: 10px;
+    }
+
+    .primary-btn {
+        background: #2563eb;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .primary-btn:hover {
+        background: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    }
+
+    .whatsapp-btn {
+        background: #22c55e;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+    }
+
+    .whatsapp-btn:hover {
+        background: #16a34a;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(34, 197, 94, 0.35);
+    }
+
+    .outline-btn {
+        background: #fff;
+        color: #2563eb;
+        border: 2px solid #2563eb;
+    }
+
+    .outline-btn:hover {
+        background: #2563eb;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+    .secondary-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #e6ebf1;
+    }
+
+    .secondary-actions button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px;
+        border: 1.5px solid #e6ebf1;
+        border-radius: 10px;
+        background: #fff;
+        color: #475569;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .secondary-actions button:hover {
+        border-color: #2563eb;
+        color: #2563eb;
+        background: #f8fafc;
+    }
+
+    .booking-note {
+        margin-top: 20px;
+        padding: 16px;
+        background: #f8fafc;
+        border-radius: 12px;
+        border: 1px solid #e6ebf1;
+    }
+
+    .booking-note strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 12px;
+    }
+
+    .booking-note p,
+    .booking-note li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #475569;
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
+
+    .booking-note p:last-child,
+    .booking-note li:last-child {
+        margin-bottom: 0;
+    }
+
+    .booking-note ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .booking-note a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .booking-note a:hover {
+        text-decoration: underline;
+    }
+
+    /* ==========================================
+    AMENITIES SECTION
+    ========================================== */
+
+    .amenities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 14px;
+        margin-top: 20px;
+    }
+
+    .amenity-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        padding: 20px 16px;
+        background: #fcfcfd;
+        border: 1px solid #edf2f7;
+        border-radius: 14px;
+        transition: all 0.25s;
+    }
+
+    .amenity-item:hover {
+        border-color: #ea580c;
+        background: #fffaf6;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(234, 88, 12, 0.08);
+    }
+
+    .amenity-item svg {
+        font-size: 28px;
+        color: #ea580c;
+        flex-shrink: 0;
+    }
+
+    .amenity-item h4 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #0f172a;
+    }
+
+    /* ==========================================
+    NEARBY PLACES SECTION
+    ========================================== */
+
+    .nearby-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .nearby-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        background: #fcfcfd;
+        border: 1px solid #edf2f7;
+        border-radius: 14px;
+        transition: all 0.25s;
+    }
+
+    .nearby-item:hover {
+        border-color: #2563eb;
+        background: #f8fafc;
+        transform: translateX(4px);
+    }
+
+    .nearby-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex: 1;
+    }
+
+    .nearby-left svg {
+        font-size: 20px;
+        color: #2563eb;
+        flex-shrink: 0;
+    }
+
+    .nearby-left h4 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 2px;
+    }
+
+    .nearby-left span {
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    .distance-chip {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        background: #dbeafe;
+        color: #1e40af;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .distance-chip svg {
         font-size: 14px;
     }
 
+    /* ==========================================
+    PROPERTY MAP SECTION
+    ========================================== */
+
+    .property-map {
+        margin-top: 20px;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #e6ebf1;
+        height: 400px;
+    }
+
+    .property-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* ==========================================
+    PROPERTY RULES SECTION
+    ========================================== */
+
+    .rules-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+    }
+
+    .rule-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+        background: #fcfcfd;
+        border: 1px solid #edf2f7;
+        border-radius: 14px;
+        transition: all 0.25s;
+    }
+
+    .rule-item:hover {
+        border-color: #16a34a;
+        background: #f0fdf4;
+        transform: translateY(-2px);
+    }
+
+    .rule-item svg {
+        font-size: 20px;
+        color: #16a34a;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .rule-item strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 4px;
+    }
+
+    .rule-item span {
+        font-size: 13px;
+        color: #64748b;
+        line-height: 1.5;
+    }
+
+    /* ==========================================
+    SIMILAR STAYS SECTION
+    ========================================== */
+
+    .similar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .similar-card {
+        display: block;
+        background: #fff;
+        border: 1px solid #e6ebf1;
+        border-radius: 16px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s;
+    }
+
+    .similar-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+        border-color: #ea580c;
+    }
+
+    .similar-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.4s;
+    }
+
+    .similar-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .similar-content {
+        padding: 16px;
+    }
+
+    .similar-content h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.4;
+    }
+
+    .similar-content p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    .similar-content p svg {
+        color: #2563eb;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    .similar-price {
+        font-size: 18px;
+        font-weight: 800;
+        color: #ea580c;
+    }
+
+    .similar-content > div:last-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #e6ebf1;
+    }
+
+    .similar-content > div:last-child span {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #f59e0b;
+    }
+
+    /* ==========================================
+    MOBILE STICKY BAR
+    ========================================== */
+
     .mobile-sticky-bar {
-        padding: 10px 14px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid #e6ebf1;
+        box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.1);
+        padding: 12px 18px;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .mobile-price {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .mobile-price small {
+        font-size: 11px;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .mobile-price strong {
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: 800;
+        color: #0f172a;
+        line-height: 1;
+    }
+
+    .mobile-buttons {
+        display: flex;
+        gap: 8px;
+        flex: 1;
     }
 
     .mobile-call,
     .mobile-whatsapp {
-        padding: 8px 12px;
-        font-size: 12px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s;
+        text-decoration: none;
     }
-}
+
+    .mobile-call {
+        background: #2563eb;
+        color: #fff;
+    }
+
+    .mobile-call:hover {
+        background: #1d4ed8;
+    }
+
+    .mobile-whatsapp {
+        background: #22c55e;
+        color: #fff;
+    }
+
+    .mobile-whatsapp:hover {
+        background: #16a34a;
+    }
+
+    /* ==========================================
+    SHARED CARD STYLES
+    ========================================== */
+
+    .details-card {
+        background: #fff;
+        border: 1px solid #e6ebf1;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+        transition: 0.25s;
+    }
+
+    .details-card:hover {
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .details-card h2 {
+        margin: 0 0 18px;
+        font-size: 28px;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.2;
+    }
+
+    .details-card p {
+        margin: 0;
+        color: #475569;
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .details-card + .details-card {
+        margin-top: 24px;
+    }
+
+    /* ==========================================
+    BREADCRUMB
+    ========================================== */
+
+    .hotel-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
+    .hotel-breadcrumb a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .hotel-breadcrumb a:hover {
+        color: #1d4ed8;
+    }
+
+    .hotel-breadcrumb span {
+        color: #64748b;
+    }
+
+    .breadcrumb-current {
+        color: #0f172a;
+        font-weight: 600;
+    }
+
+    .breadcrumb-separator {
+        color: #cbd5e1;
+    }
+
+    /* ==========================================
+    RESPONSIVE - TABLET
+    ========================================== */
+
+    @media (max-width: 1100px) {
+        .details-layout {
+            grid-template-columns: 1fr 320px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .details-layout {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .details-layout > :last-child {
+            position: static;
+        }
+
+        .stay-gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-main {
+            height: 350px;
+        }
+
+        .gallery-side {
+            display: none;
+        }
+
+        .rules-list {
+            grid-template-columns: 1fr;
+        }
+
+        .amenities-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* ==========================================
+    RESPONSIVE - MOBILE
+    ========================================== */
+
+    @media (max-width: 768px) {
+        .stay-details-page {
+            padding: 12px 0 85px;
+        }
+
+        .stay-container {
+            padding: 0 14px;
+        }
+
+        .details-main {
+            gap: 16px;
+        }
+
+        .details-layout {
+            margin-top: 14px;
+        }
+
+        .details-card {
+            padding: 18px;
+            border-radius: 16px;
+        }
+
+        .details-card h2 {
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+
+        .details-card p {
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        .gallery-main {
+            height: 280px;
+        }
+
+        .gallery-wishlist {
+            width: 36px;
+            height: 36px;
+            font-size: 16px;
+        }
+
+        .gallery-all-photos {
+            padding: 8px 14px;
+            font-size: 12px;
+        }
+
+        .amenities-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .amenity-item {
+            padding: 16px;
+        }
+
+        .similar-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .sticky-contact-card {
+            position: static;
+        }
+    }
+
+    /* ==========================================
+    RESPONSIVE - SMALL MOBILE
+    ========================================== */
+
+    @media (max-width: 480px) {
+        .stay-container {
+            padding: 0 10px;
+        }
+
+        .details-main {
+            gap: 14px;
+        }
+
+        .details-layout {
+            gap: 14px;
+        }
+
+        .details-card {
+            padding: 16px;
+        }
+
+        .details-card h2 {
+            font-size: 20px;
+        }
+
+        .details-card p {
+            font-size: 14px;
+        }
+
+        .gallery-main {
+            height: 240px;
+        }
+
+        .gallery-wishlist {
+            width: 34px;
+            height: 34px;
+            top: 10px;
+            right: 10px;
+        }
+
+        .gallery-all-photos {
+            bottom: 10px;
+            right: 10px;
+            padding: 7px 12px;
+            font-size: 11px;
+        }
+
+        .price-card h2 {
+            font-size: 26px;
+        }
+
+        .primary-btn,
+        .whatsapp-btn,
+        .outline-btn {
+            height: 48px;
+            font-size: 14px;
+        }
+
+        .mobile-sticky-bar {
+            padding: 10px 14px;
+        }
+
+        .mobile-price strong {
+            font-size: 18px;
+        }
+
+        .mobile-call,
+        .mobile-whatsapp {
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+    }

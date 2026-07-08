@@ -1,4 +1,5 @@
 import { FiHeart, FiCamera } from "react-icons/fi";
+import "./StayGallery.css";
 
 export default function StayGallery({ stay }) {
   let images = [];

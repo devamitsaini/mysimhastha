@@ -5,6 +5,7 @@ import {
   FiClock,
   FiHome,
 } from "react-icons/fi";
+import "./StayInfo.css";
 
 export default function StayInfo({ stay }) {
   return (
