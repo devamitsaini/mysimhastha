@@ -71,7 +71,7 @@
 
       <link
         rel="canonical"
-        href={`https://www.mysimhastha.com/stays/${stay.slug}`}
+        href={`https://mysimhastha.com/stays/${stay.slug}`}
       />
 
       <meta property="og:type" content="website" />
@@ -96,7 +96,7 @@
 
       <meta
         property="og:url"
-        content={`https://www.mysimhastha.com/stays/${stay.slug}`}
+        content={`https://mysimhastha.com/stays/${stay.slug}`}
       />
 
     </Helmet>

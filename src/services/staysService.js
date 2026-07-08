@@ -492,3 +492,24 @@ export const fetchSimilarStays = async (stay) => {
 
   return { data: data || [], error };
 };
+
+export const fetchHeroFilters = async () => {
+  try {
+    const [types, locations] = await Promise.all([
+      fetchAllStayTypes(),
+      fetchAllLocalities(),
+    ]);
+
+    return {
+      stayTypes: types.data || [],
+      locations: locations.data || [],
+      error: null,
+    };
+  } catch (error) {
+    return {
+      stayTypes: [],
+      locations: [],
+      error,
+    };
+  }
+};

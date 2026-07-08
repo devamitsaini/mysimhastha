@@ -1,0 +1,178 @@
+/* ==========================================
+   LISTING HEADER
+========================================== */
+
+.listing-header {
+    background: #fff;
+    border-bottom: 1px solid #e6ebf1;
+    padding: 24px 0;
+    margin-bottom: 24px;
+}
+
+/* ==========================================
+   HEADER TOP
+========================================== */
+
+.listing-header-top {
+    margin-bottom: 20px;
+}
+
+.listing-title h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+}
+
+.listing-title p {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ==========================================
+   SEARCH BAR
+========================================== */
+
+.listing-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f3f4f6;
+    border: 1px solid #e6ebf1;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    transition: all 0.2s;
+}
+
+.listing-search:focus-within {
+    background: #fff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.listing-search svg {
+    color: #64748b;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.listing-search input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    color: #0f172a;
+    outline: none;
+    min-width: 0;
+}
+
+.listing-search input::placeholder {
+    color: #94a3b8;
+}
+
+/* ==========================================
+   MOBILE ACTION BAR
+========================================== */
+
+.mobile-action-bar {
+    display: none;
+    gap: 10px;
+}
+
+.mobile-action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #e6ebf1;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mobile-action-btn:hover {
+    background: #f3f4f6;
+    border-color: #cbd5e1;
+}
+
+.mobile-action-btn svg {
+    font-size: 18px;
+    color: #64748b;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 768px) {
+    .listing-header {
+        padding: 20px 0;
+        margin-bottom: 16px;
+    }
+
+    .listing-title h1 {
+        font-size: 22px;
+    }
+
+    .listing-title p {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+    .listing-header {
+        padding: 16px 0;
+    }
+
+    .listing-title h1 {
+        font-size: 20px;
+    }
+
+    .listing-search {
+        padding: 10px 14px;
+    }
+
+    .listing-search svg {
+        font-size: 18px;
+    }
+
+    .listing-search input {
+        font-size: 14px;
+    }
+
+    .mobile-action-bar {
+        display: flex;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+    .listing-title h1 {
+        font-size: 18px;
+    }
+
+    .mobile-action-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .mobile-action-btn svg {
+        font-size: 16px;
+    }
+}

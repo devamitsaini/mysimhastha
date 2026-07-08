@@ -14,16 +14,6 @@ import HomePage from "./pages/Home";
 
 import GuidesPage from "./pages/GuidesPage";
 
-import Stays from "./pages/Stays/Stays";
-
-{/*const StayListingPage = lazy(() =>
-  import("./pages/Stays/StayListingPage")
-);*/}
-
-const StayDetailsPage = lazy(() =>
-  import("./pages/StayDetails/StayDetails")
-);
-
 
 
 import { Navigate } from "react-router-dom";
@@ -37,6 +27,20 @@ const Simhastha2028Page = lazy(() => import("./pages/Simhastha2028"));
 const SnanCalendarPage = lazy(() => import("./pages/SnanCalendar"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
+
+const StayMapPage = lazy(() =>
+  import("./pages/Stays/StayMapPage")
+);
+
+const StayHomePage = lazy(() => import("./pages/Stays/StayHomePage"));
+
+const StayListingPage = lazy(() =>
+  import("./pages/Stays/StayListingPage")
+);
+
+const StayDetailsPage = lazy(() =>
+  import("./pages/Stays/StayDetailsPage")
+);
 
 const Simhastha2028 = lazy(() => import("./guides/en/Simhastha2028"));
 const Simhastha2028HI = lazy(() => import("./guides/hi/Simhastha2028"));
@@ -106,21 +110,18 @@ function App() {
             <Route path="/hotels" element={<HotelsPage />} />
 
             {/* STAYS ROUTES */}
-            <Route path="/stays" element={<Stays />} />
-            {/*<Route path="/stays/list" element={<StayListingPage />} />*/}
+            <Route path="/stays" element={<StayHomePage />} />
+            <Route path="/stays/list" element={<StayListingPage />} />
             <Route path="/stays/:slug" element={<StayDetailsPage />} />
-
-            
+            <Route path="/stays/map" element={<StayMapPage />}/>
+                      
             <Route path="/snan-calendar" element={<SnanCalendarPage />} />
             <Route path="/simhastha-2028" element={<Simhastha2028Page />} />
             <Route path="/live-darshan" element={<LiveDarshanPage />} />
             <Route path="/missing-persons" element={
-              <MissingPersonsPage
-                openOnLoad={openMissingForm}
-                setOpenMissingForm={setOpenMissingForm}
-              />
-            } />
-
+            <MissingPersonsPage openOnLoad={openMissingForm} 
+            setOpenMissingForm={setOpenMissingForm}/>} />
+            
             {/* GUIDES ROUTES */}
               <Route path="/guides" element={<GuidesPage />} />
 

@@ -1,0 +1,453 @@
+/* ==========================================
+   HOTEL INFO CARD
+========================================== */
+
+.stay-info-card{
+
+    background:#fff;
+
+    border:1px solid #e8edf4;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:0 10px 35px rgba(15,23,42,.05);
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.stay-info-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:24px;
+
+}
+
+.stay-info-header h1{
+
+    margin:0;
+
+    font-size:34px;
+
+    line-height:1.25;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+    letter-spacing:-.3px;
+
+}
+
+/* ==========================================
+   RATING
+========================================== */
+
+.stay-rating{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:110px;
+
+    padding:16px;
+
+    border-radius:18px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    box-shadow:0 12px 30px rgba(22,163,74,.22);
+
+}
+
+.stay-rating svg{
+
+    font-size:18px;
+
+    margin-bottom:4px;
+
+}
+
+.stay-rating strong{
+
+    font-size:24px;
+
+    line-height:1;
+
+}
+
+.stay-rating small{
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    opacity:.95;
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.stay-badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:16px;
+
+}
+
+.stay-badges span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+.stay-badges .verified{
+
+    background:#ecfdf5;
+
+    border-color:#bbf7d0;
+
+    color:#15803d;
+
+}
+
+/* ==========================================
+   LOCATION
+========================================== */
+
+.stay-location-row{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin:22px 0;
+
+    font-size:15px;
+
+    color:#475569;
+
+    line-height:1.7;
+
+}
+
+.stay-location-row svg{
+
+    color:#2563eb;
+
+    font-size:19px;
+
+    margin-top:2px;
+
+}
+
+/* ==========================================
+   HIGHLIGHTS
+========================================== */
+
+.stay-highlights{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.stay-highlights>div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:#fcfcfd;
+
+    border:1px solid #edf2f7;
+
+    transition:.25s;
+
+}
+
+.stay-highlights>div:hover{
+
+    border-color:#ea580c;
+
+    background:#fffaf6;
+
+    transform:translateY(-2px);
+
+}
+
+.stay-highlights svg{
+
+    width:50px;
+
+    height:50px;
+
+    padding:13px;
+
+    border-radius:15px;
+
+    background:#fff4ed;
+
+    color:#ea580c;
+
+    flex-shrink:0;
+
+}
+
+.stay-highlights strong{
+
+    display:block;
+
+    font-size:14px;
+
+    color:#64748b;
+
+    margin-bottom:4px;
+
+}
+
+.stay-highlights span{
+
+    display:block;
+
+    font-size:16px;
+
+    color:#0f172a;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+.stay-info-header{
+
+flex-direction:column;
+
+}
+
+.stay-rating{
+
+flex-direction:row;
+
+gap:10px;
+
+padding:12px 18px;
+
+align-items:center;
+
+}
+
+.stay-rating svg{
+
+margin:0;
+
+}
+
+.stay-highlights{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.stay-info-card{
+
+padding:18px;
+
+border-radius:18px;
+
+}
+
+.stay-info-header{
+
+gap:16px;
+
+}
+
+.stay-info-header h1{
+
+font-size:25px;
+
+line-height:1.35;
+
+}
+
+.stay-rating{
+
+width:100%;
+
+justify-content:center;
+
+border-radius:14px;
+
+}
+
+.stay-rating strong{
+
+font-size:20px;
+
+}
+
+.stay-rating small{
+
+font-size:11px;
+
+}
+
+.stay-badges{
+
+gap:6px;
+
+margin-top:12px;
+
+}
+
+.stay-badges span{
+
+padding:6px 10px;
+
+font-size:11px;
+
+}
+
+.stay-location-row{
+
+font-size:14px;
+
+margin:16px 0;
+
+}
+
+.stay-highlights{
+
+gap:12px;
+
+}
+
+.stay-highlights>div{
+
+padding:14px;
+
+gap:12px;
+
+border-radius:14px;
+
+}
+
+.stay-highlights svg{
+
+width:42px;
+
+height:42px;
+
+padding:10px;
+
+}
+
+.stay-highlights strong{
+
+font-size:12px;
+
+}
+
+.stay-highlights span{
+
+font-size:14px;
+
+}
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+.stay-info-card{
+
+padding:16px;
+
+}
+
+.stay-info-header h1{
+
+font-size:22px;
+
+}
+
+.stay-location-row{
+
+font-size:13px;
+
+}
+
+}

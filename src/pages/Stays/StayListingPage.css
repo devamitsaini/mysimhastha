@@ -1,0 +1,168 @@
+/* ==========================================
+   STAY LIST PAGE
+========================================== */
+
+.stay-list-page{
+    background:#f5f7fb;
+    min-height:100vh;
+    padding:32px 0 80px;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.stay-container{
+    width:min(1500px,94%);
+    margin:auto;
+}
+
+/* ==========================================
+   LAYOUT
+========================================== */
+
+.listing-layout{
+
+    display:grid;
+
+    grid-template-columns:320px 1fr;
+
+    gap:32px;
+
+    align-items:start;
+
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.listing-layout > :first-child{
+
+    position:sticky;
+
+    top:96px;
+
+    align-self:start;
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.listing-layout > :last-child{
+
+    min-width:0;
+
+}
+
+/* ==========================================
+   PREMIUM SPACING
+========================================== */
+
+.property-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:26px;
+
+}
+
+.results-bar{
+
+    margin-bottom:18px;
+
+}
+
+.active-filters{
+
+    margin-bottom:22px;
+
+}
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+@media(max-width:1280px){
+
+.listing-layout{
+
+grid-template-columns:290px 1fr;
+
+gap:24px;
+
+}
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+.stay-list-page{
+
+padding-top:18px;
+
+}
+
+.stay-container{
+
+width:95%;
+
+}
+
+.listing-layout{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.listing-layout > :first-child{
+
+position:static;
+
+}
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.stay-list-page{
+
+padding:12px 0 95px;
+
+}
+
+.stay-container{
+
+width:100%;
+
+padding:0 14px;
+
+}
+
+.listing-layout{
+
+display:block;
+
+}
+
+.property-list{
+
+gap:18px;
+
+}
+
+}

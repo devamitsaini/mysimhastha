@@ -1,0 +1,221 @@
+/* ==========================================
+   STAY MAP PAGE
+========================================== */
+
+.stay-map-page {
+    background: #f3f4f6;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* ==========================================
+   MAP CONTAINER
+========================================== */
+
+.stay-map-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 18px;
+}
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid #e6ebf1;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 24px;
+}
+
+.back-btn:hover {
+    background: #f3f4f6;
+    border-color: #cbd5e1;
+}
+
+.back-btn svg {
+    font-size: 18px;
+    color: #64748b;
+}
+
+/* ==========================================
+   COMING SOON CARD
+========================================== */
+
+.map-coming-card {
+    background: #fff;
+    border: 1px solid #e6ebf1;
+    border-radius: 18px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.map-icon {
+    font-size: 64px;
+    color: #2563eb;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.map-coming-card h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.map-coming-card p {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================
+   GOOGLE MAPS BUTTON
+========================================== */
+
+.open-google-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.open-google-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.open-google-btn svg {
+    font-size: 18px;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 768px) {
+    .map-coming-card {
+        padding: 40px 24px;
+    }
+
+    .map-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .map-coming-card h1 {
+        font-size: 26px;
+    }
+
+    .map-coming-card p {
+        font-size: 15px;
+    }
+
+    .open-google-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+    .stay-map-page {
+        padding: 12px 0;
+    }
+
+    .stay-map-container {
+        padding: 0 14px;
+    }
+
+    .back-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .map-coming-card {
+        padding: 32px 20px;
+    }
+
+    .map-icon {
+        font-size: 40px;
+        margin-bottom: 16px;
+    }
+
+    .map-coming-card h1 {
+        font-size: 22px;
+    }
+
+    .map-coming-card p {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .open-google-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+    .stay-map-container {
+        padding: 0 10px;
+    }
+
+    .map-coming-card {
+        padding: 24px 16px;
+    }
+
+    .map-icon {
+        font-size: 36px;
+    }
+
+    .map-coming-card h1 {
+        font-size: 20px;
+    }
+
+    .map-coming-card p {
+        font-size: 13px;
+    }
+
+    .open-google-btn {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+}

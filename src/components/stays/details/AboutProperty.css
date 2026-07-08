@@ -1,0 +1,349 @@
+/* ==========================================
+   ABOUT PROPERTY
+========================================== */
+
+.details-card{
+
+    background:#fff;
+
+    border:1px solid #e8edf4;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
+
+    transition:.25s;
+
+}
+
+.details-card:hover{
+
+    box-shadow:0 16px 40px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.details-card h2{
+
+    margin:0 0 18px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    line-height:1.2;
+
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.details-card p{
+
+    margin:0;
+
+    color:#475569;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+}
+
+/* ==========================================
+   READ MORE
+========================================== */
+
+.read-more-btn{
+
+    margin-top:18px;
+
+    border:none;
+
+    background:none;
+
+    color:#ea580c;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    padding:0;
+
+    transition:.25s;
+
+}
+
+.read-more-btn:hover{
+
+    color:#c2410c;
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================
+   PROPERTY HIGHLIGHTS
+========================================== */
+
+.property-highlights{
+
+    margin-top:30px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:16px;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.property-highlights > div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:18px;
+
+    border:1px solid #edf2f7;
+
+    border-radius:16px;
+
+    background:#fcfcfd;
+
+    transition:.25s;
+
+}
+
+.property-highlights > div:hover{
+
+    border-color:#ea580c;
+
+    background:#fffaf6;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 24px rgba(234,88,12,.08);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.property-highlights svg{
+
+    width:48px;
+
+    height:48px;
+
+    min-width:48px;
+
+    border-radius:14px;
+
+    background:#fff4ed;
+
+    color:#ea580c;
+
+    padding:12px;
+
+    font-size:22px;
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.property-highlights strong{
+
+    display:block;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    margin-bottom:4px;
+
+}
+
+.property-highlights span{
+
+    display:block;
+
+    font-size:14px;
+
+    color:#64748b;
+
+    line-height:1.5;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+.details-card{
+
+padding:24px;
+
+}
+
+.property-highlights{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.details-card{
+
+padding:18px;
+
+border-radius:16px;
+
+}
+
+.details-card h2{
+
+font-size:22px;
+
+margin-bottom:14px;
+
+}
+
+.details-card p{
+
+font-size:15px;
+
+line-height:1.75;
+
+}
+
+.read-more-btn{
+
+margin-top:14px;
+
+font-size:14px;
+
+}
+
+.property-highlights{
+
+grid-template-columns:1fr;
+
+gap:12px;
+
+margin-top:22px;
+
+}
+
+.property-highlights > div{
+
+padding:14px;
+
+border-radius:14px;
+
+gap:14px;
+
+}
+
+.property-highlights svg{
+
+width:42px;
+
+height:42px;
+
+min-width:42px;
+
+padding:10px;
+
+font-size:18px;
+
+}
+
+.property-highlights strong{
+
+font-size:14px;
+
+}
+
+.property-highlights span{
+
+font-size:13px;
+
+}
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+.details-card{
+
+padding:16px;
+
+}
+
+.details-card h2{
+
+font-size:20px;
+
+}
+
+.details-card p{
+
+font-size:14px;
+
+}
+
+.property-highlights > div{
+
+padding:12px;
+
+}
+
+.property-highlights svg{
+
+width:38px;
+
+height:38px;
+
+min-width:38px;
+
+padding:9px;
+
+}
+
+}

@@ -1,0 +1,10 @@
+.property-list-wrapper{
+    width:100%;
+    min-width:0;
+}
+
+.property-list{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}

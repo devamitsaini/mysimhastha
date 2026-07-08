@@ -1,0 +1,365 @@
+/* ==========================================
+   STAY HERO - MYSIMHASTHA
+========================================== */
+
+.stay-hero {
+  padding: 12px 0 20px;
+  background: #f7f9fc;
+}
+
+.stay-container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 4px;
+}
+
+.stay-hero-overlay {
+  display: none;
+}
+
+/* ==========================================
+   HERO CARD
+========================================== */
+
+.stay-hero-card {
+  background: linear-gradient(
+    135deg,
+    #071b55 0%,
+    #17388f 65%,
+    #d76d2d 100%
+  );
+
+  border-radius: 24px;
+
+  padding: 20px 28px;
+  min-height: 220px;
+
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+
+  gap: 40px;
+
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.stay-hero-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -80px;
+
+  bottom: -80px;
+
+  width: 320px;
+
+  height: 320px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.05);
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.stay-hero-content {
+  display: contents;
+}
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.stay-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.12);
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  margin-bottom: 14px;
+}
+
+.stay-badge svg {
+  color: #FDBA74;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.stay-hero h1 {
+  color: white;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  margin-bottom: 12px;
+
+  max-width: 580px;
+}
+
+.stay-hero h1 span {
+  display: block;
+  color: #FDBA74;
+}
+
+.stay-hero p {
+  color: rgba(255,255,255,.92);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  max-width: 540px;
+
+  margin-bottom: 18px;
+}
+
+/* ==========================================
+   FEATURES
+========================================== */
+
+.stay-hero-features {
+  display: flex;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+.stay-hero-features div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.12);
+
+  border: 1px solid rgba(255,255,255,.18);
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition: .25s;
+}
+
+.stay-hero-features div:hover {
+  background: rgba(255,255,255,.18);
+}
+
+.stay-hero-features svg {
+  color: #FDBA74;
+}
+
+/* ==========================================
+   SEARCH CARD
+========================================== */
+
+.stay-search-card {
+  width:100%;
+    max-width:620px;
+    padding:22px 24px;
+    border-radius:22px;
+
+  background: white;
+
+
+
+  box-shadow: 0 20px 60px rgba(0,0,0,.16);
+}
+
+/* ==========================================
+   QUICK LINKS
+========================================== */
+
+.stay-quick-links {
+  margin-top: 16px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  align-items: center;
+}
+
+.stay-quick-links span {
+  color: white;
+
+  font-weight: 600;
+
+  margin-right: 6px;
+}
+
+.stay-quick-links button {
+  border: none;
+
+  background: rgba(255,255,255,.15);
+
+  color: white;
+
+  border-radius: 999px;
+
+  padding: 6px 14px;
+
+  cursor: pointer;
+
+  transition: .25s;
+
+  font-size: 12px;
+}
+
+.stay-quick-links button:hover {
+  background: white;
+
+  color: #0f172a;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+  .stay-hero {
+    padding: 14px 0 24px;
+  }
+
+  .stay-hero-card {
+    grid-template-columns: 1fr;
+
+    padding: 28px;
+
+    gap: 24px;
+
+    min-height: auto;
+  }
+
+  .hero-right {
+    justify-content: center;
+  }
+
+  .stay-search-card {
+    max-width: 100%;
+  }
+
+  .stay-hero h1 {
+    font-size: 36px;
+  }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .stay-container {
+    padding: 0 12px;
+  }
+
+  .stay-hero {
+    padding: 10px 0 18px;
+  }
+
+  .stay-hero-card {
+    padding: 20px;
+
+    border-radius: 18px;
+
+    min-height: auto;
+  }
+
+  .stay-badge {
+    font-size: 11px;
+
+    padding: 5px 12px;
+
+    margin-bottom: 10px;
+  }
+
+  .stay-hero h1 {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+  }
+
+  .stay-hero p {
+    font-size: 14px;
+
+    margin-bottom: 14px;
+
+    line-height: 1.5;
+  }
+
+  .stay-hero-features {
+    gap: 8px;
+  }
+
+  .stay-hero-features div {
+    width: 100%;
+
+    padding: 10px 14px;
+
+    font-size: 13px;
+  }
+
+  .stay-search-card {
+    padding: 16px;
+
+    border-radius: 14px;
+  }
+
+  .stay-quick-links {
+    display: none;
+  }
+
+}
