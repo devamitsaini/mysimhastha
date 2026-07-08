@@ -9,7 +9,7 @@ import { useStayFilters } from "../../../context/StayFiltersContext";
 import { useNavigate } from "react-router-dom";
 
 
-export default function ListingHeader() {
+export default function ListingHeader({ onOpenFilters, onOpenSort }) {
 
   const navigate = useNavigate();
   const {
@@ -55,7 +55,7 @@ export default function ListingHeader() {
 
         <div className="mobile-action-bar">
 
-          <button className="mobile-action-btn">
+          <button className="mobile-action-btn" onClick={onOpenFilters}>
 
             <FiFilter />
 
@@ -63,7 +63,7 @@ export default function ListingHeader() {
 
           </button>
 
-          <button className="mobile-action-btn">
+          <button className="mobile-action-btn" onClick={onOpenSort}>
 
             <FiSliders />
 

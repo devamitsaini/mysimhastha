@@ -12,6 +12,9 @@ export default function FiltersSidebar() {
     setPriceMin,
     setPriceMax,
 
+    rating,
+    setRating,
+
     verified,
     setVerified,
 
@@ -177,6 +180,66 @@ export default function FiltersSidebar() {
             />
 
             ₹5000+
+
+          </label>
+
+        </div>
+
+        {/* RATING */}
+
+        <div className="filter-group">
+
+          <h4>Rating</h4>
+
+          <label>
+
+            <input
+              type="radio"
+              name="rating"
+              checked={rating === 0}
+              onChange={() => setRating(0)}
+            />
+
+            All Ratings
+
+          </label>
+
+          <label>
+
+            <input
+              type="radio"
+              name="rating"
+              checked={rating === 3}
+              onChange={() => setRating(3)}
+            />
+
+            3+ Stars
+
+          </label>
+
+          <label>
+
+            <input
+              type="radio"
+              name="rating"
+              checked={rating === 4}
+              onChange={() => setRating(4)}
+            />
+
+            4+ Stars
+
+          </label>
+
+          <label>
+
+            <input
+              type="radio"
+              name="rating"
+              checked={rating === 4.5}
+              onChange={() => setRating(4.5)}
+            />
+
+            4.5+ Stars
 
           </label>
 

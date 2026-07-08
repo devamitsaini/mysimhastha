@@ -19,7 +19,7 @@ import "../styles/guides.css";
 
           <link
             rel="canonical"
-            href="https://www.mysimhastha.com/sawan-2026-dates"
+            href="https://www.mysimhastha.com/guide/sawan-2026-dates"
           />
 
           <meta

@@ -30,6 +30,14 @@ export function StayFiltersProvider({ children }) {
   searchParams.get("type") || "all"
 );
 
+  const [location, setLocation] = useState(
+  searchParams.get("location") || ""
+);
+
+  const [budget, setBudget] = useState(
+  searchParams.get("budget") || ""
+);
+
   const [priceMin, setPriceMin] = useState(
   Number(searchParams.get("min")) || 0
 );
@@ -258,6 +266,8 @@ setCount(count || 0);
   }, [
   debouncedSearch,
   stayType,
+  location,
+  budget,
   priceMin,
   priceMax,
   rating,
@@ -275,6 +285,8 @@ setCount(count || 0);
   function clearFilters() {
     setSearch("");
     setStayType("all");
+    setLocation("");
+    setBudget("");
     setPriceMin(0);
     setPriceMax(0);
     setRating(0);
@@ -296,6 +308,12 @@ setCount(count || 0);
 
         stayType,
         setStayType,
+
+        location,
+        setLocation,
+
+        budget,
+        setBudget,
 
         priceMin,
         setPriceMin,

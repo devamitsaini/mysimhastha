@@ -22,6 +22,8 @@ export const fetchAllStays = async (filters = {}) => {
     limit = 12,
     search = "",
     stayType = "all",
+    location = "",
+    budget = "",
     rating = 0,
     verified = false,
     sort = "featured",
@@ -44,6 +46,29 @@ export const fetchAllStays = async (filters = {}) => {
     query = query.eq("stay_type", stayType);
   }
 
+  if (location) {
+    query = query.or(
+      `locality.ilike.%${location}%,city.ilike.%${location}%`
+    );
+  }
+
+  if (budget) {
+    if (budget.includes("-")) {
+      const [min, max] = budget.split("-").map(Number);
+      if (!isNaN(min)) {
+        query = query.gte("price_from", min);
+      }
+      if (!isNaN(max)) {
+        query = query.lte("price_from", max);
+      }
+    } else if (budget.endsWith("+")) {
+      const min = Number(budget.replace("+", ""));
+      if (!isNaN(min)) {
+        query = query.gte("price_from", min);
+      }
+    }
+  }
+
   if (rating > 0) {
     query = query.gte("rating", rating);
   }
@@ -53,16 +78,20 @@ export const fetchAllStays = async (filters = {}) => {
   }
 
   switch (sort) {
-    case "price-low":
+    case "price_low":
       query = query.order("price_from", { ascending: true });
       break;
 
-    case "price-high":
+    case "price_high":
       query = query.order("starting_price", { ascending: false });
       break;
 
     case "rating":
       query = query.order("rating", { ascending: false });
+      break;
+
+    case "newest":
+      query = query.order("created_at", { ascending: false });
       break;
 
     default:

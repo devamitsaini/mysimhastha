@@ -18,11 +18,20 @@ export default function ActiveFilters() {
     setPriceMin,
     setPriceMax,
 
+    rating,
+    setRating,
+
     verified,
     setVerified,
 
     featured,
     setFeatured,
+
+    location,
+    setLocation,
+
+    budget,
+    setBudget,
   } = useStayFilters();
 
   const chips = [];
@@ -72,6 +81,33 @@ export default function ActiveFilters() {
     chips.push({
       label: "Featured",
       remove: () => setFeatured(false),
+    });
+  }
+
+  if (rating > 0) {
+    chips.push({
+      label: `${rating}+ Stars`,
+      remove: () => setRating(0),
+    });
+  }
+
+  if (location) {
+    chips.push({
+      label: location,
+      remove: () => setLocation(""),
+    });
+  }
+
+  if (budget) {
+    const budgetLabels = {
+      "0-1000": "Below ₹1000",
+      "1000-2000": "₹1000 – ₹2000",
+      "2000-5000": "₹2000 – ₹5000",
+      "5000+": "₹5000+"
+    };
+    chips.push({
+      label: budgetLabels[budget] || budget,
+      remove: () => setBudget(""),
     });
   }
 

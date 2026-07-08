@@ -73,9 +73,7 @@ onClick={()=>openGallery(current)}
           />
 
           <button className="gallery-wishlist">
-
             <FiHeart />
-
           </button>
 
           <button

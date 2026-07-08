@@ -78,10 +78,10 @@ export default function SearchBar() {
 
   const budgetOptions = [
     { value: "", label: "Any Budget" },
-    { value: "1000", label: "Below ₹1000" },
-    { value: "2000", label: "₹1000 – ₹2000" },
-    { value: "3000", label: "₹2000 – ₹3000" },
-    { value: "5000", label: "Above ₹3000" },
+    { value: "0-1000", label: "Below ₹1000" },
+    { value: "1000-2000", label: "₹1000 – ₹2000" },
+    { value: "2000-5000", label: "₹2000 – ₹5000" },
+    { value: "5000+", label: "₹5000+" },
   ];
 
   function handleSearch() {
