@@ -149,7 +149,7 @@ export default function ListingPropertyCard({ stay }) {
 
         <FiCheckCircle />
 
-        Verified by MySimhastha
+        Quick Owner Response
 
     </div>
 

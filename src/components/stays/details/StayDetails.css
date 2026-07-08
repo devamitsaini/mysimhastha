@@ -454,7 +454,7 @@
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid #e6ebf1;
-            height: 400px;
+            height: 211px;
         }
 
         .property-map iframe {
@@ -892,10 +892,43 @@
                 padding: 16px;
             }
 
-            .similar-grid {
-                grid-template-columns: 1fr;
-            }
+            @media (max-width:768px){
 
+.similar-grid{
+
+display:flex;
+
+overflow-x:auto;
+
+gap:16px;
+
+padding-bottom:8px;
+
+scroll-snap-type:x mandatory;
+
+-webkit-overflow-scrolling:touch;
+
+scrollbar-width:none;
+
+}
+
+.similar-grid::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.similar-grid>*{
+
+flex:0 0 82%;
+
+max-width:82%;
+
+scroll-snap-align:start;
+
+}
+
+}
             .sticky-contact-card {
                 position: static;
             }

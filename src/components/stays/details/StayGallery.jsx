@@ -1,82 +1,194 @@
-import { FiHeart } from "react-icons/fi";
-import "./StayGallery.css";
+  import { useState } from "react";
+  import {
+    FiHeart,
+    FiCamera,
+    FiX,
+    FiChevronLeft,
+    FiChevronRight,
+  } from "react-icons/fi";
+  import "./StayGallery.css";
 
-export default function StayGallery({ stay }) {
-  let images = [];
+  export default function StayGallery({ stay }) {
 
-  // gallery_images can be a JSON array or a JSON string
-  if (stay.gallery_images) {
-    if (Array.isArray(stay.gallery_images)) {
-      images = stay.gallery_images;
-    } else {
-      try {
-        images = JSON.parse(stay.gallery_images);
-      } catch (e) {
-        images = [];
-      }
-    }
-  }
+    const images = [
+      stay.image,
+      stay.featured_image,
+      stay.image2,
+      stay.image3,
+      stay.image4,
+    ].filter(Boolean);
 
-  if (stay.image) {
-    images.unshift(stay.image);
-  }
+    const gallery =
+      images.length > 0
+        ? [...new Set(images)]
+        : ["/images/mahakal-lok.webp"];
 
-  if (stay.featured_image) {
-    images.unshift(stay.featured_image);
-  }
+    const [heroImage, setHeroImage] = useState(gallery[0]);
 
-  // remove duplicates & empty values
-  images = [...new Set(images.filter(Boolean))];
+    const [open, setOpen] = useState(false);
 
-  if (images.length === 0) {
-    images = ["/images/hero-image.webp"];
-  }
+const [current, setCurrent] = useState(0);
 
-  while (images.length < 5) {
-    images.push(images[0]);
-  }
+function openGallery(index){
 
-  return (
-    <section className="stay-gallery">
+setCurrent(index);
 
-      <div className="gallery-main">
+setHeroImage(gallery[index]);
 
-        <img
-          src={images[0]}
-          alt={stay.name}
-        />
+setOpen(true);
 
-        <button className="gallery-wishlist">
-          <FiHeart />
-        </button>
+}
 
-      </div>
+function next(){
 
-      <div className="gallery-side">
+const i=(current+1)%gallery.length;
 
-        {images.slice(1, 4).map((image, index) => (
+setCurrent(i);
+
+setHeroImage(gallery[i]);
+
+}
+
+function prev(){
+
+const i=(current-1+gallery.length)%gallery.length;
+
+setCurrent(i);
+
+setHeroImage(gallery[i]);
+
+}
+    return (
+
+      <section className="stay-gallery">
+
+        <div
+className="gallery-main"
+onClick={()=>openGallery(current)}
+>
+
           <img
-            key={index}
-            src={image}
-            alt={`${stay.name} ${index + 2}`}
+            src={heroImage}
+            alt={stay.name}
           />
-        ))}
 
-        {images.length > 4 && (
-          <div className="photo-count-overlay">
-            <img
-              src={images[4]}
-              alt={`${stay.name} 5`}
-            />
-            <div className="overlay">
-              <div className="count">+{images.length - 4}</div>
-              <div className="label">Property & Guest Photos</div>
-            </div>
+          <button className="gallery-wishlist">
+
+            <FiHeart />
+
+          </button>
+
+          <button
+className="gallery-view-all"
+onClick={(e)=>{
+
+e.stopPropagation();
+
+setOpen(true);
+
+}}
+>
+
+            <FiCamera />
+
+            {gallery.length} Photos
+
+          </button>
+
+        </div>
+
+        {gallery.length > 1 && (
+
+          <div className="gallery-side">
+
+            {gallery.slice(1,5).map((img,index)=>(
+
+              <div
+                key={index}
+                className="gallery-thumb"
+                onClick={()=>{
+
+setHeroImage(img);
+
+setCurrent(index+1);
+
+}}
+              >
+
+                <img
+                  src={img}
+                  alt=""
+                />
+
+                {index===3 && gallery.length>5 && (
+
+                  <div className="gallery-more">
+
+                    +{gallery.length-4}
+
+                  </div>
+
+                )}
+
+              </div>
+
+            ))}
+
           </div>
+
         )}
 
-      </div>
+        {open && (
 
-    </section>
-  );
-}
+<div className="gallery-modal">
+
+<button
+className="gallery-close"
+onClick={()=>setOpen(false)}
+>
+
+<FiX/>
+
+</button>
+
+<button
+className="gallery-prev"
+onClick={prev}
+>
+
+<FiChevronLeft/>
+
+</button>
+
+<img
+
+src={heroImage}
+
+alt=""
+
+/>
+
+<button
+className="gallery-next"
+onClick={next}
+>
+
+<FiChevronRight/>
+
+</button>
+
+<div className="gallery-counter">
+
+{current+1} / {gallery.length}
+
+</div>
+
+</div>
+
+)}
+
+      </section>
+
+    );
+
+  }

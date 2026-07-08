@@ -38,7 +38,7 @@ export const amenityIcons = {
 
   "Verified Property": {
     icon: ShieldCheck,
-    description: "Verified by MySimhastha",
+    description: "Quick Response",
   },
 
   "Hot Water": {
