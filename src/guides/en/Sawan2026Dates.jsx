@@ -51,7 +51,7 @@ import "../styles/guides.css";
 
           <meta
             property="og:url"
-            content="https://www.mysimhastha.com/sawan-2026-dates"
+            content="https://www.mysimhastha.com/guide/sawan-2026"
           />
 
             <meta
@@ -76,7 +76,7 @@ import "../styles/guides.css";
               "@type":"ListItem",
               "position":2,
               "name":"Sawan 2026",
-              "item":"https://www.mysimhastha.com/sawan-2026"
+              "item":"https://www.mysimhastha.com/guide/sawan-2026"
               },
               {
               "@type":"ListItem",
@@ -115,7 +115,7 @@ import "../styles/guides.css";
 
                 "mainEntityOfPage":{
                 "@type":"WebPage",
-                "@id":"https://www.mysimhastha.com/sawan-2026-dates"
+                "@id":"https://www.mysimhastha.com-dates/guide/sawan-2026"
                 },
 
                 "datePublished":"2026-06-25",
@@ -130,7 +130,7 @@ import "../styles/guides.css";
                   "@context":"https://schema.org",
                   "@type":"WebPage",
                   "name":"Sawan 2026 Dates",
-                  "url":"https://www.mysimhastha.com/sawan-2026-dates",
+                  "url":"https://www.mysimhastha.com/guide/sawan-2026",
                   "description":"Complete Sawan 2026 calendar with important dates and festivals."
                   })
                   }}
