@@ -135,7 +135,7 @@ export default function FeaturedProperties() {
 
               <Link
                 className="partner-btn"
-                to="/business/feature-your-property"
+                to="/list-your-property"
               >
                 Become a Featured Partner
 
@@ -192,7 +192,7 @@ export default function FeaturedProperties() {
 
       <Link
         key={index}
-        to="/business/feature-your-property"
+        to="/list-your-property"
         className="preview-card"
       >
 

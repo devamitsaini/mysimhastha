@@ -42,6 +42,10 @@ const StayDetailsPage = lazy(() =>
   import("./pages/Stays/StayDetailsPage")
 );
 
+const ListYourPropertyPage = lazy(() =>
+  import("./pages/Stays/ListYourPropertyPage")
+);
+
 const Simhastha2028 = lazy(() => import("./guides/en/Simhastha2028"));
 const Simhastha2028HI = lazy(() => import("./guides/hi/Simhastha2028"));
 
@@ -121,6 +125,20 @@ function App() {
             <Route path="/missing-persons" element={
             <MissingPersonsPage openOnLoad={openMissingForm} 
             setOpenMissingForm={setOpenMissingForm}/>} />
+
+            {/* BUSINESS */}
+
+              <Route
+                path="/list-your-property"
+                element={<ListYourPropertyPage />}
+              />
+
+              {/* Backward Compatibility */}
+
+              <Route
+                path="/business/feature-your-property"
+                element={<Navigate to="/list-your-property" replace />}
+              />
             
             {/* GUIDES ROUTES */}
               <Route path="/guides" element={<GuidesPage />} />

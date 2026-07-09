@@ -76,6 +76,36 @@
 
     background:#fff;
 
+    cursor:pointer;
+
+    transition: all 0.2s;
+
+    min-width: 180px;
+
+}
+
+.sort-box:hover{
+
+    border-color:#2563eb;
+
+}
+
+.sort-box:focus-within{
+
+    border-color:#ea580c;
+
+    box-shadow:0 0 0 3px rgba(234,88,12,.12);
+
+}
+
+.sort-box svg{
+
+    color:#64748b;
+
+    font-size:18px;
+
+    flex-shrink:0;
+
 }
 
 .sort-box select{
@@ -85,6 +115,164 @@
     outline:none;
 
     background:none;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:#0f172a;
+
+    cursor:pointer;
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+.sort-box select:hover{
+
+    color:#ea580c;
+
+}
+
+.sort-box select option{
+
+    padding:12px;
+
+    font-size:14px;
+
+    color:#0f172a;
+
+    background:#fff;
+
+}
+
+.sort-box select option:hover,
+
+.sort-box select option:checked{
+
+    background:#fff7ed;
+
+    color:#ea580c;
+
+}
+
+/* React Select Styles */
+
+.sort-box .stay__control{
+
+    min-height:auto !important;
+
+    border:none !important;
+
+    background:none !important;
+
+    box-shadow:none !important;
+
+    padding:0 !important;
+
+    cursor:pointer;
+
+}
+
+.sort-box .stay__value-container{
+
+    padding:0 !important;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:#0f172a;
+
+}
+
+.sort-box .stay__single-value{
+
+    color:#0f172a !important;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.sort-box .stay__placeholder{
+
+    color:#0f172a !important;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.sort-box .stay__dropdown-indicator{
+
+    color:#64748b !important;
+
+    padding:0 !important;
+
+}
+
+.sort-box .stay__indicator-separator{
+
+    display:none;
+
+}
+
+.sort-box .stay__menu{
+
+    border-radius:12px !important;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 50px rgba(15,23,42,.18) !important;
+
+    border:none !important;
+
+    margin-top:8px !important;
+
+}
+
+.sort-box .stay__menu-list{
+
+    padding:8px !important;
+
+}
+
+.sort-box .stay__option{
+
+    padding:14px 16px !important;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    color:#334155 !important;
+
+    cursor:pointer;
+
+    transition:.15s;
+
+}
+
+.sort-box .stay__option--is-focused{
+
+    background:#fff7ed !important;
+
+    color:#ea580c !important;
+
+}
+
+.sort-box .stay__option--is-selected{
+
+    background:#ea580c !important;
+
+    color:#fff !important;
 
 }
 
