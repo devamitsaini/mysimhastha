@@ -201,18 +201,7 @@
    SEARCH CARD
 ========================================== */
 
-.stay-search-card {
-  width:100%;
-    max-width:620px;
-    padding:22px 24px;
-    border-radius:22px;
-
-  background: white;
-
-
-
-  box-shadow: 0 20px 60px rgba(0,0,0,.16);
-}
+/* Search card styles are in SearchBar.css */
 
 /* ==========================================
    QUICK LINKS
@@ -286,9 +275,7 @@
     justify-content: center;
   }
 
-  .stay-search-card {
-    max-width: 100%;
-  }
+  /* Search card responsive handled in SearchBar.css */
 
   .stay-hero h1 {
     font-size: 36px;
@@ -333,11 +320,7 @@
   }
 
   .stay-hero p {
-    font-size: 14px;
-
-    margin-bottom: 14px;
-
-    line-height: 1.5;
+    display: none;
   }
 
   .stay-hero-features {
@@ -352,14 +335,11 @@
     font-size: 13px;
   }
 
-  .stay-search-card {
-    padding: 16px;
-
-    border-radius: 14px;
-  }
+  /* Search card mobile styles handled in SearchBar.css */
 
   .stay-quick-links {
-    display: none;
+    display: flex;
+    margin-top: 0;
   }
 
 }
