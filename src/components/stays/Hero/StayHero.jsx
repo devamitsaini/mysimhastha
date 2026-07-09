@@ -13,10 +13,10 @@ export default function StayHero() {
   const navigate = useNavigate();
 
   const quickLinks = [
-    "Hotels",
-    "Homestays",
-    "Dharamshalas",
-    "Guest Houses",
+    { label: "Hotels", value: "Hotel" },
+    { label: "Homestays", value: "Homestay" },
+    { label: "Dharamshalas", value: "Dharamshala" },
+    { label: "Guest Houses", value: "Guest House" },
   ];
 
   return (
@@ -53,14 +53,14 @@ export default function StayHero() {
 
               {quickLinks.map((item) => (
                 <button
-                  key={item}
+                  key={item.value}
                   onClick={() =>
                     navigate(
-                      `/stays/list?type=${encodeURIComponent(item)}`
+                      `/stays/list?type=${encodeURIComponent(item.value)}`
                     )
                   }
                 >
-                  {item}
+                  {item.label}
                 </button>
               ))}
 
