@@ -74,9 +74,7 @@ export default function FeaturedProperties() {
             </h2>
 
             <p>
-              Hotels, Guest Houses, Homestays,
-              Dharamshalas and Tent Cities can
-              showcase their property on
+              Showcase your property on
               <strong> MySimhastha</strong> and receive
               direct enquiries from pilgrims
               planning their visit.
@@ -167,9 +165,7 @@ export default function FeaturedProperties() {
 
     <p>
       Stand out from the crowd with a featured listing.
-      Your property will receive premium visibility and
-      direct enquiries from pilgrims planning their stay
-      in Ujjain.
+    
     </p>
 
     <div className="preview-stats">
@@ -280,7 +276,7 @@ export default function FeaturedProperties() {
 
 
 
-{/*import React, { useEffect, useState } from "react";
+/*import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiStar } from "react-icons/fi";
 
@@ -389,4 +385,4 @@ export default function FeaturedProperties() {
 
   );
 
-}*/}
+}*/

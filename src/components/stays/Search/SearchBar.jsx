@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Select, { components } from "react-select";
@@ -10,6 +10,8 @@ import {
 } from "react-icons/fi";
 
 import { MdCurrencyRupee } from "react-icons/md";
+
+import { searchStays } from "../../../services/staysService";
 
 import "./SearchBar.css";
 
@@ -41,8 +43,12 @@ const selectStyles = {
 
 export default function SearchBar() {
   const navigate = useNavigate();
+  const searchInputRef = useRef(null);
+  const suggestionsRef = useRef(null);
 
   const [search, setSearch] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const [propertyType, setPropertyType] = useState({
     value: "",
@@ -84,7 +90,41 @@ export default function SearchBar() {
     { value: "5000+", label: "₹5000+" },
   ];
 
+  // Debounced search effect
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      if (search.trim().length >= 1) {
+        const { data } = await searchStays(search.trim(), 8);
+        setSuggestions(data || []);
+        setShowSuggestions(true);
+      } else {
+        setSuggestions([]);
+        setShowSuggestions(false);
+      }
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [search]);
+
+  // Click outside handler
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        suggestionsRef.current &&
+        !suggestionsRef.current.contains(event.target) &&
+        searchInputRef.current &&
+        !searchInputRef.current.contains(event.target)
+      ) {
+        setShowSuggestions(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   function handleSearch() {
+    setShowSuggestions(false);
     const params = new URLSearchParams();
 
     if (search.trim()) {
@@ -106,6 +146,12 @@ export default function SearchBar() {
     navigate(`/stays/list?${params.toString()}`);
   }
 
+  function handleSuggestionClick(suggestion) {
+    setSearch(suggestion.name);
+    setShowSuggestions(false);
+    handleSearch();
+  }
+
   return (
     <div className="stay-search-card">
 
@@ -115,7 +161,7 @@ export default function SearchBar() {
 
       {/* Search */}
 
-      <div className="stay-search-box full-width">
+      <div className="stay-search-box full-width" ref={searchInputRef}>
 
         <div className="stay-input">
 
@@ -126,9 +172,32 @@ export default function SearchBar() {
             placeholder="Search property, landmark or locality"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            onFocus={() => search.trim().length > 0 && setShowSuggestions(true)}
           />
 
         </div>
+
+        {/* Suggestions Dropdown */}
+
+        {showSuggestions && suggestions.length > 0 && (
+          <div className="search-suggestions" ref={suggestionsRef}>
+            {suggestions.map((suggestion) => (
+              <div
+                key={suggestion.id}
+                className="suggestion-item"
+                onClick={() => handleSuggestionClick(suggestion)}
+              >
+                <FiSearch className="suggestion-icon" />
+                <div className="suggestion-content">
+                  <span className="suggestion-name">{suggestion.name}</span>
+                  {suggestion.locality && (
+                    <span className="suggestion-locality">{suggestion.locality}</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
       </div>
 
