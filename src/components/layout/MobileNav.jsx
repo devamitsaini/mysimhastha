@@ -17,7 +17,7 @@ function MobileNav({ page }) {
   window.scrollTo(0, 0);
 };
   const { t } = useTranslation();
-  if (location.pathname.startsWith("/stays")) {
+  if (location.pathname.startsWith("/stays") || location.pathname.startsWith("/list-your-property")) {
   return null;
 }
   return (

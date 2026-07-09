@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   FiHome,
   FiUser,
@@ -8,6 +8,13 @@ import {
   FiDollarSign,
   FiUpload,
   FiCheckCircle,
+  FiCheck,
+  FiStar,
+  FiZap,
+  FiUsers,
+  FiEye,
+  FiCalendar,
+  FiTrendingUp,
 } from "react-icons/fi";
 
 import "./ListYourProperty.css";
@@ -110,6 +117,19 @@ export default function ListYourPropertyPage() {
 
   });
 
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const [showSticky, setShowSticky] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowSticky(window.scrollY > 650);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   function handleChange(e){
 
     const {name,value}=e.target;
@@ -178,6 +198,96 @@ export default function ListYourPropertyPage() {
 
   }
 
+  function handlePlanSelect(planType){
+
+    const planMapping={
+
+      "free":{
+
+        listing_type:"Free Listing",
+
+        listing_plan:"",
+
+        title: "Free Listing",
+
+        price: "₹0",
+
+        description: "Basic Listing"
+
+      },
+
+      "standard":{
+
+        listing_type:"Featured Listing",
+
+        listing_plan:"Gold",
+
+        title: "Standard",
+
+        price: "₹999",
+
+        description: "Featured Listing"
+
+      },
+
+      "premium":{
+
+        listing_type:"Featured Listing",
+
+        listing_plan:"Platinum",
+
+        title: "Premium",
+
+        price: "₹2,499",
+
+        description: "Maximum Visibility"
+
+      }
+
+    };
+
+    const selectedPlan=planMapping[planType];
+
+    if(selectedPlan){
+
+      setFormData(prev=>({
+
+        ...prev,
+
+        listing_type:selectedPlan.listing_type,
+
+        listing_plan:selectedPlan.listing_plan
+
+      }));
+
+      setSelectedPlan(selectedPlan);
+
+      setTimeout(()=>{
+
+        const formElement=document.getElementById("form");
+
+        if(formElement){
+
+          formElement.scrollIntoView({behavior:"smooth",block:"start"});
+
+          formElement.style.transition="box-shadow 0.3s ease";
+
+          formElement.style.boxShadow="0 0 0 4px rgba(37,99,235,0.3)";
+
+          setTimeout(()=>{
+
+            formElement.style.boxShadow="";
+
+          },2000);
+
+        }
+
+      },100);
+
+    }
+
+  }
+
   return(
 
 <div className="list-property-page">
@@ -210,11 +320,421 @@ for maximum visibility.
 
 </div>
 
+{/* ======================================================
+   PRICING PLANS
+===================================================== */}
+
+{!selectedPlan && (
+
+<section className="pricing-section">
+
+<h2>Choose Your Listing Plan</h2>
+
+<p>Select the perfect plan for your property. Start free and upgrade anytime for more visibility and features.</p>
+
+<div className="pricing-cards">
+
+{/* Free Plan */}
+<div className="pricing-card">
+
+<div className="pricing-icon">
+
+<FiHome/>
+
+</div>
+
+<h3>Free Listing</h3>
+
+<div className="price">
+
+₹0
+
+<span>/ forever</span>
+
+</div>
+
+<p className="price-note">Perfect for getting started</p>
+
+<ul className="pricing-features">
+
+<li>
+
+<FiCheck/>
+
+<span>Basic property listing</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Up to 5 photos</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Contact details visible</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Standard search placement</span>
+
+</li>
+
+<li className="disabled">
+
+<FiCheck/>
+
+<span>Featured badge</span>
+
+</li>
+
+<li className="disabled">
+
+<FiCheck/>
+
+<span>Priority support</span>
+
+</li>
+
+</ul>
+
+<button 
+
+  type="button"
+
+  className="pricing-btn secondary"
+
+  onClick={()=>handlePlanSelect("free")}
+
+>
+
+Get Started Free
+
+</button>
+
+</div>
+
+{/* Standard Plan - Featured */}
+<div className="pricing-card featured">
+
+<div className="pricing-badge">
+
+<FiStar/> Most Popular
+
+</div>
+
+<div className="pricing-icon">
+
+<FiZap/>
+
+</div>
+
+<h3>Standard</h3>
+
+<div className="price">
+
+₹999
+
+<span>/ month</span>
+
+</div>
+
+<p className="price-note">Best for growing properties</p>
+
+<ul className="pricing-features">
+
+<li>
+
+<FiCheck/>
+
+<span>Everything in Free</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Up to 15 photos</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Featured in search results</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Priority placement</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Performance analytics</span>
+
+</li>
+
+<li className="disabled">
+
+<FiCheck/>
+
+<span>Dedicated account manager</span>
+
+</li>
+
+</ul>
+
+<button 
+
+  type="button"
+
+  className="pricing-btn primary"
+
+  onClick={()=>handlePlanSelect("standard")}
+
+>
+
+Choose Standard
+
+</button>
+
+</div>
+
+{/* Premium Plan */}
+<div className="pricing-card">
+
+<div className="pricing-icon">
+
+<FiStar/>
+
+</div>
+
+<h3>Premium</h3>
+
+<div className="price">
+
+₹2,499
+
+<span>/ month</span>
+
+</div>
+
+<p className="price-note">Maximum visibility & support</p>
+
+<ul className="pricing-features">
+
+<li>
+
+<FiCheck/>
+
+<span>Everything in Standard</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Unlimited photos</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Top search ranking</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Homepage featured slot</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Advanced analytics & reports</span>
+
+</li>
+
+<li>
+
+<FiCheck/>
+
+<span>Dedicated account manager</span>
+
+</li>
+
+</ul>
+
+<button 
+
+  type="button"
+
+  className="pricing-btn secondary"
+
+  onClick={()=>handlePlanSelect("premium")}
+
+>
+
+Choose Premium
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+)}
+
+{/* ======================================================
+   WHY LIST WITH US
+===================================================== */}
+
+<section className="why-list-section">
+
+<h2>Why List With MySimhastha?</h2>
+
+<div className="stats-grid">
+
+<div className="stat-card">
+
+<div className="stat-icon">
+
+<FiUsers/>
+
+</div>
+
+<div className="stat-number">50K+</div>
+
+<p className="stat-label">Monthly Pilgrim Visitors</p>
+
+</div>
+
+<div className="stat-card">
+
+<div className="stat-icon">
+
+<FiEye/>
+
+</div>
+
+<div className="stat-number">2.5M+</div>
+
+<p className="stat-label">Property Views Per Month</p>
+
+</div>
+
+<div className="stat-card">
+
+<div className="stat-icon">
+
+<FiCalendar/>
+
+</div>
+
+<div className="stat-number">365</div>
+
+<p className="stat-label">Days Of Visibility Yearly</p>
+
+</div>
+
+<div className="stat-card">
+
+<div className="stat-icon">
+
+<FiTrendingUp/>
+
+</div>
+
+<div className="stat-number">85%</div>
+
+<p className="stat-label">Properties Get Bookings</p>
+
+</div>
+
+</div>
+
+</section>
+
+{selectedPlan && (
+
+<div className="selected-plan-bar">
+
+<div className="selected-plan-left">
+
+<span className="selected-chip">
+
+✓ Selected Plan
+
+</span>
+
+<div>
+
+<h3>{selectedPlan.title}</h3>
+
+<p>{selectedPlan.description}</p>
+
+</div>
+
+</div>
+
+<div className="selected-plan-right">
+
+<strong>{selectedPlan.price}</strong>
+
+<button
+type="button"
+onClick={() => setSelectedPlan(null)}
+>
+
+Change Plan
+
+</button>
+
+</div>
+
+</div>
+
+)}
+
+<div className="listing-layout">
+
+<div className="listing-main">
+
 <form
+id="form"
 className="listing-form"
 onSubmit={handleSubmit}
 >
 
+{/* Owner Information */}
 <section className="form-card">
 
 <h2>
@@ -325,6 +845,7 @@ required
 
 </section>
 
+{/* Property Information */}
 <section className="form-card">
 
 <h2>
@@ -403,6 +924,7 @@ value={type}
 </select>
 
 </div>
+
 <div className="form-group">
 
 <label>
@@ -489,10 +1011,7 @@ value={plan}
 
 </section>
 
-{/* ======================================================
-   LOCATION
-====================================================== */}
-
+{/* Property Location */}
 <section className="form-card">
 
 <h2>
@@ -647,10 +1166,7 @@ onChange={handleChange}
 
 </section>
 
-{/* ======================================================
-   PROPERTY DETAILS
-====================================================== */}
-
+{/* Property Details */}
 <section className="form-card">
 
 <h2>
@@ -801,10 +1317,7 @@ placeholder="Describe your property, nearby attractions, facilities and special 
 
 </section>
 
-{/* ======================================================
-   AMENITIES
-====================================================== */}
-
+{/* Amenities */}
 <section className="form-card">
 
 <h2>
@@ -849,10 +1362,7 @@ onChange={()=>handleAmenity(item)}
 
 </section>
 
-{/* ======================================================
-   IMAGES
-====================================================== */}
-
+{/* Property Images */}
 <section className="form-card">
 
 <h2>
@@ -920,10 +1430,8 @@ Upload up to 10 high-quality photos.
 </div>
 
 </section>
-{/* ======================================================
-   CONTACT & SOCIAL
-====================================================== */}
 
+{/* Contact & Social */}
 <section className="form-card">
 
 <h2>
@@ -1012,10 +1520,7 @@ onChange={handleChange}
 
 </section>
 
-{/* ======================================================
-   DOCUMENTS
-====================================================== */}
-
+{/* Verification Documents */}
 <section className="form-card">
 
 <h2>
@@ -1076,10 +1581,7 @@ onChange={handleFile}
 
 </section>
 
-{/* ======================================================
-   TERMS
-====================================================== */}
-
+{/* Terms */}
 <section className="form-card">
 
 <label className="agree-box">
@@ -1121,10 +1623,7 @@ I agree to the Terms & Conditions and Privacy Policy.
 
 </section>
 
-{/* ======================================================
-   SUBMIT
-====================================================== */}
-
+{/* Submit */}
 <div className="submit-area">
 
 <button
@@ -1155,8 +1654,105 @@ Phone or WhatsApp.
 
 </div>
 
+{/* ======================================================
+   SIDEBAR
+===================================================== */}
+
+<div className="listing-sidebar">
+
+{/* Selected Plan Card */}
+<div className="sidebar-card">
+
+<h3>Selected Plan</h3>
+
+<strong>
+
+{formData.listing_type === "Featured Listing" ? formData.listing_plan : "Free Listing"}
+
+</strong>
+
+<hr/>
+
+<div className="sidebar-list">
+
+<div>
+
+Property
+
+<span>
+
+{formData.property_type || "-"}
+
+</span>
+
+</div>
+
+<div>
+
+City
+
+<span>
+
+{formData.city}
+
+</span>
+
+</div>
+
+<div>
+
+Owner
+
+<span>
+
+{formData.owner_name || "-"}
+
+</span>
+
+</div>
+
+</div>
+
+<button className="change-plan-btn" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+
+Change Plan
+
+</button>
+
+</div>
+
+{/* Help Card */}
+<div className="sidebar-card">
+
+<h3>Need Help?</h3>
+
+<a href="tel:+919999999999">
+
+📞 +91 99999 99999
+
+</a>
+
+<a href="https://wa.me/919999999999">
+
+💬 WhatsApp
+
+</a>
+
+<p>
+
+Usually replies within 30 minutes.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 );
-
 }
