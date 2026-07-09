@@ -215,8 +215,8 @@
 
   <ul>
     <li>
-      <a href="mailto:mysimhastha@gmail.com">
-        mysimhastha@gmail.com
+      <a href="mailto:info@mysimhastha.com">
+        info@mysimhastha.com
       </a>
     </li>
 
