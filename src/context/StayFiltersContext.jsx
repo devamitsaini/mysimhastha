@@ -163,32 +163,40 @@ useEffect(() => {
 
   useEffect(() => {
 
-  const params = {};
+    const params = {};
 
-  if (search) params.search = search;
+    if (search) params.search = search;
 
-  if (stayType !== "all")
-    params.type = stayType;
+    if (stayType !== "all")
+      params.type = stayType;
 
-  if (priceMin)
-    params.min = priceMin;
+    if (location)
+      params.location = location;
 
-  if (priceMax)
-    params.max = priceMax;
+    if (budget)
+      params.budget = budget;
 
-  if (sort !== "featured")
-    params.sort = sort;
+    if (priceMin)
+      params.min = priceMin;
 
-  setSearchParams(params);
+    if (priceMax)
+      params.max = priceMax;
 
-}, [
-  search,
-  stayType,
-  priceMin,
-  priceMax,
-  sort,
-  setSearchParams,
-]);
+    if (sort !== "featured")
+      params.sort = sort;
+
+    setSearchParams(params);
+
+  }, [
+    search,
+    stayType,
+    location,
+    budget,
+    priceMin,
+    priceMax,
+    sort,
+    setSearchParams,
+  ]);
   /* ==========================
      Load Stays
   ========================== */
@@ -198,17 +206,19 @@ useEffect(() => {
 
     try {
       const { data, count } = await fetchAllStays({
-  page,
-  limit: 20,
-  search: debouncedSearch,
-  stayType,
-  priceMin,
-  priceMax,
-  rating,
-  verified,
-  featured,
-  sort,
-});
+        page,
+        limit: 20,
+        search: debouncedSearch,
+        stayType,
+        location,
+        budget,
+        priceMin,
+        priceMax,
+        rating,
+        verified,
+        featured,
+        sort,
+      });
 
 let updatedStays = data || [];
 
