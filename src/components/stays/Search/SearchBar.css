@@ -94,7 +94,49 @@
 
 .stay-input input::placeholder{
 
-    color:#94a3b8;
+ color:#94a3b8;
+
+}
+
+/* Clear Button */
+
+.search-clear-btn{
+
+ display:flex;
+
+ align-items:center;
+
+ justify-content:center;
+
+ width:28px;
+
+ height:28px;
+
+ border:none;
+
+ background:transparent;
+
+ color:#64748b;
+
+ cursor:pointer;
+
+ border-radius:50%;
+
+ transition:.2s;
+
+ padding:0;
+
+ flex-shrink:0;
+
+}
+
+.search-clear-btn:hover{
+
+ background:#f1f5f9;
+
+ color:#0f172a;
+
+ transform:scale(1.1);
 
 }
 

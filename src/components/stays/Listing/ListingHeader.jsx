@@ -1,8 +1,9 @@
-import {
+ import {
   FiSearch,
   FiSliders,
   FiFilter,
   FiMap,
+  FiX,
 } from "react-icons/fi";
 import "./ListingHeader.css";
 import { useStayFilters } from "../../../context/StayFiltersContext";
@@ -51,6 +52,16 @@ export default function ListingHeader({ onOpenFilters, onOpenSort }) {
             onChange={(e)=>setSearch(e.target.value)}
           />
 
+          {search && (
+            <button 
+              className="listing-search-clear" 
+              onClick={() => setSearch("")}
+              type="button"
+            >
+              <FiX />
+            </button>
+          )}
+
         </div>
 
         <div className="mobile-action-bar">
@@ -71,13 +82,13 @@ export default function ListingHeader({ onOpenFilters, onOpenSort }) {
 
           </button>
 
-                  <button
-          className="mobile-action-btn"
-          onClick={() => navigate("/stays/map")}
-        >
-          <FiMap />
-          <span>Map</span>
-        </button>
+          <button
+            className="mobile-action-btn"
+            onClick={() => navigate("/stays/map")}
+          >
+            <FiMap />
+            <span>Map</span>
+          </button>
 
         </div>
 

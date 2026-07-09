@@ -73,6 +73,48 @@
     color: #94a3b8;
 }
 
+/* Clear Button */
+
+.listing-search-clear {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 24px;
+
+  height: 24px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition: all 0.2s;
+
+  padding: 0;
+
+  flex-shrink: 0;
+
+}
+
+.listing-search-clear:hover {
+
+  background: #e5e7eb;
+
+  color: #0f172a;
+
+  transform: scale(1.1);
+
+}
+
 /* ==========================================
    MOBILE ACTION BAR
 ========================================== */

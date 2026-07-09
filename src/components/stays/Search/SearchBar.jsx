@@ -7,6 +7,7 @@ import {
   FiSearch,
   FiMapPin,
   FiHome,
+  FiX,
 } from "react-icons/fi";
 
 import { MdCurrencyRupee } from "react-icons/md";
@@ -174,6 +175,16 @@ export default function SearchBar() {
             onChange={(e) => setSearch(e.target.value)}
             onFocus={() => search.trim().length > 0 && setShowSuggestions(true)}
           />
+
+          {search && (
+            <button 
+              className="search-clear-btn" 
+              onClick={() => setSearch("")}
+              type="button"
+            >
+              <FiX />
+            </button>
+          )}
 
         </div>
 
