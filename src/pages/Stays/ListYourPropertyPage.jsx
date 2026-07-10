@@ -27,21 +27,12 @@ import {
 } from "../../services/storageService";
 import { useNavigate, useLocation } from "react-router-dom";
 import { supabase } from "../../services/staysService";
+import { compressImage, compressImages, formatFileSize, isImageFile } from "../../utils/imageCompression";
 
 import "./ListYourProperty.css";
 
 export default function ListYourPropertyPage() {
-
   const location = useLocation();
-
-const ownerName =
-    location.state?.ownerName || "Partner";
-
-const propertyName =
-    location.state?.propertyName || "your property";
-
-const listingType =
-    location.state?.listingType || "Listing";
   const navigate = useNavigate();
 
   const propertyTypes = [
@@ -56,13 +47,6 @@ const listingType =
     "Ashram",
     "Camp",
     "Other",
-  ];
-
-  const featuredPlans = [
-    "Silver",
-    "Gold",
-    "Platinum",
-    "Simhastha Premium",
   ];
 
   const amenitiesList = [
@@ -81,141 +65,286 @@ const listingType =
   ];
 
   const [formData, setFormData] = useState({
-
     owner_name: "",
-
     phone: "",
-
     whatsapp: "",
-
     email: "",
-
     property_name: "",
-
     property_type: "",
-
     listing_type: "Free Listing",
-
     listing_plan: "",
-
     address: "",
-
     locality: "",
-
     city: "Ujjain",
-
     state: "Madhya Pradesh",
-
     pincode: "",
-
     google_maps_url: "",
-
     starting_price: "",
-
     rooms: "",
-
     occupancy: "",
-
     checkin_time: "",
-
     checkout_time: "",
-
     description: "",
-
     website: "",
-
     instagram: "",
-
     facebook: "",
-
     amenities: [],
-
     featured_image: null,
-
     gallery_images: [],
-
     business_document: null,
-
     id_proof: null,
-
     gst_number: "",
-
   });
 
   const [selectedPlan, setSelectedPlan] = useState(null);
-
   const [showSticky, setShowSticky] = useState(false);
-
   const [submitting, setSubmitting] = useState(false);
+  const [compressing, setCompressing] = useState({
+    featured_image: false,
+    gallery_images: false,
+    id_proof: false,
+    business_document: false,
+  });
 
   useEffect(() => {
     const onScroll = () => {
       setShowSticky(window.scrollY > 650);
     };
-
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  function handleChange(e){
-
-    const {name,value}=e.target;
-
-    setFormData(prev=>({
-
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData(prev => ({
       ...prev,
-
-      [name]:value,
-
+      [name]: value,
     }));
-
   }
 
-  function handleAmenity(name){
-
-    setFormData(prev=>({
-
+  function handleAmenity(name) {
+    setFormData(prev => ({
       ...prev,
-
-      amenities:prev.amenities.includes(name)
-
-      ? prev.amenities.filter(item=>item!==name)
-
-      : [...prev.amenities,name]
-
+      amenities: prev.amenities.includes(name)
+        ? prev.amenities.filter(item => item !== name)
+        : [...prev.amenities, name]
     }));
-
   }
 
-  function handleFile(e){
+  function handleFile(e) {
+    const { name, files } = e.target;
 
-    const {name,files}=e.target;
+    // Handle image compression for featured_image
+    if (name === "featured_image" && files[0]) {
+      const file = files[0];
+      
+      if (isImageFile(file)) {
+        setCompressing(prev => ({ ...prev, [name]: true }));
+        
+        compressImage(file, {
+          maxWidth: 1200,
+          maxHeight: 1200,
+          quality: 0.8,
+          maxSizeMB: 2
+        })
+        .then(compressedFile => {
+          setFormData(prev => ({
+            ...prev,
+            [name]: compressedFile
+          }));
+          
+          toast.success(
+            <div className="property-success-toast">
+              <FiCheck className="toast-icon" />
+              <div>
+                <strong>Image Compressed</strong>
+                <p>Original: {formatFileSize(file.size)} → Compressed: {formatFileSize(compressedFile.size)}</p>
+              </div>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              className: "property-success-toast-container"
+            }
+          );
+        })
+        .catch(error => {
+          console.error('Compression error:', error);
+          setFormData(prev => ({
+            ...prev,
+            [name]: file
+          }));
+          
+          toast.error(
+            <div className="property-error-toast">
+              <FiX className="toast-icon" />
+              <div>
+                <strong>Compression Failed</strong>
+                <p>Using original image. {error.message}</p>
+              </div>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 4000,
+              hideProgressBar: false,
+              className: "property-error-toast-container"
+            }
+          );
+        })
+        .finally(() => {
+          setCompressing(prev => ({ ...prev, [name]: false }));
+        });
+      } else {
+        setFormData(prev => ({
+          ...prev,
+          [name]: file
+        }));
+      }
 
-    if(name==="gallery_images"){
+    } else if (name === "gallery_images" && files) {
+      const imageFiles = Array.from(files).filter(f => isImageFile(f));
+      
+      if (imageFiles.length > 0) {
+        setCompressing(prev => ({ ...prev, [name]: true }));
+        
+        compressImages(imageFiles, {
+          maxWidth: 1200,
+          maxHeight: 1200,
+          quality: 0.8,
+          maxSizeMB: 2
+        })
+        .then(compressedFiles => {
+          setFormData(prev => ({
+            ...prev,
+            gallery_images: compressedFiles
+          }));
+          
+          const totalOriginal = imageFiles.reduce((sum, f) => sum + f.size, 0);
+          const totalCompressed = compressedFiles.reduce((sum, f) => sum + f.size, 0);
+          
+          toast.success(
+            <div className="property-success-toast">
+              <FiCheck className="toast-icon" />
+              <div>
+                <strong>Images Compressed</strong>
+                <p>{imageFiles.length} images processed. Total: {formatFileSize(totalOriginal)} → {formatFileSize(totalCompressed)}</p>
+              </div>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              className: "property-success-toast-container"
+            }
+          );
+        })
+        .catch(error => {
+          console.error('Gallery compression error:', error);
+          setFormData(prev => ({
+            ...prev,
+            gallery_images: [...files]
+          }));
+          
+          toast.error(
+            <div className="property-error-toast">
+              <FiX className="toast-icon" />
+              <div>
+                <strong>Compression Failed</strong>
+                <p>Using original images. {error.message}</p>
+              </div>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 4000,
+              hideProgressBar: false,
+              className: "property-error-toast-container"
+            }
+          );
+        })
+        .finally(() => {
+          setCompressing(prev => ({ ...prev, [name]: false }));
+        });
+      }
 
-      setFormData(prev=>({
+    } else if (name === "id_proof" && files[0]) {
+      const file = files[0];
+      
+      if (isImageFile(file)) {
+        setCompressing(prev => ({ ...prev, [name]: true }));
+        
+        compressImage(file, {
+          maxWidth: 1000,
+          maxHeight: 1000,
+          quality: 0.85,
+          maxSizeMB: 1
+        })
+        .then(compressedFile => {
+          setFormData(prev => ({
+            ...prev,
+            [name]: compressedFile
+          }));
+        })
+        .catch(error => {
+          console.error('ID proof compression error:', error);
+          setFormData(prev => ({
+            ...prev,
+            [name]: file
+          }));
+        })
+        .finally(() => {
+          setCompressing(prev => ({ ...prev, [name]: false }));
+        });
+      } else {
+        setFormData(prev => ({
+          ...prev,
+          [name]: file
+        }));
+      }
 
+    } else if (name === "business_document" && files[0]) {
+      const file = files[0];
+      
+      if (isImageFile(file)) {
+        setCompressing(prev => ({ ...prev, [name]: true }));
+        
+        compressImage(file, {
+          maxWidth: 1000,
+          maxHeight: 1000,
+          quality: 0.85,
+          maxSizeMB: 1
+        })
+        .then(compressedFile => {
+          setFormData(prev => ({
+            ...prev,
+            [name]: compressedFile
+          }));
+        })
+        .catch(error => {
+          console.error('Business document compression error:', error);
+          setFormData(prev => ({
+            ...prev,
+            [name]: file
+          }));
+        })
+        .finally(() => {
+          setCompressing(prev => ({ ...prev, [name]: false }));
+        });
+      } else {
+        setFormData(prev => ({
+          ...prev,
+          [name]: file
+        }));
+      }
+
+    } else {
+      setFormData(prev => ({
         ...prev,
-
-        gallery_images:[...files],
-
+        [name]: files[0]
       }));
-
-    }else{
-
-      setFormData(prev=>({
-
-        ...prev,
-
-        [name]:files[0],
-
-      }));
-
     }
-
   }
 
-  // Validate form and show error toasts
   function validateForm() {
     const errors = [];
 
@@ -259,16 +388,13 @@ const listingType =
   }
 
   async function handleSubmit(e) {
-
     e.preventDefault();
 
     if (submitting) return;
 
-    // Validate form
     const errors = validateForm();
     
     if (errors.length > 0) {
-      // Show error toasts for each validation error
       errors.forEach((error, index) => {
         setTimeout(() => {
           toast.error(
@@ -293,12 +419,6 @@ const listingType =
 
     setSubmitting(true);
 
-    /*
-    ==========================================
-    Upload Files To Supabase Storage
-    ==========================================
-    */
-
     try {
       let featuredImagePath = null;
       let galleryImagePaths = [];
@@ -321,126 +441,72 @@ const listingType =
         businessDocumentPath = await uploadBusinessDocument(formData.business_document);
       }
 
-      /*
-      ==========================================
-      Prepare Database Payload
-      ==========================================
-      */
-
       const payload = {
-    owner_name: formData.owner_name,
-    email: formData.email,
-    phone: formData.phone,
-    whatsapp: formData.whatsapp,
+        owner_name: formData.owner_name,
+        email: formData.email,
+        phone: formData.phone,
+        whatsapp: formData.whatsapp,
+        property_name: formData.property_name,
+        property_type: formData.property_type,
+        listing_type: formData.listing_type,
+        listing_plan: formData.listing_plan,
+        address: formData.address,
+        locality: formData.locality,
+        city: formData.city,
+        state: formData.state,
+        pincode: formData.pincode,
+        google_maps_url: formData.google_maps_url,
+        starting_price: formData.starting_price,
+        rooms: formData.rooms ? parseInt(formData.rooms) : null,
+        occupancy: formData.occupancy ? parseInt(formData.occupancy) : null,
+        checkin_time: formData.checkin_time,
+        checkout_time: formData.checkout_time,
+        description: formData.description,
+        amenities: formData.amenities,
+        website: formData.website,
+        instagram: formData.instagram,
+        facebook: formData.facebook,
+        featured_image: featuredImagePath,
+        gallery_images: galleryImagePaths,
+        id_proof: idProofPath,
+        business_document: businessDocumentPath,
+        gst_number: formData.gst_number,
+        status: "pending"
+      };
 
-    property_name: formData.property_name,
-    property_type: formData.property_type,
-    listing_type: formData.listing_type,
-    listing_plan: formData.listing_plan,
+      const { error } = await supabase
+        .from("property_listing_requests")
+        .insert([payload]);
 
-    address: formData.address,
-    locality: formData.locality,
-    city: formData.city,
-    state: formData.state,
-    pincode: formData.pincode,
-
-    google_maps_url: formData.google_maps_url,
-
-    starting_price: formData.starting_price,
-
-    rooms: formData.rooms
-      ? parseInt(formData.rooms)
-      : null,
-
-    occupancy: formData.occupancy
-      ? parseInt(formData.occupancy)
-      : null,
-
-    checkin_time: formData.checkin_time,
-    checkout_time: formData.checkout_time,
-
-    description: formData.description,
-
-    amenities: formData.amenities,
-
-    website: formData.website,
-    instagram: formData.instagram,
-    facebook: formData.facebook,
-
-    featured_image: featuredImagePath,
-
-    gallery_images: galleryImagePaths,
-
-    id_proof: idProofPath,
-
-   business_document: businessDocumentPath,
-
-    gst_number: formData.gst_number,
-
-    status: "pending"
-  };
-
-      console.log("Payload:", payload);
-
-      const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  console.log("Session:", session);
-
-  const { data: user } = await supabase.auth.getUser();
-
-  console.log("User:", user);
-
-       const { error } = await supabase
-    .from("property_listing_requests")
-    .insert([payload]);
-
-        if (error) {
-          console.log("SUPABASE ERROR");
-          console.log(error);
-
-          toast.error(
-            <div className="property-error-toast">
-              <FiX className="toast-icon" />
-              <div>
-                <strong>Submission Failed</strong>
-                <p>{error.message || "Unable to submit property. Please try again."}</p>
-              </div>
-            </div>,
-            {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              className: "property-error-toast-container"
-            }
-          );
-
-          console.log(error.details);
-
-          console.log(error.hint);
-
-          console.log(error.code);
-
-          return;
-
-        }
-
-        console.log("Inserted Successfully");
-
-        navigate("/thank-you", {
-          state: {
-            ownerName: formData.owner_name,
-            propertyName: formData.property_name,
-            listingType: formData.listing_type
+      if (error) {
+        toast.error(
+          <div className="property-error-toast">
+            <FiX className="toast-icon" />
+            <div>
+              <strong>Submission Failed</strong>
+              <p>{error.message || "Unable to submit property. Please try again."}</p>
+            </div>
+          </div>,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            className: "property-error-toast-container"
           }
-        });
+        );
+        return;
+      }
 
-    }
-    catch(err){
+      navigate("/thank-you", {
+        state: {
+          ownerName: formData.owner_name,
+          propertyName: formData.property_name,
+          listingType: formData.listing_type
+        }
+      });
 
+    } catch (err) {
       console.error(err);
-
       toast.error(
         <div className="property-error-toast">
           <FiX className="toast-icon" />
@@ -456,1609 +522,447 @@ const listingType =
           className: "property-error-toast-container"
         }
       );
-
-    }
-    finally{
-
+    } finally {
       setSubmitting(false);
-
     }
-
   }
 
-  function handlePlanSelect(planType){
-
-    const planMapping={
-
-      "free":{
-
-        listing_type:"Free Listing",
-
-        listing_plan:"",
-
+  function handlePlanSelect(planType) {
+    const planMapping = {
+      "free": {
+        listing_type: "Free Listing",
+        listing_plan: "",
         title: "Free Listing",
-
         price: "₹0",
-
         description: "Basic Listing"
-
       },
-
-      "standard":{
-
-        listing_type:"Featured Listing",
-
-        listing_plan:"",
-
+      "standard": {
+        listing_type: "Featured Listing",
+        listing_plan: "",
         title: "Standard",
-
         price: "₹999",
-
         description: "Featured Listing"
-
       },
-
-      "premium":{
-
-        listing_type:"Premium Listing",
-
-        listing_plan:"",
-
+      "premium": {
+        listing_type: "Premium Listing",
+        listing_plan: "",
         title: "Premium",
-
         price: "₹2,499",
-
         description: "Maximum Visibility"
-
       }
-
     };
 
-    const selectedPlan=planMapping[planType];
+    const selectedPlan = planMapping[planType];
 
-    if(selectedPlan){
-
-      setFormData(prev=>({
-
+    if (selectedPlan) {
+      setFormData(prev => ({
         ...prev,
-
-        listing_type:selectedPlan.listing_type,
-
-        listing_plan:selectedPlan.listing_plan
-
+        listing_type: selectedPlan.listing_type,
+        listing_plan: selectedPlan.listing_plan
       }));
 
       setSelectedPlan(selectedPlan);
 
-      setTimeout(()=>{
-
-        const formElement=document.getElementById("form");
-
-        if(formElement){
-
-          formElement.scrollIntoView({behavior:"smooth",block:"start"});
-
-          formElement.style.transition="box-shadow 0.3s ease";
-
-          formElement.style.boxShadow="0 0 0 4px rgba(37,99,235,0.3)";
-
-          setTimeout(()=>{
-
-            formElement.style.boxShadow="";
-
-          },2000);
-
+      setTimeout(() => {
+        const formElement = document.getElementById("form");
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          formElement.style.transition = "box-shadow 0.3s ease";
+          formElement.style.boxShadow = "0 0 0 4px rgba(37,99,235,0.3)";
+          setTimeout(() => {
+            formElement.style.boxShadow = "";
+          }, 2000);
         }
-
-      },100);
-
+      }, 100);
     }
-
   }
 
-  return(
-
-<div className="list-property-page">
-
-<div className="stay-container">
-
-<div className="listing-hero">
-
-<div className="hero-badge">
-
-<span className="badge-icon">🏢</span>
-
-Partner With MySimhastha
-
-</div>
-
-<h1 className="hero-title">
-
-List Your Property <span className="hero-highlight">on MySimhastha</span>
-
-</h1>
-
-<p className="hero-subtitle">
-
-Reach thousands of pilgrims looking for hotels, homestays, dharamshalas and guest houses in Ujjain.
-
-</p>
-
-<div className="hero-stats-row">
-
-<div className="hero-stat">
-
-<span className="hero-stat-num">30K+</span>
-
-<span className="hero-stat-label">Monthly Visitors</span>
-
-</div>
-
-<div className="hero-stat-divider"></div>
-
-<div className="hero-stat">
-
-<span className="hero-stat-num">85%</span>
-
-<span className="hero-stat-label">Get Bookings</span>
-
-</div>
-
-<div className="hero-stat-divider"></div>
-
-<div className="hero-stat">
-
-<span className="hero-stat-num">1M+</span>
-
-<span className="hero-stat-label">Monthly Views</span>
-
-</div>
-
-</div>
-
-</div>
-
-{/* ======================================================
-   PRICING PLANS
-===================================================== */}
-
-{!selectedPlan && (
-
-<section className="pricing-section">
-
-<h2>Choose Your <span className="section-highlight">Listing Plan</span></h2>
-
-<p>Start free and upgrade anytime for maximum visibility.</p>
-
-<div className="pricing-cards">
-
-{/* Free Plan */}
-<div className="pricing-card">
-
-<div className="pricing-icon">
-
-<FiHome/>
-
-</div>
-
-<h3>Free Listing</h3>
-
-<div className="price">
-
-₹0
-
-<span>/ forever</span>
-
-</div>
-
-<p className="price-note">Perfect for getting started</p>
-
-<ul className="pricing-features">
-
-<li>
-
-<FiCheck/>
-
-<span>Basic property listing</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Up to 5 photos</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Contact details visible</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Standard search placement</span>
-
-</li>
-
-<li className="disabled">
-
-<FiCheck/>
-
-<span>Featured badge</span>
-
-</li>
-
-<li className="disabled">
-
-<FiCheck/>
-
-<span>Priority support</span>
-
-</li>
-
-</ul>
-
-<button 
-
-  type="button"
-
-  className="pricing-btn secondary"
-
-  onClick={()=>handlePlanSelect("free")}
-
->
-
-Get Started Free
-
-</button>
-
-</div>
-
-{/* Standard Plan - Featured */}
-<div className="pricing-card featured">
-
-<div className="pricing-badge">
-
-<FiStar/> Most Popular
-
-</div>
-
-<div className="pricing-icon">
-
-<FiZap/>
-
-</div>
-
-<h3>Standard</h3>
-
-<div className="price">
-
-₹999
-
-<span>/ month</span>
-
-</div>
-
-<p className="price-note">Best for growing properties</p>
-
-<ul className="pricing-features">
-
-<li>
-
-<FiCheck/>
-
-<span>Everything in Free</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Up to 15 photos</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Featured in search results</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Priority placement</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Performance analytics</span>
-
-</li>
-
-<li className="disabled">
-
-<FiCheck/>
-
-<span>Dedicated account manager</span>
-
-</li>
-
-</ul>
-
-<button 
-
-  type="button"
-
-  className="pricing-btn primary"
-
-  onClick={()=>handlePlanSelect("standard")}
-
->
-
-Choose Standard
-
-</button>
-
-</div>
-
-{/* Premium Plan */}
-<div className="pricing-card">
-
-<div className="pricing-icon">
-
-<FiStar/>
-
-</div>
-
-<h3>Premium</h3>
-
-<div className="price">
-
-₹2,499
-
-<span>/ month</span>
-
-</div>
-
-<p className="price-note">Maximum visibility & support</p>
-
-<ul className="pricing-features">
-
-<li>
-
-<FiCheck/>
-
-<span>Everything in Standard</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Unlimited photos</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Top search ranking</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Homepage featured slot</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Advanced analytics & reports</span>
-
-</li>
-
-<li>
-
-<FiCheck/>
-
-<span>Dedicated account manager</span>
-
-</li>
-
-</ul>
-
-<button 
-
-  type="button"
-
-  className="pricing-btn secondary"
-
-  onClick={()=>handlePlanSelect("premium")}
-
->
-
-Choose Premium
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-)}
-
-{/* ======================================================
-   WHY LIST WITH US
-===================================================== */}
-
-{/*<section className="why-list-section">
-
-<h2>Why List With <span className="section-highlight">MySimhastha</span>?</h2>
-
-<div className="stats-grid">
-
-<div className="stat-card">
-
-<div className="stat-icon">
-
-<FiUsers/>
-
-</div>
-
-<div className="stat-number">50K+</div>
-
-<p className="stat-label">Monthly Pilgrim Visitors</p>
-
-</div>
-
-<div className="stat-card">
-
-<div className="stat-icon">
-
-<FiEye/>
-
-</div>
-
-<div className="stat-number">2.5M+</div>
-
-<p className="stat-label">Property Views Per Month</p>
-
-</div>
-
-<div className="stat-card">
-
-<div className="stat-icon">
-
-<FiCalendar/>
-
-</div>
-
-<div className="stat-number">365</div>
-
-<p className="stat-label">Days Of Visibility Yearly</p>
-
-</div>
-
-<div className="stat-card">
-
-<div className="stat-icon">
-
-<FiTrendingUp/>
-
-</div>
-
-<div className="stat-number">85%</div>
-
-<p className="stat-label">Properties Get Bookings</p>
-
-</div>
-
-</div>
-
-</section>*/}
-
-{selectedPlan && (
-
-<div className="selected-plan-bar">
-
-<div className="selected-plan-left">
-
-<span className="selected-chip">
-
-✓ Selected Plan
-
-</span>
-
-<div>
-
-<h3>{selectedPlan.title}</h3>
-
-<p>{selectedPlan.description}</p>
-
-</div>
-
-</div>
-
-<div className="selected-plan-right">
-
-<strong>{selectedPlan.price}</strong>
-
-<button
-type="button"
-onClick={() => {
-  const plans = ["premium", "standard", "free"];
-  const currentIdx = plans.indexOf(
-    selectedPlan.title === "Premium" ? "premium" :
-    selectedPlan.title === "Standard" ? "standard" : "free"
+  return (
+    <div className="list-property-page">
+      <div className="stay-container">
+        <div className="listing-hero">
+          <div className="hero-badge">
+            <span className="badge-icon">🏢</span>
+            Partner With MySimhastha
+          </div>
+          <h1 className="hero-title">
+            List Your Property <span className="hero-highlight">on MySimhastha</span>
+          </h1>
+          <p className="hero-subtitle">
+            Reach thousands of pilgrims looking for hotels, homestays, dharamshalas and guest houses in Ujjain.
+          </p>
+          <div className="hero-stats-row">
+            <div className="hero-stat">
+              <span className="hero-stat-num">30K+</span>
+              <span className="hero-stat-label">Monthly Visitors</span>
+            </div>
+            <div className="hero-stat-divider"></div>
+            <div className="hero-stat">
+              <span className="hero-stat-num">85%</span>
+              <span className="hero-stat-label">Get Bookings</span>
+            </div>
+            <div className="hero-stat-divider"></div>
+            <div className="hero-stat">
+              <span className="hero-stat-num">1M+</span>
+              <span className="hero-stat-label">Monthly Views</span>
+            </div>
+          </div>
+        </div>
+
+        <section className="pricing-section">
+          <h2>Choose Your <span className="section-highlight">Listing Plan</span></h2>
+          <p>Start free and upgrade anytime for maximum visibility.</p>
+          <div className="pricing-cards">
+            <div className="pricing-card">
+              <div className="pricing-icon">
+                <FiHome />
+              </div>
+              <h3>Free Listing</h3>
+              <div className="price">
+                ₹0
+                <span>/ forever</span>
+              </div>
+              <p className="price-note">Perfect for getting started</p>
+              <ul className="pricing-features">
+                <li><FiCheck /><span>Basic property listing</span></li>
+                <li><FiCheck /><span>Up to 5 photos</span></li>
+                <li><FiCheck /><span>Contact details visible</span></li>
+                <li><FiCheck /><span>Standard search placement</span></li>
+                <li className="disabled"><FiCheck /><span>Featured badge</span></li>
+                <li className="disabled"><FiCheck /><span>Priority support</span></li>
+              </ul>
+              <button type="button" className="pricing-btn secondary" onClick={() => handlePlanSelect("free")}>
+                Get Started Free
+              </button>
+            </div>
+
+            <div className="pricing-card featured">
+              <div className="pricing-badge">
+                <FiStar /> Most Popular
+              </div>
+              <div className="pricing-icon">
+                <FiZap />
+              </div>
+              <h3>Standard</h3>
+              <div className="price">
+                ₹999
+                <span>/ month</span>
+              </div>
+              <p className="price-note">Best for growing properties</p>
+              <ul className="pricing-features">
+                <li><FiCheck /><span>Everything in Free</span></li>
+                <li><FiCheck /><span>Up to 15 photos</span></li>
+                <li><FiCheck /><span>Featured in search results</span></li>
+                <li><FiCheck /><span>Priority placement</span></li>
+                <li><FiCheck /><span>Performance analytics</span></li>
+                <li className="disabled"><FiCheck /><span>Dedicated account manager</span></li>
+              </ul>
+              <button type="button" className="pricing-btn primary" onClick={() => handlePlanSelect("standard")}>
+                Choose Standard
+              </button>
+            </div>
+
+            <div className="pricing-card">
+              <div className="pricing-icon">
+                <FiStar />
+              </div>
+              <h3>Premium</h3>
+              <div className="price">
+                ₹2,499
+                <span>/ month</span>
+              </div>
+              <p className="price-note">Maximum visibility & support</p>
+              <ul className="pricing-features">
+                <li><FiCheck /><span>Everything in Standard</span></li>
+                <li><FiCheck /><span>Unlimited photos</span></li>
+                <li><FiCheck /><span>Top search ranking</span></li>
+                <li><FiCheck /><span>Homepage featured slot</span></li>
+                <li><FiCheck /><span>Advanced analytics & reports</span></li>
+                <li><FiCheck /><span>Dedicated account manager</span></li>
+              </ul>
+              <button type="button" className="pricing-btn secondary" onClick={() => handlePlanSelect("premium")}>
+                Choose Premium
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {selectedPlan && (
+          <div className="selected-plan-bar">
+            <div className="selected-plan-left">
+              <span className="selected-chip">✓ Selected Plan</span>
+              <div>
+                <h3>{selectedPlan.title}</h3>
+                <p>{selectedPlan.description}</p>
+              </div>
+            </div>
+            <div className="selected-plan-right">
+              <strong>{selectedPlan.price}</strong>
+              <button type="button" onClick={() => {
+                const plans = ["premium", "standard", "free"];
+                const currentIdx = plans.indexOf(
+                  selectedPlan.title === "Premium" ? "premium" :
+                  selectedPlan.title === "Standard" ? "standard" : "free"
+                );
+                const nextPlan = plans[(currentIdx + 1) % plans.length];
+                handlePlanSelect(nextPlan);
+              }}>
+                Change Plan
+              </button>
+            </div>
+          </div>
+        )}
+
+        <div className="listing-layout">
+          <div className="listing-main">
+            <form id="form" className="listing-form" onSubmit={handleSubmit}>
+              <section className="form-card">
+                <h2><FiUser /> Owner Information</h2>
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label>Owner Name *</label>
+                    <input type="text" name="owner_name" value={formData.owner_name} onChange={handleChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label>Mobile Number *</label>
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label>WhatsApp</label>
+                    <input type="tel" name="whatsapp" value={formData.whatsapp} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+                  </div>
+                </div>
+              </section>
+
+              <section className="form-card">
+                <h2><FiHome /> Property Information</h2>
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label>Property Name *</label>
+                    <input type="text" name="property_name" value={formData.property_name} onChange={handleChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label>Property Type *</label>
+                    <select name="property_type" value={formData.property_type} onChange={handleChange} required>
+                      <option value="">Select Property Type</option>
+                      {propertyTypes.map(type => (
+                        <option key={type} value={type}>{type}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label>Listing Type *</label>
+                    <select name="listing_type" value={formData.listing_type} onChange={handleChange}>
+                      <option>Free Listing</option>
+                      <option>Featured Listing</option>
+                      <option>Premium Listing</option>
+                    </select>
+                  </div>
+                </div>
+              </section>
+
+              <section className="form-card">
+                <h2><FiMapPin /> Property Location</h2>
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label>Address *</label>
+                    <input type="text" name="address" value={formData.address} onChange={handleChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label>Locality *</label>
+                    <input type="text" name="locality" value={formData.locality} onChange={handleChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label>City</label>
+                    <input type="text" name="city" value={formData.city} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>State</label>
+                    <input type="text" name="state" value={formData.state} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>PIN Code</label>
+                    <input type="text" name="pincode" value={formData.pincode} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>Google Maps Link</label>
+                    <input type="url" name="google_maps_url" placeholder="https://maps.google.com/..." value={formData.google_maps_url} onChange={handleChange} />
+                  </div>
+                </div>
+              </section>
+
+              <section className="form-card">
+                <h2><FiDollarSign /> Property Details</h2>
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label>Starting Price *</label>
+                    <input type="number" name="starting_price" value={formData.starting_price} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>Total Rooms</label>
+                    <input type="number" name="rooms" value={formData.rooms} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>Maximum Occupancy</label>
+                    <input type="number" name="occupancy" value={formData.occupancy} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>Check In *</label>
+                    <input type="time" name="checkin_time" value={formData.checkin_time} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>Check Out *</label>
+                    <input type="time" name="checkout_time" value={formData.checkout_time} onChange={handleChange} />
+                  </div>
+                  <div className="form-group full-width">
+                    <label>Property Description</label>
+                    <textarea rows="6" name="description" value={formData.description} onChange={handleChange} placeholder="Describe your property, nearby attractions, facilities and special features." />
+                  </div>
+                </div>
+              </section>
+
+              <section className="form-card">
+                <h2>Amenities</h2>
+                <div className="amenities-grid">
+                  {amenitiesList.map(item => (
+                    <label key={item} className="amenity-checkbox">
+                      <input type="checkbox" checked={formData.amenities.includes(item)} onChange={() => handleAmenity(item)} />
+                      <span>{item}</span>
+                    </label>
+                  ))}
+                </div>
+              </section>
+
+              <section className="form-card">
+                <h2><FiUpload /> Property Images</h2>
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label>Featured Image *</label>
+                    <input type="file" accept="image/*" name="featured_image" onChange={handleFile} disabled={compressing.featured_image} />
+                    {compressing.featured_image && (
+                      <div className="property-upload-toast">
+                        <div className="upload-spinner"></div>
+                        <span>Compressing image...</span>
+                      </div>
+                    )}
+                    {formData.featured_image && !compressing.featured_image && (
+                      <div className="file-preview">
+                        <img src={URL.createObjectURL(formData.featured_image)} alt="Preview" className="preview-thumbnail" />
+                        <span className="file-name">{formData.featured_image.name} ({formatFileSize(formData.featured_image.size)})</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="form-group">
+                    <label>Gallery Images</label>
+                    <input type="file" accept="image/*" multiple name="gallery_images" onChange={handleFile} disabled={compressing.gallery_images} />
+                    <small>Upload up to 10 high-quality photos.</small>
+                    {compressing.gallery_images && (
+                      <div className="property-upload-toast">
+                        <div className="upload-spinner"></div>
+                        <span>Compressing images...</span>
+                      </div>
+                    )}
+                    {formData.gallery_images && formData.gallery_images.length > 0 && !compressing.gallery_images && (
+                      <div className="gallery-preview-grid">
+                        {formData.gallery_images.map((file, index) => (
+                          <div key={index} className="file-preview">
+                            <img src={URL.createObjectURL(file)} alt={`Preview ${index + 1}`} className="preview-thumbnail" />
+                            <span className="file-name">{file.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </section>
+
+              <section className="form-card">
+                <h2><FiPhone /> Contact & Social Links</h2>
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label>Website</label>
+                    <input type="url" name="website" placeholder="https://" value={formData.website} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>Instagram</label>
+                    <input type="url" name="instagram" placeholder="https://instagram.com/" value={formData.instagram} onChange={handleChange} />
+                  </div>
+                  <div className="form-group">
+                    <label>Facebook</label>
+                    <input type="url" name="facebook" placeholder="https://facebook.com/" value={formData.facebook} onChange={handleChange} />
+                  </div>
+                </div>
+              </section>
+
+              <section className="form-card">
+                <h2><FiUpload /> Verification Documents</h2>
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label>Owner ID Proof</label>
+                    <input type="file" accept=".pdf,.jpg,.jpeg,.png" name="id_proof" onChange={handleFile} />
+                  </div>
+                  <div className="form-group">
+                    <label>Business Registration (Optional)</label>
+                    <input type="file" accept=".pdf,.jpg,.jpeg,.png" name="business_document" onChange={handleFile} />
+                  </div>
+                </div>
+              </section>
+
+              <section className="form-card">
+                <label className="agree-box">
+                  <input type="checkbox" required />
+                  <span>I confirm that all information provided is accurate. MySimhastha may verify the property before publishing it.</span>
+                </label>
+                <label className="agree-box">
+                  <input type="checkbox" required />
+                  <span>I agree to the Terms & Conditions and Privacy Policy.</span>
+                </label>
+              </section>
+
+              <div className="submit-area">
+                <button type="submit" className="submit-btn" disabled={submitting}>
+                  {submitting ? <span className="btn-spinner"></span> : <FiCheckCircle />}
+                  Submit Property
+                </button>
+                <p>After submission our team will review your property within <strong>24 Hours</strong> and contact you through Phone or WhatsApp.</p>
+              </div>
+            </form>
+          </div>
+
+          <div className="listing-sidebar">
+            <div className="sidebar-card">
+              <h3>Listing Type</h3>
+              <strong>{formData.listing_type}</strong>
+              <hr />
+              <div className="sidebar-list">
+                <div>Property<span>{formData.property_type || "-"}</span></div>
+                <div>City<span>{formData.city}</span></div>
+                <div>Owner<span>{formData.owner_name || "-"}</span></div>
+              </div>
+              <button className="change-plan-btn" onClick={() => {
+                const types = ["Free Listing", "Featured Listing", "Premium Listing"];
+                const currentIdx = types.indexOf(formData.listing_type);
+                const nextType = types[(currentIdx + 1) % types.length];
+                setFormData(prev => ({ ...prev, listing_type: nextType, listing_plan: "" }));
+              }}>
+                Change Plan
+              </button>
+            </div>
+
+            <div className="sidebar-card">
+              <h3>Need Help?</h3>
+              <a href="tel:+91xxxxxxxxxx">📞 +91 XXXXX XXXX</a>
+              <a href="https://wa.me/91xxxxxxxxxx">💬 WhatsApp</a>
+              <p>Usually replies within 30 minutes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-  const nextPlan = plans[(currentIdx + 1) % plans.length];
-  handlePlanSelect(nextPlan);
-}}
->
-
-Change Plan
-
-</button>
-
-</div>
-
-</div>
-
-)}
-
-<div className="listing-layout">
-
-<div className="listing-main">
-
-<form
-id="form"
-className="listing-form"
-onSubmit={handleSubmit}
->
-
-{/* Owner Information */}
-<section className="form-card">
-
-<h2>
-
-<FiUser/>
-
-Owner Information
-
-</h2>
-
-<div className="form-grid">
-
-<div className="form-group">
-
-<label>
-
-Owner Name *
-
-</label>
-
-<input
-
-type="text"
-
-name="owner_name"
-
-value={formData.owner_name}
-
-onChange={handleChange}
-
-required
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Mobile Number *
-
-</label>
-
-<input
-
-type="tel"
-
-name="phone"
-
-value={formData.phone}
-
-onChange={handleChange}
-
-required
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-WhatsApp
-
-</label>
-
-<input
-
-type="tel"
-
-name="whatsapp"
-
-value={formData.whatsapp}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Email *
-
-</label>
-
-<input
-
-type="email"
-
-name="email"
-
-value={formData.email}
-
-onChange={handleChange}
-
-required
-
-/>
-
-</div>
-
-</div>
-
-</section>
-
-{/* Property Information */}
-<section className="form-card">
-
-<h2>
-
-<FiHome/>
-
-Property Information
-
-</h2>
-
-<div className="form-grid">
-
-<div className="form-group">
-
-<label>
-
-Property Name *
-
-</label>
-
-<input
-
-type="text"
-
-name="property_name"
-
-value={formData.property_name}
-
-onChange={handleChange}
-
-required
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Property Type *
-
-</label>
-
-<select
-
-name="property_type"
-
-value={formData.property_type}
-
-onChange={handleChange}
-
-required
-
->
-
-<option value="">
-
-Select Property Type
-
-</option>
-
-{propertyTypes.map(type=>(
-
-<option
-key={type}
-value={type}
->
-
-{type}
-
-</option>
-
-))}
-
-</select>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Listing Type *
-
-</label>
-
-<select
-
-name="listing_type"
-
-value={formData.listing_type}
-
-onChange={handleChange}
-
->
-
-<option>
-Free Listing
-</option>
-<option>
-Featured Listing
-</option>
-<option>
-Premium Listing
-</option>
-</select>
-
-</div>
-
-{/*{formData.listing_type==="Featured Listing" && (
-
-<div className="form-group">
-
-<label>
-
-Featured Plan *
-
-</label>
-
-<select
-
-name="listing_plan"
-
-value={formData.listing_plan}
-
-onChange={handleChange}
-
->
-
-<option value="">
-
-Select Plan
-
-</option>
-
-{featuredPlans.map(plan=>(
-
-<option
-
-key={plan}
-
-value={plan}
-
->
-
-{plan}
-
-</option>
-
-))}
-
-</select>
-
-</div>
-
-)}*/}
-
-</div>
-
-</section>
-
-{/* Property Location */}
-<section className="form-card">
-
-<h2>
-
-<FiMapPin/>
-
-Property Location
-
-</h2>
-
-<div className="form-grid">
-
-<div className="form-group">
-
-<label>
-
-Address *
-
-</label>
-
-<input
-
-type="text"
-
-name="address"
-
-value={formData.address}
-
-onChange={handleChange}
-
-required
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Locality *
-
-</label>
-
-<input
-
-type="text"
-
-name="locality"
-
-value={formData.locality}
-
-onChange={handleChange}
-
-required
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-City
-
-</label>
-
-<input
-
-type="text"
-
-name="city"
-
-value={formData.city}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-State
-
-</label>
-
-<input
-
-type="text"
-
-name="state"
-
-value={formData.state}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-PIN Code
-
-</label>
-
-<input
-
-type="text"
-
-name="pincode"
-
-value={formData.pincode}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Google Maps Link
-
-</label>
-
-<input
-
-type="url"
-
-name="google_maps_url"
-
-placeholder="https://maps.google.com/..."
-
-value={formData.google_maps_url}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-</div>
-
-</section>
-
-{/* Property Details */}
-<section className="form-card">
-
-<h2>
-
-<FiDollarSign/>
-
-Property Details
-
-</h2>
-
-<div className="form-grid">
-
-<div className="form-group">
-
-<label>
-
-Starting Price
-
-</label>
-
-<input
-
-type="number"
-
-name="starting_price"
-
-value={formData.starting_price}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Total Rooms
-
-</label>
-
-<input
-
-type="number"
-
-name="rooms"
-
-value={formData.rooms}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Maximum Occupancy
-
-</label>
-
-<input
-
-type="number"
-
-name="occupancy"
-
-value={formData.occupancy}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Check In
-
-</label>
-
-<input
-
-type="time"
-
-name="checkin_time"
-
-value={formData.checkin_time}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Check Out
-
-</label>
-
-<input
-
-type="time"
-
-name="checkout_time"
-
-value={formData.checkout_time}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group full-width">
-
-<label>
-
-Property Description
-
-</label>
-
-<textarea
-
-rows="6"
-
-name="description"
-
-value={formData.description}
-
-onChange={handleChange}
-
-placeholder="Describe your property, nearby attractions, facilities and special features."
-
-/>
-
-</div>
-
-</div>
-
-</section>
-
-{/* Amenities */}
-<section className="form-card">
-
-<h2>
-
-Amenities
-
-</h2>
-
-<div className="amenities-grid">
-
-{amenitiesList.map(item=>(
-
-<label
-
-key={item}
-
-className="amenity-checkbox"
-
->
-
-<input
-
-type="checkbox"
-
-checked={formData.amenities.includes(item)}
-
-onChange={()=>handleAmenity(item)}
-
-/>
-
-<span>
-
-{item}
-
-</span>
-
-</label>
-
-))}
-
-</div>
-
-</section>
-
-{/* Property Images */}
-<section className="form-card">
-
-<h2>
-
-<FiUpload/>
-
-Property Images
-
-</h2>
-
-<div className="form-grid">
-
-<div className="form-group">
-
-<label>
-
-Featured Image *
-
-</label>
-
-<input
-
-type="file"
-
-accept="image/*"
-
-name="featured_image"
-
-onChange={handleFile}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Gallery Images
-
-</label>
-
-<input
-
-type="file"
-
-accept="image/*"
-
-multiple
-
-name="gallery_images"
-
-onChange={handleFile}
-
-/>
-
-<small>
-
-Upload up to 10 high-quality photos.
-
-</small>
-
-</div>
-
-</div>
-
-</section>
-
-{/* Contact & Social */}
-<section className="form-card">
-
-<h2>
-
-<FiPhone/>
-
-Contact & Social Links
-
-</h2>
-
-<div className="form-grid">
-
-<div className="form-group">
-
-<label>
-
-Website
-
-</label>
-
-<input
-
-type="url"
-
-name="website"
-
-placeholder="https://"
-
-value={formData.website}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Instagram
-
-</label>
-
-<input
-
-type="url"
-
-name="instagram"
-
-placeholder="https://instagram.com/"
-
-value={formData.instagram}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Facebook
-
-</label>
-
-<input
-
-type="url"
-
-name="facebook"
-
-placeholder="https://facebook.com/"
-
-value={formData.facebook}
-
-onChange={handleChange}
-
-/>
-
-</div>
-
-</div>
-
-</section>
-
-{/* Verification Documents */}
-<section className="form-card">
-
-<h2>
-
-<FiUpload/>
-
-Verification Documents
-
-</h2>
-
-<div className="form-grid">
-
-<div className="form-group">
-
-<label>
-
-Owner ID Proof
-
-</label>
-
-<input
-
-type="file"
-
-accept=".pdf,.jpg,.jpeg,.png"
-
-name="id_proof"
-
-onChange={handleFile}
-
-/>
-
-</div>
-
-<div className="form-group">
-
-<label>
-
-Business Registration (Optional)
-
-</label>
-
-<input
-
-type="file"
-
-accept=".pdf,.jpg,.jpeg,.png"
-
-name="business_document"
-
-onChange={handleFile}
-
-/>
-
-</div>
-
-</div>
-
-</section>
-
-{/* Terms */}
-<section className="form-card">
-
-<label className="agree-box">
-
-<input
-
-type="checkbox"
-
-required
-
-/>
-
-<span>
-
-I confirm that all information provided is accurate.
-MySimhastha may verify the property before publishing it.
-
-</span>
-
-</label>
-
-<label className="agree-box">
-
-<input
-
-type="checkbox"
-
-required
-
-/>
-
-<span>
-
-I agree to the Terms & Conditions and Privacy Policy.
-
-</span>
-
-</label>
-
-</section>
-
-{/* Submit */}
-<div className="submit-area">
-
-<button
-
-type="submit"
-
-className="submit-btn"
-
->
-
-<FiCheckCircle/>
-
-Submit Property
-
-</button>
-
-<p>
-
-After submission our team will review your property
-within <strong>24 Hours</strong> and contact you through
-Phone or WhatsApp.
-
-</p>
-
-</div>
-
-</form>
-
-</div>
-
-{/* ======================================================
-   SIDEBAR
-===================================================== */}
-
-<div className="listing-sidebar">
-
-{/* Selected Plan Card */}
-<div className="sidebar-card">
-
-<h3>Listing Type</h3>
-
-<strong>
-
-{formData.listing_type}
-
-</strong>
-
-<hr/>
-
-<div className="sidebar-list">
-
-<div>
-
-Property
-
-<span>
-
-{formData.property_type || "-"}
-
-</span>
-
-</div>
-
-<div>
-
-City
-
-<span>
-
-{formData.city}
-
-</span>
-
-</div>
-
-<div>
-
-Owner
-
-<span>
-
-{formData.owner_name || "-"}
-
-</span>
-
-</div>
-
-</div>
-
-<button className="change-plan-btn" onClick={() => {
-  const types = ["Free Listing", "Featured Listing", "Premium Listing"];
-  const currentIdx = types.indexOf(formData.listing_type);
-  const nextType = types[(currentIdx + 1) % types.length];
-  setFormData(prev => ({ ...prev, listing_type: nextType, listing_plan: "" }));
-}}>
-
-Change Plan
-
-</button>
-
-</div>
-
-{/* Help Card */}
-<div className="sidebar-card">
-
-<h3>Need Help?</h3>
-
-<a href="tel:+91xxxxxxxxxx">
-
-📞 +91 XXXXX XXXX
-
-</a>
-
-<a href="https://wa.me/91xxxxxxxxxx">
-
-💬 WhatsApp
-
-</a>
-
-<p>
-
-Usually replies within 30 minutes.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div>
-);
 }
