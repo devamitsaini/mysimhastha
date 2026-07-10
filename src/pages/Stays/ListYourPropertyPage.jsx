@@ -15,11 +15,34 @@ import {
   FiEye,
   FiCalendar,
   FiTrendingUp,
+  FiX,
+  FiAlertCircle,
 } from "react-icons/fi";
+import { toast } from "react-toastify";
+import {
+  uploadFeaturedImage,
+  uploadGalleryImages,
+  uploadIdProof,
+  uploadBusinessDocument,
+} from "../../services/storageService";
+import { useNavigate, useLocation } from "react-router-dom";
+import { supabase } from "../../services/staysService";
 
 import "./ListYourProperty.css";
 
 export default function ListYourPropertyPage() {
+
+  const location = useLocation();
+
+const ownerName =
+    location.state?.ownerName || "Partner";
+
+const propertyName =
+    location.state?.propertyName || "your property";
+
+const listingType =
+    location.state?.listingType || "Listing";
+  const navigate = useNavigate();
 
   const propertyTypes = [
     "Hotel",
@@ -115,11 +138,15 @@ export default function ListYourPropertyPage() {
 
     id_proof: null,
 
+    gst_number: "",
+
   });
 
   const [selectedPlan, setSelectedPlan] = useState(null);
 
   const [showSticky, setShowSticky] = useState(false);
+
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -188,13 +215,254 @@ export default function ListYourPropertyPage() {
 
   }
 
-  async function handleSubmit(e){
+  // Validate form and show error toasts
+  function validateForm() {
+    const errors = [];
+
+    if (!formData.owner_name.trim()) {
+      errors.push({ field: "owner_name", message: "Owner name is required" });
+    }
+
+    if (!formData.phone.trim()) {
+      errors.push({ field: "phone", message: "Mobile number is required" });
+    } else if (formData.phone.length < 10) {
+      errors.push({ field: "phone", message: "Please enter a valid 10-digit mobile number" });
+    }
+
+    if (!formData.email.trim()) {
+      errors.push({ field: "email", message: "Email is required" });
+    } else if (!formData.email.includes("@")) {
+      errors.push({ field: "email", message: "Please enter a valid email address" });
+    }
+
+    if (!formData.property_name.trim()) {
+      errors.push({ field: "property_name", message: "Property name is required" });
+    }
+
+    if (!formData.property_type) {
+      errors.push({ field: "property_type", message: "Please select a property type" });
+    }
+
+    if (!formData.address.trim()) {
+      errors.push({ field: "address", message: "Property address is required" });
+    }
+
+    if (!formData.locality.trim()) {
+      errors.push({ field: "locality", message: "Locality is required" });
+    }
+
+    if (!formData.featured_image) {
+      errors.push({ field: "featured_image", message: "Featured image is required" });
+    }
+
+    return errors;
+  }
+
+  async function handleSubmit(e) {
 
     e.preventDefault();
 
-    console.log(formData);
+    if (submitting) return;
 
-    // Supabase submission (Part 2C)
+    // Validate form
+    const errors = validateForm();
+    
+    if (errors.length > 0) {
+      // Show error toasts for each validation error
+      errors.forEach((error, index) => {
+        setTimeout(() => {
+          toast.error(
+            <div className="property-error-toast">
+              <FiAlertCircle className="toast-icon" />
+              <div>
+                <strong>Required Field Missing</strong>
+                <p>{error.message}</p>
+              </div>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              className: "property-error-toast-container"
+            }
+          );
+        }, index * 300);
+      });
+      return;
+    }
+
+    setSubmitting(true);
+
+    /*
+    ==========================================
+    Upload Files To Supabase Storage
+    ==========================================
+    */
+
+    try {
+      let featuredImagePath = null;
+      let galleryImagePaths = [];
+      let idProofPath = null;
+      let businessDocumentPath = null;
+
+      if (formData.featured_image) {
+        featuredImagePath = await uploadFeaturedImage(formData.featured_image);
+      }
+
+      if (formData.gallery_images && formData.gallery_images.length > 0) {
+        galleryImagePaths = await uploadGalleryImages(formData.gallery_images);
+      }
+
+      if (formData.id_proof) {
+        idProofPath = await uploadIdProof(formData.id_proof);
+      }
+
+      if (formData.business_document) {
+        businessDocumentPath = await uploadBusinessDocument(formData.business_document);
+      }
+
+      /*
+      ==========================================
+      Prepare Database Payload
+      ==========================================
+      */
+
+      const payload = {
+    owner_name: formData.owner_name,
+    email: formData.email,
+    phone: formData.phone,
+    whatsapp: formData.whatsapp,
+
+    property_name: formData.property_name,
+    property_type: formData.property_type,
+    listing_type: formData.listing_type,
+    listing_plan: formData.listing_plan,
+
+    address: formData.address,
+    locality: formData.locality,
+    city: formData.city,
+    state: formData.state,
+    pincode: formData.pincode,
+
+    google_maps_url: formData.google_maps_url,
+
+    starting_price: formData.starting_price,
+
+    rooms: formData.rooms
+      ? parseInt(formData.rooms)
+      : null,
+
+    occupancy: formData.occupancy
+      ? parseInt(formData.occupancy)
+      : null,
+
+    checkin_time: formData.checkin_time,
+    checkout_time: formData.checkout_time,
+
+    description: formData.description,
+
+    amenities: formData.amenities,
+
+    website: formData.website,
+    instagram: formData.instagram,
+    facebook: formData.facebook,
+
+    featured_image: featuredImagePath,
+
+    gallery_images: galleryImagePaths,
+
+    id_proof: idProofPath,
+
+   business_document: businessDocumentPath,
+
+    gst_number: formData.gst_number,
+
+    status: "pending"
+  };
+
+      console.log("Payload:", payload);
+
+      const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  console.log("Session:", session);
+
+  const { data: user } = await supabase.auth.getUser();
+
+  console.log("User:", user);
+
+       const { error } = await supabase
+    .from("property_listing_requests")
+    .insert([payload]);
+
+        if (error) {
+          console.log("SUPABASE ERROR");
+          console.log(error);
+
+          toast.error(
+            <div className="property-error-toast">
+              <FiX className="toast-icon" />
+              <div>
+                <strong>Submission Failed</strong>
+                <p>{error.message || "Unable to submit property. Please try again."}</p>
+              </div>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              className: "property-error-toast-container"
+            }
+          );
+
+          console.log(error.details);
+
+          console.log(error.hint);
+
+          console.log(error.code);
+
+          return;
+
+        }
+
+        console.log("Inserted Successfully");
+
+        navigate("/thank-you", {
+          state: {
+            ownerName: formData.owner_name,
+            propertyName: formData.property_name,
+            listingType: formData.listing_type
+          }
+        });
+
+    }
+    catch(err){
+
+      console.error(err);
+
+      toast.error(
+        <div className="property-error-toast">
+          <FiX className="toast-icon" />
+          <div>
+            <strong>Unexpected Error</strong>
+            <p>{err.message || "Something went wrong. Please try again."}</p>
+          </div>
+        </div>,
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          className: "property-error-toast-container"
+        }
+      );
+
+    }
+    finally{
+
+      setSubmitting(false);
+
+    }
 
   }
 
@@ -220,7 +488,7 @@ export default function ListYourPropertyPage() {
 
         listing_type:"Featured Listing",
 
-        listing_plan:"Gold",
+        listing_plan:"",
 
         title: "Standard",
 
@@ -232,9 +500,9 @@ export default function ListYourPropertyPage() {
 
       "premium":{
 
-        listing_type:"Featured Listing",
+        listing_type:"Premium Listing",
 
-        listing_plan:"Platinum",
+        listing_plan:"",
 
         title: "Premium",
 
@@ -1698,11 +1966,11 @@ Phone or WhatsApp.
 {/* Selected Plan Card */}
 <div className="sidebar-card">
 
-<h3>Selected Plan</h3>
+<h3>Listing Type</h3>
 
 <strong>
 
-{formData.listing_type === "Featured Listing" || formData.listing_type === "Premium Listing" ? formData.listing_plan || formData.listing_type : "Free Listing"}
+{formData.listing_type}
 
 </strong>
 
@@ -1748,7 +2016,12 @@ Owner
 
 </div>
 
-<button className="change-plan-btn" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+<button className="change-plan-btn" onClick={() => {
+  const types = ["Free Listing", "Featured Listing", "Premium Listing"];
+  const currentIdx = types.indexOf(formData.listing_type);
+  const nextType = types[(currentIdx + 1) % types.length];
+  setFormData(prev => ({ ...prev, listing_type: nextType, listing_plan: "" }));
+}}>
 
 Change Plan
 
@@ -1786,8 +2059,6 @@ Usually replies within 30 minutes.
 </div>
 
 </div>
-
 </div>
-
 );
 }

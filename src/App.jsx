@@ -46,6 +46,10 @@ const ListYourPropertyPage = lazy(() =>
   import("./pages/Stays/ListYourPropertyPage")
 );
 
+const BusinessThankYouPage = lazy(() =>
+  import("./pages/Stays/BusinessThankYouPage")
+);
+
 const Simhastha2028 = lazy(() => import("./guides/en/Simhastha2028"));
 const Simhastha2028HI = lazy(() => import("./guides/hi/Simhastha2028"));
 
@@ -139,7 +143,12 @@ function App() {
                 path="/business/feature-your-property"
                 element={<Navigate to="/list-your-property" replace />}
               />
-            
+
+              <Route
+                path="/thank-you"
+                element={<BusinessThankYouPage />}
+              />
+                          
             {/* GUIDES ROUTES */}
               <Route path="/guides" element={<GuidesPage />} />
 

@@ -33,7 +33,7 @@ export default function ListingHeader({ onOpenFilters, onOpenSort }) {
 
             <p>
 
-              Showing {count} verified stays near Mahakaleshwar Temple
+              Showing {count} verified stays
 
             </p>
 
