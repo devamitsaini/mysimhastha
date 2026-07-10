@@ -384,8 +384,6 @@ function HotelsPage() {
               </div>
             </div>
           </div>
-        
-
         {/* Introduction */}
         <section className="section intro-section">
           <div className="container">
