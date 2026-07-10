@@ -125,7 +125,7 @@ export default function FeaturedProperties() {
               <div className="contact-row">
                 <FiPhone />
                 <a href="tel:+919999999999">
-                  +91 99999 99999
+                  +91 XXXXX XXXX
                 </a>
               </div>
 

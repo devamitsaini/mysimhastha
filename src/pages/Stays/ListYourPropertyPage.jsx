@@ -296,27 +296,57 @@ export default function ListYourPropertyPage() {
 
 <div className="listing-hero">
 
-<span>
+<div className="hero-badge">
 
-🏨 Partner With MySimhastha
+<span className="badge-icon">🏢</span>
 
-</span>
+Partner With MySimhastha
 
-<h1>
+</div>
 
-List Your Property
+<h1 className="hero-title">
+
+List Your Property <span className="hero-highlight">on MySimhastha</span>
 
 </h1>
 
-<p>
+<p className="hero-subtitle">
 
-Reach thousands of pilgrims looking for hotels,
-homestays, dharamshalas and guest houses in Ujjain.
-
-Choose a free listing or upgrade to a featured plan
-for maximum visibility.
+Reach thousands of pilgrims looking for hotels, homestays, dharamshalas and guest houses in Ujjain.
 
 </p>
+
+<div className="hero-stats-row">
+
+<div className="hero-stat">
+
+<span className="hero-stat-num">30K+</span>
+
+<span className="hero-stat-label">Monthly Visitors</span>
+
+</div>
+
+<div className="hero-stat-divider"></div>
+
+<div className="hero-stat">
+
+<span className="hero-stat-num">85%</span>
+
+<span className="hero-stat-label">Get Bookings</span>
+
+</div>
+
+<div className="hero-stat-divider"></div>
+
+<div className="hero-stat">
+
+<span className="hero-stat-num">1M+</span>
+
+<span className="hero-stat-label">Monthly Views</span>
+
+</div>
+
+</div>
 
 </div>
 
@@ -328,9 +358,9 @@ for maximum visibility.
 
 <section className="pricing-section">
 
-<h2>Choose Your Listing Plan</h2>
+<h2>Choose Your <span className="section-highlight">Listing Plan</span></h2>
 
-<p>Select the perfect plan for your property. Start free and upgrade anytime for more visibility and features.</p>
+<p>Start free and upgrade anytime for maximum visibility.</p>
 
 <div className="pricing-cards">
 
@@ -617,9 +647,9 @@ Choose Premium
    WHY LIST WITH US
 ===================================================== */}
 
-<section className="why-list-section">
+{/*<section className="why-list-section">
 
-<h2>Why List With MySimhastha?</h2>
+<h2>Why List With <span className="section-highlight">MySimhastha</span>?</h2>
 
 <div className="stats-grid">
 
@@ -681,7 +711,7 @@ Choose Premium
 
 </div>
 
-</section>
+</section>*/}
 
 {selectedPlan && (
 
@@ -711,7 +741,15 @@ Choose Premium
 
 <button
 type="button"
-onClick={() => setSelectedPlan(null)}
+onClick={() => {
+  const plans = ["premium", "standard", "free"];
+  const currentIdx = plans.indexOf(
+    selectedPlan.title === "Premium" ? "premium" :
+    selectedPlan.title === "Standard" ? "standard" : "free"
+  );
+  const nextPlan = plans[(currentIdx + 1) % plans.length];
+  handlePlanSelect(nextPlan);
+}}
 >
 
 Change Plan
@@ -944,22 +982,19 @@ onChange={handleChange}
 >
 
 <option>
-
 Free Listing
-
 </option>
-
 <option>
-
 Featured Listing
-
 </option>
-
+<option>
+Premium Listing
+</option>
 </select>
 
 </div>
 
-{formData.listing_type==="Featured Listing" && (
+{/*{formData.listing_type==="Featured Listing" && (
 
 <div className="form-group">
 
@@ -1005,7 +1040,7 @@ value={plan}
 
 </div>
 
-)}
+)}*/}
 
 </div>
 
@@ -1667,7 +1702,7 @@ Phone or WhatsApp.
 
 <strong>
 
-{formData.listing_type === "Featured Listing" ? formData.listing_plan : "Free Listing"}
+{formData.listing_type === "Featured Listing" || formData.listing_type === "Premium Listing" ? formData.listing_plan || formData.listing_type : "Free Listing"}
 
 </strong>
 
@@ -1726,13 +1761,13 @@ Change Plan
 
 <h3>Need Help?</h3>
 
-<a href="tel:+919999999999">
+<a href="tel:+91xxxxxxxxxx">
 
-📞 +91 99999 99999
+📞 +91 XXXXX XXXX
 
 </a>
 
-<a href="https://wa.me/919999999999">
+<a href="https://wa.me/91xxxxxxxxxx">
 
 💬 WhatsApp
 

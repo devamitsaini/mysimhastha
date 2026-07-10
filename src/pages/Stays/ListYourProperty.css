@@ -12,17 +12,23 @@
 
 }
 
+/* ==========================================================
+   HERO
+========================================================== */
+
 .listing-hero{
 
     text-align:center;
 
-    margin-bottom:32px;
+    margin-bottom:28px;
 
     padding:0 20px;
 
+    position:relative;
+
 }
 
-.listing-hero span{
+.hero-badge{
 
     display:inline-flex;
 
@@ -34,23 +40,35 @@
 
     color:#2563eb;
 
-    padding:8px 16px;
+    padding:8px 20px;
 
     border-radius:999px;
 
-    font-weight:700;
+    font-weight:600;
 
-    font-size:14px;
+    font-size:13px;
+
+    letter-spacing:.3px;
 
     box-shadow:0 2px 8px rgba(37,99,235,.1);
 
+    position:relative;
+
+    margin-bottom:24px;
+
 }
 
-.listing-hero h1{
+.badge-icon{
 
-    margin:16px 0 12px;
+    font-size:16px;
 
-    font-size:40px;
+}
+
+.hero-title{
+
+    margin:0 auto 10px;
+
+    font-size:36px;
 
     font-weight:800;
 
@@ -60,19 +78,115 @@
 
     letter-spacing:-0.02em;
 
+    max-width:600px;
+
+    position:relative;
+
 }
 
-.listing-hero p{
+.hero-highlight{
 
-    max-width:700px;
+    background:linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
 
-    margin:auto;
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+
+}
+
+.hero-subtitle{
+
+    max-width:520px;
+
+    margin:0 auto 20px;
 
     color:#64748b;
 
-    font-size:15px;
+    font-size:14px;
 
     line-height:1.6;
+
+    position:relative;
+
+}
+
+.hero-stats-row{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:0;
+
+    background:linear-gradient(135deg,#f8fbff 0%,#ffffff 100%);
+
+    border:1px solid #e5eaf2;
+
+    border-radius:12px;
+
+    padding:10px 20px;
+
+    position:relative;
+
+    box-shadow:0 2px 8px rgba(15,23,42,.06);
+
+}
+
+.hero-stat{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:0 16px;
+
+}
+
+.hero-stat-num{
+
+    font-size:18px;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+    line-height:1.2;
+
+    background:linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+
+}
+
+.hero-stat-label{
+
+    font-size:10px;
+
+    color:#64748b;
+
+    font-weight:500;
+
+    letter-spacing:.3px;
+
+    text-transform:uppercase;
+
+}
+
+.hero-stat-divider{
+
+    width:1px;
+
+    height:24px;
+
+    background:#e5eaf2;
 
 }
 
@@ -934,6 +1048,22 @@ display:none;
 }
 
 /* ==========================================================
+   SECTION HIGHLIGHT
+========================================================== */
+
+.section-highlight{
+
+    background:linear-gradient(135deg,#2563eb 0%,#3b82f6 100%);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+
+}
+
+/* ==========================================================
    PRICING PLANS
 ========================================================== */
 
@@ -1683,9 +1813,9 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
-.listing-hero h1{
+.hero-title{
 
-font-size:42px;
+font-size:30px;
 
 }
 
@@ -1731,6 +1861,74 @@ font-size:28px;
 
 }
 
+/* ==========================================================
+   MOBILE PRICING CAROUSEL
+========================================================== */
+
+@media(max-width:768px){
+
+.pricing-cards{
+
+    display:flex;
+
+    flex-direction:row;
+
+    flex-wrap:nowrap;
+
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    scroll-snap-type:x mandatory;
+
+    -webkit-overflow-scrolling:touch;
+
+    gap:16px;
+
+    padding:8px 20px 20px;
+
+    margin:0 -20px;
+
+    max-width:none;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+
+}
+
+.pricing-cards::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.pricing-cards .pricing-card{
+
+    flex:0 0 80%;
+
+    min-width:280px;
+
+    scroll-snap-align:start;
+
+    transform:none !important;
+
+}
+
+.pricing-cards .pricing-card.featured{
+
+    transform:none !important;
+
+}
+
+.pricing-cards .pricing-card.featured:hover{
+
+    transform:none !important;
+
+}
+
+}
+
 @media(max-width:768px){
 
 .listing-layout{
@@ -1762,6 +1960,13 @@ font-size:28px;
     margin:0;
 
     box-shadow:none;
+
+}
+
+/* Hide the Selected Plan card on mobile, keep Help card */
+.listing-sidebar .sidebar-card:first-child{
+
+    display:none;
 
 }
 
@@ -1867,17 +2072,53 @@ padding:30px 0 60px;
 
 margin-bottom:28px;
 
-}
-
-.listing-hero h1{
-
-font-size:34px;
+padding:0 16px;
 
 }
 
-.listing-hero p{
+.hero-title{
 
-font-size:15px;
+font-size:32px;
+
+}
+
+.hero-subtitle{
+
+font-size:14px;
+
+margin-bottom:24px;
+
+}
+
+.hero-stats-row{
+
+padding:10px 14px;
+
+flex-wrap:nowrap;
+
+}
+
+.hero-stat{
+
+padding:0 10px;
+
+}
+
+.hero-stat-num{
+
+font-size:16px;
+
+}
+
+.hero-stat-label{
+
+font-size:9px;
+
+}
+
+.hero-stat-divider{
+
+height:20px;
 
 }
 
@@ -1971,23 +2212,49 @@ font-size:36px;
 
 @media(max-width:480px){
 
-.listing-hero span{
+.hero-badge{
 
-font-size:12px;
+font-size:11px;
 
-padding:6px 12px;
-
-}
-
-.listing-hero h1{
-
-font-size:28px;
+padding:6px 14px;
 
 }
 
-.listing-hero p{
+.hero-title{
+
+font-size:26px;
+
+}
+
+.hero-subtitle{
+
+font-size:13px;
+
+margin-bottom:20px;
+
+}
+
+.hero-stats-row{
+
+padding:8px 10px;
+
+}
+
+.hero-stat{
+
+padding:0 6px;
+
+}
+
+.hero-stat-num{
 
 font-size:14px;
+
+}
+
+.hero-stat-label{
+
+font-size:8px;
 
 }
 
@@ -2110,4 +2377,3 @@ font-size:12px;
 }
 
 }
-
