@@ -24,6 +24,8 @@ export const fetchAllStays = async (filters = {}) => {
     stayType = "all",
     location = "",
     budget = "",
+    priceMin = 0,
+    priceMax = 0,
     rating = 0,
     verified = false,
     sort = "featured",
@@ -66,6 +68,16 @@ export const fetchAllStays = async (filters = {}) => {
       if (!isNaN(min)) {
         query = query.gte("price_from", min);
       }
+    }
+  }
+
+  // Apply price range from min/max (used by the FiltersSidebar budget radios)
+  if (priceMin || priceMax) {
+    if (priceMin) {
+      query = query.gte("price_from", priceMin);
+    }
+    if (priceMax) {
+      query = query.lte("price_from", priceMax);
     }
   }
 
