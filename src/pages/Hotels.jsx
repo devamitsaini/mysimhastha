@@ -1209,7 +1209,7 @@ function HotelsPage() {
             </div>
 
             <div className="related-guides-grid">
-              <a href="/guide/bhasma-aarti" className="guide-card">
+              <a href="/guide/bhasma-arti" className="guide-card">
                 <div className="guide-icon"><HelpCircle size={36} /></div>
                 <h4>Bhasma Aarti Guide</h4>
                 <p>Timings, booking, and ceremony details</p>
@@ -1221,7 +1221,7 @@ function HotelsPage() {
                 <p>By air, train, road, and local transport</p>
               </a>
 
-              <a href="/guide/mahakaleshwar-temple" className="guide-card">
+              <a href="/guide/mahakal-darshan" className="guide-card">
                 <div className="guide-icon"><Building2 size={36} /></div>
                 <h4>Mahakaleshwar Temple</h4>
                 <p>History, timings, and darshan information</p>
@@ -1233,23 +1233,26 @@ function HotelsPage() {
                 <p>Complete guide to the Kumbh Mela</p>
               </a>
 
-              <a href="/guide/ujjain-local-transport" className="guide-card">
+              <div className="guide-card guide-coming-soon">
                 <div className="guide-icon"><Car size={36} /></div>
                 <h4>Local Transport</h4>
                 <p>Auto-rickshaws, taxis, and bus services</p>
-              </a>
+                <span className="coming-soon-badge">Coming Soon</span>
+              </div>
 
-              <a href="/guide/parking-near-mahakal" className="guide-card">
+              <div className="guide-card guide-coming-soon">
                 <div className="guide-icon"><ParkingCircle size={36} /></div>
                 <h4>Parking Guide</h4>
                 <p>Parking options near temples and areas</p>
-              </a>
+                <span className="coming-soon-badge">Coming Soon</span>
+              </div>
 
-              <a href="/guide/best-restaurants-in-ujjain" className="guide-card">
+              <div className="guide-card guide-coming-soon">
                 <div className="guide-icon"><UtensilsCrossed size={36} /></div>
                 <h4>Best Restaurants</h4>
                 <p>Top dining options in Ujjain</p>
-              </a>
+                <span className="coming-soon-badge">Coming Soon</span>
+              </div>
 
               <a href="/stays" className="guide-card">
                 <div className="guide-icon"><Hotel size={36} /></div>
@@ -1344,11 +1347,10 @@ function HotelsPage() {
                 <p>Travelers seeking peaceful accommodation usually prefer Freeganj, Nanakheda, or Dewas Road. These areas experience comparatively less congestion than the immediate Mahakal Temple surroundings while still offering convenient access to major attractions, restaurants, and transportation services.</p>
               </div>
 
-            </div>
-            <div className="faq-item">
-              <h3>How much should I budget for a trip to Ujjain?</h3>
-              <p>Your budget depends on your travel style and the season. Budget travelers can comfortably visit Ujjain for ₹1,500–₹3,000 per day, including accommodation, meals, and local transport. Mid-range travelers should plan around ₹3,000–₹6,000 per day, while premium travelers may spend ₹6,000 or more. During Shravan, Mahashivratri, and Simhastha, accommodation prices rise significantly, so booking early helps reduce overall travel expenses.</p>
-            </div>
+              <div className="faq-item">
+                <h3>How much should I budget for a trip to Ujjain?</h3>
+                <p>Your budget depends on your travel style and the season. Budget travelers can comfortably visit Ujjain for ₹1,500–₹3,000 per day, including accommodation, meals, and local transport. Mid-range travelers should plan around ₹3,000–₹6,000 per day, while premium travelers may spend ₹6,000 or more. During Shravan, Mahashivratri, and Simhastha, accommodation prices rise significantly, so booking early helps reduce overall travel expenses.</p>
+              </div>
 
               <div className="faq-item">
                 <h3>What is the cheapest time to book hotels in Ujjain?</h3>
@@ -1566,8 +1568,9 @@ function HotelsPage() {
               <div className="faq-item">
                 <h3>Do hotels provide airport or railway station pickup?</h3>
                 <p>Some premium hotels and selected mid-range properties offer pickup and drop services from Ujjain Railway Station or nearby airports upon request. These services may be complimentary or chargeable depending on the property. Confirm availability and pricing with the hotel before your arrival to ensure a smooth transfer.</p>
-                           </div>      {/* faq-list */}
-            </div>        {/* container */}
+                            </div>      {/* faq-list */}
+            </div> 
+            </div>       {/* container */}
           </section>
         </div>
 
