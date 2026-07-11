@@ -96,7 +96,13 @@ export default function ListYourPropertyPage() {
     gst_number: "",
   });
 
-  const [selectedPlan, setSelectedPlan] = useState(null);
+  const listingTypeToPlan = {
+    "Free Listing": { title: "Free Listing", price: "₹0", description: "Basic Listing" },
+    "Featured Listing": { title: "Standard", price: "₹999", description: "Featured Listing" },
+    "Premium Listing": { title: "Premium", price: "₹2,499", description: "Maximum Visibility" }
+  };
+
+  const [selectedPlan, setSelectedPlan] = useState(listingTypeToPlan["Free Listing"]);
   const [showSticky, setShowSticky] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [compressing, setCompressing] = useState({
@@ -120,6 +126,14 @@ export default function ListYourPropertyPage() {
       ...prev,
       [name]: value,
     }));
+
+    // Sync the sticky bar plan when listing_type dropdown changes
+    if (name === "listing_type") {
+      const planInfo = listingTypeToPlan[value];
+      if (planInfo) {
+        setSelectedPlan(planInfo);
+      }
+    }
   }
 
   function handleAmenity(name) {
@@ -128,6 +142,25 @@ export default function ListYourPropertyPage() {
       amenities: prev.amenities.includes(name)
         ? prev.amenities.filter(item => item !== name)
         : [...prev.amenities, name]
+    }));
+  }
+
+  function removeFile(name) {
+    if (name === "featured_image") {
+      setFormData(prev => ({ ...prev, featured_image: null }));
+    } else if (name === "gallery_images") {
+      setFormData(prev => ({ ...prev, gallery_images: [] }));
+    } else if (name === "id_proof") {
+      setFormData(prev => ({ ...prev, id_proof: null }));
+    } else if (name === "business_document") {
+      setFormData(prev => ({ ...prev, business_document: null }));
+    }
+  }
+
+  function removeGalleryImage(index) {
+    setFormData(prev => ({
+      ...prev,
+      gallery_images: prev.gallery_images.filter((_, i) => i !== index)
     }));
   }
 
@@ -152,22 +185,6 @@ export default function ListYourPropertyPage() {
             ...prev,
             [name]: compressedFile
           }));
-          
-          toast.success(
-            <div className="property-success-toast">
-              <FiCheck className="toast-icon" />
-              <div>
-                <strong>Image Compressed</strong>
-                <p>Original: {formatFileSize(file.size)} → Compressed: {formatFileSize(compressedFile.size)}</p>
-              </div>
-            </div>,
-            {
-              position: "top-right",
-              autoClose: 3000,
-              hideProgressBar: false,
-              className: "property-success-toast-container"
-            }
-          );
         })
         .catch(error => {
           console.error('Compression error:', error);
@@ -175,22 +192,6 @@ export default function ListYourPropertyPage() {
             ...prev,
             [name]: file
           }));
-          
-          toast.error(
-            <div className="property-error-toast">
-              <FiX className="toast-icon" />
-              <div>
-                <strong>Compression Failed</strong>
-                <p>Using original image. {error.message}</p>
-              </div>
-            </div>,
-            {
-              position: "top-right",
-              autoClose: 4000,
-              hideProgressBar: false,
-              className: "property-error-toast-container"
-            }
-          );
         })
         .finally(() => {
           setCompressing(prev => ({ ...prev, [name]: false }));
@@ -220,24 +221,6 @@ export default function ListYourPropertyPage() {
             gallery_images: compressedFiles
           }));
           
-          const totalOriginal = imageFiles.reduce((sum, f) => sum + f.size, 0);
-          const totalCompressed = compressedFiles.reduce((sum, f) => sum + f.size, 0);
-          
-          toast.success(
-            <div className="property-success-toast">
-              <FiCheck className="toast-icon" />
-              <div>
-                <strong>Images Compressed</strong>
-                <p>{imageFiles.length} images processed. Total: {formatFileSize(totalOriginal)} → {formatFileSize(totalCompressed)}</p>
-              </div>
-            </div>,
-            {
-              position: "top-right",
-              autoClose: 3000,
-              hideProgressBar: false,
-              className: "property-success-toast-container"
-            }
-          );
         })
         .catch(error => {
           console.error('Gallery compression error:', error);
@@ -245,22 +228,6 @@ export default function ListYourPropertyPage() {
             ...prev,
             gallery_images: [...files]
           }));
-          
-          toast.error(
-            <div className="property-error-toast">
-              <FiX className="toast-icon" />
-              <div>
-                <strong>Compression Failed</strong>
-                <p>Using original images. {error.message}</p>
-              </div>
-            </div>,
-            {
-              position: "top-right",
-              autoClose: 4000,
-              hideProgressBar: false,
-              className: "property-error-toast-container"
-            }
-          );
         })
         .finally(() => {
           setCompressing(prev => ({ ...prev, [name]: false }));
@@ -853,6 +820,9 @@ export default function ListYourPropertyPage() {
                       <div className="file-preview">
                         <img src={URL.createObjectURL(formData.featured_image)} alt="Preview" className="preview-thumbnail" />
                         <span className="file-name">{formData.featured_image.name} ({formatFileSize(formData.featured_image.size)})</span>
+                        <button type="button" className="remove-file-btn" onClick={() => removeFile("featured_image")} title="Remove image">
+                          <FiX />
+                        </button>
                       </div>
                     )}
                   </div>
@@ -873,6 +843,9 @@ export default function ListYourPropertyPage() {
                           <div key={index} className="file-preview">
                             <img src={URL.createObjectURL(file)} alt={`Preview ${index + 1}`} className="preview-thumbnail" />
                             <span className="file-name">{file.name}</span>
+                            <button type="button" className="remove-file-btn" onClick={() => removeGalleryImage(index)} title="Remove image">
+                              <FiX />
+                            </button>
                           </div>
                         ))}
                       </div>
@@ -949,6 +922,10 @@ export default function ListYourPropertyPage() {
                 const currentIdx = types.indexOf(formData.listing_type);
                 const nextType = types[(currentIdx + 1) % types.length];
                 setFormData(prev => ({ ...prev, listing_type: nextType, listing_plan: "" }));
+                const planInfo = listingTypeToPlan[nextType];
+                if (planInfo) {
+                  setSelectedPlan(planInfo);
+                }
               }}>
                 Change Plan
               </button>
