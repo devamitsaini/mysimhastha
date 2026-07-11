@@ -41,6 +41,7 @@ function HotelsPage() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
+  const [openFaq, setOpenFaq] = useState(null);
   const itemsPerPage = 6;
 
   const categories = [
@@ -366,8 +367,8 @@ function HotelsPage() {
                 
                 
                 <h1 className="hotels-hero-title">
-                  <span className="hotels-hero-title-line1">Find Your Perfect Stay</span>
-                  <span className="hotels-hero-title-line2">in the Holy City of Ujjain</span>
+                  <span className="hotels-hero-title-line1">Guide To Help You </span>
+                  <span className="hotels-hero-title-line2">Find Your Perfect Stay in Ujjain</span>
                 </h1>
 
                 <div className="hotels-hero-divider">
@@ -1272,306 +1273,606 @@ function HotelsPage() {
             </div>
 
             <div className="faq-list">
-              <div className="faq-item">
-                <h3>Which area is best to stay in Ujjain?</h3>
-                <p>The best area depends on your travel purpose. Pilgrims attending Bhasma Aarti usually prefer staying within walking distance of Mahakaleshwar Temple, while families often choose Freeganj or Nanakheda for quieter surroundings, better parking, and wider roads. Travelers arriving by train may find Railway Station Road more convenient, whereas Dewas Road suits visitors with private vehicles. Consider your itinerary, budget, and transportation before selecting accommodation.</p>
+              <div className={`faq-item ${openFaq === 0 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}>
+                <div className="faq-header">
+                  <h3>Which area is best to stay in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 0 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>The best area depends on your travel purpose. Pilgrims attending Bhasma Aarti usually prefer staying within walking distance of Mahakaleshwar Temple, while families often choose Freeganj or Nanakheda for quieter surroundings, better parking, and wider roads. Travelers arriving by train may find Railway Station Road more convenient, whereas Dewas Road suits visitors with private vehicles. Consider your itinerary, budget, and transportation before selecting accommodation.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>How far should I stay from Mahakaleshwar Temple?</h3>
-                <p>If your main purpose is Mahakal Darshan or Bhasma Aarti, staying within 500 metres to 1 kilometre is convenient and reduces travel time. Hotels located 2–3 kilometres away usually offer better prices, larger rooms, and easier parking while remaining easily accessible by auto-rickshaw or taxi. Choose the distance that best matches your schedule and comfort requirements.</p>
+              <div className={`faq-item ${openFaq === 1 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}>
+                <div className="faq-header">
+                  <h3>How far should I stay from Mahakaleshwar Temple?</h3>
+                  <span className="faq-toggle">{openFaq === 1 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>If your main purpose is Mahakal Darshan or Bhasma Aarti, staying within 500 metres to 1 kilometre is convenient and reduces travel time. Hotels located 2–3 kilometres away usually offer better prices, larger rooms, and easier parking while remaining easily accessible by auto-rickshaw or taxi. Choose the distance that best matches your schedule and comfort requirements.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>What is the average hotel price in Ujjain?</h3>
-                <p>Hotel prices vary according to season, location, and amenities. Budget hotels generally start around ₹800–₹2,000 per night, mid-range properties range from ₹2,000–₹5,000, while premium hotels may cost ₹5,000 or more. During Mahashivratri, Shravan, and Simhastha, prices often increase considerably because of high demand, so early booking is recommended.</p>
+              <div className={`faq-item ${openFaq === 2 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}>
+                <div className="faq-header">
+                  <h3>What is the average hotel price in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 2 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Hotel prices vary according to season, location, and amenities. Budget hotels generally start around ₹800–₹2,000 per night, mid-range properties range from ₹2,000–₹5,000, while premium hotels may cost ₹5,000 or more. During Mahashivratri, Shravan, and Simhastha, prices often increase considerably because of high demand, so early booking is recommended.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Can I find hotels under ₹1000 in Ujjain?</h3>
-                <p>Yes. Budget hotels, guest houses, and dharamshalas offering rooms below ₹1000 are available, especially away from the immediate Mahakal Temple area. Facilities may be basic, so compare cleanliness, guest reviews, hot water availability, and security before making your booking. Availability is usually lower during festivals and weekends.</p>
+              <div className={`faq-item ${openFaq === 3 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}>
+                <div className="faq-header">
+                  <h3>Can I find hotels under ₹1000 in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 3 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes. Budget hotels, guest houses, and dharamshalas offering rooms below ₹1000 are available, especially away from the immediate Mahakal Temple area. Facilities may be basic, so compare cleanliness, guest reviews, hot water availability, and security before making your booking. Availability is usually lower during festivals and weekends.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>When should I book hotels during Simhastha?</h3>
-                <p>Accommodation should ideally be booked at least three to six months before Simhastha. Millions of devotees visit Ujjain during this period, causing hotels, guest houses, and dharamshalas to fill quickly. Booking early gives you better prices, more accommodation choices, and greater flexibility regarding room type and location.</p>
+              <div className={`faq-item ${openFaq === 4 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}>
+                <div className="faq-header">
+                  <h3>When should I book hotels during Simhastha?</h3>
+                  <span className="faq-toggle">{openFaq === 4 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Accommodation should ideally be booked at least three to six months before Simhastha. Millions of devotees visit Ujjain during this period, causing hotels, guest houses, and dharamshalas to fill quickly. Booking early gives you better prices, more accommodation choices, and greater flexibility regarding room type and location.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Are hotels available near Ujjain Railway Station?</h3>
-                <p>Yes. The Railway Station area has several budget and mid-range hotels suitable for pilgrims and tourists arriving by train. These hotels provide convenient access to local transport and can usually reach Mahakaleshwar Temple within a short drive. Many travelers prefer this location because of its transport connectivity and availability of restaurants.</p>
+              <div className={`faq-item ${openFaq === 5 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}>
+                <div className="faq-header">
+                  <h3>Are hotels available near Ujjain Railway Station?</h3>
+                  <span className="faq-toggle">{openFaq === 5 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes. The Railway Station area has several budget and mid-range hotels suitable for pilgrims and tourists arriving by train. These hotels provide convenient access to local transport and can usually reach Mahakaleshwar Temple within a short drive. Many travelers prefer this location because of its transport connectivity and availability of restaurants.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are best for families visiting Ujjain?</h3>
-                <p>Family travelers should look for hotels with spacious rooms, elevators, parking, nearby restaurants, and 24-hour reception. Areas like Freeganj and Nanakheda are generally quieter and more comfortable than the crowded temple vicinity. If travelling with children or elderly family members, prioritize accessibility, cleanliness, and reliable customer service.</p>
+              <div className={`faq-item ${openFaq === 6 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 6 ? null : 6)}>
+                <div className="faq-header">
+                  <h3>Which hotels are best for families visiting Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 6 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Family travelers should look for hotels with spacious rooms, elevators, parking, nearby restaurants, and 24-hour reception. Areas like Freeganj and Nanakheda are generally quieter and more comfortable than the crowded temple vicinity. If travelling with children or elderly family members, prioritize accessibility, cleanliness, and reliable customer service.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are best for senior citizens?</h3>
-                <p>Senior citizens should choose hotels offering lift facilities, minimal stairs, comfortable bedding, hot water, nearby transportation, and easy access to Mahakaleshwar Temple. Staying slightly away from extremely crowded streets often provides a quieter and more relaxed experience, especially during religious festivals and weekends.</p>
+              <div className={`faq-item ${openFaq === 7 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 7 ? null : 7)}>
+                <div className="faq-header">
+                  <h3>Which hotels are best for senior citizens?</h3>
+                  <span className="faq-toggle">{openFaq === 7 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Senior citizens should choose hotels offering lift facilities, minimal stairs, comfortable bedding, hot water, nearby transportation, and easy access to Mahakaleshwar Temple. Staying slightly away from extremely crowded streets often provides a quieter and more relaxed experience, especially during religious festivals and weekends.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are suitable for solo travellers?</h3>
-                <p>Solo travelers generally prefer hotels with verified reviews, secure premises, 24-hour reception, CCTV surveillance, and convenient public transport access. Staying near major roads or popular tourist areas usually provides better connectivity and safety. Always verify reviews and avoid booking unknown properties without sufficient guest feedback.</p>
+              <div className={`faq-item ${openFaq === 8 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 8 ? null : 8)}>
+                <div className="faq-header">
+                  <h3>Which hotels are suitable for solo travellers?</h3>
+                  <span className="faq-toggle">{openFaq === 8 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Solo travelers generally prefer hotels with verified reviews, secure premises, 24-hour reception, CCTV surveillance, and convenient public transport access. Staying near major roads or popular tourist areas usually provides better connectivity and safety. Always verify reviews and avoid booking unknown properties without sufficient guest feedback.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are suitable for couples visiting Ujjain?</h3>
-                <p>Many hotels in Ujjain welcome couples who carry valid government-issued photo identification and comply with hotel policies. Before booking, confirm the property's check-in requirements, cancellation policy, parking availability, and guest rules. Reading recent guest reviews can help you choose a comfortable and professionally managed property.</p>
+              <div className={`faq-item ${openFaq === 9 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 9 ? null : 9)}>
+                <div className="faq-header">
+                  <h3>Which hotels are suitable for couples visiting Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 9 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Many hotels in Ujjain welcome couples who carry valid government-issued photo identification and comply with hotel policies. Before booking, confirm the property's check-in requirements, cancellation policy, parking availability, and guest rules. Reading recent guest reviews can help you choose a comfortable and professionally managed property.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are best for group bookings?</h3>
-                <p>Large families, pilgrimage groups, and tour operators should consider hotels with multiple room options, dormitories, banquet facilities, and dedicated parking. Booking well in advance usually secures better pricing and ensures rooms remain available during weekends and major religious festivals.</p>
+              <div className={`faq-item ${openFaq === 10 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 10 ? null : 10)}>
+                <div className="faq-header">
+                  <h3>Which hotels are best for group bookings?</h3>
+                  <span className="faq-toggle">{openFaq === 10 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Large families, pilgrimage groups, and tour operators should consider hotels with multiple room options, dormitories, banquet facilities, and dedicated parking. Booking well in advance usually secures better pricing and ensures rooms remain available during weekends and major religious festivals.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Can I find budget accommodation near Mahakal Temple?</h3>
-                <p>Yes. Several budget hotels, guest houses, and dharamshalas operate within walking distance of Mahakaleshwar Temple. These accommodations are popular among pilgrims due to their convenience. During peak seasons, however, rooms sell out quickly, making advance reservations highly advisable.</p>
+              <div className={`faq-item ${openFaq === 11 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 11 ? null : 11)}>
+                <div className="faq-header">
+                  <h3>Can I find budget accommodation near Mahakal Temple?</h3>
+                  <span className="faq-toggle">{openFaq === 11 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes. Several budget hotels, guest houses, and dharamshalas operate within walking distance of Mahakaleshwar Temple. These accommodations are popular among pilgrims due to their convenience. During peak seasons, however, rooms sell out quickly, making advance reservations highly advisable.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>What facilities should I check before booking a hotel?</h3>
-                <p>Before confirming your booking, verify room cleanliness, parking availability, Wi-Fi, hot water, air conditioning, check-in and check-out timings, cancellation policy, nearby restaurants, elevator availability, and recent guest reviews. These factors significantly influence the overall quality of your stay.</p>
+              <div className={`faq-item ${openFaq === 12 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 12 ? null : 12)}>
+                <div className="faq-header">
+                  <h3>What facilities should I check before booking a hotel?</h3>
+                  <span className="faq-toggle">{openFaq === 12 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Before confirming your booking, verify room cleanliness, parking availability, Wi-Fi, hot water, air conditioning, check-in and check-out timings, cancellation policy, nearby restaurants, elevator availability, and recent guest reviews. These factors significantly influence the overall quality of your stay.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Are parking facilities available at hotels in Ujjain?</h3>
-                <p>Many hotels provide parking, although availability varies by property and location. Hotels located in Freeganj, Nanakheda, and Dewas Road generally have better parking arrangements than those near Mahakaleshwar Temple. During festivals, confirm parking availability before arrival to avoid inconvenience.</p>
+              <div className={`faq-item ${openFaq === 13 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 13 ? null : 13)}>
+                <div className="faq-header">
+                  <h3>Are parking facilities available at hotels in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 13 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Many hotels provide parking, although availability varies by property and location. Hotels located in Freeganj, Nanakheda, and Dewas Road generally have better parking arrangements than those near Mahakaleshwar Temple. During festivals, confirm parking availability before arrival to avoid inconvenience.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which area of Ujjain is least crowded for accommodation?</h3>
-                <p>Travelers seeking peaceful accommodation usually prefer Freeganj, Nanakheda, or Dewas Road. These areas experience comparatively less congestion than the immediate Mahakal Temple surroundings while still offering convenient access to major attractions, restaurants, and transportation services.</p>
+              <div className={`faq-item ${openFaq === 14 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 14 ? null : 14)}>
+                <div className="faq-header">
+                  <h3>Which area of Ujjain is least crowded for accommodation?</h3>
+                  <span className="faq-toggle">{openFaq === 14 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Travelers seeking peaceful accommodation usually prefer Freeganj, Nanakheda, or Dewas Road. These areas experience comparatively less congestion than the immediate Mahakal Temple surroundings while still offering convenient access to major attractions, restaurants, and transportation services.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>How much should I budget for a trip to Ujjain?</h3>
-                <p>Your budget depends on your travel style and the season. Budget travelers can comfortably visit Ujjain for ₹1,500–₹3,000 per day, including accommodation, meals, and local transport. Mid-range travelers should plan around ₹3,000–₹6,000 per day, while premium travelers may spend ₹6,000 or more. During Shravan, Mahashivratri, and Simhastha, accommodation prices rise significantly, so booking early helps reduce overall travel expenses.</p>
+              <div className={`faq-item ${openFaq === 15 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 15 ? null : 15)}>
+                <div className="faq-header">
+                  <h3>How much should I budget for a trip to Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 15 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Your budget depends on your travel style and the season. Budget travelers can comfortably visit Ujjain for ₹1,500–₹3,000 per day, including accommodation, meals, and local transport. Mid-range travelers should plan around ₹3,000–₹6,000 per day, while premium travelers may spend ₹6,000 or more. During Shravan, Mahashivratri, and Simhastha, accommodation prices rise significantly, so booking early helps reduce overall travel expenses.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>What is the cheapest time to book hotels in Ujjain?</h3>
-                <p>The most affordable hotel rates are generally available during weekdays outside major religious festivals. Avoid peak periods such as Mahashivratri, Shravan Mondays, long weekends, and Simhastha if you're looking for lower prices. Booking your hotel two to four weeks in advance during regular months often provides the best combination of availability and pricing.</p>
+              <div className={`faq-item ${openFaq === 16 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 16 ? null : 16)}>
+                <div className="faq-header">
+                  <h3>What is the cheapest time to book hotels in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 16 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>The most affordable hotel rates are generally available during weekdays outside major religious festivals. Avoid peak periods such as Mahashivratri, Shravan Mondays, long weekends, and Simhastha if you're looking for lower prices. Booking your hotel two to four weeks in advance during regular months often provides the best combination of availability and pricing.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Do hotel prices increase during Shravan?</h3>
-                <p>Yes. Shravan is one of the busiest pilgrimage seasons in Ujjain, attracting thousands of devotees every Monday and throughout the month. Hotel demand increases considerably, especially near Mahakaleshwar Temple, causing room rates to rise and availability to decrease. Booking several weeks in advance is strongly recommended during this period.</p>
+              <div className={`faq-item ${openFaq === 17 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 17 ? null : 17)}>
+                <div className="faq-header">
+                  <h3>Do hotel prices increase during Shravan?</h3>
+                  <span className="faq-toggle">{openFaq === 17 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes. Shravan is one of the busiest pilgrimage seasons in Ujjain, attracting thousands of devotees every Monday and throughout the month. Hotel demand increases considerably, especially near Mahakaleshwar Temple, causing room rates to rise and availability to decrease. Booking several weeks in advance is strongly recommended during this period.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>How expensive are hotels during Simhastha?</h3>
-                <p>During Simhastha, accommodation demand reaches its highest level as millions of pilgrims visit Ujjain. Hotels, guest houses, dharamshalas, and temporary accommodations are booked months in advance. Prices vary according to location and facilities, but premium locations near major ghats and temples generally experience the highest demand. Early planning is essential to secure suitable accommodation.</p>
+              <div className={`faq-item ${openFaq === 18 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 18 ? null : 18)}>
+                <div className="faq-header">
+                  <h3>How expensive are hotels during Simhastha?</h3>
+                  <span className="faq-toggle">{openFaq === 18 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>During Simhastha, accommodation demand reaches its highest level as millions of pilgrims visit Ujjain. Hotels, guest houses, dharamshalas, and temporary accommodations are booked months in advance. Prices vary according to location and facilities, but premium locations near major ghats and temples generally experience the highest demand. Early planning is essential to secure suitable accommodation.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Are luxury hotels worth booking in Ujjain?</h3>
-                <p>Luxury hotels offer larger rooms, premium amenities, restaurants, dedicated parking, enhanced security, and higher service standards. They are ideal for families, elderly travelers, business visitors, and those seeking a comfortable pilgrimage experience. If your budget allows, premium accommodation can reduce travel stress, particularly during crowded festival seasons.</p>
+              <div className={`faq-item ${openFaq === 19 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 19 ? null : 19)}>
+                <div className="faq-header">
+                  <h3>Are luxury hotels worth booking in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 19 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Luxury hotels offer larger rooms, premium amenities, restaurants, dedicated parking, enhanced security, and higher service standards. They are ideal for families, elderly travelers, business visitors, and those seeking a comfortable pilgrimage experience. If your budget allows, premium accommodation can reduce travel stress, particularly during crowded festival seasons.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Should I choose an AC or Non-AC hotel room?</h3>
-                <p>During summer months from March to June, air-conditioned rooms provide significantly greater comfort due to high daytime temperatures. During winter, many travelers comfortably choose non-AC rooms. Your decision should consider weather conditions, personal comfort preferences, and overall travel budget.</p>
+              <div className={`faq-item ${openFaq === 20 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 20 ? null : 20)}>
+                <div className="faq-header">
+                  <h3>Should I choose an AC or Non-AC hotel room?</h3>
+                  <span className="faq-toggle">{openFaq === 20 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>During summer months from March to June, air-conditioned rooms provide significantly greater comfort due to high daytime temperatures. During winter, many travelers comfortably choose non-AC rooms. Your decision should consider weather conditions, personal comfort preferences, and overall travel budget.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Can I negotiate hotel prices in Ujjain?</h3>
-                <p>Some independent hotels and guest houses may offer discounts for direct bookings, extended stays, or group reservations. However, negotiated prices are generally less common during major festivals and weekends because demand remains high. Comparing multiple properties before booking often helps you find better value.</p>
+              <div className={`faq-item ${openFaq === 21 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 21 ? null : 21)}>
+                <div className="faq-header">
+                  <h3>Can I negotiate hotel prices in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 21 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Some independent hotels and guest houses may offer discounts for direct bookings, extended stays, or group reservations. However, negotiated prices are generally less common during major festivals and weekends because demand remains high. Comparing multiple properties before booking often helps you find better value.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Are there government accommodations available in Ujjain?</h3>
-                <p>Government-operated guest houses and tourism accommodations may be available depending on the season and availability. These properties usually provide basic facilities at reasonable prices but often require advance reservations. During major events, temporary accommodations may also be arranged by local authorities for pilgrims.</p>
+              <div className={`faq-item ${openFaq === 22 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 22 ? null : 22)}>
+                <div className="faq-header">
+                  <h3>Are there government accommodations available in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 22 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Government-operated guest houses and tourism accommodations may be available depending on the season and availability. These properties usually provide basic facilities at reasonable prices but often require advance reservations. During major events, temporary accommodations may also be arranged by local authorities for pilgrims.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels provide the best value for money?</h3>
-                <p>The best value hotels balance price, cleanliness, location, service quality, parking, and guest reviews rather than simply offering the lowest rates. Mid-range hotels in areas such as Freeganj and Nanakheda often provide spacious rooms, reliable amenities, and easier transportation while remaining reasonably priced.</p>
+              <div className={`faq-item ${openFaq === 23 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 23 ? null : 23)}>
+                <div className="faq-header">
+                  <h3>Which hotels provide the best value for money?</h3>
+                  <span className="faq-toggle">{openFaq === 23 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>The best value hotels balance price, cleanliness, location, service quality, parking, and guest reviews rather than simply offering the lowest rates. Mid-range hotels in areas such as Freeganj and Nanakheda often provide spacious rooms, reliable amenities, and easier transportation while remaining reasonably priced.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Is breakfast usually included with hotel bookings?</h3>
-                <p>Breakfast policies vary between hotels. Some properties include complimentary breakfast in the room tariff, while others charge separately. Before confirming your reservation, check what meals are included, serving times, and whether vegetarian options are available if that is important for your visit.</p>
+              <div className={`faq-item ${openFaq === 24 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 24 ? null : 24)}>
+                <div className="faq-header">
+                  <h3>Is breakfast usually included with hotel bookings?</h3>
+                  <span className="faq-toggle">{openFaq === 24 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Breakfast policies vary between hotels. Some properties include complimentary breakfast in the room tariff, while others charge separately. Before confirming your reservation, check what meals are included, serving times, and whether vegetarian options are available if that is important for your visit.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are within walking distance of Mahakal Temple?</h3>
-                <p>Several hotels, guest houses, and dharamshalas are located within approximately 500 metres to 1 kilometre of Mahakaleshwar Temple. These accommodations are particularly popular among pilgrims attending early morning rituals. Due to high demand, nearby properties are often booked first during weekends and religious festivals.</p>
+              <div className={`faq-item ${openFaq === 25 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 25 ? null : 25)}>
+                <div className="faq-header">
+                  <h3>Which hotels are within walking distance of Mahakal Temple?</h3>
+                  <span className="faq-toggle">{openFaq === 25 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Several hotels, guest houses, and dharamshalas are located within approximately 500 metres to 1 kilometre of Mahakaleshwar Temple. These accommodations are particularly popular among pilgrims attending early morning rituals. Due to high demand, nearby properties are often booked first during weekends and religious festivals.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are best for attending Bhasma Aarti?</h3>
-                <p>If you plan to attend Bhasma Aarti, choose accommodation within walking distance of Mahakaleshwar Temple. This minimizes travel time during early morning hours and helps avoid traffic congestion. Verify your Bhasma Aarti booking separately, as hotel proximity does not guarantee entry to the ritual.</p>
+              <div className={`faq-item ${openFaq === 26 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 26 ? null : 26)}>
+                <div className="faq-header">
+                  <h3>Which hotels are best for attending Bhasma Aarti?</h3>
+                  <span className="faq-toggle">{openFaq === 26 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>If you plan to attend Bhasma Aarti, choose accommodation within walking distance of Mahakaleshwar Temple. This minimizes travel time during early morning hours and helps avoid traffic congestion. Verify your Bhasma Aarti booking separately, as hotel proximity does not guarantee entry to the ritual.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Do hotels arrange Bhasma Aarti bookings?</h3>
-                <p>Some hotels may assist guests with information regarding the Bhasma Aarti booking process, but official entry permissions are managed through authorized booking systems. Always verify booking procedures using official sources rather than relying solely on third-party promises or unofficial agents.</p>
+              <div className={`faq-item ${openFaq === 27 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 27 ? null : 27)}>
+                <div className="faq-header">
+                  <h3>Do hotels arrange Bhasma Aarti bookings?</h3>
+                  <span className="faq-toggle">{openFaq === 27 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Some hotels may assist guests with information regarding the Bhasma Aarti booking process, but official entry permissions are managed through authorized booking systems. Always verify booking procedures using official sources rather than relying solely on third-party promises or unofficial agents.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are closest to Mahakal Corridor?</h3>
-                <p>Hotels located near Mahakaleshwar Temple generally provide the quickest access to the Mahakal Lok Corridor. Staying nearby allows visitors to explore the corridor comfortably during the morning or evening while reducing travel time, particularly during weekends and festive occasions.</p>
+              <div className={`faq-item ${openFaq === 28 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 28 ? null : 28)}>
+                <div className="faq-header">
+                  <h3>Which hotels are closest to Mahakal Corridor?</h3>
+                  <span className="faq-toggle">{openFaq === 28 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Hotels located near Mahakaleshwar Temple generally provide the quickest access to the Mahakal Lok Corridor. Staying nearby allows visitors to explore the corridor comfortably during the morning or evening while reducing travel time, particularly during weekends and festive occasions.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Is it better to stay near Mahakal Temple or in other parts of Ujjain?</h3>
-                <p>Staying near Mahakal Temple is ideal for pilgrims attending multiple temple visits or Bhasma Aarti, while accommodations in areas such as Freeganj, Nanakheda, and Dewas Road often provide larger rooms, quieter surroundings, easier parking, and better value. The best choice depends on whether convenience or comfort is your highest priority.</p>
+              <div className={`faq-item ${openFaq === 29 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 29 ? null : 29)}>
+                <div className="faq-header">
+                  <h3>Is it better to stay near Mahakal Temple or in other parts of Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 29 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Staying near Mahakal Temple is ideal for pilgrims attending multiple temple visits or Bhasma Aarti, while accommodations in areas such as Freeganj, Nanakheda, and Dewas Road often provide larger rooms, quieter surroundings, easier parking, and better value. The best choice depends on whether convenience or comfort is your highest priority.</p>
+                </div>
               </div>
-              <div className="faq-item">
-                <h3>How early should I leave my hotel for Bhasma Aarti?</h3>
-                <p>If you have a confirmed Bhasma Aarti booking, it is advisable to leave your hotel well before the reporting time mentioned in your booking instructions. Guests staying within walking distance of Mahakaleshwar Temple usually have a smoother experience, while those staying farther away should consider additional travel time, especially during weekends, Shravan, Mahashivratri, and Simhastha when traffic restrictions and crowds are common.</p>
-              </div>
-
-              <div className="faq-item">
-                <h3>Which hotels are near Kal Bhairav Temple?</h3>
-                <p>Several hotels across central Ujjain provide convenient access to Kal Bhairav Temple by road. Travelers planning to visit multiple temples often choose accommodation near Mahakaleshwar Temple or central city areas, allowing them to easily reach Kal Bhairav, Harsiddhi Temple, Ram Ghat, and other major attractions during the same trip.</p>
-              </div>
-
-              <div className="faq-item">
-                <h3>Which hotels are near Harsiddhi Temple?</h3>
-                <p>Harsiddhi Temple is located close to Mahakaleshwar Temple, making hotels near the temple complex an excellent choice for pilgrims visiting both shrines. Staying nearby allows visitors to comfortably explore the temple area on foot while avoiding repeated transportation during busy pilgrimage seasons.</p>
-              </div>
-
-              <div className="faq-item">
-                <h3>Which hotels are near Ram Ghat?</h3>
-                <p>Ram Ghat is one of Ujjain's most visited spiritual destinations, especially during evening Aarti and religious festivals. Hotels near Mahakaleshwar Temple or the old city generally provide easier access to Ram Ghat. Visitors interested in attending the evening Aarti often prefer accommodation within a short driving or walking distance.</p>
+              <div className={`faq-item ${openFaq === 30 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 30 ? null : 30)}>
+                <div className="faq-header">
+                  <h3>How early should I leave my hotel for Bhasma Aarti?</h3>
+                  <span className="faq-toggle">{openFaq === 30 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>If you have a confirmed Bhasma Aarti booking, it is advisable to leave your hotel well before the reporting time mentioned in your booking instructions. Guests staying within walking distance of Mahakaleshwar Temple usually have a smoother experience, while those staying farther away should consider additional travel time, especially during weekends, Shravan, Mahashivratri, and Simhastha when traffic restrictions and crowds are common.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Can I visit Mahakal and Omkareshwar in one trip?</h3>
-                <p>Yes. Many pilgrims combine Mahakaleshwar Temple in Ujjain with Omkareshwar Jyotirlinga in a single itinerary. Since Omkareshwar is approximately 140 kilometres away, travelers often spend one or two nights in Ujjain before continuing their journey. Planning accommodation and transport in advance helps make the trip more comfortable.</p>
+              <div className={`faq-item ${openFaq === 31 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 31 ? null : 31)}>
+                <div className="faq-header">
+                  <h3>Which hotels are near Kal Bhairav Temple?</h3>
+                  <span className="faq-toggle">{openFaq === 31 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Several hotels across central Ujjain provide convenient access to Kal Bhairav Temple by road. Travelers planning to visit multiple temples often choose accommodation near Mahakaleshwar Temple or central city areas, allowing them to easily reach Kal Bhairav, Harsiddhi Temple, Ram Ghat, and other major attractions during the same trip.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which area is considered the safest to stay in Ujjain?</h3>
-                <p>Popular localities such as Freeganj, Nanakheda, and the areas around Mahakaleshwar Temple are generally considered safe for tourists. Choosing verified hotels with good guest reviews, CCTV surveillance, 24-hour reception, and proper security arrangements is always recommended, particularly for solo travelers and families.</p>
+              <div className={`faq-item ${openFaq === 32 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 32 ? null : 32)}>
+                <div className="faq-header">
+                  <h3>Which hotels are near Harsiddhi Temple?</h3>
+                  <span className="faq-toggle">{openFaq === 32 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Harsiddhi Temple is located close to Mahakaleshwar Temple, making hotels near the temple complex an excellent choice for pilgrims visiting both shrines. Staying nearby allows visitors to comfortably explore the temple area on foot while avoiding repeated transportation during busy pilgrimage seasons.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Where should families stay in Ujjain?</h3>
-                <p>Families usually prefer accommodations in Freeganj, Nanakheda, or well-rated hotels near Mahakaleshwar Temple offering spacious rooms, elevators, secure parking, nearby restaurants, and peaceful surroundings. These locations provide a balance between convenience and comfort for travelers with children or elderly family members.</p>
+              <div className={`faq-item ${openFaq === 33 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 33 ? null : 33)}>
+                <div className="faq-header">
+                  <h3>Which hotels are near Ram Ghat?</h3>
+                  <span className="faq-toggle">{openFaq === 33 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Ram Ghat is one of Ujjain's most visited spiritual destinations, especially during evening Aarti and religious festivals. Hotels near Mahakaleshwar Temple or the old city generally provide easier access to Ram Ghat. Visitors interested in attending the evening Aarti often prefer accommodation within a short driving or walking distance.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are located near Ujjain Bus Stand?</h3>
-                <p>Hotels near Nanakheda Bus Stand and Dewas Road provide convenient accommodation for travelers arriving by bus. These areas have good transport connectivity, restaurants, and access to local attractions. Many budget and mid-range hotels are available, making them suitable for both short and extended stays.</p>
+              <div className={`faq-item ${openFaq === 34 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 34 ? null : 34)}>
+                <div className="faq-header">
+                  <h3>Can I visit Mahakal and Omkareshwar in one trip?</h3>
+                  <span className="faq-toggle">{openFaq === 34 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes. Many pilgrims combine Mahakaleshwar Temple in Ujjain with Omkareshwar Jyotirlinga in a single itinerary. Since Omkareshwar is approximately 140 kilometres away, travelers often spend one or two nights in Ujjain before continuing their journey. Planning accommodation and transport in advance helps make the trip more comfortable.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are available in Freeganj?</h3>
-                <p>Freeganj is one of the most popular areas for accommodation in Ujjain because it offers a wide range of budget, mid-range, and premium hotels. The locality has wider roads, shopping areas, restaurants, parking facilities, and convenient access to Mahakaleshwar Temple, making it a preferred choice for many visitors.</p>
+              <div className={`faq-item ${openFaq === 35 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 35 ? null : 35)}>
+                <div className="faq-header">
+                  <h3>Which area is considered the safest to stay in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 35 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Popular localities such as Freeganj, Nanakheda, and the areas around Mahakaleshwar Temple are generally considered safe for tourists. Choosing verified hotels with good guest reviews, CCTV surveillance, 24-hour reception, and proper security arrangements is always recommended, particularly for solo travelers and families.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are located in Nanakheda?</h3>
-                <p>Nanakheda has several hotels suitable for families, business travelers, and tourists looking for quieter surroundings. The area provides better road connectivity, comparatively less congestion, and convenient access to the city's major attractions through taxis, auto-rickshaws, and private vehicles.</p>
+              <div className={`faq-item ${openFaq === 36 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 36 ? null : 36)}>
+                <div className="faq-header">
+                  <h3>Where should families stay in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 36 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Families usually prefer accommodations in Freeganj, Nanakheda, or well-rated hotels near Mahakaleshwar Temple offering spacious rooms, elevators, secure parking, nearby restaurants, and peaceful surroundings. These locations provide a balance between convenience and comfort for travelers with children or elderly family members.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are available on Dewas Road?</h3>
-                <p>Dewas Road offers multiple accommodation options for travelers arriving by private vehicles. Hotels in this area often provide spacious parking, larger properties, and comparatively peaceful surroundings. Although located slightly away from Mahakaleshwar Temple, the area remains well connected through local transportation.</p>
+              <div className={`faq-item ${openFaq === 37 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 37 ? null : 37)}>
+                <div className="faq-header">
+                  <h3>Which hotels are located near Ujjain Bus Stand?</h3>
+                  <span className="faq-toggle">{openFaq === 37 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Hotels near Nanakheda Bus Stand and Dewas Road provide convenient accommodation for travelers arriving by bus. These areas have good transport connectivity, restaurants, and access to local attractions. Many budget and mid-range hotels are available, making them suitable for both short and extended stays.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels offer the best parking facilities?</h3>
-                <p>Hotels situated in Freeganj, Nanakheda, and Dewas Road generally offer better parking facilities than properties located in the narrow lanes surrounding Mahakaleshwar Temple. If you are traveling by car, always confirm parking availability before booking, especially during major festivals and weekends.</p>
+              <div className={`faq-item ${openFaq === 38 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 38 ? null : 38)}>
+                <div className="faq-header">
+                  <h3>Which hotels are available in Freeganj?</h3>
+                  <span className="faq-toggle">{openFaq === 38 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Freeganj is one of the most popular areas for accommodation in Ujjain because it offers a wide range of budget, mid-range, and premium hotels. The locality has wider roads, shopping areas, restaurants, parking facilities, and convenient access to Mahakaleshwar Temple, making it a preferred choice for many visitors.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which area has the best restaurants in Ujjain?</h3>
-                <p>Freeganj is widely known for its variety of restaurants, cafés, and family dining options. Hotels located in this area provide convenient access to vegetarian restaurants, local street food, and multi-cuisine establishments. Travelers staying near Mahakaleshwar Temple also have numerous food options within walking distance.</p>
+              <div className={`faq-item ${openFaq === 39 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 39 ? null : 39)}>
+                <div className="faq-header">
+                  <h3>Which hotels are located in Nanakheda?</h3>
+                  <span className="faq-toggle">{openFaq === 39 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Nanakheda has several hotels suitable for families, business travelers, and tourists looking for quieter surroundings. The area provides better road connectivity, comparatively less congestion, and convenient access to the city's major attractions through taxis, auto-rickshaws, and private vehicles.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>How many days are enough to explore Ujjain?</h3>
-                <p>A two-day trip is generally sufficient to visit Mahakaleshwar Temple, Mahakal Lok, Kal Bhairav Temple, Harsiddhi Temple, Ram Ghat, Sandipani Ashram, and other major attractions. Travelers planning to attend Bhasma Aarti or visit Omkareshwar often extend their stay to three or four days for a more relaxed pilgrimage.</p>
+              <div className={`faq-item ${openFaq === 40 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 40 ? null : 40)}>
+                <div className="faq-header">
+                  <h3>Which hotels are available on Dewas Road?</h3>
+                  <span className="faq-toggle">{openFaq === 40 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Dewas Road offers multiple accommodation options for travelers arriving by private vehicles. Hotels in this area often provide spacious parking, larger properties, and comparatively peaceful surroundings. Although located slightly away from Mahakaleshwar Temple, the area remains well connected through local transportation.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Should I book my hotel in advance before visiting Ujjain?</h3>
-                <p>Yes. Advance booking is strongly recommended throughout the year and becomes essential during weekends, Shravan, Mahashivratri, long holidays, and Simhastha. Reserving your accommodation early provides better room choices, lower prices, and greater flexibility while reducing the risk of last-minute availability issues.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Can I find hotels after reaching Ujjain without prior booking?</h3>
-                <p>Yes, hotels may be available if you arrive without a reservation, especially during regular weekdays. However, availability cannot be guaranteed during weekends, Shravan, Mahashivratri, long holidays, or Simhastha when thousands of pilgrims visit the city. Booking in advance helps secure better room options, preferred locations, and competitive prices while reducing the stress of searching for accommodation after arrival.</p>
-              </div>
-
-              <div className="faq-item">
-                <h3>What should I check before confirming a hotel booking?</h3>
-                <p>Before booking, compare room size, cleanliness, guest reviews, parking availability, check-in and check-out timings, cancellation policy, hot water, Wi-Fi, air conditioning, nearby restaurants, and the hotel's actual distance from Mahakaleshwar Temple. Reading recent guest reviews and checking verified photos can help avoid unpleasant surprises during your stay.</p>
+              <div className={`faq-item ${openFaq === 41 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 41 ? null : 41)}>
+                <div className="faq-header">
+                  <h3>Which hotels offer the best parking facilities?</h3>
+                  <span className="faq-toggle">{openFaq === 41 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Hotels situated in Freeganj, Nanakheda, and Dewas Road generally offer better parking facilities than properties located in the narrow lanes surrounding Mahakaleshwar Temple. If you are traveling by car, always confirm parking availability before booking, especially during major festivals and weekends.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which cancellation policy is best while booking hotels?</h3>
-                <p>If your travel dates are not completely fixed, choose a hotel with free cancellation or flexible modification options. Flexible booking policies are especially useful during monsoon, festival seasons, or long-distance travel where transportation schedules may change unexpectedly. Always read the cancellation terms before making payment.</p>
+              <div className={`faq-item ${openFaq === 42 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 42 ? null : 42)}>
+                <div className="faq-header">
+                  <h3>Which area has the best restaurants in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 42 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Freeganj is widely known for its variety of restaurants, cafés, and family dining options. Hotels located in this area provide convenient access to vegetarian restaurants, local street food, and multi-cuisine establishments. Travelers staying near Mahakaleshwar Temple also have numerous food options within walking distance.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Are online hotel bookings safe in Ujjain?</h3>
-                <p>Yes, online bookings are generally safe when made through trusted travel platforms or directly with verified hotels. Before paying, confirm the hotel's contact details, guest reviews, photographs, location, and cancellation policy. Avoid transferring money to unknown personal accounts or relying on unofficial booking agents.</p>
+              <div className={`faq-item ${openFaq === 43 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 43 ? null : 43)}>
+                <div className="faq-header">
+                  <h3>How many days are enough to explore Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 43 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>A two-day trip is generally sufficient to visit Mahakaleshwar Temple, Mahakal Lok, Kal Bhairav Temple, Harsiddhi Temple, Ram Ghat, Sandipani Ashram, and other major attractions. Travelers planning to attend Bhasma Aarti or visit Omkareshwar often extend their stay to three or four days for a more relaxed pilgrimage.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>How can I avoid fake hotel listings?</h3>
-                <p>Choose verified hotels with genuine guest reviews, multiple recent photographs, proper contact information, and transparent pricing. Be cautious of properties that ask for full payment through personal accounts or offer unusually low prices without verification. Comparing listings across trusted sources helps reduce the risk of fraudulent bookings.</p>
+              <div className={`faq-item ${openFaq === 44 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 44 ? null : 44)}>
+                <div className="faq-header">
+                  <h3>Should I book my hotel in advance before visiting Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 44 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes. Advance booking is strongly recommended throughout the year and becomes essential during weekends, Shravan, Mahashivratri, long holidays, and Simhastha. Reserving your accommodation early provides better room choices, lower prices, and greater flexibility while reducing the risk of last-minute availability issues.</p>
+                </div>
+              </div>
+              <div className={`faq-item ${openFaq === 45 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 45 ? null : 45)}>
+                <div className="faq-header">
+                  <h3>Can I find hotels after reaching Ujjain without prior booking?</h3>
+                  <span className="faq-toggle">{openFaq === 45 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes, hotels may be available if you arrive without a reservation, especially during regular weekdays. However, availability cannot be guaranteed during weekends, Shravan, Mahashivratri, long holidays, or Simhastha when thousands of pilgrims visit the city. Booking in advance helps secure better room options, preferred locations, and competitive prices while reducing the stress of searching for accommodation after arrival.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>What documents are required during hotel check-in?</h3>
-                <p>Most hotels require every adult guest to present a valid government-issued photo identity card during check-in. Accepted documents commonly include Aadhaar Card, Passport, Driving Licence, or Voter ID. International travelers should carry their passport and any additional documents required under local regulations.</p>
+              <div className={`faq-item ${openFaq === 46 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 46 ? null : 46)}>
+                <div className="faq-header">
+                  <h3>What should I check before confirming a hotel booking?</h3>
+                  <span className="faq-toggle">{openFaq === 46 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Before booking, compare room size, cleanliness, guest reviews, parking availability, check-in and check-out timings, cancellation policy, hot water, Wi-Fi, air conditioning, nearby restaurants, and the hotel's actual distance from Mahakaleshwar Temple. Reading recent guest reviews and checking verified photos can help avoid unpleasant surprises during your stay.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Is early check-in available in hotels?</h3>
-                <p>Early check-in depends on room availability and each hotel's policy. Some hotels provide complimentary early check-in if rooms are vacant, while others may charge an additional fee. If you expect to arrive early, contact the hotel in advance to confirm availability and avoid waiting after reaching Ujjain.</p>
+              <div className={`faq-item ${openFaq === 47 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 47 ? null : 47)}>
+                <div className="faq-header">
+                  <h3>Which cancellation policy is best while booking hotels?</h3>
+                  <span className="faq-toggle">{openFaq === 47 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>If your travel dates are not completely fixed, choose a hotel with free cancellation or flexible modification options. Flexible booking policies are especially useful during monsoon, festival seasons, or long-distance travel where transportation schedules may change unexpectedly. Always read the cancellation terms before making payment.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Can I extend my hotel stay after check-in?</h3>
-                <p>Many hotels allow guests to extend their stay if rooms remain available. During weekends and festival periods, extensions may not always be possible because hotels often reach full occupancy. Inform the hotel as early as possible if you plan to stay longer than originally booked.</p>
+              <div className={`faq-item ${openFaq === 48 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 48 ? null : 48)}>
+                <div className="faq-header">
+                  <h3>Are online hotel bookings safe in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 48 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes, online bookings are generally safe when made through trusted travel platforms or directly with verified hotels. Before paying, confirm the hotel's contact details, guest reviews, photographs, location, and cancellation policy. Avoid transferring money to unknown personal accounts or relying on unofficial booking agents.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Do hotels in Ujjain provide free Wi-Fi?</h3>
-                <p>Most mid-range and premium hotels offer complimentary Wi-Fi, while some budget accommodations may provide limited internet access or charge additional fees. If reliable internet is important for work or communication, confirm Wi-Fi availability and speed before finalizing your reservation.</p>
+              <div className={`faq-item ${openFaq === 49 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 49 ? null : 49)}>
+                <div className="faq-header">
+                  <h3>How can I avoid fake hotel listings?</h3>
+                  <span className="faq-toggle">{openFaq === 49 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Choose verified hotels with genuine guest reviews, multiple recent photographs, proper contact information, and transparent pricing. Be cautious of properties that ask for full payment through personal accounts or offer unusually low prices without verification. Comparing listings across trusted sources helps reduce the risk of fraudulent bookings.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Do hotels provide room service?</h3>
-                <p>Room service is commonly available in mid-range and premium hotels, although timings and menu options differ between properties. Budget hotels may have limited food service or partner with nearby restaurants. Checking available dining facilities before booking helps avoid inconvenience during your stay.</p>
+              <div className={`faq-item ${openFaq === 50 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 50 ? null : 50)}>
+                <div className="faq-header">
+                  <h3>What documents are required during hotel check-in?</h3>
+                  <span className="faq-toggle">{openFaq === 50 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Most hotels require every adult guest to present a valid government-issued photo identity card during check-in. Accepted documents commonly include Aadhaar Card, Passport, Driving Licence, or Voter ID. International travelers should carry their passport and any additional documents required under local regulations.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Do hotels in Ujjain serve vegetarian food?</h3>
-                <p>Yes. Since Ujjain is an important religious city, most hotels either have vegetarian restaurants or are located near restaurants serving vegetarian meals. Many accommodations also provide Jain food on request or guide guests to nearby dining options suitable for pilgrims and families.</p>
+              <div className={`faq-item ${openFaq === 51 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 51 ? null : 51)}>
+                <div className="faq-header">
+                  <h3>Is early check-in available in hotels?</h3>
+                  <span className="faq-toggle">{openFaq === 51 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Early check-in depends on room availability and each hotel's policy. Some hotels provide complimentary early check-in if rooms are vacant, while others may charge an additional fee. If you expect to arrive early, contact the hotel in advance to confirm availability and avoid waiting after reaching Ujjain.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Which hotels are wheelchair friendly?</h3>
-                <p>Several modern hotels provide wheelchair-accessible entrances, elevators, ramps, and accessible rooms. However, accessibility features vary from one property to another. Travelers with mobility requirements should contact the hotel directly before booking to confirm the availability of suitable facilities.</p>
+              <div className={`faq-item ${openFaq === 52 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 52 ? null : 52)}>
+                <div className="faq-header">
+                  <h3>Can I extend my hotel stay after check-in?</h3>
+                  <span className="faq-toggle">{openFaq === 52 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Many hotels allow guests to extend their stay if rooms remain available. During weekends and festival periods, extensions may not always be possible because hotels often reach full occupancy. Inform the hotel as early as possible if you plan to stay longer than originally booked.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Do hotels offer 24-hour reception?</h3>
-                <p>Many hotels in Ujjain operate a 24-hour front desk, allowing guests to check in late at night or receive assistance whenever needed. Smaller guest houses and budget accommodations may have limited reception hours, so confirm arrival timings with the property before traveling.</p>
+              <div className={`faq-item ${openFaq === 53 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 53 ? null : 53)}>
+                <div className="faq-header">
+                  <h3>Do hotels in Ujjain provide free Wi-Fi?</h3>
+                  <span className="faq-toggle">{openFaq === 53 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Most mid-range and premium hotels offer complimentary Wi-Fi, while some budget accommodations may provide limited internet access or charge additional fees. If reliable internet is important for work or communication, confirm Wi-Fi availability and speed before finalizing your reservation.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Are pet-friendly hotels available in Ujjain?</h3>
-                <p>Only a limited number of hotels allow pets, and their policies differ regarding pet size, additional charges, and permitted areas. If you plan to travel with a pet, always contact the hotel before booking to verify its pet policy and any applicable restrictions.</p>
+              <div className={`faq-item ${openFaq === 54 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 54 ? null : 54)}>
+                <div className="faq-header">
+                  <h3>Do hotels provide room service?</h3>
+                  <span className="faq-toggle">{openFaq === 54 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Room service is commonly available in mid-range and premium hotels, although timings and menu options differ between properties. Budget hotels may have limited food service or partner with nearby restaurants. Checking available dining facilities before booking helps avoid inconvenience during your stay.</p>
+                </div>
               </div>
 
-              <div className="faq-item">
-                <h3>Do hotels provide airport or railway station pickup?</h3>
-                <p>Some premium hotels and selected mid-range properties offer pickup and drop services from Ujjain Railway Station or nearby airports upon request. These services may be complimentary or chargeable depending on the property. Confirm availability and pricing with the hotel before your arrival to ensure a smooth transfer.</p>
-                            </div>      {/* faq-list */}
-            </div> 
-            </div>       {/* container */}
-          </section>
+              <div className={`faq-item ${openFaq === 55 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 55 ? null : 55)}>
+                <div className="faq-header">
+                  <h3>Do hotels in Ujjain serve vegetarian food?</h3>
+                  <span className="faq-toggle">{openFaq === 55 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Yes. Since Ujjain is an important religious city, most hotels either have vegetarian restaurants or are located near restaurants serving vegetarian meals. Many accommodations also provide Jain food on request or guide guests to nearby dining options suitable for pilgrims and families.</p>
+                </div>
+              </div>
+
+              <div className={`faq-item ${openFaq === 56 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 56 ? null : 56)}>
+                <div className="faq-header">
+                  <h3>Which hotels are wheelchair friendly?</h3>
+                  <span className="faq-toggle">{openFaq === 56 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Several modern hotels provide wheelchair-accessible entrances, elevators, ramps, and accessible rooms. However, accessibility features vary from one property to another. Travelers with mobility requirements should contact the hotel directly before booking to confirm the availability of suitable facilities.</p>
+                </div>
+              </div>
+
+              <div className={`faq-item ${openFaq === 57 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 57 ? null : 57)}>
+                <div className="faq-header">
+                  <h3>Do hotels offer 24-hour reception?</h3>
+                  <span className="faq-toggle">{openFaq === 57 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Many hotels in Ujjain operate a 24-hour front desk, allowing guests to check in late at night or receive assistance whenever needed. Smaller guest houses and budget accommodations may have limited reception hours, so confirm arrival timings with the property before traveling.</p>
+                </div>
+              </div>
+
+              <div className={`faq-item ${openFaq === 58 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 58 ? null : 58)}>
+                <div className="faq-header">
+                  <h3>Are pet-friendly hotels available in Ujjain?</h3>
+                  <span className="faq-toggle">{openFaq === 58 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Only a limited number of hotels allow pets, and their policies differ regarding pet size, additional charges, and permitted areas. If you plan to travel with a pet, always contact the hotel before booking to verify its pet policy and any applicable restrictions.</p>
+                </div>
+              </div>
+
+              <div className={`faq-item ${openFaq === 59 ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === 59 ? null : 59)}>
+                <div className="faq-header">
+                  <h3>Do hotels provide airport or railway station pickup?</h3>
+                  <span className="faq-toggle">{openFaq === 59 ? '−' : '+'}</span>
+                </div>
+                <div className="faq-answer">
+                  <p>Some premium hotels and selected mid-range properties offer pickup and drop services from Ujjain Railway Station or nearby airports upon request. These services may be complimentary or chargeable depending on the property. Confirm availability and pricing with the hotel before your arrival to ensure a smooth transfer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         </div>
 
     </>
