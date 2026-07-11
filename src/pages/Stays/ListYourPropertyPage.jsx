@@ -109,6 +109,7 @@ export default function ListYourPropertyPage() {
   const [selectedPlan, setSelectedPlan] = useState(listingTypeToPlan["Free Listing"]);
   const [showSticky, setShowSticky] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [phoneValidation, setPhoneValidation] = useState({ valid: false, message: "" });
   const [compressing, setCompressing] = useState({
     featured_image: false,
     gallery_images: false,
@@ -124,6 +125,31 @@ export default function ListYourPropertyPage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  function validatePhone(phone) {
+    // Indian mobile: 10 digits starting with 6-9
+    const mobileRegex = /^[6-9]\d{9}$/;
+    // Indian landline: optional 0 + 2-4 digit STD code + 6-8 digit number, may have dash/space
+    const landlineRegex = /^(0\d{1,4}[\s-]?\d{6,8})$/;
+    // Also allow without leading 0: 2-4 digit code + 6-8 digit number
+    const landlineSimpleRegex = /^\d{2,4}[\s-]?\d{6,8}$/;
+
+    const cleaned = phone.replace(/\s/g, "");
+
+    if (!phone) {
+      return { valid: false, message: "" };
+    }
+    if (mobileRegex.test(cleaned)) {
+      return { valid: true, message: "✓ Valid mobile number" };
+    }
+    if (landlineRegex.test(phone.trim()) || landlineSimpleRegex.test(cleaned)) {
+      return { valid: true, message: "✓ Valid telephone number" };
+    }
+    if (cleaned.length >= 10) {
+      return { valid: false, message: "✗ Invalid number format. Use 10-digit mobile (e.g. 9876543210) or landline with STD code (e.g. 0731-123456)" };
+    }
+    return { valid: false, message: "" };
+  }
+
   function handleChange(e) {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -136,6 +162,14 @@ export default function ListYourPropertyPage() {
       const planInfo = listingTypeToPlan[value];
       if (planInfo) {
         setSelectedPlan(planInfo);
+      }
+    }
+
+    // Validate phone fields in real-time
+    if (name === "phone" || name === "whatsapp") {
+      const result = validatePhone(value);
+      if (name === "phone") {
+        setPhoneValidation(result);
       }
     }
   }
@@ -367,9 +401,12 @@ export default function ListYourPropertyPage() {
     }
 
     if (!formData.phone.trim()) {
-      errors.push({ field: "phone", message: "Mobile number is required" });
-    } else if (formData.phone.length < 10) {
-      errors.push({ field: "phone", message: "Please enter a valid 10-digit mobile number" });
+      errors.push({ field: "phone", message: "Mobile/Telephone number is required" });
+    } else {
+      const phoneResult = validatePhone(formData.phone);
+      if (!phoneResult.valid) {
+        errors.push({ field: "phone", message: phoneResult.message || "Please enter a valid mobile or telephone number" });
+      }
     }
 
     if (!formData.email.trim()) {
@@ -739,7 +776,21 @@ export default function ListYourPropertyPage() {
                   </div>
                   <div className="form-group">
                     <label>Mobile Number *</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+                    <div className="phone-input-wrapper">
+                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+                      {formData.phone && (
+                        <div className={`phone-validation ${phoneValidation.valid ? "valid" : "invalid"}`}>
+                          <span className={`validation-icon ${phoneValidation.valid ? "valid-icon" : "invalid-icon"}`}>
+                            {phoneValidation.valid ? "✓" : "✗"}
+                          </span>
+                          <span className="validation-message">
+                            {phoneValidation.valid 
+                              ? phoneValidation.message 
+                              : (phoneValidation.message || "Enter 10-digit mobile or landline with STD code")}
+                          </span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className="form-group">
                     <label>WhatsApp</label>
