@@ -139,10 +139,10 @@ export default function ListYourPropertyPage() {
       return { valid: false, message: "" };
     }
     if (mobileRegex.test(cleaned)) {
-      return { valid: true, message: "✓ Valid mobile number" };
+      return { valid: true, message: "Valid mobile number" };
     }
     if (landlineRegex.test(phone.trim()) || landlineSimpleRegex.test(cleaned)) {
-      return { valid: true, message: "✓ Valid telephone number" };
+      return { valid: true, message: "Valid telephone number" };
     }
     if (cleaned.length >= 10) {
       return { valid: false, message: "✗ Invalid number format. Use 10-digit mobile (e.g. 9876543210) or landline with STD code (e.g. 0731-123456)" };
@@ -429,6 +429,18 @@ export default function ListYourPropertyPage() {
 
     if (!formData.locality.trim()) {
       errors.push({ field: "locality", message: "Locality is required" });
+    }
+
+    if (!formData.starting_price) {
+      errors.push({ field: "starting_price", message: "Starting price is required" });
+    }
+
+    if (!formData.checkin_time) {
+      errors.push({ field: "checkin_time", message: "Check-in time is required" });
+    }
+
+    if (!formData.checkout_time) {
+      errors.push({ field: "checkout_time", message: "Check-out time is required" });
     }
 
     if (!formData.featured_image) {
@@ -865,7 +877,7 @@ export default function ListYourPropertyPage() {
                 <div className="form-grid">
                   <div className="form-group">
                     <label>Starting Price *</label>
-                    <input type="number" name="starting_price" value={formData.starting_price} onChange={handleChange} />
+                    <input type="number" name="starting_price" value={formData.starting_price} onChange={handleChange} required />
                   </div>
                   <div className="form-group">
                     <label>Total Rooms</label>
@@ -877,11 +889,11 @@ export default function ListYourPropertyPage() {
                   </div>
                   <div className="form-group">
                     <label>Check In *</label>
-                    <input type="time" name="checkin_time" value={formData.checkin_time} onChange={handleChange} />
+                    <input type="time" name="checkin_time" value={formData.checkin_time} onChange={handleChange} required />
                   </div>
                   <div className="form-group">
                     <label>Check Out *</label>
-                    <input type="time" name="checkout_time" value={formData.checkout_time} onChange={handleChange} />
+                    <input type="time" name="checkout_time" value={formData.checkout_time} onChange={handleChange} required />
                   </div>
                   <div className="form-group full-width">
                     <label>Property Description</label>
