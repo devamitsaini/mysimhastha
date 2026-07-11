@@ -97,10 +97,14 @@ export default function ListYourPropertyPage() {
   });
 
   const listingTypeToPlan = {
-    "Free Listing": { title: "Free Listing", price: "₹0", description: "Basic Listing" },
-    "Featured Listing": { title: "Standard", price: "₹999", description: "Featured Listing" },
-    "Premium Listing": { title: "Premium", price: "₹2,499", description: "Maximum Visibility" }
+    "Free Listing": { title: "Free Listing", price: "₹0", description: "Basic Listing", maxGallery: 5 },
+    "Featured Listing": { title: "Standard", price: "₹999", description: "Featured Listing", maxGallery: 15 },
+    "Premium Listing": { title: "Premium", price: "₹2,499", description: "Maximum Visibility", maxGallery: 25 }
   };
+
+  function getMaxGalleryLimit() {
+    return listingTypeToPlan[formData.listing_type]?.maxGallery || 5;
+  }
 
   const [selectedPlan, setSelectedPlan] = useState(listingTypeToPlan["Free Listing"]);
   const [showSticky, setShowSticky] = useState(false);
@@ -207,9 +211,53 @@ export default function ListYourPropertyPage() {
       const imageFiles = Array.from(files).filter(f => isImageFile(f));
       
       if (imageFiles.length > 0) {
+        const currentCount = formData.gallery_images.length;
+        const maxAllowed = getMaxGalleryLimit();
+        const remaining = maxAllowed - currentCount;
+
+        if (remaining <= 0) {
+          toast.info(
+            <div className="property-plan-toast">
+              <FiAlertCircle className="toast-icon" />
+              <div>
+                <strong>Gallery Limit Reached</strong>
+                <p>Your {formData.listing_type} plan allows a maximum of {maxAllowed} images. Remove some to upload more.</p>
+              </div>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 4000,
+              hideProgressBar: false,
+              className: "property-plan-toast-container"
+            }
+          );
+          e.target.value = "";
+          return;
+        }
+
+        const allowedFiles = imageFiles.slice(0, remaining);
+        
+        if (allowedFiles.length < imageFiles.length) {
+          toast.info(
+            <div className="property-plan-toast">
+              <FiAlertCircle className="toast-icon" />
+              <div>
+                <strong>Upload Limited</strong>
+                <p>Your plan allows {maxAllowed} images ({currentCount} currently). Uploading only {remaining} more.</p>
+              </div>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 4000,
+              hideProgressBar: false,
+              className: "property-plan-toast-container"
+            }
+          );
+        }
+
         setCompressing(prev => ({ ...prev, [name]: true }));
         
-        compressImages(imageFiles, {
+        compressImages(allowedFiles, {
           maxWidth: 1200,
           maxHeight: 1200,
           quality: 0.8,
@@ -218,9 +266,8 @@ export default function ListYourPropertyPage() {
         .then(compressedFiles => {
           setFormData(prev => ({
             ...prev,
-            gallery_images: compressedFiles
+            gallery_images: [...prev.gallery_images, ...compressedFiles]
           }));
-          
         })
         .catch(error => {
           console.error('Gallery compression error:', error);
@@ -830,7 +877,7 @@ export default function ListYourPropertyPage() {
                   <div className="form-group">
                     <label>Gallery Images</label>
                     <input type="file" accept="image/*" multiple name="gallery_images" onChange={handleFile} disabled={compressing.gallery_images} />
-                    <small>Upload up to 10 high-quality photos.</small>
+                    <small>Upload up to {getMaxGalleryLimit()} high-quality photos ({formData.gallery_images.length}/{getMaxGalleryLimit()} used).</small>
                     {compressing.gallery_images && (
                       <div className="property-upload-toast">
                         <div className="upload-spinner"></div>
