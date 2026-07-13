@@ -4,7 +4,7 @@ export default function GuideFeedback() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleFeedback = (helpful) => {
-    console.log("Guide Feedback:", helpful ? "Helpful" : "Needs Improvement");
+    ("Guide Feedback:", helpful ? "Helpful" : "Needs Improvement");
 
     // Later you can save this to Supabase
 

@@ -18,7 +18,7 @@ export default function StickyContactCard({ stay }) {
   const email = stay.email || "";
 
   // Debug: Log contact info
-  console.log("StickyContactCard - stay data:", {
+  ("StickyContactCard - stay data:", {
     phone,
     whatsapp,
     hasPhone: !!phone,

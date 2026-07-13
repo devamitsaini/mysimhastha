@@ -163,7 +163,7 @@ return result.response
 
 
 } catch (err) {
-  console.log(
+  (
     "Gemini Error:",
     err.message
   );
@@ -237,25 +237,25 @@ async function getImage(link) {
 
 async function importRSS() {
 try {
-console.log("=================================");
-console.log("Starting RSS Import");
-console.log("=================================");
+("=================================");
+("Starting RSS Import");
+("=================================");
 
 
 for (const feedUrl of feeds) {
 
-  console.log(feedUrl);
+  (feedUrl);
 
   let feed;
 
   try {
     feed = await parser.parseURL(feedUrl);
   } catch (err) {
-    console.log("Feed Error:", err.message);
+    ("Feed Error:", err.message);
     continue;
   }
 
-  console.log(`Found ${feed.items.length} items`);
+  (`Found ${feed.items.length} items`);
 
   for (const item of feed.items.slice(0, 5)) {
     const rawTitle = item.title || "";
@@ -316,7 +316,7 @@ const isLocationRelevant =
   );
 
 if (!isLocationRelevant) {
-  console.log("Not Ujjain Related");
+  ("Not Ujjain Related");
   continue;
 }
 
@@ -328,7 +328,7 @@ const isBad = badKeywords.some(
 );
 
 if (isBad) {
-  console.log("Rejected:", title);
+  ("Rejected:", title);
   continue;
 }
 
@@ -342,10 +342,10 @@ if (!matched) {
   continue;
 }
 
-    console.log(
+    (
       "\n---------------------------------"
     );
-    console.log(
+    (
       "Relevant:",
       title
     );
@@ -363,7 +363,7 @@ const {
   .limit(1);
 
     if (checkError) {
-      console.log(
+      (
         "DB Check Error:",
         checkError.message
       );
@@ -374,7 +374,7 @@ const {
       existing &&
       existing.length > 0
     ) {
-      console.log(
+      (
         "Already Exists"
       );
       continue;
@@ -387,31 +387,31 @@ const finalImage =
 
 
     if (imageUrl) {
-      console.log(
+      (
         "Image Found"
       );
     } else {
-      console.log(
+      (
         "No Image Found"
       );
     }
 
-console.log("LINK:", item.link);
+("LINK:", item.link);
 
 const snippet =
   item.contentSnippet ||
   item.summary ||
   "";
 
-console.log("\n======================");
-console.log("TITLE:", title);
-console.log("CONTENT LENGTH:", snippet.length);
-console.log("SNIPPET:");
-console.log(snippet.substring(0, 500));
-console.log("======================\n");
+("\n======================");
+("TITLE:", title);
+("CONTENT LENGTH:", snippet.length);
+("SNIPPET:");
+(snippet.substring(0, 500));
+("======================\n");
 
 if (!snippet || snippet.length < 40) {
-  console.log("Snippet too short");
+  ("Snippet too short");
   continue;
 }
 
@@ -458,16 +458,16 @@ else if (
   topic = "Ujjain";
 }
 
-console.log("SUMMARY LENGTH:", summary.length);
-console.log(summary);
+("SUMMARY LENGTH:", summary.length);
+(summary);
 
 if (!summary || summary.trim().length < 50) {
   
-  console.log("Gemini failed, skipping");
+  ("Gemini failed, skipping");
   continue;
 }
 
-    console.log(
+    (
       "Summary Generated"
     );
 
@@ -489,21 +489,21 @@ if (!summary || summary.trim().length < 50) {
 });
 
     if (insertError) {
-      console.log(
+      (
         "Insert Error:",
         insertError.message
       );
     } else {
-      console.log(
+      (
         "Inserted Successfully"
       );
     }
   }
 }
 
-console.log("\n=================================");
-console.log("RSS Import Complete");
-console.log("=================================");
+("\n=================================");
+("RSS Import Complete");
+("=================================");
 
 
 } catch (err) {

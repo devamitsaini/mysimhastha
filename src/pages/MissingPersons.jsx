@@ -48,14 +48,14 @@ function MissingPersonsPage({
       );
 
       const uploadData = await uploadRes.json();
-      console.log("Cloudinary Response:", uploadData);
+      ("Cloudinary Response:", uploadData);
       if (!uploadRes.ok || !uploadData.secure_url) {
         alert("Image upload failed");
         return;
       }
 
       photoUrl = uploadData.secure_url;
-      console.log("Photo URL:", photoUrl);
+      ("Photo URL:", photoUrl);
     }
 
     if (!form.name.trim()) {
@@ -114,9 +114,9 @@ function MissingPersonsPage({
       });
 
       const data = await res.json();
-      console.log("WEB3 STATUS:", res.status);
-      console.log("WEB3 DATA:", data);
-      console.log("WEB3 KEY:", process.env.REACT_APP_WEB3FORMS_ACCESS_KEY);
+      ("WEB3 STATUS:", res.status);
+      ("WEB3 DATA:", data);
+      ("WEB3 KEY:", process.env.REACT_APP_WEB3FORMS_ACCESS_KEY);
 
       if (res.ok && data.success) {
         localStorage.setItem(

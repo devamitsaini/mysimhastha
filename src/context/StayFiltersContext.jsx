@@ -230,7 +230,7 @@ if (userLocation) {
 
   updatedStays = updatedStays.map((stay) => {
 
-    console.log(stay.name, stay.latitude, stay.longitude);
+    (stay.name, stay.latitude, stay.longitude);
     
     if (!stay.latitude || !stay.longitude) {
 

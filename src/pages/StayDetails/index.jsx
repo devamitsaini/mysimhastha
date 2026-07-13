@@ -34,8 +34,8 @@
 
             const result=await fetchStayBySlug(slug);
 
-            console.log("Slug:", slug);
-            console.log("Result:", result);
+            ("Slug:", slug);
+            ("Result:", result);
             if(!result.error){
 
                 setStay(result.data);

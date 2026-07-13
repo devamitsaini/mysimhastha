@@ -94,7 +94,7 @@ export const subscribeToNewsletter = async (email) => {
       if (error.message?.includes('relation "newsletter_subscribers" does not exist') || 
           error.message?.includes('Could not find table') ||
           error.message?.includes('table "newsletter_subscribers" does not exist')) {
-        console.log('Supabase table not found, using Web3Forms fallback');
+        ('Supabase table not found, using Web3Forms fallback');
         return await subscribeViaWeb3Forms(email);
       }
       return { success: false, error: error.message || 'Failed to subscribe. Please try again.' };

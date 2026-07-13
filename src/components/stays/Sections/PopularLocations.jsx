@@ -47,8 +47,8 @@ export default function PopularLocations() {
           .slice(0, 6);
 
 
-          console.log("Localities:", localities);
-console.log("Locations With Counts:", sortedLocations);
+          ("Localities:", localities);
+("Locations With Counts:", sortedLocations);
         setLocations(sortedLocations);
         setLoading(false);
       } catch (error) {

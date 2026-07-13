@@ -53,8 +53,8 @@ const copyLink = async () => {
         ])
         .select();
 
-    console.log("Data:", data);
-    console.log("Error:", error);
+    ("Data:", data);
+    ("Error:", error);
 
     if (error) {
         console.error(error);

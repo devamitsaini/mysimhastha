@@ -11,8 +11,8 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-console.log("URL:", supabaseUrl);
-console.log("KEY:", supabaseAnonKey.substring(0, 20));
+("URL:", supabaseUrl);
+("KEY:", supabaseAnonKey.substring(0, 20));
 /**
  * Fetch all active stays with pagination
  */

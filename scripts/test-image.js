@@ -20,7 +20,7 @@ async function test() {
       $('meta[property="og:image"]').attr("content") ||
       $('meta[name="twitter:image"]').attr("content");
 
-    console.log("IMAGE:", image);
+    ("IMAGE:", image);
   } catch (err) {
     console.error(err.message);
   }
