@@ -27,7 +27,7 @@ margin:auto;
 }
 
 .countdown-card{
-  background:url('hero.webp') no-repeat center bottom / 100% auto,
+  background:url('/public/images/hero.webp') no-repeat center bottom / 100% auto,
   linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 55%, #EFF6FF 100%);
   border:1px solid #FDE9D2;
   border-radius:26px;
