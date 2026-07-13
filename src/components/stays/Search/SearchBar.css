@@ -1,46 +1,77 @@
 /* ==========================================================
-   SEARCH CARD
+   MYSIMHASTHA SEARCH CARD
 ========================================================== */
 
-.stay-search-card{
+.ms-search-card{
     width:100%;
-    max-width:760px !important;
+    max-width:680px;
+
     background:#fff;
-    border-radius:28px !important;
-    padding:28px !important;
-    box-shadow:0 18px 50px rgba(15,23,42,.15) !important;
+
+    border-radius:26px;
+
+    padding:30px;
+
+    box-sizing:border-box;
+
+    box-shadow:
+        0 20px 60px rgba(15,23,42,.15);
+
+    position:relative;
+
+    z-index:20;
 }
 
-.search-heading{
-    font-size:34px !important;
-    font-weight:700;
+/* ==========================================================
+   HEADING
+========================================================== */
+
+.ms-search-heading{
+
+    margin:0 0 24px;
+
     color:#0f172a;
-    margin-bottom:22px !important;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
     font-family:Georgia,serif;
 }
 
 /* ==========================================================
-   SEARCH INPUT
+   SEARCH BOX
 ========================================================== */
 
-.full-width{
+.ms-search-full{
+
+    width:100%;
+
     margin-bottom:22px;
 }
 
-.stay-search-box{
-    display:flex;
-    flex-direction:column;
+.ms-search-box{
+
+    width:100%;
+
     position:relative;
 }
 
-.stay-input{
+.ms-search-input{
 
     display:flex;
+
     align-items:center;
+
+    width:100%;
 
     height:58px;
 
     padding:0 18px;
+
+    background:#fff;
 
     border:2px solid #dbe4f0;
 
@@ -48,37 +79,37 @@
 
     transition:.25s;
 
-    background:#fff;
-
+    box-sizing:border-box;
 }
 
-.stay-input:hover{
+.ms-search-input:hover{
 
     border-color:#2563eb;
-
 }
 
-.stay-input:focus-within{
+.ms-search-input:focus-within{
 
     border-color:#ea580c;
 
     box-shadow:0 0 0 4px rgba(249,115,22,.12);
-
 }
 
-.stay-input svg{
+.ms-search-input svg{
+
+    flex-shrink:0;
 
     color:#2563eb;
 
-    font-size:22px;
+    font-size:21px;
 
     margin-right:12px;
-
 }
 
-.stay-input input{
+.ms-search-input input{
 
     flex:1;
+
+    width:100%;
 
     border:none;
 
@@ -86,111 +117,105 @@
 
     background:none;
 
-    font-size:16px;
-
     color:#0f172a;
 
+    font-size:16px;
 }
 
-.stay-input input::placeholder{
+.ms-search-input input::placeholder{
 
- color:#94a3b8;
-
+    color:#94a3b8;
 }
 
-/* Clear Button */
+/* ==========================================================
+   CLEAR BUTTON
+========================================================== */
 
-.search-clear-btn{
+.ms-search-clear{
 
- display:flex;
+    width:30px;
 
- align-items:center;
+    height:30px;
 
- justify-content:center;
+    display:flex;
 
- width:28px;
+    align-items:center;
 
- height:28px;
+    justify-content:center;
 
- border:none;
+    border:none;
 
- background:transparent;
+    background:transparent;
 
- color:#64748b;
+    border-radius:50%;
 
- cursor:pointer;
+    cursor:pointer;
 
- border-radius:50%;
+    transition:.2s;
 
- transition:.2s;
-
- padding:0;
-
- flex-shrink:0;
-
+    flex-shrink:0;
 }
 
-.search-clear-btn:hover{
+.ms-search-clear:hover{
 
- background:#f1f5f9;
-
- color:#0f172a;
-
- transform:scale(1.1);
-
+    background:#f1f5f9;
 }
 
 /* ==========================================================
    FILTERS
 ========================================================== */
 
-.search-filters{
+.ms-search-filters{
 
-    display:flex;
+    display:grid;
 
-    gap:12px;
+    grid-template-columns:
+        repeat(3,minmax(0,1fr))
+        140px;
 
-    align-items:flex-end;
+    gap:14px;
 
+    align-items:end;
+
+    width:100%;
 }
 
-.search-select{
+.ms-search-select{
 
-    flex:1.5;
+    width:100%;
 
-    min-width:140px;
-
+    min-width:0;
 }
 
-.search-select label{
+.ms-search-select label{
 
     display:block;
+
+    margin-bottom:8px;
+
+    color:#64748b;
 
     font-size:13px;
 
     font-weight:700;
-
-    color:#64748b;
-
-    margin-bottom:8px;
-
 }
 
 /* ==========================================================
-   REACT SELECT
+   REACT SELECT WRAPPER
 ========================================================== */
 
-.react-select-wrap{
+.ms-search-select-wrap{
 
     position:relative;
 
+    width:100%;
 }
 
-.select-icon{
+.ms-search-select-icon{
 
     position:absolute;
 
-    left:18px;
+    left:16px;
 
     top:50%;
 
@@ -200,17 +225,18 @@
 
     font-size:20px;
 
-    z-index:10;
-
     pointer-events:none;
 
+    z-index:2;
 }
 
-/* Control */
+/* ==========================================================
+   REACT SELECT
+========================================================== */
 
 .stay__control{
 
-    min-height:48px !important;
+    min-height:50px !important;
 
     border:2px solid #dbe4f0 !important;
 
@@ -218,18 +244,16 @@
 
     box-shadow:none !important;
 
-    padding-left:40px;
-
-    transition:.25s;
+    padding-left:38px;
 
     cursor:pointer;
 
+    transition:.25s;
 }
 
 .stay__control:hover{
 
     border-color:#2563eb !important;
-
 }
 
 .stay__control--is-focused{
@@ -237,15 +261,11 @@
     border-color:#ea580c !important;
 
     box-shadow:0 0 0 4px rgba(249,115,22,.12) !important;
-
 }
-
-/* Value */
 
 .stay__value-container{
 
-    padding:1px 6px !important;
-
+    padding:2px 6px !important;
 }
 
 .stay__single-value{
@@ -253,52 +273,31 @@
     font-size:14px;
 
     font-weight:600;
-
-    color:#0f172a !important;
-
 }
 
 .stay__placeholder{
 
     color:#94a3b8 !important;
-
-    font-size:14px;
-
-}
-
-/* Indicators */
-
-.stay__indicator{
-
-    color:#64748b !important;
-
-    transition:.2s;
-
-    padding:0 8px !important;
-
-}
-
-.stay__indicator:hover{
-
-    color:#ea580c !important;
-
 }
 
 .stay__indicator-separator{
 
     display:none;
-
 }
 
-.stay__dropdown-indicator{
+.stay__indicator{
 
     padding:0 8px !important;
-
 }
-
-/* Menu */
+/* ==========================================================
+   DROPDOWN MENU
+========================================================== */
 
 .stay__menu{
+
+    margin-top:8px !important;
+
+    border:none !important;
 
     border-radius:18px !important;
 
@@ -306,19 +305,15 @@
 
     box-shadow:0 20px 50px rgba(15,23,42,.18) !important;
 
-    border:none !important;
-
-    margin-top:8px !important;
-
+    z-index:999999 !important;
 }
 
 .stay__menu-list{
 
     padding:8px !important;
 
+    max-height:280px;
 }
-
-/* Options */
 
 .stay__option{
 
@@ -334,8 +329,7 @@
 
     cursor:pointer;
 
-    transition:.15s;
-
+    transition:.2s;
 }
 
 .stay__option--is-focused{
@@ -343,7 +337,6 @@
     background:#fff7ed !important;
 
     color:#ea580c !important;
-
 }
 
 .stay__option--is-selected{
@@ -351,50 +344,240 @@
     background:#ea580c !important;
 
     color:#fff !important;
-
 }
 
 .stay__option:active{
 
     background:#fb923c !important;
-
 }
 
 /* ==========================================================
-   BUTTON
+   SEARCH BUTTON
 ========================================================== */
 
-.search-btn{
+.ms-search-btn{
 
-    height:48px !important;
+    width:100%;
 
-    min-width:140px !important;
+    height:50px;
 
-    border:none !important;
+    border:none;
 
-    border-radius:14px !important;
+    border-radius:14px;
 
-    background:#ea580c !important;
+    cursor:pointer;
 
-    color:#fff !important;
+    display:flex;
 
-    font-size:16px !important;
+    justify-content:center;
 
-    font-weight:700 !important;
+    align-items:center;
 
-    cursor:pointer !important;
+    background:linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
 
-    transition:.25s !important;
+    color:#fff;
 
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+    white-space:nowrap;
 }
 
-.search-btn:hover{
-
-    background:#c2410c;
+.ms-search-btn:hover{
 
     transform:translateY(-2px);
 
-    box-shadow:0 12px 24px rgba(234,88,12,.28);
+    background:linear-gradient(
+        135deg,
+        #ea580c,
+        #c2410c
+    );
+
+    box-shadow:0 14px 28px rgba(234,88,12,.28);
+}
+
+.ms-search-btn:active{
+
+    transform:translateY(0);
+}
+
+/* ==========================================================
+   SEARCH SUGGESTIONS
+========================================================== */
+
+.ms-search-suggestions{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    top:calc(100% + 8px);
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 45px rgba(15,23,42,.18);
+
+    max-height:320px;
+
+    overflow-y:auto;
+
+    z-index:999999;
+}
+
+.ms-search-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 16px;
+
+    cursor:pointer;
+
+    transition:.18s;
+
+    border-bottom:1px solid #f1f5f9;
+}
+
+.ms-search-item:last-child{
+
+    border-bottom:none;
+}
+
+.ms-search-item:hover{
+
+    background:#fff7ed;
+}
+
+.ms-search-item-icon{
+
+    color:#2563eb;
+
+    font-size:18px;
+
+    flex-shrink:0;
+}
+
+.ms-search-item-content{
+
+    flex:1;
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.ms-search-item-title{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#0f172a;
+}
+
+.ms-search-item-subtitle{
+
+    margin-top:2px;
+
+    font-size:13px;
+
+    color:#64748b;
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+.ms-search-suggestions::-webkit-scrollbar{
+
+    width:6px;
+}
+
+.ms-search-suggestions::-webkit-scrollbar-track{
+
+    background:#f8fafc;
+}
+
+.ms-search-suggestions::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:20px;
+}
+
+.ms-search-suggestions::-webkit-scrollbar-thumb:hover{
+
+    background:#94a3b8;
+}
+
+/* ==========================================================
+   DESKTOP POLISH
+========================================================== */
+
+.ms-search-card *{
+
+    box-sizing:border-box;
+}
+
+.ms-search-card input,
+.ms-search-card button{
+
+    font-family:inherit;
+}
+
+.ms-search-card button{
+
+    outline:none;
+}
+
+.ms-search-card input{
+
+    outline:none;
+}
+/* ==========================================================
+   1200px
+========================================================== */
+
+@media (max-width:1200px){
+
+    .ms-search-card{
+        max-width:100%;
+        padding:26px;
+    }
+
+    .ms-search-heading{
+        font-size:30px;
+    }
+
+    .ms-search-filters{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:14px;
+    }
+
+    .ms-search-btn{
+        grid-column:1 / -1;
+        width:100%;
+    }
 
 }
 
@@ -402,33 +585,35 @@
    TABLET
 ========================================================== */
 
-@media(max-width:992px){
+@media (max-width:992px){
 
-.search-heading{
+    .ms-search-card{
+        padding:24px;
+        border-radius:24px;
+    }
 
-font-size:28px !important;
+    .ms-search-heading{
+        font-size:28px;
+        margin-bottom:20px;
+    }
 
-}
+    .ms-search-full{
+        margin-bottom:18px;
+    }
 
-.search-filters{
+    .ms-search-input{
+        height:54px;
+    }
 
-flex-wrap:wrap;
+    .ms-search-filters{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
 
-}
-
-.search-select{
-
-flex:1 1 calc(50% - 6px);
-
-min-width:120px;
-
-}
-
-.search-btn{
-
-width:100% !important;
-
-}
+    .ms-search-btn{
+        grid-column:1/-1;
+        height:50px;
+    }
 
 }
 
@@ -436,210 +621,237 @@ width:100% !important;
    MOBILE
 ========================================================== */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.stay-search-card{
+    .ms-search-card{
 
-padding:18px !important;
+        width:100%;
 
-border-radius:22px !important;
+        max-width:100%;
 
-}
+        padding:20px;
 
-.search-heading{
+        border-radius:20px;
+    }
 
-font-size:24px !important;
+    .ms-search-heading{
 
-margin-bottom:18px !important;
+        font-size:24px;
 
-}
+        text-align:center;
 
-.search-filters{
+        margin-bottom:18px;
+    }
 
-gap:10px;
+    .ms-search-full{
 
-}
+        margin-bottom:18px;
+    }
 
-.search-select{
+    .ms-search-input{
 
-flex:1 1 calc(50% - 5px);
+        height:50px;
 
-min-width:120px;
+        border-radius:14px;
 
-}
+        padding:0 16px;
+    }
 
-.stay-input{
+    .ms-search-input svg{
 
-height:48px;
+        font-size:18px;
 
-}
+        margin-right:10px;
+    }
 
-.stay__control{
+    .ms-search-input input{
 
-min-height:48px !important;
+        font-size:15px;
+    }
 
-border-radius:12px !important;
+    .ms-search-filters{
 
-}
+        grid-template-columns:1fr;
 
-.search-btn{
+        gap:14px;
+    }
 
-height:48px !important;
+    .ms-search-select{
 
-font-size:15px !important;
+        width:100%;
+    }
 
-border-radius:12px !important;
+    .ms-search-select label{
 
-}
+        font-size:12px;
+
+        margin-bottom:6px;
+    }
+
+    .stay__control{
+
+        min-height:48px !important;
+
+        border-radius:12px !important;
+    }
+
+    .ms-search-select-icon{
+
+        left:14px;
+
+        font-size:18px;
+    }
+
+    .ms-search-btn{
+
+        width:100%;
+
+        height:48px;
+
+        font-size:15px;
+    }
+
+    .ms-search-suggestions{
+
+        border-radius:14px;
+
+        max-height:260px;
+    }
 
 }
 
 /* ==========================================================
    SMALL MOBILE
-========================================== */
+========================================================== */
 
-@media(max-width:480px){
+@media (max-width:480px){
 
-.search-select{
+    .ms-search-card{
 
-flex:1 1 100%;
+        padding:16px;
 
-}
+        border-radius:18px;
+    }
 
-.search-btn{
+    .ms-search-heading{
 
-width:100%;
+        font-size:22px;
+    }
 
-}
+    .ms-search-input{
+
+        height:46px;
+    }
+
+    .ms-search-input input{
+
+        font-size:14px;
+    }
+
+    .stay__control{
+
+        min-height:46px !important;
+    }
+
+    .ms-search-btn{
+
+        height:46px;
+
+        font-size:14px;
+    }
+
+    .ms-search-item{
+
+        padding:12px;
+    }
+
+    .ms-search-item-title{
+
+        font-size:14px;
+    }
+
+    .ms-search-item-subtitle{
+
+        font-size:12px;
+    }
 
 }
 
 /* ==========================================================
-   SEARCH SUGGESTIONS
-========================================== */
+   EXTRA SMALL
+========================================================== */
 
-.search-suggestions {
+@media (max-width:360px){
 
- position: absolute;
+    .ms-search-card{
 
- top: calc(100% + 8px);
+        padding:14px;
+    }
 
- left: 0;
+    .ms-search-heading{
 
- right: 0;
+        font-size:20px;
+    }
 
- background: #fff;
+    .ms-search-input{
 
- border-radius: 16px;
+        padding:0 14px;
+    }
 
- box-shadow: 0 18px 45px rgba(15,23,42,.18);
+    .ms-search-input svg{
 
- max-height: 320px;
-
- overflow-y: auto;
-
- z-index: 99999;
-
- border: 2px solid #e2e8f0;
+        margin-right:8px;
+    }
 
 }
 
-.suggestion-item {
+/* ==========================================================
+   SAFETY FIXES
+========================================================== */
 
- display: flex;
+.ms-search-card,
+.ms-search-card *,
+.ms-search-filters,
+.ms-search-select,
+.ms-search-select-wrap,
+.ms-search-box{
 
- align-items: center;
-
- gap: 12px;
-
- padding: 14px 16px;
-
- cursor: pointer;
-
- transition: background 0.2s;
-
- border-bottom: 1px solid #f1f5f9;
-
+    box-sizing:border-box;
 }
 
-.suggestion-item:last-child {
+.ms-search-card{
 
- border-bottom: none;
+    overflow:visible;
 
+    min-width:0;
 }
 
-.suggestion-item:hover {
+.ms-search-filters>*{
 
- background: #fff7ed;
-
+    min-width:0;
 }
 
-.suggestion-icon {
+.ms-search-select{
 
- color: #2563eb;
-
- font-size: 18px;
-
- flex-shrink: 0;
-
+    overflow:visible;
 }
 
-.suggestion-content {
+.ms-search-select-wrap{
 
- flex: 1;
-
- display: flex;
-
- flex-direction: column;
-
- gap: 2px;
-
+    overflow:visible;
 }
 
-.suggestion-name {
+.ms-search-suggestions{
 
- font-size: 15px;
-
- font-weight: 600;
-
- color: #0f172a;
-
+    z-index:999999;
 }
 
-.suggestion-locality {
+.stay__menu-portal{
 
- font-size: 13px;
-
- color: #64748b;
-
+    z-index:999999 !important;
 }
 
-/* Scrollbar styling */
+.stay__menu{
 
-.search-suggestions::-webkit-scrollbar {
-
- width: 6px;
-
-}
-
-.search-suggestions::-webkit-scrollbar-track {
-
- background: #f1f5f9;
-
- border-radius: 3px;
-
-}
-
-.search-suggestions::-webkit-scrollbar-thumb {
-
- background: #cbd5e1;
-
- border-radius: 3px;
-
-}
-
-.search-suggestions::-webkit-scrollbar-thumb:hover {
-
- background: #94a3b8;
-
+    z-index:999999 !important;
 }

@@ -72,9 +72,9 @@
     .nav-logo-sub{font-family:var(--ui);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.6px;text-transform:uppercase}
     .nav-links{display:flex;list-style:none;gap:0;align-items:center;flex:1}
     .nav-links li button{padding:6px 12px;border-radius:7px;font-size:13px;font-weight:600;color:var(--muted);transition:all .15s;letter-spacing:.1px}
-    .nav-links li button:hover,.nav-links li button.active{color:var(--saffron);background:var(--sf-soft)}
-    .nav-services-btn{display:inline-flex;align-items:center;gap:3px;padding:6px 12px;border-radius:7px;font-size:13px;font-weight:600;color:var(--saffron)!important;background:none;border:none;cursor:pointer;transition:all .15s}
-    .nav-services-btn:hover,.nav-services-btn.active{background:var(--sf-soft)}
+    .nav-links li button:hover,.nav-links li button.active{color:#2563EB;background:rgba(37,99,235,.1)}
+    .nav-services-btn{display:inline-flex;align-items:center;gap:3px;padding:6px 12px;border-radius:7px;font-size:13px;font-weight:600;color:#2563EB!important;background:none;border:none;cursor:pointer;transition:all .15s}
+    .nav-services-btn:hover,.nav-services-btn.active{background:rgba(37,99,235,.1)}
     .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:230px;background:var(--white);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 40px rgba(28,9,0,.14);z-index:2000;padding:8px;animation:dropIn .18s ease}
     @keyframes dropIn{from{opacity:0;transform:translateX(-50%) translateY(-6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
     .nav-dropdown-item{display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;border-radius:9px;font-size:13.5px;font-weight:500;color:var(--text);background:none;border:none;cursor:pointer;text-align:left;transition:background .12s;font-family:var(--ui)}
@@ -86,10 +86,10 @@
     align-items:center;
     gap:6px;
 
-    background:var(--sf-soft);
-    color:var(--saffron);
+    background:rgba(37,99,235,.1);
+    color:#2563EB;
 
-    border:1px solid rgba(212,82,10,.15);
+    border:1px solid rgba(37,99,235,.15);
     border-radius:10px;
 
     padding:8px 12px;
@@ -100,7 +100,7 @@
   }
 
   .lang-switch:hover{
-    background:var(--saffron);
+    background:#2563EB;
     color:#fff;
   }
   .language-dropdown {
@@ -135,8 +135,8 @@
 }
 
   .language-dropdown button:hover{
-    background:var(--sf-soft);
-    color:var(--saffron);
+    background:rgba(37,99,235,.1);
+    color:#2563EB;
   }
     .nav-avatar{width:34px;height:34px;border-radius:50%;background:var(--saffron);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:border-color .15s}
     .nav-avatar:hover{border-color:var(--saffron)}
@@ -997,7 +997,7 @@
     .biz-desc{font-size:13px;color:var(--muted);line-height:1.6;flex:1;margin-bottom:12px}
 
     /* FOOTER */
-    footer{background:var(--deep);padding:56px 0 28px}
+    footer{background:#1e40af;padding:56px 0 28px}
     .foot-grid{display:grid;grid-template-columns:1.4fr 2fr;gap:40px;margin-bottom:40px}
     .foot-links-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
     .fl-logo {
@@ -1017,15 +1017,15 @@
     color: #d1d5db;
     margin-top: 2px;
   }
-    .brand-desc{font-size:12px;color:rgba(255,255,255,.35);line-height:1.7;margin-bottom:12px}
-    .foot-shlok{font-family:var(--deva);font-size:14px;color:rgba(255,165,50,.4);line-height:1.7;margin-bottom:12px;font-style:italic}
-    .fc-title{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:11px}
+    .brand-desc{font-size:12px;color:#fff;line-height:1.7;margin-bottom:12px}
+    .foot-shlok{font-family:var(--deva);font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:12px;font-style:italic}
+    .fc-title{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:11px}
     .fc ul{list-style:none;display:flex;flex-direction:column;gap:7px}
-    .fc ul button{font-size:13px;color:rgba(255,255,255,.4);transition:color .15s;background:none;border:none;cursor:pointer;text-align:left;padding:0;font-family:var(--ui)}
+    .fc ul button{font-size:13px;color:rgba(255,255,255,.85);transition:color .15s;background:none;border:none;cursor:pointer;text-align:left;padding:0;font-family:var(--ui)}
     .fc ul button:hover{color:#fff}
     .fc ul a{
   font-size:13px;
-  color:rgba(255,255,255,.4);
+  color:rgba(255,255,255,.85);
   transition:color .15s;
   text-decoration:none;
   font-family:var(--ui);
@@ -1034,9 +1034,29 @@
 .fc ul a:hover{
   color:#fff;
 }
-    .foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .foot-bottom p{font-size:11px;color:rgba(255,255,255,.25)}
-    .foot-hi{font-family:var(--deva);font-size:13px;color:rgba(255,165,50,.3)}
+    .foot-bottom{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .foot-bottom p{font-size:11px;color:rgba(255,255,255,.7)}
+    .foot-hi{font-family:var(--deva);font-size:13px;color:rgba(255,255,255,.8)}
+    
+    /* Social Icons */
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+    
+    .social-icon:hover {
+      background: #2563EB;
+      color: #fff;
+      transform: translateY(-2px);
+    }
 
     @media (max-width: 640px) {
     .fl-logo {
@@ -2008,14 +2028,14 @@
 }
 
 .breadcrumb-inner a {
-  color: var(--saffron);
+  color: #2563EB;
   text-decoration: none;
   font-weight: 600;
   transition: .2s ease;
 }
 
 .breadcrumb-inner a:hover {
-  color: var(--saffron2);
+  color: #1d4ed8;
 }
 
 .breadcrumb-separator {

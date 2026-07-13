@@ -1,0 +1,979 @@
+/* ======================================================
+   SHAHI SNAN CALENDAR - CLEAN & MOBILE OPTIMIZED
+   ====================================================== */
+
+.snan-page {
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+.snan-page .container {
+  width: min(1280px, 92%);
+  margin: 0 auto;
+}
+
+/* ======================================================
+   SECTION HEADING
+   ====================================================== */
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-heading.center {
+  text-align: center;
+}
+
+.section-heading span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--cream2), #FFEDD5);
+  color: var(--saffron);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(212, 82, 10, 0.15);
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+  font-family: var(--serif);
+}
+
+.section-heading p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.section-heading.center p {
+  margin-left: 0;
+}
+
+/* ======================================================
+   WHAT IS SHAHI SNAN
+   ====================================================== */
+
+.shahi-about {
+  padding: 60px 0;
+  background: var(--cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.about-image {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-point {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.about-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--cream2), #FFEDD5);
+  color: var(--saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.about-point h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+  font-family: var(--serif);
+}
+
+.about-point p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ======================================================
+   WHY SHAHI SNAN
+   ====================================================== */
+
+.why-shahi {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.importance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.importance-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.importance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--saffron);
+}
+
+.importance-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.importance-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px;
+  font-family: var(--serif);
+}
+
+.importance-card p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ======================================================
+   COMPARISON
+   ====================================================== */
+
+.snancalendar-comparison {
+  padding: 60px 0;
+  background: var(--cream);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.comparison-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 20px;
+  transition: all 0.3s ease;
+}
+
+.comparison-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.comparison-card.highlight {
+  border-color: var(--saffron);
+  background: linear-gradient(145deg, rgba(212, 82, 10, 0.04), #fff 70%);
+}
+
+.comparison-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+  font-family: var(--serif);
+}
+
+.comparison-card.highlight h3 {
+  color: var(--saffron);
+}
+
+.comparison-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comparison-card li {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.comparison-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--saffron);
+  font-weight: 700;
+}
+
+.comparison-card.highlight li::before {
+  color: var(--saffron);
+}
+
+/* ======================================================
+   AKHARA PROCESSION
+   ====================================================== */
+
+.akhara-procession {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.procession-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.timeline-item {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--saffron);
+}
+
+.timeline-item span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--saffron);
+  font-family: var(--serif);
+  margin-bottom: 8px;
+}
+
+.timeline-item h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px;
+  font-family: var(--serif);
+}
+
+.timeline-item p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ======================================================
+   BEST GHATS
+   ====================================================== */
+
+.best-ghats {
+  padding: 60px 0;
+  background: var(--cream);
+}
+
+.ghats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.ghat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.ghat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--saffron);
+}
+
+.ghat-card.featured {
+  border-color: rgba(212, 82, 10, 0.3);
+  background: linear-gradient(145deg, rgba(212, 82, 10, 0.04), #fff 70%);
+}
+
+.ghat-badge {
+  position: absolute;
+  top: -1px;
+  left: 16px;
+  background: var(--saffron);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 0 0 8px 8px;
+}
+
+.ghat-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+  font-family: var(--serif);
+}
+
+.ghat-card p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.ghat-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ghat-card li {
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ghat-card.featured li {
+  color: var(--saffron);
+}
+
+/* ======================================================
+   TRAVEL ADVISORY
+   ====================================================== */
+
+.travel-guide {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.travel-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.travel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--saffron);
+}
+
+.travel-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.travel-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px;
+  font-family: var(--serif);
+}
+
+.travel-card p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ======================================================
+   WHAT TO CARRY
+   ====================================================== */
+
+.carry-section {
+  padding: 60px 0;
+  background: var(--cream);
+}
+
+.carry-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.carry-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.carry-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--saffron);
+}
+
+.carry-item span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 8px;
+}
+
+/* ======================================================
+   DOS & DON'TS
+   ====================================================== */
+
+.dos-donts {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.dos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.dos-card,
+.donts-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 20px;
+  transition: all 0.3s ease;
+}
+
+.dos-card:hover,
+.donts-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.dos-card h3,
+.donts-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  font-family: var(--serif);
+}
+
+.dos-card h3 {
+  color: #16A34A;
+}
+
+.donts-card h3 {
+  color: #DC2626;
+}
+
+.dos-card ul,
+.donts-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dos-card li,
+.donts-card li {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.dos-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #16A34A;
+  font-weight: 700;
+}
+
+.donts-card li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #DC2626;
+  font-weight: 700;
+}
+
+/* ======================================================
+   EMERGENCY
+   ====================================================== */
+
+.emergency-section {
+  padding: 60px 0;
+  background: var(--cream);
+}
+
+.emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.emergency-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.emergency-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--saffron);
+}
+
+.emergency-card {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.emergency-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  font-family: var(--serif);
+}
+
+/* ======================================================
+   FAQ SECTION
+   ====================================================== */
+
+.snan-faq-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.snan-faq-section .section-heading p {
+  max-width: 600px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 16px;
+  transition: all 0.3s ease;
+}
+
+.faq-card:hover {
+  border-color: var(--saffron);
+  box-shadow: var(--shadow);
+}
+
+.faq-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+  font-family: var(--serif);
+}
+
+.faq-card p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ======================================================
+   RELATED GUIDES
+   ====================================================== */
+
+.related-guides {
+  padding: 60px 0;
+  background: var(--cream);
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.guide-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--saffron);
+}
+
+.guide-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--cream2), #FFEDD5);
+  color: var(--saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.guide-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px;
+  font-family: var(--serif);
+}
+
+.guide-card p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ======================================================
+   FINAL CTA
+   ====================================================== */
+
+.snan-cta {
+  padding: 60px 0;
+  background: var(--deep);
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--saffron), var(--saffron2));
+  border-radius: 16px;
+  padding: 36px 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.snan-cta span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.snan-cta h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 12px;
+  font-family: var(--serif);
+}
+
+.snan-cta p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+  font-family: var(--ui);
+}
+
+.primary-btn {
+  background: #fff;
+  color: var(--saffron);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ======================================================
+   MOBILE OPTIMIZED
+   ====================================================== */
+
+@media (max-width: 1100px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .importance-grid,
+  .ghats-grid,
+  .travel-grid,
+  .emergency-grid,
+  .guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .procession-timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .carry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .shahi-about,
+  .why-shahi,
+  .snancalendar-comparison,
+  .akhara-procession,
+  .best-ghats,
+  .travel-guide,
+  .carry-section,
+  .dos-donts,
+  .emergency-section,
+  .snan-faq-section,
+  .related-guides,
+  .snan-cta {
+    padding: 40px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-heading p {
+    font-size: 0.88rem;
+  }
+
+  .about-point {
+    gap: 12px;
+  }
+
+  .about-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+  .about-point h3 {
+    font-size: 1rem;
+  }
+
+  .about-point p {
+    font-size: 0.82rem;
+  }
+
+  .importance-grid,
+  .ghats-grid,
+  .travel-grid,
+  .emergency-grid,
+  .guide-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .procession-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .snan-cta h2 {
+    font-size: 1.4rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .shahi-about,
+  .why-shahi,
+  .snancalendar-comparison,
+  .akhara-procession,
+  .best-ghats,
+  .travel-guide,
+  .carry-section,
+  .dos-donts,
+  .emergency-section,
+  .snan-faq-section,
+  .related-guides,
+  .snan-cta {
+    padding: 32px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-heading p {
+    font-size: 0.82rem;
+  }
+
+  .procession-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .carry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .snan-cta h2 {
+    font-size: 1.2rem;
+  }
+
+  .snan-cta p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ======================================================
+   ANIMATIONS
+   ====================================================== */
+
+@keyframes snan-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.snan-animate {
+  animation: snan-fade-up 0.5s ease forwards;
+}

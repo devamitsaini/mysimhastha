@@ -1,0 +1,268 @@
+/* ======================================================
+   TESTIMONIALS - ULTRA COMPACT
+====================================================== */
+
+.testimonials{
+  padding:30px 0;
+  background:#F8FAFC;
+}
+
+.testimonials .container{
+  width:min(1280px,92%);
+  margin:auto;
+}
+
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:20px;
+}
+
+.testimonial-card{
+  position:relative;
+  background:#fff;
+  border:1px solid #E2E8F0;
+  border-radius:16px;
+  padding:18px;
+  transition:.3s ease;
+  box-shadow:0 4px 12px rgba(15,23,42,.03);
+  overflow:hidden;
+}
+
+.testimonial-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(15,23,42,.05);
+}
+
+.testimonial-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:2px;
+  background:#2563EB;
+  transform:scaleX(0);
+  transition:.3s;
+}
+
+.testimonial-card:hover::before{
+  transform:scaleX(1);
+}
+
+.quote-icon{
+  font-size:1.8rem;
+  color:#DBEAFE;
+  margin-bottom:12px;
+}
+
+.rating{
+  display:flex;
+  gap:3px;
+  margin-bottom:12px;
+}
+
+.rating svg{
+  color:#F59E0B;
+  font-size:.8rem;
+}
+
+.review{
+  color:#475569;
+  line-height:1.6;
+  font-size:.85rem;
+  margin-bottom:16px;
+}
+
+.traveller{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.traveller img{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.traveller h4{
+  margin:0;
+  font-size:.9rem;
+  color:#0F172A;
+  font-weight:700;
+}
+
+.traveller span{
+  color:#64748B;
+  font-size:.8rem;
+}
+
+.trip-type{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  background:#EEF4FF;
+  color:#2563EB;
+  padding:6px 12px;
+  border-radius:50px;
+  font-size:.75rem;
+  font-weight:700;
+}
+
+.trip-type svg{
+  color:#16A34A;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.testimonial-bottom{
+  margin-top:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+
+.review-stats{
+  display:flex;
+  gap:30px;
+}
+
+.review-stats div{
+  text-align:center;
+}
+
+.review-stats h3{
+  margin:0;
+  font-size:1.4rem;
+  color:#2563EB;
+  font-weight:800;
+}
+
+.review-stats span{
+  display:block;
+  margin-top:4px;
+  color:#64748B;
+  font-size:.8rem;
+}
+
+.review-btn{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#2563EB;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:.82rem;
+  transition:.3s;
+}
+
+.review-btn:hover{
+  background:#1D4ED8;
+  transform:translateY(-2px);
+}
+
+.review-btn svg{
+  transition:.3s;
+}
+
+.review-btn:hover svg{
+  transform:translateX(4px);
+}
+
+/* ======================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1100px){
+
+.testimonial-grid{
+  grid-template-columns:1fr;
+}
+
+.testimonial-bottom{
+  flex-direction:column;
+}
+
+.review-stats{
+  width:100%;
+  justify-content:space-around;
+}
+
+}
+
+/* ======================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+.testimonials{
+  padding:25px 0;
+}
+
+.testimonials .container{
+  width:94%;
+}
+
+.testimonial-grid{
+  display:flex;
+  overflow-x:auto;
+  gap:12px;
+  scroll-snap-type:x mandatory;
+  padding-bottom:6px;
+}
+
+.testimonial-grid::-webkit-scrollbar{
+  display:none;
+}
+
+.testimonial-card{
+  min-width:240px;
+  scroll-snap-align:start;
+  padding:16px;
+}
+
+.review{
+  font-size:.8rem;
+}
+
+.review-stats{
+  flex-direction:column;
+  gap:16px;
+}
+
+.review-btn{
+  width:100%;
+  justify-content:center;
+}
+
+}
+
+/* ======================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.testimonial-card{
+  animation:fadeUp .4s ease;
+}

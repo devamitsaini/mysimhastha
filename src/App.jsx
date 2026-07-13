@@ -4,6 +4,7 @@ import "./index.css";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
+import CountdownHub from "./components/common/CountdownHub/CountdownHub";
 import MobileNav from "./components/layout/MobileNav";
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
@@ -11,6 +12,95 @@ import Footer from "./components/layout/Footer";
 import Breadcrumb from "./components/layout/Breadcrumb";
 
 import HomePage from "./pages/Home";
+
+// Beautiful loading animation component
+const LoadingSpinner = () => (
+  <div style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'linear-gradient(135deg, #FAF6EF 0%, #FFF9F2 100%)',
+    zIndex: 9999,
+    gap: '20px'
+  }}>
+    <div style={{
+      width: '80px',
+      height: '80px',
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}>
+      {/* Outer spinning ring */}
+      <div style={{
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        border: '4px solid rgba(212, 82, 10, 0.1)',
+        borderTop: '4px solid #D4520A',
+        borderRadius: '50%',
+        animation: 'spin 1s linear infinite'
+      }} />
+      
+      {/* Inner spinning ring */}
+      <div style={{
+        position: 'absolute',
+        width: '60%',
+        height: '60%',
+        border: '3px solid rgba(37, 99, 235, 0.1)',
+        borderBottom: '3px solid #2563EB',
+        borderRadius: '50%',
+        animation: 'spin 0.8s linear infinite reverse'
+      }} />
+      
+      {/* Center dot */}
+      <div style={{
+        width: '12px',
+        height: '12px',
+        background: 'linear-gradient(135deg, #D4520A, #2563EB)',
+        borderRadius: '50%',
+        animation: 'pulse 1.5s ease-in-out infinite'
+      }} />
+    </div>
+    
+    {/* Loading text with animation */}
+    <div style={{
+      fontFamily: 'Georgia, serif',
+      fontSize: '18px',
+      fontWeight: 600,
+      background: 'linear-gradient(90deg, #D4520A, #2563EB, #D4520A)',
+      backgroundSize: '200% 100%',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+      animation: 'gradientShift 2s ease infinite',
+      letterSpacing: '0.5px'
+    }}>
+      Loading...
+    </div>
+    
+    <style>{`
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+      }
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    `}</style>
+  </div>
+);
 
 import GuidesPage from "./pages/GuidesPage";
 
@@ -23,10 +113,11 @@ const NewsDetailsPage = lazy(() => import("./pages/NewsDetailsPage"));
 const LiveDarshanPage = lazy(() => import("./pages/LiveDarshan"));
 const HotelsPage = lazy(() => import("./pages/Hotels"));
 const MissingPersonsPage = lazy(() => import("./pages/MissingPersons"));
-const Simhastha2028Page = lazy(() => import("./pages/Simhastha2028"));
+const Simhastha2028Page = lazy(() => import("./pages/Simhastha2028Page"));
 const SnanCalendarPage = lazy(() => import("./pages/SnanCalendar"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
+const TripPlanner = lazy(() => import("./pages/TripPlanner/TripPlanner"));
 
 const StayMapPage = lazy(() =>
   import("./pages/Stays/StayMapPage")
@@ -80,9 +171,15 @@ const MahakalVisitMistakesHi = lazy(() => import("./guides/hi/MahakalVisitMistak
 const UjjainToOmkareshwarGuide = lazy(() => import("./guides/en/UjjainToOmkareshwarGuide"));
 const UjjainToOmkareshwarGuideHi = lazy(() => import("./guides/hi/UjjainToOmkareshwarGuide"));
 
+
 // V3 Guides
 
 const UjjainItinerary = lazy(() => import("./guides/ujjain-itinerary"));
+const KalBhairavTempleGuide = lazy(() => import("./guides/kal-bhairav"));
+
+const TemplesPage = lazy(() => import("./pages/TemplesPage"));
+const GalleryPage = lazy(() => import("./pages/GalleryPage"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
 
 
 function App() {
@@ -96,8 +193,7 @@ function App() {
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
-    }
+      window.history.scrollRestoration = "manual";    }
   }, []);
 
   return (
@@ -107,7 +203,7 @@ function App() {
 
       <main className="main-content">
         <Breadcrumb />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<HomePage setOpenMissingForm={setOpenMissingForm} />} />
             <Route path="/about" element={<AboutPage />} />
@@ -122,13 +218,18 @@ function App() {
             <Route path="/stays/list" element={<StayListingPage />} />
             <Route path="/stays/:slug" element={<StayDetailsPage />} />
             <Route path="/stays/map" element={<StayMapPage />}/>
-                      
+                       
+            <Route path="/temples" element={<TemplesPage />} />
+            <Route path="/temple/:slug" element={<TemplesPage />} />
             <Route path="/snan-calendar" element={<SnanCalendarPage />} />
             <Route path="/simhastha-2028" element={<Simhastha2028Page />} />
             <Route path="/live-darshan" element={<LiveDarshanPage />} />
             <Route path="/missing-persons" element={
-            <MissingPersonsPage openOnLoad={openMissingForm} 
-            setOpenMissingForm={setOpenMissingForm}/>} />
+                        <MissingPersonsPage openOnLoad={openMissingForm} 
+                        setOpenMissingForm={setOpenMissingForm}/>} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/faq" element={<FAQPage />} />
+            <Route path="/trip-planner" element={<TripPlanner />} />
 
             {/* BUSINESS */}
 
@@ -163,8 +264,8 @@ function App() {
               <Route path="/guide/how-to-reach-ujjain" element={<HowToReachUjjain />} />
               <Route path="/guide/mahakal-visit-mistakes" element={<MahakalVisitMistakes />} />
               <Route path="/guide/ujjain-to-omkareshwar" element={<UjjainToOmkareshwarGuide />}/>
-              
               <Route path="/guide/2-3-day-ujjain-itinerary"  element={<UjjainItinerary />} />
+              <Route path="/guide/kal-bhairav-temple-guide" element={<KalBhairavTempleGuide />} />
 
               {/* Hindi */}
               <Route path="/hi/guide/simhastha-2028" element={<Simhastha2028HI />} />
@@ -179,7 +280,7 @@ function App() {
               element={<MahakalVisitMistakesHi />}/>
               <Route path="/hi/guide/ujjain-to-omkareshwar" element={<UjjainToOmkareshwarGuideHi/>}/>
               <Route path="/hi/guide/2-3-day-ujjain-itinerary"element={<UjjainItinerary />}/>
-
+              <Route path="/hi/guide/kal-bhairav-temple-guide" element={<KalBhairavTempleGuide />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

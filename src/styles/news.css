@@ -1,254 +1,477 @@
-/* ==================================
-   NEWS PAGE
-================================== */
+/* ==========================================
+   NEWS PAGE - NEW THEME
+   Sacred Updates from Ujjain & Simhastha
+========================================== */
 
-.news-page{
-  max-width:1200px;
-  margin:0 auto;
-  padding:32px 20px 100px;
+/* ==========================================
+   PAGE CONTAINER
+========================================== */
+
+.news-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
 }
 
-.news-header{
-  margin-bottom:28px;
+/* ==========================================
+   HEADER SECTION
+========================================== */
+
+.news-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 0 20px;
 }
 
-.news-header h1{
-  margin:0;
-  color:#2B1200;
-  font-size:clamp(30px,4vw,48px);
-  font-weight:700;
-  line-height:1.1;
+.news-header .sec-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #2563EB;
+  margin-bottom: 16px;
+  display: block;
 }
 
-/* ==================================
-   GRID
-================================== */
-
-.news-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:24px;
+.news-title {
+  font-family: 'Noto Sans Devanagari', 'Mukta', Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--text);
 }
 
-/* ==================================
-   CARD
-================================== */
-
-.news-card{
-  background:#fff;
-  border-radius:24px;
-  overflow:hidden;
-
-  border:1px solid rgba(0,0,0,.06);
-
-  box-shadow:
-    0 8px 24px rgba(0,0,0,.08);
-
-  transition:all .25s ease;
+.news-title-main {
+  display: block;
+  color: var(--text);
 }
 
-.news-card:hover{
-  transform:translateY(-4px);
-  box-shadow:
-    0 16px 40px rgba(0,0,0,.12);
+.news-title-sub {
+  display: block;
+  color: #2563EB;
+  font-style: italic;
+  margin-top: 6px;
 }
 
-/* ==================================
-   IMAGE
-================================== */
-
-.news-image-wrap{
-  position:relative;
-  background:#f8f5f0;
-  overflow:hidden;
+.news-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.news-image{
-  width:100%;
-  height:auto;
-  display:block;
+/* ==========================================
+   GRID LAYOUT
+========================================== */
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
 }
 
-/* ==================================
-   CATEGORY BADGE
-================================== */
+/* ==========================================
+   NEWS CARD
+========================================== */
 
-
-/* ==================================
-   BODY
-================================== */
-
-.news-body{
-  padding:18px;
+.news-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(28, 9, 0, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
-/* ==================================
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(28, 9, 0, 0.12);
+  border-color: #2563EB;
+}
+
+/* ==========================================
+   IMAGE WRAP
+========================================== */
+
+.news-image-wrap {
+  position: relative;
+  background: var(--cream2);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+  background: var(--white);
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   CARD BODY
+========================================== */
+
+.news-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
    DATE
-================================== */
+========================================== */
 
-.news-date{
-  margin:0 0 10px;
-  color:#8A8A8A;
-  font-size:13px;
-  font-weight:500;
+.news-date {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
 }
 
-/* ==================================
+/* ==========================================
    TITLE
-================================== */
+========================================== */
 
-.news-title{
-  margin:0;
-
-  color:#2B1200;
-
-  font-family:
-    "Noto Sans Devanagari",
-    "Mukta",
-    sans-serif;
-
-  font-size:24px;
-  font-weight:700;
-  line-height:1.35;
+.news-card-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+  line-height: 1.35;
 }
 
-/* ==================================
+/* ==========================================
    CONTENT PREVIEW
-================================== */
+========================================== */
 
-.news-excerpt{
-  margin-top:12px;
-
-  color:#666;
-
-  font-size:15px;
-  line-height:1.7;
-
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-
-  overflow:hidden;
-  text-overflow:ellipsis;
+.news-excerpt {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 20px;
+  flex: 1;
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* ==================================
-   READ MORE
-================================== */
+/* ==========================================
+   READ MORE BUTTON
+========================================== */
 
-.news-readmore{
-  margin-top:16px;
-
-  border:none;
-  background:none;
-  padding:0;
-
-  color:#E46A00;
-
-  font-size:16px;
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.2s ease;
+.news-readmore {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: #2563EB;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
-.news-readmore:hover{
-  transform:translateX(4px);
+.news-readmore:hover {
+  transform: translateY(-2px);
+  background: #1D4ED8;
 }
 
-/* ==================================
-   DESKTOP
-================================== */
+/* ==========================================
+   TABLET STYLES
+========================================== */
 
-@media (min-width:768px){
-
-  .news-grid{
-    grid-template-columns:repeat(2,1fr);
+@media (max-width: 992px) {
+  .news-page {
+    padding: 40px 16px 80px;
   }
 
-  .news-title{
-    font-size:30px;
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .news-body{
-    padding:22px;
+  .news-body {
+    padding: 20px;
+  }
+
+  .news-card-title {
+    font-size: 18px;
+  }
+}
+
+/* ==========================================
+   MOBILE STYLES
+========================================== */
+
+@media (max-width: 768px) {
+  .news-page {
+    padding: 32px 12px 80px;
+  }
+
+  .news-header {
+    margin-bottom: 32px;
+  }
+
+  .news-title {
+    font-size: 28px;
+  }
+
+  .news-subtitle {
+    font-size: 15px;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .news-card {
+    border-radius: 18px;
+  }
+
+  .news-body {
+    padding: 18px;
+  }
+
+  .news-card-title {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .news-excerpt {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .news-readmore {
+    font-size: 14px;
+    background: #2563EB;
+    padding: 6px 12px;
   }
 }
 
-/* ==================================
-   MOBILE
-================================== */
+/* ==========================================
+   SMALL MOBILE
+========================================== */
 
-@media (max-width:768px){
-
-  .news-page{
-    padding:18px 12px 100px;
+@media (max-width: 480px) {
+  .news-page {
+    padding: 24px 10px 60px;
   }
 
-  .news-grid{
-    grid-template-columns:1fr;
-    gap:18px;
+  .news-header {
+    margin-bottom: 24px;
   }
 
-  .news-card{
-    border-radius:20px;
+  .news-title {
+    font-size: 24px;
   }
 
-  .news-body{
-    padding:16px;
+  .news-card {
+    border-radius: 16px;
   }
 
-  .news-title{
-    font-size:20px;
-    line-height:1.4;
+  .news-body {
+    padding: 16px;
   }
 
-  .news-excerpt{
-    font-size:14px;
-    line-height:1.6;
+  .news-card-title {
+    font-size: 16px;
   }
 
-  .news-readmore{
-    font-size:15px;
+  .news-excerpt {
+    font-size: 12px;
   }
 }
+
+/* =========================
+   SHARE BUTTONS (used on NewsDetailsPage)
+   🙏 Share with Fellow Devotees
+========================= */
+
+.guide-share {
+  margin: 30px 0;
+  width: 100%;
+}
+
+.share-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.share-buttons{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.share-btn{
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #2b1400;
+  background: #fff;
+  border: 1px solid #ececec;
+  transition: .25s;
+  cursor: pointer;
+}
+
+.share-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+}
+
+/* WhatsApp brand color */
+.share-btn.whatsapp {
+  color: #25D366;
+  border-color: #25D366;
+}
+
+.share-btn.whatsapp:hover {
+  background: #25D366;
+  color: #fff;
+}
+
+/* Facebook brand color */
+.share-btn.facebook {
+  color: #1877F2;
+  border-color: #1877F2;
+}
+
+.share-btn.facebook:hover {
+  background: #1877F2;
+  color: #fff;
+}
+
+/* Instagram brand color */
+.share-btn.instagram {
+  color: #E4405F;
+  border-color: #E4405F;
+}
+
+.share-btn.instagram:hover {
+  background: #E4405F;
+  color: #fff;
+}
+
+/* Share Link button */
+.share-link-btn {
+  color: #4A5568;
+  border-color: #4A5568;
+  background: #fff;
+}
+
+.share-link-btn:hover {
+  background: #4A5568;
+  color: #fff;
+}
+
+/* Copy button full width */
+.copy-btn{
+  grid-column: 1 / -1;
+  background: #f97316;
+  color: #fff;
+  border: none;
+}
+
+.copy-btn:hover{
+  background: #d95b10;
+}
+
+.share-btn span{
+  white-space: nowrap;
+}
+
+.share-btn svg{
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .share-buttons{
+    gap: 10px;
+  }
+
+  .share-btn{
+    height: 46px;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
 /* =========================
    QUICK FACTS
 ========================= */
 
-.news-facts-box{
+.news-facts-box {
   background: linear-gradient(
     135deg,
-    #fff8f1,
-    #fff3e6
+    var(--gold-lt),
+    var(--white)
   );
 
-  border: 1px solid #ffd8b5;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--saffron);
 
-  border-left: 5px solid #ff7a00;
-
-  border-radius: 18px;
+  border-radius: 16px;
 
   padding: 20px;
 
   margin: 25px 0;
 
-  box-shadow:
-    0 8px 20px rgba(255,122,0,.08);
+  box-shadow: 0 8px 20px rgba(212, 82, 10, 0.08);
 }
 
-.news-facts-box h3{
+.news-facts-box h3 {
   margin: 0 0 15px;
 
-  color: #e65c00;
+  color: var(--saffron);
 
   font-size: 1.15rem;
 
   font-weight: 700;
 }
 
-.news-facts-box ul{
+.news-facts-box ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -257,47 +480,47 @@
   gap: 12px;
 }
 
-.news-facts-box li{
+.news-facts-box li {
   display: flex;
   align-items: center;
   gap: 8px;
 
-  color: #444;
-  font-size: .95rem;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-.news-facts-box strong{
-  color: #222;
+.news-facts-box strong {
+  color: var(--text);
   min-width: 90px;
 }
+
 /* =========================
    RELATED GUIDES
 ========================= */
 
-.related-guides{
+.related-guides {
   margin-top: 40px;
 
-  background: #fff;
+  background: var(--white);
 
-  border: 1px solid #f1f1f1;
+  border: 1px solid var(--border);
 
   border-radius: 20px;
 
   padding: 24px;
 
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.05);
+  box-shadow: 0 10px 25px rgba(28, 9, 0, 0.05);
 }
 
-.related-guides h3{
+.related-guides h3 {
   margin: 0 0 18px;
 
-  color: #ff7a00;
+  color: var(--saffron);
 
   font-size: 1.2rem;
 }
 
-.related-guides ul{
+.related-guides ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -306,48 +529,159 @@
   gap: 12px;
 }
 
-.related-guides li{
-  transition: .25s ease;
+.related-guides li {
+  transition: 0.25s ease;
 }
 
-.related-guides a{
+.related-guides a {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   text-decoration: none;
 
-  background: #fff8f2;
+  background: var(--cream2);
 
-  border: 1px solid #ffe0c2;
+  border: 1px solid var(--border);
 
   border-radius: 14px;
 
   padding: 14px 16px;
 
-  color: #333;
+  color: var(--text);
 
   font-weight: 600;
 
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 
-.related-guides a::after{
+.related-guides a::after {
   content: "→";
 
-  color: #ff7a00;
+  color: var(--saffron);
 
   font-size: 1.1rem;
 }
 
-.related-guides a:hover{
-  background: #ff7a00;
+.related-guides a:hover {
+  background: var(--saffron);
 
   color: #fff;
 
   transform: translateY(-2px);
 }
 
-.related-guides a:hover::after{
+.related-guides a:hover::after {
   color: #fff;
+}
+
+/* =========================
+   NEWS DETAILS PAGE
+========================= */
+
+.news-details {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.news-details-image {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.news-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #2563EB;
+  background: rgba(37, 99, 235, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.news-details-title {
+  font-family: 'Noto Sans Devanagari', 'Mukta', Georgia, 'Times New Roman', serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.news-details-date {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.news-details-content {
+  margin: 24px 0;
+}
+
+.news-details-content p {
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.news-source {
+  margin: 24px 0;
+  padding: 16px;
+  background: var(--cream2);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.news-source a {
+  color: var(--saffron);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.news-source a:hover {
+  text-decoration: underline;
+}
+
+/* Loading & Not Found States */
+
+.news-loading,
+.news-not-found {
+  padding: 120px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.news-loading h2,
+.news-not-found h2 {
+  color: var(--text);
+  font-family: Georgia, 'Times New Roman', serif;
+  margin-bottom: 20px;
+}
+
+.news-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--saffron);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.news-back-btn:hover {
+  background: var(--saffron2);
+  transform: translateY(-2px);
 }

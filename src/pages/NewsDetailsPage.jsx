@@ -1,24 +1,24 @@
-  import React, { useEffect, useState } from "react";
-  import { Link, useNavigate, useParams } from "react-router-dom";
-  import { Helmet } from "react-helmet-async";
-  import { supabase } from "../lib/supabase";
-  import ShareButtons from "../components/guides/ShareButtons";
-  import Breadcrumb from "../components/layout/Breadcrumb";
-  import "../styles/news.css";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { supabase } from "../lib/supabase";
+import ShareButtons from "../components/guides/ShareButtons";
+import Breadcrumb from "../components/layout/Breadcrumb";
+import "../styles/news.css";
 
-  function NewsDetailsPage() {
-    const { slug } = useParams();
-    const navigate = useNavigate();
-    const [loading, setLoading] = useState(true);
-    const [news, setNews] = useState(null);
+function NewsDetailsPage() {
+  const { slug } = useParams();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const [news, setNews] = useState(null);
 
-    useEffect(() => {
+  useEffect(() => {
     if (slug) {
       fetchNews();
     }
   }, [slug]);
 
-    const fetchNews = async () => {
+  const fetchNews = async () => {
     setLoading(true);
 
     try {
@@ -41,170 +41,156 @@
 
   if (loading) {
     return (
-      <div style={{ padding: "120px", textAlign: "center" }}>
+      <div className="news-loading">
         <h2>Loading...</h2>
       </div>
     );
   }
-  
-      if (!news) {
-        return (
-          <div style={{ padding: "120px 20px", textAlign: "center" }}>
-            <h2>News not found</h2>
 
-            <button
-    className="news-readmore"
-    onClick={() => navigate("/news")}
-  >
-    Back to News
-  </button>
-          </div>
-        );
-      }
-
-      return (
-        <>
-    <Helmet>
-      
-      <meta
-    name="description"
-    content={news.summary?.slice(0, 160)}
-  />
-
-  <link
-    rel="canonical"
-    href={`https://www.mysimhastha.com/news/${news.slug}`}
-  />
-      <title>{news.title} | MySimhastha News</title>
-
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "NewsArticle",
-          headline: news.title,
-          datePublished: news.created_at,
-          image: news.image_url,
-          description: news.summary,
-          author: {
-            "@type": "Organization",
-            name: "MySimhastha"
-          },
-          publisher: {
-    "@type": "Organization",
-    name: "MySimhastha",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.mysimhastha.com/logo.png"
-    }
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": `https://www.mysimhastha.com/news/${news.slug}`
-  }
-        })}
-      </script>
-    </Helmet>
-
-    <div
-      style={{
-        maxWidth: "900px",
-        margin: "40px auto",
-        padding: "20px"
-      }}
-    ></div>
-        <div
-          style={{
-            maxWidth: "900px",
-            margin: "40px auto",
-            padding: "20px",
-          }}
+  if (!news) {
+    return (
+      <div className="news-not-found">
+        <h2>News not found</h2>
+        <button
+          className="news-back-btn"
+          onClick={() => navigate("/news")}
         >
-          {news.image_url && (
-            <img
-              src={news.image_url}
-              alt={news.title}
-              style={{
-                width: "100%",
-                borderRadius: "16px",
-                marginBottom: "20px",
-              }}
-            />
-          )}
+          Back to News
+        </button>
+      </div>
+    );
+  }
 
-          <span className="news-tag">
-            {news.category}
-          </span>
+  return (
+    <>
+      <Helmet>
+        <meta
+          name="description"
+          content={news.summary?.slice(0, 160)}
+        />
+        <link
+          rel="canonical"
+          href={`https://www.mysimhastha.com/news/${news.slug}`}
+        />
+        <title>{news.title} | MySimhastha News</title>
 
-          <h1>{news.title}</h1>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            headline: news.title,
+            datePublished: news.created_at,
+            image: news.image_url,
+            description: news.summary,
+            author: {
+              "@type": "Organization",
+              name: "MySimhastha"
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "MySimhastha",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.mysimhastha.com/logo.png"
+              }
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://www.mysimhastha.com/news/${news.slug}`
+            }
+          })}
+        </script>
+      </Helmet>
 
-          <p className="news-date">
-              
-            {new Date(news.created_at).toLocaleDateString("hi-IN")}
-          </p>
+      <div className="news-details">
+        {news.image_url && (
+          <img
+            src={news.image_url}
+            alt={news.title}
+            className="news-details-image"
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.src = "https://cokhwroeblaykgyicmgq.supabase.co/storage/v1/object/public/News_mysimhastha/default-news.webp";
+            }}
+          />
+        )}
 
-          <ShareButtons
-      title={news.title}
-      image={news.image_url}
-  />
-          <div className="news-facts-box">
-    <h3>Quick Facts</h3>
+        <span className="news-tag">
+          {news.category}
+        </span>
 
-    <ul>
-      <li><strong>Location:</strong> Ujjain</li>
-      <li><strong>Category:</strong> {news.category}</li>
-      <li><strong>Topic:</strong> Mahakal Temple</li>
-      <li><strong>Relevance:</strong> Devotees & Pilgrims</li>
-    </ul>
-  </div>
+        <h1 className="news-details-title">
+          {news.title}
+        </h1>
 
-          {news.summary && (
-  
-      <div className="news-details-content">
-    {news.summary.split("\n").map((para, index) => (
-      para.trim() && (
-        <p key={index}>{para}</p>
-      )
-    ))}
-  </div>
+        <p className="news-details-date">
+          {new Date(news.created_at).toLocaleDateString("hi-IN", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
+        </p>
 
-    
-  )}
-  {news.source_url && (
-    <div className="news-source">
-      <strong>Source:</strong>{" "}
-      <a
-        href={news.source_url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Read Original News
-      </a>
-    </div>
-  )}
-  <div className="related-guides">
-    <h3>Related Guides</h3>
+        <ShareButtons
+          title={news.title}
+          image={news.image_url}
+        />
 
-    <ul>
-      
-  <li>
-    <Link to="/guide/simhastha-2028">
-      Simhastha 2028 Guide
-    </Link>
-  </li>
+        <div className="news-facts-box">
+          <h3>Quick Facts</h3>
 
-  <li>
-    <Link to="/hotels">
-      Hotels Near Mahakal
-    </Link>
-  </li>
-    </ul>
-  </div>
+          <ul>
+            <li><strong>Location:</strong> Ujjain</li>
+            <li><strong>Category:</strong> {news.category}</li>
+            <li><strong>Topic:</strong> Mahakal Temple</li>
+            <li><strong>Relevance:</strong> Devotees & Pilgrims</li>
+          </ul>
+        </div>
 
-    </div>
-  </>
-      );
-      
-    }
-    
+        {news.summary && (
+          <div className="news-details-content">
+            {news.summary.split("\n").map((para, index) => (
+              para.trim() && (
+                <p key={index}>{para}</p>
+              )
+            ))}
+          </div>
+        )}
 
-    export default NewsDetailsPage;
+        {news.source_url && (
+          <div className="news-source">
+            <strong>Source:</strong>{" "}
+            <a
+              href={news.source_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read Original News
+            </a>
+          </div>
+        )}
+
+        <div className="related-guides">
+          <h3>Related Guides</h3>
+
+          <ul>
+            <li>
+              <Link to="/guide/simhastha-2028">
+                Simhastha 2028 Guide
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/hotels">
+                Hotels Near Mahakal
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default NewsDetailsPage;

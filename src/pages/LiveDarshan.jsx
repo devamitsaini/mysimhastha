@@ -1,455 +1,1456 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { DARSHAN_FEEDS } from "../data/simhasthaData";
+import { useNavigate } from "react-router-dom";
+
 import LiveDarshanCard from "../components/common/LiveDarshanCard";
 
-function LiveDarshanPage() {
-  const canonicalUrl = "https://www.mysimhastha.com/live-darshan";
+import { DARSHAN_FEEDS } from "../data/simhasthaData";
 
-  const image =
-    "https://www.mysimhastha.com/images/live-darshan.webp";
+import "../styles/LiveDarshan.css";
 
-  const webpageSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": canonicalUrl,
-    name: "Live Darshan Ujjain | Mahakal Live Darshan",
-    description:
-      "Watch Live Darshan from Mahakaleshwar Temple, Harsiddhi Temple, Kal Bhairav Temple and other sacred temples of Ujjain. Find Mahakal Aarti timings, temple schedules and Simhastha 2028 live updates.",
-    url: canonicalUrl,
-    inLanguage: "en",
-    isPartOf: {
-      "@type": "WebSite",
-      "@id": "https://www.mysimhastha.com/#website"
-    }
-  };
+function LiveDarshanPage(){
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.mysimhastha.com"
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Live Darshan",
-        item: canonicalUrl
-      }
-    ]
-  };
+const navigate=useNavigate();
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Can I watch Mahakal Live Darshan online?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text:
-            "Yes. MySimhastha provides information about Mahakaleshwar Temple Live Darshan and official live streaming updates."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "When will Simhastha 2028 Live Darshan begin?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text:
-            "Live coverage will begin during Simhastha 2028 and will include major rituals, Shahi Snan and temple events whenever official streams are available."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Is Live Darshan free?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text:
-            "Yes. Live Darshan information and official streaming links are completely free."
-        }
-      }
-    ]
-  };
+const stats=[
+{
+number:"15+",
+label:"Temple Streams"
+},
+{
+number:"24×7",
+label:"Live Updates"
+},
+{
+number:"365",
+label:"Days Coverage"
+},
+{
+number:"5 Cr+",
+label:"Expected Viewers"
+}
+];
 
-  return (
-    <>
-      <Helmet>
+return(
 
-        <title>
-          Live Darshan Ujjain | Mahakal Live Darshan, Aarti Timings & Simhastha 2028
-        </title>
+<>
 
-        <meta
-          name="description"
-          content="Watch Live Darshan from Mahakaleshwar Temple and other famous temples of Ujjain. Find Mahakal Aarti timings, temple schedules and Simhastha 2028 live updates."
-        />
+<Helmet>
 
-        <meta
-          name="keywords"
-          content="Mahakal Live Darshan, Mahakaleshwar Live Darshan, Ujjain Live Darshan, Mahakal Aarti, Simhastha Live, Temple Live Darshan, Mahakal Temple Live"
-        />
+<title>
 
-        <meta
-          name="robots"
-          content="index,follow,max-image-preview:large"
-        />
+Live Darshan Ujjain | Mahakal Live Darshan, Aarti Timings & Temple Live Streams
 
-        <link
-          rel="canonical"
-          href={canonicalUrl}
-        />
+</title>
 
-        <link
-          rel="alternate"
-          hrefLang="en"
-          href={canonicalUrl}
-        />
+<meta
+name="description"
+content="Watch Mahakal Live Darshan, Mahakal Aarti, Harsiddhi Temple Live, Kal Bhairav Live Darshan, temple timings, official live streams and Simhastha 2028 coverage."
+/>
 
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href={canonicalUrl}
-        />
+<meta
+name="keywords"
+content="
+Mahakal Live Darshan,
+Mahakal Live,
+Mahakal Aarti,
+Mahakal Live Today,
+Live Darshan Ujjain,
+Temple Live,
+Simhastha Live,
+Mahakal Temple Live
+"
+/>
 
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="MySimhastha" />
-        <meta property="og:locale" content="en_IN" />
+<link
+rel="canonical"
+href="https://www.mysimhastha.com/live-darshan"
+/>
 
-        <meta
-          property="og:url"
-          content={canonicalUrl}
-        />
+</Helmet>
 
-        <meta
-          property="og:title"
-          content="Live Darshan Ujjain | Mahakal Live Darshan"
-        />
+<div className="live-page">
 
-        <meta
-          property="og:description"
-          content="Watch Mahakaleshwar Temple Live Darshan, Aarti timings and Simhastha 2028 live updates."
-        />
+{/* HERO */}
 
-        <meta
-          property="og:image"
-          content={image}
-        />
+<section className="live-hero">
 
-        <meta
-          property="og:image:width"
-          content="1200"
-        />
+<div className="hero-overlay"></div>
 
-        <meta
-          property="og:image:height"
-          content="630"
-        />
+<div className="container">
 
-        <meta
-          name="twitter:card"
-          content="summary_large_image"
-        />
+<div className="hero-content">
 
-        <meta
-          name="twitter:title"
-          content="Live Darshan Ujjain"
-        />
+<span className="hero-chip">
 
-        <meta
-          name="twitter:description"
-          content="Watch Mahakal Live Darshan, temple live streams and Aarti timings."
-        />
+📡 LIVE DARSHAN
 
-        <meta
-          name="twitter:image"
-          content={image}
-        />
+</span>
 
-        <script type="application/ld+json">
-          {JSON.stringify(webpageSchema)}
-        </script>
+<h1>
 
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
+Watch
 
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+<span>
 
-      </Helmet>
+Mahakal Live Darshan
 
-      <div className="page-wrap">
+</span>
 
-  {/* Hero Section */}
+</h1>
 
-  <div
-    className="page-hero"
-    data-shlok="जय महाकाल"
-    style={{
-      background: "linear-gradient(160deg,#0A0400,#1A0000)"
-    }}
-  >
-    <div
-      className="container"
-      style={{
-        position: "relative",
-        zIndex: 1
-      }}
-    >
+<p>
 
-      <div
-        style={{
-          fontFamily: "var(--ui)",
-          fontSize: "11px",
-          fontWeight: 900,
-          letterSpacing: "1px",
-          textTransform: "uppercase",
-          color: "rgba(255,200,100,.75)",
-          marginBottom: "8px"
-        }}
-      >
-        📡 LIVE STREAMS
-      </div>
+Experience the divine presence of
+Mahakaleshwar Temple and other sacred temples
+of Ujjain through official Live Darshan,
+daily Aarti timings and festival broadcasts.
 
-      <div className="page-hero-hi">
-        लाइव दर्शन · आरती समय
-      </div>
+</p>
 
-      <div className="page-hero-title">
-        Mahakal Live Darshan & Ujjain Temple Live Streams
-      </div>
+<div className="hero-actions">
 
-      <p className="page-hero-sub">
-        Watch Live Darshan from Mahakaleshwar Temple and other sacred temples
-        of Ujjain. Find Mahakal Aarti timings, temple schedules and official
-        Simhastha 2028 live updates.
-      </p>
+<button
+className="primary-btn"
+onClick={()=>navigate("/simhastha-2028")}
+>
+
+Explore Simhastha
+
+</button>
+
+<button
+className="secondary-btn"
+onClick={()=>navigate("/snan-calendar")}
+>
+
+Shahi Snan
+
+</button>
+
+<button
+className="outline-btn"
+onClick={()=>navigate("/stays")}
+>
+
+Book Stay
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{/* FLOATING BAR */}
+
+<section className="live-floating">
+
+<div className="container">
+
+<div className="live-floating-card">
+
+<div className="live-indicator">
+
+<span className="live-dot"></span>
+
+LIVE STATUS
+
+</div>
+
+<div className="live-next">
+
+Next Major Event
+
+<strong>
+
+Mahakal Aarti
+
+</strong>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+{/* STATS */}
+
+<section className="live-stats">
+
+<div className="container">
+
+<div className="section-heading center">
+
+<span>
+
+Live Coverage
+
+</span>
+
+<h2>
+
+Temple Live Darshan at a Glance
+
+</h2>
+
+<p>
+
+Watch important temple ceremonies,
+Aarti broadcasts,
+festival events
+and official live streams from Ujjain.
+
+</p>
+
+</div>
+
+<div className="stats-grid">
+
+{stats.map((item,index)=>(
+
+<div
+key={index}
+className="stat-card"
+>
+
+<h3>
+
+{item.number}
+
+</h3>
+
+<p>
+
+{item.label}
+
+</p>
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+</section>
+
+{/* FEATURED STREAMS */}
+
+<section className="featured-live">
+
+<div className="container">
+
+<div className="section-heading">
+
+<span>
+
+Official Streams
+
+</span>
+
+<h2>
+
+Featured Live Darshan
+
+</h2>
+
+<p>
+
+Watch official temple live streams,
+daily Aarti,
+religious ceremonies
+and important Simhastha events.
+
+</p>
+
+</div>
+
+<div className="live-grid">
+
+{DARSHAN_FEEDS.map((item,index)=>(
+
+<LiveDarshanCard
+
+key={index}
+
+d={item}
+
+/>
+
+))}
+
+</div>
+
+</div>
+
+</section>
+      {/* ======================================================
+          TODAY'S AARTI SCHEDULE
+      ====================================================== */}
+
+      <section className="aarti-section">
+
+        <div className="container">
+
+          <div className="section-heading center">
+
+            <span>
+
+              Daily Schedule
+
+            </span>
+
+            <h2>
+
+              Mahakal Aarti Timings
+
+            </h2>
+
+            <p>
+
+              Important daily Aarti timings of
+              Mahakaleshwar Temple. Timings may vary
+              on festival days and during Simhastha.
+
+            </p>
+
+          </div>
+
+          <div className="aarti-grid">
+
+            <div className="aarti-card featured">
+
+              <span className="live-tag">
+
+                MOST POPULAR
+
+              </span>
+
+              <h3>
+
+                Bhasma Aarti
+
+              </h3>
+
+              <h4>
+
+                4:00 AM
+
+              </h4>
+
+              <p>
+
+                The most sacred ritual of
+                Mahakaleshwar Temple performed
+                before sunrise.
+
+              </p>
+
+            </div>
+
+            <div className="aarti-card">
+
+              <h3>
+
+                Morning Puja
+
+              </h3>
+
+              <h4>
+
+                7:30 AM
+
+              </h4>
+
+              <p>
+
+                Daily morning worship.
+
+              </p>
+
+            </div>
+
+            <div className="aarti-card">
+
+              <h3>
+
+                Midday Aarti
+
+              </h3>
+
+              <h4>
+
+                10:30 AM
+
+              </h4>
+
+              <p>
+
+                Regular temple rituals.
+
+              </p>
+
+            </div>
+
+            <div className="aarti-card">
+
+              <h3>
+
+                Evening Aarti
+
+              </h3>
+
+              <h4>
+
+                7:00 PM
+
+              </h4>
+
+              <p>
+
+                Sandhya Aarti with devotional chants.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          WHY LIVE DARSHAN
+      ====================================================== */}
+
+      <section className="why-live">
+
+        <div className="container">
+
+          <div className="section-heading center">
+
+            <span>
+
+              Divine Experience
+
+            </span>
+
+            <h2>
+
+              Why Watch Live Darshan?
+
+            </h2>
+
+          </div>
+
+          <div className="why-grid">
+
+            <div className="why-card">
+
+              <div className="why-icon">
+
+                🕉
+
+              </div>
+
+              <h3>
+
+                Spiritual Connection
+
+              </h3>
+
+              <p>
+
+                Experience the divine atmosphere
+                of Mahakal from anywhere in
+                the world.
+
+              </p>
+
+            </div>
+
+            <div className="why-card">
+
+              <div className="why-icon">
+
+                🌍
+
+              </div>
+
+              <h3>
+
+                Global Devotees
+
+              </h3>
+
+              <p>
+
+                Perfect for devotees who cannot
+                travel to Ujjain.
+
+              </p>
+
+            </div>
+
+            <div className="why-card">
+
+              <div className="why-icon">
+
+                📺
+
+              </div>
+
+              <h3>
+
+                Official Coverage
+
+              </h3>
+
+              <p>
+
+                Watch authentic temple broadcasts
+                and festival ceremonies.
+
+              </p>
+
+            </div>
+
+            <div className="why-card">
+
+              <div className="why-icon">
+
+                🔔
+
+              </div>
+
+              <h3>
+
+                Never Miss Aarti
+
+              </h3>
+
+              <p>
+
+                Stay updated with important
+                temple rituals and events.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          TEMPLE DIRECTORY
+      ====================================================== */}
+
+      <section className="temple-directory">
+
+        <div className="container">
+
+          <div className="section-heading">
+
+            <span>
+
+              Temple Coverage
+
+            </span>
+
+            <h2>
+
+              Live Darshan from Sacred Temples
+
+            </h2>
+
+            <p>
+
+              Official temple broadcasts and
+              important ceremonies across Ujjain.
+
+            </p>
+
+          </div>
+
+          <div className="temple-grid">
+
+            <div className="temple-card">
+
+              <div className="temple-status live">
+
+                LIVE
+
+              </div>
+
+              <h3>
+
+                Mahakaleshwar Temple
+
+              </h3>
+
+              <p>
+
+                Daily Aarti, Darshan &
+                important festivals.
+
+              </p>
+
+            </div>
+
+            <div className="temple-card">
+
+              <div className="temple-status">
+
+                Scheduled
+
+              </div>
+
+              <h3>
+
+                Harsiddhi Temple
+
+              </h3>
+
+              <p>
+
+                Evening Deep Stambh
+                illumination.
+
+              </p>
+
+            </div>
+
+            <div className="temple-card">
+
+              <div className="temple-status">
+
+                Scheduled
+
+              </div>
+
+              <h3>
+
+                Kal Bhairav Temple
+
+              </h3>
+
+              <p>
+
+                Daily rituals &
+                temple updates.
+
+              </p>
+
+            </div>
+
+            <div className="temple-card">
+
+              <div className="temple-status">
+
+                Scheduled
+
+              </div>
+
+              <h3>
+
+                Chintaman Ganesh
+
+              </h3>
+
+              <p>
+
+                Ganesh Darshan &
+                special pujas.
+
+              </p>
+
+            </div>
+
+            <div className="temple-card">
+
+              <div className="temple-status">
+
+                Scheduled
+
+              </div>
+
+              <h3>
+
+                Mangalnath Temple
+
+              </h3>
+
+              <p>
+
+                Mangal Dosh rituals &
+                temple worship.
+
+              </p>
+
+            </div>
+
+            <div className="temple-card">
+
+              <div className="temple-status">
+
+                Festival
+
+              </div>
+
+              <h3>
+
+                Ram Ghat
+
+              </h3>
+
+              <p>
+
+                Shipra Aarti and
+                Simhastha ceremonies.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          UPCOMING EVENTS
+      ====================================================== */}
+
+      <section className="upcoming-live">
+
+        <div className="container">
+
+          <div className="section-heading center">
+
+            <span>
+
+              Upcoming Broadcasts
+
+            </span>
+
+            <h2>
+
+              Upcoming Live Events
+
+            </h2>
+
+          </div>
+
+          <div className="event-timeline">
+
+            <div className="event-item">
+
+              <div className="event-time">
+
+                04:00 AM
+
+              </div>
+
+              <div className="event-content">
+
+                <h3>
+
+                  Mahakal Bhasma Aarti
+
+                </h3>
+
+                <p>
+
+                  Official morning broadcast.
+
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="event-item">
+
+              <div className="event-time">
+
+                07:00 PM
+
+              </div>
+
+              <div className="event-content">
+
+                <h3>
+
+                  Evening Mahakal Aarti
+
+                </h3>
+
+                <p>
+
+                  Daily evening darshan.
+
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="event-item">
+
+              <div className="event-time">
+
+                Festival
+
+              </div>
+
+              <div className="event-content">
+
+                <h3>
+
+                  Simhastha 2028 Live Coverage
+
+                </h3>
+
+                <p>
+
+                  Shahi Snan,
+                  temple rituals and
+                  cultural events.
+
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+            {/* ======================================================
+          HOW TO WATCH
+      ====================================================== */}
+
+      <section className="watch-guide">
+
+        <div className="container">
+
+          <div className="section-heading center">
+
+            <span>
+
+              Watch Guide
+
+            </span>
+
+            <h2>
+
+              How to Watch Live Darshan
+
+            </h2>
+
+            <p>
+
+              Follow these simple steps to enjoy
+              uninterrupted Live Darshan from
+              Mahakaleshwar Temple and other
+              sacred temples of Ujjain.
+
+            </p>
+
+          </div>
+
+          <div className="watch-grid">
+
+            <div className="watch-step">
+
+              <span>1</span>
+
+              <h3>
+
+                Choose a Temple
+
+              </h3>
+
+              <p>
+
+                Select Mahakal or any temple
+                whose Live Darshan you wish
+                to watch.
+
+              </p>
+
+            </div>
+
+            <div className="watch-step">
+
+              <span>2</span>
+
+              <h3>
+
+                Check Schedule
+
+              </h3>
+
+              <p>
+
+                View today's Aarti timings
+                and upcoming ceremonies.
+
+              </p>
+
+            </div>
+
+            <div className="watch-step">
+
+              <span>3</span>
+
+              <h3>
+
+                Join Live Stream
+
+              </h3>
+
+              <p>
+
+                Watch the official
+                temple broadcast
+                in real time.
+
+              </p>
+
+            </div>
+
+            <div className="watch-step">
+
+              <span>4</span>
+
+              <h3>
+
+                Receive Updates
+
+              </h3>
+
+              <p>
+
+                Stay informed about
+                important festivals,
+                Aarti timings and
+                Simhastha broadcasts.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          LIVE DARSHAN BENEFITS
+      ====================================================== */}
+
+      <section className="benefits-section">
+
+        <div className="container">
+
+          <div className="section-heading center">
+
+            <span>
+
+              Why MySimhastha
+
+            </span>
+
+            <h2>
+
+              Everything in One Place
+
+            </h2>
+
+          </div>
+
+          <div className="benefits-grid">
+
+            <div className="benefit-card">
+
+              <div className="benefit-icon">
+
+                📡
+
+              </div>
+
+              <h3>
+
+                Official Updates
+
+              </h3>
+
+              <p>
+
+                Access official temple
+                schedules and verified
+                festival information.
+
+              </p>
+
+            </div>
+
+            <div className="benefit-card">
+
+              <div className="benefit-icon">
+
+                🔔
+
+              </div>
+
+              <h3>
+
+                Live Notifications
+
+              </h3>
+
+              <p>
+
+                Get notified before
+                important Aartis and
+                Live Darshan begins.
+
+              </p>
+
+            </div>
+
+            <div className="benefit-card">
+
+              <div className="benefit-icon">
+
+                🛕
+
+              </div>
+
+              <h3>
+
+                Multiple Temples
+
+              </h3>
+
+              <p>
+
+                Watch Live Darshan from
+                Mahakal and other famous
+                temples of Ujjain.
+
+              </p>
+
+            </div>
+
+            <div className="benefit-card">
+
+              <div className="benefit-icon">
+
+                🌍
+
+              </div>
+
+              <h3>
+
+                Global Access
+
+              </h3>
+
+              <p>
+
+                Join the divine experience
+                from anywhere in the world.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          NOTIFICATION CTA
+      ====================================================== */}
+
+      <section className="notify-section">
+
+        <div className="container">
+
+          <div className="notify-box">
+
+            <div className="notify-left">
+
+              <span>
+
+                🔔
+
+              </span>
+
+              <div>
+
+                <h2>
+
+                  Never Miss a Live Darshan
+
+                </h2>
+
+                <p>
+
+                  Receive notifications
+                  for Mahakal Live Darshan,
+                  Bhasma Aarti,
+                  festival broadcasts
+                  and Simhastha updates.
+
+                </p>
+
+              </div>
+
+            </div>
+
+            <button
+              className="primary-btn"
+            >
+
+              Notify Me
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          FAQ
+      ====================================================== */}
+
+      <section className="live-faq">
+
+        <div className="container">
+
+          <div className="section-heading center">
+
+            <span>
+
+              FAQs
+
+            </span>
+
+            <h2>
+
+              Frequently Asked Questions
+
+            </h2>
+
+          </div>
+
+          <div className="faq-grid">
+
+            <div className="faq-card">
+
+              <h3>
+
+                Can I watch Mahakal Live Darshan online?
+
+              </h3>
+
+              <p>
+
+                Yes. Official temple
+                streams are available
+                during important rituals
+                and festivals.
+
+              </p>
+
+            </div>
+
+            <div className="faq-card">
+
+              <h3>
+
+                Is Live Darshan free?
+
+              </h3>
+
+              <p>
+
+                Yes.
+                Live Darshan information
+                and official links are
+                completely free.
+
+              </p>
+
+            </div>
+
+            <div className="faq-card">
+
+              <h3>
+
+                Does Mahakal have daily Live Darshan?
+
+              </h3>
+
+              <p>
+
+                Major rituals,
+                Aartis and festivals
+                are broadcast whenever
+                official streams
+                are available.
+
+              </p>
+
+            </div>
+
+            <div className="faq-card">
+
+              <h3>
+
+                Can I watch Simhastha Live?
+
+              </h3>
+
+              <p>
+
+                Yes.
+                During Simhastha,
+                major ceremonies,
+                Shahi Snan and temple
+                events will be covered.
+
+              </p>
+
+            </div>
+
+            <div className="faq-card">
+
+              <h3>
+
+                Which temples provide Live Darshan?
+
+              </h3>
+
+              <p>
+
+                Mahakaleshwar,
+                Harsiddhi,
+                Kal Bhairav,
+                Chintaman Ganesh,
+                Mangalnath and more.
+
+              </p>
+
+            </div>
+
+            <div className="faq-card">
+
+              <h3>
+
+                How do I receive notifications?
+
+              </h3>
+
+              <p>
+
+                Register on MySimhastha
+                to receive alerts before
+                important temple broadcasts.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          RELATED GUIDES
+      ====================================================== */}
+
+      <section className="related-guides">
+
+        <div className="container">
+
+          <div className="section-heading">
+
+            <span>
+
+              Continue Exploring
+
+            </span>
+
+            <h2>
+
+              Helpful Guides
+
+            </h2>
+
+          </div>
+
+          <div className="guide-grid">
+
+            <div
+              className="guide-card"
+              onClick={()=>navigate("/guide/mahakal-darshan")}
+            >
+
+              🛕
+
+              <h3>
+
+                Mahakal Darshan Guide
+
+              </h3>
+
+            </div>
+
+            <div
+              className="guide-card"
+              onClick={()=>navigate("/snan-calendar")}
+            >
+
+              🔱
+
+              <h3>
+
+                Shahi Snan Calendar
+
+              </h3>
+
+            </div>
+
+            <div
+              className="guide-card"
+              onClick={()=>navigate("/stays")}
+            >
+
+              🏨
+
+              <h3>
+
+                Hotels Near Mahakal
+
+              </h3>
+
+            </div>
+
+            <div
+              className="guide-card"
+              onClick={()=>navigate("/guide/how-to-reach-ujjain")}
+            >
+
+              🚆
+
+              <h3>
+
+                How to Reach Ujjain
+
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          FINAL CTA
+      ====================================================== */}
+
+      <section className="live-cta">
+
+        <div className="container">
+
+          <div className="cta-card">
+
+            <span>
+
+              📡 LIVE DARSHAN
+
+            </span>
+
+            <h2>
+
+              Experience Divine Blessings Anytime
+
+            </h2>
+
+            <p>
+
+              Watch official Live Darshan,
+              explore Simhastha,
+              plan your pilgrimage
+              and stay connected
+              with the spiritual heart
+              of Ujjain.
+
+            </p>
+
+            <div className="cta-buttons">
+
+              <button
+                className="primary-btn"
+                onClick={()=>navigate("/simhastha-2028")}
+              >
+
+                Explore Simhastha
+
+              </button>
+
+              <button
+                className="secondary-btn"
+                onClick={()=>navigate("/stays")}
+              >
+
+                Find Stays
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
 
     </div>
-  </div>
 
-  {/* SEO Content */}
+  </>
 
-  <section className="section">
-    <div className="container">
+);
 
-      <h2
-        style={{
-          fontFamily: "var(--serif)",
-          color: "var(--deep)",
-          marginBottom: "16px"
-        }}
-      >
-        
-        Watch Mahakal Live Darshan from Mahakaleshwar Temple, Harsiddhi Temple, Kal Bhairav Temple and other sacred temples of Ujjain. Get daily Aarti timings, temple schedules and official Simhastha 2028 live updates.
-      </h2>
-
-      <p
-        style={{
-          lineHeight: 1.9,
-          color: "var(--muted)",
-          marginBottom: "18px"
-        }}
-      >
-        MySimhastha brings together information about Live Darshan from
-        Mahakaleshwar Jyotirlinga, Harsiddhi Temple, Kal Bhairav Temple,
-        Chintaman Ganesh Temple, Mangalnath Temple, Ram Ghat and other
-        important temples of Ujjain. Devotees can stay updated with Mahakal
-        Aarti timings, temple schedules, religious ceremonies and important
-        announcements related to Simhastha 2028.
-      </p>
-
-      <p
-        style={{
-          lineHeight: 1.9,
-          color: "var(--muted)",
-          marginBottom: "18px"
-        }}
-      >
-        During Simhastha 2028, this page will provide access to official live
-        streams, important bathing day coverage, spiritual events,
-        Mahakaleshwar Temple updates and pilgrimage information to help
-        devotees around the world experience the sacred atmosphere of Ujjain.
-      </p>
-
-      <div className="darshan-grid">
-
-        {DARSHAN_FEEDS.map((d, i) => (
-          <LiveDarshanCard
-            key={i}
-            d={d}
-          />
-        ))}
-
-      </div>
-        <div
-          style={{
-            background: "var(--cream2)",
-            border: "1px solid var(--border)",
-            borderRadius: "16px",
-            padding: "24px",
-            marginTop: "32px",
-            display: "flex",
-            alignItems: "center",
-            gap: "18px",
-            flexWrap: "wrap"
-          }}
-        >
-          <div style={{ fontSize: "28px" }}>
-            🔔
-          </div>
-
-          <div style={{ flex: 1 }}>
-            <div
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: "20px",
-                fontWeight: 700,
-                color: "var(--deep)",
-                marginBottom: "6px"
-              }}
-            >
-              Get Notified When Live Darshan Starts
-            </div>
-
-            <div
-              style={{
-                color: "var(--muted)",
-                lineHeight: 1.7
-              }}
-            >
-              Register to receive updates about Mahakal Live Darshan,
-              Simhastha 2028 live streams, important Aarti timings,
-              Shahi Snan coverage and major religious events.
-            </div>
-          </div>
-
-          <button
-            className="btn btn-primary"
-            style={{ marginLeft: "auto" }}
-            onClick={() =>
-              alert(
-                "Registration opens soon."
-              )
-            }
-          >
-            Notify Me →
-          </button>
-        </div>
-
-        {/* Information Section */}
-
-        <div style={{ marginTop: "60px" }}>
-
-          <h2
-            style={{
-              fontFamily: "var(--serif)",
-              color: "var(--deep)",
-              marginBottom: "18px"
-            }}
-          >
-            About Live Darshan
-          </h2>
-
-          <p
-            style={{
-              lineHeight: 1.9,
-              color: "var(--muted)",
-              marginBottom: "16px"
-            }}
-          >
-            Live Darshan allows devotees across India and around the world
-            to experience the spiritual atmosphere of Ujjain without
-            travelling to the temple. During major festivals such as
-            Simhastha, Mahashivratri, Sawan and other important occasions,
-            official temple broadcasts provide real-time coverage of
-            rituals and ceremonies.
-          </p>
-
-          <p
-            style={{
-              lineHeight: 1.9,
-              color: "var(--muted)",
-              marginBottom: "16px"
-            }}
-          >
-            MySimhastha brings together temple information, Mahakal Aarti
-            timings, important announcements and official streaming
-            updates to help pilgrims stay informed before and during
-            their visit to Ujjain.
-          </p>
-
-        </div>
-
-        {/* FAQ */}
-
-        <div style={{ marginTop: "60px" }}>
-
-          <h2
-            style={{
-              fontFamily: "var(--serif)",
-              color: "var(--deep)",
-              marginBottom: "20px"
-            }}
-          >
-            Frequently Asked Questions
-          </h2>
-
-          <div className="faq-list">
-
-            <div className="faq-item">
-              <h3>
-                Can I watch Mahakal Live Darshan online?
-              </h3>
-
-              <p>
-                Yes. Official live streams are available during important
-                rituals and festivals. MySimhastha also provides temple
-                schedules and live stream updates.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h3>
-                Is Live Darshan free?
-              </h3>
-
-              <p>
-                Yes. Live Darshan information and official streaming links
-                are available free of charge.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h3>
-                When will Simhastha 2028 Live Darshan begin?
-              </h3>
-
-              <p>
-                Live coverage is expected during Simhastha 2028,
-                including important bathing days, temple ceremonies
-                and religious events.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-  </div>
-
-    </>
-  );
 }
 
 export default LiveDarshanPage;

@@ -1,69 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Main Pages -->
   <url>
     <loc>https://www.mysimhastha.com/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
+    <loc>https://www.mysimhastha.com/about</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/blog</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/news</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/hotels</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/stays</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/stays/list</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/missing-persons</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.mysimhastha.com/simhastha-2028</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/snan-calendar</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/live-darshan</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.mysimhastha.com/stays</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://www.mysimhastha.com/temples</loc>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.mysimhastha.com/hotels</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://www.mysimhastha.com/gallery</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/faq</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/trip-planner</loc>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.mysimhastha.com/missing-persons</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://www.mysimhastha.com/guides</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Business Pages -->
   <url>
-    <loc>https://www.mysimhastha.com/news</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://www.mysimhastha.com/list-your-property</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.mysimhastha.com/blog</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.mysimhastha.com/thank-you</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
+  <!-- Blog Posts -->
   <url>
     <loc>https://www.mysimhastha.com/blog/mahakal-sawan-2026-complete-guide-pilgrimage</loc>
     <lastmod>2026-07-07</lastmod>
@@ -77,180 +143,175 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <url>
-    <loc>https://www.mysimhastha.com/about</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.mysimhastha.com/guides</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <!-- English Guides -->
-
   <url>
     <loc>https://www.mysimhastha.com/guide/simhastha-2028</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/guide/kumbh-locations</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/guide/mahakal-darshan</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/guide/bhasma-arti</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/guide/mahakal-shahi-sawari</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/guide/sawan-2026</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/guide/sawan-2026-dates</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/guide/how-to-reach-ujjain</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/guide/2-3-day-ujjain-itinerary</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/guide/ujjain-to-omkareshwar</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/guide/mahakal-visit-mistakes</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/guide/kal-bhairav-temple-guide</loc>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Hindi Guides -->
-
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/simhastha-2028</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/kumbh-locations</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/mahakal-darshan</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/bhasma-arti</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/mahakal-shahi-sawari</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/sawan-2026</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/sawan-2026-dates</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-    <!-- How to Reach Ujjain -->
 
   <url>
-    <loc>https://www.mysimhastha.com/guide/how-to-reach-ujjain</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>https://www.mysimhastha.com/hi/guide/how-to-reach-ujjain</loc>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-   <url>
-     <loc>https://www.mysimhastha.com/hi/guide/how-to-reach-ujjain</loc>
-     <lastmod>2026-07-03</lastmod>
-     <changefreq>monthly</changefreq>
-     <priority>0.8</priority>
-   </url>
+  <url>
+    <loc>https://www.mysimhastha.com/hi/guide/2-3-day-ujjain-itinerary</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <!-- 2-3 Day Ujjain Itinerary -->
-   <url>
-     <loc>https://www.mysimhastha.com/guide/2-3-day-ujjain-itinerary</loc>
-     <lastmod>2026-07-06</lastmod>
-     <changefreq>monthly</changefreq>
-     <priority>0.8</priority>
-   </url>
+  <url>
+    <loc>https://www.mysimhastha.com/hi/guide/ujjain-to-omkareshwar</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <url>
-     <loc>https://www.mysimhastha.com/hi/guide/2-3-day-ujjain-itinerary</loc>
-     <lastmod>2026-07-06</lastmod>
-     <changefreq>monthly</changefreq>
-     <priority>0.8</priority>
-   </url>
+  <url>
+    <loc>https://www.mysimhastha.com/hi/guide/mahakal-visit-mistakes</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <url>
-  <loc>https://www.mysimhastha.com/guide/ujjain-to-omkareshwar</loc>
-  <lastmod>2026-07-05</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.mysimhastha.com/hi/guide/ujjain-to-omkareshwar</loc>
-  <lastmod>2026-07-05</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.mysimhastha.com/guide/mahakal-visit-mistakes</loc>
-  <lastmod>2026-07-05</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.mysimhastha.com/hi/guide/mahakal-visit-mistakes</loc>
-  <lastmod>2026-07-05</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://www.mysimhastha.com/hi/guide/kal-bhairav-temple-guide</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>

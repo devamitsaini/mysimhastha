@@ -1,10 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  FiShield,
-  FiHome,
-  FiMapPin,
-} from "react-icons/fi";
+import { FiShield } from "react-icons/fi";
 
 import SearchBar from "../Search/SearchBar";
 import "./StayHero.css";
@@ -20,40 +16,44 @@ export default function StayHero() {
   ];
 
   return (
-    <section className="stay-hero">
+    <section className="ms-hero">
 
-      <div className="stay-hero-overlay"></div>
+      <div className="ms-hero-overlay"></div>
 
-      <div className="stay-container">
+      <div className="ms-hero-container">
 
-        <div className="stay-hero-card">
+        <div className="ms-hero-card">
 
           {/* LEFT */}
 
-          <div className="hero-left">
+          <div className="ms-hero-left">
 
-            <div className="stay-badge">
+            <div className="ms-hero-badge">
               <FiShield />
-              Verified Accommodation Directory
+              <span>Verified Accommodation Directory</span>
             </div>
 
-            <h1>
+            <h1 className="ms-hero-title">
               Find Comfortable Stays
               <span>Near Mahakaleshwar Temple, Ujjain</span>
             </h1>
 
-            <p>
-              Explore verified hotels, homestays, guest houses, and dharamshalas with direct owner contact, real photos, and convenient locations.
+            <p className="ms-hero-description">
+              Explore verified hotels, homestays, guest houses, and
+              dharamshalas with direct owner contact, real photos, and
+              convenient locations.
             </p>
 
+            <div className="ms-hero-links">
 
-            <div className="stay-quick-links">
-
-              <span>Popular</span>
+              <span className="ms-hero-links-title">
+                Popular
+              </span>
 
               {quickLinks.map((item) => (
                 <button
                   key={item.value}
+                  className="ms-hero-tag"
                   onClick={() =>
                     navigate(
                       `/stays/list?type=${encodeURIComponent(item.value)}`
@@ -70,7 +70,7 @@ export default function StayHero() {
 
           {/* RIGHT */}
 
-          <div className="hero-right">
+          <div className="ms-hero-right">
 
             <SearchBar />
 

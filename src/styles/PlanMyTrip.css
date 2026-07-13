@@ -1,0 +1,407 @@
+/* ======================================================
+   PLAN MY TRIP PAGE STYLES
+====================================================== */
+
+.plan-my-trip-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.pmt-hero {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #fff;
+  padding: 60px 0 50px;
+  text-align: center;
+}
+
+.pmt-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pmt-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.pmt-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  opacity: 0.95;
+}
+
+.pmt-hero-badges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+/* Planner Section */
+.pmt-planner-section {
+  padding: 60px 0;
+  background: #F8FAFC;
+}
+
+/* How to Use Section */
+.pmt-how-to-use {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.pmt-how-to-use h2 {
+  font-size: 2rem;
+  color: #0F172A;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #64748B;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.step-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border-color: #2563EB;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  background: #EEF4FF;
+  color: #2563EB;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 16px;
+}
+
+.step-number {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 32px;
+  height: 32px;
+  background: #2563EB;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.step-card h3 {
+  font-size: 1.1rem;
+  color: #0F172A;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* FAQ Section */
+.pmt-faq {
+  padding: 80px 0;
+  background: #F8FAFC;
+}
+
+.pmt-faq h2 {
+  font-size: 2rem;
+  color: #0F172A;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  border-color: #2563EB;
+}
+
+.faq-item h3 {
+  font-size: 1.05rem;
+  color: #0F172A;
+  margin-bottom: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.faq-item h3::before {
+  content: "Q.";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #EEF4FF;
+  color: #2563EB;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.faq-item p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Geo Section */
+.pmt-geo-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.pmt-geo-section h2 {
+  font-size: 2rem;
+  color: #0F172A;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.geo-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.geo-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.geo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border-color: #2563EB;
+}
+
+.geo-icon {
+  width: 50px;
+  height: 50px;
+  background: #EEF4FF;
+  color: #2563EB;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+.geo-card h3 {
+  font-size: 1.1rem;
+  color: #0F172A;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.geo-card p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Section */
+.pmt-cta {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.pmt-cta h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.pmt-cta p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN
+====================================================== */
+
+@media (max-width: 768px) {
+  .pmt-hero {
+    padding: 40px 0 35px;
+  }
+
+  .pmt-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .pmt-hero p {
+    font-size: 1rem;
+  }
+
+  .pmt-hero-badges {
+    gap: 8px;
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .pmt-planner-section {
+    padding: 40px 0;
+  }
+
+  .pmt-how-to-use,
+  .pmt-faq,
+  .pmt-geo-section {
+    padding: 50px 0;
+  }
+
+  .pmt-how-to-use h2,
+  .pmt-faq h2,
+  .pmt-geo-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  .steps-grid,
+  .faq-grid,
+  .geo-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .step-card,
+  .faq-item,
+  .geo-card {
+    padding: 20px;
+  }
+
+  .step-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .pmt-cta {
+    padding: 40px 0;
+  }
+
+  .pmt-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .pmt-cta p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pmt-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .pmt-hero p {
+    font-size: 0.9rem;
+  }
+
+  .pmt-how-to-use h2,
+  .pmt-faq h2,
+  .pmt-geo-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .step-card h3,
+  .faq-item h3,
+  .geo-card h3 {
+    font-size: 1rem;
+  }
+
+  .step-card p,
+  .faq-item p,
+  .geo-card p {
+    font-size: 0.85rem;
+  }
+}

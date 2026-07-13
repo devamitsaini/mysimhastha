@@ -1,0 +1,211 @@
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s ease;
+
+    border-radius:16px;
+
+    white-space:nowrap;
+
+    font-family:inherit;
+}
+
+/* =========================
+   Sizes
+========================= */
+
+.btn-sm{
+
+    height:42px;
+
+    padding:0 18px;
+
+    font-size:.85rem;
+
+}
+
+.btn-md{
+
+    height:52px;
+
+    padding:0 28px;
+
+    font-size:.95rem;
+
+}
+
+.btn-lg{
+
+    height:60px;
+
+    padding:0 36px;
+
+    font-size:1rem;
+
+}
+
+/* =========================
+   Variants
+========================= */
+
+.btn-primary{
+
+    background:#2563EB;
+
+    color:#fff;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.20);
+
+}
+
+.btn-primary:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+    background:#0F172A;
+
+    color:#fff;
+
+}
+
+.btn-secondary:hover{
+
+    background:#1E293B;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline{
+
+    background:#fff;
+
+    color:#2563EB;
+
+    border:1px solid #CBD5E1;
+
+}
+
+.btn-outline:hover{
+
+    border-color:#2563EB;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-ghost{
+
+    background:transparent;
+
+    color:#2563EB;
+
+}
+
+.btn-ghost:hover{
+
+    background:#EEF4FF;
+
+}
+
+.btn-success{
+
+    background:#16A34A;
+
+    color:#fff;
+
+}
+
+.btn-success:hover{
+
+    background:#15803D;
+
+}
+
+.btn-danger{
+
+    background:#DC2626;
+
+    color:#fff;
+
+}
+
+.btn-danger:hover{
+
+    background:#B91C1C;
+
+}
+
+/* ========================= */
+
+.btn svg{
+
+    transition:.3s;
+
+}
+
+.btn:hover svg:last-child{
+
+    transform:translateX(5px);
+
+}
+
+/* ========================= */
+
+.btn-block{
+
+    width:100%;
+
+}
+
+.btn-disabled{
+
+    opacity:.55;
+
+    pointer-events:none;
+
+}
+
+/* ========================= */
+
+@media(max-width:768px){
+
+.btn-lg{
+
+height:56px;
+
+padding:0 28px;
+
+}
+
+.btn-md{
+
+height:50px;
+
+}
+
+.btn-block{
+
+width:100%;
+
+}
+
+}

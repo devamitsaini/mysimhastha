@@ -7,13 +7,26 @@
 .blog-page h1 {
   font-size: 42px;
   margin-bottom: 10px;
-  color: #2b1400;
+  color: var(--text);
 }
 
 .blog-subtitle {
-  color: #666;
+  color: var(--muted);
   font-size: 18px;
   margin-bottom: 32px;
+}
+
+.blog-status-message {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.blog-excerpt {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
 /* BLOG CARD */
@@ -23,13 +36,13 @@
   gap: 24px;
   align-items: center;
 
-  background: #fff;
+  background: var(--white);
   border-radius: 18px;
   padding: 24px;
   margin-bottom: 24px;
 
-  border-top: 4px solid #e46a25;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid var(--saffron);
+  box-shadow: var(--shadow);
 
   transition: all 0.3s ease;
 }
@@ -68,7 +81,7 @@
   line-height: 1.25;
   margin-bottom: 16px;
 
-  color: #2d1300;
+  color: var(--text);
   font-weight: 700;
 
   display: -webkit-box;
@@ -78,7 +91,7 @@
 }
 
 .blog-date {
-  color: #777;
+  color: var(--muted);
   font-size: 16px;
   margin-bottom: 20px;
 }
@@ -90,7 +103,7 @@
 
   width: fit-content;
 
-  background: #f97316;
+  background: var(--saffron);
   color: white;
 
   padding: 12px 24px;
@@ -106,10 +119,180 @@
 }
 
 .blog-btn:hover {
+  background: var(--saffron2);
+  transform: translateY(-2px);
+}
+
+/* Blue button for blog cards on listing page */
+.blog-card .blog-btn {
+  background: #2563eb;
+}
+
+.blog-card .blog-btn:hover {
+  background: #1d4ed8;
   transform: translateY(-2px);
 }
 
 /* BLOG DETAILS PAGE */
+
+.blog-details-status {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.blog-details-status h2 {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.blog-details-container {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  max-width: 1000px;
+  margin: 120px auto;
+}
+
+.blog-details-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.blog-details-container h1 {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+/* Share Buttons */
+.guide-share {
+  margin: 30px 0;
+  width: 100%;
+}
+
+.share-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.share-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.share-btn {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #2b1400;
+  background: #fff;
+  border: 1px solid #ececec;
+  transition: .25s;
+  cursor: pointer;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+}
+
+/* WhatsApp brand color */
+.share-btn.whatsapp {
+  color: #25D366;
+  border-color: #25D366;
+}
+
+.share-btn.whatsapp:hover {
+  background: #25D366;
+  color: #fff;
+}
+
+/* Facebook brand color */
+.share-btn.facebook {
+  color: #1877F2;
+  border-color: #1877F2;
+}
+
+.share-btn.facebook:hover {
+  background: #1877F2;
+  color: #fff;
+}
+
+/* Instagram brand color */
+.share-btn.instagram {
+  color: #E4405F;
+  border-color: #E4405F;
+}
+
+.share-btn.instagram:hover {
+  background: #E4405F;
+  color: #fff;
+}
+
+/* Share Link button */
+.share-link-btn {
+  color: #4A5568;
+  border-color: #4A5568;
+  background: #fff;
+}
+
+.share-link-btn:hover {
+  background: #4A5568;
+  color: #fff;
+}
+
+/* Copy button full width */
+.copy-btn {
+  grid-column: 1 / -1;
+  background: #f97316;
+  color: #fff;
+  border: none;
+}
+
+.copy-btn:hover {
+  background: #d95b10;
+}
+
+.share-btn span {
+  white-space: nowrap;
+}
+
+.share-btn svg {
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.blog-details-date {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
 
 .blog-content {
   white-space: pre-line;
@@ -119,7 +302,7 @@
 
   line-height: 1.9;
   font-size: 18px;
-  color: #333;
+  color: var(--text);
 }
 
 .blog-content h1,
@@ -128,7 +311,7 @@
   margin-top: 40px;
   margin-bottom: 20px;
 
-  color: #2b1400;
+  color: var(--text);
   font-weight: 700;
 }
 
@@ -210,5 +393,24 @@
 
   .blog-content {
     font-size: 16px;
+  }
+
+  .blog-details-container {
+    padding: 20px;
+    margin: 100px auto;
+  }
+
+  .blog-details-container h1 {
+    font-size: 28px;
+  }
+
+  .share-buttons {
+    gap: 10px;
+  }
+
+  .share-btn {
+    height: 46px;
+    font-size: 14px;
+    padding: 0 10px;
   }
 }

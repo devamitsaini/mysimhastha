@@ -1,5 +1,6 @@
     import React, { useState } from "react";
     import { Helmet } from "react-helmet-async";
+    import "../styles/AboutPage.css";
   
     function AboutPage() {
 
@@ -485,12 +486,7 @@ if (contactForm.message.length > 2000) {
               <iframe
                 title="Ujjain Map"
                 src="https://www.google.com/maps?q=Ujjain&output=embed"
-                width="100%"
-                height="450"
-                style={{
-                  border: 0,
-                  borderRadius: "16px",
-                }}
+                className="about-map"
                 loading="lazy"
               />
             </div>

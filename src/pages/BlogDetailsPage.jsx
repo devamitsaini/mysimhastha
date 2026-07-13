@@ -32,12 +32,7 @@ function BlogDetailsPage() {
 
   if (loading) {
     return (
-      <div
-        style={{
-          padding: "120px 20px",
-          textAlign: "center",
-        }}
-      >
+      <div className="blog-details-status">
         <h2>Loading...</h2>
       </div>
     );
@@ -45,12 +40,7 @@ function BlogDetailsPage() {
 
   if (!blog) {
     return (
-      <div
-        style={{
-          padding: "120px 20px",
-          textAlign: "center",
-        }}
-      >
+      <div className="blog-details-status">
         <h2>Blog not found</h2>
 
         <button
@@ -64,50 +54,29 @@ function BlogDetailsPage() {
   }
 
   return (
-    <div
-      style={{
-        background: "#fff",
-        padding: "30px",
-        borderRadius: "16px",
-        boxShadow: "0 4px 20px rgba(0,0,0,.08)",
-        maxWidth: "1000px",
-        margin: "120px auto",
-      }}
-    >
+    <div className="blog-details-container">
       {blog.image_url && (
         <img
           src={blog.image_url}
           alt={blog.title}
-          style={{
-            width: "100%",
-            maxHeight: "450px",
-            objectFit: "cover",
-            borderRadius: "12px",
-            marginBottom: "20px",
-          }}
+          className="blog-details-image"
         />
       )}
 
       <h1>{blog.title}</h1>
 
-      <p
-        style={{
-          color: "#777",
-          marginBottom: "20px",
-        }}
-      >
+      <p className="blog-details-date">
         {new Date(blog.created_at).toLocaleDateString()}
       </p>
-          <ShareButtons
-    title={blog.title}
-    image={blog.image_url}
-/>
-      <div
-  className="blog-content"
-  style={{ whiteSpace: "pre-line" }}
->
-  {blog.content}
-</div>
+      
+      <ShareButtons
+        title={blog.title}
+        image={blog.image_url}
+      />
+      
+      <div className="blog-content">
+        {blog.content}
+      </div>
     </div>
   );
 }

@@ -1,425 +1,313 @@
 /* ==========================================
-   MYSIMHASTHA GUIDES PAGE
+   GUIDES PAGE - NEW THEME
+   Sacred Travel Guides for Ujjain & Simhastha
 ========================================== */
 
-.simhastha-guide{
-  padding:40px 0 60px;
+/* ==========================================
+   PAGE CONTAINER
+========================================== */
+
+.guides-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
 }
 
 /* ==========================================
-   HEADER
+   HEADER SECTION
 ========================================== */
 
-.guide-header{
-  text-align:center;
-  margin-bottom:40px;
+.guides-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 0 20px;
 }
 
-.guide-header h1{
-  margin-bottom:12px;
-  font-size:2.5rem;
-  color:var(--deep);
-  font-family:var(--deva);
+.guides-header .sec-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 16px;
+  display: block;
 }
 
-.guide-header p{
-  max-width:700px;
-  margin:auto;
-  color:var(--muted);
-  line-height:1.7;
+.guides-title {
+  font-family: 'Noto Sans Devanagari', 'Mukta', Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.guides-title-main {
+  display: block;
+  color: var(--text);
+}
+
+.guides-title-sub {
+  display: block;
+  color: #2563EB;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.guides-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* ==========================================
-   GRID
+   GRID LAYOUT
 ========================================== */
 
-.guides-grid{
-  display:flex;
-  flex-direction:column;
-  gap:28px;
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
 }
 
 /* ==========================================
-   CARD
+   GUIDE CARD
 ========================================== */
 
-.guide-card{
-  display:flex;
-  align-items:center;
-  gap:30px;
-
-  background:#fff;
-  border:1px solid rgba(220,120,20,.18);
-  border-radius:22px;
-
-  overflow:hidden;
-
-  box-shadow:0 10px 25px rgba(0,0,0,.06);
-
-  transition:.3s ease;
-
-  cursor:pointer;
+.guide-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(28, 9, 0, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
-.guide-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 16px 35px rgba(0,0,0,.10);
+.guide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(28, 9, 0, 0.12);
+  border-color: var(--saffron);
 }
 
 /* ==========================================
-   IMAGE
+   IMAGE WRAP
 ========================================== */
 
-.guide-card-image-wrapper{
-  width:100%;
-  min-width:380px;
-  height:220px;
+.guide-image-wrap {
+  position: relative;
+  background: var(--cream2);
+  overflow: hidden;
+  aspect-ratio: 16/9;
 }
 
-.guide-card-image{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center;
-  background:#fff;
-  border-radius:12px;
-  transition:.3s ease;
+.guide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+  background: var(--white);
 }
 
-.guide-card:hover .guide-card-image{
-  transform:scale(1.03);
+.guide-card:hover .guide-image {
+  transform: scale(1.05);
 }
 
 /* ==========================================
-   CONTENT
+   CARD BODY
 ========================================== */
 
-.guide-card-content{
-  flex:1;
-  padding:24px 30px 24px 0;
+.guide-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.guide-card-content h2{
-  margin:0 0 14px;
-  color:var(--deep);
-  font-size:2rem;
-  line-height:1.25;
+.guide-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+  line-height: 1.35;
 }
 
-.guide-card-content p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.7;
-  font-size:1rem;
+.guide-excerpt {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 20px;
+  flex: 1;
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ==========================================
-   BUTTONS
+   ACTION BUTTONS
 ========================================== */
 
-.guide-language-switch{
-  display:flex;
-  gap:12px;
-  margin-top:24px;
+.guide-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
 }
 
-.lang-btn{
-  flex:1;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  height:46px;
-
-  border:2px solid var(--saffron);
-  border-radius:12px;
-
-  background:#fff;
-
-  color:var(--saffron);
-  text-decoration:none;
-
-  font-weight:700;
-
-  transition:.25s ease;
-
-  cursor:pointer;
-
-  z-index:2;
-  position:relative;
+.guide-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
 }
 
-.lang-btn:hover{
-  background:var(--saffron);
-  color:#fff;
+.guide-btn-primary {
+  background: #2563EB;
+  color: #fff;
+  border-color: #2563EB;
+}
+
+.guide-btn-primary:hover {
+  background: #1D4ED8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+.guide-btn-outline {
+  background: var(--white);
+  color: #2563EB;
+  border-color: #2563EB;
+}
+
+.guide-btn-outline:hover {
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563EB;
 }
 
 /* ==========================================
-   TABLET
+   TABLET STYLES
 ========================================== */
 
-@media (max-width:992px){
-
-  .guide-card{
-    gap:20px;
+@media (max-width: 992px) {
+  .guides-page {
+    padding: 40px 16px 80px;
   }
 
-  .guide-card-image-wrapper{
-    min-width:300px;
-    height:190px;
+  .guides-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .guide-card-content{
-    padding:20px 20px 20px 0;
+  .guide-body {
+    padding: 20px;
   }
 
-  .guide-card-content h2{
-    font-size:1.5rem;
+  .guide-title {
+    font-size: 18px;
   }
-
 }
 
 /* ==========================================
-    LANGUAGE SWITCHER
+   MOBILE STYLES
 ========================================== */
 
-.language-switcher{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin:24px 0;
-  padding:0 16px;
-}
-
-.language-switcher a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 24px;
-  border:2px solid var(--saffron);
-  border-radius:10px;
-  background:#fff;
-  color:var(--saffron);
-  text-decoration:none;
-  font-weight:600;
-  font-size:0.95rem;
-  transition:all 0.25s ease;
-  min-width:120px;
-}
-
-.language-switcher a:hover{
-  background:var(--saffron);
-  color:#fff;
-  transform:translateY(-2px);
-  box-shadow:0 4px 12px rgba(220,120,20,0.25);
-}
-
-.language-switcher a.active{
-  background:var(--saffron);
-  color:#fff;
-}
-
-/* ==========================================
-    SHARE BUTTONS
-========================================== */
-
-.share-title{
-  text-align:center;
-  font-size:1.1rem;
-  font-weight:600;
-  color:var(--deep);
-  margin:32px 0 16px;
-}
-
-.share-buttons{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:32px;
-  padding:0 16px;
-}
-
-.share-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 20px;
-  border:none;
-  border-radius:10px;
-  background:#f0f0f0;
-  color:var(--deep);
-  text-decoration:none;
-  font-weight:500;
-  font-size:0.9rem;
-  transition:all 0.25s ease;
-  cursor:pointer;
-}
-
-.share-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-}
-
-.share-btn svg{
-  flex-shrink:0;
-}
-
-/* WhatsApp - Green */
-.share-btn.whatsapp{
-  background:#25D366;
-  color:#fff;
-}
-
-.share-btn.whatsapp:hover{
-  background:#20ba5a;
-  box-shadow:0 4px 12px rgba(37,211,102,0.4);
-}
-
-/* Facebook - Blue */
-.share-btn.facebook{
-  background:#1877F2;
-  color:#fff;
-}
-
-.share-btn.facebook:hover{
-  background:#166fe5;
-  box-shadow:0 4px 12px rgba(24,119,242,0.4);
-}
-
-/* Twitter/X - Black */
-.share-btn.twitter{
-  background:#000000;
-  color:#fff;
-}
-
-.share-btn.twitter:hover{
-  background:#333333;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4);
-}
-
-/* Pinterest - Red */
-.share-btn.pinterest{
-  background:#E60023;
-  color:#fff;
-}
-
-.share-btn.pinterest:hover{
-  background:#cc0020;
-  box-shadow:0 4px 12px rgba(230,0,35,0.4);
-}
-
-/* Copy Button - Gray */
-.share-btn.copy-btn{
-  background:#6B7280;
-  color:#fff;
-}
-
-.share-btn.copy-btn:hover{
-  background:#4B5563;
-  box-shadow:0 4px 12px rgba(107,114,128,0.4);
-}
-
-/* ==========================================
-    MOBILE
-========================================== */
-
-@media (max-width:768px){
-
-  .guide-card{
-    display:block;
-    padding:12px;
+@media (max-width: 768px) {
+  .guides-page {
+    padding: 32px 12px 80px;
   }
 
-  .guide-card-image-wrapper{
-    width:100%;
-    min-width:100%;
-    height:170px;
-    margin-bottom:12px;
+  .guides-header {
+    margin-bottom: 32px;
   }
 
-  .guide-card-image{
-    width:100%;
-    height:100%;
-    object-fit:contain;
+  .guides-title {
+    font-size: 28px;
   }
 
-  .guide-card-content{
-    padding:0;
+  .guides-subtitle {
+    font-size: 15px;
   }
 
-  .guide-card-content h2{
-    font-size:1.25rem;
-    margin-bottom:8px;
+  .guides-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
-  .guide-card-content p{
-    margin-bottom:16px;
-    line-height:1.5;
+  .guide-card {
+    border-radius: 18px;
   }
 
-  .guide-language-switch{
-    gap:10px;
-    margin-top:16px;
+  .guide-body {
+    padding: 18px;
   }
 
-  .language-switcher{
-    gap:10px;
-    margin:20px 0;
+  .guide-title {
+    font-size: 17px;
   }
 
-  .language-switcher a{
-    padding:8px 18px;
-    font-size:0.9rem;
-    min-width:100px;
+  .guide-excerpt {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+    margin-bottom: 16px;
   }
 
-  .share-buttons{
-    gap:10px;
+  .guide-actions {
+    gap: 10px;
   }
 
-  .share-btn{
-    padding:8px 16px;
-    font-size:0.85rem;
+  .guide-btn {
+    padding: 10px 16px;
+    font-size: 13px;
   }
-
 }
 
 /* ==========================================
    SMALL MOBILE
 ========================================== */
 
-@media (max-width:480px){
-
-  .guide-header h1{
-    font-size:1.8rem;
+@media (max-width: 480px) {
+  .guides-page {
+    padding: 24px 10px 60px;
   }
 
-  .guide-card{
-    border-radius:18px;
+  .guides-header {
+    margin-bottom: 24px;
   }
 
-  .guide-card-content{
-    padding:8px;
+  .guides-title {
+    font-size: 24px;
   }
 
-  .guide-card-content h2{
-    font-size:1.2rem;
+  .guide-card {
+    border-radius: 16px;
   }
 
-  .guide-card-content p{
-    font-size:.9rem;
+  .guide-body {
+    padding: 16px;
   }
 
-  .guide-language-switch{
-    gap:10px;
+  .guide-title {
+    font-size: 16px;
   }
 
-  .lang-btn{
-    height:42px;
-    font-size:.95rem;
+  .guide-excerpt {
+    font-size: 12px;
   }
-
 }

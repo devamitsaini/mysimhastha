@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
 import Select, { components } from "react-select";
 
 import {
@@ -91,7 +90,6 @@ export default function SearchBar() {
     { value: "5000+", label: "₹5000+" },
   ];
 
-  // Debounced search effect
   useEffect(() => {
     const timer = setTimeout(async () => {
       if (search.trim().length >= 1) {
@@ -107,7 +105,6 @@ export default function SearchBar() {
     return () => clearTimeout(timer);
   }, [search]);
 
-  // Click outside handler
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -121,11 +118,14 @@ export default function SearchBar() {
     }
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   function handleSearch() {
     setShowSuggestions(false);
+
     const params = new URLSearchParams();
 
     if (search.trim()) {
@@ -154,17 +154,18 @@ export default function SearchBar() {
   }
 
   return (
-    <div className="stay-search-card">
+    <div className="ms-search-card">
 
-      <h3 className="search-heading">
+      <h3 className="ms-search-heading">
         Find Your Stay
       </h3>
 
-      {/* Search */}
+      <div
+        className="ms-search-box ms-search-full"
+        ref={searchInputRef}
+      >
 
-      <div className="stay-search-box full-width" ref={searchInputRef}>
-
-        <div className="stay-input">
+        <div className="ms-search-input">
 
           <FiSearch />
 
@@ -173,14 +174,17 @@ export default function SearchBar() {
             placeholder="Search property, landmark or locality"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            onFocus={() => search.trim().length > 0 && setShowSuggestions(true)}
+            onFocus={() =>
+              search.trim().length > 0 &&
+              setShowSuggestions(true)
+            }
           />
 
           {search && (
-            <button 
-              className="search-clear-btn" 
-              onClick={() => setSearch("")}
+            <button
+              className="ms-search-clear"
               type="button"
+              onClick={() => setSearch("")}
             >
               <FiX />
             </button>
@@ -188,43 +192,58 @@ export default function SearchBar() {
 
         </div>
 
-        {/* Suggestions Dropdown */}
-
         {showSuggestions && suggestions.length > 0 && (
-          <div className="search-suggestions" ref={suggestionsRef}>
+
+          <div
+            className="ms-search-suggestions"
+            ref={suggestionsRef}
+          >
+
             {suggestions.map((suggestion) => (
+
               <div
                 key={suggestion.id}
-                className="suggestion-item"
-                onClick={() => handleSuggestionClick(suggestion)}
+                className="ms-search-item"
+                onClick={() =>
+                  handleSuggestionClick(suggestion)
+                }
               >
-                <FiSearch className="suggestion-icon" />
-                <div className="suggestion-content">
-                  <span className="suggestion-name">{suggestion.name}</span>
+
+                <FiSearch className="ms-search-item-icon" />
+
+                <div className="ms-search-item-content">
+
+                  <span className="ms-search-item-title">
+                    {suggestion.name}
+                  </span>
+
                   {suggestion.locality && (
-                    <span className="suggestion-locality">{suggestion.locality}</span>
+                    <span className="ms-search-item-subtitle">
+                      {suggestion.locality}
+                    </span>
                   )}
+
                 </div>
+
               </div>
+
             ))}
+
           </div>
+
         )}
 
       </div>
 
-      {/* Filters */}
+      <div className="ms-search-filters">
 
-      <div className="search-filters">
-
-        {/* Property */}
-
-        <div className="search-select">
+        <div className="ms-search-select">
 
           <label>Property</label>
 
-          <div className="react-select-wrap">
+          <div className="ms-search-select-wrap">
 
-            <FiHome className="select-icon" />
+            <FiHome className="ms-search-select-icon" />
 
             <Select
               classNamePrefix="stay"
@@ -242,16 +261,13 @@ export default function SearchBar() {
           </div>
 
         </div>
-
-        {/* Location */}
-
-        <div className="search-select">
+                <div className="ms-search-select">
 
           <label>Location</label>
 
-          <div className="react-select-wrap">
+          <div className="ms-search-select-wrap">
 
-            <FiMapPin className="select-icon" />
+            <FiMapPin className="ms-search-select-icon" />
 
             <Select
               classNamePrefix="stay"
@@ -270,15 +286,13 @@ export default function SearchBar() {
 
         </div>
 
-        {/* Budget */}
-
-        <div className="search-select">
+        <div className="ms-search-select">
 
           <label>Budget</label>
 
-          <div className="react-select-wrap">
+          <div className="ms-search-select-wrap">
 
-            <MdCurrencyRupee className="select-icon" />
+            <MdCurrencyRupee className="ms-search-select-icon" />
 
             <Select
               classNamePrefix="stay"
@@ -298,7 +312,7 @@ export default function SearchBar() {
         </div>
 
         <button
-          className="search-btn"
+          className="ms-search-btn"
           onClick={handleSearch}
         >
           Explore

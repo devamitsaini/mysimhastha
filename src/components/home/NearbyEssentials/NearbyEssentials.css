@@ -1,0 +1,229 @@
+/* ======================================================
+   NEARBY ESSENTIALS - ULTRA COMPACT
+====================================================== */
+
+.nearby-essentials{
+  padding:30px 0;
+  background:#fff;
+}
+
+.nearby-essentials .container{
+  width:min(1280px,92%);
+  margin:auto;
+}
+
+.essentials-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:20px;
+}
+
+.essential-card{
+  position:relative;
+  background:#fff;
+  border:1px solid #E2E8F0;
+  border-radius:16px;
+  padding:18px 14px;
+  text-decoration:none;
+  transition:.3s ease;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(15,23,42,.03);
+}
+
+.essential-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(15,23,42,.05);
+  border-color:#2563EB;
+}
+
+.essential-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:2px;
+  background:#2563EB;
+  transform:scaleX(0);
+  transition:.3s;
+}
+
+.essential-card:hover::before{
+  transform:scaleX(1);
+}
+
+.essential-icon{
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:1.2rem;
+  margin-bottom:12px;
+  transition:.3s;
+}
+
+.essential-card:hover .essential-icon{
+  transform:scale(1.05) rotate(-3deg);
+}
+
+.essential-card h3{
+  margin:0 0 8px;
+  color:#0F172A;
+  font-size:.95rem;
+  font-weight:700;
+}
+
+.essential-card p{
+  color:#64748B;
+  line-height:1.5;
+  font-size:.78rem;
+  margin-bottom:12px;
+}
+
+.essential-count{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:50px;
+  background:#EEF4FF;
+  color:#2563EB;
+  font-size:.75rem;
+  font-weight:700;
+}
+
+.essential-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:14px;
+  color:#2563EB;
+  font-weight:700;
+  font-size:.82rem;
+}
+
+.essential-link svg{
+  transition:.3s;
+}
+
+.essential-card:hover .essential-link svg{
+  transform:translateX(4px);
+}
+
+.essential-footer{
+  text-align:center;
+  margin-top:25px;
+}
+
+.essential-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 20px;
+  background:#2563EB;
+  color:#fff;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:700;
+  font-size:.88rem;
+  transition:.3s;
+}
+
+.essential-btn:hover{
+  background:#1D4ED8;
+  transform:translateY(-2px);
+}
+
+.essential-btn svg{
+  transition:.3s;
+}
+
+.essential-btn:hover svg{
+  transform:translateX(4px);
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:1100px){
+
+.essentials-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.nearby-essentials{
+  padding:25px 0;
+}
+
+.nearby-essentials .container{
+  width:94%;
+}
+
+.essentials-grid{
+  display:flex;
+  overflow-x:auto;
+  gap:10px;
+  scroll-snap-type:x mandatory;
+  padding-bottom:6px;
+}
+
+.essentials-grid::-webkit-scrollbar{
+  display:none;
+}
+
+.essential-card{
+  min-width:200px;
+  scroll-snap-align:start;
+  padding:16px 12px;
+}
+
+.essential-icon{
+  width:46px;
+  height:46px;
+  font-size:1.1rem;
+}
+
+.essential-card h3{
+  font-size:.9rem;
+}
+
+.essential-card p{
+  font-size:.72rem;
+}
+
+.essential-btn{
+  width:100%;
+  justify-content:center;
+}
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.essential-card{
+  animation:fadeUp .4s ease;
+}

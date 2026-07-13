@@ -4,9 +4,10 @@
     import i18n from "../../i18n";
     import { useTranslation } from "react-i18next";
     import { Link, useNavigate, useLocation } from "react-router-dom";
+    import { FaHotel } from "react-icons/fa";
 
     const SERVICES = [
-        { icon: "🏨", label: "Hotels & Stay",      page: "/stays" },
+        { icon: <FaHotel size={18} />, label: "Hotels & Stay",      page: "/stays" },
         /*{ icon: "🍱", label: "Food & Prasad",       page: "/hotels" },
         { icon: "🚕", label: "Cab & Transport",     page: "/hotels" },
         { icon: "🎪", label: "Darshan Booking",     page: "/live-darshan" },

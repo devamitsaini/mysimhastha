@@ -1,0 +1,623 @@
+/* =====================================================
+   HOME PAGE - ULTRA COMPACT REDESIGN
+===================================================== */
+
+.home-page{
+    width:100%;
+    overflow:hidden;
+    background:#FFFFFF;
+}
+
+/* =====================================================
+   COMPACT SECTION SPACING
+==================================================== */
+
+.home-page > section{
+    position:relative;
+}
+
+/* Reduced spacing between sections - more compact */
+.home-page > section:not(:first-child){
+    margin-top:-1px;
+}
+
+/* =====================================================
+   SEARCH BAR SECTION
+==================================================== */
+
+.home-search{
+    position:relative;
+    margin-top:-35px;
+    z-index:20;
+}
+
+.home-search .container{
+    width:min(1280px,92%);
+    margin:auto;
+}
+
+.home-search .searchbar{
+    background:#FFFFFF;
+    border-radius:20px;
+    padding:18px;
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.1);
+}
+
+/* =====================================================
+   SECTION DIVIDER - Subtle
+==================================================== */
+
+.home-page section{
+    border-bottom:1px solid #F1F5F9;
+}
+
+.home-page section:last-child{
+    border-bottom:none;
+}
+
+/* =====================================================
+   ALTERNATE SECTION BACKGROUND
+==================================================== */
+
+.home-page section:nth-child(even){
+    background:#FFFFFF;
+}
+
+.home-page section:nth-child(odd){
+    background:#FAFAFC;
+}
+
+/* Hero keeps its own background */
+.home-page section:first-child{
+    background:transparent;
+}
+
+/* =====================================================
+   CONTAINER
+==================================================== */
+
+.home-page .container{
+    width:min(1280px,92%);
+    margin:auto;
+}
+
+/* =====================================================
+   SMOOTH SCROLL
+==================================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* =====================================================
+   IMAGE OPTIMIZATION
+==================================================== */
+
+.home-page img{
+    display:block;
+    max-width:100%;
+}
+
+/* =====================================================
+   BUTTON FIX
+==================================================== */
+
+.home-page button{
+    font-family:inherit;
+}
+
+/* =====================================================
+   ULTRA COMPACT PADDING FOR ALL SECTIONS
+==================================================== */
+
+.home-page section{
+    padding:35px 0;
+}
+
+/* Hero has its own full background - no padding needed */
+.home-page section:first-child{
+    padding:0;
+}
+
+/* Countdown timer - compact */
+.countdown-section{
+    padding:30px 0 35px;
+}
+
+/* Quick access - compact */
+.quick-access-section{
+    padding:30px 0 35px;
+}
+
+/* Live updates - compact */
+.live-updates-section{
+    padding:30px 0 35px;
+}
+
+/* AI Trip Planner - compact */
+.trip-planner{
+    padding:40px 0;
+}
+
+/* Categories - compact */
+.explore-categories{
+    padding:35px 0;
+}
+
+/* Pilgrim tools - compact */
+.pilgrim-tools{
+    padding:35px 0;
+}
+
+/* Sacred places - compact */
+.sacred-places{
+    padding:35px 0;
+}
+
+/* Featured stays - compact */
+.featured-stays{
+    padding:35px 0;
+}
+
+/* Popular guides - compact */
+.popular-guides{
+    padding:35px 0;
+}
+
+/* Latest news - compact */
+.latest-news{
+    padding:35px 0;
+}
+
+/* Testimonials - compact */
+.testimonials{
+    padding:35px 0;
+}
+
+/* FAQ - compact */
+.faq-preview{
+    padding:35px 0;
+}
+
+/* Newsletter - compact */
+.newsletter{
+    padding:40px 0;
+}
+
+/* Explore Ujjain - compact */
+.explore-ujjain{
+    padding:35px 0;
+}
+
+/* Nearby essentials - compact */
+.nearby-essentials{
+    padding:35px 0;
+}
+
+/* =====================================================
+   MERGED QUICK INFO SECTION
+==================================================== */
+
+.quick-info-section{
+    padding:30px 0 35px;
+}
+
+.quick-info-container{
+    width:min(1280px,92%);
+    margin:auto;
+}
+
+.quick-info-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.quick-info-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 14px;
+    background:#fff;
+    border-radius:12px;
+    border:1px solid #E2E8F0;
+    text-decoration:none;
+    transition:.3s ease;
+    box-shadow:0 2px 6px rgba(0,0,0,.03);
+}
+
+.quick-info-item:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(0,0,0,.05);
+    border-color:#CBD5E1;
+}
+
+.quick-info-icon{
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1rem;
+    flex-shrink:0;
+}
+
+.quick-info-content{
+    flex:1;
+    min-width:0;
+}
+
+.quick-info-content .label{
+    font-size:.75rem;
+    color:#64748B;
+    font-weight:600;
+    margin-bottom:2px;
+}
+
+.quick-info-content .value{
+    font-size:.9rem;
+    font-weight:700;
+    color:#0F172A;
+}
+
+/* =====================================================
+   MERGED QUICK LINKS SECTION
+==================================================== */
+
+.quick-links-section{
+    padding:35px 0;
+}
+
+.quick-links-container{
+    width:min(1280px,92%);
+    margin:auto;
+}
+
+.quick-links-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.quick-link-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:16px 12px;
+    background:#fff;
+    border-radius:16px;
+    border:1px solid #E2E8F0;
+    text-decoration:none;
+    transition:.3s ease;
+    box-shadow:0 2px 6px rgba(0,0,0,.03);
+}
+
+.quick-link-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 16px rgba(0,0,0,.06);
+    border-color:#2563EB;
+}
+
+.quick-link-icon{
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+}
+
+.quick-link-label{
+    font-size:.8rem;
+    font-weight:600;
+    color:#334155;
+    text-align:center;
+    line-height:1.3;
+}
+
+/* =====================================================
+   MERGED CONTENT SECTION
+==================================================== */
+
+.merged-content-section{
+    padding:35px 0;
+}
+
+.merged-content-container{
+    width:min(1280px,92%);
+    margin:auto;
+}
+
+.merged-content-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.merged-card{
+    background:#fff;
+    border:1px solid #E2E8F0;
+    border-radius:16px;
+    overflow:hidden;
+    transition:.3s ease;
+    box-shadow:0 4px 12px rgba(15,23,42,.03);
+}
+
+.merged-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(15,23,42,.05);
+}
+
+.merged-card-image{
+    position:relative;
+    height:140px;
+    overflow:hidden;
+}
+
+.merged-card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.merged-card:hover .merged-card-image img{
+    transform:scale(1.05);
+}
+
+.merged-card-badge{
+    position:absolute;
+    left:10px;
+    bottom:10px;
+    background:#2563EB;
+    color:#fff;
+    padding:5px 10px;
+    border-radius:50px;
+    font-size:.7rem;
+    font-weight:700;
+}
+
+.merged-card-content{
+    padding:16px;
+}
+
+.merged-card-content h3{
+    margin:0 0 8px;
+    font-size:1rem;
+    font-weight:700;
+    color:#0F172A;
+}
+
+.merged-card-content p{
+    margin:0 0 12px;
+    color:#64748B;
+    line-height:1.5;
+    font-size:.82rem;
+}
+
+.merged-card-link{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:#2563EB;
+    font-weight:600;
+    font-size:.82rem;
+}
+
+.merged-card-link svg{
+    transition:.3s;
+}
+
+.merged-card:hover .merged-card-link svg{
+    transform:translateX(4px);
+}
+
+/* =====================================================
+   COMPACT TRIP PLANNER
+==================================================== */
+
+.planner-wrapper{
+    display:grid;
+    grid-template-columns:340px 1fr;
+    gap:24px;
+    align-items:start;
+}
+
+.planner-form{
+    background:#fff;
+    border-radius:18px;
+    padding:20px;
+    border:1px solid #E2E8F0;
+    box-shadow:0 6px 18px rgba(15,23,42,.04);
+}
+
+.planner-field{
+    margin-bottom:14px;
+}
+
+.planner-field label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:.82rem;
+    font-weight:600;
+    color:#0F172A;
+    margin-bottom:6px;
+}
+
+.planner-field input,
+.planner-field select{
+    width:100%;
+    height:42px;
+    border:1px solid #CBD5E1;
+    border-radius:10px;
+    padding:0 12px;
+    outline:none;
+    font-size:.88rem;
+    transition:.3s;
+    background:#fff;
+}
+
+.planner-field input:focus,
+.planner-field select:focus{
+    border-color:#2563EB;
+    box-shadow:0 0 0 2px rgba(37,99,235,.1);
+}
+
+.transport-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+}
+
+.transport-grid button{
+    height:44px;
+    border:none;
+    border-radius:10px;
+    background:#F8FAFC;
+    border:1px solid #E2E8F0;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    font-size:.82rem;
+    font-weight:600;
+    transition:.3s;
+}
+
+.transport-grid button:hover{
+    background:#EEF4FF;
+    border-color:#2563EB;
+}
+
+.transport-grid button.active{
+    background:#2563EB;
+    color:#fff;
+}
+
+.generate-btn{
+    width:100%;
+    height:44px;
+    border:none;
+    border-radius:12px;
+    background:#2563EB;
+    color:#fff;
+    font-size:.88rem;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.3s;
+}
+
+.generate-btn:hover{
+    background:#1D4ED8;
+    transform:translateY(-2px);
+}
+
+.planner-result{
+    background:#fff;
+    border-radius:18px;
+    border:1px solid #E2E8F0;
+    padding:22px;
+    min-height:500px;
+    box-shadow:0 6px 18px rgba(15,23,42,.04);
+}
+
+/* =====================================================
+   MOBILE
+==================================================== */
+
+@media(max-width:992px){
+
+.home-search{
+    margin-top:-25px;
+}
+
+.home-search .container{
+    width:94%;
+}
+
+}
+
+@media(max-width:768px){
+
+.home-search{
+    margin-top:-15px;
+}
+
+.home-search .searchbar{
+    padding:14px;
+    border-radius:18px;
+}
+
+.home-page .container{
+    width:94%;
+}
+
+/* Even more compact on mobile */
+.home-page section{
+    padding:28px 0;
+}
+
+/* Hero has full background on mobile too */
+.home-page section:first-child{
+    padding:0;
+}
+
+/* Quick info grid - mobile */
+.quick-info-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+}
+
+/* Quick links grid - mobile */
+.quick-links-grid{
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+}
+
+.quick-link-card{
+    padding:12px 8px;
+}
+
+.quick-link-icon{
+    width:36px;
+    height:36px;
+    font-size:1rem;
+}
+
+.quick-link-label{
+    font-size:.72rem;
+}
+
+/* Merged content grid - mobile */
+.merged-content-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+}
+
+.merged-card-image{
+    height:160px;
+}
+
+}
+
+/* =====================================================
+   LARGE DESKTOP
+==================================================== */
+
+@media(min-width:1600px){
+
+.home-page .container{
+    max-width:1400px;
+}
+
+}

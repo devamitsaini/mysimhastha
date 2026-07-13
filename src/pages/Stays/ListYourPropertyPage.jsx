@@ -62,6 +62,12 @@ export default function ListYourPropertyPage() {
     "CCTV",
     "Wheelchair Access",
     "Room Service",
+    "Balcony",
+    "Cooler",
+    "Geyser",
+    "Kitchen",
+    "RO",
+    "Refrigerator"
   ];
 
   const [formData, setFormData] = useState({

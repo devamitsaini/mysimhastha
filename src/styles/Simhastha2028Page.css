@@ -1,0 +1,1945 @@
+/* ======================================================
+   SIMHASTHA 2028 - PREMIUM REDESIGN
+   ====================================================== */
+
+.sim2028-page {
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.sim2028-page .container {
+  width: min(1280px, 92%);
+  margin: 0 auto;
+}
+
+/* SECTION HEADER */
+.sim2028-section-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.sim2028-section-header.left {
+  text-align: left;
+}
+
+.sim2028-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
+  color: #F97316;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(249, 115, 22, 0.15);
+}
+
+.sim2028-section-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.15;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+}
+
+.sim2028-section-header p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: #64748B;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.sim2028-section-header.left p {
+  margin-left: 0;
+}
+
+/* HERO SECTION */
+.sim2028-hero-wrap {
+  --sim2028-hc-max-h: 75vh;
+  max-height: var(--sim2028-hc-max-h);
+  overflow: hidden;
+  padding: 14px 16px 0;
+  background: #FFFBF5;
+}
+
+.sim2028-hero {
+  width: min(1280px, 92%);
+  margin: 0 auto;
+}
+
+.sim2028-hero-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #FFFBF5;
+  border: 1px solid #F1E4D0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.sim2028-hero-image {
+  position: relative;
+  height: 130px;
+  overflow: hidden;
+}
+
+.sim2028-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.sim2028-hero-image-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(255, 251, 245, 0.55) 65%, rgba(255, 251, 245, 1) 100%);
+}
+
+.sim2028-hero-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  color: #EA580C;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.1);
+}
+
+.sim2028-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px 18px;
+  margin-top: -18px;
+}
+
+.sim2028-hero-deva {
+  font-family: serif;
+  font-size: clamp(13px, 1.6vw, 16px);
+  color: #C2740D;
+  margin-bottom: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sim2028-hero-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  line-height: 1.18;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.4px;
+  max-width: 640px;
+}
+
+.sim2028-hero-title .highlight {
+  background: linear-gradient(135deg, #FB923C, #F97316, #EA580C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sim2028-hero-subtitle {
+  margin-top: 6px;
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  line-height: 1.5;
+  color: #64748B;
+  max-width: 520px;
+}
+
+.sim2028-hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.sim2028-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.sim2028-hero-btn-primary {
+  background: linear-gradient(135deg, #F97316, #EA580C);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(249, 115, 22, 0.3);
+}
+
+.sim2028-hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(249, 115, 22, 0.4);
+}
+
+.sim2028-hero-btn-secondary {
+  background: #1E3A8A;
+  color: #fff;
+}
+
+.sim2028-hero-btn-secondary:hover {
+  background: #1E40AF;
+  transform: translateY(-2px);
+}
+
+/* COUNTDOWN - Saffron Theme */
+.sim2028-page .countdown-hub {
+  position: relative;
+  bottom: unset;
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.sim2028-page .countdown-hub .container {
+  width: min(1280px, 92%);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.sim2028-page .countdown-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  gap: 16px;
+}
+
+.sim2028-page .countdown-card-head {
+  flex-wrap: wrap;
+  gap: 12px;
+  flex: 1 1 auto;
+}
+
+.sim2028-page .countdown-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(249, 115, 22, 0.1);
+}
+
+.sim2028-page .countdown-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.sim2028-page .countdown-title-text h3 {
+  font-size: 0.95rem;
+  margin: 0 0 2px;
+  color: #0F172A;
+}
+
+.sim2028-page .countdown-title-text p {
+  font-size: 0.72rem;
+  margin: 0;
+  color: #64748B;
+}
+
+.sim2028-page .countdown-date {
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  gap: 5px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+}
+
+.sim2028-page .countdown-date svg {
+  color: #F97316;
+}
+
+.sim2028-page .countdown-stats {
+  gap: 8px;
+}
+
+.sim2028-page .stat-box {
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  border-radius: 10px;
+  padding: 8px 12px;
+  min-width: 60px;
+  box-shadow: none;
+}
+
+.sim2028-page .stat-box h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #F97316;
+}
+
+.sim2028-page .stat-box span {
+  font-size: 0.6rem;
+  margin-top: 2px;
+  color: #F97316;
+}
+
+.sim2028-page .colon {
+  font-size: 1rem;
+  color: #CBD5E1;
+}
+
+.sim2028-page .countdown-link {
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  border-radius: 10px;
+  margin-left: 0;
+  background: #F97316;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+}
+
+.sim2028-page .countdown-link:hover {
+  background: #EA580C;
+}
+
+/* GUIDES SECTION - Compact */
+.sim2028-guides {
+  padding: 40px 0;
+  background: #fff;
+}
+
+.sim2028-guides-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sim2028-guide-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  position: relative;
+}
+
+.sim2028-guide-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border-color: #2563EB;
+}
+
+.sim2028-guide-popular {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: #FEF3C7;
+  color: #D97706;
+  font-size: 0.65rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.sim2028-guide-image {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sim2028-guide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sim2028-guide-card:hover .sim2028-guide-image img {
+  transform: scale(1.05);
+}
+
+.sim2028-guide-content {
+  padding: 12px;
+}
+
+.sim2028-guide-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #EEF4FF;
+  color: #2563EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.sim2028-guide-card h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 4px;
+}
+
+.sim2028-guide-card p {
+  font-size: 0.72rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0 0 6px;
+}
+
+.sim2028-guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #2563EB;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.sim2028-guide-link svg {
+  transition: transform 0.3s;
+}
+
+.sim2028-guide-card:hover .sim2028-guide-link svg {
+  transform: translateX(4px);
+}
+
+/* QUICK STATS - 2 Boxes Per Row */
+.sim2028-stats {
+  padding: 40px 0;
+  background: #fff;
+}
+
+.sim2028-overview-summary {
+  max-width: 900px;
+  margin: 0 auto 24px;
+  padding: 20px;
+  background: #F8FAFC;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+}
+
+.sim2028-overview-summary p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0 0 12px;
+}
+
+.sim2028-overview-summary p:last-child {
+  margin-bottom: 0;
+}
+
+.sim2028-overview-summary strong {
+  color: #2563EB;
+  font-weight: 700;
+}
+
+.sim2028-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.sim2028-stat-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.sim2028-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.sim2028-stat-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #F97316;
+  margin: 0 0 4px;
+  font-family: inherit;
+}
+
+.sim2028-stat-card span {
+  font-size: 0.75rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+/* QUICK ACTIONS */
+.sim2028-actions {
+  padding: 40px 0;
+  background: #F8FAFC;
+}
+
+.sim2028-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.sim2028-action-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.sim2028-action-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #F97316, #FB923C);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.sim2028-action-card:hover::before {
+  transform: scaleX(1);
+}
+
+.sim2028-action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.sim2028-action-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
+  color: #F97316;
+}
+
+.sim2028-action-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 6px;
+  font-family: inherit;
+}
+
+.sim2028-action-card span {
+  font-size: 0.78rem;
+  color: #F97316;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* SNAN CALENDAR - Desktop: 4 per row, Mobile: 2 per row */
+.sim2028-snan {
+  padding: 60px 0;
+  background: #F8FAFC;
+}
+
+.sim2028-snan-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.sim2028-snan-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px 14px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.sim2028-snan-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.sim2028-snan-card.shahi {
+  border-color: rgba(249, 115, 22, 0.3);
+  background: linear-gradient(145deg, rgba(249, 115, 22, 0.04), #fff 70%);
+}
+
+.sim2028-snan-badge {
+  position: absolute;
+  top: -1px;
+  left: 14px;
+  background: linear-gradient(135deg, #F97316, #EA580C);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 0 0 6px 6px;
+}
+
+.sim2028-snan-date {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+
+.sim2028-snan-day {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #F97316;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.sim2028-snan-card:not(.shahi) .sim2028-snan-day {
+  color: #0F172A;
+}
+
+.sim2028-snan-month-wrap {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+  gap: 1px;
+}
+
+.sim2028-snan-month {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #F97316;
+}
+
+.sim2028-snan-card:not(.shahi) .sim2028-snan-month {
+  color: #64748B;
+}
+
+.sim2028-snan-weekday {
+  font-size: 0.72rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.sim2028-snan-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.sim2028-snan-hi {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  margin-bottom: 8px;
+}
+
+.sim2028-snan-tithi {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #64748B;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 3px 10px;
+}
+
+.sim2028-snan-card.shahi .sim2028-snan-tithi {
+  color: #F97316;
+  background: rgba(249, 115, 22, 0.07);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.sim2028-snan-legend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.sim2028-snan-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+.sim2028-snan-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sim2028-snan-legend-dot.shahi {
+  background: #F97316;
+}
+
+.sim2028-snan-legend-dot.normal {
+  background: #F1F5F9;
+  border: 1.5px solid #CBD5E1;
+}
+
+/* LIVE DARSHAN */
+.sim2028-darshan {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.sim2028-darshan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.sim2028-darshan-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.sim2028-darshan-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.sim2028-darshan-thumb {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sim2028-darshan-icon {
+  font-size: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.sim2028-darshan-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,0,0,0.55);
+  border-radius: 6px;
+  padding: 2px 8px;
+  z-index: 2;
+}
+
+.sim2028-darshan-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: sim2028-blink 1.5s infinite;
+}
+
+.sim2028-darshan-badge-txt {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.sim2028-darshan-body {
+  padding: 12px;
+}
+
+.sim2028-darshan-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 2px;
+}
+
+.sim2028-darshan-name-hi {
+  font-size: 0.78rem;
+  color: #94A3B8;
+  margin-bottom: 8px;
+}
+
+.sim2028-darshan-aarti-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #F97316;
+  margin-bottom: 6px;
+}
+
+.sim2028-darshan-aarti-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  padding: 2px 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.sim2028-darshan-aarti-row:last-child {
+  border-bottom: none;
+}
+
+.sim2028-darshan-aarti-name {
+  color: #64748B;
+  font-weight: 600;
+}
+
+.sim2028-darshan-aarti-time {
+  color: #0F172A;
+  font-weight: 700;
+}
+
+.sim2028-darshan-footer {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sim2028-darshan-watch {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #F97316;
+  color: #fff;
+}
+
+.sim2028-darshan-watch:hover {
+  background: #EA580C;
+}
+
+.sim2028-darshan-free {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #22C55E;
+}
+
+.sim2028-darshan-premium {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #F97316;
+}
+
+.sim2028-darshan-cta {
+  text-align: center;
+  margin-top: 24px;
+}
+
+@keyframes sim2028-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* TEMPLES / GHATS / AKHADAS - Compact */
+.sim2028-places {
+  padding: 60px 0;
+  background: #F8FAFC;
+}
+
+.sim2028-places-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.sim2028-places-tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #64748B;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.sim2028-places-tab:hover {
+  background: rgba(249, 115, 22, 0.06);
+}
+
+.sim2028-places-tab.active {
+  background: #F97316;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+}
+
+.sim2028-places-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sim2028-place-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 160px;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.sim2028-place-category {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #F97316;
+  margin: 8px 0 2px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
+  border: 1px solid rgba(249, 115, 22, 0.15);
+  border-radius: 10px;
+}
+
+.sim2028-place-category:first-child {
+  margin-top: 0;
+}
+
+.sim2028-place-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.sim2028-place-card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.sim2028-place-card:hover .sim2028-place-card-img {
+  transform: scale(1.05);
+}
+
+.sim2028-place-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.1) 60%, transparent 100%);
+}
+
+.sim2028-place-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 160px;
+}
+
+.sim2028-place-icon {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.sim2028-place-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.sim2028-place-subtitle {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 4px;
+}
+
+.sim2028-place-desc {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+/* HERITAGE */
+.sim2028-heritage {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.sim2028-heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.sim2028-heritage-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 200px;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.sim2028-heritage-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.sim2028-heritage-card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.sim2028-heritage-card:hover .sim2028-heritage-card-img {
+  transform: scale(1.05);
+}
+
+.sim2028-heritage-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%);
+}
+
+.sim2028-heritage-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 200px;
+}
+
+.sim2028-heritage-emoji {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.sim2028-heritage-era {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #FB923C;
+  margin-bottom: 3px;
+}
+
+.sim2028-heritage-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.sim2028-heritage-desc {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+}
+
+/* ZONES & ROUTES - Redesigned */
+.sim2028-zones {
+  padding: 60px 0;
+  background: #F8FAFC;
+}
+
+.sim2028-zones-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.sim2028-zones-map {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.sim2028-zones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sim2028-zone-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.sim2028-zone-card:hover {
+  border-color: rgba(249, 115, 22, 0.2);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.sim2028-zone-num {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: rgba(249, 115, 22, 0.15);
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+  line-height: 1;
+}
+
+.sim2028-zone-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 2px;
+}
+
+.sim2028-zone-areas {
+  font-size: 0.75rem;
+  color: #64748B;
+  line-height: 1.4;
+}
+
+.sim2028-zone-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 16px;
+  margin-top: 3px;
+  background: rgba(249, 115, 22, 0.08);
+  color: #F97316;
+  border: 1px solid rgba(249, 115, 22, 0.15);
+}
+
+/* Routes - Premium Design */
+.sim2028-routes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.sim2028-route-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.sim2028-route-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.sim2028-route-from-to {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.sim2028-route-place {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.sim2028-route-arrow {
+  color: #F97316;
+  font-size: 0.85rem;
+}
+
+.sim2028-route-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  padding: 4px 0;
+}
+
+.sim2028-route-mode-icon {
+  font-size: 1rem;
+  margin-right: 6px;
+}
+
+.sim2028-route-mode-name {
+  color: #64748B;
+  font-weight: 600;
+  flex: 1;
+}
+
+.sim2028-route-mode-time {
+  font-weight: 700;
+  color: #0F172A;
+  margin-right: 8px;
+}
+
+.sim2028-route-mode-price {
+  color: #F97316;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* FEATURED STAYS - Compact */
+.sim2028-hotels {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.sim2028-featured-stays {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sim2028-featured-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.sim2028-featured-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border-color: #2563EB;
+}
+
+.sim2028-featured-img {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+}
+
+.sim2028-featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sim2028-featured-card:hover .sim2028-featured-img img {
+  transform: scale(1.05);
+}
+
+.sim2028-featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.4), transparent 60%);
+}
+
+.sim2028-featured-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.sim2028-featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 8px;
+  border-radius: 16px;
+  background: #FEF3C7;
+  color: #D97706;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.sim2028-distance-badge {
+  padding: 3px 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0F172A;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.sim2028-featured-body {
+  padding: 12px;
+}
+
+.sim2028-featured-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.sim2028-featured-top h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+  flex: 1;
+}
+
+.sim2028-featured-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #F97316;
+}
+
+.sim2028-featured-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: #64748B;
+  margin: 0 0 8px;
+}
+
+.sim2028-featured-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.sim2028-featured-amenities span {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #64748B;
+}
+
+.sim2028-featured-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.sim2028-featured-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #F97316;
+}
+
+.sim2028-featured-price span {
+  font-size: 0.68rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.sim2028-featured-btn {
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: #F97316;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.sim2028-featured-btn:hover {
+  background: #EA580C;
+}
+
+.sim2028-featured-footer {
+  text-align: center;
+}
+
+/* CULTURE & EVENTS - Compact */
+.sim2028-culture {
+  padding: 60px 0;
+  background: #F8FAFC;
+}
+
+.sim2028-culture-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.sim2028-culture-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.sim2028-culture-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.sim2028-culture-img {
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+}
+
+.sim2028-culture-body {
+  padding: 12px;
+}
+
+.sim2028-culture-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #F97316;
+  margin-bottom: 4px;
+}
+
+.sim2028-culture-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.sim2028-culture-desc {
+  font-size: 0.72rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.sim2028-culture-btn {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #F97316;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.sim2028-culture-btn:hover {
+  background: #EA580C;
+}
+
+/* FAQ SECTION */
+.sim2028-faq {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.sim2028-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sim2028-faq-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.sim2028-faq-item:hover {
+  border-color: rgba(249, 115, 22, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.sim2028-faq-question {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.sim2028-faq-icon {
+  color: #F97316;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.sim2028-faq-answer {
+  font-size: 0.82rem;
+  color: #64748B;
+  line-height: 1.6;
+  padding-left: 28px;
+}
+
+/* MODAL */
+.sim2028-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.sim2028-modal-box {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+}
+
+.sim2028-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sim2028-modal-close:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+.sim2028-modal-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.sim2028-modal-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 10px;
+}
+
+.sim2028-modal-desc {
+  font-size: 0.9rem;
+  color: #64748B;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.sim2028-modal-detail {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #F97316;
+}
+
+/* PAGINATION */
+.sim2028-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.sim2028-page-btn {
+  height: 36px;
+  min-width: 36px;
+  padding: 0 12px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  background: #fff;
+  color: #0F172A;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.sim2028-page-btn:hover:not(:disabled) {
+  border-color: #F97316;
+  color: #F97316;
+}
+
+.sim2028-page-btn.active {
+  background: #F97316;
+  border-color: #F97316;
+  color: #fff;
+}
+
+.sim2028-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ANIMATIONS */
+@keyframes sim2028-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sim2028-animate {
+  animation: sim2028-fadeUp 0.5s ease forwards;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .sim2028-hero-image {
+    height: 110px;
+  }
+
+  .sim2028-hero-content {
+    padding: 0 18px 16px;
+  }
+
+  .sim2028-stats-grid,
+  .sim2028-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sim2028-guides-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sim2028-about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sim2028-darshan-grid,
+  .sim2028-places-grid,
+  .sim2028-heritage-grid,
+  .sim2028-culture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sim2028-zones-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .sim2028-routes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sim2028-hotels-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sim2028-hero-wrap {
+    padding: 10px 12px 0;
+  }
+
+  .sim2028-hero-image {
+    height: 90px;
+  }
+
+  .sim2028-hero-badge {
+    font-size: 0.62rem;
+    padding: 4px 10px;
+    top: 9px;
+    left: 9px;
+  }
+
+  .sim2028-hero-content {
+    padding: 0 14px 14px;
+    margin-top: -14px;
+  }
+
+  .sim2028-hero-deva {
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+
+  .sim2028-hero-title {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  .sim2028-hero-subtitle {
+    font-size: 0.72rem;
+    margin-top: 5px;
+    line-height: 1.45;
+  }
+
+  .sim2028-hero-buttons {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .sim2028-hero-btn {
+    flex: 1;
+    height: 36px;
+    font-size: 0.72rem;
+    padding: 0 12px;
+  }
+
+  .sim2028-section-header {
+    margin-bottom: 24px;
+  }
+
+  .sim2028-section-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .sim2028-section-header p {
+    font-size: 0.85rem;
+  }
+
+  .sim2028-stats-grid,
+  .sim2028-actions-grid,
+  .sim2028-guides-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .sim2028-snan-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .sim2028-darshan-grid,
+  .sim2028-places-grid,
+  .sim2028-heritage-grid,
+  .sim2028-culture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sim2028-routes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sim2028-places-tabs {
+    width: 100%;
+  }
+
+  .sim2028-places-tab {
+    font-size: 0.78rem;
+    padding: 8px 12px;
+  }
+
+  .sim2028-about-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .sim2028-modal-box {
+    padding: 20px;
+  }
+
+  .sim2028-featured-stays {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .sim2028-featured-img {
+    height: 120px;
+  }
+
+  .sim2028-featured-body {
+    padding: 10px;
+  }
+
+  .sim2028-featured-top h3 {
+    font-size: 0.85rem;
+  }
+
+  .sim2028-featured-rating {
+    font-size: 0.72rem;
+  }
+
+  .sim2028-featured-price {
+    font-size: 0.9rem;
+  }
+
+  .sim2028-featured-btn {
+    padding: 5px 10px;
+    font-size: 0.68rem;
+  }
+
+  .sim2028-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sim2028-hero-image {
+    height: 78px;
+  }
+
+  .sim2028-hero-badge {
+    font-size: 0.58rem;
+    padding: 3px 9px;
+  }
+
+  .sim2028-hero-title {
+    font-size: 1rem;
+  }
+
+  .sim2028-hero-subtitle {
+    font-size: 0.68rem;
+  }
+
+  .sim2028-hero-btn {
+    font-size: 0.68rem;
+    padding: 0 10px;
+    height: 34px;
+  }
+
+  .sim2028-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .sim2028-actions-grid,
+  .sim2028-guides-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .sim2028-snan-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .sim2028-section-header {
+    margin-bottom: 20px;
+  }
+
+  .sim2028-section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .sim2028-section-header p {
+    font-size: 0.82rem;
+  }
+
+  .sim2028-about-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .sim2028-featured-stays {
+    grid-template-columns: 1fr;
+  }
+}

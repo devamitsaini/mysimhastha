@@ -386,13 +386,13 @@ body {
     color: var(--primary-dark);
 }
 
-.guide-quick-answer p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: var(--text);
-    margin: 0;
-}
 
+.guide-quick-answer p {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: initial !important;
+    overflow: visible !important;
+}
 /*==========================================================
     QUICK FACTS
 ==========================================================*/

@@ -1,345 +1,733 @@
-/* ==========================================
-   STAY HERO - MYSIMHASTHA
-========================================== */
+/* ==========================================================
+   MYSIMHASTHA STAY HERO
+========================================================== */
 
-.stay-hero {
-  padding: 12px 0 20px;
+.ms-hero {
+  padding: 8px 0 14px;
   background: #f7f9fc;
+  position: relative;
 }
 
-.stay-container {
-  width: 100%;
-  max-width: 1480px;
-  margin: 0 auto;
-  padding: 0 4px;
-}
-
-.stay-hero-overlay {
+.ms-hero-overlay {
   display: none;
 }
 
-/* ==========================================
-   HERO CARD
-========================================== */
-
-.stay-hero-card {
-  background: linear-gradient(
-    135deg,
-    #071b55 0%,
-    #17388f 65%,
-    #d76d2d 100%
-  );
-
-  border-radius: 24px;
-
-  padding: 20px 28px;
-  min-height: 220px;
-
-  display: grid;
-  grid-template-columns: 1fr 0.85fr;
-
-  gap: 40px;
-
-  align-items: center;
-
-  position: relative;
-
-  overflow: hidden;
+.ms-hero-container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.stay-hero-card::after {
+/* ==========================================================
+   HERO CARD
+========================================================== */
+
+.ms-hero-card {
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  gap: 16px;
+
+  min-height: 220px;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #081f69 0%,
+    #173f99 62%,
+    #d87835 100%
+  );
+}
+
+/* decorative circle */
+
+.ms-hero-card::before {
   content: "";
 
   position: absolute;
 
+  width: 200px;
+  height: 200px;
+
   right: -80px;
-
   bottom: -80px;
-
-  width: 320px;
-
-  height: 320px;
 
   border-radius: 50%;
 
   background: rgba(255,255,255,.05);
 }
 
-/* ==========================================
-   CONTENT
-========================================== */
+/* glow behind search */
 
-.stay-hero-content {
-  display: contents;
+.ms-hero-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: 31%;
+
+  top: -15%;
+
+  width: 100px;
+  height: 130%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.90),
+    rgba(255,255,255,.18),
+    transparent
+  );
+
+  filter: blur(8px);
+
+  opacity: .55;
+
+  pointer-events: none;
 }
 
-.hero-left {
+/* ==========================================================
+   LEFT
+========================================================== */
+
+.ms-hero-left {
   position: relative;
   z-index: 2;
+
+  max-width: 420px;
 }
 
-.hero-right {
+/* ==========================================================
+   RIGHT
+========================================================== */
+
+.ms-hero-right {
+  position: relative;
+  z-index: 5;
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: relative;
-  z-index: 2;
 }
 
-/* ==========================================
+/* ==========================================================
    BADGE
-========================================== */
+========================================================== */
 
-.stay-badge {
+.ms-hero-badge {
+
   display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 4px 10px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.10);
+
+  border: 1px solid rgba(255,255,255,.18);
+
+  color: #fff;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.ms-hero-badge svg {
+  color: #FDBA74;
+  font-size: 11px;
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.ms-hero-title {
+
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 42px;
+  font-weight: 800;
+
+  line-height: 1.04;
+
+  letter-spacing: -.5px;
+
+  margin-bottom: 12px;
+
+  max-width: 420px;
+}
+
+.ms-hero-title span {
+
+  display: block;
+
+  margin-top: 4px;
+
+  color: #FDBA74;
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.ms-hero-description {
+
+  max-width: 380px;
+
+  color: rgba(255,255,255,.92);
+
+  font-size: 16px;
+
+  line-height: 1.55;
+
+  margin: 0 0 14px;
+}
+
+/* ==========================================================
+   QUICK LINKS
+========================================================== */
+
+.ms-hero-links {
+
+  display: flex;
+
+  flex-wrap: wrap;
 
   align-items: center;
 
-  gap: 6px;
+  gap: 8px;
+}
+
+.ms-hero-links-title {
+
+  color: white;
+
+  font-weight: 700;
+
+  margin-right: 4px;
+
+  font-size: 13px;
+}
+
+.ms-hero-tag {
+
+  border: none;
+
+  cursor: pointer;
 
   padding: 6px 14px;
 
   border-radius: 999px;
 
   background: rgba(255,255,255,.12);
-
-  border: 1px solid rgba(255,255,255,.15);
 
   color: white;
 
   font-size: 13px;
 
-  font-weight: 600;
-
-  margin-bottom: 14px;
-}
-
-.stay-badge svg {
-  color: #FDBA74;
-}
-
-/* ==========================================
-   HEADING
-========================================== */
-
-.stay-hero h1 {
-  color: white;
-
-  font-size: 42px;
-
-  font-weight: 800;
-
-  line-height: 1.1;
-
-  margin-bottom: 12px;
-
-  max-width: 580px;
-}
-
-.stay-hero h1 span {
-  display: block;
-  color: #FDBA74;
-}
-
-.stay-hero p {
-  color: rgba(255,255,255,.92);
-
-  font-size: 15px;
-
-  line-height: 1.6;
-
-  max-width: 540px;
-
-  margin-bottom: 18px;
-}
-
-/* ==========================================
-   FEATURES
-========================================== */
-
-.stay-hero-features {
-  display: flex;
-
-  gap: 14px;
-
-  flex-wrap: wrap;
-}
-
-.stay-hero-features div {
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 12px 18px;
-
-  border-radius: 14px;
-
-  background: rgba(255,255,255,.12);
-
-  border: 1px solid rgba(255,255,255,.18);
-
-  color: white;
-
-  font-size: 14px;
-
   font-weight: 500;
 
-  transition: .25s;
+  transition: all .25s ease;
 }
 
-.stay-hero-features div:hover {
-  background: rgba(255,255,255,.18);
-}
+.ms-hero-tag:hover {
 
-.stay-hero-features svg {
-  color: #FDBA74;
-}
-
-/* ==========================================
-   SEARCH CARD
-========================================== */
-
-/* Search card styles are in SearchBar.css */
-
-/* ==========================================
-   QUICK LINKS
-========================================== */
-
-.stay-quick-links {
-  margin-top: 16px;
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 8px;
-
-  align-items: center;
-}
-
-.stay-quick-links span {
-  color: white;
-
-  font-weight: 600;
-
-  margin-right: 6px;
-}
-
-.stay-quick-links button {
-  border: none;
-
-  background: rgba(255,255,255,.15);
-
-  color: white;
-
-  border-radius: 999px;
-
-  padding: 6px 14px;
-
-  cursor: pointer;
-
-  transition: .25s;
-
-  font-size: 12px;
-}
-
-.stay-quick-links button:hover {
   background: white;
 
-  color: #0f172a;
+  color: #173f99;
+
+  transform: translateY(-1px);
 }
 
-/* ==========================================
+/* ==========================================================
+   SEARCH CARD HOLDER
+========================================================== */
+
+.ms-hero-right > * {
+
+  width: 100%;
+
+  max-width: 710px;
+}
+/* ==========================================================
+   1600px
+========================================================== */
+
+@media (max-width:1600px){
+
+    .ms-hero-container{
+        max-width:1320px;
+    }
+
+    .ms-hero-card{
+
+        grid-template-columns:50% 50%;
+
+        gap:15px;
+
+        padding:18px;
+    }
+
+    .ms-hero-title{
+
+        font-size:40px;
+    }
+
+    .ms-hero-description{
+
+        font-size:15px;
+    }
+
+    .ms-hero-right>*{
+
+        max-width:660px;
+    }
+
+}
+
+/* ==========================================================
+   1400px
+========================================================== */
+
+@media (max-width:1400px){
+
+    .ms-hero-container{
+        max-width:1240px;
+    }
+
+    .ms-hero-card{
+
+        grid-template-columns:50% 50%;
+
+        padding:18px;
+
+        gap:14px;
+    }
+
+    .ms-hero-title{
+
+        font-size:38px;
+    }
+
+    .ms-hero-description{
+
+        font-size:15px;
+    }
+
+    .ms-hero-right>*{
+
+        max-width:620px;
+    }
+
+}
+
+/* ==========================================================
+   1200px
+========================================================== */
+
+@media (max-width:1200px){
+
+    .ms-hero-container{
+
+        max-width:1140px;
+    }
+
+    .ms-hero-card{
+
+        grid-template-columns:1fr 500px;
+
+        gap:14px;
+
+        padding:16px;
+
+        min-height:200px;
+    }
+
+    .ms-hero-title{
+
+        font-size:34px;
+
+        max-width:100%;
+    }
+
+    .ms-hero-description{
+
+        font-size:14px;
+
+        max-width:100%;
+    }
+
+    .ms-hero-badge{
+
+        font-size:12px;
+
+        padding:5px 12px;
+    }
+
+    .ms-hero-tag{
+
+        padding:5px 12px;
+
+        font-size:12px;
+    }
+
+    .ms-hero-right>*{
+
+        max-width:500px;
+    }
+
+}
+
+/* ==========================================================
+   1024px
+========================================================== */
+
+@media (max-width:1024px){
+
+    .ms-hero-card{
+
+        grid-template-columns:1fr 460px;
+
+        gap:12px;
+
+        padding:14px;
+    }
+
+    .ms-hero-title{
+
+        font-size:30px;
+    }
+
+    .ms-hero-description{
+
+        font-size:14px;
+    }
+
+    .ms-hero-right>*{
+
+        max-width:460px;
+    }
+
+}
+
+/* ==========================================================
    TABLET
-========================================== */
+========================================================== */
 
-@media (max-width: 992px) {
+@media (max-width:992px){
 
-  .stay-hero {
-    padding: 14px 0 24px;
-  }
+    .ms-hero{
 
-  .stay-hero-card {
-    grid-template-columns: 1fr;
+        padding:12px 0;
+    }
 
-    padding: 28px;
+    .ms-hero-container{
 
-    gap: 24px;
+        padding:0 16px;
+    }
 
-    min-height: auto;
-  }
+    .ms-hero-card{
 
-  .hero-right {
-    justify-content: center;
-  }
+        grid-template-columns:1fr;
 
-  /* Search card responsive handled in SearchBar.css */
+        gap:16px;
 
-  .stay-hero h1 {
-    font-size: 36px;
-  }
+        padding:16px;
+
+        min-height:auto;
+    }
+
+    .ms-hero-card::after{
+
+        display:none;
+    }
+
+    .ms-hero-left{
+
+        max-width:100%;
+    }
+
+    .ms-hero-right{
+
+        justify-content:center;
+    }
+
+    .ms-hero-title{
+
+        font-size:30px;
+
+        max-width:100%;
+    }
+
+    .ms-hero-description{
+
+        max-width:100%;
+
+        margin-bottom:12px;
+    }
+
+    .ms-hero-right>*{
+
+        max-width:760px;
+
+        width:100%;
+    }
+
+    .ms-hero-links{
+
+        gap:8px;
+    }
+
+}
+/* ==========================================================
+   MOBILE (768px)
+========================================================== */
+
+@media (max-width:768px){
+
+    .ms-hero{
+        padding:8px 0 12px;
+    }
+
+    .ms-hero-container{
+        padding:0 14px;
+    }
+
+    .ms-hero-card{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+        padding:14px;
+
+        min-height:auto;
+
+        border-radius:12px;
+    }
+
+    .ms-hero-card::before{
+
+        width:120px;
+        height:120px;
+
+        right:-40px;
+        bottom:-40px;
+    }
+
+    .ms-hero-card::after{
+        display:none;
+    }
+
+    .ms-hero-left{
+
+        max-width:100%;
+    }
+
+    .ms-hero-right{
+
+        width:100%;
+
+        justify-content:center;
+    }
+
+    .ms-hero-right>*{
+
+        width:100%;
+
+        max-width:100%;
+    }
+
+    .ms-hero-badge{
+
+        font-size:12px;
+
+        padding:5px 12px;
+
+        margin-bottom:10px;
+    }
+
+    .ms-hero-title{
+
+        font-size:26px;
+
+        line-height:1.08;
+
+        margin-bottom:10px;
+    }
+
+    .ms-hero-title span{
+
+        margin-top:4px;
+    }
+
+    .ms-hero-description{
+
+        font-size:14px;
+
+        line-height:1.5;
+
+        margin-bottom:10px;
+    }
+
+    .ms-hero-links{
+
+        gap:6px;
+    }
+
+    .ms-hero-links-title{
+
+        width:100%;
+
+        margin-bottom:2px;
+    }
+
+    .ms-hero-tag{
+
+        padding:5px 12px;
+
+        font-size:12px;
+    }
 
 }
 
-/* ==========================================
-   MOBILE
-========================================== */
+/* ==========================================================
+   SMALL MOBILE (480px)
+========================================================== */
 
-@media (max-width: 768px) {
+@media (max-width:480px){
 
-  .stay-container {
-    padding: 0 12px;
-  }
+    .ms-hero{
 
-  .stay-hero {
-    padding: 10px 0 18px;
-  }
+        padding:8px 0 10px;
+    }
 
-  .stay-hero-card {
-    padding: 20px;
+    .ms-hero-container{
 
-    border-radius: 18px;
+        padding:0 12px;
+    }
 
-    min-height: auto;
-  }
+    .ms-hero-card{
 
-  .stay-badge {
-    font-size: 11px;
+        padding:12px;
 
-    padding: 5px 12px;
+        border-radius:12px;
+    }
 
-    margin-bottom: 10px;
-  }
+    .ms-hero-badge{
 
-  .stay-hero h1 {
-    font-size: 28px;
+        width:100%;
 
-    margin-bottom: 10px;
-  }
+        justify-content:center;
 
-  .stay-hero p {
-    display: none;
-  }
+        text-align:center;
 
-  .stay-hero-features {
-    gap: 8px;
-  }
+        margin-bottom:8px;
+    }
 
-  .stay-hero-features div {
-    width: 100%;
+    .ms-hero-title{
 
-    padding: 10px 14px;
+        font-size:22px;
 
-    font-size: 13px;
-  }
+        line-height:1.12;
 
-  /* Search card mobile styles handled in SearchBar.css */
+        margin-bottom:8px;
+    }
 
-  .stay-quick-links {
-    display: flex;
-    margin-top: 0;
-  }
+    .ms-hero-description{
 
+        font-size:13px;
+
+        margin-bottom:10px;
+    }
+
+    .ms-hero-links{
+
+        gap:6px;
+    }
+
+    .ms-hero-links-title{
+
+        width:100%;
+    }
+
+    .ms-hero-tag{
+
+        flex:1 1 calc(50% - 6px);
+
+        text-align:center;
+
+        padding:5px 10px;
+
+        font-size:12px;
+    }
+
+}
+
+/* ==========================================================
+   EXTRA SMALL (360px)
+========================================================== */
+
+@media (max-width:360px){
+
+    .ms-hero-card{
+
+        padding:10px;
+    }
+
+    .ms-hero-title{
+
+        font-size:20px;
+    }
+
+    .ms-hero-description{
+
+        font-size:12px;
+    }
+
+    .ms-hero-tag{
+
+        flex:1 1 100%;
+    }
+
+}
+
+/* ==========================================================
+   SAFETY FIXES
+========================================================== */
+
+.ms-hero,
+.ms-hero *{
+    box-sizing:border-box;
+}
+
+.ms-hero-card,
+.ms-hero-left,
+.ms-hero-right{
+    min-width:0;
+}
+
+.ms-hero-right{
+    overflow:visible;
+}
+
+.ms-hero-card{
+    isolation:isolate;
+}
+
+.ms-hero button{
+    font-family:inherit;
 }

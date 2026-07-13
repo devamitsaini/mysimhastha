@@ -1,0 +1,159 @@
+/* ======================================================
+   LIVE DASHBOARD - REDESIGNED (COMPACT)
+====================================================== */
+
+.live-dashboard{
+  padding:50px 0;
+  background:#F8FAFC;
+}
+
+.live-dashboard .container{
+  width:min(1280px,92%);
+  margin:auto;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-tag{
+  display:inline-block;
+  background:#EEF4FF;
+  color:#2563EB;
+  padding:6px 14px;
+  border-radius:50px;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.3px;
+  margin-bottom:12px;
+}
+
+.section-heading h2{
+  font-size:1.8rem;
+  color:#0F172A;
+  margin-bottom:12px;
+}
+
+.section-heading p{
+  max-width:650px;
+  margin:auto;
+  color:#64748B;
+  line-height:1.6;
+  font-size:.95rem;
+}
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.dashboard-card{
+  background:#fff;
+  border:1px solid #E5E7EB;
+  border-radius:18px;
+  padding:22px;
+  text-decoration:none;
+  transition:.3s ease;
+  box-shadow:0 6px 18px rgba(15,23,42,.03);
+}
+
+.dashboard-card:hover{
+  transform:translateY(-4px);
+  border-color:#2563EB;
+  box-shadow:0 12px 25px rgba(15,23,42,.06);
+}
+
+.dashboard-icon{
+  width:54px;
+  height:54px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:1.3rem;
+  margin-bottom:16px;
+}
+
+.dashboard-card h3{
+  color:#64748B;
+  font-size:.9rem;
+  margin-bottom:8px;
+}
+
+.dashboard-card h4{
+  font-size:1.5rem;
+  color:#0F172A;
+  margin-bottom:6px;
+  font-weight:700;
+}
+
+.dashboard-card p{
+  color:#475569;
+  margin-bottom:14px;
+  line-height:1.5;
+  font-size:.88rem;
+}
+
+.dashboard-card span{
+  font-size:.8rem;
+  color:#94A3B8;
+}
+
+@media(max-width:992px){
+
+.dashboard-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.live-dashboard{
+  padding:40px 0;
+}
+
+.section-heading h2{
+  font-size:1.5rem;
+}
+
+.dashboard-grid{
+  display:flex;
+  overflow-x:auto;
+  gap:14px;
+  padding-bottom:8px;
+  scroll-snap-type:x mandatory;
+}
+
+.dashboard-grid::-webkit-scrollbar{
+  display:none;
+}
+
+.dashboard-card{
+  min-width:240px;
+  scroll-snap-align:start;
+}
+
+}
+
+/* ===========================
+   Animation
+=========================== */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.dashboard-card{
+  animation:fadeUp .4s ease;
+}

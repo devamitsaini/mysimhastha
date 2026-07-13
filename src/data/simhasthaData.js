@@ -161,7 +161,7 @@ export const GALLERY_IMAGES = [
 ];
 
 export const KUMBH_YEARS = [
-  { year:"2016", city:"Ujjain", type:"Simhastha", note:"75 million+ pilgrims" },
+  { year:"2016", city:"Ujjain", type:"Simhastha", note:"40 million+ pilgrims" },
   { year:"2019", city:"Prayagraj", type:"Kumbh Mela", note:"240 million+ visitors" },
   { year:"2021", city:"Haridwar", type:"Kumbh Mela", note:"Held amid pandemic precautions" },
   { year:"2025", city:"Prayagraj", type:"Maha Kumbh", note:"Largest spiritual gathering" },

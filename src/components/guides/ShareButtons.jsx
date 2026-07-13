@@ -3,6 +3,8 @@ import {
   FaWhatsapp,
   FaFacebookF,
   FaPinterestP,
+  FaInstagram,
+  FaShareAlt,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiCopy } from "react-icons/fi";
@@ -28,6 +30,8 @@ export default function ShareButtons({
     copy: "Copy Link",
     copied: "Link copied!",
     failed: "Unable to copy link.",
+    share: "Share Link",
+    instagram: "Instagram",
   },
 
   hi: {
@@ -35,6 +39,8 @@ export default function ShareButtons({
     copy: "लिंक कॉपी करें",
     copied: "लिंक कॉपी हो गया।",
     failed: "लिंक कॉपी नहीं हो सका।",
+    share: "शेयर लिंक",
+    instagram: "इंस्टाग्राम",
   },
 };
 
@@ -59,6 +65,26 @@ export default function ShareButtons({
       toast.error(t.failed);
     }
   };
+
+  const shareNative = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: title || document.title,
+          url: pageUrl,
+        });
+      } catch {
+        // User cancelled or error - do nothing
+      }
+    } else {
+      // Fallback to copy if Web Share API not available
+      copyLink();
+    }
+  };
+
+  const instagramUrl = mounted
+    ? `https://www.instagram.com/create/story/?url=${shareUrl}`
+    : "#";
 
   return (
     <section className="guide-share">
@@ -91,7 +117,26 @@ export default function ShareButtons({
           <span>Facebook</span>
         </a>
 
+        <a
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="share-btn instagram"
+          aria-label="Share on Instagram"
+        >
+          <FaInstagram />
+          <span>{t.instagram}</span>
+        </a>
 
+        <button
+          type="button"
+          onClick={shareNative}
+          className="share-btn share-link-btn"
+          aria-label={t.share}
+        >
+          <FaShareAlt />
+          <span>{t.share}</span>
+        </button>
 
         <button
           type="button"

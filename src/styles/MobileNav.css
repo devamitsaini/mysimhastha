@@ -6,9 +6,9 @@
 
   height: 70px;
 
-  background: #fff;
+  background: var(--white);
 
-  border-top: 1px solid #ececec;
+  border-top: 1px solid var(--border);
 
   display: flex;
   justify-content: space-around;
@@ -16,7 +16,7 @@
 
   z-index: 9999;
 
-  box-shadow: 0 -4px 12px rgba(0,0,0,.08);
+  box-shadow: var(--shadow);
 }
 
 .mobile-nav button {
@@ -29,11 +29,16 @@
   gap: 4px;
 
   font-size: 11px;
-  color: #666;
+  color: var(--muted);
+  transition: all 0.2s ease;
 }
 
 .mobile-nav button.active {
-  color: #f97316;
+  color: #2563EB;
+}
+
+.mobile-nav button:hover {
+  color: var(--text);
 }
 
 @media (min-width: 768px) {

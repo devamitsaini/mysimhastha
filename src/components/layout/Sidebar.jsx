@@ -1,6 +1,16 @@
   import React from "react";
   import "../../styles/sidebar.css";
   import { useNavigate } from "react-router-dom";
+  import { 
+    FaHome, 
+    FaCalendarAlt, 
+    FaFlag, 
+    FaTv, 
+    FaSearch, 
+    FaHotel, 
+    FaNewspaper, 
+    FaBookOpen 
+  } from "react-icons/fa";
 
   const Sidebar = ({ drawerOpen, setDrawerOpen}) => {
     const navigate = useNavigate();
@@ -34,46 +44,46 @@
           <div className="drawer-body">
 
     <button className="menu-item" onClick={() => nav("/")}>
-      <span>🏠 Home</span>
+      <span><FaHome size={18} /> Home</span>
       <span>›</span>
     </button>
 
     <button className="menu-item" onClick={() => nav("/snan-calendar")}>
-      <span>📅 Snan Calendar</span>
+      <span><FaCalendarAlt size={18} /> Snan Calendar</span>
       <span>›</span>
     </button>
 
     <button className="menu-item" onClick={() => nav("/simhastha-2028")}>
-      <span>🚩 Simhastha 2028</span>
+      <span><FaFlag size={18} /> Simhastha 2028</span>
       <span>›</span>
     </button>
 
     <button className="menu-item" onClick={() => nav("/live-darshan")}>
-      <span>📺 Live Darshan</span>
+      <span><FaTv size={18} /> Live Darshan</span>
       <span>›</span>
     </button>
 
     <button className="menu-item" onClick={() => nav("/missing-persons")}>
-      <span>🔍 Missing Persons</span>
+      <span><FaSearch size={18} /> Missing Persons</span>
       <span>›</span>
     </button>
 
     <button className="menu-item" onClick={() => nav("/hotels")}>
-      <span>🏨 Hotels & Stays</span>
+      <span><FaHotel size={18} /> Hotels & Stays</span>
       <span>›</span>
     </button>
 
-    <button className="menu-item" onClick={() => nav("/hotels")}>
+    {/*<button className="menu-item" onClick={() => nav("/hotels")}>
       <span>🚕 Cab & Transport</span>
       <span>›</span>
-    </button>
+    </button>*/}
 
     <button className="menu-item" onClick={() => nav("/blog")}>
-      <span>📰 Blogs & Updates</span>
+      <span><FaNewspaper size={18} /> Blogs & Updates</span>
         <span>›</span>
   </button>
     <button className="menu-item" onClick={() => nav("/about")}>
-      <span>📖 About Us</span>
+      <span><FaBookOpen size={18} /> About Us</span>
       <span>›</span>
     </button>
 

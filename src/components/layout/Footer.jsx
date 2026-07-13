@@ -4,6 +4,7 @@
   import {FaInstagram,FaYoutube,FaFacebook, FaReddit} from "react-icons/fa";
 
   import { FaXTwitter } from "react-icons/fa6";
+  import { FaEnvelope, FaPhone } from "react-icons/fa";
 
   function Footer() {
     const navigate = useNavigate();
@@ -60,8 +61,9 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Instagram"
+      className="social-icon"
     >
-      <FaInstagram />
+      <FaInstagram size={20} />
     </a>
 
     <a
@@ -69,8 +71,9 @@
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Facebook"
+    className="social-icon"
   >
-    <FaFacebook />
+    <FaFacebook size={20} />
   </a>
 
     <a
@@ -78,8 +81,9 @@
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Reddit"
+    className="social-icon"
   >
-    <FaReddit />
+    <FaReddit size={20} />
   </a>
 
     <a
@@ -87,8 +91,9 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="X"
+      className="social-icon"
     >
-      <FaXTwitter />
+      <FaXTwitter size={20} />
     </a>
 
     <a
@@ -96,8 +101,9 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="YouTube"
+      className="social-icon"
     >
-      <FaYoutube />
+      <FaYoutube size={20} />
     </a>
   </div>
 

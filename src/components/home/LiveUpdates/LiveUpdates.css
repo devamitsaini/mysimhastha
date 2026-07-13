@@ -1,0 +1,277 @@
+/* ======================================================
+   LIVE UPDATES - ULTRA COMPACT
+====================================================== */
+
+.live-updates-section {
+  padding: 25px 0 30px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.live-updates-container {
+  width: min(1280px, 92%);
+  margin: 0 auto;
+}
+
+.live-updates-section .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #FEE2E2;
+  color: #EF4444;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: #EF4444;
+  border-radius: 50%;
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.15);
+  }
+}
+
+.live-updates-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.update-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.update-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  border-color: #CBD5E1;
+}
+
+.update-card-disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.update-card-disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  border-color: #E2E8F0;
+}
+
+.update-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.update-icon svg {
+  font-size: 1rem;
+}
+
+.update-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.update-label {
+  font-size: 0.7rem;
+  color: #64748B;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.update-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1px;
+  line-height: 1.2;
+}
+
+.update-subtext {
+  font-size: 0.68rem;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* ======================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1024px) {
+  .live-updates-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .update-card {
+    padding: 10px 8px;
+  }
+
+  .update-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .update-icon svg {
+    font-size: 0.9rem;
+  }
+
+  .update-value {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .live-updates-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .update-card {
+    padding: 8px 6px;
+  }
+
+  .update-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .update-icon svg {
+    font-size: 0.85rem;
+  }
+
+  .update-label {
+    font-size: 0.68rem;
+  }
+
+  .update-value {
+    font-size: 0.78rem;
+  }
+
+  .update-subtext {
+    font-size: 0.62rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .live-updates-section {
+    padding: 18px 0 22px;
+  }
+
+  .live-updates-container {
+    width: 96%;
+  }
+
+  .live-updates-section .section-header {
+    margin-bottom: 10px;
+  }
+
+  .section-title h2 {
+    font-size: 0.95rem;
+  }
+
+  .live-indicator {
+    padding: 2px 8px;
+    font-size: 0.65rem;
+  }
+
+  .live-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .live-updates-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .update-card {
+    padding: 8px 6px;
+    gap: 6px;
+    border-radius: 10px;
+  }
+
+  .update-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+  }
+
+  .update-icon svg {
+    font-size: 0.75rem;
+  }
+
+  .update-content {
+    min-width: 0;
+  }
+
+  .update-label {
+    font-size: 0.6rem;
+    margin-bottom: 1px;
+  }
+
+  .update-value {
+    font-size: 0.72rem;
+    margin-bottom: 0;
+    line-height: 1.1;
+  }
+
+  .update-subtext {
+    font-size: 0.58rem;
+    line-height: 1;
+  }
+}

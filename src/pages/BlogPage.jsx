@@ -34,13 +34,13 @@ function BlogPage() {
       </p>
 
       {loading && (
-        <div style={{ textAlign: "center", padding: "40px 0" }}>
+        <div className="blog-status-message">
           Loading blogs...
         </div>
       )}
 
       {!loading && posts.length === 0 && (
-        <div style={{ textAlign: "center", padding: "40px 0" }}>
+        <div className="blog-status-message">
           No blogs available.
         </div>
       )}
@@ -64,13 +64,7 @@ function BlogPage() {
             </p>
 
             {post.excerpt && (
-              <p
-                style={{
-                  color: "#555",
-                  lineHeight: "1.7",
-                  marginBottom: "20px",
-                }}
-              >
+              <p className="blog-excerpt">
                 {post.excerpt}
               </p>
             )}

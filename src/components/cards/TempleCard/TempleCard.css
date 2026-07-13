@@ -1,0 +1,143 @@
+.temple-card{
+    background:#fff;
+    border:1px solid #E2E8F0;
+    border-radius:24px;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
+}
+
+.temple-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(15,23,42,.10);
+}
+
+.temple-image{
+    position:relative;
+    display:block;
+    width:100%;
+    aspect-ratio: 16/9;
+    overflow:hidden;
+}
+
+.temple-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.45s;
+}
+
+.temple-card:hover img{
+    transform:scale(1.08);
+}
+
+.temple-tag{
+    position:absolute;
+    left:18px;
+    bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#F97316;
+    color:#fff;
+    padding:9px 15px;
+    border-radius:50px;
+    font-size:.82rem;
+    font-weight:700;
+}
+
+.featured-tag{
+    position:absolute;
+    top:18px;
+    right:18px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#2563EB;
+    color:#fff;
+    padding:9px 15px;
+    border-radius:50px;
+    font-size:.82rem;
+    font-weight:700;
+}
+
+.temple-content{
+    padding:24px;
+}
+
+.temple-content h3{
+    margin:0 0 16px;
+    font-size:1.45rem;
+}
+
+.temple-content h3 a{
+    text-decoration:none;
+    color:#0F172A;
+}
+
+.temple-content p{
+    color:#64748B;
+    line-height:1.8;
+    margin-bottom:24px;
+}
+
+.temple-info{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:26px;
+}
+
+.temple-info span{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#475569;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.temple-info svg{
+    color:#2563EB;
+}
+
+.temple-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:#2563EB;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.temple-btn svg{
+    transition:.3s;
+}
+
+.temple-btn:hover svg{
+    transform:translateX(5px);
+}
+
+@media(max-width:768px){
+
+.temple-card{
+    min-width:320px;
+}
+
+.temple-image{
+    aspect-ratio: 16/9;
+}
+
+.temple-content{
+    padding:20px;
+}
+
+.temple-content h3{
+    font-size:1.2rem;
+}
+
+.temple-content p{
+    font-size:.94rem;
+}
+
+}
