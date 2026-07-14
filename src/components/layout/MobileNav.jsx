@@ -40,7 +40,7 @@ function MobileNav({ page }) {
 
       <button
         className={page === "hotels" ? "active" : ""}
-        onClick={() => nav("/hotels")}
+        onClick={() => nav("/stays")}
       >
         <Bed size={22} />
         <span>{t("stay")}</span>
