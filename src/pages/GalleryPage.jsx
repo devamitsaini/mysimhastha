@@ -31,10 +31,11 @@ const GalleryPage = () => {
           title: "Mahakal Darshan & Kumbh Mela Gallery",
           description: "A visual collection of spiritual and cultural moments from Mahakal Temple and Kumbh Mela in Ujjain.",
           url: "https://www.mysimhastha.com/gallery",
-          images: galleryImages.map((img) => ({
-            url: `https://www.mysimhastha.com${img.src}`,
-            caption: img.alt,
-          })),
+          breadcrumbs: [
+            { label: "Home", url: "https://www.mysimhastha.com" },
+            { label: "Gallery", url: "https://www.mysimhastha.com/gallery" },
+          ],
+          images: galleryImages.map((img) => `https://www.mysimhastha.com${img.src}`),
         }}
       />
 

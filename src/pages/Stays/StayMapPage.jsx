@@ -5,6 +5,7 @@ import {
   FiArrowLeft,
   FiExternalLink,
 } from "react-icons/fi";
+import { SEO, SchemaProvider } from "../../seo";
 
 import "./StayMapPage.css";
 
@@ -12,7 +13,29 @@ export default function StayMapPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="stay-map-page">
+    <>
+      <SEO
+        title="Stays Map in Ujjain | Hotels & Dharamshalas Near Mahakal | MySimhastha"
+        description="Explore hotels, homestays, guest houses and dharamshalas in Ujjain on an interactive map near Mahakaleshwar Temple and Ram Ghat."
+        canonical="https://www.mysimhastha.com/stays/map"
+      />
+
+      <SchemaProvider
+        type="stays"
+        data={{
+          title: "Stays Map in Ujjain | Hotels & Dharamshalas Near Mahakal",
+          description: "Explore hotels, homestays, guest houses and dharamshalas in Ujjain on an interactive map near Mahakaleshwar Temple and Ram Ghat.",
+          url: "https://www.mysimhastha.com/stays/map",
+          about: "Accommodation",
+          breadcrumbs: [
+            { label: "Home", url: "https://www.mysimhastha.com" },
+            { label: "Stays", url: "https://www.mysimhastha.com/stays" },
+            { label: "Map", url: "https://www.mysimhastha.com/stays/map" },
+          ],
+        }}
+      />
+
+      <div className="stay-map-page">
 
       <div className="stay-map-container">
 
@@ -54,5 +77,6 @@ export default function StayMapPage() {
       </div>
 
     </div>
+    </>
   );
 }

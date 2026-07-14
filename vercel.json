@@ -22,8 +22,24 @@
       ],
       "destination": "https://www.mysimhastha.com/$1",
       "permanent": true
+    },
+    {
+  "redirects": [
+    {
+      "source": "/hi/guide/ujjain-kaise-pahunche",
+      "destination": "/hi/guide/how-to-reach-ujjain",
+      "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+  ],
+  
 
   "rewrites": [
     {

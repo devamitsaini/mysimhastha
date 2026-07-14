@@ -6,6 +6,7 @@ import {
   StayFiltersProvider,
   useStayFilters,
 } from "../../context/StayFiltersContext";
+import { SEO, SchemaProvider } from "../../seo";
 
 import "./StayListingPage.css";
 
@@ -15,6 +16,27 @@ export default function StayListingPage() {
 
   return (
     <StayFiltersProvider>
+      <SEO
+        title="All Stays in Ujjain | Hotels, Homestays & Dharamshalas Near Mahakal | MySimhastha"
+        description="Browse all verified hotels, homestays, guest houses, dharamshalas and pilgrim accommodations in Ujjain near Mahakaleshwar Temple with filters and live availability."
+        canonical="https://www.mysimhastha.com/stays/list"
+      />
+
+      <SchemaProvider
+        type="stays"
+        data={{
+          title: "All Stays in Ujjain | Hotels, Homestays & Dharamshalas Near Mahakal",
+          description: "Browse all verified hotels, homestays, guest houses, dharamshalas and pilgrim accommodations in Ujjain near Mahakaleshwar Temple.",
+          url: "https://www.mysimhastha.com/stays/list",
+          about: "Accommodation",
+          breadcrumbs: [
+            { label: "Home", url: "https://www.mysimhastha.com" },
+            { label: "Stays", url: "https://www.mysimhastha.com/stays" },
+            { label: "All Listings", url: "https://www.mysimhastha.com/stays/list" },
+          ],
+        }}
+      />
+
       <div className="stay-list-page">
 
         <ListingHeader

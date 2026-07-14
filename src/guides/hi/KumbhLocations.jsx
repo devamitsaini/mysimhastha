@@ -624,6 +624,94 @@ export default function KumbhLocations() {
         modified="2026-06-30"
       />
 
+      <Helmet>
+        {/* FAQ Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": guide.faq.map((item) => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": item.answer
+                }
+              }))
+            })
+          }}
+        />
+
+        {/* Place Schema - Ujjain */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Place",
+              "name": "Ujjain",
+              "description": "Sacred city and one of the four Kumbh Mela locations, home to Mahakaleshwar Jyotirlinga",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Ujjain",
+                "addressLocality": "Ujjain",
+                "addressRegion": "Madhya Pradesh",
+                "postalCode": "456010",
+                "addressCountry": "India"
+              },
+              "url": "https://www.mysimhastha.com/hi/guide/kumbh-locations",
+              "telephone": "0734-2550563, 0734-2559277, 18002331008",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "23.1815",
+                "longitude": "75.7733"
+              }
+            })
+          }}
+        />
+
+        {/* TouristDestination Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "TouristDestination",
+              "name": "Ujjain",
+              "description": "Ancient sacred city and one of the four Kumbh Mela locations, home to Mahakaleshwar Jyotirlinga",
+              "url": "https://www.mysimhastha.com/hi/guide/kumbh-locations",
+              "image": "https://www.mysimhastha.com/images/kumbh-locations.webp",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Ujjain",
+                "addressRegion": "Madhya Pradesh",
+                "addressCountry": "India"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "23.1815",
+                "longitude": "75.7733"
+              },
+              "touristType": ["Religious", "Cultural", "Historical"],
+              "includesAttraction": [
+                {
+                  "@type": "TouristAttraction",
+                  "name": "Mahakaleshwar Jyotirlinga",
+                  "description": "One of the twelve Jyotirlingas"
+                },
+                {
+                  "@type": "TouristAttraction",
+                  "name": "Shipra River",
+                  "description": "Sacred river where Kumbh Mela bathing takes place"
+                }
+              ]
+            })
+          }}
+        />
+      </Helmet>
+
       <main className="simhastha-guide">
         <div className="container">
 

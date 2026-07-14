@@ -144,12 +144,19 @@ const TemplesPage = () => {
           description: "Explore sacred temples in and around Ujjain including Mahakaleshwar Jyotirlinga, Omkareshwar Jyotirlinga, and Baglamukhi Mata Temple.",
           url: "https://www.mysimhastha.com/temples",
           about: "Temples of Ujjain",
-          temples: templesData.map((t) => ({
-            name: t.name,
-            description: t.description,
-            location: t.location,
-            image: `https://www.mysimhastha.com${t.image}`,
-          })),
+          breadcrumbs: [
+            { label: "Home", url: "https://www.mysimhastha.com" },
+            { label: "Temples in Ujjain", url: "https://www.mysimhastha.com/temples" },
+          ],
+          itemList: {
+            name: "Sacred Temples of Ujjain, Omkareshwar & Baglamukhi Mata",
+            description: "List of prominent temples in and around Ujjain for pilgrims and travelers.",
+            items: templesData.map((t) => ({
+              name: t.name,
+              description: t.description,
+              url: t.mapLink,
+            })),
+          },
         }}
       />
 

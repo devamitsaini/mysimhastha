@@ -135,56 +135,150 @@ import "../styles/guides.css";
                   }}
                   />
                 <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-  __html: JSON.stringify({
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-  {
-  "@type":"Question",
-  "name":"उज्जैन में महाकाल के लिए श्रावण मास का महत्व क्या है?",
-  "acceptedAnswer":{
-  "@type":"Answer",
-  "text":"श्रावण को भगवान शिव के लिए सबसे पवित्र महीना माना जाता है, जो बढ़ी हुई आध्यात्मिक ऊर्जा और अभिषेक जैसे अनुष्ठान करने की परंपरा के कारण उज्जैन में लाखों भक्तों को आकर्षित करता है।"
-  }
-  },
-  {
-  "@type":"Question",
-  "name":"महाकाल शाही सवारी क्या है और आपको इसे देखने का कारण क्या है?",
-  "acceptedAnswer":{
-  "@type":"Answer",
-  "text":"शाही सवारी एक भव्य समारोह जुलूस है जहां महाकाल की मूर्ति को मंदिर से निकालकर शहर और क्षिप्रा नदी के दर्शन कराए जाते हैं, जो देवता और लोगों के बीच दिव्य संबंध देखने का अनोखा अवसर प्रदान करती है।"
-  }
-  },
-  {
-  "@type":"Question",
-  "name":"महाकाल शाही सवारी हर साल कब होती है?",
-  "acceptedAnswer":{
-  "@type":"Answer",
-  "text":"शाही सवारी जुलूस श्रावण पवित्र महीने के दौरान होते हैं, लेकिन दिन और समय प्रत्येक वर्ष पारंपरिक कैलेंडर के अनुसार बदलते हैं।"
-  }
-  },
-  {
-  "@type":"Question",
-  "name":"क्या महाकाल शाही सवारी देखना मुफ्त है?",
-  "acceptedAnswer":{
-  "@type":"Answer",
-  "text":"हां, यह जुलूस एक सार्वजनिक कार्यक्रम है जिसे निर्धारित मार्ग के साथ सड़कों से मुफ्त में देखा जा सकता है।"
-  }
-  },
-  {
-  "@type":"Question",
-  "name":"क्या लड़कियों और महिलाओं को महाकाल शाही सवारी में प्रवेश दिया जाता है?",
-  "acceptedAnswer":{
-  "@type":"Answer",
-  "text":"हां, शाही सवारी एक समावेशी कार्यक्रम है जहां महिलाएं और लड़कियां जुलूस में भाग लेने और देखने के लिए स्वागत हैं।"
-  }
-  }
-  ]
-  })
-  }}
-  />
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                  "@context":"https://schema.org",
+                  "@type":"FAQPage",
+                  "mainEntity":[
+                  {
+                  "@type":"Question",
+                  "name":"उज्जैन में महाकाल के लिए श्रावण मास का महत्व क्या है?",
+                  "acceptedAnswer":{
+                  "@type":"Answer",
+                  "text":"श्रावण को भगवान शिव के लिए सबसे पवित्र महीना माना जाता है, जो बढ़ी हुई आध्यात्मिक ऊर्जा और अभिषेक जैसे अनुष्ठान करने की परंपरा के कारण उज्जैन में लाखों भक्तों को आकर्षित करता है।"
+                  }
+                  },
+                  {
+                  "@type":"Question",
+                  "name":"महाकाल शाही सवारी क्या है और आपको इसे देखने का कारण क्या है?",
+                  "acceptedAnswer":{
+                  "@type":"Answer",
+                  "text":"शाही सवारी एक भव्य समारोह जुलूस है जहां महाकाल की मूर्ति को मंदिर से निकालकर शहर और क्षिप्रा नदी के दर्शन कराए जाते हैं, जो देवता और लोगों के बीच दिव्य संबंध देखने का अनोखा अवसर प्रदान करती है।"
+                  }
+                  },
+                  {
+                  "@type":"Question",
+                  "name":"महाकाल शाही सवारी हर साल कब होती है?",
+                  "acceptedAnswer":{
+                  "@type":"Answer",
+                  "text":"शाही सवारी जुलूस श्रावण पवित्र महीने के दौरान होते हैं, लेकिन दिन और समय प्रत्येक वर्ष पारंपरिक कैलेंडर के अनुसार बदलते हैं।"
+                  }
+                  },
+                  {
+                  "@type":"Question",
+                  "name":"क्या महाकाल शाही सवारी देखना मुफ्त है?",
+                  "acceptedAnswer":{
+                  "@type":"Answer",
+                  "text":"हां, यह जुलूस एक सार्वजनिक कार्यक्रम है जिसे निर्धारित मार्ग के साथ सड़कों से मुफ्त में देखा जा सकता है।"
+                  }
+                  },
+                  {
+                  "@type":"Question",
+                  "name":"क्या लड़कियों और महिलाओं को महाकाल शाही सवारी में प्रवेश दिया जाता है?",
+                  "acceptedAnswer":{
+                  "@type":"Answer",
+                  "text":"हां, शाही सवारी एक समावेशी कार्यक्रम है जहां महिलाएं और लड़कियां जुलूस में भाग लेने और देखने के लिए स्वागत हैं।"
+                  }
+                  }
+                  ]
+                  })
+                  }}
+                  />
+
+                {/* Place Schema - Mahakaleshwar Temple */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Place",
+                      "name": "श्री महाकालेश्वर ज्योतिर्लिंग मंदिर",
+                      "description": "उज्जैन में स्थित भगवान शिव के बारह ज्योतिर्लिंगों में से एक, श्रावण मास में लाखों भक्तों को आकर्षित करता है",
+                      "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "उज्जैन",
+                        "addressRegion": "मध्य प्रदेश",
+                        "postalCode": "456010",
+                        "addressCountry": "भारत"
+                      },
+                      "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": "23.1815",
+                        "longitude": "75.7733"
+                      },
+                      "touristType": "Religious Tourism",
+                      "openingHours": "Mo-Su 04:00-23:00"
+                    })
+                  }}
+                />
+
+                {/* Event Schema - Sawan 2026 */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Event",
+                      "name": "सावन 2026 - श्री महाकालेश्वर मंदिर",
+                      "description": "भगवान शिव को समर्पित पवित्र सावन महीना 2026, उज्जैन में महाकालेश्वर मंदिर में विशेष पूजा और अनुष्ठान",
+                      "startDate": "2026-07-30",
+                      "endDate": "2026-08-28",
+                      "location": {
+                        "@type": "Place",
+                        "name": "श्री महाकालेश्वर ज्योतिर्लिंग मंदिर",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "addressLocality": "उज्जैन",
+                          "addressRegion": "मध्य प्रदेश",
+                          "addressCountry": "भारत"
+                        }
+                      },
+                      "organizer": {
+                        "@type": "Organization",
+                        "name": "श्री महाकालेश्वर मंदिर प्रबंध समिति",
+                        "url": "https://shrimahakaleshwar.com"
+                      },
+                      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                      "eventStatus": "https://schema.org/EventScheduled"
+                    })
+                  }}
+                />
+
+                {/* HowTo Schema - How to Perform Sawan Vrat */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "HowTo",
+                      "name": "सावन 2026 में सावन सोमवार व्रत कैसे रखें",
+                      "description": "सावन 2026 में सावन सोमवार व्रत रखने का संपूर्ण मार्गदर्शिका",
+                      "step": [
+                        {
+                          "@type": "HowToStep",
+                          "name": "सुबह जल्दी उठें",
+                          "text": "सुबह जल्दी उठें, पवित्र स्नान करें और पूजा की वेदी को साफ करें"
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "शिवलिंग का अभिषेक करें",
+                          "text": "शिवलिंग का अभिषेक पानी, दूध, शहद और बेल के पत्तों के साथ करें और 'ॐ नमः शिवाय' का जाप करें"
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "व्रत का पालन करें",
+                          "text": "सावन सोमवार पर व्रत रखें, सूर्यास्त के बाद केवल एक भोजन (सात्विक) लें"
+                        },
+                        {
+                          "@type": "HowToStep",
+                          "name": "शिव पुराण पढ़ें",
+                          "text": "शिव पुराण पढ़ें या भजन सुनें और दिन का समय पूजा में बिताएं"
+                        }
+                      ]
+                    })
+                  }}
+                />
 
                 
         </Helmet>

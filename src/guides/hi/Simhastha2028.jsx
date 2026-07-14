@@ -234,6 +234,68 @@ export default function Simhastha2028Hi() {
   schema={faqSchema}
 />
 
+      <Helmet>
+        {/* Place Schema - Ujjain */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Place",
+              "name": "Ujjain",
+              "description": "Sacred city and one of the four Kumbh Mela locations, home to Mahakaleshwar Jyotirlinga",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Ujjain",
+                "addressLocality": "Ujjain",
+                "addressRegion": "Madhya Pradesh",
+                "postalCode": "456010",
+                "addressCountry": "India"
+              },
+              "url": "https://www.mysimhastha.com/hi/guide/simhastha-2028",
+              "telephone": "0734-2550563, 0734-2559277, 18002331008",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "23.1815",
+                "longitude": "75.7733"
+              }
+            })
+          }}
+        />
+
+        {/* Event Schema - Simhastha 2028 */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": "Simhastha 2028 - Kumbh Mela Ujjain",
+              "description": "Simhastha 2028 Kumbh Mela in Ujjain, one of the world's largest peaceful religious gatherings",
+              "startDate": "2028-03-27",
+              "endDate": "2028-05-27",
+              "location": {
+                "@type": "Place",
+                "name": "Ujjain",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Ujjain",
+                  "addressRegion": "Madhya Pradesh",
+                  "addressCountry": "India"
+                }
+              },
+              "organizer": {
+                "@type": "Organization",
+                "name": "Shri Mahakaleshwar Temple Management Committee",
+                "url": "https://shrimahakaleshwar.com"
+              },
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "eventStatus": "https://schema.org/EventScheduled"
+            })
+          }}
+        />
+      </Helmet>
+
       <section className="simhastha-guide">
         <div className="container">
           {/* Header */}

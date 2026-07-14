@@ -27,6 +27,7 @@ import {
 } from "../../services/storageService";
 import { useNavigate, useLocation } from "react-router-dom";
 import { supabase } from "../../services/staysService";
+import { SEO, SchemaProvider } from "../../seo";
 import { compressImage, compressImages, formatFileSize, isImageFile } from "../../utils/imageCompression";
 
 import "./ListYourProperty.css";
@@ -647,7 +648,33 @@ export default function ListYourPropertyPage() {
   }
 
   return (
-    <div className="list-property-page">
+    <>
+      <SEO
+        title="List Your Property on MySimhastha | Hotels, Homestays & Dharamshalas in Ujjain"
+        description="List your hotel, homestay, guest house, dharamshala or resort on MySimhastha and reach thousands of pilgrims visiting Ujjain for Mahakal Darshan and Simhastha 2028."
+        canonical="https://www.mysimhastha.com/list-property"
+      />
+
+      <SchemaProvider
+        type="service"
+        data={{
+          title: "List Your Property on MySimhastha",
+          description: "Reach thousands of pilgrims looking for hotels, homestays, dharamshalas and guest houses in Ujjain.",
+          url: "https://www.mysimhastha.com/list-property",
+          service: {
+            name: "Property Listing Service",
+            description: "List your hotel, homestay, guest house, dharamshala, hostel, resort, apartment, villa, ashram or camp on MySimhastha to reach pilgrims visiting Ujjain.",
+            category: "Accommodation Listing",
+            areaServed: ["Ujjain", "Omkareshwar", "Indore", "Madhya Pradesh"],
+          },
+          breadcrumbs: [
+            { label: "Home", url: "https://www.mysimhastha.com" },
+            { label: "List Your Property", url: "https://www.mysimhastha.com/list-property" },
+          ],
+        }}
+      />
+
+      <div className="list-property-page">
       <div className="stay-container">
         <div className="listing-hero">
           <div className="hero-badge">
@@ -1057,5 +1084,6 @@ export default function ListYourPropertyPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -330,6 +330,12 @@ function HotelsPage() {
           description: "Everything you need to know before choosing accommodation in Ujjain—from the best localities and hotel prices to pilgrimage planning, family travel tips, festival seasons, and expert booking advice.",
           url: "https://www.mysimhastha.com/hotels",
           about: "Ujjain Accommodation",
+          published: articleSchema.datePublished,
+          modified: articleSchema.dateModified,
+          breadcrumbs: breadcrumbSchema.itemListElement.map((b) => ({
+            label: b.name,
+            url: b.item,
+          })),
           faqs: faqSchema.mainEntity.map((q) => ({
             question: q.name,
             answer: q.acceptedAnswer.text,

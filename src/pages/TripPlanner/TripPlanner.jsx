@@ -19,6 +19,12 @@ const TripPlanner = () => {
           title: "Plan Your Simhastha Journey",
           description: "Create a personalized pilgrimage itinerary for Ujjain Simhastha 2028. Our AI-powered trip planner helps you design the perfect spiritual journey based on your preferences, budget, and interests.",
           url: "https://www.mysimhastha.com/trip-planner",
+          published: "2026-01-01",
+          modified: new Date().toISOString().split('T')[0],
+          breadcrumbs: [
+            { label: "Home", url: "https://www.mysimhastha.com" },
+            { label: "Trip Planner", url: "https://www.mysimhastha.com/trip-planner" },
+          ],
           howTo: {
             name: "How to Plan Your Simhastha Pilgrimage",
             description: "Step-by-step guide to planning your spiritual journey to Ujjain for Simhastha 2028 using our AI-powered trip planner.",

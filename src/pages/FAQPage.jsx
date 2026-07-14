@@ -229,6 +229,12 @@ const FAQPage = () => {
           url: "https://www.mysimhastha.com/faq",
           articleSection: "FAQ",
           about: "Ujjain Travel Guide",
+          published: "2026-01-01",
+          modified: new Date().toISOString().split('T')[0],
+          breadcrumbs: [
+            { label: "Home", url: "https://www.mysimhastha.com" },
+            { label: "FAQ", url: "https://www.mysimhastha.com/faq" },
+          ],
           faqs: flatFaqs,
         }}
       />

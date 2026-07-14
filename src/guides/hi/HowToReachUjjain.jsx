@@ -1376,6 +1376,70 @@ export default function HowToReachUjjain() {
         about="Ujjain"
         articleSection="Travel Guide"
         schema={faqSchema}
+        place={{
+          "@context": "https://schema.org",
+          "@type": "Place",
+          "name": "उज्जैन",
+          "description": "मध्य प्रदेश में स्थित पवित्र तीर्थ नगर, महाकालेश्वर ज्योतिर्लिंग का घर",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "उज्जैन",
+            "addressRegion": "मध्य प्रदेश",
+            "postalCode": "456010",
+            "addressCountry": "भारत"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "23.1815",
+            "longitude": "75.7733"
+          }
+        }}
+        touristDestination={{
+          "@context": "https://schema.org",
+          "@type": "TouristDestination",
+          "name": "उज्जैन",
+          "description": "हिंदू धर्म के सात पवित्र नगरों में से एक, महाकालेश्वर ज्योतिर्लिंग के लिए प्रसिद्ध",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "उज्जैन",
+            "addressRegion": "मध्य प्रदेश",
+            "addressCountry": "भारत"
+          },
+          "touristType": ["Religious Tourism", "Pilgrimage"],
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "23.1815",
+            "longitude": "75.7733"
+          }
+        }}
+        howTo={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "उज्जैन कैसे पहुँचें",
+          "description": "ट्रेन, हवाई मार्ग और सड़क मार्ग से उज्जैन पहुँचने की संपूर्ण गाइड",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "ट्रेन से यात्रा करें",
+              "text": "उज्जैन जंक्शन रेलवे स्टेशन (UJN) तक सीधी ट्रेनें उपलब्ध हैं, जो मध्य प्रदेश के प्रमुख शहरों से जुड़ी हैं"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "हवाई मार्ग से यात्रा करें",
+              "text": "इंदौर के देवी अहिल्याबाई होल्कर एयरपोर्ट (IDR) तक उड़ान भरें, जो उज्जैन से लगभग 55 किमी दूर है"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "सड़क मार्ग से यात्रा करें",
+              "text": "राज्य परिवहन बसें, निजी बसें या निजी वाहन से उज्जैन तक आसानी से पहुँचा जा सकता है"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "स्थानीय परिवहन का उपयोग करें",
+              "text": "उज्जैन में ऑटो-रिक्शा, टैक्सी और ई-रिक्शा आसानी से उपलब्ध हैं जो मंदिर और आसपास के स्थलों तक पहुँचने में मदद करते हैं"
+            }
+          ]
+        }}
       />
 
       <section className="simhastha-guide">

@@ -1414,6 +1414,70 @@ export default function HowToReachUjjain() {
         about="Ujjain"
         articleSection="Travel Guide"
         schema={faqSchema}
+        place={{
+          "@context": "https://schema.org",
+          "@type": "Place",
+          "name": "Ujjain",
+          "description": "Sacred pilgrimage city in Madhya Pradesh, home to Mahakaleshwar Jyotirlinga",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ujjain",
+            "addressRegion": "Madhya Pradesh",
+            "postalCode": "456010",
+            "addressCountry": "India"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "23.1815",
+            "longitude": "75.7733"
+          }
+        }}
+        touristDestination={{
+          "@context": "https://schema.org",
+          "@type": "TouristDestination",
+          "name": "Ujjain",
+          "description": "One of Hinduism's seven sacred cities, famous for Mahakaleshwar Jyotirlinga and Simhastha Kumbh Mela",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ujjain",
+            "addressRegion": "Madhya Pradesh",
+            "addressCountry": "India"
+          },
+          "touristType": ["Religious Tourism", "Pilgrimage"],
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "23.1815",
+            "longitude": "75.7733"
+          }
+        }}
+        howTo={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Reach Ujjain",
+          "description": "Complete guide to reach Ujjain by train, flight, and road transport",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Travel by Train",
+              "text": "Direct trains available to Ujjain Junction Railway Station (UJN), connecting major cities in Madhya Pradesh"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Travel by Flight",
+              "text": "Fly to Devi Ahilya Bai Holkar Airport (IDR) in Indore, approximately 55 km from Ujjain"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Travel by Road",
+              "text": "State transport buses, private buses, or private vehicles provide easy access to Ujjain"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Use Local Transport",
+              "text": "Auto-rickshaws, taxis, and e-rickshaws are readily available in Ujjain for temple and local visits"
+            }
+          ]
+        }}
       />
 
       <section className="simhastha-guide">

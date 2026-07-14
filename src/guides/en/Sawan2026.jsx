@@ -234,6 +234,87 @@ const faqSchema = {
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
         </script>
+
+        {/* Place Schema - Mahakaleshwar Temple */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Place",
+            "name": "Mahakaleshwar Temple",
+            "description": "One of the twelve Jyotirlingas, located in Ujjain, Madhya Pradesh",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Mahakal Lok, Ujjain",
+              "addressLocality": "Ujjain",
+              "addressRegion": "Madhya Pradesh",
+              "postalCode": "456010",
+              "addressCountry": "India"
+            },
+            "url": "https://www.mysimhastha.com/guide/sawan-2026",
+            "telephone": "0734-2550563, 0734-2559277, 18002331008",
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "23.1815",
+              "longitude": "75.7733"
+            }
+          })}
+        </script>
+
+        {/* Event Schema - Sawan 2026 */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "Sawan 2026 - Holy Month of Lord Shiva",
+            "description": "The holy month of Sawan (Shravan) 2026 in Ujjain, dedicated to Lord Shiva worship at Mahakaleshwar Temple",
+            "startDate": "2026-07-30",
+            "endDate": "2026-08-28",
+            "location": {
+              "@type": "Place",
+              "name": "Mahakaleshwar Temple",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Ujjain",
+                "addressRegion": "Madhya Pradesh",
+                "addressCountry": "India"
+              }
+            },
+            "organizer": {
+              "@type": "Organization",
+              "name": "Shri Mahakaleshwar Temple Management Committee",
+              "url": "https://shrimahakaleshwar.com"
+            },
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled"
+          })}
+        </script>
+
+        {/* HowTo Schema - How to Reach Mahakaleshwar Temple */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Reach Mahakaleshwar Temple in Ujjain",
+            "description": "Complete guide to reach Mahakaleshwar Temple by air, train, and road",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "By Air",
+                "text": "Nearest airport is Devi Ahilya Bai Holkar Airport in Indore (55 km). Take taxi or bus to Ujjain (1.5-2 hours)."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "By Train",
+                "text": "Ujjain Junction is 2 km from temple. Direct trains from Delhi, Mumbai, Bhopal, Indore available."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "By Road",
+                "text": "Ujjain is well-connected via NH52 and NH44. From Indore (55 km, 1-1.5 hours), Bhopal (190 km, 3-3.5 hours)."
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <section className="simhastha-guide">

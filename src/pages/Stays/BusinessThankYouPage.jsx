@@ -14,6 +14,7 @@ import {
   FiSearch,
   FiUsers,
 } from "react-icons/fi";
+import { SEO, SchemaProvider } from "../../seo";
 
 import "./BusinessThankYouPage.css";
 
@@ -96,7 +97,25 @@ export default function BusinessThankYouPage() {
 
   return (
 
-    <div className="business-thankyou-page">
+    <>
+      <SEO
+        title="Property Listing Submitted | MySimhastha"
+        description="Thank you for listing your property on MySimhastha. Our team will review your hotel, homestay, guest house or dharamshala and contact you shortly."
+        canonical="https://www.mysimhastha.com/thank-you"
+      />
+
+      <SchemaProvider
+        type="article"
+        data={{
+          title: "Property Listing Submitted | MySimhastha",
+          description: "Thank you for listing your property on MySimhastha. Our team will review your accommodation and contact you shortly.",
+          url: "https://www.mysimhastha.com/thank-you",
+          published: "2026-01-01",
+          modified: new Date().toISOString().split("T")[0],
+        }}
+      />
+
+      <div className="business-thankyou-page">
 
       {/* Hero */}
 
@@ -596,6 +615,7 @@ export default function BusinessThankYouPage() {
       </section>
 
     </div>
+    </>
 
   );
 

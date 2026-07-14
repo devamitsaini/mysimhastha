@@ -232,36 +232,6 @@ encodeURIComponent(window.location.href);
         />
 
         {/* ========================= */}
-        {/* PLACE SCHEMA */}
-        {/* ========================= */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Place",
-              "name": "महाकालेश्वर मंदिर",
-              "description": "12 ज्योतिर्लिंगों में से एक प्राचीन शिव मंदिर",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "महाकाल लोक, उज्जैन",
-                "addressLocality": "उज्जैन",
-                "addressRegion": "मध्य प्रदेश",
-                "postalCode": "456010",
-                "addressCountry": "भारत"
-              },
-              "url": "https://www.mysimhastha.com/hi/guide/mahakal-darshan",
-              "telephone": "0734-2550563, 0734-2559277, 18002331008",
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "23.1815",
-                "longitude": "75.7733"
-              }
-            })
-          }}
-        />
-
-        {/* ========================= */}
         {/* FAQ SCHEMA */}
         {/* ========================= */}
         <script
@@ -350,6 +320,104 @@ encodeURIComponent(window.location.href);
                     "@type": "Answer",
                     "text": "श्रवण (जुलाई-अगस्त) शिव पूजा के लिए सबसे पवित्र मास है। महाकालेश्वर में इस समय सर्वाधिक भीड़ और आध्यात्मिक ऊर्जा होती है। शाही सवारी जैसी भव्य परेडें होती हैं। लाभ: अधिकतम आध्यात्मिक शक्ति। चुनौतियाँ: अत्यधिक भीड़, 3-5 घंटे की प्रतीक्षा, अधिक दाम।"
                   }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ========================= */}
+        {/* PLACE SCHEMA */}
+        {/* ========================= */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Place",
+              "name": "महाकालेश्वर मंदिर",
+              "description": "12 ज्योतिर्लिंगों में से एक प्राचीन शिव मंदिर",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "महाकाल लोक, उज्जैन",
+                "addressLocality": "उज्जैन",
+                "addressRegion": "मध्य प्रदेश",
+                "postalCode": "456010",
+                "addressCountry": "भारत"
+              },
+              "url": "https://www.mysimhastha.com/hi/guide/mahakal-darshan",
+              "telephone": "0734-2550563, 0734-2559277, 18002331008",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "23.1815",
+                "longitude": "75.7733"
+              }
+            })
+          }}
+        />
+
+        {/* ========================= */}
+        {/* HOWTO SCHEMA */}
+        {/* ========================= */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "महाकालेश्वर मंदिर कैसे पहुंचें",
+              "description": "उज्जैन के महाकालेश्वर मंदिर तक विभिन्न परिवहन माध्यमों से पहुंचने की पूरी जानकारी",
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "name": "हवाई जहाज से",
+                  "text": "निकटतम हवाई अड्डा इंदौर में है (55 किमी)। इंदौर से उज्जैन तक टैक्सी या बस लें (1.5-2 घंटे)।"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "ट्रेन से",
+                  "text": "उज्जैन जंक्शन मंदिर से 4-5 किमी दूर है। दिल्ली, मुंबई, इंदौर से सीधी ट्रेनें उपलब्ध हैं।"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "सड़क मार्ग से",
+                  "text": "उज्जैन NH52 और NH44 से अच्छी तरह जुड़ा है। इंदौर (55 किमी, 1-1.5 घंटे), भोपाल (190 किमी, 3-3.5 घंटे)।"
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ========================= */}
+        {/* TOURIST DESTINATION SCHEMA */}
+        {/* ========================= */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "TouristDestination",
+              "name": "Ujjain",
+              "description": "प्राचीन पवित्र शहर महाकालेश्वर ज्योतिर्लिंग का घर",
+              "url": "https://www.mysimhastha.com/hi/guide/mahakal-darshan",
+              "image": "https://www.mysimhastha.com/images/mahakal-darshan.webp",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Ujjain",
+                "addressRegion": "Madhya Pradesh",
+                "addressCountry": "India"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "23.1815",
+                "longitude": "75.7733"
+              },
+              "touristType": ["Religious", "Cultural", "Historical"],
+              "includesAttraction": [
+                {
+                  "@type": "TouristAttraction",
+                  "name": "Mahakaleshwar Jyotirlinga",
+                  "description": "12 ज्योतिर्लिंगों में से एक"
                 }
               ]
             })

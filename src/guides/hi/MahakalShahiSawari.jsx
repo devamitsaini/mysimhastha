@@ -193,6 +193,73 @@ export default function MahakalShahiSawariHi() {
             })
           }}
         />
+
+        {/* Event Schema - Mahakal Shahi Sawari */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": "Mahakal Shahi Sawari - Royal Procession of Lord Mahakal",
+              "description": "The grand royal procession of Lord Mahakal during Sawan month in Ujjain, where the deity is carried on a decorated elephant through the streets of Ujjain",
+              "startDate": "2026-07-30",
+              "endDate": "2026-08-28",
+              "location": {
+                "@type": "Place",
+                "name": "Mahakaleshwar Temple",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Ujjain",
+                  "addressRegion": "Madhya Pradesh",
+                  "addressCountry": "India"
+                }
+              },
+              "organizer": {
+                "@type": "Organization",
+                "name": "Shri Mahakaleshwar Temple Management Committee",
+                "url": "https://shrimahakaleshwar.com"
+              },
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "eventStatus": "https://schema.org/EventScheduled"
+            })
+          }}
+        />
+
+        {/* HowTo Schema - How to Watch Shahi Sawari */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to Watch Mahakal Shahi Sawari in Ujjain",
+              "description": "Complete guide to watch the grand royal procession of Lord Mahakal in Ujjain during Sawan month",
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "name": "Check the Schedule",
+                  "text": "Check the official Mahakaleshwar Temple website or contact temple authorities for the exact dates and timings of Shahi Sawari during Sawan 2026"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Reach Early",
+                  "text": "Arrive at the procession route 4-6 hours before the scheduled start time to get a good viewing spot"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Choose Best Viewing Spot",
+                  "text": "Select a viewing spot along the official procession route - near Mahakaleshwar Temple, main roads (MG Road area), or near Shipra River for the best experience"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Follow Safety Guidelines",
+                  "text": "Follow temple staff instructions, maintain crowd discipline, keep valuables safe, and stay hydrated during the event"
+                }
+              ]
+            })
+          }}
+        />
       </Helmet>
 
       <section className="simhastha-guide">

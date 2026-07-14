@@ -228,6 +228,30 @@ function buildAccommodationCollectionSchema(data) {
 }
 
 /**
+ * Build an ItemList schema (used by stays type) when an `itemList` object with
+ * an `items` array is supplied in the page data.
+ * @param {object} data - The page data.
+ * @returns {object|null} An ItemList schema or null.
+ */
+function buildItemListSchema(data) {
+  const { itemList } = data || {};
+  if (!itemList) return null;
+  const items = Array.isArray(itemList) ? itemList : itemList.items;
+  return generateItemListSchema(items || []);
+}
+
+/**
+ * Build a SpeakableSpecification schema (used by content pages) when
+ * `speakableSelectors` are supplied in the page data.
+ * @param {object} data - The page data.
+ * @returns {object|null} A SpeakableSpecification schema or null.
+ */
+function buildSpeakableSchema(data) {
+  const { speakableSelectors } = data || {};
+  return generateSpeakableSchema(speakableSelectors);
+}
+
+/**
  * Build schema from generateHomeSchema which returns an array of home-specific
  * schema objects (SearchAction, Navigation, Brand, etc.).
  * @param {object} data - The page data.
@@ -361,7 +385,16 @@ const GENERATORS = {
     ]),
 
   stays: (data) =>
-    compact([...buildSiteSchemas(), ...buildPageSchemas(data), buildAccommodationCollectionSchema(data)]),
+    compact([
+      ...buildSiteSchemas(),
+      ...buildPageSchemas(data),
+      buildArticleSchema(data),
+      buildFaqSchema(data),
+      buildHowToSchema(data),
+      buildItemListSchema(data),
+      buildSpeakableSchema(data),
+      buildAccommodationCollectionSchema(data),
+    ]),
 
   temple: (data) =>
     compact([
@@ -369,6 +402,7 @@ const GENERATORS = {
       ...buildPageSchemas(data),
       buildPlaceSchema(data),
       buildTouristAttractionSchema(data),
+      buildItemListSchema(data),
       buildFaqSchema(data),
     ]),
 
