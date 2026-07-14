@@ -26,11 +26,11 @@
   ],
 
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ],
+  {
+    "source": "/((?!images|static|favicon.ico|manifest.json|robots.txt|sitemap.xml).*)",
+    "destination": "/"
+  }
+],
 
   "headers": [
     {
