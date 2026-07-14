@@ -27,7 +27,7 @@ const seo = {
     type: "article",
     siteName: "MySimhastha",
     locale: "en_IN",
-    image: "https://www.mysimhastha.com/images/kal-bhairav-hero.webp",
+    image: "https://www.mysimhastha.com/images/kal-bhairav-temple-guide.webp",
     imageAlt: "Priest offering liquor as prasad to the deity at Kal Bhairav Temple, Ujjain",
   },
 
@@ -36,7 +36,7 @@ const seo = {
     title: "Kal Bhairav Temple, Ujjain: Complete Guide, Timings & Significance",
     description:
       "History, darshan timings, and the famous liquor offering ritual at Kal Bhairav Temple, Ujjain — plus how to reach and what to expect.",
-    image: "https://www.mysimhastha.com/images/kal-bhairav-hero.webp",
+    image: "https://www.mysimhastha.com/images/kal-bhairav-temple-guide.webp",
   },
 
   publishedTime: "2026-07-13T00:00:00+05:30",
@@ -54,7 +54,7 @@ const seo = {
     headline: "Kal Bhairav Temple, Ujjain: Complete Guide, Timings & Significance",
     description:
       "A complete guide to Kal Bhairav Temple, Ujjain, covering its history, darshan timings, the famous liquor offering ritual, dress code, and how to combine it with other Ujjain landmarks.",
-    image: "https://www.mysimhastha.com/images/kal-bhairav-hero.webp",
+    image: "https://www.mysimhastha.com/images/kal-bhairav-temple-guide.webp",
     author: {
       "@type": "Organization",
       name: "MySimhastha Travel Desk",

@@ -6,20 +6,7 @@ import "./TripPlanner.css";
 const TripPlanner = () => {
   return (
     <div className="trip-planner-page">
-      {/* Hero Section */}
-      <section className="tp-hero">
-        <div className="container">
-          <div className="tp-hero-content">
-            <h1>Plan Your Ujjain Journey</h1>
-           
-            <div className="tp-hero-badges">
-              <span className="badge">AI-Powered</span>
-              <span className="badge">Personalized</span>
-              <span className="badge">Free</span>
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
       {/* AI Trip Planner Section */}
       <section className="tp-planner-section">

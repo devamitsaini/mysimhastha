@@ -50,7 +50,7 @@ const LiveUpdates = () => {
     {
       icon: FaCalendarCheck,
       label: "Upcoming Event",
-      value: "30 June",
+      value: "30 July",
       subtext: "Shravan Month",
       color: "#F59E0B",
       route: "/guide/sawan-2026-dates",

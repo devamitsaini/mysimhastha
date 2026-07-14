@@ -13,7 +13,7 @@ const guide = {
     title: "काल भैरव मंदिर, उज्जैन: पर्यटक का पूर्ण गाइड",
     subtitle:
       "इतिहास, प्रसिद्ध शराब अर्पण रीति, समय, और उज्जैन के कोतवाल से मिलने से पहले जो कुछ जानना जरूरी है",
-    image: "/images/kal-bhairav-hero.webp",
+    image: "/images/kal-bhairav-temple-guide.webp",
     imageAlt:
       "उज्जैन के प्राचीन काल भैरव मंदिर में शराब अर्पण करते भक्त",
   },

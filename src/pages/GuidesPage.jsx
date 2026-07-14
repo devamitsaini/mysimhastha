@@ -9,7 +9,7 @@ export default function GuidesPage() {
     title: "Kal Bhairav Temple, Ujjain: Complete Guide, Timings & Significance",
     description:
       "Everything you need to know before visiting Kal Bhairav Temple, Ujjain — history, darshan timings, the famous liquor offering ritual, how to reach, dress code, and nearby places to combine on your visit.",
-    image: "/images/kal-bhairav-hero.webp",
+    image: "/images/kal-bhairav-temple-guide.webp",
     enLink: "/guide/kal-bhairav-temple-guide",
     hiLink: "/hi/guide/kal-bhairav-temple-guide",
     date: "2026-07-13"

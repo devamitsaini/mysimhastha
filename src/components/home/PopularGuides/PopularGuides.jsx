@@ -132,17 +132,18 @@ const PopularGuides = () => {
             >
 
               <Link
-                to={guide.enLink}
-                className="guide-image"
-              >
+              to={guide.enLink}
+              className="popular-guide-image"
+            >
 
-                <img
-                  src={guide.image}
-                  alt={guide.title}
-                  loading="lazy"
-                />
+              <img
+                className="popular-guide-img"
+                src={guide.image}
+                alt={guide.title}
+                loading="lazy"
+              />
 
-              </Link>
+            </Link>
 
               <div className="guide-content">
 

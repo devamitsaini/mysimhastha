@@ -13,7 +13,7 @@ const guide = {
     title: "Kal Bhairav Temple, Ujjain: The Complete Visitor's Guide",
     subtitle:
       "History, the famous liquor offering ritual, timings, and everything you need to know before visiting the Kotwal of Ujjain",
-    image: "/images/kal-bhairav-hero.webp",
+    image: "/images/kal-bhairav-temple-guide.webp",
     imageAlt:
       "Devotees offering liquor at the ancient Kal Bhairav Temple in Ujjain, Madhya Pradesh",
   },
