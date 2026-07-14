@@ -45,7 +45,7 @@ export default function StayReviewForm({ stayId, onSuccess }) {
 
     setSubmitting(true);
     try {
-      const { createStayReview } = await import("../../services/staysService");
+      const { createStayReview } = await import("../../../services/staysService");
       const { error } = await createStayReview({
         stay_id: stayId,
         name: form.name.trim(),
