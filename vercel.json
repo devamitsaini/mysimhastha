@@ -26,15 +26,15 @@
   ],
 
   "rewrites": [
-  {
-    "source": "/((?!images|static|favicon.ico|manifest.json|robots.txt|sitemap.xml).*)",
-    "destination": "/"
-  }
-],
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
 
   "headers": [
     {
-      "source": "/(.*)\\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)",
+      "source": "/static/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
