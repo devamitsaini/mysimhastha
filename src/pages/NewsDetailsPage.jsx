@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { supabase } from "../lib/supabase";
 import ShareButtons from "../components/guides/ShareButtons";
 import Breadcrumb from "../components/layout/Breadcrumb";
+import { SEO, SchemaProvider } from "../seo";
 import "../styles/news.css";
 
 function NewsDetailsPage() {
@@ -63,44 +63,25 @@ function NewsDetailsPage() {
 
   return (
     <>
-      <Helmet>
-        <meta
-          name="description"
-          content={news.summary?.slice(0, 160)}
-        />
-        <link
-          rel="canonical"
-          href={`https://www.mysimhastha.com/news/${news.slug}`}
-        />
-        <title>{news.title} | MySimhastha News</title>
+      <SEO
+        title={`${news.title} | MySimhastha News`}
+        description={news.summary?.slice(0, 160)}
+        canonical={`https://www.mysimhastha.com/news/${news.slug}`}
+        image={news.image_url}
+      />
 
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            headline: news.title,
-            datePublished: news.created_at,
-            image: news.image_url,
-            description: news.summary,
-            author: {
-              "@type": "Organization",
-              name: "MySimhastha"
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "MySimhastha",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://www.mysimhastha.com/logo.png"
-              }
-            },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": `https://www.mysimhastha.com/news/${news.slug}`
-            }
-          })}
-        </script>
-      </Helmet>
+      <SchemaProvider
+        type="blog"
+        data={{
+          title: news.title,
+          description: news.summary,
+          url: `https://www.mysimhastha.com/news/${news.slug}`,
+          image: news.image_url,
+          datePublished: news.created_at,
+          dateModified: news.updated_at || news.created_at,
+          about: "News",
+        }}
+      />
 
       <div className="news-details">
         {news.image_url && (

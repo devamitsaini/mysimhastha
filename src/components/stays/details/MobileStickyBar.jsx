@@ -1,26 +1,26 @@
 import { FiPhone, FiMessageCircle } from "react-icons/fi";
 
+// Format a number as Indian currency, e.g. 1500 -> "₹1,500".
+function formatPrice(value) {
+  const num = Number(value);
+  if (!num) return null;
+  return `₹${num.toLocaleString("en-IN")}`;
+}
+
 export default function MobileStickyBar({ stay }) {
   const phone = stay?.phone || "";
   const whatsapp = stay?.whatsapp || stay?.phone || "";
 
+  const price = formatPrice(stay.starting_price || stay.price_from);
+
   return (
     <div className="mobile-sticky-bar">
-
       <div className="mobile-price">
-
         <small>Starting From</small>
-
-        <strong>
-          {stay.starting_price ||
-            stay.price_from ||
-            "Contact"}
-        </strong>
-
+        <strong>{price || "Contact"}</strong>
       </div>
 
       <div className="mobile-buttons">
-
         <a
           href={phone ? `tel:${phone}` : "#"}
           className="mobile-call"
@@ -40,9 +40,7 @@ export default function MobileStickyBar({ stay }) {
           <FiMessageCircle />
           WhatsApp
         </a>
-
       </div>
-
     </div>
   );
 }

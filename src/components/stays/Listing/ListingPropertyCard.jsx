@@ -63,14 +63,20 @@ export default function ListingPropertyCard({ stay }) {
 
             <div className="listing-badges">
 
-              <span className="verified">
-                <FiCheckCircle />
-                Verified
-              </span>
+              {stay.verified && (
+                <span className="verified">
+                  <FiCheckCircle />
+                  Verified
+                </span>
+              )}
 
-              <span>Couple Friendly</span>
+              {stay.couple_friendly && (
+                <span>Couple Friendly</span>
+              )}
 
-              <span>Free Cancellation</span>
+              {stay.free_cancellation && (
+                <span>Free Cancellation</span>
+              )}
 
             </div>
 
@@ -113,21 +119,17 @@ export default function ListingPropertyCard({ stay }) {
 
         <p className="listing-description">
 
-          Spacious AC rooms with free WiFi,
-          parking, hot water, attached bathrooms,
-          lift and family-friendly facilities.
+          {stay.short_description || stay.description || `Comfortable ${stay.stay_type || 'accommodation'} in Ujjain with modern amenities and convenient location.`}
 
         </p>
 
-        <div className="amenities">
-
-          <span>AC</span>
-          <span>WiFi</span>
-          <span>Parking</span>
-          <span>Lift</span>
-          <span>Family Rooms</span>
-
-        </div>
+        {stay.amenities && stay.amenities.length > 0 && (
+          <div className="amenities">
+            {stay.amenities.slice(0, 5).map((amenity, idx) => (
+              <span key={idx}>{amenity}</span>
+            ))}
+          </div>
+        )}
 
         {/* Mobile Price - Bottom */}
 

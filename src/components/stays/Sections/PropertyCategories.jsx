@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FiHome,
@@ -8,36 +8,66 @@ import {
 } from "react-icons/fi";
 import { MdTempleHindu } from "react-icons/md";
 
+import { fetchStayCountsByType } from "../../../services/staysService";
+
 import "./PropertyCategories.css";
 
-const categories = [
-  {
-    name: "Hotels",
-    icon: <FiHome />,
-    count: 248,
-    type: "Hotel",
-  },
-  {
-    name: "Homestays",
-    icon: <FiUsers />,
-    count: 61,
-    type: "Homestay",
-  },
-  {
-    name: "Guest Houses",
-    icon: <FiGrid />,
-    count: 29,
-    type: "Guest House",
-  },
-  {
-    name: "Dharamshalas",
-    icon: <MdTempleHindu />,
-    count: 34,
-    type: "Dharamshala",
-  },
-];
+const iconMap = {
+  "Hotel": <FiHome />,
+  "Homestay": <FiUsers />,
+  "Guest House": <FiGrid />,
+  "Dharamshala": <MdTempleHindu />,
+};
 
 export default function PropertyCategories() {
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadCategories() {
+      try {
+        const { data } = await fetchStayCountsByType();
+        const mappedCategories = (data || []).map(item => ({
+          name: item.stay_type,
+          type: item.stay_type,
+          count: item.count,
+          icon: iconMap[item.stay_type] || <FiHome />,
+        }));
+        setCategories(mappedCategories);
+      } catch (error) {
+        console.error('Error loading categories:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadCategories();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="property-types">
+        <div className="stay-container">
+          <div className="section-heading">
+            <h2>Browse by Stay Type</h2>
+            <p>Choose the accommodation that best fits your journey to Ujjain.</p>
+          </div>
+          <div className="category-grid">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="category-card loading-skeleton">
+                <div className="skeleton-overlay"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (categories.length === 0) {
+    return null;
+  }
+
   return (
     <section className="property-types">
 

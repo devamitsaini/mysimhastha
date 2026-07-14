@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import { SEO, SchemaProvider } from "../seo";
 import "../styles/GalleryPage.css";
 
 const GalleryPage = () => {
@@ -19,10 +19,24 @@ const GalleryPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Gallery | MySimhastha</title>
-        <meta name="description" content="View our collection of spiritual and cultural moments from Mahakal Temple and Kumbh Mela in Ujjain." />
-      </Helmet>
+      <SEO
+        title="Gallery | MySimhastha"
+        description="View our collection of spiritual and cultural moments from Mahakal Temple and Kumbh Mela in Ujjain."
+        canonical="https://www.mysimhastha.com/gallery"
+      />
+
+      <SchemaProvider
+        type="gallery"
+        data={{
+          title: "Mahakal Darshan & Kumbh Mela Gallery",
+          description: "A visual collection of spiritual and cultural moments from Mahakal Temple and Kumbh Mela in Ujjain.",
+          url: "https://www.mysimhastha.com/gallery",
+          images: galleryImages.map((img) => ({
+            url: `https://www.mysimhastha.com${img.src}`,
+            caption: img.alt,
+          })),
+        }}
+      />
 
       <div className="gallery-page">
         <div className="container">

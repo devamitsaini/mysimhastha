@@ -1,66 +1,28 @@
-import {
-  FiCheckCircle,
-} from "react-icons/fi";
+import { FiCheckCircle } from "react-icons/fi";
 
-export default function PropertyRules() {
+export default function PropertyRules({ stay }) {
+  // Rules live directly on the stay object (TEXT[] column in the `stays` table).
+  // Only render the section when rules actually exist.
+  const rules = stay.rules || [];
 
-  const rules = [
-    {
-      title: "Check-in",
-      value: "12:00 PM onwards",
-    },
-    {
-      title: "Check-out",
-      value: "Before 10:00 AM",
-    },
-    {
-      title: "Pets",
-      value: "Not Allowed",
-    },
-    {
-      title: "Smoking",
-      value: "No Smoking",
-    },
-    {
-      title: "Children",
-      value: "Family Friendly",
-    },
-    {
-      title: "Payment",
-      value: "Cash & UPI",
-    },
-  ];
+  if (rules.length === 0) {
+    return null;
+  }
 
   return (
     <section className="details-card">
-
       <h2>Property Rules</h2>
 
       <div className="rules-list">
-
-        {rules.map((rule) => (
-
-          <div
-            className="rule-item"
-            key={rule.title}
-          >
-
+        {rules.map((rule, index) => (
+          <div className="rule-item" key={index}>
             <FiCheckCircle />
-
             <div>
-
-              <strong>{rule.title}</strong>
-
-              <span>{rule.value}</span>
-
+              <span>{rule}</span>
             </div>
-
           </div>
-
         ))}
-
       </div>
-
     </section>
   );
 }

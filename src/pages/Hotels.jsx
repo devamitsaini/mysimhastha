@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Helmet } from "react-helmet-async";
+import { SEO, SchemaProvider } from "../seo";
 import { 
   Hotel, 
   MapPin, 
@@ -316,48 +316,41 @@ function HotelsPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Hotels in Ujjain: Complete Accommodation Guide (2026–2028) | MySimhastha</title>
-        <meta
-          name="description"
-          content="Planning to stay in Ujjain? Discover the best areas to stay, hotel price ranges, travel tips, distance from Mahakaleshwar Temple, seasonal accommodation advice, booking mistakes to avoid, and everything pilgrims need before choosing a hotel."
-        />
-        <link rel="canonical" href="https://www.mysimhastha.com/hotels" />
-        
-        <meta property="og:title" content="Hotels in Ujjain: Complete Accommodation Guide (2026–2028) | MySimhastha" />
-        <meta property="og:description" content="Discover the best areas to stay, hotel prices, travel tips, and expert booking advice for Ujjain pilgrimage." />
-        <meta property="og:url" content="https://www.mysimhastha.com/hotels" />
-        <meta property="og:type" content="article" />
-        
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hotels in Ujjain: Complete Accommodation Guide (2026–2028)" />
-        <meta name="twitter:description" content="Everything you need to know before choosing accommodation in Ujjain." />
+      <SEO
+        title="Hotels in Ujjain: Complete Accommodation Guide (2026–2028) | MySimhastha"
+        description="Planning to stay in Ujjain? Discover the best areas to stay, hotel price ranges, travel tips, distance from Mahakaleshwar Temple, seasonal accommodation advice, booking mistakes to avoid, and everything pilgrims need before choosing a hotel."
+        canonical="https://www.mysimhastha.com/hotels"
+        image="https://www.mysimhastha.com/og-image.jpg"
+      />
 
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(articleSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(howToSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(itemListSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(organizationSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(websiteSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(speakableSchema)}
-        </script>
-      </Helmet>
+      <SchemaProvider
+        type="stays"
+        data={{
+          title: "Complete Ujjain Hotel Guide (2026–2028)",
+          description: "Everything you need to know before choosing accommodation in Ujjain—from the best localities and hotel prices to pilgrimage planning, family travel tips, festival seasons, and expert booking advice.",
+          url: "https://www.mysimhastha.com/hotels",
+          about: "Ujjain Accommodation",
+          faqs: faqSchema.mainEntity.map((q) => ({
+            question: q.name,
+            answer: q.acceptedAnswer.text,
+          })),
+          howTo: {
+            name: howToSchema.name,
+            description: howToSchema.description,
+            steps: howToSchema.step.map((s) => ({ name: s.name, text: s.text })),
+          },
+          itemList: {
+            name: itemListSchema.name,
+            description: itemListSchema.description,
+            items: itemListSchema.itemListElement.map((i) => ({
+              position: i.position,
+              name: i.name,
+              description: i.description,
+            })),
+          },
+          speakableSelectors: [".guide-summary", ".section-summary"],
+        }}
+      />
 
       <div className="page-wrap">
         {/* Hero Section */}

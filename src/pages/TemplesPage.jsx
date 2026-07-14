@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { SEO, SchemaProvider } from "../seo";
 import {
   FaMapMarkerAlt,
   FaClock,
@@ -131,13 +131,27 @@ const TemplesPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Sacred Temples of Ujjain, Omkareshwar & Baglamukhi Mata</title>
-        <meta
-          name="description"
-          content="Explore sacred temples in and around Ujjain including Mahakaleshwar Jyotirlinga, Omkareshwar Jyotirlinga, and Baglamukhi Mata Temple. Get timings, entry charges, and location details."
-        />
-      </Helmet>
+      <SEO
+        title="Sacred Temples of Ujjain, Omkareshwar & Baglamukhi Mata"
+        description="Explore sacred temples in and around Ujjain including Mahakaleshwar Jyotirlinga, Omkareshwar Jyotirlinga, and Baglamukhi Mata Temple. Get timings, entry charges, and location details."
+        canonical="https://www.mysimhastha.com/temples"
+      />
+
+      <SchemaProvider
+        type="temple"
+        data={{
+          title: "Sacred Temples of Ujjain, Omkareshwar & Baglamukhi Mata",
+          description: "Explore sacred temples in and around Ujjain including Mahakaleshwar Jyotirlinga, Omkareshwar Jyotirlinga, and Baglamukhi Mata Temple.",
+          url: "https://www.mysimhastha.com/temples",
+          about: "Temples of Ujjain",
+          temples: templesData.map((t) => ({
+            name: t.name,
+            description: t.description,
+            location: t.location,
+            image: `https://www.mysimhastha.com${t.image}`,
+          })),
+        }}
+      />
 
       <div className="temples-page">
         <div className="container">

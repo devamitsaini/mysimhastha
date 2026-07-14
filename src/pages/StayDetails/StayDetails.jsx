@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { fetchStayBySlug } from "../../services/staysService";
+import { SEO, SchemaProvider } from "../../seo";
 
 import StayGallery from "../../components/stays/details/StayGallery";
 import StayInfo from "../../components/stays/details/StayInfo";
@@ -62,41 +63,67 @@ export default function StayDetailsPage() {
 
   return (
 
-    <div className="stay-details-page">
+    <>
+      <SEO
+        title={`${stay.name} | Hotels Near Mahakaleshwar Temple | MySimhastha`}
+        description={stay.short_description || `Book ${stay.name} in Ujjain near Mahakaleshwar Temple.`}
+        canonical={`https://www.mysimhastha.com/stays/${stay.slug}`}
+        image={stay.featured_image || stay.image}
+      />
 
-      <div className="stay-container">
+      <SchemaProvider
+        type="hotel"
+        data={{
+          name: stay.name,
+          description: stay.short_description || stay.description,
+          url: `https://www.mysimhastha.com/stays/${stay.slug}`,
+          image: stay.featured_image || stay.image,
+          about: "Accommodation",
+          faqs: stay.faqs,
+          reviews: stay.reviews,
+          rating: stay.rating,
+          priceRange: stay.price_range,
+          address: stay.address,
+          telephone: stay.phone,
+        }}
+      />
 
-        <StayGallery stay={stay} />
+      <div className="stay-details-page">
 
-        <div className="details-layout">
+        <div className="stay-container">
 
-          <div className="details-main">
+          <StayGallery stay={stay} />
 
-            <StayInfo stay={stay} />
+          <div className="details-layout">
 
-            <AboutProperty stay={stay} />
+            <div className="details-main">
 
-            <Amenities stay={stay} />
+              <StayInfo stay={stay} />
 
-            <NearbyPlaces stay={stay} />
+              <AboutProperty stay={stay} />
 
-            <PropertyMap stay={stay} />
+              <Amenities stay={stay} />
 
-            <PropertyRules stay={stay} />
+              <NearbyPlaces stay={stay} />
 
-            <SimilarStays stay={stay} />
+              <PropertyMap stay={stay} />
+
+              <PropertyRules stay={stay} />
+
+              <SimilarStays stay={stay} />
+
+            </div>
+
+            <StickyContactCard stay={stay} />
 
           </div>
 
-          <StickyContactCard stay={stay} />
-
         </div>
 
+        <MobileStickyBar stay={stay} />
+
       </div>
-
-      <MobileStickyBar stay={stay} />
-
-    </div>
+    </>
 
   );
 

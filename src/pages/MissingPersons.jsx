@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MISSING_DATA } from '../data/simhasthaData';
+import { SEO, SchemaProvider } from "../seo";
 import "../styles/MissingPersons.css";
 
 function MissingPersonsPage({
@@ -171,7 +172,32 @@ function MissingPersonsPage({
   const filtered = list.filter(p => statusFilter === "all" || p.status === statusFilter);
 
   return (
-    <div className="page-wrap">
+    <>
+      <SEO
+        title="Missing Persons Board | MySimhastha"
+        description="Help reunite families during Simhastha 2028. Report missing persons or search for missing devotees. Emergency helpline: 112 (24/7 Free)."
+        canonical="https://www.mysimhastha.com/missing-persons"
+      />
+
+      <SchemaProvider
+        type="service"
+        data={{
+          title: "Missing Persons Board",
+          description: "Help reunite families during Simhastha 2028. Report missing persons or search for missing devotees.",
+          url: "https://www.mysimhastha.com/missing-persons",
+          service: {
+            name: "Missing Persons Reporting Service",
+            serviceType: "Emergency Assistance",
+            areaServed: "Ujjain, Madhya Pradesh",
+            provider: {
+              name: "MySimhastha",
+              url: "https://www.mysimhastha.com",
+            },
+          },
+        }}
+      />
+
+      <div className="page-wrap">
       <div className="page-hero">
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div className="sec-label">🆘 EMERGENCY HELP</div>
@@ -364,6 +390,7 @@ function MissingPersonsPage({
         </div>
       </section>
     </div>
+    </>
   );
 }
 

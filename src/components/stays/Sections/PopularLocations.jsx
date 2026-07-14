@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiMapPin, FiArrowRight } from "react-icons/fi";
 
-import { fetchAllLocalities, fetchStaysByLocality, supabase } from "../../../services/staysService";
+import { fetchStayCountsByLocality } from "../../../services/staysService";
 
 import "./PopularLocations.css";
 
@@ -16,43 +16,18 @@ export default function PopularLocations() {
   useEffect(() => {
     async function loadLocations() {
       try {
-        // Fetch all unique localities
-        const { data: localities, error } = await fetchAllLocalities();
+        const { data } = await fetchStayCountsByLocality();
         
-        if (error || !localities || localities.length === 0) {
-          setLoading(false);
-          return;
-        }
+        const mappedLocations = (data || []).map(item => ({
+          name: item.locality,
+          properties: item.count,
+          query: item.locality,
+        }));
 
-        // Fetch property count for each locality
-        const locationsWithCounts = await Promise.all(
-          localities.map(async (locality) => {
-            const { count } = await supabase
-              .from('stays')
-              .select('*', { count: 'exact', head: true })
-              .eq('active', true)
-              .eq('locality', locality);
-            
-            return {
-              name: locality,
-              properties: count || 0,
-              query: locality,
-            };
-          })
-        );
-
-        // Sort by property count (descending) and take top 6
-        const sortedLocations = locationsWithCounts
-          .sort((a, b) => b.properties - a.properties)
-          .slice(0, 6);
-
-
-          ("Localities:", localities);
-("Locations With Counts:", sortedLocations);
-        setLocations(sortedLocations);
-        setLoading(false);
+        setLocations(mappedLocations);
       } catch (error) {
         console.error("Error loading locations:", error);
+      } finally {
         setLoading(false);
       }
     }

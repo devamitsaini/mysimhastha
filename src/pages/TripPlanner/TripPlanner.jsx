@@ -1,13 +1,59 @@
 import React from "react";
 import { FaMapSigns, FaQuestionCircle, FaListOl, FaMapMarkerAlt, FaClock, FaUsers, FaWallet, FaBus, FaHotel, FaLanguage, FaCheckCircle } from "react-icons/fa";
 import AITripPlanner from "../../components/home/AITripPlanner/AITripPlanner";
+import { SEO, SchemaProvider } from "../../seo";
 import "./TripPlanner.css";
 
 const TripPlanner = () => {
   return (
-    <div className="trip-planner-page">
-    
+    <>
+      <SEO
+        title="Plan Your Simhastha Journey | AI Trip Planner"
+        description="Create a personalized pilgrimage itinerary for Ujjain Simhastha 2028. Our AI-powered trip planner helps you design the perfect spiritual journey based on your preferences, budget, and interests."
+        canonical="https://www.mysimhastha.com/trip-planner"
+      />
 
+      <SchemaProvider
+        type="howto"
+        data={{
+          title: "Plan Your Simhastha Journey",
+          description: "Create a personalized pilgrimage itinerary for Ujjain Simhastha 2028. Our AI-powered trip planner helps you design the perfect spiritual journey based on your preferences, budget, and interests.",
+          url: "https://www.mysimhastha.com/trip-planner",
+          howTo: {
+            name: "How to Plan Your Simhastha Pilgrimage",
+            description: "Step-by-step guide to planning your spiritual journey to Ujjain for Simhastha 2028 using our AI-powered trip planner.",
+            step: [
+              {
+                name: "Enter Trip Details",
+                text: "Provide your departure city, arrival date, and duration of stay in Ujjain.",
+              },
+              {
+                name: "Add Travelers",
+                text: "Specify the number of adults, children, and senior citizens traveling with you.",
+              },
+              {
+                name: "Choose Budget & Stay",
+                text: "Select your budget range and hotel preferences for a comfortable stay.",
+              },
+              {
+                name: "Select Transport",
+                text: "Choose your preferred mode of transport - Train, Flight, Car, Bus, or Bike.",
+              },
+              {
+                name: "Pick Interests",
+                text: "Select activities and places you're interested in - temples, ghats, museums, and more.",
+              },
+              {
+                name: "Get Itinerary",
+                text: "Review your personalized day-by-day itinerary with timings, tips, and recommendations.",
+              },
+            ],
+          },
+        }}
+      />
+
+    <div className="trip-planner-page">
+     
       {/* AI Trip Planner Section */}
       <section className="tp-planner-section">
         <div className="container">
@@ -271,6 +317,7 @@ const TripPlanner = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

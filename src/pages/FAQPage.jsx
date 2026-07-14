@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { SEO, SchemaProvider } from "../seo";
 import { FaChevronDown, FaHome, FaCalendarAlt, FaHotel, FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 import "../styles/FAQPage.css";
 
@@ -201,6 +201,8 @@ const faqCategories = [
   }
 ];
 
+const flatFaqs = faqCategories.flatMap(cat => cat.faqs);
+
 const FAQPage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeCategory, setActiveCategory] = useState("temple");
@@ -213,10 +215,23 @@ const FAQPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>FAQ - Frequently Asked Questions | MySimhastha</title>
-        <meta name="description" content="Find answers to 100+ frequently asked questions about Mahakal Temple, Bhasma Aarti, Simhastha, hotels, and traveling to Ujjain." />
-      </Helmet>
+      <SEO
+        title="FAQ - Frequently Asked Questions | MySimhastha"
+        description="Find answers to 100+ frequently asked questions about Mahakal Temple, Bhasma Aarti, Simhastha, hotels, and traveling to Ujjain."
+        canonical="https://www.mysimhastha.com/faq"
+      />
+
+      <SchemaProvider
+        type="guide"
+        data={{
+          title: "FAQ - Frequently Asked Questions about Ujjain & Simhastha",
+          description: "Find answers to common questions about Mahakal Darshan, Bhasma Aarti, Simhastha, hotels, and traveling to Ujjain.",
+          url: "https://www.mysimhastha.com/faq",
+          articleSection: "FAQ",
+          about: "Ujjain Travel Guide",
+          faqs: flatFaqs,
+        }}
+      />
 
       <div className="faq-page">
         <div className="container">

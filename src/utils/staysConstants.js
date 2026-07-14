@@ -41,75 +41,10 @@ export const RATING_RANGES = [
   { value: 3.0, label: '3.0+', icon: 'Star' },
 ];
 
-// Popular areas/localities in Ujjain
-export const POPULAR_AREAS = [
-  'Near Mahakaleshwar Temple',
-  'Ram Ghat',
-  'Harsingh Ghat',
-  'Kal Bhairav',
-  'Chintamani Temple',
-  'Gadkalika Temple',
-  'City Center',
-  'Railway Station',
-];
-
-// Popular searches (SEO)
-export const POPULAR_SEARCHES = [
-  'Hotels near Mahakal',
-  'Budget Dharamshala',
-  'Luxury Stays in Ujjain',
-  'Ashrams in Ujjain',
-  'Guest Houses near Ram Ghat',
-  'Verified Homestay',
-  'Stays for Simhastha',
-  'Family Accommodation',
-];
-
-// Featured collections
-export const FEATURED_COLLECTIONS = [
-  {
-    id: 'near-mahakal',
-    title: 'Hotels Near Mahakaleshwar',
-    description: 'Best rated stays within 2km of the sacred temple',
-    icon: 'MapPin',
-    query: { area: 'Near Mahakaleshwar Temple' },
-  },
-  {
-    id: 'budget',
-    title: 'Budget Stays',
-    description: 'Comfortable accommodation under ₹2,500/night',
-    icon: 'Wallet',
-    query: { price_max: 2500 },
-  },
-  {
-    id: 'luxury',
-    title: 'Luxury Hotels',
-    description: 'Premium experience with modern amenities',
-    icon: 'Crown',
-    query: { price_min: 5000 },
-  },
-  {
-    id: 'ashrams',
-    title: 'Ashrams',
-    description: 'Spiritual experience and meditation spaces',
-    icon: 'Scroll',
-    query: { stay_type: 'Ashram' },
-  },
-  {
-    id: 'dharamshalas',
-    title: 'Dharamshalas',
-    description: 'Traditional lodging for pilgrims',
-    icon: 'Home',
-    query: { stay_type: 'Dharamshala' },
-  },
-  {
-    id: 'ram-ghat',
-    title: 'Near Ram Ghat',
-    description: 'Accommodation close to sacred bathing ghats',
-    icon: 'Waves',
-    query: { area: 'Ram Ghat' },
-  },
-];
+// Note: POPULAR_AREAS, POPULAR_SEARCHES, and FEATURED_COLLECTIONS 
+// have been moved to the database (site_settings table) for dynamic management.
+// Use fetchSiteSetting('popular_searches') and fetchSiteSetting('featured_collections')
+// from staysService.js to fetch these values dynamically.
 
 // Mahakaleshwar Temple coordinates (reference point)
 export const MAHAKAL_TEMPLE = {

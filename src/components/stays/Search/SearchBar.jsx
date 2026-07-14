@@ -65,30 +65,52 @@ export default function SearchBar() {
     label: "Any Budget",
   });
 
-  const propertyOptions = [
+  const [propertyOptions, setPropertyOptions] = useState([
     { value: "", label: "All Types" },
-    { value: "Hotel", label: "Hotel" },
-    { value: "Homestay", label: "Homestay" },
-    { value: "Guest House", label: "Guest House" },
-    { value: "Dharamshala", label: "Dharamshala" },
-  ];
-
-  const locationOptions = [
+  ]);
+  const [locationOptions, setLocationOptions] = useState([
     { value: "", label: "Anywhere" },
-    { value: "Mahakal Temple", label: "Mahakal Temple" },
-    { value: "Mahakal Lok", label: "Mahakal Lok" },
-    { value: "Ram Ghat", label: "Ram Ghat" },
-    { value: "Freeganj", label: "Freeganj" },
-    { value: "Nanakheda", label: "Nanakheda" },
-  ];
-
-  const budgetOptions = [
+  ]);
+  const [budgetOptions] = useState([
     { value: "", label: "Any Budget" },
     { value: "0-1000", label: "Below ₹1000" },
     { value: "1000-2000", label: "₹1000 – ₹2000" },
     { value: "2000-5000", label: "₹2000 – ₹5000" },
     { value: "5000+", label: "₹5000+" },
-  ];
+  ]);
+
+  useEffect(() => {
+    async function loadOptions() {
+      try {
+        const [typesResult, localitiesResult] = await Promise.all([
+          fetchAllStayTypes(),
+          fetchAllLocalities()
+        ]);
+
+        const typeOptions = [
+          { value: "", label: "All Types" },
+          ...(typesResult.data || []).map(type => ({
+            value: type,
+            label: type
+          }))
+        ];
+        setPropertyOptions(typeOptions);
+
+        const locationOpts = [
+          { value: "", label: "Anywhere" },
+          ...(localitiesResult.data || []).map(locality => ({
+            value: locality,
+            label: locality
+          }))
+        ];
+        setLocationOptions(locationOpts);
+      } catch (error) {
+        console.error('Error loading search options:', error);
+      }
+    }
+
+    loadOptions();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(async () => {

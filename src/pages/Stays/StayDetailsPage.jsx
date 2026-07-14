@@ -14,6 +14,7 @@ import NearbyPlaces from "../../components/stays/details/NearbyPlaces";
 import PropertyMap from "../../components/stays/details/PropertyMap";
 import PropertyRules from "../../components/stays/details/PropertyRules";
 import SimilarStays from "../../components/stays/details/SimilarStays";
+import StayReviews from "../../components/stays/details/StayReviews";
 import MobileStickyBar from "../../components/stays/details/MobileStickyBar";
 
 import "../../components/stays/details/StayDetails.css";
@@ -88,6 +89,8 @@ export default function StayDetailsPage() {
               <PropertyRules stay={stay} />
 
               <SimilarStays stay={stay} />
+
+              <StayReviews stay={stay} />
             </div>
 
             <StickyContactCard stay={stay} />

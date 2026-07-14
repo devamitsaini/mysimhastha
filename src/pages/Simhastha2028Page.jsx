@@ -12,7 +12,7 @@ import {
 import CountdownHub from '../components/common/CountdownHub/CountdownHub';
 import AITripPlanner from '../components/home/AITripPlanner/AITripPlanner';
 
-import { Helmet } from "react-helmet-async";
+import { SEO, SchemaProvider } from "../seo";
 import "../styles/Simhastha2028Page.css";
 import {
   FaShieldAlt,
@@ -119,35 +119,28 @@ function Simhastha2028Page() {
 
   return (
     <>
-      <Helmet>
-        <title>Simhastha 2028 Portal | Dates, Hotels, Live Darshan & Travel</title>
-        <meta
-          name="description"
-          content="Plan your Simhastha 2028 pilgrimage with hotels, Shahi Snan dates, live darshan, temples, routes and travel information."
-        />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mysimhastha.com" },
-              { "@type": "ListItem", "position": 2, "name": "Simhastha 2028", "item": "https://www.mysimhastha.com/simhastha-2028" }
-            ]
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Ujjain Simhastha Mahakumbh 2028",
-            "description": "Complete guide to Simhastha 2028 including Shahi Snan dates, temples, ghats, akhadas, accommodation, routes and pilgrimage information.",
-            "author": { "@type": "Organization", "name": "MySimhastha" },
-            "publisher": { "@type": "Organization", "name": "MySimhastha", "logo": { "@type": "ImageObject", "url": "https://www.mysimhastha.com/logo.png" } },
-            "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.mysimhastha.com/simhastha-2028" },
-            "image": "https://www.mysimhastha.com/images/hero-image.webp"
-          })}
-        </script>
-      </Helmet>
+      <SEO
+        title="Simhastha 2028 Portal | Dates, Hotels, Live Darshan & Travel"
+        description="Plan your Simhastha 2028 pilgrimage with hotels, Shahi Snan dates, live darshan, temples, routes and travel information."
+        canonical="https://www.mysimhastha.com/simhastha-2028"
+        image="https://www.mysimhastha.com/images/hero-image.webp"
+      />
+
+      <SchemaProvider
+        type="event"
+        data={{
+          title: "Ujjain Simhastha Mahakumbh 2028",
+          description: "Complete guide to Simhastha 2028 including Shahi Snan dates, temples, ghats, akhadas, accommodation, routes and pilgrimage information.",
+          url: "https://www.mysimhastha.com/simhastha-2028",
+          about: "Simhastha 2028",
+          image: "https://www.mysimhastha.com/images/hero-image.webp",
+          startDate: "2028-03-27",
+          endDate: "2028-05-27",
+          location: "Ujjain, Madhya Pradesh, India",
+          eventStatus: "https://schema.org/EventScheduled",
+          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        }}
+      />
 
       <div className="sim2028-page">
 

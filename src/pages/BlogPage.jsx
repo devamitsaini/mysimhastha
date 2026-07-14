@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import "../styles/blog.css";
 import { useNavigate } from "react-router-dom";
+import { SEO, SchemaProvider } from "../seo";
 
 function BlogPage() {
   const navigate = useNavigate();
@@ -26,7 +27,30 @@ function BlogPage() {
   }, []);
 
   return (
-    <div className="blog-page">
+    <>
+      <SEO
+        title="Latest Blogs & Updates | MySimhastha"
+        description="Latest articles, travel guides, Sawan updates and Simhastha updates from MySimhastha."
+        canonical="https://www.mysimhastha.com/blog"
+      />
+
+      <SchemaProvider
+        type="collection"
+        data={{
+          title: "Latest Blogs & Updates",
+          description: "Latest articles, travel guides, Sawan updates and Simhastha updates from MySimhastha.",
+          url: "https://www.mysimhastha.com/blog",
+          about: "Blog",
+          items: posts.map((post) => ({
+            name: post.title || "Untitled Post",
+            description: post.excerpt,
+            url: `https://www.mysimhastha.com/blog/${post.slug}`,
+            image: post.image_url,
+          })),
+        }}
+      />
+
+      <div className="blog-page">
       <h1>Latest Blogs & Updates</h1>
 
       <p className="blog-subtitle">
@@ -78,7 +102,8 @@ function BlogPage() {
           </div>
         </div>
       ))}
-    </div>
+      </div>
+    </>
   );
 }
 

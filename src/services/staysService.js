@@ -11,8 +11,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-("URL:", supabaseUrl);
-("KEY:", supabaseAnonKey.substring(0, 20));
+
 /**
  * Fetch all active stays with pagination
  */
@@ -552,5 +551,112 @@ export const fetchHeroFilters = async () => {
       locations: [],
       error,
     };
+  }
+};
+export const fetchStayCountsByLocality = async () => {
+  try {
+    const { data, error } = await supabase
+      .from("stays")
+      .select("locality")
+      .eq("active", true);
+
+    if (error) {
+      return { data: {}, error };
+    }
+
+    const counts = {};
+
+    (data || []).forEach((item) => {
+      if (!item.locality) return;
+      counts[item.locality] = (counts[item.locality] || 0) + 1;
+    });
+
+    return { data: counts, error: null };
+  } catch (error) {
+    return { data: {}, error };
+  }
+};
+
+export const fetchStayCountsByType = async () => {
+  try {
+    const { data, error } = await supabase
+      .from("stays")
+      .select("stay_type")
+      .eq("active", true);
+
+    if (error) {
+      return { data: {}, error };
+    }
+
+    const counts = {};
+
+    (data || []).forEach((item) => {
+      if (!item.stay_type) return;
+      counts[item.stay_type] = (counts[item.stay_type] || 0) + 1;
+    });
+
+    return { data: counts, error: null };
+  } catch (error) {
+    return { data: {}, error };
+  }
+};
+
+/**
+ * Fetch approved reviews for a stay, newest first.
+ */
+export const fetchStayReviews = async (stayId) => {
+  try {
+    const { data, error } = await supabase
+      .from("stay_reviews")
+      .select("*")
+      .eq("stay_id", stayId)
+      .eq("status", "approved")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching reviews:", error);
+      return { data: [], error };
+    }
+
+    return { data: data || [], error: null };
+  } catch (error) {
+    console.error("Unexpected error fetching reviews:", error);
+    return { data: [], error };
+  }
+};
+
+/**
+ * Submit a new review. It is inserted with status 'pending' for moderation.
+ */
+export const createStayReview = async (review) => {
+  try {
+    const { data, error } = await supabase
+      .from("stay_reviews")
+      .insert([
+        {
+          stay_id: review.stay_id,
+          name: review.name,
+          email: review.email || null,
+          phone: review.phone || null,
+          rating: review.rating,
+          title: review.title || null,
+          review: review.review,
+          visit_date: review.visit_date || null,
+          verified_stay: Boolean(review.verified_stay),
+          status: "pending",
+        },
+      ])
+      .select()
+      .single();
+
+    if (error) {
+      console.error("Error submitting review:", error);
+      return { data: null, error };
+    }
+
+    return { data, error: null };
+  } catch (error) {
+    console.error("Unexpected error submitting review:", error);
+    return { data: null, error };
   }
 };

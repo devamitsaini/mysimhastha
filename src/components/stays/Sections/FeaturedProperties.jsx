@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FiStar,
@@ -9,47 +9,68 @@ import {
   FiMapPin,
 } from "react-icons/fi";
 
+import { fetchFeaturedStays } from "../../../services/staysService";
+import FeaturedStayCard from "../Cards/FeaturedStayCard";
 
 import "./FeaturedProperties.css";
 
 export default function FeaturedProperties() {
+  const [stays, setStays] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const benefits = [
-    "Homepage Featured Placement",
-    "Priority Stay Listing",
-    "Verified Partner Badge",
-    "Direct Customer Enquiries",
-  ];
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const { data: featuredStays } = await fetchFeaturedStays(3);
+        setStays(featuredStays || []);
+      } catch (error) {
+        console.error('Error loading featured properties:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
 
-  const demoCards = [
-    {
-      type: "Luxury Hotel",
-      location: "Near Mahakal Temple",
-      price: "Starting ₹2,999",
-      image:
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80",
-    },
-    {
-      type: "Premium Homestay",
-      location: "Ram Ghat Area",
-      price: "Starting ₹1,499",
-      image:
-        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80",
-    },
-    {
-      type: "Dharamshala",
-      location: "Walking Distance to Temple",
-      price: "Affordable Stay",
-      image:
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80",
-    },
-  ];
+    loadData();
+  }, []);
 
-  const stats = [
-    { value: "1K+", label: "Daily Visitors" },
-    { value: "100+", label: "Active Listings" },
-    { value: "Limited", label: "Slots" },
-  ];
+  const demoCards = stays.length > 0 
+    ? stays.map(stay => ({
+        type: stay.stay_type || 'Hotel',
+        location: stay.locality || stay.city || 'Ujjain',
+        price: `Starting ₹${stay.starting_price || stay.price_from || '999'}`,
+        image: stay.featured_image || stay.image || "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80",
+        slug: stay.slug
+      }))
+    : [];
+
+ const benefits = [
+  "Homepage Featured Placement",
+  "Priority Stay Listing",
+  "Verified Partner Badge",
+  "Direct Customer Enquiries",
+];
+
+const stats = [
+  {
+    label: "Daily Visitors",
+    value: "1K+",
+  },
+  {
+    label: "Active Listings",
+    value: "100+",
+  },
+  {
+    label: "Slots",
+    value: "Limited",
+  },
+];
+
+const partnershipEmail = "business@mysimhastha.com";
+
+const partnershipPhone = "+91 99999 99999";
+
+const partnershipResponseTime =
+  "Usually replies within 24 hours.";
 
   return (
     <section className="featured-section">
@@ -117,20 +138,20 @@ export default function FeaturedProperties() {
 
               <div className="contact-row">
                 <FiMail />
-                <a href="mailto:business@mysimhastha.com">
-                  business@mysimhastha.com
+                <a href={`mailto:${partnershipEmail}`}>
+                  {partnershipEmail}
                 </a>
               </div>
 
               <div className="contact-row">
                 <FiPhone />
-                <a href="tel:+919999999999">
-                  +91 XXXXX XXXX
+                <a href={`tel:${partnershipPhone}`}>
+                  {partnershipPhone}
                 </a>
               </div>
 
               <p className="reply-text">
-                Usually replies within 24 hours.
+                {partnershipResponseTime}
               </p>
 
               <Link
@@ -191,8 +212,8 @@ export default function FeaturedProperties() {
     {demoCards.map((card, index) => (
 
       <Link
-        key={index}
-        to="/list-your-property"
+        key={card.slug || index}
+        to={card.slug ? `/stays/${card.slug}` : "/list-your-property"}
         className="preview-card"
       >
 

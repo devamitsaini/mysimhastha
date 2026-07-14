@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { SEO, SchemaProvider } from "../seo";
 import "../styles/GuidesPage.css";
 
 export default function GuidesPage() {
@@ -100,66 +101,90 @@ export default function GuidesPage() {
   ];
 
   return (
-    <div className="guides-page">
-      <div className="container">
-        {/* Header Section */}
-        <div className="guides-header">
-          <span className="sec-label">Complete Guides</span>
-          <h1 className="guides-title">
-            <span className="guides-title-main">Sacred Travel Guides</span>
-            <span className="guides-title-sub">for Ujjain & Simhastha</span>
-          </h1>
-          <p className="guides-subtitle">
-            Explore complete guides for Simhastha 2028, Mahakaleshwar Temple, Sawan/Shravan Month,
-            Ujjain travel, accommodation and more. Each guide is crafted to help you plan
-            your spiritual journey with confidence.
-          </p>
-        </div>
+    <>
+      <SEO
+        title="Sacred Travel Guides for Ujjain & Simhastha"
+        description="Explore complete guides for Simhastha 2028, Mahakaleshwar Temple, Sawan/Shravan Month, Ujjain travel, accommodation and more. Each guide is crafted to help you plan your spiritual journey with confidence."
+        canonical="https://www.mysimhastha.com/guides"
+      />
 
-        {/* Guides Grid */}
-        <div className="guides-grid">
-          {[...guides]
-            .sort((a, b) => new Date(b.date) - new Date(a.date))
-            .map((guide) => (
-              <article
-                key={guide.title}
-                className="guide-card"
-                onClick={() => navigate(guide.enLink)}
-              >
-                <div className="guide-image-wrap">
-                  <img
-                    src={guide.image}
-                    alt={guide.title}
-                    className="guide-image"
-                    loading="lazy"
-                  />
-                </div>
+      <SchemaProvider
+        type="collection"
+        data={{
+          title: "Sacred Travel Guides for Ujjain & Simhastha",
+          description: "Explore complete guides for Simhastha 2028, Mahakaleshwar Temple, Sawan/Shravan Month, Ujjain travel, accommodation and more.",
+          url: "https://www.mysimhastha.com/guides",
+          about: "Travel Guides",
+          items: guides.map((guide) => ({
+            name: guide.title,
+            description: guide.description,
+            url: `https://www.mysimhastha.com${guide.enLink}`,
+            image: `https://www.mysimhastha.com${guide.image}`,
+          })),
+        }}
+      />
 
-                <div className="guide-body">
-                  <h2 className="guide-title">{guide.title}</h2>
-                  <p className="guide-excerpt">{guide.description}</p>
+      <div className="guides-page">
+        <div className="container">
+          {/* Header Section */}
+          <div className="guides-header">
+            <span className="sec-label">Complete Guides</span>
+            <h1 className="guides-title">
+              <span className="guides-title-main">Sacred Travel Guides</span>
+              <span className="guides-title-sub">for Ujjain & Simhastha</span>
+            </h1>
+            <p className="guides-subtitle">
+              Explore complete guides for Simhastha 2028, Mahakaleshwar Temple, Sawan/Shravan Month,
+              Ujjain travel, accommodation and more. Each guide is crafted to help you plan
+              your spiritual journey with confidence.
+            </p>
+          </div>
 
-                  <div className="guide-actions">
-                    <Link
-                      to={guide.enLink}
-                      className="guide-btn guide-btn-primary"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      English
-                    </Link>
-                    <Link
-                      to={guide.hiLink}
-                      className="guide-btn guide-btn-outline"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      हिन्दी
-                    </Link>
+          {/* Guides Grid */}
+          <div className="guides-grid">
+            {[...guides]
+              .sort((a, b) => new Date(b.date) - new Date(a.date))
+              .map((guide) => (
+                <article
+                  key={guide.title}
+                  className="guide-card"
+                  onClick={() => navigate(guide.enLink)}
+                >
+                  <div className="guide-image-wrap">
+                    <img
+                      src={guide.image}
+                      alt={guide.title}
+                      className="guide-image"
+                      loading="lazy"
+                    />
                   </div>
-                </div>
-              </article>
-            ))}
+
+                  <div className="guide-body">
+                    <h2 className="guide-title">{guide.title}</h2>
+                    <p className="guide-excerpt">{guide.description}</p>
+
+                    <div className="guide-actions">
+                      <Link
+                        to={guide.enLink}
+                        className="guide-btn guide-btn-primary"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        English
+                      </Link>
+                      <Link
+                        to={guide.hiLink}
+                        className="guide-btn guide-btn-outline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        हिन्दी
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

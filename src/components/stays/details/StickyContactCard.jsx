@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   FiPhone,
   FiMessageCircle,
@@ -6,183 +7,177 @@ import {
   FiMail,
   FiHeart,
   FiShare2,
+  FiCheck,
 } from "react-icons/fi";
 
 import "./StickyContactCard.css";
 
+// Format a number as Indian currency, e.g. 1500 -> "₹1,500".
+function formatPrice(value) {
+  const num = Number(value);
+  if (!num) return null;
+  return `₹${num.toLocaleString("en-IN")}`;
+}
+
 export default function StickyContactCard({ stay }) {
   const phone = stay.phone || "";
   const whatsapp = stay.whatsapp || stay.phone || "";
-  const maps = stay.google_maps_url || "";
   const website = stay.website || "";
   const email = stay.email || "";
 
-  // Debug: Log contact info
-  ("StickyContactCard - stay data:", {
-    phone,
-    whatsapp,
-    hasPhone: !!phone,
-    hasWhatsapp: !!whatsapp,
-    stayKeys: Object.keys(stay || {})
-  });
+  const [toast, setToast] = useState("");
+
+  function showToast(message) {
+    setToast(message);
+    setTimeout(() => setToast(""), 2500);
+  }
+
+  async function handleShare() {
+    const shareData = {
+      title: stay.name,
+      text: stay.name,
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch {
+        // User cancelled — no-op.
+      }
+      return;
+    }
+
+    // Fallback: copy link to clipboard and show a toast.
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      showToast("Link copied to clipboard!");
+    } catch {
+      showToast("Could not copy link");
+    }
+  }
 
   return (
     <aside className="sticky-contact-card">
+      {/* PRICE */}
 
-  {/* PRICE */}
+      <div className="price-card">
+        <small>Starting From</small>
 
-  <div className="price-card">
+        <h2>{formatPrice(stay.starting_price || stay.price_from) || "Contact"}</h2>
 
-    <small>Starting From</small>
+        <span>Per Night</span>
+      </div>
 
-    <h2>
-      {stay.starting_price ||
-        stay.price_from ||
-        "Contact"}
-    </h2>
+      {/* CONTACT */}
 
-    <span>Per Night</span>
+      <div className="contact-actions">
+        <a
+          href={phone ? `tel:${phone}` : "#"}
+          className="primary-btn"
+          onClick={(e) => !phone && e.preventDefault()}
+        >
+          <FiPhone />
+          Call
+        </a>
 
-  </div>
+        <a
+          href={whatsapp ? `https://wa.me/${whatsapp}` : "#"}
+          target="_blank"
+          rel="noreferrer"
+          className="whatsapp-btn"
+          onClick={(e) => !whatsapp && e.preventDefault()}
+        >
+          <FiMessageCircle />
+          WhatsApp
+        </a>
+      </div>
 
-  {/* CONTACT */}
+      {/* MAP */}
 
-  <div className="contact-actions">
-
-    <a
-      href={phone ? `tel:${phone}` : "#"}
-      className="primary-btn"
-      onClick={(e) => !phone && e.preventDefault()}
-    >
-      <FiPhone />
-      Call
-    </a>
-
-    <a
-      href={whatsapp ? `https://wa.me/${whatsapp}` : "#"}
-      target="_blank"
-      rel="noreferrer"
-      className="whatsapp-btn"
-      onClick={(e) => !whatsapp && e.preventDefault()}
-    >
-      <FiMessageCircle />
-      WhatsApp
-    </a>
-
-  </div>
-
-  {/* MAP */}
-
-  {maps && (
-    <a
-      href={maps}
-      target="_blank"
-      rel="noreferrer"
-      className="outline-btn"
-    >
-      <FiNavigation />
-      Get Directions
-    </a>
-  )}
-
-  {/* SAVE / SHARE */}
-
-  <div className="secondary-actions">
-
-    <button>
-
-      <FiHeart />
-
-      Save
-
-    </button>
-
-    <button
-      onClick={() =>
-        navigator.share
-          ? navigator.share({
-              title: stay.name,
-              text: stay.name,
-              url: window.location.href,
-            })
-          : navigator.clipboard.writeText(
-              window.location.href
-            )
-      }
-    >
-
-      <FiShare2 />
-
-      Share
-
-    </button>
-
-  </div>
-
-  {/* CONTACT INFO */}
-
-  {(website || email) && (
-
-    <div className="booking-note">
-
-      <strong>Contact Information</strong>
-
-      {website && (
-
-        <p>
-
-          <FiGlobe />
-
+      {stay.latitude && stay.longitude ? (
+        <a
+          href={`https://www.google.com/maps?q=${stay.latitude},${stay.longitude}`}
+          target="_blank"
+          rel="noreferrer"
+          className="outline-btn"
+        >
+          <FiNavigation />
+          Get Directions
+        </a>
+      ) : (
+        stay.google_maps_url && (
           <a
-            href={website}
+            href={stay.google_maps_url}
             target="_blank"
             rel="noreferrer"
+            className="outline-btn"
           >
-            Visit Website
+            <FiNavigation />
+            Get Directions
           </a>
-
-        </p>
-
+        )
       )}
 
-      {email && (
+      {/* SAVE / SHARE */}
 
-        <p>
+      <div className="secondary-actions">
+        <button type="button">
+          <FiHeart />
+          Save
+        </button>
 
-          <FiMail />
+        <button type="button" onClick={handleShare}>
+          <FiShare2 />
+          Share
+        </button>
+      </div>
 
-          <a href={`mailto:${email}`}>
-            {email}
-          </a>
+      {/* CONTACT INFO */}
 
-        </p>
+      {(website || email) && (
+        <div className="booking-note">
+          <strong>Contact Information</strong>
 
+          {website && (
+            <p>
+              <FiGlobe />
+              <a href={website} target="_blank" rel="noreferrer">
+                Visit Website
+              </a>
+            </p>
+          )}
+
+          {email && (
+            <p>
+              <FiMail />
+              <a href={`mailto:${email}`}>{email}</a>
+            </p>
+          )}
+        </div>
       )}
 
-    </div>
+      {/* WHY */}
 
-  )}
+      <div className="booking-note">
+        <strong>Why MySimhastha?</strong>
 
-  {/* WHY */}
+        <ul>
+          <li>✔ Verified Property</li>
+          <li>✔ Direct Contact</li>
+          <li>✔ No Booking Commission</li>
+          <li>✔ Trusted During Simhastha</li>
+        </ul>
+      </div>
 
-  <div className="booking-note">
+      {/* TOAST */}
 
-    <strong>Why MySimhastha?</strong>
-
-    <ul>
-
-      <li>✔ Verified Property</li>
-
-      <li>✔ Direct Contact</li>
-
-      <li>✔ No Booking Commission</li>
-
-      <li>✔ Trusted During Simhastha</li>
-
-    </ul>
-
-  </div>
-
-</aside>
+      {toast && (
+        <div className="share-toast">
+          <FiCheck />
+          {toast}
+        </div>
+      )}
+    </aside>
   );
 }

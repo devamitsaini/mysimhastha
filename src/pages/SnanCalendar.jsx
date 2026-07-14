@@ -1,11 +1,40 @@
-
 import { useNavigate } from "react-router-dom";
+import { SEO, SchemaProvider } from "../seo";
 import "../styles/SnanCalendar.css";
 
 function SnanCalendarPage() {
   const navigate = useNavigate();
   return (
     <>
+      <SEO
+        title="Shahi Snan Calendar & Guide | Simhastha 2028"
+        description="Complete guide to Shahi Snan during Simhastha 2028. Learn about the Royal Bath dates, timings, ghats, travel tips, and essential information for the sacred dip in the Shipra River."
+        canonical="https://www.mysimhastha.com/snan-calendar"
+      />
+
+      <SchemaProvider
+        type="event"
+        data={{
+          title: "Shahi Snan Calendar & Guide",
+          description: "Complete guide to Shahi Snan during Simhastha 2028. Learn about the Royal Bath dates, timings, ghats, travel tips, and essential information for the sacred dip in the Shipra River.",
+          url: "https://www.mysimhastha.com/snan-calendar",
+          event: {
+            name: "Shahi Snan - Royal Bath",
+            startDate: "2028-01-01",
+            endDate: "2028-12-31",
+            location: {
+              name: "Shipra River, Ujjain",
+              address: {
+                addressLocality: "Ujjain",
+                addressRegion: "Madhya Pradesh",
+                addressCountry: "IN",
+              },
+            },
+            description: "The Royal Bath (Shahi Snan) is the most important and spiritually significant event of Simhastha. During this sacred ritual, saints and devotees gather on the banks of the holy Shipra River to take the divine bath according to ancient Vedic traditions.",
+          },
+        }}
+      />
+
     <div className="snan-page">
       {/* ======================================================
           WHAT IS SHAHI SNAN
@@ -57,7 +86,6 @@ function SnanCalendarPage() {
                 <div className="about-icon">
 
                   🔱
-
                 </div>
 
                 <div>
@@ -65,7 +93,6 @@ function SnanCalendarPage() {
                   <h3>
 
                     Royal Procession
-
                   </h3>
 
                   <p>
@@ -86,7 +113,6 @@ function SnanCalendarPage() {
                 <div className="about-icon">
 
                   🌊
-
                 </div>
 
                 <div>
@@ -94,7 +120,6 @@ function SnanCalendarPage() {
                   <h3>
 
                     Holy Dip
-
                   </h3>
 
                   <p>
@@ -115,7 +140,6 @@ function SnanCalendarPage() {
                 <div className="about-icon">
 
                   🕉
-
                 </div>
 
                 <div>
@@ -123,7 +147,6 @@ function SnanCalendarPage() {
                   <h3>
 
                     Ancient Tradition
-
                   </h3>
 
                   <p>
@@ -161,13 +184,11 @@ function SnanCalendarPage() {
             <span>
 
               Spiritual Importance
-
             </span>
 
             <h2>
 
               Why is Shahi Snan Important?
-
             </h2>
 
           </div>
@@ -179,13 +200,11 @@ function SnanCalendarPage() {
               <div className="importance-icon">
 
                 ✨
-
               </div>
 
               <h3>
 
                 Spiritual Purification
-
               </h3>
 
               <p>
@@ -204,13 +223,11 @@ function SnanCalendarPage() {
               <div className="importance-icon">
 
                 🪔
-
               </div>
 
               <h3>
 
                 Divine Blessings
-
               </h3>
 
               <p>
@@ -228,13 +245,11 @@ function SnanCalendarPage() {
               <div className="importance-icon">
 
                 🔭
-
               </div>
 
               <h3>
 
                 Astrological Significance
-
               </h3>
 
               <p>
@@ -252,13 +267,11 @@ function SnanCalendarPage() {
               <div className="importance-icon">
 
                 🛕
-
               </div>
 
               <h3>
 
                 Living Heritage
-
               </h3>
 
               <p>
@@ -291,13 +304,11 @@ function SnanCalendarPage() {
             <span>
 
               Comparison
-
             </span>
 
             <h2>
 
               Normal Snan vs Shahi Snan
-
             </h2>
 
           </div>
@@ -309,7 +320,6 @@ function SnanCalendarPage() {
               <h3>
 
                 Normal Snan
-
               </h3>
 
               <ul>
@@ -335,7 +345,6 @@ function SnanCalendarPage() {
               <h3>
 
                 Shahi Snan
-
               </h3>
 
               <ul>
@@ -375,13 +384,11 @@ function SnanCalendarPage() {
             <span>
 
               Royal Procession
-
             </span>
 
             <h2>
 
               Akhara Procession
-
             </h2>
 
             <p>
@@ -403,19 +410,16 @@ function SnanCalendarPage() {
               <span>
 
                 01
-
               </span>
 
               <h4>
 
                 Preparation
-
               </h4>
 
               <p>
 
                 Early morning gathering.
-
               </p>
 
             </div>
@@ -425,19 +429,16 @@ function SnanCalendarPage() {
               <span>
 
                 02
-
               </span>
 
               <h4>
 
                 Royal March
-
               </h4>
 
               <p>
 
                 Akharas begin the procession.
-
               </p>
 
             </div>
@@ -447,19 +448,16 @@ function SnanCalendarPage() {
               <span>
 
                 03
-
               </span>
 
               <h4>
 
                 Naga Sadhus
-
               </h4>
 
               <p>
 
                 Holy saints lead the Royal Bath.
-
               </p>
 
             </div>
@@ -469,19 +467,16 @@ function SnanCalendarPage() {
               <span>
 
                 04
-
               </span>
 
               <h4>
 
                 Shahi Snan
-
               </h4>
 
               <p>
 
                 Sacred bathing begins.
-
               </p>
 
             </div>
@@ -491,19 +486,16 @@ function SnanCalendarPage() {
               <span>
 
                 05
-
               </span>
 
               <h4>
 
                 Public Entry
-
               </h4>
 
               <p>
 
                 Devotees begin taking the holy dip.
-
               </p>
 
             </div>
@@ -616,10 +608,12 @@ function SnanCalendarPage() {
           <div className="section-heading">
 
             <span>
+
               Pilgrim Guide
             </span>
 
             <h2>
+
               Travel Advisory for Shahi Snan
             </h2>
 
@@ -634,10 +628,12 @@ function SnanCalendarPage() {
               </div>
 
               <h3>
+
                 By Train
               </h3>
 
               <p>
+
                 Reach Ujjain Junction at least one
                 day before the Shahi Snan to avoid
                 heavy rush.
@@ -652,10 +648,12 @@ function SnanCalendarPage() {
               </div>
 
               <h3>
+
                 By Air
               </h3>
 
               <p>
+
                 Nearest Airport:
                 Devi Ahilyabai Holkar Airport,
                 Indore.
@@ -670,10 +668,12 @@ function SnanCalendarPage() {
               </div>
 
               <h3>
+
                 Shuttle Services
               </h3>
 
               <p>
+
                 Government shuttle buses operate
                 from parking zones to bathing
                 ghats.
@@ -688,10 +688,12 @@ function SnanCalendarPage() {
               </div>
 
               <h3>
+
                 Parking
               </h3>
 
               <p>
+
                 Use designated parking zones and
                 avoid bringing vehicles inside
                 restricted festival areas.
@@ -716,10 +718,12 @@ function SnanCalendarPage() {
           <div className="section-heading center">
 
             <span>
+
               Preparation
             </span>
 
             <h2>
+
               Essential Items to Carry
             </h2>
 
@@ -774,10 +778,12 @@ function SnanCalendarPage() {
           <div className="section-heading center">
 
             <span>
+
               Safety
             </span>
 
             <h2>
+
               Do's & Don'ts
             </h2>
 
@@ -788,6 +794,7 @@ function SnanCalendarPage() {
             <div className="dos-card">
 
               <h3>
+
                 ✅ Do's
               </h3>
 
@@ -812,6 +819,7 @@ function SnanCalendarPage() {
             <div className="donts-card">
 
               <h3>
+
                 ❌ Don'ts
               </h3>
 
@@ -850,10 +858,12 @@ function SnanCalendarPage() {
           <div className="section-heading center">
 
             <span>
+
               Emergency Help
             </span>
 
             <h2>
+
               Important Services
             </h2>
 
@@ -909,16 +919,20 @@ function SnanCalendarPage() {
           <div className="section-heading center">
 
             <span>
+
               Frequently Asked Questions
             </span>
 
             <h2>
+
               Shahi Snan FAQs
             </h2>
 
             <p>
+
               Answers to the most common questions asked by
               pilgrims visiting Simhastha 2028.
+
             </p>
 
           </div>
@@ -928,6 +942,7 @@ function SnanCalendarPage() {
             <div className="faq-card">
               <h3>What is Shahi Snan?</h3>
               <p>
+
                 Shahi Snan is the Royal Bath performed by
                 saints and Akharas during Simhastha. It is
                 considered the holiest bathing ceremony of
@@ -938,6 +953,7 @@ function SnanCalendarPage() {
             <div className="faq-card">
               <h3>How many Shahi Snan are there?</h3>
               <p>
+
                 Simhastha 2028 includes multiple Royal Bath
                 dates announced by the Government of Madhya
                 Pradesh and religious authorities.
@@ -947,6 +963,7 @@ function SnanCalendarPage() {
             <div className="faq-card">
               <h3>Can everyone participate?</h3>
               <p>
+
                 Yes. All devotees can take the holy dip
                 after the Akharas complete their Royal Bath.
               </p>
@@ -955,6 +972,7 @@ function SnanCalendarPage() {
             <div className="faq-card">
               <h3>Which is the best ghat?</h3>
               <p>
+
                 Ram Ghat is the principal bathing ghat,
                 although several other ghats are opened for
                 pilgrims during the festival.
@@ -964,6 +982,7 @@ function SnanCalendarPage() {
             <div className="faq-card">
               <h3>What is the best time to arrive?</h3>
               <p>
+
                 Pilgrims are advised to reach before dawn
                 because roads become heavily crowded after
                 sunrise.
@@ -973,6 +992,7 @@ function SnanCalendarPage() {
             <div className="faq-card">
               <h3>Is parking available?</h3>
               <p>
+
                 Yes. Temporary parking zones are created
                 outside the city with shuttle services to
                 the bathing areas.
@@ -982,6 +1002,7 @@ function SnanCalendarPage() {
             <div className="faq-card">
               <h3>Can women participate?</h3>
               <p>
+
                 Yes. Dedicated facilities and security
                 arrangements are provided for women
                 pilgrims.
@@ -991,6 +1012,7 @@ function SnanCalendarPage() {
             <div className="faq-card">
               <h3>What should I wear?</h3>
               <p>
+
                 Comfortable, modest cotton clothes are
                 recommended. Avoid carrying valuables.
               </p>
@@ -1158,11 +1180,11 @@ function SnanCalendarPage() {
 
       </section>
 
-  </div>
+    </div>
 
-  </>
+    </>
 
-);
+  );
 }
 
 export default SnanCalendarPage;

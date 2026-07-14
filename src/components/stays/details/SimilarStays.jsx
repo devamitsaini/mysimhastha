@@ -22,11 +22,13 @@ export default function SimilarStays({ stay }) {
 
     }
 
-    if (stay) {
+    if (stay?.id) {
       load();
+    } else {
+      setLoading(false);
     }
 
-  }, [stay]);
+  }, [stay?.id]);
 
   if (loading) {
     return (

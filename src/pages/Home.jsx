@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, memo } from "react";
+import { SEO, SchemaProvider } from "../seo";
 import "../styles/Home.css";  
 
 /* ===========================
@@ -46,7 +47,24 @@ const SectionLoader = () => (
 
 const Home = memo(() => {
   return (
-    <main className="home-page">
+    <>
+      <SEO
+        title="MySimhastha | Simhastha 2028, Mahakal Temple & Ujjain Pilgrimage Guide"
+        description="Plan your Ujjain pilgrimage with MySimhastha — complete guide to Simhastha 2028, Mahakaleshwar Temple, Bhasma Aarti, hotels, live darshan, and travel information."
+        canonical="https://www.mysimhastha.com"
+      />
+
+      <SchemaProvider
+        type="home"
+        data={{
+          title: "MySimhastha | Simhastha 2028, Mahakal Temple & Ujjain Pilgrimage Guide",
+          description: "Plan your Ujjain pilgrimage with MySimhastha — complete guide to Simhastha 2028, Mahakaleshwar Temple, Bhasma Aarti, hotels, live darshan, and travel information.",
+          url: "https://www.mysimhastha.com",
+          about: "Ujjain Pilgrimage",
+        }}
+      />
+
+      <main className="home-page">
       {/* Hero - Critical, load immediately */}
       <Suspense fallback={<SectionLoader />}>
         <Hero />
@@ -111,7 +129,8 @@ const Home = memo(() => {
       <Suspense fallback={<SectionLoader />}>
         <Newsletter />
       </Suspense>
-    </main>
+      </main>
+    </>
   );
 });
 

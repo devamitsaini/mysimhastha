@@ -1,7 +1,7 @@
     import { useParams, Link } from "react-router-dom";
     import { useEffect, useState } from "react";
-    import { Helmet } from "react-helmet-async";
     import { fetchStayBySlug } from "../../services/staysService";
+    import { SEO, SchemaProvider } from "../../seo";
 
     import Gallery from "../../components/stayDetails/Gallery/Gallery";
     import HotelInfo from "../../components/stayDetails/HotelInfo/HotelInfo";
@@ -55,51 +55,29 @@
         return (
   <>
 
-    <Helmet>
+    <SEO
+      title={`${stay.name} | Hotels Near Mahakaleshwar Temple | MySimhastha`}
+      description={stay.short_description || `Book ${stay.name} in Ujjain near Mahakaleshwar Temple.`}
+      canonical={`https://www.mysimhastha.com/stays/${stay.slug}`}
+      image={stay.featured_image || stay.image}
+    />
 
-      <title>
-        {stay.name} | Hotels Near Mahakaleshwar Temple | MySimhastha
-      </title>
-
-      <meta
-        name="description"
-        content={
-          stay.short_description ||
-          `Book ${stay.name} in Ujjain near Mahakaleshwar Temple.`
-        }
-      />
-
-      <link
-        rel="canonical"
-        href={`https://mysimhastha.com/stays/${stay.slug}`}
-      />
-
-      <meta property="og:type" content="website" />
-
-      <meta
-        property="og:title"
-        content={stay.name}
-      />
-
-      <meta
-        property="og:description"
-        content={
-          stay.short_description ||
-          stay.description
-        }
-      />
-
-      <meta
-        property="og:image"
-        content={stay.featured_image || stay.image}
-      />
-
-      <meta
-        property="og:url"
-        content={`https://mysimhastha.com/stays/${stay.slug}`}
-      />
-
-    </Helmet>
+    <SchemaProvider
+      type="hotel"
+      data={{
+        name: stay.name,
+        description: stay.short_description || stay.description,
+        url: `https://www.mysimhastha.com/stays/${stay.slug}`,
+        image: stay.featured_image || stay.image,
+        about: "Accommodation",
+        faqs: stay.faqs,
+        reviews: stay.reviews,
+        rating: stay.rating,
+        priceRange: stay.price_range,
+        address: stay.address,
+        telephone: stay.phone,
+      }}
+    />
 
     <main className="stay-details-page">
 

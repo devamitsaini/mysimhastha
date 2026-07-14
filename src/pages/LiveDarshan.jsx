@@ -1,10 +1,11 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 
 import LiveDarshanCard from "../components/common/LiveDarshanCard";
 
 import { DARSHAN_FEEDS } from "../data/simhasthaData";
+
+import { SEO, SchemaProvider } from "../seo";
 
 import "../styles/LiveDarshan.css";
 
@@ -35,39 +36,22 @@ return(
 
 <>
 
-<Helmet>
-
-<title>
-
-Live Darshan Ujjain | Mahakal Live Darshan, Aarti Timings & Temple Live Streams
-
-</title>
-
-<meta
-name="description"
-content="Watch Mahakal Live Darshan, Mahakal Aarti, Harsiddhi Temple Live, Kal Bhairav Live Darshan, temple timings, official live streams and Simhastha 2028 coverage."
+<SEO
+title="Live Darshan Ujjain | Mahakal Live Darshan, Aarti Timings & Temple Live Streams"
+description="Watch Mahakal Live Darshan, Mahakal Aarti, Harsiddhi Temple Live, Kal Bhairav Live Darshan, temple timings, official live streams and Simhastha 2028 coverage."
+canonical="https://www.mysimhastha.com/live-darshan"
+keywords="Mahakal Live Darshan, Mahakal Live, Mahakal Aarti, Mahakal Live Today, Live Darshan Ujjain, Temple Live, Simhastha Live, Mahakal Temple Live"
 />
 
-<meta
-name="keywords"
-content="
-Mahakal Live Darshan,
-Mahakal Live,
-Mahakal Aarti,
-Mahakal Live Today,
-Live Darshan Ujjain,
-Temple Live,
-Simhastha Live,
-Mahakal Temple Live
-"
+<SchemaProvider
+type="video"
+data={{
+title: "Live Darshan Ujjain | Mahakal Live Darshan, Aarti Timings & Temple Live Streams",
+description: "Watch Mahakal Live Darshan, Mahakal Aarti, Harsiddhi Temple Live, Kal Bhairav Live Darshan, temple timings, official live streams and Simhastha 2028 coverage.",
+url: "https://www.mysimhastha.com/live-darshan",
+about: "Live Darshan",
+}}
 />
-
-<link
-rel="canonical"
-href="https://www.mysimhastha.com/live-darshan"
-/>
-
-</Helmet>
 
 <div className="live-page">
 

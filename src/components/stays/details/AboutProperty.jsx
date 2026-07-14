@@ -14,6 +14,24 @@ export default function AboutProperty({ stay }) {
 
   if (!stay) return null;
 
+  const description = stay.short_description || stay.description || `${stay.name} is one of the most preferred ${stay.stay_type || "stays"} in Ujjain.`;
+  
+  const checkIn = stay.check_in_time 
+    ? new Date(`2000-01-01T${stay.check_in_time}`).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
+    : "12:00 PM";
+  
+  const checkOut = stay.check_out_time 
+    ? new Date(`2000-01-01T${stay.check_out_time}`).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
+    : "10:00 AM";
+  
+  const suitableFor = stay.suitable_for?.length > 0 
+    ? stay.suitable_for.join(", ") 
+    : "Families & Pilgrims";
+  
+  const languages = stay.languages?.length > 0 
+    ? stay.languages.join(", ") 
+    : "Hindi & English";
+
   return (
     <section className="details-card">
 
@@ -21,25 +39,12 @@ export default function AboutProperty({ stay }) {
 
       <p>
 
-        {stay.short_description ||
-          `${stay.name} is one of the most preferred ${
-            stay.stay_type || "stays"
-          } in Ujjain. Conveniently located near Mahakaleshwar Temple, the property offers comfortable accommodation, modern amenities, and easy access to Mahakal Lok, Ram Ghat, railway station, and other major attractions.`}
+        {description}
 
-        {expanded && (
+        {expanded && stay.description && (
           <>
             {" "}
-
-            {stay.description
-              ? stay.description
-              : `Guests can enjoy ${
-                  stay.ac ? "air-conditioned rooms, " : ""
-                }${stay.wifi ? "free WiFi, " : ""}${
-                  stay.parking ? "parking facilities, " : ""
-                }${
-                  stay.hot_water ? "hot water, " : ""
-                }family-friendly rooms, and a peaceful stay suitable for pilgrims, tourists, families, and groups visiting Ujjain throughout the year.`}
-
+            {stay.description}
           </>
         )}
 
@@ -64,7 +69,7 @@ export default function AboutProperty({ stay }) {
 
             <strong>Check In</strong>
 
-            <span>12:00 PM</span>
+            <span>{checkIn}</span>
 
           </div>
 
@@ -78,7 +83,7 @@ export default function AboutProperty({ stay }) {
 
             <strong>Check Out</strong>
 
-            <span>10:00 AM</span>
+            <span>{checkOut}</span>
 
           </div>
 
@@ -106,7 +111,7 @@ export default function AboutProperty({ stay }) {
 
             <strong>Suitable For</strong>
 
-            <span>Families & Pilgrims</span>
+            <span>{suitableFor}</span>
 
           </div>
 
@@ -120,7 +125,7 @@ export default function AboutProperty({ stay }) {
 
             <strong>Languages</strong>
 
-            <span>Hindi & English</span>
+            <span>{languages}</span>
 
           </div>
 
