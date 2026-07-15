@@ -132,16 +132,20 @@ const TemplesPage = () => {
   return (
     <>
       <SEO
-        title="Sacred Temples of Ujjain, Omkareshwar & Baglamukhi Mata"
-        description="Explore sacred temples in and around Ujjain including Mahakaleshwar Jyotirlinga, Omkareshwar Jyotirlinga, and Baglamukhi Mata Temple. Get timings, entry charges, and location details."
+        title="Sacred Temples of Ujjain | Mahakaleshwar, Omkareshwar, Baglamukhi Mata"
+        description="Explore 11+ sacred temples in Ujjain including Mahakaleshwar Jyotirlinga, Kal Bhairav, Harsiddhi Mata. Get timings, entry fees, and complete darshan guide."
         canonical="https://www.mysimhastha.com/temples"
+        ogTitle="Sacred Temples of Ujjain | Mahakaleshwar, Omkareshwar, Baglamukhi Mata"
+        ogDescription="Explore 11+ sacred temples in Ujjain including Mahakaleshwar Jyotirlinga, Kal Bhairav, Harsiddhi Mata. Get timings, entry fees, and complete darshan guide."
+        twitterTitle="Sacred Temples of Ujjain | Mahakaleshwar, Omkareshwar, Baglamukhi Mata"
+        twitterDescription="Explore 11+ sacred temples in Ujjain including Mahakaleshwar Jyotirlinga, Kal Bhairav, Harsiddhi Mata. Get timings, entry fees, and complete darshan guide."
       />
 
       <SchemaProvider
         type="temple"
         data={{
-          title: "Sacred Temples of Ujjain, Omkareshwar & Baglamukhi Mata",
-          description: "Explore sacred temples in and around Ujjain including Mahakaleshwar Jyotirlinga, Omkareshwar Jyotirlinga, and Baglamukhi Mata Temple.",
+          title: "Sacred Temples of Ujjain | Mahakaleshwar, Omkareshwar, Baglamukhi Mata",
+          description: "Explore 11+ sacred temples in Ujjain including Mahakaleshwar Jyotirlinga, Kal Bhairav, Harsiddhi Mata. Get timings, entry fees, and complete darshan guide.",
           url: "https://www.mysimhastha.com/temples",
           about: "Temples of Ujjain",
           breadcrumbs: [
@@ -165,10 +169,10 @@ const TemplesPage = () => {
           {/* Header */}
           <div className="temples-header">
             <span className="temples-tag">Sacred Temples</span>
-            <h1>Explore Sacred Temples</h1>
+            <h1>Explore Sacred Temples of Ujjain</h1>
             <p>
-              Discover the most famous temples of Ujjain, Omkareshwar, and Baglamukhi Mata
-              with complete details on timings, entry charges, and locations.
+              Discover 11+ sacred temples in and around Ujjain including Mahakaleshwar Jyotirlinga,
+              Omkareshwar, and Baglamukhi Mata with complete darshan timings, entry fees, and locations.
             </p>
           </div>
 

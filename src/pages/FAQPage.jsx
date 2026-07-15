@@ -216,16 +216,20 @@ const FAQPage = () => {
   return (
     <>
       <SEO
-        title="FAQ - Frequently Asked Questions | MySimhastha"
-        description="Find answers to 100+ frequently asked questions about Mahakal Temple, Bhasma Aarti, Simhastha, hotels, and traveling to Ujjain."
+        title="Ujjain FAQ | Mahakal Temple, Simhastha 2028, Hotels & Travel Questions"
+        description="Get answers to 100+ FAQs about Mahakaleshwar Temple darshan, Bhasma Aarti booking, Simhastha 2028 dates, hotels, ghats, and Ujjain travel planning."
         canonical="https://www.mysimhastha.com/faq"
+        ogTitle="Ujjain FAQ | Mahakal Temple, Simhastha 2028, Hotels & Travel Questions"
+        ogDescription="Get answers to 100+ FAQs about Mahakaleshwar Temple darshan, Bhasma Aarti booking, Simhastha 2028 dates, hotels, ghats, and Ujjain travel planning."
+        twitterTitle="Ujjain FAQ | Mahakal Temple, Simhastha 2028, Hotels & Travel Questions"
+        twitterDescription="Get answers to 100+ FAQs about Mahakaleshwar Temple darshan, Bhasma Aarti booking, Simhastha 2028 dates, hotels, ghats, and Ujjain travel planning."
       />
 
       <SchemaProvider
         type="guide"
         data={{
-          title: "FAQ - Frequently Asked Questions about Ujjain & Simhastha",
-          description: "Find answers to common questions about Mahakal Darshan, Bhasma Aarti, Simhastha, hotels, and traveling to Ujjain.",
+          title: "Ujjain FAQ | Mahakal Temple, Simhastha 2028, Hotels & Travel Questions",
+          description: "Get answers to 100+ FAQs about Mahakaleshwar Temple darshan, Bhasma Aarti booking, Simhastha 2028 dates, hotels, ghats, and Ujjain travel planning.",
           url: "https://www.mysimhastha.com/faq",
           articleSection: "FAQ",
           about: "Ujjain Travel Guide",
@@ -243,10 +247,10 @@ const FAQPage = () => {
         <div className="container">
           <div className="page-header">
             <span className="section-tag">FAQ</span>
-            <h1>Frequently Asked Questions</h1>
+            <h1>Ujjain FAQ | Mahakal Temple, Simhastha 2028 & Travel Questions</h1>
             <p>
-              Find answers to the most common questions about Mahakal Darshan,
-              Bhasma Aarti, Simhastha, hotels, and traveling to Ujjain.
+              Get answers to 100+ frequently asked questions about Mahakaleshwar Temple darshan,
+              Bhasma Aarti booking, Simhastha 2028 dates, hotels, ghats, and Ujjain travel planning.
             </p>
           </div>
 

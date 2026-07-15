@@ -49,16 +49,20 @@ const Home = memo(() => {
   return (
     <>
       <SEO
-        title="MySimhastha | Simhastha 2028, Mahakal Temple & Ujjain Pilgrimage Guide"
-        description="Plan your Ujjain pilgrimage with MySimhastha — complete guide to Simhastha 2028, Mahakaleshwar Temple, Bhasma Aarti, hotels, live darshan, and travel information."
+        title="MySimhastha | Complete Ujjain Pilgrimage Portal | Mahakal, Simhastha 2028"
+        description="Your complete Ujjain pilgrimage guide. Plan Simhastha 2028, Mahakaleshwar Temple darshan, Bhasma Aarti, hotels, live darshan, and spiritual travel with trusted information."
         canonical="https://www.mysimhastha.com"
+        ogTitle="MySimhastha | Complete Ujjain Pilgrimage Portal | Mahakal, Simhastha 2028"
+        ogDescription="Your complete Ujjain pilgrimage guide. Plan Simhastha 2028, Mahakaleshwar Temple darshan, Bhasma Aarti, hotels, live darshan, and spiritual travel with trusted information."
+        twitterTitle="MySimhastha | Complete Ujjain Pilgrimage Portal | Mahakal, Simhastha 2028"
+        twitterDescription="Your complete Ujjain pilgrimage guide. Plan Simhastha 2028, Mahakaleshwar Temple darshan, Bhasma Aarti, hotels, live darshan, and spiritual travel with trusted information."
       />
 
       <SchemaProvider
         type="home"
         data={{
-          title: "MySimhastha | Simhastha 2028, Mahakal Temple & Ujjain Pilgrimage Guide",
-          description: "Plan your Ujjain pilgrimage with MySimhastha — complete guide to Simhastha 2028, Mahakaleshwar Temple, Bhasma Aarti, hotels, live darshan, and travel information.",
+          title: "MySimhastha | Complete Ujjain Pilgrimage Portal | Mahakal, Simhastha 2028",
+          description: "Your complete Ujjain pilgrimage guide. Plan Simhastha 2028, Mahakaleshwar Temple darshan, Bhasma Aarti, hotels, live darshan, and spiritual travel with trusted information.",
           url: "https://www.mysimhastha.com",
           about: "Ujjain Pilgrimage",
         }}

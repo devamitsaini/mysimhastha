@@ -29,18 +29,22 @@ function BlogPage() {
   return (
     <>
       <SEO
-        title="Latest Blogs & Updates | MySimhastha"
-        description="Latest articles, travel guides, Sawan updates and Simhastha updates from MySimhastha."
+        title="Ujjain Travel Guides & Pilgrimage Articles | MySimhastha Blog"
+        description="Read in-depth travel guides, pilgrimage articles, Sawan 2026 updates, and Simhastha preparation tips. Expert advice for your Ujjain spiritual journey."
         canonical="https://www.mysimhastha.com/blog"
+        ogTitle="Ujjain Travel Guides & Pilgrimage Articles | MySimhastha Blog"
+        ogDescription="Read in-depth travel guides, pilgrimage articles, Sawan 2026 updates, and Simhastha preparation tips. Expert advice for your Ujjain spiritual journey."
+        twitterTitle="Ujjain Travel Guides & Pilgrimage Articles | MySimhastha Blog"
+        twitterDescription="Read in-depth travel guides, pilgrimage articles, Sawan 2026 updates, and Simhastha preparation tips. Expert advice for your Ujjain spiritual journey."
       />
 
       <SchemaProvider
         type="collection"
         data={{
-          title: "Latest Blogs & Updates",
-          description: "Latest articles, travel guides, Sawan updates and Simhastha updates from MySimhastha.",
+          title: "Ujjain Travel Guides & Pilgrimage Articles | MySimhastha Blog",
+          description: "Read in-depth travel guides, pilgrimage articles, Sawan 2026 updates, and Simhastha preparation tips. Expert advice for your Ujjain spiritual journey.",
           url: "https://www.mysimhastha.com/blog",
-          about: "Blog",
+          about: "Ujjain Travel Guides & Pilgrimage Articles",
           items: posts.map((post) => ({
             name: post.title || "Untitled Post",
             description: post.excerpt,
@@ -51,10 +55,10 @@ function BlogPage() {
       />
 
       <div className="blog-page">
-      <h1>Latest Blogs & Updates</h1>
+      <h1>Ujjain Travel Guides & Pilgrimage Articles</h1>
 
       <p className="blog-subtitle">
-        Latest articles, travel guides, Sawan updates and Simhastha updates.
+        Expert travel guides, pilgrimage tips, Sawan 2026 updates, and Simhastha preparation articles.
       </p>
 
       {loading && (

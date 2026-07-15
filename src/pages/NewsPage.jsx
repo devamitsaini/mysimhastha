@@ -31,18 +31,22 @@ function NewsPage() {
   return (
     <>
       <SEO
-        title="Latest News & Updates | MySimhastha"
-        description="Stay updated with the latest news, events, and announcements from Mahakaleshwar Temple, Simhastha 2028, and Ujjain pilgrimage."
+        title="Latest Ujjain News | Mahakal Temple, Simhastha 2028 & Pilgrimage Updates"
+        description="Get the latest Ujjain news, Mahakaleshwar Temple updates, Simhastha 2028 announcements, and pilgrimage travel information. Stay informed with MySimhastha."
         canonical="https://www.mysimhastha.com/news"
+        ogTitle="Latest Ujjain News | Mahakal Temple, Simhastha 2028 & Pilgrimage Updates"
+        ogDescription="Get the latest Ujjain news, Mahakaleshwar Temple updates, Simhastha 2028 announcements, and pilgrimage travel information. Stay informed with MySimhastha."
+        twitterTitle="Latest Ujjain News | Mahakal Temple, Simhastha 2028 & Pilgrimage Updates"
+        twitterDescription="Get the latest Ujjain news, Mahakaleshwar Temple updates, Simhastha 2028 announcements, and pilgrimage travel information. Stay informed with MySimhastha."
       />
 
       <SchemaProvider
         type="collection"
         data={{
-          title: "Latest News & Updates",
-          description: "Stay updated with the latest news, events, and announcements from Mahakaleshwar Temple, Simhastha 2028, and Ujjain pilgrimage.",
+          title: "Latest Ujjain News | Mahakal Temple, Simhastha 2028 & Pilgrimage Updates",
+          description: "Get the latest Ujjain news, Mahakaleshwar Temple updates, Simhastha 2028 announcements, and pilgrimage travel information. Stay informed with MySimhastha.",
           url: "https://www.mysimhastha.com/news",
-          about: "News",
+          about: "Ujjain News & Pilgrimage Updates",
           items: news.map((item) => ({
             name: item.title || "Untitled News",
             description: item.summary,
@@ -58,12 +62,13 @@ function NewsPage() {
           <div className="news-header">
             <span className="sec-label">Latest Updates</span>
             <h1 className="news-title">
-              <span className="news-title-main">Latest News & Updates</span>
-              <span className="news-title-sub">from Ujjain & Simhastha</span>
+              <span className="news-title-main">Latest Ujjain News & Pilgrimage Updates</span>
+              <span className="news-title-sub">Mahakaleshwar Temple, Simhastha 2028 & Travel Information</span>
             </h1>
             <p className="news-subtitle">
-              Stay updated with the latest news, events, and announcements from
-              Mahakaleshwar Temple, Simhastha 2028, and Ujjain pilgrimage.
+              Stay informed with the latest news from Ujjain, including Mahakaleshwar Temple announcements, 
+              Simhastha 2028 updates, pilgrimage advisories, and travel information for devotees visiting 
+              the holy city of Ujjain.
             </p>
           </div>
 

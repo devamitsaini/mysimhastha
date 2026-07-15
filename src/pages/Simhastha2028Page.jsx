@@ -120,17 +120,21 @@ function Simhastha2028Page() {
   return (
     <>
       <SEO
-        title="Simhastha 2028 Portal | Dates, Hotels, Live Darshan & Travel"
-        description="Plan your Simhastha 2028 pilgrimage with hotels, Shahi Snan dates, live darshan, temples, routes and travel information."
+        title="Simhastha 2028 Ujjain | Complete Kumbh Mela Guide | Dates, Hotels, Ghats"
+        description="Plan your Simhastha 2028 pilgrimage to Ujjain. Get Shahi Snan dates, Mahakaleshwar Temple guide, hotel booking, live darshan, 13 Akharas, zones, routes, and travel tips."
         canonical="https://www.mysimhastha.com/simhastha-2028"
         image="https://www.mysimhastha.com/images/hero-image.webp"
+        ogTitle="Simhastha 2028 Ujjain | Complete Kumbh Mela Guide | Dates, Hotels, Ghats"
+        ogDescription="Plan your Simhastha 2028 pilgrimage to Ujjain. Get Shahi Snan dates, Mahakaleshwar Temple guide, hotel booking, live darshan, 13 Akharas, zones, routes, and travel tips."
+        twitterTitle="Simhastha 2028 Ujjain | Complete Kumbh Mela Guide | Dates, Hotels, Ghats"
+        twitterDescription="Plan your Simhastha 2028 pilgrimage to Ujjain. Get Shahi Snan dates, Mahakaleshwar Temple guide, hotel booking, live darshan, 13 Akharas, zones, routes, and travel tips."
       />
 
       <SchemaProvider
         type="event"
         data={{
-          title: "Ujjain Simhastha Mahakumbh 2028",
-          description: "Complete guide to Simhastha 2028 including Shahi Snan dates, temples, ghats, akhadas, accommodation, routes and pilgrimage information.",
+          title: "Simhastha 2028 Ujjain | Complete Kumbh Mela Guide | Dates, Hotels, Ghats",
+          description: "Plan your Simhastha 2028 pilgrimage to Ujjain. Get Shahi Snan dates, Mahakaleshwar Temple guide, hotel booking, live darshan, 13 Akharas, zones, routes, and travel tips.",
           url: "https://www.mysimhastha.com/simhastha-2028",
           about: "Simhastha 2028",
           image: "https://www.mysimhastha.com/images/hero-image.webp",

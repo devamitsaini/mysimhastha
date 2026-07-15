@@ -103,18 +103,22 @@ export default function GuidesPage() {
   return (
     <>
       <SEO
-        title="Sacred Travel Guides for Ujjain & Simhastha"
-        description="Explore complete guides for Simhastha 2028, Mahakaleshwar Temple, Sawan/Shravan Month, Ujjain travel, accommodation and more. Each guide is crafted to help you plan your spiritual journey with confidence."
+        title="Ujjain Travel Guides | Mahakal Temple, Simhastha 2028, Sawan & Pilgrimage Tips"
+        description="Complete travel guides for Ujjain pilgrimage. Plan Simhastha 2028, Mahakaleshwar Temple darshan, Sawan 2026, Bhasma Aarti booking, and sacred site visits with expert tips."
         canonical="https://www.mysimhastha.com/guides"
+        ogTitle="Ujjain Travel Guides | Mahakal Temple, Simhastha 2028, Sawan & Pilgrimage Tips"
+        ogDescription="Complete travel guides for Ujjain pilgrimage. Plan Simhastha 2028, Mahakaleshwar Temple darshan, Sawan 2026, Bhasma Aarti booking, and sacred site visits with expert tips."
+        twitterTitle="Ujjain Travel Guides | Mahakal Temple, Simhastha 2028, Sawan & Pilgrimage Tips"
+        twitterDescription="Complete travel guides for Ujjain pilgrimage. Plan Simhastha 2028, Mahakaleshwar Temple darshan, Sawan 2026, Bhasma Aarti booking, and sacred site visits with expert tips."
       />
 
       <SchemaProvider
         type="collection"
         data={{
-          title: "Sacred Travel Guides for Ujjain & Simhastha",
-          description: "Explore complete guides for Simhastha 2028, Mahakaleshwar Temple, Sawan/Shravan Month, Ujjain travel, accommodation and more.",
+          title: "Ujjain Travel Guides | Mahakal Temple, Simhastha 2028, Sawan & Pilgrimage Tips",
+          description: "Complete travel guides for Ujjain pilgrimage. Plan Simhastha 2028, Mahakaleshwar Temple darshan, Sawan 2026, Bhasma Aarti booking, and sacred site visits with expert tips.",
           url: "https://www.mysimhastha.com/guides",
-          about: "Travel Guides",
+          about: "Ujjain Travel Guides & Pilgrimage Tips",
           items: guides.map((guide) => ({
             name: guide.title,
             description: guide.description,
@@ -130,13 +134,11 @@ export default function GuidesPage() {
           <div className="guides-header">
             <span className="sec-label">Complete Guides</span>
             <h1 className="guides-title">
-              <span className="guides-title-main">Sacred Travel Guides</span>
-              <span className="guides-title-sub">for Ujjain & Simhastha</span>
+              <span className="guides-title-main">Complete Ujjain & Simhastha Travel Guides</span>
             </h1>
             <p className="guides-subtitle">
-              Explore complete guides for Simhastha 2028, Mahakaleshwar Temple, Sawan/Shravan Month,
-              Ujjain travel, accommodation and more. Each guide is crafted to help you plan
-              your spiritual journey with confidence.
+              Expert travel guides for Mahakaleshwar Temple, Simhastha 2028, Sawan 2026,
+              Bhasma Aarti booking, and sacred site visits. Plan your spiritual journey with confidence.
             </p>
           </div>
 
