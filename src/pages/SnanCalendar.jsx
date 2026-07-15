@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { FaCalendarAlt } from "react-icons/fa";
 import { SEO, SchemaProvider } from "../seo";
+import { SNAN_DATES } from "../data/simhasthaData";
 import "../styles/SnanCalendar.css";
 
 function SnanCalendarPage() {
@@ -169,6 +171,50 @@ function SnanCalendarPage() {
 
         </div>
 
+      </section>
+
+      {/* ======================================================
+          SNAN CALENDAR
+      ====================================================== */}
+
+      <section className="sim2028-snan">
+        <div className="container">
+          <div className="sim2028-section-header">
+            <span className="sim2028-section-badge">
+              <FaCalendarAlt />
+              Sacred Calendar
+            </span>
+            <h2>Simhastha 2028 Snan Calendar</h2>
+            <p>Complete bathing schedule including all Shahi Snan dates.</p>
+          </div>
+          <div className="sim2028-snan-grid">
+            {SNAN_DATES.map((snan, index) => (
+              <div key={index} className={`sim2028-snan-card ${snan.shahi ? "shahi" : ""}`}>
+                {snan.shahi && <div className="sim2028-snan-badge">SHAHI SNAN</div>}
+                <div className="sim2028-snan-date">
+                  <div className="sim2028-snan-day">{snan.day}</div>
+                  <div className="sim2028-snan-month-wrap">
+                    <span className="sim2028-snan-month">{snan.month}</span>
+                    <span className="sim2028-snan-weekday">{snan.weekday}</span>
+                  </div>
+                </div>
+                <div className="sim2028-snan-name">{snan.name}</div>
+                {snan.nameHi && <div className="sim2028-snan-hi">{snan.nameHi}</div>}
+                <div className="sim2028-snan-tithi">{snan.tithi}</div>
+              </div>
+            ))}
+          </div>
+          <div className="sim2028-snan-legend">
+            <div className="sim2028-snan-legend-item">
+              <span className="sim2028-snan-legend-dot shahi" />
+              <span>Shahi Snan — Royal bathing procession of all 13 Akharas</span>
+            </div>
+            <div className="sim2028-snan-legend-item">
+              <span className="sim2028-snan-legend-dot normal" />
+              <span>Auspicious bathing tithi</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ======================================================

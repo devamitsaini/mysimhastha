@@ -1,12 +1,15 @@
 export const SNAN_DATES = [
-  { name:"First Shahi Snan", nameHi:"प्रथम शाही स्नान", day:22, month:"APR", weekday:"Tuesday", tithi:"Chaitra Shukla Purnima", shahi:true },
-  { name:"Akshaya Tritiya", nameHi:"अक्षय तृतीया", day:6, month:"MAY", weekday:"Monday", tithi:"Vaishakha Shukla Tritiya", shahi:false },
-  { name:"Second Shahi Snan", nameHi:"द्वितीय शाही स्नान", day:11, month:"MAY", weekday:"Saturday", tithi:"Vaishakha Shukla Ashtami", shahi:true },
-  { name:"Narasimha Chaturdashi", nameHi:"नरसिंह चतुर्दशी", day:19, month:"MAY", weekday:"Sunday", tithi:"Vaishakha Shukla Chaturdashi", shahi:false },
-  { name:"Third Shahi Snan", nameHi:"तृतीय शाही स्नान", day:20, month:"MAY", weekday:"Monday", tithi:"Vaishakha Shukla Purnima", shahi:true },
-  { name:"Ganga Dussehra", nameHi:"गंगा दशहरा स्नान", day:3, month:"JUN", weekday:"Tuesday", tithi:"Jyeshtha Shukla Dashami", shahi:false },
-  { name:"Nirjala Ekadashi", nameHi:"निर्जला एकादशी", day:11, month:"JUN", weekday:"Wednesday", tithi:"Jyeshtha Shukla Ekadashi", shahi:false },
-  { name:"Fourth Shahi Snan", nameHi:"चतुर्थ शाही स्नान", day:18, month:"JUN", weekday:"Wednesday", tithi:"Jyeshtha Shukla Purnima", shahi:true },
+  { name:"Chaitra Purnima", nameHi:"चैत्र पूर्णिमा", day:27, month:"MAR", weekday:"Monday", tithi:"Opening sacred bath and beginning of Simhastha", shahi:false },
+  { name:"Mesh Sankranti", nameHi:"मेष संक्रांति", day:4, month:"APR", weekday:"Tuesday", tithi:"Solar transition into Aries, highly auspicious", shahi:false },
+  { name:"First Shahi Snan", nameHi:"प्रथम शाही स्नान", day:9, month:"APR", weekday:"Sunday", tithi:"Royal bath led by Akharas and Naga Sadhus", shahi:true },
+  { name:"Vaishakh Amavasya", nameHi:"वैशाख अमावस्या", day:14, month:"APR", weekday:"Friday", tithi:"Powerful day for ancestor prayers and purification", shahi:false },
+  { name:"Vaishakh Shukla Panchami", nameHi:"वैशाख शुक्ल पंचमी", day:19, month:"APR", weekday:"Wednesday", tithi:"Traditional holy bathing and spiritual observances", shahi:false },
+  { name:"Second Shahi Snan", nameHi:"द्वितीय शाही स्नान", day:23, month:"APR", weekday:"Sunday", tithi:"Largest and most crowded bathing day", shahi:true },
+  { name:"Vaishakh Shukla Ekadashi", nameHi:"वैशाख शुक्ल एकादशी", day:1, month:"MAY", weekday:"Monday", tithi:"Considered highly sacred for fasting and devotion", shahi:false },
+  { name:"Vaishakh Purnima", nameHi:"वैशाख पूर्णिमा", day:5, month:"MAY", weekday:"Friday", tithi:"Buddha Purnima and holy bathing day", shahi:false },
+  { name:"Final Shahi Snan", nameHi:"अंतिम शाही स्नान", day:8, month:"MAY", weekday:"Monday", tithi:"Grand concluding royal bath of Simhastha", shahi:true },
+  { name:"Jyeshtha Krishna Amavasya", nameHi:"ज्येष्ठ कृष्ण अमावस्या", day:15, month:"MAY", weekday:"Monday", tithi:"Spiritual cleansing and ancestral offerings", shahi:false },
+  { name:"Simhastha Closing Ceremonies", nameHi:"सिंहस्थ समापन समारोह", day:27, month:"MAY", weekday:"Saturday", tithi:"Formal conclusion of the sacred gathering", shahi:false },
 ];
 
 export const DARSHAN_FEEDS = [

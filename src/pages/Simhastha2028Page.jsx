@@ -101,7 +101,7 @@ function Simhastha2028Page() {
 
   const quickStats = [
     { number: "400M+", label: "Expected Pilgrims" },
-    { number: "4", label: "Shahi Snan Dates" },
+    { number: "3", label: "Shahi Snan Dates" },
     { number: "60+", label: "Days of Festival" },
     { number: "13", label: "Sacred Akharas" },
   ];
@@ -205,7 +205,7 @@ function Simhastha2028Page() {
                 <strong>Simhastha 2028</strong> (also known as Ujjain Simhastha Mahakumbh) is one of the four sacred Kumbh Melas held every twelve years in the holy city of <strong>Ujjain, Madhya Pradesh</strong>. Scheduled from <strong>March 27 to May 27, 2028</strong>, this grand pilgrimage will witness over <strong>40 million devotees</strong> gathering on the banks of the sacred <strong>Shipra River</strong>.
               </p>
               <p>
-                The festival features <strong>4 Shahi Snan dates</strong> (royal bathing processions) where 13 sacred Akharas of sadhus and saints take holy dips. Pilgrims can witness magnificent processions, attend spiritual discourses, seek blessings at the <strong>Mahakaleshwar Jyotirlinga</strong>, and participate in sacred rituals spanning <strong>60+ days</strong> of festivities.
+                The festival features <strong>3 Shahi Snan dates</strong> (royal bathing processions) where 13 sacred Akharas of sadhus and saints take holy dips. Pilgrims can witness magnificent processions, attend spiritual discourses, seek blessings at the <strong>Mahakaleshwar Jyotirlinga</strong>, and participate in sacred rituals spanning <strong>60+ days</strong> of festivities.
               </p>
               <p>
                 Whether you're planning to attend the Shahi Snan, explore ancient temples and ghats, or experience the spiritual energy of one of the world's largest religious gatherings, this comprehensive guide provides everything you need for a blessed and well-planned pilgrimage to Simhastha 2028.
@@ -280,7 +280,7 @@ function Simhastha2028Page() {
                 {
                   icon: <FaCalendarAlt />,
                   title: "Shahi Snan Dates",
-                  desc: "Complete schedule of all 4 royal bathing dates",
+                  desc: "Complete schedule of all 3 royal bathing dates",
                   link: "#snan-calendar",
                   popular: true,
                   image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963"
@@ -734,7 +734,7 @@ Thousands of Pilgrims. Only limited slots Hurry up!</p>
                   <span>When is Simhastha 2028?</span>
                 </div>
                 <div className="sim2028-faq-answer">
-                  Simhastha 2028 will be held from March 27 to May 27, 2028, in Ujjain, Madhya Pradesh. The festival lasts for approximately 60 days with four major Shahi Snan dates.
+                  Simhastha 2028 will be held from March 27 to May 27, 2028, in Ujjain, Madhya Pradesh. The festival lasts for approximately 60 days with three major Shahi Snan dates.
                 </div>
               </div>
               <div className="sim2028-faq-item">

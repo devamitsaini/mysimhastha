@@ -37,7 +37,7 @@ const CountdownHub = () => {
 
             <div className="countdown-title">
               <div className="countdown-icon">
-                <img src="/images/trishul-icon.png" alt="Trishul" />
+                <img src="/images/trishul.png" alt="Trishul" />
               </div>
               <div className="countdown-title-text">
                 <h3>Simhastha 2028</h3>
