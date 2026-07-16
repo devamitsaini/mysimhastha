@@ -1,11 +1,33 @@
-import { FiCheckCircle } from "react-icons/fi";
+import { FiCheckCircle, FiClock, FiUsers, FiSlash, FiCreditCard, FiSun, FiVolume2 } from "react-icons/fi";
+
+// Map rule keys to appropriate icons for visual distinction
+const iconMap = {
+  check_in: <FiClock />,
+  check_out: <FiClock />,
+  checkin: <FiClock />,
+  checkout: <FiClock />,
+  pets: <FiUsers />,
+  smoking: <FiSlash />,
+  children: <FiUsers />,
+  payment: <FiCreditCard />,
+  cancellation: <FiCreditCard />,
+  quiet_hours: <FiVolume2 />,
+  pool: <FiSun />,
+};
 
 export default function PropertyRules({ stay }) {
-  // Rules live directly on the stay object (TEXT[] column in the `stays` table).
-  // Only render the section when rules actually exist.
-  const rules = stay.rules || [];
+  // Support two data formats:
+  // 1. Structured rules from `stay_rules` table → `stay.rules_structured`
+  //    [{ rule_key, rule_label, rule_value }, ...]
+  // 2. Simple TEXT[] from `stays` table rules column → `stay.rules`
+  //    ["Rule text", ...]
+  const structuredRules = stay.rules_structured || [];
+  const simpleRules = stay.rules || [];
 
-  if (rules.length === 0) {
+  const hasStructured = structuredRules.length > 0;
+  const hasSimple = simpleRules.length > 0;
+
+  if (!hasStructured && !hasSimple) {
     return null;
   }
 
@@ -14,14 +36,24 @@ export default function PropertyRules({ stay }) {
       <h2>Property Rules</h2>
 
       <div className="rules-list">
-        {rules.map((rule, index) => (
-          <div className="rule-item" key={index}>
-            <FiCheckCircle />
-            <div>
-              <span>{rule}</span>
-            </div>
-          </div>
-        ))}
+        {hasStructured
+          ? structuredRules.map((rule, index) => (
+              <div className="rule-item" key={rule.rule_key || index}>
+                {iconMap[rule.rule_key] || <FiCheckCircle />}
+                <div>
+                  <strong>{rule.rule_label}</strong>
+                  <span>{rule.rule_value}</span>
+                </div>
+              </div>
+            ))
+          : simpleRules.map((rule, index) => (
+              <div className="rule-item" key={index}>
+                <FiCheckCircle />
+                <div>
+                  <span>{rule}</span>
+                </div>
+              </div>
+            ))}
       </div>
     </section>
   );

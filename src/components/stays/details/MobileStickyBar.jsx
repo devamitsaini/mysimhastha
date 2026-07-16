@@ -17,7 +17,7 @@ export default function MobileStickyBar({ stay }) {
     <div className="mobile-sticky-bar">
       <div className="mobile-price">
         <small>Starting From</small>
-        <strong>{price || "Contact"}</strong>
+        <strong>{price}</strong>
       </div>
 
       <div className="mobile-buttons">

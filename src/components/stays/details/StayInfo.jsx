@@ -109,14 +109,16 @@ export default function StayInfo({ stay }) {
           </div>
         </div>
 
-        <div>
-          <FiClock />
+        {price && (
+  <div>
+    <FiClock />
 
-          <div>
-            <strong>Starting Price</strong>
-            <span>{price || "Contact"}</span>
-          </div>
-        </div>
+    <div>
+      <strong>Starting Price</strong>
+      <span>{price}</span>
+    </div>
+  </div>
+)}
 
         <div>
           <FiMapPin />

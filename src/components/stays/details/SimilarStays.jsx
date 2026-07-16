@@ -95,7 +95,8 @@ export default function SimilarStays({ stay }) {
 
                   {hotel.starting_price ||
                     hotel.price_from ||
-                    "Contact"}
+                    hotel.price ||
+                    "Price on Request"}
 
                 </strong>
 

@@ -88,7 +88,7 @@ export default function ListingPropertyCard({ stay }) {
 
             <small>Starting From</small>
 
-            <h3>{stay.starting_price || stay.price_from || "Contact"}</h3>
+            <h3>{stay.starting_price || stay.price_from || stay.price || "Price on Request"}</h3>
 
             <p>/night</p>
 
@@ -137,7 +137,7 @@ export default function ListingPropertyCard({ stay }) {
 
           <small>Starting From</small>
 
-          <h3>{stay.starting_price || stay.price_from || "Contact"}</h3>
+          <h3>{stay.starting_price || stay.price_from || stay.price || "Price on Request"}</h3>
 
           <p>/night</p>
 

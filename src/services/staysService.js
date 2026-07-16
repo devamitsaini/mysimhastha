@@ -190,6 +190,63 @@ export const fetchStayBySlug = async (slug) => {
       return { data: null, error };
     }
 
+    // Also fetch rules from the normalized stay_rules table
+    const { data: rulesData, error: rulesError } = await supabase
+      .from('stay_rules')
+      .select('rule_key, rule_label, rule_value')
+      .eq('stay_id', data.id)
+      .order('display_order', { ascending: true });
+
+    if (!rulesError && rulesData?.length > 0) {
+      data.rules_structured = rulesData;
+    }
+
+    // Also fetch nearby places from the normalized stay_nearby_places table
+    const { data: nearbyData, error: nearbyError } = await supabase
+      .from('stay_nearby_places')
+      .select('place_name, place_type, distance_meters')
+      .eq('stay_id', data.id)
+      .order('distance_meters', { ascending: true });
+
+    if (!nearbyError && nearbyData?.length > 0) {
+      // Map DB fields (place_name, place_type, distance_meters) to what the component expects (name, type, distance)
+      data.nearby_places = nearbyData.map((p) => ({
+        name: p.place_name,
+        type: p.place_type || 'Popular attraction',
+        distance: p.distance_meters,
+      }));
+    }
+
+    // Also fetch room types so we can derive a fallback starting price
+    const { data: roomTypesData, error: roomTypesError } = await supabase
+      .from('stay_room_types')
+      .select('price_from')
+      .eq('stay_id', data.id)
+      .not('price_from', 'is', null)
+      .order('price_from', { ascending: true })
+      .limit(1);
+
+    if (!roomTypesError && roomTypesData?.length > 0) {
+      const minRoomPrice = Number(roomTypesData[0].price_from);
+      if (
+        minRoomPrice > 0 &&
+        (!data.starting_price && !data.price_from)
+      ) {
+        data.starting_price = minRoomPrice;
+      }
+    }
+
+    // Normalize alternate price column names/formats onto starting_price
+    const rawPrice = data.starting_price || data.price_from || data.price || data.rate || data.cost || data.amount || data.price_per_night || data.min_price || data.base_price;
+    if (!rawPrice) {
+      // keep existing fallback to room-types minimum handled above
+    } else {
+      const parsed = Number(String(rawPrice).replace(/[^0-9.]/g, ''));
+      if (parsed > 0) {
+        data.starting_price = parsed;
+      }
+    }
+
     return { data, error: null };
   } catch (error) {
     console.error('Unexpected error fetching stay by slug:', error);
@@ -527,7 +584,10 @@ export const fetchSimilarStays = async (stay) => {
     .from("stays")
     .select("*")
     .eq("stay_type", stay.stay_type)
+    .eq("active", true)
     .neq("id", stay.id)
+    .order("rating", { ascending: false })
+    .order("featured", { ascending: false })
     .limit(3);
 
   return { data: data || [], error };

@@ -61,13 +61,15 @@ export default function StickyContactCard({ stay }) {
     <aside className="sticky-contact-card">
       {/* PRICE */}
 
-      <div className="price-card">
-        <small>Starting From</small>
+      {formatPrice(stay.starting_price || stay.price_from) && (
+  <div className="price-card">
+    <small>Starting From</small>
 
-        <h2>{formatPrice(stay.starting_price || stay.price_from) || "Contact"}</h2>
+    <h2>{formatPrice(stay.starting_price || stay.price_from)}</h2>
 
-        <span>Per Night</span>
-      </div>
+    <span>Per Night</span>
+  </div>
+)}
 
       {/* CONTACT */}
 

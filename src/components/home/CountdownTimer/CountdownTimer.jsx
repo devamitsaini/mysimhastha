@@ -92,10 +92,10 @@ const CountdownTimer = () => {
 
       {/* BUTTON (Moved outside countdown-right) */}
       <Link
-        to="/snan-calendar"
+        to="/simhasth-2028"
         className="countdown-btn"
       >
-        View Snan Calendar
+        Explore Simhastha
         <FaArrowRight />
       </Link>
 
