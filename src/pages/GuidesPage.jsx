@@ -7,14 +7,23 @@ export default function GuidesPage() {
   
   const guides = [
     {
-    title: "Kal Bhairav Temple, Ujjain: Complete Guide, Timings & Significance",
+    title: "Harsiddhi Mata Temple, Ujjain: Timings, History & Darshan Guide",
     description:
-      "Everything you need to know before visiting Kal Bhairav Temple, Ujjain — history, darshan timings, the famous liquor offering ritual, how to reach, dress code, and nearby places to combine on your visit.",
-    image: "/images/kal-bhairav-temple-guide.webp",
-    enLink: "/guide/kal-bhairav-temple-guide",
-    hiLink: "/hi/guide/kal-bhairav-temple-guide",
-    date: "2026-07-13"
+      "Complete guide to Harsiddhi Mata Temple, Ujjain — one of the 51 Shakti Peethas. Timings, history, the iconic Deepmala, aarti schedule, dress code, how to reach from Mahakaleshwar, and essential travel tips for pilgrims and visitors.",
+    image: "/images/harsiddhi-temple.webp",
+    enLink: "/guide/harsiddhi-mata-temple-ujjain",
+    hiLink: "/hi/guide/harsiddhi-mata-temple-ujjain",
+    date: "2026-07-18"
   },
+    {
+      title: "Kal Bhairav Temple, Ujjain: Complete Guide, Timings & Significance",
+      description:
+        "Everything you need to know before visiting Kal Bhairav Temple, Ujjain — history, darshan timings, the famous liquor offering ritual, how to reach, dress code, and nearby places to combine on your visit.",
+      image: "/images/kal-bhairav-temple-guide.webp",
+      enLink: "/guide/kal-bhairav-temple-guide",
+      hiLink: "/hi/guide/kal-bhairav-temple-guide",
+      date: "2026-07-13"
+    },
     {
       title: "Ujjain to Omkareshwar Travel Guide: Distance, Route, Taxi, Bus & Train",
       description:

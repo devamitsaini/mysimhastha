@@ -176,6 +176,7 @@ const UjjainToOmkareshwarGuideHi = lazy(() => import("./guides/hi/UjjainToOmkare
 
 const UjjainItinerary = lazy(() => import("./guides/ujjain-itinerary"));
 const KalBhairavTempleGuide = lazy(() => import("./guides/kal-bhairav"));
+const HarsiddhiMataTempleGuide = lazy(() => import("./guides/harsiddhi-mata-temple-ujjain"));
 
 const TemplesPage = lazy(() => import("./pages/TemplesPage"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
@@ -217,8 +218,7 @@ function App() {
             <Route path="/stays" element={<StayHomePage />} />
             <Route path="/stays/list" element={<StayListingPage />} />
             <Route path="/stays/:slug" element={<StayDetailsPage />} />
-            <Route path="/stays/map" element={<StayMapPage />}/>
-                       
+            <Route path="/stays/map" element={<StayMapPage />}/>           
             <Route path="/temples" element={<TemplesPage />} />
             <Route path="/temple/:slug" element={<TemplesPage />} />
             <Route path="/snan-calendar" element={<SnanCalendarPage />} />
@@ -266,6 +266,7 @@ function App() {
               <Route path="/guide/ujjain-to-omkareshwar" element={<UjjainToOmkareshwarGuide />}/>
               <Route path="/guide/2-3-day-ujjain-itinerary"  element={<UjjainItinerary />} />
               <Route path="/guide/kal-bhairav-temple-guide" element={<KalBhairavTempleGuide />} />
+              <Route path="/guide/harsiddhi-mata-temple-ujjain" element={<HarsiddhiMataTempleGuide />} />
 
               {/* Hindi */}
               <Route path="/hi/guide/simhastha-2028" element={<Simhastha2028HI />} />
@@ -281,6 +282,7 @@ function App() {
               <Route path="/hi/guide/ujjain-to-omkareshwar" element={<UjjainToOmkareshwarGuideHi/>}/>
               <Route path="/hi/guide/2-3-day-ujjain-itinerary"element={<UjjainItinerary />}/>
               <Route path="/hi/guide/kal-bhairav-temple-guide" element={<KalBhairavTempleGuide />} />
+              <Route path="/hi/guide/harsiddhi-mata-temple-ujjain" element={<HarsiddhiMataTempleGuide />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

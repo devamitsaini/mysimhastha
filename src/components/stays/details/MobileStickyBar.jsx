@@ -9,7 +9,10 @@ function formatPrice(value) {
 
 export default function MobileStickyBar({ stay }) {
   const phone = stay?.phone || "";
-  const whatsapp = stay?.whatsapp || stay?.phone || "";
+  const whatsapp =
+  (stay.whatsapp || stay.phone || "")
+    .replace(/\D/g, "")
+    .replace(/^0/, "");
 
   const price = formatPrice(stay.starting_price || stay.price_from);
 
@@ -31,7 +34,7 @@ export default function MobileStickyBar({ stay }) {
         </a>
 
         <a
-          href={whatsapp ? `https://wa.me/${whatsapp}` : "#"}
+          href={whatsapp ? `https://wa.me/91${whatsapp}` : "#"}
           target="_blank"
           rel="noreferrer"
           className="mobile-whatsapp"

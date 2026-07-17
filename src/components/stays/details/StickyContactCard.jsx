@@ -21,7 +21,10 @@ function formatPrice(value) {
 
 export default function StickyContactCard({ stay }) {
   const phone = stay.phone || "";
-  const whatsapp = stay.whatsapp || stay.phone || "";
+  const whatsapp =
+  (stay.whatsapp || stay.phone || "")
+    .replace(/\D/g, "")
+    .replace(/^0/, "");
   const website = stay.website || "";
   const email = stay.email || "";
 
@@ -84,7 +87,7 @@ export default function StickyContactCard({ stay }) {
         </a>
 
         <a
-          href={whatsapp ? `https://wa.me/${whatsapp}` : "#"}
+          href={whatsapp ? `https://wa.me/91${whatsapp}` : "#"}
           target="_blank"
           rel="noreferrer"
           className="whatsapp-btn"
