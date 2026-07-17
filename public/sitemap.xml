@@ -229,6 +229,13 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.mysimhastha.com/guide/harsiddhi-mata-temple-ujjain</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Hindi Guides -->
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/simhastha-2028</loc>
@@ -309,6 +316,13 @@
 
   <url>
     <loc>https://www.mysimhastha.com/hi/guide/kal-bhairav-temple-guide</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mysimhastha.com/hi/guide/harsiddhi-mata-temple-ujjain</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
