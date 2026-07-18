@@ -29,7 +29,7 @@ const places = [
     description:
       "Walk through one of India's largest spiritual corridors featuring magnificent sculptures and architecture.",
     image:
-      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963",
+      "/images/shahi-snan.webp",
     link: "/guide/mahakal-lok",
     color: "#2563EB",
   },
@@ -39,7 +39,7 @@ const places = [
     description:
       "Experience the peaceful Shipra River, evening aarti and the spiritual heart of Ujjain.",
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "/images/safety.webp",
     link: "/guide/ram-ghat",
     color: "#0EA5E9",
   },
@@ -59,7 +59,7 @@ const places = [
     description:
       "Discover sunrise, sunset and iconic photography locations around temples and the Shipra River.",
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "/images/routes.webp",
     link: "/explore",
     color: "#8B5CF6",
   },

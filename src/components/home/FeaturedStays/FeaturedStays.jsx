@@ -18,7 +18,7 @@ const stays = [
   {
     id: 1,
     name: "Your Property Name",
-    image: "/images/featured1.jpg",
+    image: "/images/featured1.webp",
     distance: "700m from Mahakal",
     price: "₹1,800",
     rating: "4.8",
@@ -40,7 +40,7 @@ const stays = [
   {
     id: 3,
     name: "Your Property Name",
-    image: "/images/feattured3.webp",
+    image: "/images/featured3.webp",
     distance: "500m from Mahakal",
     price: "₹1,200",
     rating: "4.6",
@@ -51,7 +51,7 @@ const stays = [
   {
     id: 4,
     name: "Your Property Name",
-    image: "/images/featured4.jpg",
+    image: "/images/featured4.webp",
     distance: "2 km from Mahakal",
     price: "₹3,100",
     rating: "4.9",

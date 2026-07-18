@@ -75,7 +75,7 @@ function SnanCalendarPage() {
             <div className="about-image">
 
               <img
-                src="https://www.ercotravels.com/blog/wp-content/uploads/2016/01/groupofsadhus.jpg"
+                src="groupofsadhus.webp"
                 alt="Shahi Snan Procession"
               />
 

@@ -155,7 +155,7 @@ function Simhastha2028Page() {
             <div className="sim2028-hero-card">
               <div className="sim2028-hero-image">
                 <img
-                  src="https://www.ercotravels.com/blog/wp-content/uploads/2016/01/groupofsadhus.jpg"
+                  src="groupofsadhus.webp"
                   alt="Simhastha 2028 Ujjain"
                 />
                 <div className="sim2028-hero-image-fade" />
@@ -283,7 +283,7 @@ function Simhastha2028Page() {
                   desc: "Complete schedule of all 3 royal bathing dates",
                   link: "#snan-calendar",
                   popular: true,
-                  image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963"
+                  image: "/images/shahi-snan.webp"
                 },
                 {
                   icon: <FaMapMarkedAlt />,
@@ -291,7 +291,7 @@ function Simhastha2028Page() {
                   desc: "Navigate 6 festival zones and plan your entry",
                   link: "#zones-routes",
                   popular: false,
-                  image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                  image: "/images/routes.webp"
                 },
                 {
                   icon: <FaHotel />,
@@ -308,7 +308,7 @@ function Simhastha2028Page() {
                   link: "/transport",
                   popular: false,
                   comingSoon: true,
-                  image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
+                  image: "/images/transport.webp"
                 },
                 {
                   icon: <FaUsers />,
@@ -317,7 +317,7 @@ function Simhastha2028Page() {
                   link: "#temples-ghats",
                   popular: true,
                   comingSoon: true,
-                  image: "https://images.unsplash.com/photo-1519608487953-e999c86e7455"
+                  image: "/images/akhada.webp"
                 },
                 {
                   icon: <FaShieldAlt />,
@@ -326,7 +326,7 @@ function Simhastha2028Page() {
                   link: "/guide",
                   popular: false,
                   comingSoon: true,
-                  image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+                  image: "/images/safety.webp"
                 }
               ].map((guide, index) => (
                 <div
