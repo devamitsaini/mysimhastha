@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import {
   FaMapMarkerAlt,
@@ -61,15 +61,18 @@ const stays = [
   },
 ];
 
-const FeaturedStays = () => {
+const FeaturedStays = memo(() => {
   return (
     <section className="featured-stays">
       <div className="container">
         <div className="section-heading">
           <span className="section-tag">ADVERTISEMENT</span>
+
           <h2>Want to see your property here?</h2>
+
           <p>
-            Get featured and fill the form first, then showcase your property to thousands of pilgrims visiting Mahakaleshwar Temple daily.
+            Get featured and fill the form first, then showcase your property
+            to thousands of pilgrims visiting Mahakaleshwar Temple daily.
           </p>
         </div>
 
@@ -81,58 +84,91 @@ const FeaturedStays = () => {
           <button>Dharamshalas</button>
         </div>
 
-        <div className="featured-grid">
+        <div
+          className="featured-grid"
+          role="list"
+        >
           {stays.map((stay) => (
-            <div className="stay-card" key={stay.id}>
+            <div
+              className="stay-card"
+              key={stay.id}
+              role="listitem"
+            >
               <div className="stay-image">
                 <img
-  src={stay.image}
-  alt={stay.name}
-  loading="lazy"
-  decoding="async"
-  width="600"
-  height="400"
-/>
+                  src={stay.image}
+
+                  /*
+                  Future responsive images:
+
+                  srcSet={`
+                    ${stay.image.replace(".webp","-300.webp")} 300w,
+                    ${stay.image.replace(".webp","-600.webp")} 600w
+                  `}
+                  sizes="(max-width:768px) 200px, 600px"
+                  */
+
+                  alt={stay.name}
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="400"
+                />
+
                 <div className="verified-badge">
-                  <FaCheckCircle />
+                  <FaCheckCircle aria-hidden="true" />
                   Verified
                 </div>
-                <div className="distance-badge">{stay.distance}</div>
-                <button className="wishlist-btn">
-                  <FaHeart />
+
+                <div className="distance-badge">
+                  {stay.distance}
+                </div>
+
+                <button
+                  className="wishlist-btn"
+                  aria-label={`Add ${stay.name} to wishlist`}
+                  type="button"
+                >
+                  <FaHeart aria-hidden="true" />
                 </button>
               </div>
 
               <div className="stay-content">
                 <div className="rating-row">
                   <div className="rating">
-                    <FaStar />
+                    <FaStar aria-hidden="true" />
+
                     {stay.rating}
+
                     <span>({stay.reviews})</span>
                   </div>
                 </div>
 
                 <h3>{stay.name}</h3>
+
                 <p className="location">
-                  <FaMapMarkerAlt />
+                  <FaMapMarkerAlt aria-hidden="true" />
                   {stay.location}
                 </p>
 
                 <div className="amenities">
                   <span>
-                    <FaWifi />
+                    <FaWifi aria-hidden="true" />
                     WiFi
                   </span>
+
                   <span>
-                    <FaParking />
+                    <FaParking aria-hidden="true" />
                     Parking
                   </span>
+
                   <span>
-                    <FaSnowflake />
+                    <FaSnowflake aria-hidden="true" />
                     AC
                   </span>
+
                   <span>
-                    <FaUsers />
+                    <FaUsers aria-hidden="true" />
                     Family
                   </span>
                 </div>
@@ -142,9 +178,13 @@ const FeaturedStays = () => {
                     <h4>{stay.price}</h4>
                     <span>per night</span>
                   </div>
-                  <Link to="/list-your-property" className="details-btn">
+
+                  <Link
+                    to="/list-your-property"
+                    className="details-btn"
+                  >
                     Get Featured
-                    <FaArrowRight />
+                    <FaArrowRight aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -153,14 +193,19 @@ const FeaturedStays = () => {
         </div>
 
         <div className="featured-bottom">
-          <Link to="/list-your-property" className="view-all-btn">
+          <Link
+            to="/list-your-property"
+            className="view-all-btn"
+          >
             Get Featured
-            <FaArrowRight />
+            <FaArrowRight aria-hidden="true" />
           </Link>
         </div>
       </div>
     </section>
   );
-};
+});
+
+FeaturedStays.displayName = "FeaturedStays";
 
 export default FeaturedStays;
