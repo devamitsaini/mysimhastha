@@ -6,17 +6,17 @@ import "./GalleryHome.css";
 
 const GalleryHome = () => {
   const galleryImages = [
-    { id: 1, src: "/images/temple/mahakal.webp", alt: "Mahakal Temple" },
-    { id: 2, src: "/images/temple/harsiddhi.webp", alt: "Harsiddhi Mata Temple" },
-    { id: 3, src: "/images/temple/kalbhairav.webp", alt: "Kal Bhairav Temple" },
-    { id: 4, src: "/images/temple/mangalnath.webp", alt: "Mangalnath Temple" },
-    { id: 5, src: "/images/temple/omkareshwar.webp", alt: "Omkareshwar" },
+    { id: 1, src: "/temple/mahakal.webp", alt: "Mahakal Temple" },
+    { id: 2, src: "/temple/harsiddhi.webp", alt: "Harsiddhi Mata Temple" },
+    { id: 3, src: "/temple/kalbhairav.webp", alt: "Kal Bhairav Temple" },
+    { id: 4, src: "/temple/mangalnath.webp", alt: "Mangalnath Temple" },
+    { id: 5, src: "/temple/omkareshwar.webp", alt: "Omkareshwar" },
     { id: 6, src: "/images/guide-boating.webp", alt: "Narmada River Boating" },
     { id: 7, src: "/images/guide-mahakal-lok.webp", alt: "Mahakal Lok" },
     { id: 8, src: "/images/guide-narmada-ghat.webp", alt: "Narmada ghat" },
     { id: 9, src: "/images/guide-ram-ghat.webp", alt: "Ram ghat ujjain" },
     { id: 10, src: "/images/guide-shipra.webp", alt: "Shipra River Ujjain" },
-    { id: 10, src: "/images/guide-entry.webp", alt: "Mahakal mandir entry  gate" },
+    { id: 11, src: "/images/guide-entry.webp", alt: "Mahakal mandir entry gate" },
   ];
 
   return (
