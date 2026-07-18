@@ -130,11 +130,13 @@
         >
           <div className="home-guide-image-wrapper">
             <img
-              src={guide.image}
-              alt={guide.title}
-              className="home-guide-image"
-              loading="lazy"
-            />
+  src={guide.image}
+  alt={guide.title}
+  width="600"
+  height="338"
+  loading="lazy"
+  decoding="async"
+/>
           </div>
 
           <div className="home-guide-content">
