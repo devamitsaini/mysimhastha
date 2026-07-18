@@ -328,7 +328,7 @@ const AITripPlanner = () => {
       <div className="container">
         <div className="section-heading">
           <span className="section-tag">AI TRIP PLANNER</span>
-          <h2>Plan Your Simhastha Journey</h2>
+          <h2>Plan Your Ujjain Journeyy</h2>
           <p>
             Create a personalized pilgrimage itinerary based on your travel
             style, budget, duration and interests.

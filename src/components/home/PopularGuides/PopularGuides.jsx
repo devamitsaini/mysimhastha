@@ -141,6 +141,9 @@ const PopularGuides = () => {
                 src={guide.image}
                 alt={guide.title}
                 loading="lazy"
+                decoding="async"
+                width="320"
+                height="180"
               />
 
             </Link>

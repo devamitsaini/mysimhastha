@@ -1,10 +1,9 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import "./index.css";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-import CountdownHub from "./components/common/CountdownHub/CountdownHub";
 import MobileNav from "./components/layout/MobileNav";
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
@@ -102,11 +101,8 @@ const LoadingSpinner = () => (
   </div>
 );
 
-import GuidesPage from "./pages/GuidesPage";
+const GuidesPage = lazy(() => import("./pages/GuidesPage"));
 
-
-
-import { Navigate } from "react-router-dom";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const NewsPage = lazy(() => import("./pages/NewsPage"));
 const NewsDetailsPage = lazy(() => import("./pages/NewsDetailsPage"));

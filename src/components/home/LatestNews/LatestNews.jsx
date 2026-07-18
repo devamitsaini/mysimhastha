@@ -53,6 +53,8 @@ const LatestNews = () => {
                     alt={item.title}
                     loading="lazy"
                     decoding="async"
+                    width="270"
+                    height="160"
                     onError={(e) => {
                       e.currentTarget.src = "https://cokhwroeblaykgyicmgq.supabase.co/storage/v1/object/public/News_mysimhastha/default-news.webp";
                     }}

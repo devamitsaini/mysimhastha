@@ -16,12 +16,24 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const { createClient } = require("@supabase/supabase-js");
 
-const parser = new Parser();
+const parser = new Parser({
+  timeout: 15000,
+  headers: {
+    "User-Agent": "Mozilla/5.0"
+  }
+});
 
 const supabase = createClient(
   process.env.SUPABASE_URL || process.env.REACT_APP_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_KEY
 );
+
+console.log("========== ENV ==========");
+console.log("SUPABASE_URL:", !!process.env.SUPABASE_URL);
+console.log("REACT_APP_SUPABASE_URL:", !!process.env.REACT_APP_SUPABASE_URL);
+console.log("SUPABASE_SERVICE_KEY:", !!process.env.SUPABASE_SERVICE_KEY);
+console.log("GEMINI_API_KEY:", !!process.env.GEMINI_API_KEY);
+console.log("=========================");
 
 const keywords = [
 "mahakal",
@@ -237,25 +249,40 @@ async function getImage(link) {
 
 async function importRSS() {
 try {
-("=================================");
-("Starting RSS Import");
-("=================================");
+
+console.log("\n=================================");
+console.log("Starting RSS Import");
+console.log("=================================\n");
 
 
 for (const feedUrl of feeds) {
 
-  (feedUrl);
+  console.log("\nFetching Feed:");
+console.log(feedUrl);
 
   let feed;
 
   try {
-    feed = await parser.parseURL(feedUrl);
+    console.log("Connecting to Google RSS...");
+
+const response = await axios.get(feedUrl, {
+  timeout: 15000,
+  headers: {
+    "User-Agent": "Mozilla/5.0"
+  }
+});
+
+console.log("RSS Downloaded");
+
+feed = await parser.parseString(response.data);
+
+console.log("RSS Parsed");
   } catch (err) {
     ("Feed Error:", err.message);
     continue;
   }
 
-  (`Found ${feed.items.length} items`);
+  console.log(`Found ${feed.items.length} items`);
 
   for (const item of feed.items.slice(0, 5)) {
     const rawTitle = item.title || "";

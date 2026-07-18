@@ -103,6 +103,9 @@ const SacredPlaces = () => {
                   src={place.image}
                   alt={place.title}
                   loading="lazy"
+                  decoding="async"
+                  width="320"
+                  height="180"
                 />
                 <div className="place-badge">
                   <FaPlaceOfWorship />

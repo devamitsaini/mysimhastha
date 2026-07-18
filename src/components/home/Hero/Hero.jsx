@@ -90,8 +90,7 @@ const Hero = () => {
   className="hero-image"
   width="1600"
   height="900"
-  fetchPriority="high"
-  decoding="async"
+    decoding="async"
 />
 
   <div className="image-glow"></div>

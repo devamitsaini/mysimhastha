@@ -70,7 +70,7 @@
 
 .guide-image{
   display:block;
-  aspect-ratio:1/1;
+  aspect-ratio:16/9;
   overflow:hidden;
   background:var(--cream2);
 }
@@ -228,7 +228,7 @@
   }
 
 .guide-image{
-    aspect-ratio:1/1;
+    aspect-ratio:16/9;
   }
 
   .popular-guides .guide-content{

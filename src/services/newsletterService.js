@@ -1,14 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
-
-// Initialize Supabase client
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || '';
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn('Supabase credentials not configured for newsletter');
-}
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+import { supabase } from "../lib/supabase";
 
 // Web3Forms fallback
 const web3formsAccessKey = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY || '';

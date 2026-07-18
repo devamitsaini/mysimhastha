@@ -79,8 +79,7 @@ const GuideHero = ({ hero = {} }) => {
             src={hero.image}
             alt={hero.imageAlt}
             loading="eager"
-            fetchpriority="high"
-            width="1200"
+                        width="1200"
             height="675"
           />
 

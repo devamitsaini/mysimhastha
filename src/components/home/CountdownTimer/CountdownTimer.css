@@ -327,6 +327,10 @@
     box-shadow:
         0 8px 20px rgba(37,99,235,.22);
 
+    grid-column: 3;
+    justify-self: end;
+    align-self: end;
+
 }
 
 .countdown-btn:hover{
@@ -753,9 +757,4 @@ transform:translateY(0);
 
 }
 
-}
-.countdown-btn{
-    grid-column: 3;
-    justify-self: end;
-    align-self: end;
 }
