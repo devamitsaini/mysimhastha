@@ -588,7 +588,7 @@ Thousands of Pilgrims. Only limited slots Hurry up!</p>
                 {
                   id: 1,
                   name: "Your Property Here",
-                  image: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+                  image: "/images/featured1.jpg",
                   distance: "700m from Mahakal",
                   price: "₹1,800",
                   rating: "4.8",
@@ -600,7 +600,7 @@ Thousands of Pilgrims. Only limited slots Hurry up!</p>
                 {
                   id: 2,
                   name: "Your Property Here",
-                  image: "https://images.unsplash.com/photo-1582719508461-905c673771fd",
+                  image: "/images/featured2.webp",
                   distance: "Featured",
                   price: "₹2,400",
                   rating: "4.7",
@@ -612,7 +612,7 @@ Thousands of Pilgrims. Only limited slots Hurry up!</p>
                 {
                   id: 3,
                   name: "Your Property Here",
-                  image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+                  image: "/images/feattured3.webp",
                   distance: "500m from Mahakal",
                   price: "₹1,200",
                   rating: "4.6",
@@ -624,7 +624,7 @@ Thousands of Pilgrims. Only limited slots Hurry up!</p>
                 {
                   id: 4,
                   name: "Your Property Here",
-                  image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+                  image: "/images/featured4.jpg",
                   distance: "2 km from Mahakal",
                   price: "₹3,100",
                   rating: "4.9",

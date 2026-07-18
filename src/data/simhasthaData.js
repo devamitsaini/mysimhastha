@@ -58,7 +58,7 @@ export const HOTELS_DATA = [
     tier: "Premium",
     desc: "Luxury hotel with temple views and modern amenities.",
     featured: true,
-    img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80"
+    img: "/images/featured2.webp"
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const HOTELS_DATA = [
     tier: "Standard",
     desc: "Clean rooms and convenient access to major temples.",
     featured: false,
-    img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80"
+    img: "/images/feattured3.webp"
   },
   {
     id: 4,
@@ -97,7 +97,7 @@ export const HOTELS_DATA = [
     tier: "Budget",
     desc: "Affordable accommodation for pilgrims.",
     featured: false,
-    img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80"
+    img: "/images/featured4.jpg"
   },
   {
     id: 5,

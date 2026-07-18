@@ -19,15 +19,12 @@ export default function FeaturedStayCard({ stay }) {
   const image =
     stay.featured_image ||
     stay.image ||
-    "/images/hotel-placeholder.webp";
+    "/images/featured1.jpg";
 
   return (
     <article className="stay-card">
-
       {/* IMAGE */}
-
       <div className="stay-card-image">
-
         <img
           src={image}
           alt={stay.name}
@@ -49,15 +46,11 @@ export default function FeaturedStayCard({ stay }) {
           <FiStar />
           {stay.rating || "4.5"}
         </div>
-
       </div>
 
       {/* BODY */}
-
       <div className="stay-card-body">
-
         <div className="stay-top">
-
           <span className="stay-type">
             {stay.stay_type || "Hotel"}
           </span>
@@ -67,23 +60,18 @@ export default function FeaturedStayCard({ stay }) {
               Popular
             </span>
           )}
-
         </div>
 
         <h3>{stay.name}</h3>
 
         <div className="stay-location">
-
           <FiMapPin />
-
           <span>
             {stay.locality || stay.city || "Ujjain"}
           </span>
-
         </div>
 
         <div className="stay-info">
-
           {stay.distance_mahakal && (
             <span>
               📍 {stay.distance_mahakal} m
@@ -101,28 +89,19 @@ export default function FeaturedStayCard({ stay }) {
               ✓ Verified
             </span>
           )}
-
         </div>
 
         <div className="stay-price-row">
-
           <div>
-
             <small>Starting from</small>
-
             <h2>
               ₹{stay.price_from || stay.starting_price || "999"}
-
               <span>/night</span>
-
             </h2>
-
           </div>
-
         </div>
 
         <div className="stay-actions">
-
           <Link
             to={`/stays/${stay.slug}`}
             className="details-btn"
@@ -131,7 +110,6 @@ export default function FeaturedStayCard({ stay }) {
           </Link>
 
           {stay.whatsapp ? (
-
             <a
               href={`https://wa.me/${stay.whatsapp}`}
               target="_blank"
@@ -140,22 +118,16 @@ export default function FeaturedStayCard({ stay }) {
             >
               <FaWhatsapp />
             </a>
-
           ) : stay.phone ? (
-
             <a
               href={`tel:${stay.phone}`}
               className="whatsapp-btn"
             >
               <FiPhone />
             </a>
-
           ) : null}
-
         </div>
-
       </div>
-
     </article>
   );
 }
