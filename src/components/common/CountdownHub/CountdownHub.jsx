@@ -70,8 +70,8 @@ const CountdownHub = () => {
               <span>Seconds</span>
             </div>
           </div>
-          <Link to="/simhastha-2028" className="countdown-link">
-            Explore Simhastha <FaArrowRight />
+          <Link to="/snan-calendar" className="countdown-link">
+            Explore Shahi Snan <FaArrowRight />
           </Link>
         </div>
       </div>

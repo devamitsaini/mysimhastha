@@ -86,13 +86,13 @@ const FeaturedStays = () => {
             <div className="stay-card" key={stay.id}>
               <div className="stay-image">
                 <img
-                  src={stay.image}
-                  alt={stay.name}
-                  loading="lazy"
-                  decoding="async"
-                  width="400"
-                  height="280"
-                />
+  src={stay.image}
+  alt={stay.name}
+  loading="lazy"
+  decoding="async"
+  width="600"
+  height="400"
+/>
                 <div className="verified-badge">
                   <FaCheckCircle />
                   Verified

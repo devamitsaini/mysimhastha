@@ -112,10 +112,13 @@ const ExploreUjjain = () => {
               <div className="explore-image">
 
                 <img
-                  src={place.image}
-                  alt={place.title}
-                  loading="lazy"
-                />
+  src={place.image}
+  alt={place.title}
+  loading="lazy"
+  decoding="async"
+  width="600"
+  height="400"
+/>
 
                 <div
                   className="explore-icon"

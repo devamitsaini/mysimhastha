@@ -347,7 +347,14 @@ function Simhastha2028Page() {
                     </span>
                   )}
                   <div className="sim2028-guide-image">
-                    <img src={guide.image} alt={guide.title} loading="lazy" />
+                    <img
+  src={guide.image}
+  alt={guide.title}
+  loading="lazy"
+  decoding="async"
+  width="600"
+  height="400"
+/>
                   </div>
                   <div className="sim2028-guide-content">
                     <div className="sim2028-guide-icon">{guide.icon}</div>

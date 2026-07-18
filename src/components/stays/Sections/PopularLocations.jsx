@@ -6,8 +6,7 @@ import { fetchStayCountsByLocality } from "../../../services/staysService";
 
 import "./PopularLocations.css";
 
-const placeholder =
-  "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80";
+const placeholder = "/images/locations/location-placeholder.webp";
 
 export default function PopularLocations() {
   const [locations, setLocations] = useState([]);
@@ -83,10 +82,13 @@ export default function PopularLocations() {
             >
 
               <img
-                src={placeholder}
-                alt={location.name}
-                loading="lazy"
-              />
+  src={placeholder}
+  alt={location.name}
+  loading="lazy"
+  decoding="async"
+  width="600"
+  height="400"
+/>
 
               <div className="location-overlay">
 
