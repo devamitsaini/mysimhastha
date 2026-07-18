@@ -1,5 +1,6 @@
 import React from "react";
 import SchemaInjector from "./SchemaInjector";
+import { generateItemListSchema } from "./generators/itemList";
 
 import { generateOrganizationSchema } from "./generators/organization";
 import { generateWebsiteSchema } from "./generators/website";

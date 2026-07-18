@@ -135,10 +135,6 @@ const TemplesPage = () => {
         title="Sacred Temples of Ujjain | Mahakaleshwar, Omkareshwar, Baglamukhi Mata"
         description="Explore 11+ sacred temples in Ujjain including Mahakaleshwar Jyotirlinga, Kal Bhairav, Harsiddhi Mata. Get timings, entry fees, and complete darshan guide."
         canonical="https://www.mysimhastha.com/temples"
-        ogTitle="Sacred Temples of Ujjain | Mahakaleshwar, Omkareshwar, Baglamukhi Mata"
-        ogDescription="Explore 11+ sacred temples in Ujjain including Mahakaleshwar Jyotirlinga, Kal Bhairav, Harsiddhi Mata. Get timings, entry fees, and complete darshan guide."
-        twitterTitle="Sacred Temples of Ujjain | Mahakaleshwar, Omkareshwar, Baglamukhi Mata"
-        twitterDescription="Explore 11+ sacred temples in Ujjain including Mahakaleshwar Jyotirlinga, Kal Bhairav, Harsiddhi Mata. Get timings, entry fees, and complete darshan guide."
       />
 
       <SchemaProvider
