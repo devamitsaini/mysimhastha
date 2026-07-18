@@ -155,7 +155,7 @@ function Simhastha2028Page() {
             <div className="sim2028-hero-card">
               <div className="sim2028-hero-image">
                 <img
-                  src="groupofsadhus.webp"
+                  src="/images/groupofsadhus.webp"
                   alt="Simhastha 2028 Ujjain"
                 />
                 <div className="sim2028-hero-image-fade" />
@@ -588,7 +588,7 @@ Thousands of Pilgrims. Only limited slots Hurry up!</p>
                 {
                   id: 1,
                   name: "Your Property Here",
-                  image: "/images/featured1.jpg",
+                  image: "/images/featured1.webp",
                   distance: "700m from Mahakal",
                   price: "₹1,800",
                   rating: "4.8",
@@ -624,7 +624,7 @@ Thousands of Pilgrims. Only limited slots Hurry up!</p>
                 {
                   id: 4,
                   name: "Your Property Here",
-                  image: "/images/featured4.jpg",
+                  image: "/images/featured4.webp",
                   distance: "2 km from Mahakal",
                   price: "₹3,100",
                   rating: "4.9",

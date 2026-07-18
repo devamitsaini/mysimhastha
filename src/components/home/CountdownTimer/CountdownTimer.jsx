@@ -92,7 +92,7 @@ const CountdownTimer = () => {
 
       {/* BUTTON (Moved outside countdown-right) */}
       <Link
-        to="/simhasth-2028"
+        to="/simhastha-2028"
         className="countdown-btn"
       >
         Explore Simhastha

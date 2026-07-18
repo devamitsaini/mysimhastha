@@ -97,7 +97,7 @@ export const HOTELS_DATA = [
     tier: "Budget",
     desc: "Affordable accommodation for pilgrims.",
     featured: false,
-    img: "/images/featured4.jpg"
+    img: "/images/featured4.webp"
   },
   {
     id: 5,

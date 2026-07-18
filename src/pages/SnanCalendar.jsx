@@ -75,7 +75,7 @@ function SnanCalendarPage() {
             <div className="about-image">
 
               <img
-                src="groupofsadhus.webp"
+                src="/images/groupofsadhus.webp"
                 alt="Shahi Snan Procession"
               />
 

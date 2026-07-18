@@ -19,7 +19,7 @@ export default function FeaturedStayCard({ stay }) {
   const image =
     stay.featured_image ||
     stay.image ||
-    "/images/featured1.jpg";
+    "/images/featured1.webp";
 
   return (
     <article className="stay-card">
