@@ -220,7 +220,7 @@ const faqSchema = {
 <link
   rel="alternate"
   hreflang="hi"
-  href="https://www.mysimhastha.comExplore complete guides for Simhastha 2028, Mahakaleshwar Temple, Sawan/Sharvan Maas, Ujjain travel, accommodation and more./guide/sawan-2026"
+  href="https://www.mysimhastha.com/hi/guide/sawan-2026"
 />
 
         <script type="application/ld+json">

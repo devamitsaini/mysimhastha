@@ -13,6 +13,7 @@ import GuideOfficialResources from "../../components/guides/GuideOfficialResourc
 import ShareButtons from "../../components/guides/ShareButtons";
 import GuideRenderer from "../../components/guides/GuideRenderer";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 import "../styles/guides.css";
 
