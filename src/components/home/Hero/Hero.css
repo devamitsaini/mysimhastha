@@ -40,7 +40,7 @@
     border:1px solid rgba(249,115,22,.10);
 
     box-shadow:
-        0 30px 80px rgba(15,23,42,.08);
+        0 10px 30px rgba(15,23,42,.06);
 
     position:relative;
 
@@ -113,7 +113,7 @@
 
     display:block;
 
-    transform:scale(1.02);
+    transform:none;
 
 }
 /* ======================================================
@@ -132,7 +132,7 @@
 
     bottom:0;
 
-    width:240px;
+    width:160px;
 
     background:
         linear-gradient(
@@ -444,19 +444,13 @@
 
 .hero-image{
 
-    transition:
-        transform .8s ease,
-        filter .8s ease;
-
-    filter:
-        saturate(1.05)
-        contrast(1.02);
+    transition:transform .6s ease;
 
 }
 
 .hero-wrapper:hover .hero-image{
 
-    transform:scale(1.05);
+    transform:scale(1.02);
 
 }
 
@@ -583,10 +577,7 @@
 
 .hero-left>*{
 
-    animation:
-        heroFade .8s ease forwards;
-
-    opacity:0;
+    opacity:1;
 
 }
 

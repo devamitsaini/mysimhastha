@@ -41,7 +41,7 @@ const MissingPersonsHome = () => {
                     {person.status === "found" ? "Found" : "Missing"}
                   </span>
                 </div>
-                <div rlassName="mp-age">{person.age}</div>
+                <div className="mp-age">{person.age}</div>
                 <div className="mp-desc">{person.desc}</div>
                 <div className="mp-detail">📍 {person.location}</div>
                 <div className="mp-contact-row">📞 {person.contact}</div>

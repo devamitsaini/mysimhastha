@@ -25,7 +25,7 @@ const Hero = () => {
 
           <h1 className="hero-title">
             Your Complete Guide to{" "}
-            <p></p>
+            <br />
             <span className="hero-blue">
               Ujjain, Mahakal &{" "}
             </span>
@@ -85,10 +85,14 @@ const Hero = () => {
         <div className="hero-right">
 
           <img
-            src="/images/hero.webp"
-            alt="Simhastha 2028 Ujjain Mahakal Temple"
-            className="hero-image"
-          />
+  src="/images/hero.webp"
+  alt="Simhastha 2028 Ujjain Mahakal Temple"
+  className="hero-image"
+  width="1600"
+  height="900"
+  fetchPriority="high"
+  decoding="async"
+/>
 
   <div className="image-glow"></div>
        
