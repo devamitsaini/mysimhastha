@@ -619,7 +619,7 @@ Thousands of Pilgrims. Only limited slots Hurry up!</p>
                 {
                   id: 3,
                   name: "Your Property Here",
-                  image: "/images/feattured3.webp",
+                  image: "/images/featured3.webp",
                   distance: "500m from Mahakal",
                   price: "₹1,200",
                   rating: "4.6",
