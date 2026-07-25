@@ -7,6 +7,15 @@ export default function GuidesPage() {
   
   const guides = [
     {
+      title: "First Sawan Somwar 2026: Date, Puja Vidhi, Vrat Rules, Significance & Mahakal Darshan Guide",
+      description:
+        "Know everything about the First Sawan Somwar 2026, including the exact date, puja vidhi, vrat rules, Shiva mantras, significance, fasting guidelines, Mahakal darshan tips, and frequently asked questions.",
+      image: "/images/first-sawan-somwar-2026.webp",
+      enLink: "/guide/first-sawan-somwar-2026",
+      hiLink: "/hi/guide/first-sawan-somwar-2026",
+      date: "2026-08-03"
+    },
+    {
     title: "Harsiddhi Mata Temple, Ujjain: Timings, History & Darshan Guide",
     description:
       "Complete guide to Harsiddhi Mata Temple, Ujjain — one of the 51 Shakti Peethas. Timings, history, the iconic Deepmala, aarti schedule, dress code, how to reach from Mahakaleshwar, and essential travel tips for pilgrims and visitors.",

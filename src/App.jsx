@@ -173,6 +173,7 @@ const UjjainToOmkareshwarGuideHi = lazy(() => import("./guides/hi/UjjainToOmkare
 const UjjainItinerary = lazy(() => import("./guides/ujjain-itinerary"));
 const KalBhairavTempleGuide = lazy(() => import("./guides/kal-bhairav"));
 const HarsiddhiMataTempleGuide = lazy(() => import("./guides/harsiddhi-mata-temple-ujjain"));
+const FirstSawanSomwarGuide = lazy(() => import("./guides/first-somwar"));
 
 const TemplesPage = lazy(() => import("./pages/TemplesPage"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
@@ -263,6 +264,7 @@ function App() {
               <Route path="/guide/2-3-day-ujjain-itinerary"  element={<UjjainItinerary />} />
               <Route path="/guide/kal-bhairav-temple-guide" element={<KalBhairavTempleGuide />} />
               <Route path="/guide/harsiddhi-mata-temple-ujjain" element={<HarsiddhiMataTempleGuide />} />
+              <Route path="/guide/first-sawan-somwar-2026" element={<FirstSawanSomwarGuide />} />
 
               {/* Hindi */}
               <Route path="/hi/guide/simhastha-2028" element={<Simhastha2028HI />} />
@@ -279,6 +281,7 @@ function App() {
               <Route path="/hi/guide/2-3-day-ujjain-itinerary"element={<UjjainItinerary />}/>
               <Route path="/hi/guide/kal-bhairav-temple-guide" element={<KalBhairavTempleGuide />} />
               <Route path="/hi/guide/harsiddhi-mata-temple-ujjain" element={<HarsiddhiMataTempleGuide />} />
+              <Route path="/hi/guide/first-sawan-somwar-2026" element={<FirstSawanSomwarGuide />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
