@@ -8,7 +8,7 @@ const TripPlanner = () => {
   return (
     <>
       <SEO
-        title="Plan Your Ujjain Journeyy | AI Trip Planner"
+        title="Plan Your Ujjain Journey | AI Trip Planner"
         description="Create a personalized pilgrimage itinerary for Ujjain Simhastha 2028. Our AI-powered trip planner helps you design the perfect spiritual journey based on your preferences, budget, and interests."
         canonical="https://www.mysimhastha.com/trip-planner"
       />
@@ -16,7 +16,7 @@ const TripPlanner = () => {
       <SchemaProvider
         type="howto"
         data={{
-          title: "Plan Your Ujjain Journeyy",
+          title: "Plan Your Ujjain Journey",
           description: "Create a personalized pilgrimage itinerary for Ujjain Simhastha 2028. Our AI-powered trip planner helps you design the perfect spiritual journey based on your preferences, budget, and interests.",
           url: "https://www.mysimhastha.com/trip-planner",
           published: "2026-01-01",

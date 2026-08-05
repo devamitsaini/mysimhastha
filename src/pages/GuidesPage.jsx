@@ -93,6 +93,15 @@ export default function GuidesPage() {
       date: "2026-06-25",
     },
     {
+      title: "Mahakal Shahi Sawari Route: Timing, Stops & Ram Ghat Ritual Guide",
+      description:
+        "Complete guide to Mahakal Shahi Sawari Route — procession path from Mahakaleshwar Temple to Ram Ghat, timing, major stops, Shipra Jalabhishek, best viewing points, and visitor tips.",
+      image: "/images/mahakal-shahi-sawari-route.webp",
+      enLink: "/guide/mahakal-shahi-sawari-route",
+      hiLink: "/hi/guide/mahakal-shahi-sawari-route",
+      date: "2026-07-25",
+    },
+    {
       title: "Sawan 2026 Ujjain Guide",
       description: "Mahakal Darshan, Sawan Mondays...",
       image: "/images/sawan-2026-ujjain.webp",
