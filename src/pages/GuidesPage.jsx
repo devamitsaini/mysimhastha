@@ -7,7 +7,16 @@ export default function GuidesPage() {
   
   const guides = [
     {
-      title: "First Sawan Somwar 2026: Date, Puja Vidhi, Vrat Rules, Significance & Mahakal Darshan Guide",
+      title: "Nagchandreshwar Mandir Ujjain 2026: Darshan, Tickets & Nag Panchami Guide",
+      description:
+        "Complete guide to Nagchandreshwar Mandir Ujjain — the rare shrine that opens once a year on Nag Panchami. 2026 date (Monday, 17 August), ₹300 Sheeghra Darshan, 11 online slots, Gate 5 entry, history, religious traditions, Kaal Sarp Dosh beliefs and travel tips.",
+      image: "/images/nagchandreshwar-mandir-ujjain.webp",
+      enLink: "/guide/nagchandreshwar-mandir-ujjain",
+      hiLink: "/hi/guide/nagchandreshwar-mandir-ujjain",
+      date: "2026-08-14"
+    },
+    {
+      title: "First Sawan Somwar 2026: Date, Puja, Vrat Rules, Significance & Mahakal Darshan Guide",
       description:
         "Know everything about the First Sawan Somwar 2026, including the exact date, puja vidhi, vrat rules, Shiva mantras, significance, fasting guidelines, Mahakal darshan tips, and frequently asked questions.",
       image: "/images/first-sawan-somwar-2026.webp",

@@ -178,6 +178,8 @@ const FirstSawanSomwarGuide = lazy(() => import("./guides/first-somwar"));
 const MahakalShahiSawariRoute = lazy(() => import("./guides/mahakal-sawari-route"));
 const MahakalShahiSawariRouteHi = lazy(() => import("./guides/mahakal-sawari-route"));
 
+const NagchandreshwarMandirGuide = lazy(() => import("./guides/nagchandreshwar-mandir"));
+
 const TemplesPage = lazy(() => import("./pages/TemplesPage"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
@@ -269,6 +271,7 @@ function App() {
               <Route path="/guide/harsiddhi-mata-temple-ujjain" element={<HarsiddhiMataTempleGuide />} />
               <Route path="/guide/first-sawan-somwar-2026" element={<FirstSawanSomwarGuide />} />
               <Route path="/guide/mahakal-shahi-sawari-route" element={<MahakalShahiSawariRoute />} />
+              <Route path="/guide/nagchandreshwar-mandir-ujjain" element={<NagchandreshwarMandirGuide />} />
 
               {/* Hindi */}
               <Route path="/hi/guide/simhastha-2028" element={<Simhastha2028HI />} />
@@ -287,6 +290,7 @@ function App() {
               <Route path="/hi/guide/harsiddhi-mata-temple-ujjain" element={<HarsiddhiMataTempleGuide />} />
               <Route path="/hi/guide/first-sawan-somwar-2026" element={<FirstSawanSomwarGuide />} />
               <Route path="/hi/guide/mahakal-shahi-sawari-route" element={<MahakalShahiSawariRouteHi />} />
+              <Route path="/hi/guide/nagchandreshwar-mandir-ujjain" element={<NagchandreshwarMandirGuide />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
