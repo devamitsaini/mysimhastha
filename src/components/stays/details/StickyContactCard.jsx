@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import {
   FiPhone,
   FiMessageCircle,
@@ -20,13 +20,29 @@ function formatPrice(value) {
 }
 
 export default function StickyContactCard({ stay }) {
-  const phone = stay.phone || "";
-  const whatsapp =
-  (stay.whatsapp || stay.phone || "")
+  const phone = (stay.phone || "").trim();
+  // Normalize to digits for tel:/wa.me links; keep a display version.
+  const phoneDigits = phone.replace(/\D/g, "").replace(/^0/, "");
+  const whatsappDigits = (stay.whatsapp || "")
     .replace(/\D/g, "")
     .replace(/^0/, "");
-  const website = stay.website || "";
-  const email = stay.email || "";
+  // Prefer an explicit WhatsApp number, else fall back to the phone number.
+  const whatsappTarget = whatsappDigits || phoneDigits;
+  const website = (stay.website || "").trim();
+  const email = (stay.email || "").trim();
+
+  // Directions: prefer the stored map link, else build from coordinates.
+  const hasCoords =
+    stay.latitude != null &&
+    stay.longitude != null &&
+    stay.latitude !== "" &&
+    stay.longitude !== "";
+  const directionsUrl =
+    stay.google_maps_url ||
+    (hasCoords
+      ? `https://www.google.com/maps?q=${stay.latitude},${stay.longitude}`
+      : "");
+  const hasContact = phone || whatsappTarget || website || email;
 
   const [toast, setToast] = useState("");
 
@@ -51,7 +67,6 @@ export default function StickyContactCard({ stay }) {
       return;
     }
 
-    // Fallback: copy link to clipboard and show a toast.
     try {
       await navigator.clipboard.writeText(window.location.href);
       showToast("Link copied to clipboard!");
@@ -62,47 +77,48 @@ export default function StickyContactCard({ stay }) {
 
   return (
     <aside className="sticky-contact-card">
-      {/* PRICE */}
-
       {formatPrice(stay.starting_price || stay.price_from) && (
-  <div className="price-card">
-    <small>Starting From</small>
-
-    <h2>{formatPrice(stay.starting_price || stay.price_from)}</h2>
-
-    <span>Per Night</span>
-  </div>
-)}
-
-      {/* CONTACT */}
+        <div className="price-card">
+          <small>Starting From</small>
+          <h2>{formatPrice(stay.starting_price || stay.price_from)}</h2>
+          <span>Per Night</span>
+        </div>
+      )}
 
       <div className="contact-actions">
-        <a
-          href={phone ? `tel:${phone}` : "#"}
-          className="primary-btn"
-          onClick={(e) => !phone && e.preventDefault()}
-        >
-          <FiPhone />
-          Call
-        </a>
+        {phone ? (
+          <a href={`tel:${phoneDigits || phone}`} className="primary-btn">
+            <FiPhone />
+            Call
+          </a>
+        ) : (
+          <span className="primary-btn primary-btn-disabled" aria-disabled="true">
+            <FiPhone />
+            Call
+          </span>
+        )}
 
-        <a
-          href={whatsapp ? `https://wa.me/91${whatsapp}` : "#"}
-          target="_blank"
-          rel="noreferrer"
-          className="whatsapp-btn"
-          onClick={(e) => !whatsapp && e.preventDefault()}
-        >
-          <FiMessageCircle />
-          WhatsApp
-        </a>
+        {whatsappTarget ? (
+          <a
+            href={`https://wa.me/${whatsappTarget}`}
+            target="_blank"
+            rel="noreferrer"
+            className="whatsapp-btn"
+          >
+            <FiMessageCircle />
+            WhatsApp
+          </a>
+        ) : (
+          <span className="whatsapp-btn whatsapp-btn-disabled" aria-disabled="true">
+            <FiMessageCircle />
+            WhatsApp
+          </span>
+        )}
       </div>
 
-      {/* MAP */}
-
-      {stay.latitude && stay.longitude ? (
+      {directionsUrl ? (
         <a
-          href={`https://www.google.com/maps?q=${stay.latitude},${stay.longitude}`}
+          href={directionsUrl}
           target="_blank"
           rel="noreferrer"
           className="outline-btn"
@@ -110,40 +126,22 @@ export default function StickyContactCard({ stay }) {
           <FiNavigation />
           Get Directions
         </a>
-      ) : (
-        stay.google_maps_url && (
-          <a
-            href={stay.google_maps_url}
-            target="_blank"
-            rel="noreferrer"
-            className="outline-btn"
-          >
-            <FiNavigation />
-            Get Directions
-          </a>
-        )
-      )}
-
-      {/* SAVE / SHARE */}
+      ) : null}
 
       <div className="secondary-actions">
         <button type="button">
           <FiHeart />
           Save
         </button>
-
         <button type="button" onClick={handleShare}>
           <FiShare2 />
           Share
         </button>
       </div>
 
-      {/* CONTACT INFO */}
-
       {(website || email) && (
         <div className="booking-note">
           <strong>Contact Information</strong>
-
           {website && (
             <p>
               <FiGlobe />
@@ -152,35 +150,12 @@ export default function StickyContactCard({ stay }) {
               </a>
             </p>
           )}
-
           {email && (
             <p>
               <FiMail />
               <a href={`mailto:${email}`}>{email}</a>
             </p>
           )}
-        </div>
-      )}
-
-      {/* WHY */}
-
-      <div className="booking-note">
-        <strong>Why MySimhastha?</strong>
-
-        <ul>
-          <li>✔ Verified Property</li>
-          <li>✔ Direct Contact</li>
-          <li>✔ No Booking Commission</li>
-          <li>✔ Trusted During Simhastha</li>
-        </ul>
-      </div>
-
-      {/* TOAST */}
-
-      {toast && (
-        <div className="share-toast">
-          <FiCheck />
-          {toast}
         </div>
       )}
     </aside>

@@ -41,7 +41,7 @@ export default function StayInfo({ stay }) {
             {stay.review_count > 0 ? (
               <>
                 <strong>{stay.rating}</strong>
-                <small>({stay.review_count} Reviews)</small>
+                <small>({stay.review_count} Ratings)</small>
               </>
             ) : (
               <small>New Property</small>
@@ -51,7 +51,7 @@ export default function StayInfo({ stay }) {
               <div className="rating-actions">
                 {stay.phone && (
                   <a
-                    href={`tel:${stay.phone}`}
+                    href={`tel:${String(stay.phone).replace(/\D/g, "").replace(/^0/, "") || stay.phone}`}
                     className="rating-action-btn"
                     title="Call"
                   >
@@ -61,7 +61,7 @@ export default function StayInfo({ stay }) {
 
                 {stay.whatsapp && (
                   <a
-                    href={`https://wa.me/${stay.whatsapp}`}
+                    href={`https://wa.me/${String(stay.whatsapp).replace(/\D/g, "").replace(/^0/, "")}`}
                     target="_blank"
                     rel="noreferrer"
                     className="rating-action-btn"
@@ -105,20 +105,20 @@ export default function StayInfo({ stay }) {
 
           <div>
             <strong>Property Type</strong>
-            <span>{stay.stay_type || "N/A"}</span>
+            <span>{stay.stay_type || "Not available"}</span>
           </div>
         </div>
 
         {price && (
-  <div>
-    <FiClock />
+          <div>
+            <FiClock />
 
-    <div>
-      <strong>Starting Price</strong>
-      <span>{price}</span>
-    </div>
-  </div>
-)}
+            <div>
+              <strong>Starting Price</strong>
+              <span>{price}</span>
+            </div>
+          </div>
+        )}
 
         <div>
           <FiMapPin />

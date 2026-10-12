@@ -1,4 +1,4 @@
-
+﻿
 import { createClient } from '@supabase/supabase-js';
 
 
@@ -190,57 +190,123 @@ export const fetchStayBySlug = async (slug) => {
       return { data: null, error };
     }
 
-    // Also fetch rules from the normalized stay_rules table
-    const { data: rulesData, error: rulesError } = await supabase
-      .from('stay_rules')
-      .select('rule_key, rule_label, rule_value')
-      .eq('stay_id', data.id)
-      .order('display_order', { ascending: true });
-
-    if (!rulesError && rulesData?.length > 0) {
-      data.rules_structured = rulesData;
+    // Verified live `stays` columns (read-only probe, 2026-10-12):
+    // - Time fields: checkin_time, checkout_time (NOT check_in_time/check_out_time)
+    // - Amenities: boolean flags (parking, wifi, ac, restaurant, lift,
+    //   family_room, power_backup, hot_water, ev_charging, wheelchair)
+    //   plus an `amenities` array on some rows.
+    // - Distances: distance_mahakal, distance_ramghat, distance_station,
+    //   distance_busstand (NULL on every sampled row).
+    // - Photos: gallery_images[], featured_image, hotel_images[].
+    // - Prices: starting_price (NULL on scraped rows), booking_links,
+    //   booking_partners, price_source, price_last_updated, currency.
+    // - Enrichment: hotel_description, check_in, check_out, star_rating,
+    //   free_cancellation, breakfast_included.
+    // Related tables stay_rules / stay_nearby_places / stay_amenities /
+    // stay_room_types do NOT exist in the live DB (verified PGRST205), and
+    // stay_reviews has 0 rows — so they are deliberately NOT queried here.
+    // Components that consumed them (PropertyRules rules_structured,
+    // NearbyPlaces nearby_places) hide themselves when the data is absent.
+    // Normalise the verified check-in/out column names onto the names the
+    // components expect. Live rows use checkin_time/checkout_time; a few
+    // enriched rows also carry check_in/check_out strings.
+    // tables (stay_rules, stay_nearby_places, stay_room_types) were modelled
+    // for.  Normalise them onto the conventional names the components expect
+    // and safely dispose of any empty collections.
+    if (data.checkin_time != null) data.check_in_time = data.checkin_time;
+    if (data.checkout_time != null) data.check_out_time = data.checkout_time;
+    if (data.check_in != null && data.check_in_time == null) {
+      data.check_in_time = data.check_in;
+    }
+    if (data.check_out != null && data.check_out_time == null) {
+      data.check_out_time = data.check_out;
     }
 
-    // Also fetch nearby places from the normalized stay_nearby_places table
-    const { data: nearbyData, error: nearbyError } = await supabase
-      .from('stay_nearby_places')
-      .select('place_name, place_type, distance_meters')
-      .eq('stay_id', data.id)
-      .order('distance_meters', { ascending: true });
-
-    if (!nearbyError && nearbyData?.length > 0) {
-      // Map DB fields (place_name, place_type, distance_meters) to what the component expects (name, type, distance)
-      data.nearby_places = nearbyData.map((p) => ({
-        name: p.place_name,
-        type: p.place_type || 'Popular attraction',
-        distance: p.distance_meters,
-      }));
+    // Merge enrichment description without inventing copy.
+    if (data.short_description == null && data.hotel_description != null) {
+      data.short_description = data.hotel_description;
     }
 
-    // Also fetch room types so we can derive a fallback starting price
-    const { data: roomTypesData, error: roomTypesError } = await supabase
-      .from('stay_room_types')
-      .select('price_from')
-      .eq('stay_id', data.id)
-      .not('price_from', 'is', null)
-      .order('price_from', { ascending: true })
-      .limit(1);
+    // Merge gallery sources: gallery_images + hotel_images + featured/image.
+    // Single-row fetch, so combine once here instead of extra queries.
+    const gallerySources = [
+      ...(Array.isArray(data.gallery_images) ? data.gallery_images : []),
+      ...(Array.isArray(data.hotel_images) ? data.hotel_images : []),
+      data.featured_image,
+      data.image,
+    ].filter((img) => img != null && String(img).trim() !== '');
+    data.gallery_images = [...new Set(gallerySources)];
 
-    if (!roomTypesError && roomTypesData?.length > 0) {
-      const minRoomPrice = Number(roomTypesData[0].price_from);
-      if (
-        minRoomPrice > 0 &&
-        (!data.starting_price && !data.price_from)
-      ) {
-        data.starting_price = minRoomPrice;
+    // Build amenities from verified boolean flags + stored array entries.
+    // Boolean flags are the primary source on enriched rows (the `amenities`
+    // array exists on only 18/50 sampled rows).
+    const AMENITY_FLAGS = [
+      ['parking', 'Parking'],
+      ['wifi', 'WiFi'],
+      ['ac', 'Air Conditioning'],
+      ['restaurant', 'Restaurant'],
+      ['lift', 'Lift'],
+      ['family_room', 'Family Room'],
+      ['power_backup', 'Power Backup'],
+      ['hot_water', 'Hot Water'],
+      ['ev_charging', 'EV Charging'],
+      ['wheelchair', 'Wheelchair Access'],
+    ];
+    const amenitySet = new Map();
+    for (const [flag, label] of AMENITY_FLAGS) {
+      if (data[flag] === true) amenitySet.set(label.toLowerCase(), label);
+    }
+    if (Array.isArray(data.amenities)) {
+      for (const a of data.amenities) {
+        const key = String(a || '').trim();
+        if (key) amenitySet.set(key.toLowerCase(), key);
       }
     }
+    data.amenities = [...amenitySet.values()];
 
-    // Normalize alternate price column names/formats onto starting_price
+    // Derive a starting price from verified live sources when the
+    // `starting_price` column is empty (NULL on all enriched rows):
+    // booking_links / booking_partners price_raw values ("₹1,445" style
+    // strings are parsed numerically). Never invent a number.
+    const parsePrice = (v) => {
+      if (v == null) return 0;
+      const n = Number(String(v).replace(/[^0-9.]/g, ''));
+      return Number.isFinite(n) && n > 0 ? n : 0;
+    };
+    const candidatePrices = [];
+    const collectPrices = (src) => {
+      if (Array.isArray(src)) {
+        for (const p of src) {
+          if (p && typeof p === 'object') {
+            candidatePrices.push(parsePrice(p.price_raw ?? p.price ?? p.amount));
+          } else {
+            candidatePrices.push(parsePrice(p));
+          }
+        }
+      } else if (src && typeof src === 'object') {
+        for (const v of Object.values(src)) {
+          if (v && typeof v === 'object' && !Array.isArray(v)) {
+            candidatePrices.push(parsePrice(v.price_raw ?? v.price ?? v.amount));
+          } else {
+            candidatePrices.push(parsePrice(v));
+          }
+        }
+      }
+    };
+    collectPrices(data.booking_links);
+    collectPrices(data.booking_partners);
+    const validPrices = candidatePrices.filter((n) => n > 0);
+    if (
+      validPrices.length > 0 &&
+      (data.starting_price == null || Number(data.starting_price) <= 0)
+    ) {
+      data.starting_price = Math.min(...validPrices);
+      if (data.price_source == null) data.price_source = 'booking_links';
+    }
+
+    // Normalise alternate price column names/formats onto starting_price.
     const rawPrice = data.starting_price || data.price_from || data.price || data.rate || data.cost || data.amount || data.price_per_night || data.min_price || data.base_price;
-    if (!rawPrice) {
-      // keep existing fallback to room-types minimum handled above
-    } else {
+    if (rawPrice != null) {
       const parsed = Number(String(rawPrice).replace(/[^0-9.]/g, ''));
       if (parsed > 0) {
         data.starting_price = parsed;
@@ -253,6 +319,7 @@ export const fetchStayBySlug = async (slug) => {
     return { data: null, error };
   }
 };
+
 
 /**
  * Fetch stays by locality (area)

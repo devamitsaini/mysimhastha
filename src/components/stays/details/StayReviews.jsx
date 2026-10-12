@@ -49,18 +49,21 @@ export default function StayReviews({ stay }) {
 
   const average = Number(stay.rating) || 0;
   const count = Number(stay.review_count) || 0;
+  // Live verification (2026-10-12): stay_reviews has 0 rows, while
+  // stays.rating/review_count come from the enrichment import. Label the
+  // stored figure as an overall rating — never as MySimhastha guest reviews.
 
   return (
     <section className="details-card stay-reviews">
-      <h2>Customer Reviews</h2>
+      <h2>Guest Reviews</h2>
 
-      {/* Overall rating card */}
+      {/* Overall rating card (imported listing data, not on-site reviews) */}
       <div className="review-summary">
         <div className="review-summary-score">
           <span className="review-average">{average.toFixed(1)}</span>
           <ReviewStars value={Math.round(average)} size={22} />
           <span className="review-count">
-            {count > 0 ? `${count} Reviews` : "No reviews yet"}
+            {count > 0 ? `${count} Overall Ratings` : "No ratings yet"}
           </span>
         </div>
       </div>
@@ -73,7 +76,7 @@ export default function StayReviews({ stay }) {
         </div>
       ) : reviews.length === 0 ? (
         <p className="review-empty">
-          No reviews yet. Be the first to review this property.
+          No MySimhastha guest reviews yet. Be the first to review this property.
         </p>
       ) : (
         <div className="reviews-list">

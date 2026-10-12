@@ -8,13 +8,15 @@ function formatPrice(value) {
 }
 
 export default function MobileStickyBar({ stay }) {
-  const phone = stay?.phone || "";
-  const whatsapp =
-  (stay.whatsapp || stay.phone || "")
+  const phone = (stay?.phone || "").trim();
+  const phoneDigits = phone.replace(/\D/g, "").replace(/^0/, "");
+  const whatsappDigits = (stay?.whatsapp || "")
     .replace(/\D/g, "")
     .replace(/^0/, "");
+  // Prefer an explicit WhatsApp number, else fall back to the phone number.
+  const whatsappTarget = whatsappDigits || phoneDigits;
 
-  const price = formatPrice(stay.starting_price || stay.price_from);
+  const price = formatPrice(stay?.starting_price || stay?.price_from);
 
   return (
     <div className="mobile-sticky-bar">
@@ -24,25 +26,34 @@ export default function MobileStickyBar({ stay }) {
       </div>
 
       <div className="mobile-buttons">
-        <a
-          href={phone ? `tel:${phone}` : "#"}
-          className="mobile-call"
-          onClick={(e) => !phone && e.preventDefault()}
-        >
-          <FiPhone />
-          Call
-        </a>
+        {phone ? (
+          <a href={`tel:${phoneDigits || phone}`} className="mobile-call">
+            <FiPhone />
+            Call
+          </a>
+        ) : (
+          <span className="mobile-call mobile-call-disabled" aria-disabled="true">
+            <FiPhone />
+            Call
+          </span>
+        )}
 
-        <a
-          href={whatsapp ? `https://wa.me/91${whatsapp}` : "#"}
-          target="_blank"
-          rel="noreferrer"
-          className="mobile-whatsapp"
-          onClick={(e) => !whatsapp && e.preventDefault()}
-        >
-          <FiMessageCircle />
-          WhatsApp
-        </a>
+        {whatsappTarget ? (
+          <a
+            href={`https://wa.me/${whatsappTarget}`}
+            target="_blank"
+            rel="noreferrer"
+            className="mobile-whatsapp"
+          >
+            <FiMessageCircle />
+            WhatsApp
+          </a>
+        ) : (
+          <span className="mobile-whatsapp mobile-whatsapp-disabled" aria-disabled="true">
+            <FiMessageCircle />
+            WhatsApp
+          </span>
+        )}
       </div>
     </div>
   );
